@@ -1,0 +1,1261 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The ten open-weight language models worth testing for generating intelligent textbooks on a 128 GB DGX, with the parameter count and main strength of each, and the reasons to evaluate it.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/model-candidates/">
+      
+      
+        <link rel="prev" href="../design-choices/">
+      
+      
+        <link rel="next" href="../course-description/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Model Candidates: Ten Models to Test for Textbook Generation - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#model-candidates" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Model Candidates: Ten Models to Test for Textbook Generation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-qwen3827b" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. qwen3.8:27b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-gemma431b" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. gemma4:31b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-muse-glimmer30b" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. muse-glimmer:30b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-qwen3635b" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. qwen3.6:35b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-gemma426b" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. gemma4:26b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nemotron-35-lightning30b" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. nemotron-3.5-lightning:30b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-mistral-medium-35128b" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. mistral-medium-3.5:128b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-gpt-oss120b" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. gpt-oss:120b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-devstral-small-224b" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. devstral-small-2:24b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-granite4230b" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. granite4.2:30b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-qualities-that-matter-for-a-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Qualities That Matter for a Textbook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models-left-off-the-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models Left Off the List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-qwen3827b" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. qwen3.8:27b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-gemma431b" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. gemma4:31b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-muse-glimmer30b" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. muse-glimmer:30b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-qwen3635b" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. qwen3.6:35b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-gemma426b" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. gemma4:26b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nemotron-35-lightning30b" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. nemotron-3.5-lightning:30b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-mistral-medium-35128b" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. mistral-medium-3.5:128b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-gpt-oss120b" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. gpt-oss:120b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-devstral-small-224b" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. devstral-small-2:24b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-granite4230b" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. granite4.2:30b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-qualities-that-matter-for-a-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Qualities That Matter for a Textbook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models-left-off-the-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models Left Off the List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/model-candidates.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="model-candidates">Model Candidates<a class="headerlink" href="#model-candidates" title="Permanent link">&para;</a></h1>
+<p>These are the ten open-weight models most worth testing for textbook
+generation on this hardware: one DGX unit with 128 GB of unified memory. They
+are listed in the order they should be evaluated.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters</th>
+<th>Main strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen3.8:27b</code></td>
+<td>27 billion</td>
+<td>Built for long agent tasks; the only model so far to finish a full benchmark stage</td>
+</tr>
+<tr>
+<td><code>gemma4:31b</code></td>
+<td>30.7 billion, dense</td>
+<td>The most consistent rule-follower in the tests run so far</td>
+</tr>
+<tr>
+<td><code>muse-glimmer:30b</code></td>
+<td>30 billion</td>
+<td>Top instruction-following and tool-use scores in its publisher's own comparison</td>
+</tr>
+<tr>
+<td><code>qwen3.6:35b</code></td>
+<td>35 billion, about 3 billion active</td>
+<td>Agentic coding at mixture-of-experts speed, with reasoning carried across turns</td>
+</tr>
+<tr>
+<td><code>gemma4:26b</code></td>
+<td>25.2 billion, 3.8 billion active</td>
+<td>The fastest model tested, three times quicker than its dense sibling</td>
+</tr>
+<tr>
+<td><code>nemotron-3.5-lightning:30b</code></td>
+<td>30 billion, 3 billion active</td>
+<td>Designed for always-on agents, with a one-million-token context window</td>
+</tr>
+<tr>
+<td><code>mistral-medium-3.5:128b</code></td>
+<td>128 billion, dense</td>
+<td>The largest dense model that fits, promoted for instruction and system-prompt adherence</td>
+</tr>
+<tr>
+<td><code>gpt-oss:120b</code></td>
+<td>117 billion, 5.1 billion active</td>
+<td>The largest model that still runs fast on one unit</td>
+</tr>
+<tr>
+<td><code>devstral-small-2:24b</code></td>
+<td>24 billion</td>
+<td>A coding-agent model with a 384,000-token window in the smallest download</td>
+</tr>
+<tr>
+<td><code>granite4.2:30b</code></td>
+<td>about 30 billion, dense</td>
+<td>Structured output and tool calling under a plain Apache 2.0 license</td>
+</tr>
+</tbody>
+</table>
+<p>The benchmark tests two abilities above all others. The first is following a
+detailed skill: a <code>SKILL.md</code> file that can run past a thousand lines, with
+reference documents, templates, and scripts beside it that the model must find
+and use at the right step. The second is tool calling: reading files, writing
+files, and running commands through the harness, correctly, dozens of times in
+one session.</p>
+<p>The order puts evidence first: the models already tested here, then the models
+whose publishers make claims closest to those two abilities. Four have been
+tested. For the other six, the claims below come from each publisher's own
+page as of October 2026 and have not been checked.</p>
+<h2 id="1-qwen3827b">1. <code>qwen3.8:27b</code><a class="headerlink" href="#1-qwen3827b" title="Permanent link">&para;</a></h2>
+<p>This is the model with the most evidence behind it. It is the only one to
+complete a benchmark stage: the learning graph for Algebra I. Its graph had
+exactly 200 concepts and 299 dependencies with no cycles, the JSON matched the
+CSV, and the resulting site passed a strict build. It made 55 tool calls and
+one failed.</p>
+<p>Its publisher describes it as improved for long-running agent work, planning,
+and handling feedback from tools, which is a description of running a skill.
+In the model-only tests it followed every formatting rule.</p>
+<p>The reason to keep evaluating it is its cost in time. That stage took 102
+minutes. The server re-read almost the whole conversation on every turn, and
+one turn ran for nineteen minutes, nearly all of it reasoning. Both need
+investigating before the longer stages.</p>
+<p><strong>Download:</strong> 17 GB. <strong>Context window:</strong> 256,000 tokens. <strong>License:</strong> reported
+as Apache 2.0, not yet verified. <strong>Status:</strong> tested.</p>
+<h2 id="2-gemma431b">2. <code>gemma4:31b</code><a class="headerlink" href="#2-gemma431b" title="Permanent link">&para;</a></h2>
+<p>No other model has been as consistent. It passed every rule in the model-only
+tests, and it is the only model whose skill runs all ended with a site that
+builds: three runs out of three. It is a dense model, so every parameter takes
+part in every token, and it still generated 28 to 40 tokens per second.</p>
+<p>Its publisher gives it built-in function calling and a 256,000-token window.
+In one published comparison it scored within a point of the leader on an
+instruction-following benchmark.</p>
+<p>It has not completed a benchmark stage. Its learning-graph run was lost when
+the machine froze, at a context setting that is now treated as unsafe. Running
+that stage again at a smaller context is the most informative next test on
+this list.</p>
+<p><strong>Download:</strong> 20 GB. <strong>Context window:</strong> 256,000 tokens. <strong>License:</strong> Apache
+2.0. <strong>Status:</strong> tested, benchmark stage incomplete.</p>
+<h2 id="3-muse-glimmer30b">3. <code>muse-glimmer:30b</code><a class="headerlink" href="#3-muse-glimmer30b" title="Permanent link">&para;</a></h2>
+<p>This model is aimed at exactly what the benchmark measures. Its publisher,
+Meta, describes it as built for local agents that run unattended, and stresses
+recovery: a model that diagnoses a failed step and retries instead of
+stopping. A long skill run with nobody watching needs that.</p>
+<p>Meta's published comparison puts it first among three similar-sized models on
+an instruction-following benchmark and on a tool-use benchmark, and first on a
+long-context test at 128,000 tokens. The same table shows it behind
+<code>qwen3.6:27b</code> on several coding benchmarks, so the claim is specific to
+following instructions and using tools.</p>
+<p>It also accepts images, which matters for reviewing MicroSim screenshots.</p>
+<p><strong>Download:</strong> 18 GB. <strong>Context window:</strong> 128,000 tokens. <strong>License:</strong> Apache
+2.0. <strong>Status:</strong> not tested.</p>
+<h2 id="4-qwen3635b">4. <code>qwen3.6:35b</code><a class="headerlink" href="#4-qwen3635b" title="Permanent link">&para;</a></h2>
+<p>This is the release before <code>qwen3.8</code>, in a larger mixture-of-experts form. A
+mixture-of-experts model uses only a few billion parameters for each token, and
+on this hardware that was worth a threefold speed gain in the one direct
+comparison made so far.</p>
+<p>Its publisher highlights agentic coding and a new option to keep reasoning
+from earlier turns, which should help on a skill with many steps. If
+<code>qwen3.8:27b</code> stays slow, this model is the natural test of whether the same
+family can do the work faster.</p>
+<p>The parameter split is taken from a chart name on its page and is not stated
+in the text.</p>
+<p><strong>Download:</strong> about 24 GB. <strong>Context window:</strong> 256,000 tokens. <strong>License:</strong>
+not stated on its page. <strong>Status:</strong> not tested.</p>
+<h2 id="5-gemma426b">5. <code>gemma4:26b</code><a class="headerlink" href="#5-gemma426b" title="Permanent link">&para;</a></h2>
+<p>This is the fastest model tested: 86 to 130 tokens per second, and it read a
+30,000-token prompt in ten seconds. It finished the skill smoke test in about a
+minute, where others took three to eleven.</p>
+<p>It was set aside for two reasons, and one of them no longer holds. Its skill
+runs produced a navigation file that would not build, but that error was
+copied from a faulty example in the skill, which has since been corrected.
+The other reason stands: in the model-only tests it twice broke two rules,
+omitting the blank line before a list and writing a p5.js call that fails when
+run.</p>
+<p>It deserves a retest against the corrected skill. A model this fast can afford
+a second attempt at a step and still finish first.</p>
+<p><strong>Download:</strong> 18 GB. <strong>Context window:</strong> 256,000 tokens. <strong>License:</strong> Apache
+2.0. <strong>Status:</strong> tested, retest needed.</p>
+<h2 id="6-nemotron-35-lightning30b">6. <code>nemotron-3.5-lightning:30b</code><a class="headerlink" href="#6-nemotron-35-lightning30b" title="Permanent link">&para;</a></h2>
+<p>This model comes from NVIDIA, which also makes the hardware. Its publisher
+describes it as the execution layer for always-on agents and claims four times
+the throughput of comparable open models. With 3 billion active parameters,
+high speed on this machine is plausible.</p>
+<p>Its context window is one million tokens on the main download. A skill with
+many reference files can use a long window, though on unified memory a long
+context competes directly with everything else.</p>
+<p>It accepts text only, so it cannot review screenshots. Its page states no
+license.</p>
+<p><strong>Download:</strong> 25 GB. <strong>Context window:</strong> 1,000,000 tokens. <strong>License:</strong> not
+stated on its page. <strong>Status:</strong> not tested.</p>
+<h2 id="7-mistral-medium-35128b">7. <code>mistral-medium-3.5:128b</code><a class="headerlink" href="#7-mistral-medium-35128b" title="Permanent link">&para;</a></h2>
+<p>This is the test of whether size helps. It is a dense model more than four
+times larger than <code>gemma4:31b</code>, and its publisher names instruction following
+and system-prompt adherence as headline strengths. A harness works by giving
+the model a long system prompt, so that claim bears directly on the benchmark.
+It also supports function calling, JSON output, and image input.</p>
+<p>Expect it to be slow. A dense model reads all of its weights for every token,
+and this one is 80 GB. It also leaves little room: after the weights, less
+than 50 GB remain for the context and the system, which probably rules out
+the largest context settings.</p>
+<p>Its license allows commercial use with exceptions for companies with large
+revenue, which should be read before relying on it.</p>
+<p><strong>Download:</strong> 80 GB. <strong>Context window:</strong> 256,000 tokens. <strong>License:</strong> modified
+MIT. <strong>Status:</strong> not tested.</p>
+<h2 id="8-gpt-oss120b">8. <code>gpt-oss:120b</code><a class="headerlink" href="#8-gpt-oss120b" title="Permanent link">&para;</a></h2>
+<p>This is the largest model that still ran at a usable speed: 38 to 44 tokens
+per second from 117 billion parameters, because only about 5 billion are
+active for each token. Its publisher released it with function calling,
+structured output, and adjustable reasoning effort.</p>
+<p>Its results here were mixed, and that is the reason to test it further. In
+one of two skill runs it printed a tool call as plain text and stopped after a
+single turn. In the model-only tests it twice returned the wrong value from a
+24,000-token prompt. A model that misreads a long prompt is a poor fit for
+long skills, but two runs are not enough to settle it.</p>
+<p>It used 69 GB of memory at a modest context, which leaves less room than the
+smaller models have.</p>
+<p><strong>Download:</strong> 65 GB. <strong>Context window:</strong> 128,000 tokens. <strong>License:</strong> Apache
+2.0. <strong>Status:</strong> tested.</p>
+<h2 id="9-devstral-small-224b">9. <code>devstral-small-2:24b</code><a class="headerlink" href="#9-devstral-small-224b" title="Permanent link">&para;</a></h2>
+<p>This model was built to drive software-engineering agents: exploring a set of
+files, editing several of them, and calling tools along the way. A skill run
+is the same kind of work, with Markdown where the code would be.</p>
+<p>It has a 384,000-token context window, the second largest on the list, in the
+smallest download. Its publisher reports 65.8% on a widely used
+software-engineering benchmark.</p>
+<p>The open question is prose. Nothing on its page speaks to long-form writing,
+and a textbook is mostly prose. It is most likely to earn a place on the code
+that MicroSims need.</p>
+<p><strong>Download:</strong> 15 GB. <strong>Context window:</strong> 384,000 tokens. <strong>License:</strong> Apache
+2.0. <strong>Status:</strong> not tested.</p>
+<h2 id="10-granite4230b">10. <code>granite4.2:30b</code><a class="headerlink" href="#10-granite4230b" title="Permanent link">&para;</a></h2>
+<p>This model is the conservative choice. Its publisher, IBM, lists tool calling,
+general instruction following, structured JSON output, and reasoning that can
+be switched on or off for each request. The learning-graph stage depends on
+exact structured output, and the benchmark has already shown how much time
+uncontrolled reasoning can cost.</p>
+<p>Its license is Apache 2.0 with no added conditions, and its page describes
+governance and compliance checks on its training data. For a reader who must
+justify a model choice to an employer, those points can matter more than a
+benchmark score.</p>
+<p>Its page gives no benchmark results, and its context window is among the
+smallest here.</p>
+<p><strong>Download:</strong> 18 GB. <strong>Context window:</strong> 128,000 tokens. <strong>License:</strong> Apache
+2.0. <strong>Status:</strong> not tested.</p>
+<h2 id="other-qualities-that-matter-for-a-textbook">Other Qualities That Matter for a Textbook<a class="headerlink" href="#other-qualities-that-matter-for-a-textbook" title="Permanent link">&para;</a></h2>
+<p>Following a skill and calling tools decide whether a run finishes. These
+qualities decide whether the result is worth reading.</p>
+<ul>
+<li><strong>Long-form writing at a set reading level.</strong> A course description names its
+  audience. Chapters for grade 9 and chapters for engineers need different
+  sentences, and a model has to hold that level across tens of thousands of
+  words.</li>
+<li><strong>Faithfulness to the course description.</strong> The description lists what the
+  course covers and what it excludes. A model that drifts outside those limits
+  produces a different book.</li>
+<li><strong>Dependency reasoning.</strong> A learning graph orders 200 concepts so that each
+  comes after the ones it depends on. That is a reasoning task, and an error
+  in it carries into every chapter.</li>
+<li><strong>Exact structured output.</strong> The pipeline passes CSV, JSON, and YAML between
+  stages. One malformed file stops the next stage.</li>
+<li><strong>Markdown that builds.</strong> A missing blank line before a list, or a wrong
+  indent in a navigation file, breaks the site. Most of the failed skill runs
+  in this evaluation failed this way.</li>
+<li><strong>Code that runs.</strong> MicroSims are JavaScript programs. Code that looks right
+  and fails in the browser is worse than no simulation.</li>
+<li><strong>Mathematical notation.</strong> A mathematics or science book needs correct
+  formulas in the notation the site renders.</li>
+<li><strong>Vision.</strong> Checking a MicroSim's layout means looking at a screenshot. Only
+  models that accept images can do that step.</li>
+<li><strong>Speed in a long session.</strong> Generation speed is half the story. A harness
+  resends a growing conversation on every turn, so the speed of reading a
+  prompt, and whether the server reuses what it has already read, can dominate.</li>
+<li><strong>Memory left for context.</strong> On unified memory, a long context takes memory
+  from the same pool as the weights. A smaller model with a long context can
+  need more memory than a larger model with a short one.</li>
+<li><strong>Control over reasoning.</strong> Reasoning can improve a hard step and waste
+  minutes on an easy one. A model whose reasoning can be limited is easier to
+  budget.</li>
+<li><strong>Repeatability.</strong> Two runs of the same stage should give comparable
+  results. Scores that differ from run to run make a model hard to depend on.</li>
+<li><strong>License.</strong> A recommendation is only useful if readers are allowed to
+  follow it, and if they can publish what the model writes.</li>
+</ul>
+<h2 id="models-left-off-the-list">Models Left Off the List<a class="headerlink" href="#models-left-off-the-list" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><code>laguna-s-2.1</code></strong> has 118 billion parameters and a strong published score
+  on a terminal-agent benchmark. Its page gives two different download sizes,
+  75 GB and 96 GB, and at the larger one there is too little memory left for a
+  long context.</li>
+<li><strong><code>qwen3.5:122b</code></strong> is the largest Qwen model that fits. It is older than
+  <code>qwen3.8</code>, and <code>gpt-oss:120b</code> already covers the large mixture-of-experts
+  tier.</li>
+<li><strong><code>qwen3-coder:30b</code></strong> was a strong coding-agent model with a 256,000-token
+  window. It is about a year old, and newer Qwen releases have replaced it.</li>
+<li><strong><code>nemotron3:33b</code></strong> is aimed at understanding video, audio, and documents,
+  which this benchmark does not use.</li>
+<li><strong>Models that need more than one unit</strong>, and models offered only as a cloud
+  service, are outside what this evaluation tests.</li>
+</ul>
+<h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
+<p>The claims about untested models come from these pages, read in October 2026.</p>
+<ul>
+<li><a href="https://ollama.com/library/qwen3.8">qwen3.8</a>, <a href="https://ollama.com/library/qwen3.6">qwen3.6</a>, <a href="https://ollama.com/library/qwen3.5">qwen3.5</a>, and <a href="https://ollama.com/library/qwen3-coder">qwen3-coder</a> in the Ollama library</li>
+<li><a href="https://ollama.com/library/gemma4">gemma4</a> in the Ollama library</li>
+<li><a href="https://ollama.com/library/muse-glimmer">muse-glimmer</a> in the Ollama library, including its publisher's benchmark comparison</li>
+<li><a href="https://ollama.com/library/nemotron-3.5-lightning">nemotron-3.5-lightning</a> and <a href="https://ollama.com/library/nemotron3">nemotron3</a> in the Ollama library</li>
+<li><a href="https://ollama.com/library/mistral-medium-3.5">mistral-medium-3.5</a> in the Ollama library</li>
+<li><a href="https://ollama.com/library/gpt-oss">gpt-oss</a> in the Ollama library, and the <a href="https://huggingface.co/openai/gpt-oss-120b">gpt-oss-120b model card</a></li>
+<li><a href="https://ollama.com/library/devstral-small-2">devstral-small-2</a> in the Ollama library</li>
+<li><a href="https://ollama.com/library/granite4.2">granite4.2</a> in the Ollama library</li>
+<li><a href="https://ollama.com/library/laguna-s-2.1">laguna-s-2.1</a> in the Ollama library</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../design-choices/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Design Choices">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Design Choices
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../course-description/" class="md-footer__link md-footer__link--next" aria-label="Next: Course Description">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Course Description
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
