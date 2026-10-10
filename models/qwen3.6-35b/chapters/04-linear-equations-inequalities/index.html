@@ -1,0 +1,3953 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Solving one-step, two-step, and multi-step equations; literal equations and formulas; inequalities; absolute value equations; and systems of linear equations.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/04-linear-equations-inequalities/">
+      
+      
+        <link rel="prev" href="../03-factoring-techniques-polynomial-division/">
+      
+      
+        <link rel="next" href="../05-linear-relationships-coordinate-graphing/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Chapter 4: Linear Equations and Inequalities - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linear-equations-and-inequalities" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 4: Linear Equations and Inequalities
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            qwen3.6:35b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5_4" id="__nav_8_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundational-concepts-and-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundational Number Concepts and Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-variables-expressions-polynomial-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Variables, Expressions, and Polynomial Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-factoring-techniques-polynomial-division/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Factoring Techniques and Polynomial Division
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4. Linear Equations and Inequalities
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    4. Linear Equations and Inequalities
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#41-simplifying-numerical-expressions-before-you-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Simplifying Numerical Expressions Before You Solve
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Simplifying Numerical Expressions Before You Solve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-41" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties-you-will-use-again" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties You Will Use Again
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-one-step-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 One-Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 One-Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solving-equations-that-involve-addition-or-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Equations That Involve Addition or Subtraction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solving-equations-that-involve-multiplication-or-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Equations That Involve Multiplication or Division
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-44" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-number-line-visualization-of-equation-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Number Line Visualization of Equation Balance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-two-step-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Two-Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Two-Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-46" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-47" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-48" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.8
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-multi-step-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Multi-Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Multi-Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategy-for-multi-step-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategy for Multi-Step Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-49" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.9
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-410" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.10
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-literal-equations-and-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Literal Equations and Formulas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Literal Equations and Formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-411" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-412" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.12
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-413" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.13
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-solving-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 Solving Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6 Solving Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-one-big-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      The One Big Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-414" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.14
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-415" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.15
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-416" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.16
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-inequality-flip-rule-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Inequality Flip Rule Interactive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-compound-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 Compound Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.7 Compound Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#and-compound-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      And Compound Inequalities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-417" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.17
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-compound-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Or Compound Inequalities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-418" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.18
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-absolute-value-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8 Absolute Value Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.8 Absolute Value Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solving-absolute-value-equations-the-two-case-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Absolute Value Equations — The Two-Case Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-419" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.19
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-420" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.20
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-421" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.21
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-line-visualization-of-absolute-value-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number Line Visualization of Absolute Value Solutions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-absolute-value-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.9 Absolute Value Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.9 Absolute Value Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-422" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.22
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-423" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.23
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-424" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.24
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-425" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.25
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#410-systems-of-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.10 Systems of Linear Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.10 Systems of Linear Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-graphing-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Graphing Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-substitution-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: Substitution Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-426-substitution-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.26 — Substitution Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-427-substitution-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.27 — Substitution Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-elimination-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 3: Elimination Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-428-elimination-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.28 — Elimination Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-429-elimination-method-requires-multiplication-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.29 — Elimination Method (Requires Multiplication First)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-comparing-the-three-solution-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Comparing the Three Solution Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#411-systems-of-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11 Systems of Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.11 Systems of Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-430" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.30
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-431" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.31
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#412-connecting-to-quadratic-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.12 Connecting to Quadratic Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.12 Connecting to Quadratic Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greatest-common-factor-gcf-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greatest Common Factor (GCF) Review
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-432" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.32
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trinomial-factoring-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trinomial Factoring Review
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-433-trinomial-factoring-a-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.33 — Trinomial Factoring (a = 1)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prime-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prime Polynomials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-434" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.34
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completing-the-square-the-bridge-to-quadratics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Completing the Square: The Bridge to Quadratics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-435-completing-the-square" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.35 — Completing the Square
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roots-of-quadratics-via-completing-the-square" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roots of Quadratics via Completing the Square
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-discriminant-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Discriminant Preview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#looking-ahead" class="md-nav__link">
+    <span class="md-ellipsis">
+      Looking Ahead
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-linear-relationships-coordinate-graphing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linear Relationships and Coordinate Graphing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-functions-relations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Functions and Relations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-exponential-functions-sequences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Exponential Functions and Sequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-sequences-and-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Sequences and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-mathematical-modeling-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Mathematical Modeling and Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-radicals-and-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Radicals and Radical Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#41-simplifying-numerical-expressions-before-you-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Simplifying Numerical Expressions Before You Solve
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Simplifying Numerical Expressions Before You Solve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-41" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties-you-will-use-again" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties You Will Use Again
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-one-step-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 One-Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 One-Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solving-equations-that-involve-addition-or-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Equations That Involve Addition or Subtraction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solving-equations-that-involve-multiplication-or-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Equations That Involve Multiplication or Division
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-44" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-number-line-visualization-of-equation-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Number Line Visualization of Equation Balance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-two-step-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Two-Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Two-Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-46" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-47" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-48" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.8
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-multi-step-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Multi-Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Multi-Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategy-for-multi-step-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategy for Multi-Step Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-49" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.9
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-410" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.10
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-literal-equations-and-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Literal Equations and Formulas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Literal Equations and Formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-411" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-412" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.12
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-413" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.13
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-solving-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 Solving Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6 Solving Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-one-big-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      The One Big Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-414" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.14
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-415" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.15
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-416" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.16
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-inequality-flip-rule-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Inequality Flip Rule Interactive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-compound-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 Compound Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.7 Compound Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#and-compound-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      And Compound Inequalities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-417" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.17
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-compound-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Or Compound Inequalities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-418" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.18
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-absolute-value-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8 Absolute Value Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.8 Absolute Value Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solving-absolute-value-equations-the-two-case-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Absolute Value Equations — The Two-Case Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-419" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.19
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-420" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.20
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-421" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.21
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-line-visualization-of-absolute-value-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number Line Visualization of Absolute Value Solutions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-absolute-value-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.9 Absolute Value Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.9 Absolute Value Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-422" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.22
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-423" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.23
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-424" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.24
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-425" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.25
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#410-systems-of-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.10 Systems of Linear Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.10 Systems of Linear Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-graphing-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Graphing Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-substitution-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: Substitution Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-426-substitution-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.26 — Substitution Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-427-substitution-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.27 — Substitution Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-elimination-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 3: Elimination Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-428-elimination-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.28 — Elimination Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-429-elimination-method-requires-multiplication-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.29 — Elimination Method (Requires Multiplication First)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-comparing-the-three-solution-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Comparing the Three Solution Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#411-systems-of-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11 Systems of Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.11 Systems of Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-430" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.30
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-431" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.31
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#412-connecting-to-quadratic-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.12 Connecting to Quadratic Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.12 Connecting to Quadratic Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greatest-common-factor-gcf-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greatest Common Factor (GCF) Review
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-432" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.32
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trinomial-factoring-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trinomial Factoring Review
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-433-trinomial-factoring-a-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.33 — Trinomial Factoring (a = 1)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prime-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prime Polynomials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-434" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.34
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completing-the-square-the-bridge-to-quadratics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Completing the Square: The Bridge to Quadratics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-435-completing-the-square" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4.35 — Completing the Square
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roots-of-quadratics-via-completing-the-square" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roots of Quadratics via Completing the Square
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-discriminant-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Discriminant Preview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#looking-ahead" class="md-nav__link">
+    <span class="md-ellipsis">
+      Looking Ahead
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/qwen3.6-35b/chapters/04-linear-equations-inequalities/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="linear-equations-and-inequalities">Linear Equations and Inequalities<a class="headerlink" href="#linear-equations-and-inequalities" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter takes students from simple one-step equations through multi-step problems, literal equations and formulas, then into the world of inequalities. Students solve linear equations using algebraic properties learned in earlier chapters, then apply similar reasoning to inequalities — including the special case of flipping the inequality sign when multiplying or dividing by a negative number. The chapter concludes with three methods for solving systems of two linear equations simultaneously and introduces systems of inequalities as a natural extension.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 24 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>CIS Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multi-Step Equations</td>
+<td>15</td>
+</tr>
+<tr>
+<td>One-Step Equations</td>
+<td>26</td>
+</tr>
+<tr>
+<td>Two-Step Equations</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Literal Equations</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Formulas</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Solving Inequalities</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Compound Inequalities</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Absolute Value Equations</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Absolute Value Inequalities</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Systems of Equations</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Substitution Method</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Elimination Method</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Graphing Systems</td>
+<td>1</td>
+</tr>
+<tr>
+<td>System of Inequalities</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Simplifying Numerical Expressions</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Parentheses and Grouping</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Multiplying Monomials</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Quadratic Expressions</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Completing the Square</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Roots of Quadratics</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Discriminant</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Greatest Common Factor</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Trinomial Factoring</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Prime Polynomials</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:
+- <a href="../01-foundational-concepts-and-properties/">Chapter 1: Foundational Number Concepts and Properties</a>
+- <a href="../02-variables-expressions-polynomial-foundations/">Chapter 2: Variables, Expressions, and Polynomial Foundations</a>
+- <a href="../03-factoring-techniques-polynomial-division/">Chapter 3: Factoring Techniques and Polynomial Division</a></p>
+<hr />
+<h2 id="41-simplifying-numerical-expressions-before-you-solve">4.1 Simplifying Numerical Expressions Before You Solve<a class="headerlink" href="#41-simplifying-numerical-expressions-before-you-solve" title="Permanent link">&para;</a></h2>
+<p>Before you can solve any equation, you need to be comfortable simplifying numerical expressions that appear on either side of the equals sign. Many students stumble not because they do not understand equations — they stumble because the expression in front of them has not been simplified yet.</p>
+<p>Recall the <strong>order of operations</strong> (often remembered by PEMDAS or BODMAS): Parentheses, Exponents, Multiplication and Division (left to right), Addition and Subtraction (left to right). Always follow this order when simplifying a numerical expression.</p>
+<h3 id="worked-example-41">Worked Example 4.1<a class="headerlink" href="#worked-example-41" title="Permanent link">&para;</a></h3>
+<p>Simplify the expression on the left side:</p>
+<p><code>6 + 2 · (9 − 4) + 3²</code></p>
+<p>The steps, in order, are:</p>
+<ol>
+<li><strong>Parentheses:</strong> <code>9 − 4 = 5</code>. The expression becomes <code>6 + 2 · 5 + 3²</code>.</li>
+<li><strong>Exponents:</strong> <code>3² = 9</code>. The expression becomes <code>6 + 2 · 5 + 9</code>.</li>
+<li><strong>Multiplication:</strong> <code>2 · 5 = 10</code>. The expression becomes <code>6 + 10 + 9</code>.</li>
+<li><strong>Addition:</strong> <code>6 + 10 + 9 = 25</code>.</li>
+</ol>
+<p><strong>Final answer:</strong> The simplified expression equals 25.</p>
+<p>Before we move to equations, notice a key skill inside worked example 4.1: the multiplication (<code>2 · 5</code>) had to be done before the addition (<code>6 +</code>). That is not optional — it is dictated by the order of operations. Whenever you see an expression with multiple operations, slow down and mark the order in which you will perform them.</p>
+<h3 id="properties-you-will-use-again">Properties You Will Use Again<a class="headerlink" href="#properties-you-will-use-again" title="Permanent link">&para;</a></h3>
+<p>Below are the properties from Chapter 1 that serve as your toolkit for solving equations. Each one tells you when two expressions are guaranteed to be equal even though they look different.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Statement</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Commutative (Addition)</strong></td>
+<td><code>a + b = b + a</code></td>
+<td><code>3 + 7 = 7 + 3</code></td>
+</tr>
+<tr>
+<td><strong>Associative (Addition)</strong></td>
+<td><code>(a + b) + c = a + (b + c)</code></td>
+<td><code>(2 + 3) + 4 = 2 + (3 + 4)</code></td>
+</tr>
+<tr>
+<td><strong>Commutative (Multiplication)</strong></td>
+<td><code>a · b = b · a</code></td>
+<td><code>5 · 3 = 3 · 5</code></td>
+</tr>
+<tr>
+<td><strong>Associative (Multiplication)</strong></td>
+<td><code>(a · b) · c = a · (b · c)</code></td>
+<td><code>(2 · 3) · 4 = 2 · (3 · 4)</code></td>
+</tr>
+<tr>
+<td><strong>Distributive</strong></td>
+<td><code>a(b + c) = ab + ac</code></td>
+<td><code>3(x + 4) = 3x + 12</code></td>
+</tr>
+</tbody>
+</table>
+<p>The distributive property is especially important. Whenever you encounter a number (or variable) directly in front of parentheses, you must multiply that number by every term inside the parentheses. Forgetting to distribute to all terms is one of the most common algebra mistakes.</p>
+<hr />
+<h2 id="42-one-step-equations">4.2 One-Step Equations<a class="headerlink" href="#42-one-step-equations" title="Permanent link">&para;</a></h2>
+<p>A <strong>one-step equation</strong> is an equation that requires exactly one inverse operation to isolate the variable. The four basic operations give you four types: addition, subtraction, multiplication, and division.</p>
+<p>The guiding principle in every step of solving an equation is this: <strong>whatever you do to one side of the equals sign, you must do to the other side</strong>. The equality is a balance — tip one side and the whole equation breaks.</p>
+<h3 id="solving-equations-that-involve-addition-or-subtraction">Solving Equations That Involve Addition or Subtraction<a class="headerlink" href="#solving-equations-that-involve-addition-or-subtraction" title="Permanent link">&para;</a></h3>
+<p>If the variable has a number added (or subtracted) to it, undo that operation by subtracting (or adding) the same number from both sides.</p>
+<h3 id="worked-example-42">Worked Example 4.2<a class="headerlink" href="#worked-example-42" title="Permanent link">&para;</a></h3>
+<p>Solve <code>x + 9 = −3</code>.</p>
+<p>The variable <code>x</code> has 9 added to it. Undo by subtracting 9 from both sides:</p>
+<p><code>x + 9 − 9 = −3 − 9</code>
+<code>x = −12</code></p>
+<p>Check by substituting back: <code>−12 + 9 = −3</code>. Correct.</p>
+<h3 id="worked-example-43">Worked Example 4.3<a class="headerlink" href="#worked-example-43" title="Permanent link">&para;</a></h3>
+<p>Solve <code>y − 7 = 11</code>.</p>
+<p>The variable <code>y</code> has 7 subtracted from it. Undo by adding 7 to both sides:</p>
+<p><code>y − 7 + 7 = 11 + 7</code>
+<code>y = 18</code></p>
+<p>Check: <code>18 − 7 = 11</code>. Correct.</p>
+<h3 id="solving-equations-that-involve-multiplication-or-division">Solving Equations That Involve Multiplication or Division<a class="headerlink" href="#solving-equations-that-involve-multiplication-or-division" title="Permanent link">&para;</a></h3>
+<p>When the variable is multiplied by a number, divide both sides by that number. When it is divided by a number, multiply both sides by that number. The inverse relationship of multiplication and division lets you undo each operation.</p>
+<h3 id="worked-example-44">Worked Example 4.4<a class="headerlink" href="#worked-example-44" title="Permanent link">&para;</a></h3>
+<p>Solve <code>5x = 35</code>.</p>
+<p><code>x</code> is multiplied by 5. Divide both sides by 5:</p>
+<p><code>(5x) / 5 = 35 / 5</code>
+<code>x = 7</code></p>
+<p>Check: <code>5 · 7 = 35</code>. Correct.</p>
+<h3 id="worked-example-45">Worked Example 4.5<a class="headerlink" href="#worked-example-45" title="Permanent link">&para;</a></h3>
+<p>Solve <code>y / 4 = −6</code>.</p>
+<p><code>y</code> is divided by 4. Multiply both sides by 4:</p>
+<p><code>(y / 4) · 4 = −6 · 4</code>
+<code>y = −24</code></p>
+<p>Check: <code>(−24) / 4 = −6</code>. Correct.</p>
+<h3 id="diagram-number-line-visualization-of-equation-balance">Diagram: Number Line Visualization of Equation Balance<a class="headerlink" href="#diagram-number-line-visualization-of-equation-balance" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Number Line Visualization of Equation Balance</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> number-line-balance<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> explain<br/>
+<strong>Learning Objective:</strong> The learner will explain how each step of solving a one-step equation moves the solution point on a number line while preserving balance.</p>
+<p><strong>Prerequisites:</strong> inverse operation, equals sign as a balance, integer operations (all defined in sections 4.1 and 4.2 above).</p>
+<p><strong>Evidence of Mastery:</strong> For each of three equations, the learner identifies which direction and how far the solution point moves on the number line, and states the correct final position. A response is correct when both direction and distance match the worked steps in Content.</p>
+<p><strong>Misconceptions:</strong> (1) Subtracting a negative makes the answer smaller. (2) Dividing by a negative flips the sign of only one side. (3) The equals sign means "the answer comes next" rather than "both sides are equal."</p>
+<p><strong>Instructional Rationale:</strong> Understanding-level work benefits from a visual trace: the learner watches the solution point slide along a number line as each inverse operation is applied, connecting the symbolic step to its spatial meaning. This grounds the abstract balance idea in something concrete.</p>
+<p><strong>Content:</strong></p>
+<p>The sim displays a horizontal number line from −20 to 20 with tick marks at every integer. A highlighted point shows the current position of the variable. Three equation problems are presented:</p>
+<p>Problem 1: <code>x + 5 = 2</code>
+- Initial state: point at position x (unknown, shown as a hollow circle).
+- Step 1: An arrow moves left by 5 units from the unknown to the value −5 on the number line. Label: "Subtract 5 from both sides."
+- Step 2: The equation rewrites as <code>x = −3</code>. The point moves to position −3 and is highlighted in green.</p>
+<p>Problem 2: <code>y − 4 = −8</code>
+- Step 1: An arrow moves right by 4 units. Label: "Add 4 to both sides."
+- Step 2: The equation rewrites as <code>y = −4</code>. The point moves to position −4 and is highlighted in green.</p>
+<p>Problem 3: <code>(−2) · x = 10</code>
+- Step 1: An arrow points up with label "Divide both sides by −2."
+- Step 2: The equation rewrites as <code>x = −5</code>. The point moves to position −5 and is highlighted in green.</p>
+<p>Below the number line, a question asks: "Which equation's solution lies furthest to the right on the number line?" Options: Problem 1 (−3), Problem 2 (−4), Problem 3 (−5). Correct answer: Problem 1, because −3 &gt; −4 &gt; −5.</p>
+<p><strong>Provenance:</strong> Synthetic with seed 4-1; all numbers computed from the Rules below. The number line is labeled "illustrative" when rendered.</p>
+<p><strong>Rules:</strong> Each problem uses integer coefficients between −9 and 9 and integer constants between −20 and 20. The solution is always an integer. Step arrows represent exactly the inverse operation applied to both sides.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees Problem 1 on a number line with a hollow circle at position x.</li>
+<li>The learner presses "Show Step" to animate subtracting 5 from both sides and watch the point shift left by 5.</li>
+<li>After all three problems, the learner selects which solution is furthest right.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct selection: "Correct. −3 is greater than −4 and −5, so Problem 1's solution is furthest right." Incorrect: review each problem's solution and re-select. After two wrong attempts the correct answer is revealed with a number line comparison of all three solutions.</p>
+<p><strong>Starting State:</strong> Problem 1 with the hollow circle at an unlabeled position x. The question "Where will x end up on this number line?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that Problem 2's solution (−4) lies to the left of Problem 1's solution (−3).</p>
+</details>
+<hr />
+<h2 id="43-two-step-equations">4.3 Two-Step Equations<a class="headerlink" href="#43-two-step-equations" title="Permanent link">&para;</a></h2>
+<p>A <strong>two-step equation</strong> requires two inverse operations to isolate the variable. These equations typically take the form <code>ax + b = c</code> or <code>b − ax = c</code>. The general strategy is:</p>
+<ol>
+<li>Undo addition or subtraction first (get the term with the variable by itself).</li>
+<li>Undo multiplication or division second (isolate the variable completely).</li>
+</ol>
+<p>The order matters. If you try to divide before subtracting, the arithmetic becomes unnecessarily complicated and increases the chance of an error.</p>
+<h3 id="worked-example-46">Worked Example 4.6<a class="headerlink" href="#worked-example-46" title="Permanent link">&para;</a></h3>
+<p>Solve <code>3x + 7 = −8</code>.</p>
+<ul>
+<li>
+<p>Step 1: Subtract 7 from both sides to move the constant term to the right.
+  <code>3x + 7 − 7 = −8 − 7</code>
+  <code>3x = −15</code></p>
+</li>
+<li>
+<p>Step 2: Divide both sides by 3 (the coefficient of x).
+  <code>(3x) / 3 = (−15) / 3</code>
+  <code>x = −5</code></p>
+</li>
+</ul>
+<p>Check: <code>3(−5) + 7 = −15 + 7 = −8</code>. Correct.</p>
+<h3 id="worked-example-47">Worked Example 4.7<a class="headerlink" href="#worked-example-47" title="Permanent link">&para;</a></h3>
+<p>Solve <code>10 − 2y = −4</code>.</p>
+<ul>
+<li>
+<p>Step 1: Subtract 10 from both sides to isolate the variable term.
+  <code>10 − 10 − 2y = −4 − 10</code>
+  <code>−2y = −14</code></p>
+</li>
+<li>
+<p>Step 2: Divide both sides by −2.
+  <code>(−2y) / (−2) = (−14) / (−2)</code>
+  <code>y = 7</code></p>
+</li>
+</ul>
+<p>Check: <code>10 − 2(7) = 10 − 14 = −4</code>. Correct.</p>
+<p>Notice in worked example 4.7 that dividing two negatives gives a positive — <code>−14 / −2 = 7</code>. This is consistent with the rule from Chapter 1 that an even number of negative signs in a product or quotient yields a positive result.</p>
+<h3 id="worked-example-48">Worked Example 4.8<a class="headerlink" href="#worked-example-48" title="Permanent link">&para;</a></h3>
+<p>Solve <code>(x / 3) + 4 = 10</code>.</p>
+<ul>
+<li>
+<p>Step 1: Subtract 4 from both sides.
+  <code>x / 3 + 4 − 4 = 10 − 4</code>
+  <code>x / 3 = 6</code></p>
+</li>
+<li>
+<p>Step 2: Multiply both sides by 3.
+  <code>(x / 3) · 3 = 6 · 3</code>
+  <code>x = 18</code></p>
+</li>
+</ul>
+<p>Check: <code>18 / 3 + 4 = 6 + 4 = 10</code>. Correct.</p>
+<hr />
+<h2 id="44-multi-step-equations">4.4 Multi-Step Equations<a class="headerlink" href="#44-multi-step-equations" title="Permanent link">&para;</a></h2>
+<p>A <strong>multi-step equation</strong> requires three or more operations. These equations may have variables on both sides, require the distributive property, or contain fractions and decimals. The same strategy applies — isolate the variable by undoing operations one at a time — but there are more moves to plan ahead.</p>
+<h3 id="strategy-for-multi-step-equations">Strategy for Multi-Step Equations<a class="headerlink" href="#strategy-for-multi-step-equations" title="Permanent link">&para;</a></h3>
+<p>Before you start manipulating numbers, do this:</p>
+<ol>
+<li><strong>Simplify each side separately.</strong> Use the distributive property to expand any parentheses. Combine like terms (terms with the same variable raised to the same power) on each side of the equals sign.</li>
+<li><strong>Move all variable terms to one side</strong> using addition or subtraction.</li>
+<li><strong>Move all constant terms to the other side</strong> using addition or subtraction.</li>
+<li><strong>Isolate the variable</strong> using multiplication or division.</li>
+<li><strong>Check your answer</strong> by substitution.</li>
+</ol>
+<h3 id="worked-example-49">Worked Example 4.9<a class="headerlink" href="#worked-example-49" title="Permanent link">&para;</a></h3>
+<p>Solve <code>4(x − 3) + 2 = 3x + 7</code>.</p>
+<ul>
+<li>
+<p>Step 1: Distribute on the left side, then simplify.
+  <code>4x − 12 + 2 = 3x + 7</code>
+  <code>4x − 10 = 3x + 7</code></p>
+</li>
+<li>
+<p>Step 2: Move variable terms to one side. Subtract 3x from both sides.
+  <code>4x − 3x − 10 = 7</code>
+  <code>x − 10 = 7</code></p>
+</li>
+<li>
+<p>Step 3: Isolate x by adding 10 to both sides.
+  <code>x − 10 + 10 = 7 + 10</code>
+  <code>x = 17</code></p>
+</li>
+</ul>
+<p>Check: Left side: <code>4(17 − 3) + 2 = 4(14) + 2 = 56 + 2 = 58</code>. Right side: <code>3(17) + 7 = 51 + 7 = 58</code>. Both sides match.</p>
+<h3 id="worked-example-410">Worked Example 4.10<a class="headerlink" href="#worked-example-410" title="Permanent link">&para;</a></h3>
+<p>Solve <code>5 − 2(x + 3) = 3x − (x − 8)</code>.</p>
+<ul>
+<li>
+<p>Step 1: Distribute on both sides.
+  Left side: <code>5 − 2x − 6</code>
+  Right side: <code>3x − x + 8</code> (note the sign change when distributing the minus sign!)
+  <code>−2x − 1 = 2x + 8</code></p>
+</li>
+<li>
+<p>Step 2: Move all variable terms to one side. Add 2x to both sides.
+  <code>−1 = 4x + 8</code></p>
+</li>
+<li>
+<p>Step 3: Move constants to the other side. Subtract 8 from both sides.
+  <code>−9 = 4x</code></p>
+</li>
+<li>
+<p>Step 4: Isolate x. Divide by 4.
+  <code>x = −9/4</code> or <code>x = −2¼</code></p>
+</li>
+</ul>
+<p>Check: Left side: <code>5 − 2(−9/4 + 3) = 5 − 2(3/4) = 5 − 3/2 = 10/2 − 3/2 = 7/2</code>. Right side: <code>3(−9/4) − (−9/4 − 8) = −27/4 + 9/4 + 32/4 = 14/4 = 7/2</code>. Both sides match.</p>
+<p>The distributive property in worked example 4.10 is especially important on the right side. The minus sign before <code>(x − 8)</code> means you must change the sign of <strong>every</strong> term inside the parentheses: <code>−(x − 8) = −x + 8</code>. This is a common source of errors because it is easy to forget the second sign flip.</p>
+<hr />
+<h2 id="45-literal-equations-and-formulas">4.5 Literal Equations and Formulas<a class="headerlink" href="#45-literal-equations-and-formulas" title="Permanent link">&para;</a></h2>
+<p>A <strong>literal equation</strong> (also called a <strong>formula</strong>) is an equation that contains two or more variables — for example, <code>d = rt</code> (distance equals rate times time) or <code>A = lw</code> (area of a rectangle equals length times width). Solving a literal equation means isolating one variable in terms of the others. The process is identical to solving numerical equations: treat the variable you want as the unknown and every other letter as if it were a constant.</p>
+<h3 id="worked-example-411">Worked Example 4.11<a class="headerlink" href="#worked-example-411" title="Permanent link">&para;</a></h3>
+<p>Solve <code>A = lw</code> for <code>w</code>.</p>
+<p>The variable <code>w</code> is multiplied by <code>l</code>. Divide both sides by <code>l</code>:</p>
+<p><code>A / l = (lw) / l</code>
+<code>A / l = w</code> or <code>w = A / l</code></p>
+<p>This tells you that the width of a rectangle equals its area divided by its length — a useful rearrangement when you know the area and one side.</p>
+<h3 id="worked-example-412">Worked Example 4.12<a class="headerlink" href="#worked-example-412" title="Permanent link">&para;</a></h3>
+<p>Solve <code>d = rt</code> for <code>t</code>.</p>
+<p><code>t</code> is multiplied by <code>r</code>. Divide both sides by <code>r</code>:</p>
+<p><code>d / r = (rt) / r</code>
+<code>t = d / r</code></p>
+<p>This rearranged formula says: time equals distance divided by rate. It is the basis of many word problems involving speed and travel.</p>
+<h3 id="worked-example-413">Worked Example 4.13<a class="headerlink" href="#worked-example-413" title="Permanent link">&para;</a></h3>
+<p>Solve <code>3x + 2y = 6</code> for <code>y</code>.</p>
+<p>This equation has both <code>x</code> and <code>y</code>. We want to isolate <code>y</code> as if <code>x</code> were just a number.</p>
+<ul>
+<li>
+<p>Step 1: Subtract <code>3x</code> from both sides.
+  <code>2y = 6 − 3x</code></p>
+</li>
+<li>
+<p>Step 2: Divide both sides by 2.
+  <code>y = (6 − 3x) / 2</code> or <code>y = 3 − (3/2)x</code></p>
+</li>
+</ul>
+<p>The expression on the right is now written entirely in terms of <code>x</code>. This form (<code>y = mx + b</code>) is called <strong>slope-intercept form</strong>, and we will explore it in more depth in Chapter 5. For now, notice that you can solve for any variable by treating the others as known numbers.</p>
+<hr />
+<h2 id="46-solving-inequalities">4.6 Solving Inequalities<a class="headerlink" href="#46-solving-inequalities" title="Permanent link">&para;</a></h2>
+<p>An <strong>inequality</strong> is similar to an equation, but instead of an equals sign it uses <code>&lt;</code>, <code>&gt;</code>, <code>≤</code>, or <code>≥</code>. The key idea is the same: you perform inverse operations to isolate the variable, and whatever you do to one side you must do to the other.</p>
+<h3 id="the-one-big-difference">The One Big Difference<a class="headerlink" href="#the-one-big-difference" title="Permanent link">&para;</a></h3>
+<p>There is one critical rule that applies to inequalities but <strong>not</strong> to equations:</p>
+<blockquote>
+<p><strong>If you multiply or divide both sides of an inequality by a negative number, you must flip (reverse) the direction of the inequality sign.</strong></p>
+</blockquote>
+<p>This rule exists because multiplying or dividing by a negative reverses the order of numbers on the number line. For example, <code>3 &lt; 5</code> is true, but if you multiply both sides by −1 without flipping the sign you would get <code>−3 &lt; −5</code>, which is false (because −3 is actually greater than −5). Flip the sign instead: <code>−3 &gt; −5</code>. Now it is correct.</p>
+<h3 id="worked-example-414">Worked Example 4.14<a class="headerlink" href="#worked-example-414" title="Permanent link">&para;</a></h3>
+<p>Solve and graph <code>2x + 3 &gt; 11</code>.</p>
+<ul>
+<li>
+<p>Step 1: Subtract 3 from both sides.
+  <code>2x &gt; 8</code></p>
+</li>
+<li>
+<p>Step 2: Divide by 2 (positive, so no flip).
+  <code>x &gt; 4</code></p>
+</li>
+</ul>
+<p>On a number line, this is shown as an open circle at 4 with shading to the right — all numbers greater than 4 but not including 4 itself.</p>
+<h3 id="worked-example-415">Worked Example 4.15<a class="headerlink" href="#worked-example-415" title="Permanent link">&para;</a></h3>
+<p>Solve and graph <code>−3x − 7 ≤ 8</code>.</p>
+<ul>
+<li>
+<p>Step 1: Add 7 to both sides.
+  <code>−3x ≤ 15</code></p>
+</li>
+<li>
+<p>Step 2: Divide by −3 (negative, so <strong>flip</strong> the sign).
+  <code>x ≥ −5</code></p>
+</li>
+</ul>
+<p>On a number line, this is shown as a closed circle at −5 with shading to the right — all numbers greater than or equal to −5.</p>
+<h3 id="worked-example-416">Worked Example 4.16<a class="headerlink" href="#worked-example-416" title="Permanent link">&para;</a></h3>
+<p>Solve and graph <code>5 − 2x &lt; −3</code>.</p>
+<ul>
+<li>
+<p>Step 1: Subtract 5 from both sides.
+  <code>−2x &lt; −8</code></p>
+</li>
+<li>
+<p>Step 2: Divide by −2 (negative, so <strong>flip</strong> the sign).
+  <code>x &gt; 4</code></p>
+</li>
+</ul>
+<p>On a number line, this is an open circle at 4 with shading to the right.</p>
+<h3 id="diagram-inequality-flip-rule-interactive">Diagram: Inequality Flip Rule Interactive<a class="headerlink" href="#diagram-inequality-flip-rule-interactive" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Inequality Flip Rule Explorer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> inequality-flip-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> solve<br/>
+<strong>Learning Objective:</strong> The learner will solve a linear inequality by choosing the correct sign flip decision when dividing by a negative coefficient, and verify the solution on a number line.</p>
+<p><strong>Prerequisites:</strong> inverse operations, multiplying and dividing negative numbers (from sections 4.1–4.2), reading a number line with open and closed circles (from section 4.6 above).</p>
+<p><strong>Evidence of Mastery:</strong> The learner correctly solves all three challenge inequalities before the sim reveals any answers. A solution is correct when the learner's inequality sign direction and final answer both match the model result. Mastery is 3 of 3 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Forgetting to flip the sign when dividing by a negative. (2) Flipping the sign when dividing by a positive. (3) Treating <code>≤</code> and <code>&lt;</code> identically when graphing (using an open circle for both).</p>
+<p><strong>Instructional Rationale:</strong> Apply-level mastery requires the learner to commit to each sign-flip decision before seeing the answer, reinforcing that the rule applies consistently regardless of the numbers involved. The number line visualization provides immediate visual feedback on whether the inequality direction matches the solution set.</p>
+<p><strong>Content:</strong></p>
+<p>The sim shows a horizontal number line from −10 to 10 and presents three challenges:</p>
+<p>Challenge 1: <code>−4x + 3 ≥ 15</code>
+Model steps: subtract 3 → <code>−4x ≥ 12</code>; divide by −4 (flip) → <code>x ≤ −3</code>. Correct answer: <code>x ≤ −3</code>. Closed circle at −3, shaded left.</p>
+<p>Challenge 2: <code>2 − 5x &lt; −13</code>
+Model steps: subtract 2 → <code>−5x &lt; −15</code>; divide by −5 (flip) → <code>x &gt; 3</code>. Correct answer: <code>x &gt; 3</code>. Open circle at 3, shaded right.</p>
+<p>Challenge 3: <code>7 + 3x ≥ 4x</code>
+Model steps: subtract <code>3x</code> → <code>7 ≥ x</code>, or equivalently <code>x ≤ 7</code>. Correct answer: <code>x ≤ 7</code>. Closed circle at 7, shaded left.</p>
+<p>For each challenge the learner sees the coefficient of x and must decide: "Do I flip the inequality sign when dividing by this coefficient?" with Yes/No buttons. After the decision the sim computes and displays the full solution with a number line.</p>
+<p><strong>Provenance:</strong> Synthetic with seed 4-2; all numbers are integers and produce integer solutions in the range [−10, 10].</p>
+<p><strong>Rules:</strong> Coefficients of x are chosen from {−9, −8, ..., −2, 2, ..., 8} (nonzero). Constants are integers between −20 and 20. Solutions are always integers within the displayed number line range. The learner must explicitly choose Yes or No for the flip before revealing the answer.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>Challenge 1 appears: <code>−4x + 3 ≥ 15</code> with a blank answer box, a Yes/No selector for "Flip when dividing?", and a number line.</li>
+<li>The learner chooses Yes or No, types the resulting inequality (e.g., <code>x ≤ −3</code>), then presses Check.</li>
+<li>If correct: the sim shades the number line correctly. If wrong: the sim shows what happened step by step, including whether the sign should have been flipped.</li>
+<li>After all three challenges, a score "Correct: n of 3" is shown.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct: "Correct — divide by −4 (negative), so flip to <code>x ≤</code>." Incorrect: re-check the coefficient used for division. If it was negative, the sign must flip; if positive, it stays. After two wrong attempts the full worked solution is revealed.</p>
+<p><strong>Starting State:</strong> Challenge 1 with an empty answer box and a Yes/No selector. The question "What happens to the inequality sign when we divide both sides by −4?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that in example 4.16, dividing by −2 flips the direction of <code>5 − 2x &lt; −3</code> to <code>x &gt; 4</code>.</p>
+</details>
+<hr />
+<h2 id="47-compound-inequalities">4.7 Compound Inequalities<a class="headerlink" href="#47-compound-inequalities" title="Permanent link">&para;</a></h2>
+<p>A <strong>compound inequality</strong> is formed by joining two simple inequalities with "and" or "or." There are two types:</p>
+<ul>
+<li><strong>And compound inequalities</strong> — both conditions must be true simultaneously (intersection). The solution lies in the overlap of both individual solutions.</li>
+<li><strong>Or compound inequalities</strong> — either condition can be true (union). The solution includes all values that satisfy at least one side.</li>
+</ul>
+<h3 id="and-compound-inequalities">And Compound Inequalities<a class="headerlink" href="#and-compound-inequalities" title="Permanent link">&para;</a></h3>
+<p>When an inequality is written as <code>a &lt; x &lt; b</code>, it means "x is greater than a AND x is less than b." Solve these by performing the same operation on all three parts simultaneously — just like an equation, but with three pieces instead of two.</p>
+<h3 id="worked-example-417">Worked Example 4.17<a class="headerlink" href="#worked-example-417" title="Permanent link">&para;</a></h3>
+<p>Solve <code>−3 &lt; 2x + 1 ≤ 9</code>.</p>
+<p>Perform operations on all three parts:</p>
+<ul>
+<li>Subtract 1 from each part: <code>−3 − 1 &lt; 2x + 1 − 1 ≤ 9 − 1</code>, which gives <code>−4 &lt; 2x ≤ 8</code>.</li>
+<li>Divide each part by 2 (positive, no flip): <code>−4 / 2 &lt; x ≤ 8 / 2</code>, which gives <code>−2 &lt; x ≤ 4</code>.</li>
+</ul>
+<p>On a number line: an open circle at −2, a closed circle at 4, and the region between shaded. The solution is all real numbers strictly greater than −2 and less than or equal to 4.</p>
+<h3 id="or-compound-inequalities">Or Compound Inequalities<a class="headerlink" href="#or-compound-inequalities" title="Permanent link">&para;</a></h3>
+<p>For <code>a &lt; x</code> OR <code>x &lt; b</code>, solve each inequality independently and combine the results as a union.</p>
+<h3 id="worked-example-418">Worked Example 4.18<a class="headerlink" href="#worked-example-418" title="Permanent link">&para;</a></h3>
+<p>Solve <code>3x − 2 &lt; 7</code> OR <code>3x − 2 &gt; 10</code>.</p>
+<p>Left side: <code>3x &lt; 9</code> → <code>x &lt; 3</code>.
+Right side: <code>3x &gt; 12</code> → <code>x &gt; 4</code>.</p>
+<p>The solution is <code>x &lt; 3</code> or <code>x &gt; 4</code>. On a number line, there are two shaded regions: everything to the left of 3 (open circle) and everything to the right of 4 (open circle), with a gap between them.</p>
+<hr />
+<h2 id="48-absolute-value-equations">4.8 Absolute Value Equations<a class="headerlink" href="#48-absolute-value-equations" title="Permanent link">&para;</a></h2>
+<p>The <strong>absolute value</strong> of a number, written <code>|n|</code>, represents its distance from zero on the number line — regardless of direction. Because distance is always non-negative, <code>|5| = 5</code> and <code>|−5| = 5</code>. This property creates an important consequence for equations: when you have <code>|expression| = k</code> where <code>k &gt; 0</code>, the expression inside can equal either <code>+k</code> or <code>−k</code>.</p>
+<h3 id="solving-absolute-value-equations-the-two-case-method">Solving Absolute Value Equations — The Two-Case Method<a class="headerlink" href="#solving-absolute-value-equations-the-two-case-method" title="Permanent link">&para;</a></h3>
+<p>For any equation of the form <code>|A| = k</code> (where <code>k ≥ 0</code>), write two separate equations:</p>
+<p><code>A = k</code> OR <code>A = −k</code></p>
+<p>Solve each one independently. If <code>k &lt; 0</code>, there is no solution because absolute value can never be negative.</p>
+<h3 id="worked-example-419">Worked Example 4.19<a class="headerlink" href="#worked-example-419" title="Permanent link">&para;</a></h3>
+<p>Solve <code>|2x − 3| = 7</code>.</p>
+<p>Set up the two cases:</p>
+<p>Case 1: <code>2x − 3 = 7</code>
+<code>2x = 10</code>
+<code>x = 5</code></p>
+<p>Case 2: <code>2x − 3 = −7</code>
+<code>2x = −4</code>
+<code>x = −2</code></p>
+<p>Check: <code>|2(5) − 3| = |7| = 7</code>. ✓ <code>|2(−2) − 3| = |−7| = 7</code>. ✓</p>
+<p><strong>Solutions:</strong> <code>x = 5</code> or <code>x = −2</code>.</p>
+<h3 id="worked-example-420">Worked Example 4.20<a class="headerlink" href="#worked-example-420" title="Permanent link">&para;</a></h3>
+<p>Solve <code>|x + 4| = 3</code>.</p>
+<p>Case 1: <code>x + 4 = 3</code> → <code>x = −1</code>.
+Case 2: <code>x + 4 = −3</code> → <code>x = −7</code>.</p>
+<p>Check: <code>|−1 + 4| = |3| = 3</code>. ✓ <code>|−7 + 4| = |−3| = 3</code>. ✓</p>
+<p><strong>Solutions:</strong> <code>x = −1</code> or <code>x = −7</code>.</p>
+<h3 id="worked-example-421">Worked Example 4.21<a class="headerlink" href="#worked-example-421" title="Permanent link">&para;</a></h3>
+<p>Solve <code>|3x + 1| + 5 = 5</code>.</p>
+<p>First, isolate the absolute value expression:
+<code>|3x + 1| = 0</code></p>
+<p>When an absolute value equals zero, there is only one case (since <code>+0 = −0</code>):
+<code>3x + 1 = 0</code>
+<code>3x = −1</code>
+<code>x = −1/3</code></p>
+<p>Check: <code>|3(−1/3) + 1| + 5 = |0| + 5 = 0 + 5 = 5</code>. ✓</p>
+<p><strong>Solution:</strong> <code>x = −1/3</code>. (Only one solution because the absolute value equals zero, not a positive number.)</p>
+<h3 id="number-line-visualization-of-absolute-value-solutions">Number Line Visualization of Absolute Value Solutions<a class="headerlink" href="#number-line-visualization-of-absolute-value-solutions" title="Permanent link">&para;</a></h3>
+<p>Absolute value equations always have two solutions on the number line when <code>k &gt; 0</code>, because the expression inside is equally distant from zero in both directions. The solutions are symmetric around the point where the inside expression equals zero (the "center" of the absolute value).</p>
+<hr />
+<h2 id="49-absolute-value-inequalities">4.9 Absolute Value Inequalities<a class="headerlink" href="#49-absolute-value-inequalities" title="Permanent link">&para;</a></h2>
+<p>Absolute value inequalities extend the two-case method. There are two forms, and they lead to different types of compound inequalities:</p>
+<table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Meaning on Number Line</th>
+<th>Compound Inequality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>|A| &lt; k</code> (where <code>k &gt; 0</code>)</td>
+<td>A is within distance k of zero — between −k and +k</td>
+<td><code>−k &lt; A &lt; k</code> (an <strong>and</strong> inequality)</td>
+</tr>
+<tr>
+<td><code>|A| &gt; k</code> (where <code>k &gt; 0</code>)</td>
+<td>A is farther than k from zero — less than −k or greater than +k</td>
+<td><code>A &lt; −k</code> <strong>or</strong> <code>A &gt; k</code> (an <strong>or</strong> inequality)</td>
+</tr>
+</tbody>
+</table>
+<p>For <code>≤</code> and <code>≥</code>, replace <code>&lt;</code> with <code>≤</code> and <code>&gt;</code> with <code>≥</code> accordingly.</p>
+<h3 id="worked-example-422">Worked Example 4.22<a class="headerlink" href="#worked-example-422" title="Permanent link">&para;</a></h3>
+<p>Solve <code>|x − 2| ≤ 5</code>.</p>
+<p>The form is <code>|A| ≤ k</code>, so rewrite as an <strong>and</strong> inequality:
+<code>−5 ≤ x − 2 ≤ 5</code></p>
+<p>Add 2 to all three parts:
+<code>−3 ≤ x ≤ 7</code></p>
+<p>On a number line: closed circles at −3 and 7, with the region between shaded. The solution is all real numbers from −3 to 7, inclusive.</p>
+<h3 id="worked-example-423">Worked Example 4.23<a class="headerlink" href="#worked-example-423" title="Permanent link">&para;</a></h3>
+<p>Solve <code>|2x + 1| &gt; 7</code>.</p>
+<p>The form is <code>|A| &gt; k</code>, so rewrite as an <strong>or</strong> inequality:
+<code>2x + 1 &lt; −7</code> <strong>OR</strong> <code>2x + 1 &gt; 7</code></p>
+<p>Solve each side independently:
+Left: <code>2x &lt; −8</code> → <code>x &lt; −4</code>.
+Right: <code>2x &gt; 6</code> → <code>x &gt; 3</code>.</p>
+<p>On a number line: open circles at −4 and 3, with the region to the left of −4 and the region to the right of 3 both shaded. There is a gap between them (the numbers that do NOT satisfy the inequality).</p>
+<h3 id="worked-example-424">Worked Example 4.24<a class="headerlink" href="#worked-example-424" title="Permanent link">&para;</a></h3>
+<p>Solve <code>|3x − 6| + 2 ≥ 11</code>.</p>
+<p>First isolate the absolute value:
+<code>|3x − 6| ≥ 9</code></p>
+<p>Rewrite as an <strong>or</strong> inequality:
+<code>3x − 6 ≤ −9</code> <strong>OR</strong> <code>3x − 6 ≥ 9</code></p>
+<p>Left: <code>3x ≤ −3</code> → <code>x ≤ −1</code>.
+Right: <code>3x ≥ 15</code> → <code>x ≥ 5</code>.</p>
+<p><strong>Solutions:</strong> <code>x ≤ −1</code> or <code>x ≥ 5</code>.</p>
+<h3 id="worked-example-425">Worked Example 4.25<a class="headerlink" href="#worked-example-425" title="Permanent link">&para;</a></h3>
+<p>Solve <code>|x/2 + 1| &lt; 3</code>.</p>
+<p>Rewrite as an <strong>and</strong> inequality:
+<code>−3 &lt; x/2 + 1 &lt; 3</code></p>
+<p>Subtract 1 from all three parts:
+<code>−4 &lt; x/2 &lt; 2</code></p>
+<p>Multiply all three parts by 2 (positive, no flip):
+<code>−8 &lt; x &lt; 4</code></p>
+<p><strong>Solution:</strong> All real numbers strictly between −8 and 4.</p>
+<hr />
+<h2 id="410-systems-of-linear-equations">4.10 Systems of Linear Equations<a class="headerlink" href="#410-systems-of-linear-equations" title="Permanent link">&para;</a></h2>
+<p>A <strong>system of linear equations</strong> consists of two or more linear equations with the same variables. A solution to the system is a set of values for the variables that satisfies <strong>every</strong> equation simultaneously. Geometrically, each equation represents a line in the coordinate plane, and the solution corresponds to the point where the lines intersect.</p>
+<p>There are three standard methods for solving systems of two equations:</p>
+<ol>
+<li><strong>Graphing</strong> — find the intersection point visually</li>
+<li><strong>Substitution</strong> — solve one equation for a variable and substitute into the other</li>
+<li><strong>Elimination (addition)</strong> — add or subtract the equations to eliminate one variable</li>
+</ol>
+<h3 id="method-1-graphing-systems">Method 1: Graphing Systems<a class="headerlink" href="#method-1-graphing-systems" title="Permanent link">&para;</a></h3>
+<p>When you graph two lines, three outcomes are possible:</p>
+<ul>
+<li><strong>One solution:</strong> The lines intersect at exactly one point. This happens when the lines have different slopes.</li>
+<li><strong>No solution:</strong> The lines are parallel (same slope, different y-intercept). They never meet.</li>
+<li><strong>Infinitely many solutions:</strong> The lines are identical (same slope and same intercept). Every point on the line is a solution.</li>
+</ul>
+<p>To use graphing, convert both equations to slope-intercept form (<code>y = mx + b</code>), plot each line using its slope and y-intercept, and read the intersection point. While this method gives good intuition, it is only approximate — for exact answers, use substitution or elimination.</p>
+<h3 id="method-2-substitution-method">Method 2: Substitution Method<a class="headerlink" href="#method-2-substitution-method" title="Permanent link">&para;</a></h3>
+<p>The <strong>substitution method</strong> works well when one of the equations already has a variable isolated (or can be easily isolated). Follow these steps:</p>
+<ol>
+<li>Solve one equation for one variable (preferably the easier one).</li>
+<li>Substitute that expression into the other equation — wherever the variable appears, replace it with the expression you just found.</li>
+<li>Solve the resulting single-variable equation.</li>
+<li>Substitute the answer back into one of the original equations to find the other variable.</li>
+<li>Check both values in both original equations.</li>
+</ol>
+<h3 id="worked-example-426-substitution-method">Worked Example 4.26 — Substitution Method<a class="headerlink" href="#worked-example-426-substitution-method" title="Permanent link">&para;</a></h3>
+<p>Solve: <code>y = 2x + 3</code> and <code>3x + y = −8</code>.</p>
+<ul>
+<li>Step 1: The first equation already has <code>y</code> isolated: <code>y = 2x + 3</code>.</li>
+<li>Step 2: Substitute <code>2x + 3</code> for <code>y</code> in the second equation.
+  <code>3x + (2x + 3) = −8</code></li>
+<li>Step 3: Solve for x.
+  <code>5x + 3 = −8</code>
+  <code>5x = −11</code>
+  <code>x = −11/5</code> or <code>x = −2.2</code></li>
+<li>Step 4: Substitute <code>x = −11/5</code> back into <code>y = 2x + 3</code>.
+  <code>y = 2(−11/5) + 3 = −22/5 + 15/5 = −7/5</code> or <code>y = −1.4</code></li>
+</ul>
+<p>Solution: <code>x = −11/5</code>, <code>y = −7/5</code>. (Check by substituting into both original equations.)</p>
+<h3 id="worked-example-427-substitution-method">Worked Example 4.27 — Substitution Method<a class="headerlink" href="#worked-example-427-substitution-method" title="Permanent link">&para;</a></h3>
+<p>Solve: <code>2x + y = 10</code> and <code>x − y = 2</code>.</p>
+<ul>
+<li>Step 1: Solve the second equation for <code>y</code>.
+  <code>x − 2 = y</code> or <code>y = x − 2</code></li>
+<li>Step 2: Substitute into the first equation.
+  <code>2x + (x − 2) = 10</code>
+  <code>3x − 2 = 10</code>
+  <code>3x = 12</code>
+  <code>x = 4</code></li>
+<li>Step 3: Substitute back to find y.
+  <code>y = 4 − 2 = 2</code></li>
+</ul>
+<p>Solution: <code>(4, 2)</code>. Check: <code>2(4) + 2 = 10</code> ✓ and <code>4 − 2 = 2</code> ✓.</p>
+<h3 id="method-3-elimination-method">Method 3: Elimination Method<a class="headerlink" href="#method-3-elimination-method" title="Permanent link">&para;</a></h3>
+<p>The <strong>elimination method</strong> (also called the addition method) works by adding or subtracting the two equations to cancel out one variable. Follow these steps:</p>
+<ol>
+<li>Write both equations in standard form (<code>Ax + By = C</code>).</li>
+<li>If necessary, multiply one or both equations by a constant so that the coefficients of one variable become opposites (same magnitude, opposite sign).</li>
+<li>Add the two equations — the chosen variable cancels out.</li>
+<li>Solve the resulting single-variable equation.</li>
+<li>Substitute back to find the other variable.</li>
+<li>Check in both original equations.</li>
+</ol>
+<h3 id="worked-example-428-elimination-method">Worked Example 4.28 — Elimination Method<a class="headerlink" href="#worked-example-428-elimination-method" title="Permanent link">&para;</a></h3>
+<p>Solve: <code>3x + 2y = 12</code> and <code>x − 2y = 4</code>.</p>
+<p>Notice that the coefficients of <code>y</code> are already opposites (+2 and −2). Add the equations directly:</p>
+<p><code>(3x + x) + (2y − 2y) = 12 + 4</code>
+<code>4x + 0 = 16</code>
+<code>4x = 16</code>
+<code>x = 4</code></p>
+<p>Substitute <code>x = 4</code> into either equation. Using the second: <code>4 − 2y = 4</code>, so <code>−2y = 0</code>, and <code>y = 0</code>.</p>
+<p>Solution: <code>(4, 0)</code>. Check: <code>3(4) + 2(0) = 12</code> ✓ and <code>4 − 2(0) = 4</code> ✓.</p>
+<h3 id="worked-example-429-elimination-method-requires-multiplication-first">Worked Example 4.29 — Elimination Method (Requires Multiplication First)<a class="headerlink" href="#worked-example-429-elimination-method-requires-multiplication-first" title="Permanent link">&para;</a></h3>
+<p>Solve: <code>2x + 3y = 12</code> and <code>4x − y = 6</code>.</p>
+<p>The coefficients of neither variable are already opposites. Let's eliminate <code>y</code>. Multiply the second equation by 3 so its <code>y</code> coefficient becomes −3 (the opposite of +3):</p>
+<p>First equation: <code>2x + 3y = 12</code>
+Second equation × 3: <code>12x − 3y = 18</code></p>
+<p>Add:
+<code>(2x + 12x) + (3y − 3y) = 12 + 18</code>
+<code>14x = 30</code>
+<code>x = 30/14 = 15/7</code> or <code>x ≈ 2.14</code></p>
+<p>Substitute into the second original equation: <code>4(15/7) − y = 6</code>.
+<code>60/7 − y = 6 = 42/7</code>
+<code>y = 60/7 − 42/7 = 18/7</code> or <code>y ≈ 2.57</code></p>
+<p>Solution: <code>(15/7, 18/7)</code>. Check in both equations confirms correctness.</p>
+<h3 id="diagram-comparing-the-three-solution-methods">Diagram: Comparing the Three Solution Methods<a class="headerlink" href="#diagram-comparing-the-three-solution-methods" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Three Methods for Solving Systems — Decision Flowchart</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> systems-method-comparison<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Evaluate<br/>
+<strong>Bloom Verb:</strong> judge<br/>
+<strong>Learning Objective:</strong> The learner will judge which method (graphing, substitution, or elimination) is most efficient for a given system of equations and justify the choice based on the form of the equations.</p>
+<p><strong>Prerequisites:</strong> systems of linear equations, substitution method, elimination method (all defined in section 4.10 above), slope-intercept form (introduced in section 4.5).</p>
+<p><strong>Evidence of Mastery:</strong> For three given systems, the learner selects the most efficient method and gives a reason. A response is correct when the method choice matches the decision rule in Rules and the reason references the equation form (e.g., one variable already isolated → substitution). Mastery: 3 of 3 correct.</p>
+<p><strong>Misconceptions:</strong> (1) Graphing is always less accurate and should not be chosen when exact answers matter. (2) Elimination is only for equations already in standard form. (3) Substitution requires the variable to have coefficient 1.</p>
+<p><strong>Instructional Rationale:</strong> Evaluate-level judgment asks learners to compare trade-offs between methods, which solidifies understanding of each method's strengths. By making a choice and justifying it, students internalize when each technique shines rather than applying methods mechanically.</p>
+<p><strong>Content:</strong></p>
+<p>Three systems are presented for analysis. Each has clickable nodes showing the steps of all three methods with computed results:</p>
+<p>System A: <code>y = 3x − 1</code> and <code>2x + y = 9</code>
+- Substitution is most efficient (y already isolated). Result: <code>(10/3, 8)</code>.
+- Elimination requires rearranging first. Result: same.
+- Graphing gives approximate intersection near <code>(3.3, 9)</code>.</p>
+<p>System B: <code>3x + 2y = 6</code> and <code>3x − 4y = −12</code>
+- Elimination is most efficient (x coefficients are identical). Subtracting cancels x immediately. Result: <code>(0, 3)</code>.
+- Substitution requires rearranging first. Result: same.</p>
+<p>System C: <code>5x + y = 7</code> and <code>3x − 2y = 1</code>
+- Both methods require work. Substitution needs solving for one variable; elimination needs multiplication to align coefficients. Either is reasonable here. Result: <code>(3, −8)</code>.</p>
+<p>Each system has three clickable "Method" buttons that reveal the step-by-step solution using that method, including the final point plotted on a small coordinate grid.</p>
+<p><strong>Provenance:</strong> Synthetic with seed 4-3; all solutions are rational numbers computed from the Rules below.</p>
+<p><strong>Rules:</strong> For each system (Ax + By = C, Dx + Ey = F), elimination is most efficient when either A = −D or B = −E (coefficients are already opposites). Substitution is most efficient when one equation has a variable with coefficient ±1 and it appears alone on one side. When neither condition holds, both methods require comparable effort — choose freely.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>System A is displayed. The learner selects "Substitution," "Elimination," or "Graphing" and types a one-sentence reason.</li>
+<li>After pressing Check the sim reveals the step-by-step solution with all three methods and highlights the most efficient one in green.</li>
+<li>Repeat for Systems B and C.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct method + correct reason: the response is marked right. Correct method but wrong or missing reason: partial credit — the sim asks "Why did you choose that?" A wrong method choice reveals the condition (e.g., "One variable already has coefficient ±1 on its own side, so substitution is usually faster here.") and shows all three methods.</p>
+<p><strong>Starting State:</strong> System A displayed with empty method selector and reason box. The question "Which method would solve this system most efficiently?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that System A (example 4.26's equations rearranged) has y already isolated, making substitution the recommended approach.</p>
+</details>
+<hr />
+<h2 id="411-systems-of-inequalities">4.11 Systems of Inequalities<a class="headerlink" href="#411-systems-of-inequalities" title="Permanent link">&para;</a></h2>
+<p>A <strong>system of inequalities</strong> is a set of two or more inequalities with the same variables. The solution to a system of inequalities is the region (or regions) in the coordinate plane where <strong>all</strong> inequalities overlap — the area that satisfies every inequality simultaneously.</p>
+<p>To graph a system of inequalities:</p>
+<ol>
+<li>Graph each inequality on the same coordinate plane exactly as you did in section 4.6.</li>
+<li>Shade the solution region for each inequality separately (you can use different line styles or colors).</li>
+<li>The <strong>solution to the system</strong> is the region where all shaded areas overlap — the darkened region common to every inequality.</li>
+</ol>
+<h3 id="worked-example-430">Worked Example 4.30<a class="headerlink" href="#worked-example-430" title="Permanent link">&para;</a></h3>
+<p>Graph and describe the solution of:</p>
+<p><code>y &gt; x + 1</code> and <code>y &lt; −x + 4</code></p>
+<ul>
+<li>First inequality (<code>y &gt; x + 1</code>): Draw the line <code>y = x + 1</code> (dashed, because <code>&gt;</code> does not include the boundary) and shade above the line.</li>
+<li>Second inequality (<code>y &lt; −x + 4</code>): Draw the line <code>y = −x + 4</code> (dashed) and shade below the line.</li>
+<li>The solution is the triangular region where both shadings overlap — between the two lines, above <code>y = x + 1</code> and below <code>y = −x + 4</code>.</li>
+</ul>
+<p>To verify a point is in the solution region, substitute it into <strong>both</strong> inequalities. For example, <code>(0, 2)</code>: <code>2 &gt; 0 + 1</code> (true) and <code>2 &lt; −0 + 4</code> (true), so <code>(0, 2)</code> is a valid solution.</p>
+<h3 id="worked-example-431">Worked Example 4.31<a class="headerlink" href="#worked-example-431" title="Permanent link">&para;</a></h3>
+<p>Graph and describe the solution of:</p>
+<p><code>y ≥ 2x − 3</code> and <code>y ≤ −x + 6</code></p>
+<ul>
+<li>First inequality (<code>y ≥ 2x − 3</code>): Solid line, shade above.</li>
+<li>Second inequality (<code>y ≤ −x + 6</code>): Solid line, shade below.</li>
+<li>The solution is the region where the shadings overlap — a wedge between the two lines.</li>
+</ul>
+<p>Find the intersection point of the boundary lines to locate the vertex of the wedge:
+Set <code>2x − 3 = −x + 6</code>.
+<code>3x = 9</code> → <code>x = 3</code>.
+Substitute: <code>y = 2(3) − 3 = 3</code>.</p>
+<p>The vertex is at <code>(3, 3)</code>, and the solution region extends to the left from this point, bounded above by <code>y = −x + 6</code> and below by <code>y = 2x − 3</code>.</p>
+<hr />
+<h2 id="412-connecting-to-quadratic-expressions">4.12 Connecting to Quadratic Expressions<a class="headerlink" href="#412-connecting-to-quadratic-expressions" title="Permanent link">&para;</a></h2>
+<p>Although this chapter focuses on linear equations, several topics here serve as prerequisites for solving quadratic equations — a central theme of the next chapters. Understanding how simplification, factoring, and completing the square work with linear expressions builds the foundation you need.</p>
+<h3 id="greatest-common-factor-gcf-review">Greatest Common Factor (GCF) Review<a class="headerlink" href="#greatest-common-factor-gcf-review" title="Permanent link">&para;</a></h3>
+<p>When you factor a polynomial, the first step is always to look for the <strong>greatest common factor</strong> shared by all terms. The GCF of a set of terms consists of:</p>
+<ul>
+<li>The greatest integer that divides every coefficient evenly</li>
+<li>Every variable that appears in <strong>every</strong> term, raised to the lowest power it appears at in any term</li>
+</ul>
+<h3 id="worked-example-432">Worked Example 4.32<a class="headerlink" href="#worked-example-432" title="Permanent link">&para;</a></h3>
+<p>Factor <code>6x³ + 9x² − 12x</code> completely.</p>
+<p>Step 1: Find the GCF of all three terms.
+- Coefficients: GCF(6, 9, 12) = 3.
+- Variables: only x appears in every term; lowest power is x¹.
+- GCF = <code>3x</code>.</p>
+<p>Step 2: Divide each term by the GCF and write as a product:
+<code>3x(2x² + 3x − 4)</code></p>
+<p>The expression is factored as <code>3x(2x² + 3x − 4)</code>. The quadratic inside can be checked for further factoring (it does not factor nicely over the integers, so we stop here).</p>
+<h3 id="trinomial-factoring-review">Trinomial Factoring Review<a class="headerlink" href="#trinomial-factoring-review" title="Permanent link">&para;</a></h3>
+<p>To factor a trinomial of the form <code>ax² + bx + c</code>:</p>
+<ol>
+<li>Find two numbers whose product is <code>a · c</code> and whose sum is <code>b</code>.</li>
+<li>Rewrite the middle term using these two numbers (this creates four terms).</li>
+<li>Factor by grouping: factor the GCF from pairs of terms, then factor out the common binomial.</li>
+</ol>
+<p>When <code>a = 1</code> (the trinomial starts with <code>x²</code>), this simplifies: find two numbers whose product is <code>c</code> and whose sum is <code>b</code>.</p>
+<h3 id="worked-example-433-trinomial-factoring-a-1">Worked Example 4.33 — Trinomial Factoring (a = 1)<a class="headerlink" href="#worked-example-433-trinomial-factoring-a-1" title="Permanent link">&para;</a></h3>
+<p>Factor <code>x² + 5x + 6</code>.</p>
+<p>Find two numbers whose product is 6 and whose sum is 5. The pairs of factors of 6 are: (1, 6), (2, 3). Only (2, 3) adds to 5.</p>
+<p><code>x² + 5x + 6 = (x + 2)(x + 3)</code></p>
+<p>Check by expanding: <code>(x + 2)(x + 3) = x² + 3x + 2x + 6 = x² + 5x + 6</code>. ✓</p>
+<h3 id="prime-polynomials">Prime Polynomials<a class="headerlink" href="#prime-polynomials" title="Permanent link">&para;</a></h3>
+<p>A polynomial is <strong>prime</strong> (or irreducible over the integers) when it cannot be factored into two polynomials with integer coefficients. In other words, no matter what factoring strategies you try — GCF, grouping, trinomial formulas — there are no two integer-coefficient factors that multiply to produce the original expression.</p>
+<h3 id="worked-example-434">Worked Example 4.34<a class="headerlink" href="#worked-example-434" title="Permanent link">&para;</a></h3>
+<p>Determine whether <code>x² + x + 1</code> is prime.</p>
+<p>To factor <code>x² + x + 1</code>, look for two integers whose product is 1 and whose sum is 1. The only factor pairs of 1 are (1, 1) and (−1, −1), which give sums of 2 and −2 respectively. Neither gives a sum of 1.</p>
+<p>No other strategies apply (no GCF beyond 1, not a special product pattern).</p>
+<p><strong>Conclusion:</strong> <code>x² + x + 1</code> is prime over the integers.</p>
+<h3 id="completing-the-square-the-bridge-to-quadratics">Completing the Square: The Bridge to Quadratics<a class="headerlink" href="#completing-the-square-the-bridge-to-quadratics" title="Permanent link">&para;</a></h3>
+<p><strong>Completing the square</strong> is a technique that rewrites a quadratic expression in the form <code>(x − h)² + k</code>. This technique was introduced briefly in Chapter 3 and will be explored deeply when you study quadratic equations. The key idea is:</p>
+<p>Given <code>x² + bx</code>, add <code>(b/2)²</code> to create a perfect square trinomial:
+<code>x² + bx + (b/2)² = (x + b/2)²</code></p>
+<h3 id="worked-example-435-completing-the-square">Worked Example 4.35 — Completing the Square<a class="headerlink" href="#worked-example-435-completing-the-square" title="Permanent link">&para;</a></h3>
+<p>Rewrite <code>x² + 8x + 3</code> in vertex form <code>(x − h)² + k</code>.</p>
+<ul>
+<li>The coefficient of x is 8, so <code>b/2 = 4</code> and <code>(b/2)² = 16</code>.</li>
+<li>Add and subtract 16 (adding zero doesn't change the expression):
+  <code>x² + 8x + 16 − 16 + 3</code>
+  <code>(x + 4)² − 13</code></li>
+</ul>
+<p>The vertex form is <code>(x + 4)² − 13</code>, which reveals that the parabola <code>y = x² + 8x + 3</code> has its vertex at <code>(−4, −13)</code>. The number 13 also appears in the next section on the discriminant — when you set the expression equal to zero and solve, the roots lie exactly 13 units below the horizontal shift.</p>
+<h3 id="roots-of-quadratics-via-completing-the-square">Roots of Quadratics via Completing the Square<a class="headerlink" href="#roots-of-quadratics-via-completing-the-square" title="Permanent link">&para;</a></h3>
+<p>If we set <code>x² + 8x + 3 = 0</code> and complete the square:</p>
+<p><code>(x + 4)² − 13 = 0</code>
+<code>(x + 4)² = 13</code>
+<code>x + 4 = ±√13</code>
+<code>x = −4 ± √13</code></p>
+<p><strong>Solutions:</strong> <code>x = −4 + √13</code> and <code>x = −4 − √13</code>. (These are approximately <code>0.61</code> and <code>−8.61</code>.)</p>
+<h3 id="the-discriminant-preview">The Discriminant Preview<a class="headerlink" href="#the-discriminant-preview" title="Permanent link">&para;</a></h3>
+<p>The <strong>discriminant</strong> of a quadratic equation <code>ax² + bx + c = 0</code> is the expression <code>b² − 4ac</code>. Its value determines the nature of the roots:</p>
+<table>
+<thead>
+<tr>
+<th>Discriminant Value</th>
+<th>Nature of Roots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b² − 4ac &gt; 0</code></td>
+<td>Two distinct real roots (the quadratic crosses the x-axis at two points)</td>
+</tr>
+<tr>
+<td><code>b² − 4ac = 0</code></td>
+<td>One repeated real root (the vertex touches the x-axis — a perfect square trinomial)</td>
+</tr>
+<tr>
+<td><code>b² − 4ac &lt; 0</code></td>
+<td>No real roots (the parabola does not intersect the x-axis — roots are complex)</td>
+</tr>
+</tbody>
+</table>
+<p>In worked example 4.35, for <code>x² + 8x + 3</code>: <code>a = 1</code>, <code>b = 8</code>, <code>c = 3</code>.
+Discriminant: <code>8² − 4(1)(3) = 64 − 12 = 52 &gt; 0</code>. Two distinct real roots — consistent with the ±√13 result.</p>
+<hr />
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>This chapter covered a wide range of algebraic techniques, all connected by one central idea: <strong>isolate the unknown</strong>. Whether you are solving an equation or an inequality, the goal is always the same — use inverse operations to get the variable alone on one side.</p>
+<h3 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Simplify first.</strong> Always apply the distributive property and combine like terms before isolating variables.</li>
+<li><strong>Balance is sacred.</strong> Whatever operation you perform on one side, perform it on the other. This is the golden rule of equation solving.</li>
+<li><strong>One-step → two-step → multi-step.</strong> Build fluency with simpler forms before tackling complex expressions. Practice each type until you can solve it without hesitation.</li>
+<li><strong>Literal equations</strong> use the same methods — just treat other letters as known numbers.</li>
+<li><strong>Inequalities follow all equation rules plus one more:</strong> flip the sign when multiplying or dividing by a negative. This is non-negotiable.</li>
+<li><strong>Absolute value equations split into two cases.</strong> When you see <code>|expression| = k</code>, write both <code>expression = k</code> and <code>expression = −k</code>.</li>
+<li><strong>Systems of equations</strong> can be solved by graphing (for intuition), substitution (when one variable is isolated), or elimination (when coefficients line up nicely).</li>
+<li><strong>Systems of inequalities</strong> are solved by finding the overlapping shaded region — every inequality must be satisfied simultaneously.</li>
+<li><strong>Factoring, completing the square, and the discriminant</strong> all build on the algebraic manipulation skills you practiced in this chapter. They will become central tools when you study quadratic equations.</li>
+</ol>
+<h3 id="looking-ahead">Looking Ahead<a class="headerlink" href="#looking-ahead" title="Permanent link">&para;</a></h3>
+<p>In the next chapters, you will extend everything you have learned here: solving quadratic equations (by factoring, square roots, completing the square, and the quadratic formula), exploring exponential growth and decay, analyzing sequences, and building mathematical models for real-world situations. The isolation technique — undoing operations one by one to find the unknown — is the thread that ties all of these topics together.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../03-factoring-techniques-polynomial-division/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3. Factoring Techniques and Polynomial Division">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                3. Factoring Techniques and Polynomial Division
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-linear-relationships-coordinate-graphing/" class="md-footer__link md-footer__link--next" aria-label="Next: 5. Linear Relationships and Coordinate Graphing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                5. Linear Relationships and Coordinate Graphing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

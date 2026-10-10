@@ -1,0 +1,2753 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An introduction to the fundamental building blocks of algebra, including variables, expressions, and the order of operations.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/01-algebra-foundations-and-basic-operations/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-algebraic-expressions-and-functions/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Algebra Foundations and Basic Operations - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#algebra-foundations-and-basic-operations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Algebra Foundations and Basic Operations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            gemma4:26b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_2_4" id="__nav_8_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1. Algebra Foundations and Basic Operations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1. Algebra Foundations and Basic Operations
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algebra-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algebra Foundations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algebra Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-constants-and-coefficients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables, Constants, and Coefficients
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables, Constants, and Coefficients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-anatomy-of-an-algebraic-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Anatomy of an Algebraic Expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terms-and-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terms and Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluating-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluating Expressions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order of Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Order of Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-applying-pemdas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Applying PEMDAS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algebraic-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algebraic Reasoning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algebraic Reasoning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-distributive-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Distributive Property
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-of-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rules of Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rules of Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-visualizing-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Visualizing Exponents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-simplifying-with-exponent-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Simplifying with Exponent Laws
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solving-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Inequalities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absolute-value-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Absolute Value Equations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Concept
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domain-and-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain and Range
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domain and Range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-function-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Function Machine
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-evaluating-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Evaluating a Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#piecewise-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Piecewise Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systems of Linear Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Systems of Linear Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-solving-by-substitution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Solving by Substitution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-inequalities-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Inequalities Systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factoring-quadratic-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factoring Quadratic Equations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solving-by-square-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving by Square Roots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-function-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparing Function Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmetic Sequences
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic Sequences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-finding-a-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Finding a Term
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmetic Means
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-algebraic-expressions-and-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Algebraic Expressions and Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-advanced-algebra-and-relations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Advanced Algebra and Relations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-exponents-and-mathematical-constants/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Exponents and Mathematical Constants
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-laws-of-exponents-and-modeling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Laws of Exponents and Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-radicals-and-algebraic-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Radicals and Algebraic Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-rational-exponents-and-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Rational Exponents and Logic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-equations-and-inequalities-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Equations and Inequalities Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-polynomial-operations-and-factoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Polynomial Operations and Factoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-functions-modeling-and-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Functions, Modeling, and Logic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-linear-and-exponential-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Linear and Exponential Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-advanced-polynomials-and-function-behavior/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Advanced Polynomials and Function Behavior
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-linear-relationships-and-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Linear Relationships and Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-advanced-modeling-and-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Advanced Modeling and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algebra-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algebra Foundations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algebra Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-constants-and-coefficients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables, Constants, and Coefficients
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables, Constants, and Coefficients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-anatomy-of-an-algebraic-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Anatomy of an Algebraic Expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terms-and-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terms and Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluating-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluating Expressions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order of Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Order of Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-applying-pemdas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Applying PEMDAS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algebraic-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algebraic Reasoning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algebraic Reasoning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-distributive-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Distributive Property
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-of-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rules of Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rules of Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-visualizing-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Visualizing Exponents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-simplifying-with-exponent-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Simplifying with Exponent Laws
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solving-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Inequalities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absolute-value-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Absolute Value Equations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Concept
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domain-and-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain and Range
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domain and Range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-function-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Function Machine
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-evaluating-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Evaluating a Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#piecewise-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Piecewise Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systems of Linear Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Systems of Linear Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-solving-by-substitution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Solving by Substitution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-inequalities-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Inequalities Systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factoring-quadratic-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factoring Quadratic Equations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solving-by-square-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving by Square Roots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-function-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparing Function Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmetic Sequences
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic Sequences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-finding-a-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Finding a Term
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmetic Means
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/gemma4-26b/chapters/01-algebra-foundations-and-basic-operations/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="algebra-foundations-and-basic-operations">Algebra Foundations and Basic Operations<a class="headerlink" href="#algebra-foundations-and-basic-operations" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter introduces key algebraic concepts, building on foundational knowledge to develop new skills in modeling and problem-solving.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 15 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Algebra Foundations</td>
+<td>3897</td>
+</tr>
+<tr>
+<td>Order of Operations</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Exponents</td>
+<td>1112</td>
+</tr>
+<tr>
+<td>Linear Inequalities</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Absolute Value Equations</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Function Concept</td>
+<td>345</td>
+</tr>
+<tr>
+<td>Piecewise Functions</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Systems of Linear Equations</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Linear Inequalities Systems</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Factoring Quadratic Equations</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Solving by Square Roots</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Comparing Function Models</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Arithmetic Sequences</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Arithmetic Means</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Algebraic Reasoning</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+<h2 id="algebra-foundations">Algebra Foundations<a class="headerlink" href="#algebra-foundations" title="Permanent link">&para;</a></h2>
+<p>To begin our journey into algebra, we must first understand the language used to describe mathematical relationships. In arithmetic, we work with concrete numbers: <span class="arithmatex">\( 5 + 3 = 8 \)</span>. However, real-world situations are often more complex. We might know that a taxi charges a flat fee plus a rate per mile, but we don't know exactly how many miles a passenger will travel. Algebra allows us to use symbols to represent these unknown quantities, creating a mathematical "template" that can be applied to any specific case.</p>
+<h3 id="variables-constants-and-coefficients">Variables, Constants, and Coefficients<a class="headerlink" href="#variables-constants-and-coefficients" title="Permanent link">&para;</a></h3>
+<p>In algebra, we use symbols to represent numbers that can change or are not yet known. These symbols are called <strong>variables</strong>. For example, in the expression <span class="arithmatex">\( 3x + 5 \)</span>, the letter <span class="arithmatex">\( x \)</span> is a variable. It acts as a placeholder for any value we choose to plug into the expression.</p>
+<p>A <strong>constant</strong> is a value that does not change. In the same expression, the number <span class="arithmatex">\( 5 \)</span> is a constant because its value remains fixed regardless of what <span class="arithmatex">\( x \)</span> is. Constants provide the fixed points or starting values in our mathematical models.</p>
+<p>When a number is multiplied by a variable, it is called a <strong>coefficient</strong>. In the term <span class="arithmatex">\( 3x \)</span>, the number <span class="arithmatex">\( 3 \)</span> is the coefficient of <span class="arithmatex">\( x \)</span>. It tells us how many "copies" of the variable we have. For instance, if <span class="arithmatex">\( x \)</span> represents the number of apples, <span class="arithmatex">\( 3x \)</span> represents three times that number of apples.</p>
+<h4 id="diagram-anatomy-of-an-algebraic-expression">Diagram: Anatomy of an Algebraic Expression<a class="headerlink" href="#diagram-anatomy-of-an-algebraic-expression" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Anatomy of an Expression</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> algebraic-expression-anatomy<br/>
+<strong>Library:</strong> mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> describe<br/>
+<strong>Learning Objective:</strong> The learner will describe the role of variables, constants, and coefficients in a given algebraic expression.</p>
+<p><strong>Prerequisites:</strong> None</p>
+<p><strong>Evidence of Mastery:</strong> The learner can correctly label the variable, constant, and coefficient in a new expression like <span class="arithmatex">\( -7y + 12 \)</span>.</p>
+<p><strong>Misconceptions:</strong> Confusing a coefficient with a constant, or thinking a variable must always be <span class="arithmatex">\( x \)</span>.</p>
+<p><strong>Instructional Rationale:</strong> Visualizing the components of an expression helps anchor the abstract terminology to a concrete structure.</p>
+<p><strong>Content:</strong>
+- Expression: <span class="arithmatex">\( 3x + 5 \)</span>
+- Coefficient: <span class="arithmatex">\( 3 \)</span>
+- Variable: <span class="arithmatex">\( x \)</span>
+- Constant: <span class="arithmatex">\( 5 \)</span>
+- Term: <span class="arithmatex">\( 3x \)</span> and <span class="arithmatex">\( 5 \)</span></p>
+<p><strong>Provenance:</strong> Illustrative</p>
+<p><strong>Rules:</strong> A term is separated from others by addition or subtraction.</p>
+<p><strong>Learner Activity:</strong>
+1. Observe the diagram of <span class="arithmatex">\( 3x + 5 \)</span>.
+2. Identify the parts.
+3. Apply the identification to a new expression.</p>
+<p><strong>Feedback:</strong> If the learner identifies <span class="arithmatex">\( 5 \)</span> as a coefficient, explain that <span class="arithmatex">\( 5 \)</span> is not attached to a variable.</p>
+<p><strong>Starting State:</strong> An image showing <span class="arithmatex">\( 3x + 5 \)</span> with arrows pointing to its parts.</p>
+<p><strong>Chapter Anchors:</strong> variables, constants, coefficients, terms, expressions</p>
+</details>
+<h3 id="terms-and-expressions">Terms and Expressions<a class="headerlink" href="#terms-and-expressions" title="Permanent link">&para;</a></h3>
+<p>An <strong>expression</strong> is a mathematical phrase that combines numbers, variables, and operation symbols (like <span class="arithmatex">\( +, -, \times, \div \)</span>). For example, <span class="arithmatex">\( 4y - 7 \)</span> is an expression. It represents a value, but it does not state an equality or inequality.</p>
+<p>Within an expression, individual parts separated by addition or subtraction are called <strong>terms</strong>. For example, in the expression <span class="arithmatex">\( 2x + 9y - 4 \)</span>, there are three terms: <span class="arithmatex">\( 2x \)</span>, <span class="arithmatex">\( 9y \)</span>, and <span class="arithmatex">\( -4 \)</span>. Terms can be single numbers, single variables, or a combination of both.</p>
+<h3 id="evaluating-expressions">Evaluating Expressions<a class="headerlink" href="#evaluating-expressions" title="Permanent link">&para;</a></h3>
+<p><strong>Evaluating an expression</strong> means finding its numerical value by replacing the variables with specific numbers. This is a fundamental skill in algebra, allowing us to move from a general rule to a specific result.</p>
+<p><strong>Worked Example: Evaluating an Expression</strong></p>
+<p>Let's evaluate the expression <span class="arithmatex">\( 5x - 3 \)</span> for <span class="arithmatex">\( x = 4 \)</span>.</p>
+<ol>
+<li><strong>Substitute</strong> the value of the variable: Replace <span class="arithmatex">\( x \)</span> with <span class="arithmatex">\( 4 \)</span>.
+   [ 5(4) - 3 ]</li>
+<li><strong>Simplify</strong> using the order of operations:
+   [ 20 - 3 ]
+   [ 17 ]</li>
+</ol>
+<p>So, when <span class="arithmatex">\( x = 4 \)</span>, the value of the expression is <span class="arithmatex">\( 17 \)</span>.</p>
+<h2 id="order-of-operations">Order of Operations<a class="headerlink" href="#order-of-operations" title="Permanent link">&para;</a></h2>
+<p>When an expression contains multiple operations, we must follow a specific order to ensure everyone reaches the same result. Without a standardized order, an expression like <span class="arithmatex">\( 2 + 3 \times 4 \)</span> could be interpreted as <span class="arithmatex">\( 20 \)</span> (if adding first) or <span class="arithmatex">\( 14 \)</span> (if multiplying first). To prevent this ambiguity, we use the <strong>order of operations</strong>, often remembered by the mnemonic <strong>PEMDAS</strong>.</p>
+<ol>
+<li><strong>P</strong>arentheses: Perform operations inside parentheses or brackets first.</li>
+<li><strong>E</strong>xponents: Calculate powers and roots.</li>
+<li><strong>M</strong>ultiplication and <strong>D</strong>ivision: Perform these from left to right.</li>
+<li><strong>A</strong>ddition and <strong>S</strong>ubtraction: Perform these from left to right.</li>
+</ol>
+<h3 id="worked-example-applying-pemdas">Worked Example: Applying PEMDAS<a class="headerlink" href="#worked-example-applying-pemdas" title="Permanent link">&para;</a></h3>
+<p>Evaluate the expression: <span class="arithmatex">\( 10 + (6 - 2)^2 \div 2 \)</span></p>
+<ol>
+<li><strong>Parentheses</strong>: Solve inside the parentheses first.
+   [ (6 - 2) = 4 ]
+   The expression becomes: <span class="arithmatex">\( 10 + 4^2 \div 2 \)</span></li>
+<li><strong>Exponents</strong>: Calculate the power.
+   [ 4^2 = 16 ]
+   The expression becomes: <span class="arithmatex">\( 10 + 16 \div 2 \)</span></li>
+<li><strong>Division</strong>: Perform the division.
+   [ 16 \div 2 = 8 ]
+   The expression becomes: <span class="arithmatex">\( 10 + 8 \)</span></li>
+<li><strong>Addition</strong>: Final step.
+   [ 10 + 8 = 18 ]</li>
+</ol>
+<p>The final result is <span class="arithmatex">\( 18 \)</span>.</p>
+<h2 id="algebraic-reasoning">Algebraic Reasoning<a class="headerlink" href="#algebraic-reasoning" title="Permanent link">&para;</a></h2>
+<p>Algebraic reasoning involves using mathematical properties to manipulate and simplify expressions. These properties are the rules of the "game," allowing us to rewrite expressions in more useful forms without changing their underlying value.</p>
+<h3 id="the-distributive-property">The Distributive Property<a class="headerlink" href="#the-distributive-property" title="Permanent link">&para;</a></h3>
+<p>One of the most important tools in algebra is the <strong>distributive property</strong>. It states that multiplying a sum by a number is the same as multiplying each addend by that number and then adding the products. This property is essential for expanding expressions and solving equations.</p>
+<p>Formally: <span class="arithmatex">\( a(b + c) = ab + ac \)</span></p>
+<p><strong>Worked Example: Using the Distributive Property</strong></p>
+<p>Simplify the expression: <span class="arithmatex">\( 3(2x + 5) \)</span></p>
+<ol>
+<li><strong>Distribute</strong> the <span class="arithmatex">\( 3 \)</span> to the first term: <span class="arithmatex">\( 3 \times 2x = 6x \)</span>.</li>
+<li><strong>Distribute</strong> the <span class="arithmatex">\( 3 \)</span> to the second term: <span class="arithmatex">\( 3 \times 5 = 15 \)</span>.</li>
+<li><strong>Combine</strong> the results: <span class="arithmatex">\( 6x + 15 \)</span>.</li>
+</ol>
+<p>The simplified expression is <span class="arithmatex">\( 6x + 15 \)</span>.</p>
+<h2 id="exponents">Exponents<a class="headerlink" href="#exponents" title="Permanent link">&para;</a></h2>
+<p>An <strong>exponent</strong> represents how many times a number, called the <strong>base</strong>, is used as a factor in a multiplication. Exponents provide a powerful way to express very large or very small numbers concisely.</p>
+<p>For example, in <span class="arithmatex">\( 5^3 \)</span>:
+- <span class="arithmatex">\( 5 \)</span> is the <strong>base</strong>.
+- <span class="arithmatex">\( 3 \)</span> is the <strong>exponent</strong> (or power).</p>
+<p>This is shorthand for <span class="arithmatex">\( 5 \times 5 \times 5 \)</span>, which equals <span class="arithmatex">\( 125 \)</span>. If the exponent were 1, it would just be <span class="arithmatex">\( 5 \)</span>. If it were 0, it would be 1 (for any non-zero base).</p>
+<h3 id="rules-of-exponents">Rules of Exponents<a class="headerlink" href="#rules-of-exponents" title="Permanent link">&para;</a></h3>
+<p>Exponents follow specific laws that allow us to simplify complex expressions involving powers. These laws are foundational for higher-level math like calculus.</p>
+<h4 id="diagram-visualizing-exponents">Diagram: Visualizing Exponents<a class="headerlink" href="#diagram-visualizing-exponents" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Visualizing Exponents</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> exponent-visual-growth<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> describe<br/>
+<strong>Learning Objective:</strong> The learner will describe the relationship between the base and the exponent through a visual growth model.</p>
+<p><strong>Prerequisites:</strong> Algebra Foundations</p>
+<p><strong>Evidence of Mastery:</strong> The learner correctly predicts whether changing the exponent from 2 to 3 will increase or decrease the growth rate in a multiple-choice question.</p>
+<p><strong>Misconceptions:</strong> Thinking <span class="arithmatex">\( 5^3 \)</span> means <span class="arithmatex">\( 5 \times 3 \)</span>.</p>
+<p><strong>Instructional Rationale:</strong> A visual representation of repeated multiplication helps differentiate between linear and exponential scaling.</p>
+<p><strong>Content:</strong>
+- Base: 2
+- Exponent: 1, 2, 3, 4, 5
+- Visual: A growing area or number of dots.</p>
+<p><strong>Provenance:</strong> Synthetic</p>
+<p><strong>Rules:</strong>
+- Base <span class="arithmatex">\( b &gt; 0 \)</span>
+- Exponent <span class="arithmatex">\( n \)</span> increases by 1 each step.</p>
+<p><strong>Learner Activity:</strong>
+1. Observe the growth of the visual element.
+2. Change the base from 2 to 3.
+3. Notice the difference in speed of growth.</p>
+<p><strong>Feedback:</strong> If the learner expects linear growth, show the mathematical difference between <span class="arithmatex">\( 2n \)</span> and <span class="arithmatex">\( 2^n \)</span>.</p>
+<p><strong>Starting State:</strong> A small square representing <span class="arithmatex">\( 2^1 \)</span>.</p>
+<p><strong>Chapter Anchors:</strong> base, exponent, power</p>
+</details>
+<h3 id="worked-example-simplifying-with-exponent-laws">Worked Example: Simplifying with Exponent Laws<a class="headerlink" href="#worked-example-simplifying-with-exponent-laws" title="Permanent link">&para;</a></h3>
+<p>Simplify: <span class="arithmatex">\( (x^3)(x^4) \)</span></p>
+<p>According to the <strong>Product Rule of Exponents</strong>, when multiplying terms with the same base, you add the exponents: <span class="arithmatex">\( x^a \cdot x^b = x^{a+b} \)</span>.</p>
+<ol>
+<li><strong>Identify</strong> the base: The base is <span class="arithmatex">\( x \)</span>.</li>
+<li><strong>Add</strong> the exponents: <span class="arithmatex">\( 3 + 4 = 7 \)</span>.</li>
+<li><strong>Result</strong>: <span class="arithmatex">\( x^7 \)</span>.</li>
+</ol>
+<h2 id="linear-inequalities">Linear Inequalities<a class="headerlink" href="#linear-inequalities" title="Permanent link">&para;</a></h2>
+<p>An <strong>inequality</strong> is a mathematical statement that compares two values, indicating if one is greater than, less than, or equal to another. Unlike equations, which describe a specific point of balance, inequalities describe a range of possibilities. We use symbols like <span class="arithmatex">\( &lt; \)</span> (less than), <span class="arithmatex">\( &gt; \)</span> (greater than), <span class="arithmatex">\( \leq \)</span> (less than or equal to), and <span class="arithmatex">\( \geq \)</span> (greater than or equal to).</p>
+<h3 id="solving-inequalities">Solving Inequalities<a class="headerlink" href="#solving-inequalities" title="Permanent link">&para;</a></h3>
+<p>Solving an inequality is very similar to solving an equation, with one critical difference: when you multiply or divide both sides by a <strong>negative number</strong>, you must <strong>reverse the inequality sign</strong>. This is because multiplying by a negative number flips the order of numbers on the number line.</p>
+<p><strong>Worked Example: Solving a Two-Step Inequality</strong></p>
+<p>Solve: <span class="arithmatex">\( 2x - 4 &gt; 6 \)</span></p>
+<ol>
+<li><strong>Add 4</strong> to both sides to isolate the term with <span class="arithmatex">\( x \)</span>:
+   [ 2x &gt; 10 ]</li>
+<li><strong>Divide by 2</strong> on both sides:
+   [ x &gt; 5 ]</li>
+</ol>
+<p>The solution is all numbers greater than 5.</p>
+<h2 id="absolute-value-equations">Absolute Value Equations<a class="headerlink" href="#absolute-value-equations" title="Permanent link">&para;</a></h2>
+<p>The <strong>absolute value</strong> of a number, denoted by <span class="arithmatex">\( |x| \)</span>, is its distance from zero on a number line. Because distance is never negative, the absolute value is always zero or positive. For example, <span class="arithmatex">\( |-5| = 5 \)</span> and <span class="arithmatex">\( |5| = 5 \)</span>.</p>
+<p>An <strong>absolute value equation</strong> asks us to find the values that satisfy a certain distance. Because a distance can be in either direction, these equations often have two solutions.</p>
+<p><strong>Example:</strong>
+To solve <span class="arithmatex">\( |x| = 3 \)</span>, we look for numbers that are exactly 3 units away from zero. Those numbers are <span class="arithmatex">\( 3 \)</span> and <span class="arithmatex">\( -3 \)</span>.</p>
+<h2 id="function-concept">Function Concept<a class="headerlink" href="#function-concept" title="Permanent link">&para;</a></h2>
+<p>A <strong>function</strong> is a special relationship where each <strong>input</strong> (often called <span class="arithmatex">\( x \)</span>) is associated with exactly one <strong>output</strong> (often called <span class="arithmatex">\( f(x) \)</span> or <span class="arithmatex">\( y \)</span>). </p>
+<p>Think of a function like a machine: you put something in, the machine performs a specific rule, and it spits out exactly one result. If you put in the same input twice, you must get the same output both times.</p>
+<h3 id="domain-and-range">Domain and Range<a class="headerlink" href="#domain-and-range" title="Permanent link">&para;</a></h3>
+<p>To fully describe a function, we need to know what numbers it can accept and what numbers it can produce.</p>
+<ul>
+<li>The <strong>domain</strong> is the set of all possible input values. It's like the "menu" of things you can feed the function.</li>
+<li>The <strong>range</strong> is the set of all possible output values. It's the collection of all results the function can produce.</li>
+</ul>
+<h4 id="diagram-the-function-machine">Diagram: The Function Machine<a class="headerlink" href="#diagram-the-function-machine" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Function Machine Mapping</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> function-mapping-diagram<br/>
+<strong>Library:</strong> mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> describe<br/>
+<strong>Learning Objective:</strong> The learner will describe the relationship between input, output, domain, and range using a mapping diagram.</p>
+<p><strong>Prerequisites:</strong> Algebra Foundations</p>
+<p><strong>Evidence of Mastery:</strong> The learner can identify the domain and range from a provided mapping diagram.</p>
+<p><strong>Misconceptions:</strong> Thinking an input can have two different outputs.</p>
+<p><strong>Instructional Rationale:</strong> Mapping diagrams are the standard way to visualize the one-to-one or many-to-one nature of functions.</p>
+<p><strong>Content:</strong>
+- Set A (Domain/Input)
+- Set B (Range/Output)
+- Mapping arrows</p>
+<p><strong>Provenance:</strong> Illustrative</p>
+<p><strong>Rules:</strong> Each element in Set A must have exactly one arrow pointing to an element in Set B.</p>
+<p><strong>Learner Activity:</strong>
+1. Observe the arrows connecting inputs to outputs.
+2. Identify which elements belong to the domain.
+3. Identify which elements belong to the range.</p>
+<p><strong>Feedback:</strong> If the learner identifies an input with two outputs, explain that this violates the definition of a function.</p>
+<p><strong>Starting State:</strong> A mapping diagram with 3 inputs and 2 outputs.</p>
+<p><strong>Chapter Anchors:</strong> function, input, output, domain, range</p>
+</details>
+<h3 id="worked-example-evaluating-a-function">Worked Example: Evaluating a Function<a class="headerlink" href="#worked-example-evaluating-a-function" title="Permanent link">&para;</a></h3>
+<p>Given the function <span class="arithmatex">\( f(x) = 2x + 1 \)</span>, find <span class="arithmatex">\( f(3) \)</span>.</p>
+<ol>
+<li><strong>Substitute</strong> <span class="arithmatex">\( 3 \)</span> for <span class="arithmatex">\( x \)</span>:
+   [ f(3) = 2(3) + 1 ]</li>
+<li><strong>Simplify</strong>:
+   [ f(3) = 6 + 1 = 7 ]</li>
+</ol>
+<p>So, <span class="arithmatex">\( f(3) = 7 \)</span>.</p>
+<h2 id="piecewise-functions">Piecewise Functions<a class="headerlink" href="#piecewise-functions" title="Permanent link">&para;</a></h2>
+<p>A <strong>piecewise function</strong> is a function that is defined by different rules for different parts of its domain. Instead of one single formula, it uses a collection of formulas, each applied only to a certain interval of <span class="arithmatex">\( x \)</span>. </p>
+<p>For example, a function might use one formula if <span class="arithmatex">\( x \)</span> is negative and a different formula if <span class="arithmatex">\( x \)</span> is positive. This allows us to model more complex, real-world behaviors that change abruptly.</p>
+<h2 id="systems-of-linear-equations">Systems of Linear Equations<a class="headerlink" href="#systems-of-linear-equations" title="Permanent link">&para;</a></h2>
+<p>A <strong>system of linear equations</strong> consists of two or more equations with the same set of variables. The <strong>solution</strong> to the system is the set of values that makes all equations in the system true at the same time. </p>
+<p>Graphically, if you draw the lines for both equations, the solution is the point where the lines intersect.</p>
+<h3 id="worked-example-solving-by-substitution">Worked Example: Solving by Substitution<a class="headerlink" href="#worked-example-solving-by-substitution" title="Permanent link">&para;</a></h3>
+<p>Solve the system:
+1) <span class="arithmatex">\( y = 2x \)</span>
+2) <span class="arithmatex">\( x + y = 9 \)</span></p>
+<ol>
+<li><strong>Substitute</strong> the first equation into the second:
+   Since <span class="arithmatex">\( y = 2x \)</span>, replace <span class="arithmatex">\( y \)</span> in the second equation with <span class="arithmatex">\( 2x \)</span>.
+   [ x + (2x) = 9 ]</li>
+<li><strong>Solve</strong> for <span class="arithmatex">\( x \)</span>:
+   [ 3x = 9 ]
+   [ x = 3 ]</li>
+<li><strong>Find <span class="arithmatex">\( y \)</span></strong> by substituting <span class="arithmatex">\( x = 3 \)</span> back into the first equation:
+   [ y = 2(3) = 6 ]</li>
+</ol>
+<p>The solution is <span class="arithmatex">\( (3, 6) \)</span>.</p>
+<h2 id="linear-inequalities-systems">Linear Inequalities Systems<a class="headerlink" href="#linear-inequalities-systems" title="Permanent link">&para;</a></h2>
+<p>A <strong>system of linear inequalities</strong> is a set of two or more inequalities. Unlike a system of equations, which usually has a single point as a solution, a system of inequalities has an entire region of solutions. This region is the area on a graph where the shaded areas of all inequalities overlap.</p>
+<h2 id="factoring-quadratic-equations">Factoring Quadratic Equations<a class="headerlink" href="#factoring-quadratic-equations" title="Permanent link">&para;</a></h2>
+<p><strong>Factoring</strong> is the process of breaking down an expression into a product of simpler expressions. For a quadratic equation like <span class="arithmatex">\( x^2 - 5x + 6 = 0 \)</span>, factoring means finding two expressions that multiply to give the quadratic.</p>
+<p>In this case, <span class="arithmatex">\( (x - 2)(x - 3) = 0 \)</span>. This tells us that the original equation is true if either <span class="arithmatex">\( x - 2 = 0 \)</span> or <span class="arithmatex">\( x - 3 = 0 \)</span>, which leads to the solutions <span class="arithmatex">\( x = 2 \)</span> or <span class="arithmatex">\( x = 3 \)</span>.</p>
+<h2 id="solving-by-square-roots">Solving by Square Roots<a class="headerlink" href="#solving-by-square-roots" title="Permanent link">&para;</a></h2>
+<p>If an equation is in the form <span class="arithmatex">\( x^2 = a \)</span>, we can solve it by taking the <strong>square root</strong> of both sides. Because squaring a negative number also results in a positive number, we must account for both possibilities.</p>
+<p><strong>Example:</strong>
+To solve <span class="arithmatex">\( x^2 = 16 \)</span>, take the square root of both sides:
+[ x = \pm \sqrt{16} ]
+[ x = 4 \text{ or } x = -4 ]</p>
+<h2 id="comparing-function-models">Comparing Function Models<a class="headerlink" href="#comparing-function-models" title="Permanent link">&para;</a></h2>
+<p>As we progress, we will learn to compare different types of mathematical models. For instance, a <strong>linear model</strong> grows at a constant rate, resulting in a straight line on a graph. In contrast, an <strong>exponential model</strong> grows by a constant percentage, creating a curve that becomes progressively steeper. Being able to distinguish between these models is crucial for making accurate predictions in science and economics.</p>
+<h2 id="arithmetic-sequences">Arithmetic Sequences<a class="headerlink" href="#arithmetic-sequences" title="Permanent link">&para;</a></h2>
+<p>An <strong>arithmetic sequence</strong> is a list of numbers where the difference between any two consecutive terms is constant. This constant difference is called the <strong>common difference</strong>.</p>
+<p>Example: <span class="arithmatex">\( 2, 5, 8, 11, \dots \)</span>
+Here, the common difference is <span class="arithmatex">\( 3 \)</span>.</p>
+<h3 id="worked-example-finding-a-term">Worked Example: Finding a Term<a class="headerlink" href="#worked-example-finding-a-term" title="Permanent link">&para;</a></h3>
+<p>Find the 10th term of the sequence <span class="arithmatex">\( 5, 9, 13, 17, \dots \)</span></p>
+<ol>
+<li><strong>Identify the first term (<span class="arithmatex">\( a_1 \)</span>)</strong>: <span class="arithmatex">\( a_1 = 5 \)</span></li>
+<li><strong>Identify the common difference (<span class="arithmatex">\( d \)</span>)</strong>: <span class="arithmatex">\( d = 4 \)</span></li>
+<li><strong>Use the formula</strong> <span class="arithmatex">\( a_n = a_1 + (n-1)d \)</span>:
+   [ a_{10} = 5 + (10-1)4 ]
+   [ a_{10} = 5 + 9(4) ]
+   [ a_{10} = 5 + 36 = 41 ]</li>
+</ol>
+<p>The 10th term is <span class="arithmatex">\( 41 \)</span>.</p>
+<h2 id="arithmetic-means">Arithmetic Means<a class="headerlink" href="#arithmetic-means" title="Permanent link">&para;</a></h2>
+<p><strong>Arithmetic means</strong> are the terms that sit between two given numbers in an arithmetic sequence. For example, in the sequence <span class="arithmatex">\( 2, 4, 6, 8 \)</span>, the numbers <span class="arithmatex">\( 4 \)</span> and <span class="arithmatex">\( 6 \)</span> are the arithmetic means between <span class="arithmatex">\( 2 \)</span> and <span class="arithmatex">\( 8 \)</span>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: List of Chapters">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                List of Chapters
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-algebraic-expressions-and-functions/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Algebraic Expressions and Functions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2. Algebraic Expressions and Functions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

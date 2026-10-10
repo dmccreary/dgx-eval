@@ -1,0 +1,2924 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/02-variables-expressions-polynomial-foundations/">
+      
+      
+        <link rel="prev" href="../01-foundational-concepts-and-properties/">
+      
+      
+        <link rel="next" href="../03-factoring-techniques-polynomial-division/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>2. Variables, Expressions, and Polynomial Foundations - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#variables-expressions-and-polynomial-foundations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Variables, Expressions, and Polynomial Foundations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            qwen3.6:35b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5_4" id="__nav_8_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundational-concepts-and-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundational Number Concepts and Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2. Variables, Expressions, and Polynomial Foundations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2. Variables, Expressions, and Polynomial Foundations
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is a Variable?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Is a Variable?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-parts-of-an-algebraic-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Parts of an Algebraic Expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algebraic-terms-and-how-they-relate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algebraic Terms and How They Relate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algebraic Terms and How They Relate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monomials-binomials-and-trinomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monomials, Binomials, and Trinomials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#like-terms-and-unlike-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Like Terms and Unlike Terms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-polynomials-degree-and-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Polynomials: Degree and Classification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Polynomials: Degree and Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluating-a-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluating a Polynomial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-and-subtracting-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding and Subtracting Polynomials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expanding-expressions-with-the-distributive-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanding Expressions with the Distributive Property
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factoring-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factoring Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Factoring Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-factoring-strategy-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Factoring Strategy Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponentiation-a-quick-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponentiation: A Quick Review
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-algebraic-expressions-from-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing Algebraic Expressions from Words
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-and-subtracting-polynomials-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding and Subtracting Polynomials in Practice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplying-monomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplying Monomials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributing-monomials-across-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributing Monomials Across Polynomials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rational-exponents-and-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rational Exponents and Radicals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scientific-notation-and-significant-figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scientific Notation and Significant Figures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-factoring-techniques-polynomial-division/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Factoring Techniques and Polynomial Division
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-linear-equations-inequalities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Linear Equations and Inequalities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-linear-relationships-coordinate-graphing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linear Relationships and Coordinate Graphing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-functions-relations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Functions and Relations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-exponential-functions-sequences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Exponential Functions and Sequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-sequences-and-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Sequences and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-mathematical-modeling-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Mathematical Modeling and Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-radicals-and-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Radicals and Radical Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is a Variable?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Is a Variable?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-parts-of-an-algebraic-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Parts of an Algebraic Expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algebraic-terms-and-how-they-relate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algebraic Terms and How They Relate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algebraic Terms and How They Relate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monomials-binomials-and-trinomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monomials, Binomials, and Trinomials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#like-terms-and-unlike-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Like Terms and Unlike Terms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-polynomials-degree-and-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Polynomials: Degree and Classification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Polynomials: Degree and Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluating-a-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluating a Polynomial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-and-subtracting-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding and Subtracting Polynomials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expanding-expressions-with-the-distributive-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanding Expressions with the Distributive Property
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factoring-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factoring Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Factoring Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-factoring-strategy-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Factoring Strategy Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponentiation-a-quick-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponentiation: A Quick Review
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-algebraic-expressions-from-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing Algebraic Expressions from Words
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-and-subtracting-polynomials-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding and Subtracting Polynomials in Practice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplying-monomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplying Monomials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributing-monomials-across-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributing Monomials Across Polynomials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rational-exponents-and-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rational Exponents and Radicals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scientific-notation-and-significant-figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scientific Notation and Significant Figures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/qwen3.6-35b/chapters/02-variables-expressions-polynomial-foundations/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="variables-expressions-and-polynomial-foundations">Variables, Expressions, and Polynomial Foundations<a class="headerlink" href="#variables-expressions-and-polynomial-foundations" title="Permanent link">&para;</a></h1>
+<hr />
+<p>title: "Chapter 2: Variables, Expressions, and Polynomial Foundations"
+description: "Introduces variables as the building blocks of algebra, with worked examples on evaluating expressions, classifying polynomials, factoring, and scientific notation."
+generated_by: claude skill chapter-content-generator
+date: "2026-10-10 14:53:57"
+version: 1.11</p>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter builds the language of algebra by introducing variables — the core building blocks of all future work. Students learn to evaluate and simplify numerical expressions using order of operations, write and expand algebraic expressions, classify polynomials by degree and number of terms, and perform basic operations on polynomials. Scientific notation provides an additional tool for handling very large or small numbers encountered in real-world applications.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 25 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>CIS Score</th>
+<th>Tier</th>
+<th>Target Words</th>
+<th>Required Elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variables</td>
+<td>578</td>
+<td>A</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Algebraic Expressions</td>
+<td>93</td>
+<td>A</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Coefficients</td>
+<td>192</td>
+<td>A</td>
+<td>500-750</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Constants</td>
+<td>194</td>
+<td>A</td>
+<td>500-750</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Algebraic Terms</td>
+<td>98</td>
+<td>A</td>
+<td>500-750</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Exponentiation</td>
+<td>70</td>
+<td>A</td>
+<td>500-750</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Like Terms</td>
+<td>3</td>
+<td>B</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Evaluating Expressions</td>
+<td>33</td>
+<td>A</td>
+<td>500-750</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Expanding Expressions</td>
+<td>17</td>
+<td>B</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Factoring Expressions</td>
+<td>39</td>
+<td>A</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Monomial</td>
+<td>9</td>
+<td>B</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Binomial</td>
+<td>9</td>
+<td>B</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Trinomial</td>
+<td>9</td>
+<td>B</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Polynomial Degree</td>
+<td>6</td>
+<td>B</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Evaluating Polynomials</td>
+<td>4</td>
+<td>B</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Rational Exponents</td>
+<td>28</td>
+<td>B</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Unlike Terms</td>
+<td>1</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Writing Algebraic Expressions</td>
+<td>1</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Polynomial Classification</td>
+<td>1</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Adding Polynomials</td>
+<td>2</td>
+<td>C</td>
+<td>120-200</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Subtracting Polynomials</td>
+<td>1</td>
+<td>C</td>
+<td>120-200</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Multiplying Monomials</td>
+<td>2</td>
+<td>C</td>
+<td>120-200</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Distributing Monomials</td>
+<td>1</td>
+<td>C</td>
+<td>120-200</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Significant Figures</td>
+<td>1</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Scientific Notation</td>
+<td>2</td>
+<td>C</td>
+<td>120-200</td>
+<td>worked example</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Budgeted word count: 7,560 — 11,800 words</strong> (sum of per-concept targets)</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:
+- <a href="../01-foundational-concepts-and-properties/">Chapter 1: Foundational Number Concepts and Properties</a></p>
+<p>Specifically, you need to be comfortable with the following ideas from Chapter 1:</p>
+<ul>
+<li><strong>Real numbers</strong> — the set of all numbers on the number line, including integers, fractions, and decimals.</li>
+<li><strong>Arithmetic operations</strong> — adding, subtracting, multiplying, and dividing real numbers.</li>
+<li><strong>Order of Operations</strong> — the rule that dictates the sequence in which mathematical operations are evaluated (parentheses first, then exponents, then multiplication and division from left to right, and finally addition and subtraction from left to right).</li>
+<li><strong>The Distributive Property</strong> — the rule that <span class="arithmatex">\(a(b + c) = ab + ac\)</span>, allowing you to multiply a single term across a sum inside parentheses.</li>
+</ul>
+<p>Without these foundations, the algebraic reasoning in this chapter will feel arbitrary. This chapter is about taking those arithmetic tools and generalizing them with letters that represent unknown numbers.</p>
+<hr />
+<h2 id="what-is-a-variable">What Is a Variable?<a class="headerlink" href="#what-is-a-variable" title="Permanent link">&para;</a></h2>
+<p>A <strong>variable</strong> is a letter or symbol that stands for an unknown number. In everyday language you might say, "I'm thinking of a number." In algebra, that number gets a name — typically <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, or <span class="arithmatex">\(z\)</span> — so we can write rules about it and reason with it just like any other number.</p>
+<p>Variables are the single most important concept in this book because they appear in nearly every definition and formula that follows. They let us move from computing specific answers (what is <span class="arithmatex">\(3 + 5\)</span>?) to describing general patterns (what is <span class="arithmatex">\(a + b\)</span>?). This shift from arithmetic to algebra is the defining moment of an Algebra I course.</p>
+<p><strong>Worked Example 1: Translating a Real-World Statement into an Expression with a Variable</strong></p>
+<p>A car rental company charges $45 per day plus a one-time fee of $20 for insurance. You want to know the total cost if you rent the car for <span class="arithmatex">\(d\)</span> days.</p>
+<p><em>Step 1 — Identify what is known and what varies.</em>
+- The daily rate is fixed at $45/day.
+- The insurance fee is fixed at $20 (one time).
+- The number of days, <span class="arithmatex">\(d\)</span>, can change depending on your trip.</p>
+<p><em>Step 2 — Write the cost for each part.</em>
+The daily charge is $45 times <span class="arithmatex">\(d\)</span> days: this gives the expression <span class="arithmatex">\(45d\)</span>. In algebra, when a number is written directly next to a variable, it means multiplication. The one-time fee is simply 20.</p>
+<p><em>Step 3 — Combine the parts.</em></p>
+<div class="arithmatex">\[
+\text{Total cost} = 45d + 20
+\]</div>
+<p>This single expression works for any value of <span class="arithmatex">\(d\)</span>. If you rent the car for 3 days, substitute <span class="arithmatex">\(d = 3\)</span> to get $155. If <span class="arithmatex">\(d = 7\)</span>, you get $335. The expression captures every possible scenario at once.</p>
+<p><strong>Why this matters:</strong> Before variables, you needed a separate calculation for each trip length. Now one line of algebra does the work of infinite arithmetic problems. That is the power of a variable.</p>
+<h3 id="the-parts-of-an-algebraic-expression">The Parts of an Algebraic Expression<a class="headerlink" href="#the-parts-of-an-algebraic-expression" title="Permanent link">&para;</a></h3>
+<p>Before we can manipulate expressions with confidence, we need to name their components. Consider the following expression:</p>
+<div class="arithmatex">\[
+3x^2 - 7x + 4
+\]</div>
+<p>This expression has three pieces separated by addition and subtraction signs: <span class="arithmatex">\(3x^2\)</span>, <span class="arithmatex">\(-7x\)</span>, and <span class="arithmatex">\(4\)</span>. Each piece is called a <strong>term</strong>. In algebra, we treat subtraction as adding the opposite, so this expression is more precisely written as <span class="arithmatex">\(3x^2 + (-7x) + 4\)</span>.</p>
+<p>A <strong>coefficient</strong> is the numerical factor of a term that contains a variable. In the expression above:
+- The coefficient of <span class="arithmatex">\(3x^2\)</span> is 3.
+- The coefficient of <span class="arithmatex">\(-7x\)</span> is <span class="arithmatex">\(-7\)</span> (the sign is part of the coefficient).
+- The third piece, 4, has no variable attached. It is called a <strong>constant</strong> because its value never changes.</p>
+<p>The constant term and the terms containing variables serve different roles. The constant shifts the whole expression up or down on a number line but does not affect how the expression grows or shrinks as the variable changes. The coefficient determines how fast the expression's value changes with respect to the variable.</p>
+<p><strong>Worked Example 2: Identifying Coefficients and Constants</strong></p>
+<p>For each term below, state its coefficient and whether it is a variable term or a constant.</p>
+<ol>
+<li><span class="arithmatex">\(8y\)</span></li>
+<li><span class="arithmatex">\(-\frac{3}{4}m^2\)</span></li>
+<li>15</li>
+<li><span class="arithmatex">\(-n\)</span></li>
+</ol>
+<p><em>Solution:</em></p>
+<ol>
+<li>The coefficient is 8; it is a variable term because it contains the letter <span class="arithmatex">\(y\)</span>.</li>
+<li>The coefficient is <span class="arithmatex">\(-\frac{3}{4}\)</span>; it is a variable term because it contains <span class="arithmatex">\(m^2\)</span>. Note that when a fraction precedes a variable, the negative sign belongs to the fraction.</li>
+<li>The number 15 has no variable, so it is a constant. (You can think of its coefficient as 0 for any hidden variable.)</li>
+<li>The expression <span class="arithmatex">\(-n\)</span> means <span class="arithmatex">\(-1 \cdot n\)</span>. Its coefficient is <span class="arithmatex">\(-1\)</span>, and it is a variable term. The coefficient <span class="arithmatex">\(-1\)</span> is often omitted in writing because <span class="arithmatex">\(-n\)</span> is cleaner than <span class="arithmatex">\(-1n\)</span>.</li>
+</ol>
+<p><strong>Worked Example 3: Extracting the Parts of a Multi-Term Expression</strong></p>
+<p>Consider the expression <span class="arithmatex">\(2a^3 - 5a + 7a^2 - 9\)</span>. Identify every term, its coefficient, and whether it is a variable term or constant.</p>
+<p><em>Solution:</em> First rewrite with all subtractions shown as additions to make terms visible:</p>
+<div class="arithmatex">\[
+2a^3 + (-5a) + 7a^2 + (-9)
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Coefficient</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(2a^3\)</span></td>
+<td>2</td>
+<td>Variable term (contains <span class="arithmatex">\(a^3\)</span>)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(-5a\)</span></td>
+<td><span class="arithmatex">\(-5\)</span></td>
+<td>Variable term (contains <span class="arithmatex">\(a\)</span>)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(7a^2\)</span></td>
+<td>7</td>
+<td>Variable term (contains <span class="arithmatex">\(a^2\)</span>)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(-9\)</span></td>
+<td>None (it is the constant)</td>
+<td>Constant</td>
+</tr>
+</tbody>
+</table>
+<p>This table illustrates how each piece contributes to the whole. Notice that this expression has four terms but three different powers of <span class="arithmatex">\(a\)</span>: <span class="arithmatex">\(a^3\)</span>, <span class="arithmatex">\(a^2\)</span>, and <span class="arithmatex">\(a\)</span>. The same variable can appear multiple times in one expression with different exponents, and each appearance creates a distinct term.</p>
+<hr />
+<h2 id="algebraic-terms-and-how-they-relate">Algebraic Terms and How They Relate<a class="headerlink" href="#algebraic-terms-and-how-they-relate" title="Permanent link">&para;</a></h2>
+<p>An <strong>algebraic term</strong> is a single number, a single variable, or a product of numbers and variables raised to powers. Each of the following is an algebraic term:</p>
+<ul>
+<li><span class="arithmatex">\(5\)</span> (a pure number)</li>
+<li><span class="arithmatex">\(x\)</span> (a single variable)</li>
+<li><span class="arithmatex">\(3xy^2\)</span> (three numbers multiplied: 3, <span class="arithmatex">\(x\)</span>, and <span class="arithmatex">\(y^2\)</span>)</li>
+<li><span class="arithmatex">\(-\frac{1}{2}a^4b\)</span> (includes a fraction, two variables, and an exponent)</li>
+</ul>
+<p>Terms that are combined by addition or subtraction form <strong>algebraic expressions</strong>. A polynomial is a special kind of algebraic expression built from terms using only non-negative integer exponents on the variables. The expression <span class="arithmatex">\(3x^2 - 7x + 4\)</span> is a polynomial; <span class="arithmatex">\(\frac{1}{x} + 2\)</span> is not, because the variable appears in a denominator (which means it has exponent <span class="arithmatex">\(-1\)</span>, a negative integer).</p>
+<h3 id="monomials-binomials-and-trinomials">Monomials, Binomials, and Trinomials<a class="headerlink" href="#monomials-binomials-and-trinomials" title="Permanent link">&para;</a></h3>
+<p>Polynomials are named by how many terms they contain:</p>
+<table>
+<thead>
+<tr>
+<th>Number of Terms</th>
+<th>Name</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 term</td>
+<td><strong>Monomial</strong></td>
+<td><span class="arithmatex">\(4x^3\)</span></td>
+</tr>
+<tr>
+<td>2 terms</td>
+<td><strong>Binomial</strong></td>
+<td><span class="arithmatex">\(x + 5\)</span></td>
+</tr>
+<tr>
+<td>3 terms</td>
+<td><strong>Trinomial</strong></td>
+<td><span class="arithmatex">\(2a^2 - 3a + 1\)</span></td>
+</tr>
+<tr>
+<td>4 or more terms</td>
+<td>Polynomial (by term count)</td>
+<td><span class="arithmatex">\(p^4 + p^3 - 2p^2 + p - 7\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>A monomial has one piece. A binomial splits that piece into two. A trinomial splits it further. The name tells you nothing about the size of the coefficients or the exponents — only about how many separate terms are joined by addition or subtraction.</p>
+<p><strong>Worked Example 4: Classifying Terms by Count</strong></p>
+<p>State the number of terms and classify each expression as a monomial, binomial, trinomial, or other polynomial.</p>
+<ol>
+<li><span class="arithmatex">\(9y^2\)</span></li>
+<li><span class="arithmatex">\(x - 3\)</span></li>
+<li><span class="arithmatex">\(a^2 + 2a - 7\)</span></li>
+<li><span class="arithmatex">\(5m^3 - m^2 + 4m - 2\)</span></li>
+</ol>
+<p><em>Solution:</em></p>
+<ol>
+<li>One term (<span class="arithmatex">\(9y^2\)</span>): <strong>monomial</strong>.</li>
+<li>Two terms (<span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(-3\)</span>): <strong>binomial</strong>.</li>
+<li>Three terms (<span class="arithmatex">\(a^2\)</span>, <span class="arithmatex">\(2a\)</span>, and <span class="arithmatex">\(-7\)</span>): <strong>trinomial</strong>.</li>
+<li>Four terms (<span class="arithmatex">\(5m^3\)</span>, <span class="arithmatex">\(-m^2\)</span>, <span class="arithmatex">\(4m\)</span>, and <span class="arithmatex">\(-2\)</span>): polynomial with four terms (no special name).</li>
+</ol>
+<p>When a term has a negative sign, count it as one term. Do not count the minus sign separately. The expression <span class="arithmatex">\(x - 3\)</span> is <span class="arithmatex">\(x + (-3)\)</span>, which is two terms, not three.</p>
+<h3 id="like-terms-and-unlike-terms">Like Terms and Unlike Terms<a class="headerlink" href="#like-terms-and-unlike-terms" title="Permanent link">&para;</a></h3>
+<p><strong>Like terms</strong> are terms that have exactly the same variable factors (same variables raised to the same powers). Only like terms can be combined through addition or subtraction.</p>
+<ul>
+<li><span class="arithmatex">\(3x^2\)</span> and <span class="arithmatex">\(-7x^2\)</span> <strong>are like terms</strong>: same variable (<span class="arithmatex">\(x\)</span>), same exponent (2).</li>
+<li><span class="arithmatex">\(4xy\)</span> and <span class="arithmatex">\(5yx\)</span> <strong>are like terms</strong>: <span class="arithmatex">\(xy\)</span> and <span class="arithmatex">\(yx\)</span> are the same product because multiplication is commutative.</li>
+<li><span class="arithmatex">\(2a^2\)</span> and <span class="arithmatex">\(3a^3\)</span> <strong>are not like terms</strong>: same variable but different exponents.</li>
+<li><span class="arithmatex">\(6b\)</span> and <span class="arithmatex">\(6c\)</span> <strong>are not like terms</strong>: different variables.</li>
+</ul>
+<p><strong>Unlike terms</strong> cannot be combined into a single term. The expression <span class="arithmatex">\(3x + 5y\)</span> is already in its simplest form because the variable parts <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> do not match.</p>
+<p><strong>Worked Example 5: Sorting Terms by Like vs. Unlike</strong></p>
+<p>Given the list of terms below, group them into sets of like terms and name any that are unlike every other term.</p>
+<div class="arithmatex">\[
+4p^2,\; -3q,\; 7p^2,\; q,\; -2r^3,\; 5q
+\]</div>
+<p><em>Solution:</em>
+- Like terms: <span class="arithmatex">\(4p^2\)</span> and <span class="arithmatex">\(7p^2\)</span> share the factor <span class="arithmatex">\(p^2\)</span>.
+- Like terms: <span class="arithmatex">\(-3q\)</span>, <span class="arithmatex">\(q\)</span>, and <span class="arithmatex">\(5q\)</span> all share the factor <span class="arithmatex">\(q\)</span>. (Note that <span class="arithmatex">\(q = 1q\)</span>.)
+- Unlike every other term: <span class="arithmatex">\(-2r^3\)</span> — no other term contains the variable <span class="arithmatex">\(r\)</span>.</p>
+<p>To combine like terms, add or subtract their coefficients while keeping the variable part unchanged. For example, <span class="arithmatex">\(4p^2 + 7p^2 = (4 + 7)p^2 = 11p^2\)</span>, and <span class="arithmatex">\(-3q + q + 5q = (-3 + 1 + 5)q = 3q\)</span>. The unlike term <span class="arithmatex">\(-2r^3\)</span> stays alone.</p>
+<hr />
+<h2 id="understanding-polynomials-degree-and-classification">Understanding Polynomials: Degree and Classification<a class="headerlink" href="#understanding-polynomials-degree-and-classification" title="Permanent link">&para;</a></h2>
+<p>Every polynomial has a <strong>degree</strong>, which is the highest exponent on the variable among all of its terms (for polynomials in one variable). The degree tells you important things about the behavior of the polynomial, including how many roots it can have and what shape its graph takes.</p>
+<table>
+<thead>
+<tr>
+<th>Degree</th>
+<th>Name</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Constant</td>
+<td><span class="arithmatex">\(7\)</span></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Linear</td>
+<td><span class="arithmatex">\(3x + 2\)</span></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Quadratic</td>
+<td><span class="arithmatex">\(x^2 - 5x + 6\)</span></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cubic</td>
+<td><span class="arithmatex">\(2t^3 + t - 4\)</span></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quartic</td>
+<td><span class="arithmatex">\(x^4 - 3x^2 + 1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Worked Example 6: Finding the Degree of a Polynomial</strong></p>
+<p>State the degree and classify by term count for each polynomial.</p>
+<ol>
+<li><span class="arithmatex">\(5x^3 - 2x + 9\)</span></li>
+<li><span class="arithmatex">\(-4y^2\)</span></li>
+<li><span class="arithmatex">\(7z - 1\)</span></li>
+<li><span class="arithmatex">\(12\)</span></li>
+</ol>
+<p><em>Solution:</em></p>
+<ol>
+<li>The exponents are 3, 1 (from <span class="arithmatex">\(x = x^1\)</span>), and 0 (from <span class="arithmatex">\(9 = 9x^0\)</span>). The highest is 3: <strong>cubic trinomial</strong>.</li>
+<li>The exponent is 2: <strong>quadratic monomial</strong>. (The coefficient <span class="arithmatex">\(-4\)</span> does not affect the degree.)</li>
+<li>The exponent on <span class="arithmatex">\(z\)</span> is 1: <strong>linear binomial</strong>.</li>
+<li>The number 12 has no variable, which means its exponent is 0: <strong>constant monomial</strong> (degree 0).</li>
+</ol>
+<h3 id="evaluating-a-polynomial">Evaluating a Polynomial<a class="headerlink" href="#evaluating-a-polynomial" title="Permanent link">&para;</a></h3>
+<p>To <strong>evaluate a polynomial</strong>, substitute a specific number for the variable and compute the result. This is the process of turning a general algebraic expression into a concrete arithmetic answer.</p>
+<p>Consider the polynomial <span class="arithmatex">\(P(x) = 2x^3 - x^2 + 4x - 6\)</span>. To find <span class="arithmatex">\(P(3)\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+P(3) &amp;= 2(3)^3 - (3)^2 + 4(3) - 6 \\
+&amp;= 2(27) - 9 + 12 - 6 \\
+&amp;= 54 - 9 + 12 - 6 \\
+&amp;= 51
+\end{aligned}
+\]</div>
+<p><strong>Worked Example 7: Evaluating a Polynomial at Two Values</strong></p>
+<p>Evaluate <span class="arithmatex">\(Q(t) = t^3 - 2t^2 + t\)</span> at <span class="arithmatex">\(t = 0\)</span> and <span class="arithmatex">\(t = -1\)</span>.</p>
+<p><em>Solution for <span class="arithmatex">\(t = 0\)</span>:</em></p>
+<div class="arithmatex">\[
+Q(0) = (0)^3 - 2(0)^2 + (0) = 0 - 0 + 0 = 0
+\]</div>
+<p>This result is expected: whenever every term of a polynomial contains the variable, substituting zero always gives zero.</p>
+<p><em>Solution for <span class="arithmatex">\(t = -1\)</span>:</em></p>
+<div class="arithmatex">\[
+\begin{aligned}
+Q(-1) &amp;= (-1)^3 - 2(-1)^2 + (-1) \\
+&amp;= -1 - 2(1) + (-1) \\
+&amp;= -1 - 2 - 1 \\
+&amp;= -4
+\end{aligned}
+\]</div>
+<p>Key observation: <span class="arithmatex">\((-1)^3 = -1\)</span> (negative because the exponent is odd) but <span class="arithmatex">\((-1)^2 = 1\)</span> (positive because the exponent is even). The sign of a negative base alternates with each successive power.</p>
+<hr />
+<h2 id="adding-and-subtracting-polynomials">Adding and Subtracting Polynomials<a class="headerlink" href="#adding-and-subtracting-polynomials" title="Permanent link">&para;</a></h2>
+<p>Adding polynomials means combining all like terms across both expressions. When you add, simply collect terms with matching variable parts and add their coefficients.</p>
+<p><strong>Worked Example 8: Adding Two Polynomials</strong></p>
+<p>Add <span class="arithmatex">\((3x^2 - 5x + 7)\)</span> and <span class="arithmatex">\((2x^2 + 4x - 9)\)</span>.</p>
+<p><em>Solution:</em> Group like terms together, then add coefficients:</p>
+<div class="arithmatex">\[
+(3x^2 + 2x^2) + (-5x + 4x) + (7 + (-9)) = 5x^2 - x - 2
+\]</div>
+<p>Each column of the calculation adds terms that share the same variable power. The <span class="arithmatex">\(x^2\)</span> terms go with <span class="arithmatex">\(x^2\)</span> terms, the <span class="arithmatex">\(x\)</span> terms with <span class="arithmatex">\(x\)</span> terms, and constants with constants.</p>
+<p><strong>Worked Example 9: Subtracting Two Polynomials</strong></p>
+<p>Subtract <span class="arithmatex">\((4a^3 - 2a + 5)\)</span> from <span class="arithmatex">\((6a^3 + a^2 - 3a + 1)\)</span>.</p>
+<p><em>Solution:</em> Write the subtraction explicitly, then distribute the negative sign to every term in the polynomial being subtracted:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+(6a^3 + a^2 - 3a + 1) - (4a^3 - 2a + 5) &amp;= 6a^3 + a^2 - 3a + 1 - 4a^3 + 2a - 5 \\
+&amp;= (6a^3 - 4a^3) + a^2 + (-3a + 2a) + (1 - 5) \\
+&amp;= 2a^3 + a^2 - a - 4
+\end{aligned}
+\]</div>
+<p>The key step is distributing the minus sign: <span class="arithmatex">\(-(4a^3 - 2a + 5)\)</span> becomes <span class="arithmatex">\(-4a^3 + 2a - 5\)</span>. Every sign inside the parentheses flips. A common error is to flip only the first term's sign, leaving the others unchanged.</p>
+<hr />
+<h2 id="expanding-expressions-with-the-distributive-property">Expanding Expressions with the Distributive Property<a class="headerlink" href="#expanding-expressions-with-the-distributive-property" title="Permanent link">&para;</a></h2>
+<p><strong>Expanding an expression</strong> means using the distributive property to remove parentheses. The rule is:</p>
+<div class="arithmatex">\[
+a(b + c) = ab + ac
+\]</div>
+<p>Multiply the outside term by each term inside the parentheses, then combine like terms if any appear.</p>
+<p><strong>Worked Example 10: Expanding a Monomial Times a Polynomial</strong></p>
+<p>Expand <span class="arithmatex">\(3x(2x^2 - 5x + 4)\)</span>.</p>
+<p><em>Solution:</em> Multiply <span class="arithmatex">\(3x\)</span> by each of the three terms inside:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+3x(2x^2) &amp;= 6x^3 \\
+3x(-5x) &amp;= -15x^2 \\
+3x(4) &amp;= 12x
+\end{aligned}
+\]</div>
+<p>Assembling the result:</p>
+<div class="arithmatex">\[
+3x(2x^2 - 5x + 4) = 6x^3 - 15x^2 + 12x
+\]</div>
+<p>When multiplying terms with variables, multiply the coefficients and add the exponents of any matching bases. For <span class="arithmatex">\(3x \cdot (-5x)\)</span>, that is <span class="arithmatex">\(3 \cdot (-5) = -15\)</span> for the coefficient, and <span class="arithmatex">\(x^1 \cdot x^1 = x^{1+1} = x^2\)</span> for the variable part.</p>
+<hr />
+<h2 id="factoring-expressions">Factoring Expressions<a class="headerlink" href="#factoring-expressions" title="Permanent link">&para;</a></h2>
+<p><strong>Factoring an expression</strong> means writing it as a product of simpler expressions — essentially expanding in reverse. The most common starting point is to pull out the <strong>greatest common factor (GCF)</strong> shared by all terms.</p>
+<p>Before we examine a visual summary of factoring strategies, note that every factoring problem begins with one question: <em>Do all the terms share a common factor?</em> If yes, factor it out first. Then look at what remains inside the parentheses to decide which pattern applies next.</p>
+<h4 id="diagram-factoring-strategy-map">Diagram: Factoring Strategy Map<a class="headerlink" href="#diagram-factoring-strategy-map" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Factoring Strategy Map</summary>
+<p>Type: graph-model
+<strong>sim-id:</strong> factoring-strategy-map<br/>
+<strong>Library:</strong> vis-network<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> classify<br/>
+<strong>Learning Objective:</strong> The learner will classify a given algebraic expression into one of four factoring categories by clicking on the correct branch in a concept map.</p>
+<p><strong>Prerequisites:</strong> greatest common factor, difference of squares, perfect square trinomial, trinomials (all defined above).</p>
+<p><strong>Evidence of Mastery:</strong> For 10 sample expressions, the learner clicks the matching category node. A click is correct when it matches the answer key below. Mastery is 8 of 10 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Trying to factor by GCF before checking if all terms share a common factor. (2) Confusing difference-of-squares with sum-of-squares (which does not factor over the reals). (3) Misidentifying a perfect square trinomial because the signs on the middle and constant terms are wrong.</p>
+<p><strong>Instructional Rationale:</strong> Understand-level classification requires the learner to examine each expression's structure and map it to the correct factoring pattern. A clickable concept map makes the classification process explicit, forcing the learner to compare structural features rather than guess.</p>
+<p><strong>Content:</strong></p>
+<p>The learner sees a central node "Factoring Strategy" connected to four branches:</p>
+<ol>
+<li><strong>GCF</strong> — All terms share a common numerical or variable factor. Example: <span class="arithmatex">\(6x^2 + 9x = 3x(2x + 3)\)</span>.</li>
+<li><strong>Difference of Squares</strong> — Two squared terms separated by subtraction. Pattern: <span class="arithmatex">\(a^2 - b^2 = (a - b)(a + b)\)</span>. Example: <span class="arithmatex">\(x^2 - 16 = (x - 4)(x + 4)\)</span>.</li>
+<li><strong>Perfect Square Trinomial</strong> — Three terms matching the pattern <span class="arithmatex">\(a^2 \pm 2ab + b^2\)</span>. The first and last terms are perfect squares, and the middle term is twice the product of their roots. Examples: <span class="arithmatex">\(x^2 + 6x + 9 = (x + 3)^2\)</span> and <span class="arithmatex">\(x^2 - 10x + 25 = (x - 5)^2\)</span>.</li>
+<li><strong>General Trinomial</strong> — Three terms that do not match the above patterns. Pattern: <span class="arithmatex">\(ax^2 + bx + c\)</span>, factored as <span class="arithmatex">\((dx + e)(fx + g)\)</span>. Example: <span class="arithmatex">\(2x^2 + 7x + 3 = (2x + 1)(x + 3)\)</span>.</li>
+</ol>
+<p>Answer key for 10 expressions:
+| # | Expression | Category | Why |
+|---|------------|----------|-----|
+| 1 | <span class="arithmatex">\(8x^2 + 12x\)</span> | GCF | Both terms share the factor 4x |
+| 2 | <span class="arithmatex">\(x^2 - 25\)</span> | Difference of Squares | Two squares separated by minus: <span class="arithmatex">\(x^2 - 5^2\)</span> |
+| 3 | <span class="arithmatex">\(x^2 + 10x + 25\)</span> | Perfect Square Trinomial | First and last are squares; middle = 2 · x · 5 = 10x |
+| 4 | <span class="arithmatex">\(3y^2 + y\)</span> | GCF | Both terms share the factor y |
+| 5 | <span class="arithmatex">\(4a^2 - 9b^2\)</span> | Difference of Squares | <span class="arithmatex">\((2a)^2 - (3b)^2 = (2a-3b)(2a+3b)\)</span> |
+| 6 | <span class="arithmatex">\(x^2 + 8x + 12\)</span> | General Trinomial | First and last are squares but 8 ≠ 2·1·√12, so not a perfect square |
+| 7 | <span class="arithmatex">\(5z - 15\)</span> | GCF | Both terms share the factor 5: 5(z - 3) |
+| 8 | <span class="arithmatex">\(m^2 - 36\)</span> | Difference of Squares | <span class="arithmatex">\(m^2 - 6^2 = (m-6)(m+6)\)</span> |
+| 9 | <span class="arithmatex">\(x^2 + 14x + 49\)</span> | Perfect Square Trinomial | First and last are squares; middle = 2 · x · 7 = 14x |
+| 10 | <span class="arithmatex">\(2w^2 + w - 6\)</span> | General Trinomial | Three terms, does not match other categories |</p>
+<p><strong>Provenance:</strong> The expressions and answer key are synthetic, written for this chapter.</p>
+<p><strong>Rules:</strong> A difference of squares requires exactly two terms with a subtraction sign between perfect-square terms. A sum of squares <span class="arithmatex">\(a^2 + b^2\)</span> does not factor over the real numbers. A perfect square trinomial has its first term as a perfect square, its last term as a perfect square, and its middle term equal to twice the product of the roots of those squares (with matching sign).</p>
+<p><strong>Learner Activity:</strong>
+1. The learner sees expression 1 (<span class="arithmatex">\(8x^2 + 12x\)</span>) and the four category nodes.
+2. The learner clicks the matching category node.
+3. If correct, a brief confirmation appears and the next expression loads. If wrong, the incorrect node briefly highlights red and the learner is told which of the four patterns does actually match, with the one-sentence reason from the answer key.
+4. After 10 expressions, the learner's score (correct out of 10) is displayed.</p>
+<p><strong>Feedback:</strong> Correct: "Correct." Incorrect: shows the correct category and the "Why" entry from the answer table for that expression. Two attempts per expression; on the second attempt, the model answer is revealed. Score shown at end.</p>
+<p><strong>Starting State:</strong> The concept map with a central node labeled "Factoring Strategy" connected to four category nodes (GCF, Difference of Squares, Perfect Square Trinomial, General Trinomial). Expression 1 is displayed above the map: "<span class="arithmatex">\(8x^2 + 12x\)</span> — which strategy applies?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter's worked examples use GCF (Example 11 below), difference of squares, perfect square trinomials, and general trinomials. This concept map covers exactly those four strategies in the order students should attempt them.</p>
+</details>
+<p><strong>Worked Example 11: Factoring by Greatest Common Factor</strong></p>
+<p>Factor <span class="arithmatex">\(12x^3 + 18x^2\)</span> completely.</p>
+<p><em>Step 1 — Find the GCF of the coefficients.</em> The greatest common factor of 12 and 18 is 6.
+<em>Step 2 — Find the GCF of the variable parts.</em> Both terms contain at least <span class="arithmatex">\(x^2\)</span> (the smaller power of <span class="arithmatex">\(x\)</span>).
+<em>Step 3 — Combine to get the overall GCF.</em> The GCF is <span class="arithmatex">\(6x^2\)</span>.
+<em>Step 4 — Divide each term by the GCF and write the result as a product.</em></p>
+<div class="arithmatex">\[
+12x^3 + 18x^2 = 6x^2(2x + 3)
+\]</div>
+<p>Check your work by expanding: <span class="arithmatex">\(6x^2 \cdot 2x = 12x^3\)</span> and <span class="arithmatex">\(6x^2 \cdot 3 = 18x^2\)</span>. The expansion matches the original expression, confirming the factorization is correct.</p>
+<hr />
+<h2 id="exponentiation-a-quick-review">Exponentiation: A Quick Review<a class="headerlink" href="#exponentiation-a-quick-review" title="Permanent link">&para;</a></h2>
+<p>Exponentiation is a compact way of writing repeated multiplication. In the expression <span class="arithmatex">\(a^n\)</span>, <span class="arithmatex">\(a\)</span> is the <strong>base</strong> and <span class="arithmatex">\(n\)</span> is the <strong>exponent</strong> (also called the <strong>power</strong>). It means: multiply <span class="arithmatex">\(a\)</span> by itself <span class="arithmatex">\(n\)</span> times.</p>
+<div class="arithmatex">\[
+a^n = \underbrace{a \cdot a \cdot a \cdots a}_{n\text{ times}}
+\]</div>
+<p>For example, <span class="arithmatex">\(2^4 = 2 \cdot 2 \cdot 2 \cdot 2 = 16\)</span>. The base is 2 and the exponent (power) is 4.</p>
+<p>The rules for manipulating exponents are essential tools in algebra. Here are the key laws that govern how exponents behave:</p>
+<table>
+<thead>
+<tr>
+<th>Rule Name</th>
+<th>Formula</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product of Powers</td>
+<td><span class="arithmatex">\(a^m \cdot a^n = a^{m+n}\)</span></td>
+<td><span class="arithmatex">\(x^3 \cdot x^4 = x^7\)</span></td>
+</tr>
+<tr>
+<td>Quotient of Powers</td>
+<td><span class="arithmatex">\(\frac{a^m}{a^n} = a^{m-n}\)</span> (for <span class="arithmatex">\(a \neq 0\)</span>)</td>
+<td><span class="arithmatex">\(\frac{y^5}{y^2} = y^3\)</span></td>
+</tr>
+<tr>
+<td>Power of a Power</td>
+<td><span class="arithmatex">\((a^m)^n = a^{m \cdot n}\)</span></td>
+<td><span class="arithmatex">\((x^2)^3 = x^6\)</span></td>
+</tr>
+<tr>
+<td>Power of a Product</td>
+<td><span class="arithmatex">\((ab)^n = a^n \cdot b^n\)</span></td>
+<td><span class="arithmatex">\((2x)^3 = 8x^3\)</span></td>
+</tr>
+<tr>
+<td>Power of a Quotient</td>
+<td><span class="arithmatex">\(\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}\)</span> (for <span class="arithmatex">\(b \neq 0\)</span>)</td>
+<td><span class="arithmatex">\(\left(\frac{x}{3}\right)^2 = \frac{x^2}{9}\)</span></td>
+</tr>
+<tr>
+<td>Zero Exponent</td>
+<td><span class="arithmatex">\(a^0 = 1\)</span> (for <span class="arithmatex">\(a \neq 0\)</span>)</td>
+<td><span class="arithmatex">\(5^0 = 1\)</span></td>
+</tr>
+<tr>
+<td>Negative Exponent</td>
+<td><span class="arithmatex">\(a^{-n} = \frac{1}{a^n}\)</span> (for <span class="arithmatex">\(a \neq 0\)</span>)</td>
+<td><span class="arithmatex">\(x^{-3} = \frac{1}{x^3}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Worked Example 12: Applying the Laws of Exponents</strong></p>
+<p>Simplify each expression. Write your answer with only positive exponents.</p>
+<ol>
+<li><span class="arithmatex">\(x^4 \cdot x^5\)</span></li>
+<li><span class="arithmatex">\(\frac{y^8}{y^3}\)</span></li>
+<li><span class="arithmatex">\((z^2)^4\)</span></li>
+<li><span class="arithmatex">\((3a)^3\)</span></li>
+<li><span class="arithmatex">\(2^{-2}\)</span></li>
+</ol>
+<p><em>Solution:</em></p>
+<ol>
+<li>Product of Powers: add the exponents. <span class="arithmatex">\(x^4 \cdot x^5 = x^{4+5} = x^9\)</span>.</li>
+<li>Quotient of Powers: subtract the exponents. <span class="arithmatex">\(\frac{y^8}{y^3} = y^{8-3} = y^5\)</span>.</li>
+<li>Power of a Power: multiply the exponents. <span class="arithmatex">\((z^2)^4 = z^{2 \cdot 4} = z^8\)</span>.</li>
+<li>Power of a Product: apply the exponent to both factors. <span class="arithmatex">\((3a)^3 = 3^3 \cdot a^3 = 27a^3\)</span>.</li>
+<li>Negative Exponent: flip the base and make the exponent positive. <span class="arithmatex">\(2^{-2} = \frac{1}{2^2} = \frac{1}{4}\)</span>.</li>
+</ol>
+<hr />
+<h2 id="writing-algebraic-expressions-from-words">Writing Algebraic Expressions from Words<a class="headerlink" href="#writing-algebraic-expressions-from-words" title="Permanent link">&para;</a></h2>
+<p>A <strong>written (or algebraic) expression</strong> translates a verbal description into symbols using variables, numbers, and operations. The key skill is recognizing which operation each phrase calls for:</p>
+<table>
+<thead>
+<tr>
+<th>Verbal Phrase</th>
+<th>Operation</th>
+<th>Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"more than", "increased by", "sum of"</td>
+<td>Addition</td>
+<td><span class="arithmatex">\(+\)</span></td>
+</tr>
+<tr>
+<td>"less than", "decreased by", "difference of"</td>
+<td>Subtraction</td>
+<td><span class="arithmatex">\(-\)</span></td>
+</tr>
+<tr>
+<td>"times", "product of", "of" (in context)</td>
+<td>Multiplication</td>
+<td><span class="arithmatex">\(\cdot\)</span> or parentheses</td>
+</tr>
+<tr>
+<td>"divided by", "quotient of"</td>
+<td>Division</td>
+<td><span class="arithmatex">\(/\)</span> or fraction bar</td>
+</tr>
+</tbody>
+</table>
+<p>The order of words can be tricky. The phrase "three more than a number" means <span class="arithmatex">\(n + 3\)</span>, not <span class="arithmatex">\(3 + n\)</span> (although mathematically they are equal, the translation follows the word order). In contrast, "three less than a number" means <span class="arithmatex">\(n - 3\)</span>, <strong>not</strong> <span class="arithmatex">\(3 - n\)</span>. The phrase "less than" reverses the order: you start with the unknown and subtract.</p>
+<hr />
+<h2 id="adding-and-subtracting-polynomials-in-practice">Adding and Subtracting Polynomials in Practice<a class="headerlink" href="#adding-and-subtracting-polynomials-in-practice" title="Permanent link">&para;</a></h2>
+<p>Adding polynomials follows a single rule: combine like terms. Subtracting polynomials requires one extra step — distribute the negative sign across every term of the second polynomial before combining.</p>
+<p><strong>Worked Example 13: A Multi-Step Addition Problem</strong></p>
+<p>Simplify <span class="arithmatex">\((5x^2 - 3x + 8) + (2x^2 + 7x - 4) - (x^2 - x + 6)\)</span>.</p>
+<p><em>Solution:</em> First, remove parentheses by distributing the negative sign in the last group:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;= 5x^2 - 3x + 8 + 2x^2 + 7x - 4 - x^2 + x - 6 \\
+&amp;= (5x^2 + 2x^2 - x^2) + (-3x + 7x + x) + (8 - 4 - 6) \\
+&amp;= 6x^2 + 5x - 2
+\end{aligned}
+\]</div>
+<p>The trickiest part is the subtraction line: <span class="arithmatex">\(-(x^2 - x + 6)\)</span> becomes <span class="arithmatex">\(-x^2 + x - 6\)</span>. Every sign inside flips. Always write out the distributed signs before combining — skipping this step is the single most common error in polynomial arithmetic.</p>
+<hr />
+<h2 id="multiplying-monomials">Multiplying Monomials<a class="headerlink" href="#multiplying-monomials" title="Permanent link">&para;</a></h2>
+<p>To multiply monomials, multiply the coefficients and then apply the product-of-powers rule to each variable separately. When two terms share a base, add the exponents.</p>
+<p><strong>Worked Example 14: Multiplying Two Monomials</strong></p>
+<p>Multiply <span class="arithmatex">\((4x^3)(-6x^2)\)</span>.</p>
+<p><em>Solution:</em>
+- Multiply coefficients: <span class="arithmatex">\(4 \cdot (-6) = -24\)</span>.
+- Add exponents of <span class="arithmatex">\(x\)</span>: <span class="arithmatex">\(x^3 \cdot x^2 = x^{3+2} = x^5\)</span>.</p>
+<div class="arithmatex">\[
+(4x^3)(-6x^2) = -24x^5
+\]</div>
+<p>When multiplying more than two monomials, group all coefficients together and all variables of the same type together before combining. For instance:</p>
+<p><strong>Worked Example 15: Multiplying Three Monomials</strong></p>
+<p>Multiply <span class="arithmatex">\((2a)(-3a^2b)(4ab)\)</span>.</p>
+<p><em>Solution:</em>
+- Coefficients: <span class="arithmatex">\(2 \cdot (-3) \cdot 4 = -24\)</span>.
+- Variable <span class="arithmatex">\(a\)</span>: <span class="arithmatex">\(a^1 \cdot a^2 \cdot a^1 = a^{1+2+1} = a^4\)</span>.
+- Variable <span class="arithmatex">\(b\)</span>: <span class="arithmatex">\(b^1\)</span> appears once, so it stays as <span class="arithmatex">\(b\)</span>.</p>
+<div class="arithmatex">\[
+(2a)(-3a^2b)(4ab) = -24a^4b
+\]</div>
+<hr />
+<h2 id="distributing-monomials-across-polynomials">Distributing Monomials Across Polynomials<a class="headerlink" href="#distributing-monomials-across-polynomials" title="Permanent link">&para;</a></h2>
+<p>Distributing a monomial through a polynomial is simply applying the distributive property with one term on the outside and multiple terms inside. Multiply the outside term by every inside term, then combine like terms if any appear in the result.</p>
+<p><strong>Worked Example 16: Distributing Through a Binomial</strong></p>
+<p>Expand <span class="arithmatex">\(-2x(3x - 5)\)</span>.</p>
+<p><em>Solution:</em>
+- <span class="arithmatex">\(-2x \cdot 3x = -6x^2\)</span>
+- <span class="arithmatex">\(-2x \cdot (-5) = 10x\)</span></p>
+<div class="arithmatex">\[
+-2x(3x - 5) = -6x^2 + 10x
+\]</div>
+<p>Note the sign rule: a negative times a negative is positive, which is why <span class="arithmatex">\(-2x \cdot (-5)\)</span> gives <span class="arithmatex">\(+10x\)</span>.</p>
+<p><strong>Worked Example 17: Distributing Through a Trinomial</strong></p>
+<p>Expand <span class="arithmatex">\(3ab(2a^2b - 4ab + b^2)\)</span>.</p>
+<p><em>Solution:</em> Multiply <span class="arithmatex">\(3ab\)</span> by each term:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+3ab \cdot 2a^2b &amp;= 6a^3b^2 \\
+3ab \cdot (-4ab) &amp;= -12a^2b^2 \\
+3ab \cdot b^2 &amp;= 3ab^3
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+3ab(2a^2b - 4ab + b^2) = 6a^3b^2 - 12a^2b^2 + 3ab^3
+\]</div>
+<p>Each step multiplies the coefficient and adds exponents of matching bases. The result has three distinct terms with no like terms to combine, so this is the final answer.</p>
+<hr />
+<h2 id="rational-exponents-and-radicals">Rational Exponents and Radicals<a class="headerlink" href="#rational-exponents-and-radicals" title="Permanent link">&para;</a></h2>
+<p>A <strong>rational exponent</strong> is a fraction as an exponent. It connects directly to radical notation (roots). The rule is:</p>
+<div class="arithmatex">\[
+a^{\frac{m}{n}} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m
+\]</div>
+<p>The denominator of the fraction becomes the root index; the numerator becomes the power inside the radical. You can take the root first or the power first — both give the same result.</p>
+<p>For example:
+- <span class="arithmatex">\(8^{\frac{2}{3}} = (\sqrt[3]{8})^2 = 2^2 = 4\)</span>
+- <span class="arithmatex">\(16^{\frac{3}{4}} = (\sqrt[4]{16})^3 = 2^3 = 8\)</span></p>
+<p>Radical notation and exponential notation are interchangeable. You can convert between them using the rule above, which means the <strong>laws of exponents</strong> that you already know also apply to rational exponents. For instance:</p>
+<div class="arithmatex">\[
+x^{\frac{1}{2}} \cdot x^{\frac{1}{3}} = x^{\frac{1}{2} + \frac{1}{3}} = x^{\frac{5}{6}} = \sqrt[6]{x^5}
+\]</div>
+<p><strong>Worked Example 18: Converting Between Radical and Exponent Form</strong></p>
+<p>Convert each expression to the other form. Simplify when possible.</p>
+<ol>
+<li><span class="arithmatex">\(27^{\frac{1}{3}}\)</span> as a radical</li>
+<li><span class="arithmatex">\(\sqrt[4]{81}\)</span> with an exponent</li>
+<li><span class="arithmatex">\(64^{\frac{2}{3}}\)</span> simplified</li>
+</ol>
+<p><em>Solution:</em></p>
+<ol>
+<li>The denominator 3 means cube root; the numerator 1 means power 1. <span class="arithmatex">\(27^{\frac{1}{3}} = \sqrt[3]{27} = 3\)</span> (because <span class="arithmatex">\(3^3 = 27\)</span>).</li>
+<li>The index 4 means fourth root. <span class="arithmatex">\(\sqrt[4]{81} = 81^{\frac{1}{4}} = 3\)</span> (because <span class="arithmatex">\(3^4 = 81\)</span>).</li>
+<li>Take the cube root first, then square: <span class="arithmatex">\(64^{\frac{2}{3}} = (\sqrt[3]{64})^2 = 4^2 = 16\)</span>. (Check: <span class="arithmatex">\(4^3 = 64\)</span>, so <span class="arithmatex">\(\sqrt[3]{64} = 4\)</span>.)</li>
+</ol>
+<hr />
+<h2 id="scientific-notation-and-significant-figures">Scientific Notation and Significant Figures<a class="headerlink" href="#scientific-notation-and-significant-figures" title="Permanent link">&para;</a></h2>
+<p><strong>Scientific notation</strong> is a compact way to write very large or very small numbers. Any number is written as:</p>
+<div class="arithmatex">\[
+a \times 10^n
+\]</div>
+<p>where <span class="arithmatex">\(1 \leq |a| &lt; 10\)</span> (the <strong>coefficient</strong>) and <span class="arithmatex">\(n\)</span> is an integer (the <strong>exponent</strong>). The coefficient has exactly one non-zero digit to the left of the decimal point.</p>
+<p>Examples:
+- <span class="arithmatex">\(3,200,000 = 3.2 \times 10^6\)</span> (move the decimal 6 places to the left)
+- <span class="arithmatex">\(0.0045 = 4.5 \times 10^{-3}\)</span> (move the decimal 3 places to the right)</p>
+<p><strong>Significant figures</strong> are the digits in a number that carry meaningful information about its precision. The rules:</p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Example</th>
+<th>Significant Figures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All non-zero digits are significant</td>
+<td>4521</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Zeros between non-zero digits are significant</td>
+<td>3007</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Leading zeros (before the first non-zero digit) are NOT significant</td>
+<td>0.0052</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Trailing zeros in a number WITH a decimal point ARE significant</td>
+<td>250.0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Trailing zeros in a number WITHOUT a decimal point are ambiguous</td>
+<td>3200</td>
+<td>at least 2 (could be 3 or 4)</td>
+</tr>
+</tbody>
+</table>
+<p>Scientific notation removes the ambiguity of trailing zeros: <span class="arithmatex">\(3.2 \times 10^3\)</span> has 2 significant figures; <span class="arithmatex">\(3.20 \times 10^3\)</span> has 3.</p>
+<p><strong>Worked Example 19: Converting Between Standard and Scientific Notation</strong></p>
+<p>Convert each number to scientific notation, then back to standard form.</p>
+<ol>
+<li>The distance from Earth to the Sun is about 150,000,000 km.</li>
+<li>The diameter of a hydrogen atom is about <span class="arithmatex">\(0.000\,000\,000\,1\)</span> m.</li>
+<li><span class="arithmatex">\(7.3 \times 10^8\)</span> in standard form.</li>
+</ol>
+<p><em>Solution:</em></p>
+<ol>
+<li>Move the decimal 8 places left: <span class="arithmatex">\(150{,}000{,}000 = 1.5 \times 10^8\)</span> km.</li>
+<li>Move the decimal 10 places right: <span class="arithmatex">\(0.000\,000\,000\,1 = 1 \times 10^{-10}\)</span> m (or more precisely <span class="arithmatex">\(1.0 \times 10^{-10}\)</span> m if you know the precision).</li>
+<li>Move the decimal 8 places right: <span class="arithmatex">\(7.3 \times 10^8 = 730{,}000{,}000\)</span>.</li>
+</ol>
+<p><strong>Worked Example 20: Counting Significant Figures</strong></p>
+<p>How many significant figures does each number have?</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Significant Figures</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4050</td>
+<td>3</td>
+<td>Non-zero digits (4, 0 between non-zeros) + zero between digits counts; trailing zero without decimal is ambiguous but convention says at least 3</td>
+</tr>
+<tr>
+<td>0.00720</td>
+<td>3</td>
+<td>Leading zeros don't count; 7 and 2 are non-zero; the trailing zero after the decimal does count</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(2.50 \times 10^4\)</span></td>
+<td>3</td>
+<td>In scientific notation, all digits of the coefficient (2, 5, 0) count — the zero is explicit precision</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key takeaway:</strong> Scientific notation is not just a convenience for writing large numbers — it also communicates how precise a measurement is. The number of digits in the coefficient equals the number of significant figures.</p>
+<hr />
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>This chapter introduced the foundational language of algebra:</p>
+<ul>
+<li><strong>Variables</strong> are letters representing unknown numbers, enabling one expression to capture infinitely many arithmetic problems at once.</li>
+<li><strong>Algebraic expressions</strong> are built from <strong>terms</strong>, each with a <strong>coefficient</strong> and a <strong>variable part</strong>. Terms without variables are <strong>constants</strong>.</li>
+<li>Like terms share the same variable factors and can be combined; unlike terms cannot.</li>
+<li>Polynomials are classified by their <strong>degree</strong> (highest exponent) and by the <strong>number of terms</strong> (monomial, binomial, trinomial).</li>
+<li><strong>Adding and subtracting polynomials</strong> requires combining like terms, with care to flip every sign when distributing a minus.</li>
+<li>The <strong>distributive property</strong> (<span class="arithmatex">\(a(b + c) = ab + ac\)</span>) lets you expand products or factor out common terms.</li>
+<li>The <strong>laws of exponents</strong> govern how powers combine under multiplication, division, and exponentiation of exponents.</li>
+<li><strong>Rational exponents</strong> (<span class="arithmatex">\(a^{\frac{m}{n}}\)</span>) are equivalent to radicals (<span class="arithmatex">\(\sqrt[n]{a^m}\)</span>), letting you use the same algebraic rules for roots as for integer powers.</li>
+<li><strong>Scientific notation</strong> (<span class="arithmatex">\(a \times 10^n\)</span>) compresses very large or small numbers while preserving the precision indicated by <strong>significant figures</strong>.</li>
+</ul>
+<p>The concepts in this chapter form the building blocks for every algebraic manipulation you will encounter — from factoring quadratic expressions in Chapter 6 to solving systems of equations in Chapter 4 to analyzing functions in Chapter 7. Mastery of these fundamentals will make those later chapters significantly easier.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-foundational-concepts-and-properties/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Foundational Number Concepts and Properties">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. Foundational Number Concepts and Properties
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-factoring-techniques-polynomial-division/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Factoring Techniques and Polynomial Division">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. Factoring Techniques and Polynomial Division
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Arithmetic Operations,,NUMBER
+2,Whole Numbers,1,NUMBER
+3,Integers,2,NUMBER
+4,Rational Numbers,3,NUMBER
+5,Irrational Numbers,4,NUMBER
+6,Real Number System,5,NUMBER
+7,Number Line,3,NUMBER
+8,Absolute Value,7,NUMBER
+9,Order of Operations,1,NUMBER
+10,Fractions and Decimals,4|9,NUMBER
+11,Percent Change,10,NUMBER
+12,Properties of Operations,9,NUMBER
+13,Commutative Property,12,NUMBER
+14,Associative Property,12,NUMBER
+15,Distributive Property,12,NUMBER
+16,Variable,,EXPRS
+17,Constant,16,EXPRS
+18,Coefficient,17,EXPRS
+19,Term,18,EXPRS
+20,Algebraic Expression,19,EXPRS
+21,Numerical Expression,9,EXPRS
+22,Factors,16,EXPRS
+23,Translating Word Phrases,20,EXPRS
+24,Writing Algebraic Expressions,23,EXPRS
+25,Evaluating Expressions,20|10,EXPRS
+26,Like Terms,19,EXPRS
+27,Combining Like Terms,26,EXPRS
+28,Simplifying Expressions,25|27,EXPRS
+29,Expanding Expressions,28|15,EXPRS
+30,Expression Equivalence,28,EXPRS
+31,Complex Expressions,30|29,EXPRS
+32,Modeling with Expressions,31|24,EXPRS
+33,Exponent,1,EXPT
+34,Exponential Expression,33,EXPT
+35,Laws of Exponents,34,EXPT
+36,Product Rule for Exponents,35,EXPT
+37,Quotient Rule for Exponents,35,EXPT
+38,Zero and Negative Exponents,36|37,EXPT
+39,Power Rule for Exponents,35,EXPT
+40,Simplifying Exponentials,38|39,EXPT
+41,Square Root,33,EXPT
+42,Cube Root,41,EXPT
+43,Rational Exponents,38|42,EXPT
+44,Radical Expressions,41,EXPT
+45,Simplifying Radicals,44|40,EXPT
+46,Properties of Radicals,45|35,EXPT
+47,Rationalizing the Denominator,45|38,EXPT
+48,Scientific Notation,40|33,EXPT
+49,Equation,20,LINEQ
+50,Properties of Equality,49|12,LINEQ
+51,Solution of an Equation,49,LINEQ
+52,One-Step Equations,50,LINEQ
+53,Two-Step Equations,52,LINEQ
+54,Multi-Step Equations,53|29,LINEQ
+55,Equations with Distribution,54,LINEQ
+56,Variables on Both Sides,55,LINEQ
+57,Equations with Fractions,56|10,LINEQ
+58,Literal Equations,54,LINEQ
+59,Linear Equation,56,LINEQ
+60,No Solution Equations,59,LINEQ
+61,Infinitely Many Solutions,60,LINEQ
+62,Verifying Solutions,51,LINEQ
+63,Linear Inequality,59,LINEQ
+64,Solving Linear Inequalities,63|54,LINEQ
+65,Compound Inequalities,64,LINEQ
+66,Graphing Inequalities,64|7,LINEQ
+67,Absolute Value Equations,8|59,LINEQ
+68,Absolute Value Inequalities,67,LINEQ
+69,Equation Word Problems,59|24,LINEQ
+70,Relation,16,FUNC
+71,Ordered Pairs,16,FUNC
+72,Function,70,FUNC
+73,Independent Variable,72,FUNC
+74,Dependent Variable,73,FUNC
+75,Function Notation,72|16,FUNC
+76,Domain,70,FUNC
+77,Range,76,FUNC
+78,Mapping Diagrams,72|76|77,FUNC
+79,Vertical Line Test,72|78,FUNC
+80,Graphs of Functions,72|71,FUNC
+81,Tables of Functions,72|71,FUNC
+82,Evaluating Functions,75|25,FUNC
+83,Linear Functions,80|49,FUNC
+84,Nonlinear Functions,80,FUNC
+85,Continuous and Discrete,81,FUNC
+86,Piecewise Functions,83|64,FUNC
+87,Step Functions,86,FUNC
+88,Zeros of a Function,82|74,FUNC
+89,Transformations of Functions,80|9,FUNC
+90,Coordinate Plane,71,LINEAR
+91,Plotting Points,90,LINEAR
+92,Intercepts,71,LINEAR
+93,Slope,90,LINEAR
+94,Rate of Change,93,LINEAR
+95,Slope Formula,93|90,LINEAR
+96,Positive and Negative Slope,95,LINEAR
+97,Zero and Undefined Slope,96,LINEAR
+98,Slope-Intercept Form,93|92,LINEAR
+99,Point-Slope Form,98|95,LINEAR
+100,Standard Form,98|92,LINEAR
+101,Parallel Lines,98,LINEAR
+102,Perpendicular Lines,101,LINEAR
+103,Graphing Linear Equations,98|91,LINEAR
+104,Writing Linear Equations,103|95,LINEAR
+105,Interpreting Slope,98|93,LINEAR
+106,Interpreting Intercepts,98|92,LINEAR
+107,Linear Models,105|106,LINEAR
+108,Average Rate of Change,94|82,LINEAR
+109,System of Linear Equations,104|103,SYSTEM
+110,Solutions of Systems,109,SYSTEM
+111,Graphing Systems,110|103,SYSTEM
+112,Substitution Method,110|53,SYSTEM
+113,Elimination Method,110|50,SYSTEM
+114,No Solution Systems,113|111,SYSTEM
+115,Infinite Solution Systems,114,SYSTEM
+116,Systems of Inequalities,112|64,SYSTEM
+117,Shading Feasible Regions,116,SYSTEM
+118,Comparing Solution Methods,112|113,SYSTEM
+119,Systems Word Problems,118|24,SYSTEM
+120,Applications of Systems,119|117,SYSTEM
+121,Monomial,18,POLY
+122,Binomial,121,POLY
+123,Trinomial,121,POLY
+124,Polynomial,121,POLY
+125,Degree of Polynomial,124|33,POLY
+126,Adding Polynomials,122|27,POLY
+127,Subtracting Polynomials,126,POLY
+128,Multiplying Polynomials,126|15,POLY
+129,Special Products,128,POLY
+130,Polynomial Functions,124|83,POLY
+131,Greatest Common Factor,22,FACT
+132,Factoring Out GCF,131|29,FACT
+133,Factoring Trinomials,128,FACT
+134,Difference of Squares,129|123,FACT
+135,Sum and Difference of Cubes,134|128,FACT
+136,Factoring by Grouping,133|132,FACT
+137,Prime Polynomials,133,FACT
+138,Perfect Square Trinomials,133|129,FACT
+139,Fully Factored Form,136|137,FACT
+140,Factoring Strategy,139,FACT
+141,Factoring Applications,140|11,FACT
+142,Verifying Factorizations,140|128,FACT
+143,Quadratic Equation,124|49,QUAD
+144,Quadratic Function,130|143,QUAD
+145,Parabola,144,QUAD
+146,Vertex,145,QUAD
+147,Axis of Symmetry,146,QUAD
+148,Standard Form of a Quadratic,144,QUAD
+149,Graphing Quadratics,148|146|91,QUAD
+150,Zeros of a Quadratic,143|88,QUAD
+151,Solving by Factoring,150|140,QUAD
+152,Square Root Method,143|41,QUAD
+153,Completing the Square,152|138,QUAD
+154,Quadratic Formula,153|148,QUAD
+155,Discriminant,154,QUAD
+156,Nature of the Roots,155,QUAD
+157,Maximum and Minimum Values,146|145,QUAD
+158,Quadratic Inequalities,154|63,QUAD
+159,Quadratic Models,149|107,QUAD
+160,Optimizing Quadratic Models,157|159,QUAD
+161,Exponential Function,72|33,EXPF
+162,Exponential Growth,161,EXPF
+163,Exponential Decay,162,EXPF
+164,Growth Factor,162|11,EXPF
+165,Graphing Exponentials,161|91,EXPF
+166,Exponential Models,165|164,EXPF
+167,Compound Interest,166|11,EXPF
+168,Percent Growth and Decay,164|11,EXPF
+169,Exponential vs Linear,166|107,EXPF
+170,Solving Exponential Equations,161|40,EXPF
+171,Pattern,16,SEQR
+172,Sequence,171,SEQR
+173,Arithmetic Sequence,172|107,SEQR
+174,Common Difference,173,SEQR
+175,Geometric Sequence,172|162,SEQR
+176,Common Ratio,175|164,SEQR
+177,Explicit Formulas,173|75,SEQR
+178,Recursive Formulas,173|75,SEQR
+179,The Nth Term,177,SEQR
+180,Bivariate Data,71,STAT
+181,Data Displays,180,STAT
+182,Scatterplot,180|91,STAT
+183,Correlation,182,STAT
+184,Line of Best Fit,183|107,STAT
+185,Linear Regression,184,STAT
+186,Two-Way Frequency Tables,180,STAT
+187,Comparing Data Sets,181,STAT
+188,Correlation vs Causation,183,STAT
+189,Predicting with Regressions,185|184,STAT
+190,Variability,181,STAT
+191,Building Equation Models,69|32,MODEL
+192,Modeling with Functions,191|89,MODEL
+193,Comparing Models,169|159|184,MODEL
+194,Choosing the Right Model,193,MODEL
+195,Verifying Model Solutions,191|62,MODEL
+196,Multi-Step Problems,195|118,MODEL
+197,Mathematical Communication,196,MODEL
+198,Personal Finance Project,167|166,MODEL
+199,Data Analysis Project,189|184,MODEL
+200,Algebra Capstone,198|199|197,MODEL

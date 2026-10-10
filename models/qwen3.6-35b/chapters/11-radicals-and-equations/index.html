@@ -1,0 +1,2790 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Radical notation, converting to rational exponents, simplifying radicals, arithmetic operations on radicals, and solving radical equations including extraneous solutions.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/11-radicals-and-equations/">
+      
+      
+        <link rel="prev" href="../10-mathematical-modeling-applications/">
+      
+      
+        <link rel="next" href="../../chapter-metrics/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Chapter 11: Radicals and Radical Equations - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#radicals-and-radical-equations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 11: Radicals and Radical Equations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            qwen3.6:35b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5_4" id="__nav_8_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundational-concepts-and-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundational Number Concepts and Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-variables-expressions-polynomial-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Variables, Expressions, and Polynomial Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-factoring-techniques-polynomial-division/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Factoring Techniques and Polynomial Division
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-linear-equations-inequalities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Linear Equations and Inequalities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-linear-relationships-coordinate-graphing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linear Relationships and Coordinate Graphing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-functions-relations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Functions and Relations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-exponential-functions-sequences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Exponential Functions and Sequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-sequences-and-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Sequences and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-mathematical-modeling-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Mathematical Modeling and Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    11. Radicals and Radical Equations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    11. Radicals and Radical Equations
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radical-notation-and-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radical Notation and Roots
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radical Notation and Roots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#square-and-cube-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Square and Cube Roots
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-identifying-square-and-cube-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Identifying Square and Cube Roots
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nth-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nth Roots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#converting-between-radical-and-exponent-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Converting Between Radical and Exponent Forms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Converting Between Radical and Exponent Forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-conversion-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Conversion Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-converting-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Converting Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equivalent-forms-for-the-same-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equivalent Forms for the Same Value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-recognizing-equivalent-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Recognizing Equivalent Forms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radical-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radical Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radical Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simplifying-radical-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simplifying Radical Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-simplifying-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Simplifying Radicals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simplifying-radicals-the-factor-and-pull-out-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simplifying Radicals: The Factor-and-Pull-Out Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-with-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmetic with Radicals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic with Radicals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-and-subtracting-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding and Subtracting Radicals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding and Subtracting Radicals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-adding-and-subtracting-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Adding and Subtracting Radicals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplying-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplying Radicals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiplying Radicals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-multiplying-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Multiplying Radicals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dividing-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dividing Radicals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dividing Radicals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-dividing-and-rationalizing-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Dividing and Rationalizing Radicals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-operations-on-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary: Operations on Radicals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radical-equations-and-extraneous-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radical Equations and Extraneous Solutions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radical Equations and Extraneous Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-method-of-solving-radical-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Method of Solving Radical Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-warning-extraneous-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Warning: Extraneous Solutions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Important Warning: Extraneous Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-solving-a-radical-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Solving a Radical Equation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-radical-equation-with-two-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Radical Equation with Two Radicals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solving-radical-equations-the-step-by-step-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Radical Equations: The Step-by-Step Checklist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway-why-checking-is-mandatory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway: Why Checking Is Mandatory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Terms
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radical-notation-and-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radical Notation and Roots
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radical Notation and Roots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#square-and-cube-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Square and Cube Roots
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-identifying-square-and-cube-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Identifying Square and Cube Roots
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nth-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nth Roots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#converting-between-radical-and-exponent-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Converting Between Radical and Exponent Forms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Converting Between Radical and Exponent Forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-conversion-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Conversion Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-converting-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Converting Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equivalent-forms-for-the-same-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equivalent Forms for the Same Value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-recognizing-equivalent-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Recognizing Equivalent Forms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radical-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radical Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radical Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simplifying-radical-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simplifying Radical Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-simplifying-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Simplifying Radicals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simplifying-radicals-the-factor-and-pull-out-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simplifying Radicals: The Factor-and-Pull-Out Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-with-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmetic with Radicals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic with Radicals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-and-subtracting-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding and Subtracting Radicals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding and Subtracting Radicals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-adding-and-subtracting-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Adding and Subtracting Radicals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplying-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplying Radicals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiplying Radicals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-multiplying-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Multiplying Radicals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dividing-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dividing Radicals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dividing Radicals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-dividing-and-rationalizing-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Dividing and Rationalizing Radicals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-operations-on-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary: Operations on Radicals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radical-equations-and-extraneous-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radical Equations and Extraneous Solutions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radical Equations and Extraneous Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-method-of-solving-radical-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Method of Solving Radical Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-warning-extraneous-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Warning: Extraneous Solutions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Important Warning: Extraneous Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-solving-a-radical-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Solving a Radical Equation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-radical-equation-with-two-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Radical Equation with Two Radicals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solving-radical-equations-the-step-by-step-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Radical Equations: The Step-by-Step Checklist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway-why-checking-is-mandatory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway: Why Checking Is Mandatory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Terms
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/qwen3.6-35b/chapters/11-radicals-and-equations/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="radicals-and-radical-equations">Radicals and Radical Equations<a class="headerlink" href="#radicals-and-radical-equations" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter completes the study of radicals and roots. Students learn radical notation, convert between radical and exponent forms, simplify radical expressions involving square, cube, and nth roots, and perform arithmetic operations on radicals. The chapter culminates in solving radical equations — integrating the manipulation skills with equation-solving techniques developed throughout the course. These concepts provide essential tools used throughout the textbook, especially in later chapters on statistics and mathematical modeling.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rational Exponents</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Radical Notation</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Converting Radicals to Exponent Form</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Equivalent Radical and Exponent Forms</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Radical Expressions</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Square Roots</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Cube Roots</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Nth Roots</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Simplifying Radicals</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Adding Radicals</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Multiplying Radicals</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Dividing Radicals</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Radical Equations</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:
+- <a href="../02-variables-expressions-polynomial-foundations/">Chapter 2: Variables, Expressions, and Polynomial Foundations</a>
+- <a href="../03-factoring-techniques-polynomial-division/">Chapter 3: Facturing Techniques and Polynomial Division</a></p>
+<hr />
+<h2 id="radical-notation-and-roots">Radical Notation and Roots<a class="headerlink" href="#radical-notation-and-roots" title="Permanent link">&para;</a></h2>
+<p>A <strong>radical</strong> is the symbol that represents a root of a number. The most familiar radical is the square root sign, but radicals can denote any type of root. Understanding radical notation is the foundation for everything this chapter builds on.</p>
+<p>Before working with radicals, you should recall that raising a number to an integer power means multiplying it by itself a certain number of times. For example, <span class="arithmatex">\(2^3 = 2 \times 2 \times 2 = 8\)</span>. A root is the inverse operation: if <span class="arithmatex">\(3^4 = 81\)</span>, then the fourth root of 81 is 3.</p>
+<h3 id="square-and-cube-roots">Square and Cube Roots<a class="headerlink" href="#square-and-cube-roots" title="Permanent link">&para;</a></h3>
+<p>The <strong>square root</strong> of a number <span class="arithmatex">\(a\)</span> is the value that, when multiplied by itself, gives <span class="arithmatex">\(a\)</span>. It is written with the radical symbol:</p>
+<div class="arithmatex">\[ \sqrt{a} = b \quad \text{when} \quad b^2 = a \]</div>
+<p>For instance, <span class="arithmatex">\(\sqrt{16} = 4\)</span> because <span class="arithmatex">\(4^2 = 16\)</span>. Every positive number has two square roots — one positive and one negative. By convention, the radical symbol <span class="arithmatex">\(\sqrt{\;}\)</span> refers to the <strong>principal (non-negative) square root</strong>. To indicate both roots, we write <span class="arithmatex">\(\pm\sqrt{a}\)</span>.</p>
+<p>The <strong>cube root</strong> of a number <span class="arithmatex">\(a\)</span> is the value that, when multiplied by itself three times, gives <span class="arithmatex">\(a\)</span>:</p>
+<div class="arithmatex">\[ \sqrt[3]{a} = b \quad \text{when} \quad b^3 = a \]</div>
+<p>Unlike square roots, cube roots exist for negative numbers as well. For example:</p>
+<div class="arithmatex">\[ \sqrt[3]{-27} = -3 \quad \text{because} \quad (-3)^3 = -27 \]</div>
+<p>This is because multiplying an odd number of negative factors yields a negative result, while an even number of negative factors yields a positive result.</p>
+<h3 id="worked-example-identifying-square-and-cube-roots">Worked Example: Identifying Square and Cube Roots<a class="headerlink" href="#worked-example-identifying-square-and-cube-roots" title="Permanent link">&para;</a></h3>
+<p>Determine which of the following numbers are perfect squares, perfect cubes, or both: 64, 81, 27, 100, 0.</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Perfect Square?</th>
+<th>Perfect Cube?</th>
+<th>Both?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>64</td>
+<td>Yes (<span class="arithmatex">\(8^2\)</span>)</td>
+<td>Yes (<span class="arithmatex">\(4^3 = 64\)</span>)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>81</td>
+<td>Yes (<span class="arithmatex">\(9^2\)</span>)</td>
+<td>No</td>
+<td>—</td>
+</tr>
+<tr>
+<td>27</td>
+<td>No</td>
+<td>Yes (<span class="arithmatex">\(3^3\)</span>)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>100</td>
+<td>Yes (<span class="arithmatex">\(10^2\)</span>)</td>
+<td>No</td>
+<td>—</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Yes (<span class="arithmatex">\(0^2 = 0\)</span>)</td>
+<td>Yes (<span class="arithmatex">\(0^3 = 0\)</span>)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>The key pattern to notice: a number is both a perfect square and a perfect cube when it is a perfect sixth power (because the least common multiple of 2 and 3 is 6). Indeed, <span class="arithmatex">\(64 = 2^6 = 8^2 = 4^3\)</span>.</p>
+<h3 id="nth-roots">Nth Roots<a class="headerlink" href="#nth-roots" title="Permanent link">&para;</a></h3>
+<p>The <strong>nth root</strong> generalizes both square roots and cube roots. The nth root of a number <span class="arithmatex">\(a\)</span> is the value that, when raised to the power <span class="arithmatex">\(n\)</span>, gives <span class="arithmatex">\(a\)</span>:</p>
+<div class="arithmatex">\[ \sqrt[n]{a} = b \quad \text{when} \quad b^n = a \]</div>
+<p>Here, <span class="arithmatex">\(n\)</span> is called the <strong>index</strong> of the radical. When no index is written (as in <span class="arithmatex">\(\sqrt{a}\)</span>), the index is understood to be 2.</p>
+<p>Some important observations about nth roots:</p>
+<ul>
+<li>When <span class="arithmatex">\(n\)</span> is even and <span class="arithmatex">\(a &gt; 0\)</span>, there are two real nth roots (positive and negative). The radical symbol denotes the positive one.</li>
+<li>When <span class="arithmatex">\(n\)</span> is even and <span class="arithmatex">\(a &lt; 0\)</span>, no real nth root exists. For example, <span class="arithmatex">\(\sqrt{-4}\)</span> is not a real number because no real number squared gives a negative result.</li>
+<li>When <span class="arithmatex">\(n\)</span> is odd, every real number has exactly one real nth root (positive for positive inputs, negative for negative inputs).</li>
+</ul>
+<details class="note">
+<summary>Quick Check: Nth Roots</summary>
+<p>What is <span class="arithmatex">\(\sqrt[5]{32}\)</span>? Click to expand and reveal the answer.</p>
+<p>2, because <span class="arithmatex">\(2^5 = 32\)</span>. The index 5 means we are looking for a number that, when multiplied by itself five times, equals 32.</p>
+</details>
+<h2 id="converting-between-radical-and-exponent-forms">Converting Between Radical and Exponent Forms<a class="headerlink" href="#converting-between-radical-and-exponent-forms" title="Permanent link">&para;</a></h2>
+<p>Radical expressions can be rewritten as expressions with rational (fractional) exponents, and vice versa. This conversion is one of the most powerful tools in algebra because it lets you apply exponent rules to radicals.</p>
+<h3 id="the-conversion-rule">The Conversion Rule<a class="headerlink" href="#the-conversion-rule" title="Permanent link">&para;</a></h3>
+<p>The relationship between radicals and rational exponents is:</p>
+<div class="arithmatex">\[ \sqrt[n]{a} = a^{\frac{1}{n}} \]</div>
+<p>More generally, for any integer <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(n\)</span> (with <span class="arithmatex">\(n \neq 0\)</span>):</p>
+<div class="arithmatex">\[ a^{\frac{m}{n}} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m \]</div>
+<p>The denominator of the fraction tells you which root to take. The numerator tells you which power to raise it to. You can take the root first and then the power, or the power first and then the root — whichever is easier to compute.</p>
+<h3 id="worked-example-converting-expressions">Worked Example: Converting Expressions<a class="headerlink" href="#worked-example-converting-expressions" title="Permanent link">&para;</a></h3>
+<p>Convert each expression between radical and exponent form:</p>
+<p><strong>(a)</strong> <span class="arithmatex">\(\sqrt[4]{x^3}\)</span> in exponent form
+The denominator 4 becomes the fractional exponent's denominator, so the answer is <span class="arithmatex">\(x^{3/4}\)</span>.</p>
+<p><strong>(b)</strong> <span class="arithmatex">\(y^{2/5}\)</span> in radical form
+The denominator 5 means fifth root, and the numerator 2 means power of 2: <span class="arithmatex">\(\sqrt[5]{y^2}\)</span>.</p>
+<p><strong>(c)</strong> <span class="arithmatex">\(\sqrt[3]{8^2}\)</span> as a rational number
+Take the root first: <span class="arithmatex">\(\sqrt[3]{8} = 2\)</span>, then square it: <span class="arithmatex">\(2^2 = 4\)</span>. So <span class="arithmatex">\(\sqrt[3]{8^2} = 4\)</span>.</p>
+<p><strong>(d)</strong> <span class="arithmatex">\(16^{3/4}\)</span> as a rational number
+The fraction <span class="arithmatex">\(3/4\)</span> means fourth root first, then cube. The fourth root of 16 is 2 (because <span class="arithmatex">\(2^4 = 16\)</span>), and <span class="arithmatex">\(2^3 = 8\)</span>. So <span class="arithmatex">\(16^{3/4} = 8\)</span>.</p>
+<h3 id="equivalent-forms-for-the-same-value">Equivalent Forms for the Same Value<a class="headerlink" href="#equivalent-forms-for-the-same-value" title="Permanent link">&para;</a></h3>
+<p>The expression <span class="arithmatex">\(a^{\frac{m}{n}}\)</span> can be written in three equivalent ways, all representing the same value:</p>
+<div class="arithmatex">\[ a^{\frac{m}{n}} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m \]</div>
+<p>These three forms are often useful in different situations. Consider <span class="arithmatex">\(8^{2/3}\)</span>:</p>
+<ol>
+<li>Using <span class="arithmatex">\((\sqrt[3]{8})^2\)</span>: Take the cube root first, giving 2, then square it to get 4. This is usually easiest when the root comes out even.</li>
+<li>Using <span class="arithmatex">\(\sqrt[3]{8^2} = \sqrt[3]{64}\)</span>: Square first to get 64, then take the cube root, also giving 4. Useful when the power is a familiar number.</li>
+</ol>
+<p>Both approaches yield the same result because of the rule: the order of taking the root and raising to a power does not matter.</p>
+<h3 id="worked-example-recognizing-equivalent-forms">Worked Example: Recognizing Equivalent Forms<a class="headerlink" href="#worked-example-recognizing-equivalent-forms" title="Permanent link">&para;</a></h3>
+<p>Which of the following expressions are equivalent to <span class="arithmatex">\(27^{2/3}\)</span>? Explain your reasoning.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Equivalent?</th>
+<th>Reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\((\sqrt[3]{27})^2\)</span></td>
+<td>Yes</td>
+<td>Cube root first: <span class="arithmatex">\(\sqrt[3]{27} = 3\)</span>, then square: <span class="arithmatex">\(3^2 = 9\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sqrt[3]{27^2}\)</span></td>
+<td>Yes</td>
+<td>Square first: <span class="arithmatex">\(27^2 = 729\)</span>, cube root: <span class="arithmatex">\(\sqrt[3]{729} = 9\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sqrt{27^3}\)</span></td>
+<td>No</td>
+<td>The index is 2 (square root) instead of 3 (cube root). This equals <span class="arithmatex">\(27^{3/2} = (\sqrt{27})^3\)</span>, not <span class="arithmatex">\(27^{2/3}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(9\)</span></td>
+<td>Yes</td>
+<td>As shown above, <span class="arithmatex">\((\sqrt[3]{27})^2 = 3^2 = 9\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The key insight: <span class="arithmatex">\(a^{m/n}\)</span> always means "take the nth root and raise to the mth power." Only the index of the radical must match the denominator exactly.</p>
+<h2 id="radical-expressions">Radical Expressions<a class="headerlink" href="#radical-expressions" title="Permanent link">&para;</a></h2>
+<p>A <strong>radical expression</strong> is any algebraic expression that contains a radical with a variable or a combination of numbers under the radical sign. Examples include <span class="arithmatex">\(\sqrt{x + 3}\)</span>, <span class="arithmatex">\(2\sqrt{5} + \sqrt{20}\)</span>, and <span class="arithmatex">\(\sqrt[3]{4x^2}\)</span>.</p>
+<h3 id="simplifying-radical-expressions">Simplifying Radical Expressions<a class="headerlink" href="#simplifying-radical-expressions" title="Permanent link">&para;</a></h3>
+<p>The primary skill in working with radicals is <strong>simplification</strong>: rewriting a radical so that the radicand (the quantity under the radical) contains no perfect nth powers as factors.</p>
+<p>The general approach:
+1. Factor the radicand into prime factors (for numbers) or identify repeated variable factors.
+2. Pull out groups of <span class="arithmatex">\(n\)</span> identical factors, where <span class="arithmatex">\(n\)</span> is the index of the radical.
+3. Multiply the pulled-out factors together outside the radical.</p>
+<h3 id="worked-example-simplifying-radicals">Worked Example: Simplifying Radicals<a class="headerlink" href="#worked-example-simplifying-radicals" title="Permanent link">&para;</a></h3>
+<p>Simplify each expression completely:</p>
+<p><strong>(a)</strong> <span class="arithmatex">\(\sqrt{72}\)</span>
+Factor 72 into primes: <span class="arithmatex">\(72 = 36 \times 2 = 6^2 \times 2 = 2^3 \times 3^2\)</span>. The largest perfect square factor is 36. Pull it out:</p>
+<div class="arithmatex">\[ \sqrt{72} = \sqrt{36 \times 2} = \sqrt{36} \cdot \sqrt{2} = 6\sqrt{2} \]</div>
+<p>Check by squaring back: <span class="arithmatex">\((6\sqrt{2})^2 = 36 \times 2 = 72\)</span>.</p>
+<p><strong>(b)</strong> <span class="arithmatex">\(\sqrt[3]{54x^4}\)</span>
+Factor: <span class="arithmatex">\(54 = 27 \times 2 = 3^3 \times 2\)</span> and <span class="arithmatex">\(x^4 = x^3 \cdot x\)</span>. The largest perfect cube factor is <span class="arithmatex">\(27x^3\)</span>:</p>
+<div class="arithmatex">\[ \sqrt[3]{54x^4} = \sqrt[3]{27x^3 \cdot 2x} = \sqrt[3]{27x^3} \cdot \sqrt[3]{2x} = 3x\sqrt[3]{2x} \]</div>
+<p>The key step: when extracting an nth root of a variable raised to power <span class="arithmatex">\(p\)</span>, you can pull out <span class="arithmatex">\(\lfloor p/n \rfloor\)</span> copies. For <span class="arithmatex">\(x^4\)</span> under a cube root, that is <span class="arithmatex">\(\lfloor 4/3 \rfloor = 1\)</span> copy of <span class="arithmatex">\(x\)</span>.</p>
+<p><strong>(c)</strong> <span class="arithmatex">\(\sqrt[4]{80y^5}\)</span>
+Factor: <span class="arithmatex">\(80 = 16 \times 5 = 2^4 \times 5\)</span> and <span class="arithmatex">\(y^5 = y^4 \cdot y\)</span>. The largest perfect fourth-power factor is <span class="arithmatex">\(16y^4\)</span>:</p>
+<div class="arithmatex">\[ \sqrt[4]{80y^5} = \sqrt[4]{16y^4 \cdot 5y} = 2y\sqrt[4]{5y} \]</div>
+<h3 id="simplifying-radicals-the-factor-and-pull-out-method">Simplifying Radicals: The Factor-and-Pull-Out Method<a class="headerlink" href="#simplifying-radicals-the-factor-and-pull-out-method" title="Permanent link">&para;</a></h3>
+<p>To simplify a radical with index <span class="arithmatex">\(n\)</span> and radicand <span class="arithmatex">\(R\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Factor <span class="arithmatex">\(R\)</span> into prime factors or identify perfect nth-power factors</td>
+<td>Identify what can be pulled out</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Group factors into sets of <span class="arithmatex">\(n\)</span> identical factors</td>
+<td>Each complete set becomes one factor outside the radical</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Leave remaining (uncollected) factors under the radical</td>
+<td>These cannot be simplified further</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Multiply all pulled-out factors and write before the radical</td>
+<td>Produce the simplest equivalent form</td>
+</tr>
+</tbody>
+</table>
+<h2 id="arithmetic-with-radicals">Arithmetic with Radicals<a class="headerlink" href="#arithmetic-with-radicals" title="Permanent link">&para;</a></h2>
+<p>Radicals can be added, subtracted, multiplied, and divided. The rules for these operations depend on whether the radicals are "like" (having the same index and the same radicand).</p>
+<h3 id="adding-and-subtracting-radicals">Adding and Subtracting Radicals<a class="headerlink" href="#adding-and-subtracting-radicals" title="Permanent link">&para;</a></h3>
+<p>Two radicals are <strong>like radicals</strong> when they have the same index and the same radicand. Only like radicals can be combined by addition or subtraction, just as <span class="arithmatex">\(3x + 5x = 8x\)</span>.</p>
+<div class="arithmatex">\[ a\sqrt[n]{r} + b\sqrt[n]{r} = (a + b)\sqrt[n]{r} \]</div>
+<p>If the radicals are not alike, you may need to simplify them first to see whether they become like terms.</p>
+<h4 id="worked-example-adding-and-subtracting-radicals">Worked Example: Adding and Subtracting Radicals<a class="headerlink" href="#worked-example-adding-and-subtracting-radicals" title="Permanent link">&para;</a></h4>
+<p>Simplify each expression by combining like radicals.</p>
+<p><strong>(a)</strong> <span class="arithmatex">\(3\sqrt{12} + 5\sqrt{27}\)</span></p>
+<p>These are not yet like radicals because the radicands differ. Simplify each one first:</p>
+<p>[ \sqrt{12} = \sqrt{4 \times 3} = 2\sqrt{3} ]
+[ \sqrt{27} = \sqrt{9 \times 3} = 3\sqrt{3} ]</p>
+<p>Now substitute back:</p>
+<div class="arithmatex">\[ 3(2\sqrt{3}) + 5(3\sqrt{3}) = 6\sqrt{3} + 15\sqrt{3} = 21\sqrt{3} \]</div>
+<p><strong>(b)</strong> <span class="arithmatex">\(4\sqrt[3]{16} - \sqrt[3]{54}\)</span></p>
+<p>Simplify each cube root:</p>
+<p>[ \sqrt[3]{16} = \sqrt[3]{8 \times 2} = 2\sqrt[3]{2} ]
+[ \sqrt[3]{54} = \sqrt[3]{27 \times 2} = 3\sqrt[3]{2} ]</p>
+<p>Subtract: <span class="arithmatex">\(4(2\sqrt[3]{2}) - 3\sqrt[3]{2} = 8\sqrt[3]{2} - 3\sqrt[3]{2} = 5\sqrt[3]{2}\)</span></p>
+<h3 id="multiplying-radicals">Multiplying Radicals<a class="headerlink" href="#multiplying-radicals" title="Permanent link">&para;</a></h3>
+<p>When two radicals share the same index, you can multiply the radicands and keep the same index:</p>
+<div class="arithmatex">\[ \sqrt[n]{a} \cdot \sqrt[n]{b} = \sqrt[n]{a \cdot b} \]</div>
+<p>If the coefficients (numbers in front of the radicals) differ from 1, multiply them separately.</p>
+<h4 id="worked-example-multiplying-radicals">Worked Example: Multiplying Radicals<a class="headerlink" href="#worked-example-multiplying-radicals" title="Permanent link">&para;</a></h4>
+<p>Multiply and simplify each expression.</p>
+<p><strong>(a)</strong> <span class="arithmatex">\(\sqrt{6} \cdot \sqrt{3}\)</span></p>
+<div class="arithmatex">\[ \sqrt{6} \cdot \sqrt{3} = \sqrt{18} = \sqrt{9 \times 2} = 3\sqrt{2} \]</div>
+<p><strong>(b)</strong> <span class="arithmatex">\(2\sqrt{5} \cdot 4\sqrt{10}\)</span></p>
+<p>Multiply coefficients together and radicands together:</p>
+<div class="arithmatex">\[ (2 \cdot 4)(\sqrt{5} \cdot \sqrt{10}) = 8\sqrt{50} = 8\sqrt{25 \times 2} = 8 \cdot 5\sqrt{2} = 40\sqrt{2} \]</div>
+<h3 id="dividing-radicals">Dividing Radicals<a class="headerlink" href="#dividing-radicals" title="Permanent link">&para;</a></h3>
+<p>When dividing radicals with the same index, divide the radicands:</p>
+<div class="arithmatex">\[ \frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}} \quad \text{(for } b &gt; 0\text{)} \]</div>
+<p>In many cases the resulting fraction has a radical in the denominator. A standard convention is to <strong>rationalize</strong> the denominator — eliminate the radical from the bottom of the fraction.</p>
+<h4 id="worked-example-dividing-and-rationalizing-radicals">Worked Example: Dividing and Rationalizing Radicals<a class="headerlink" href="#worked-example-dividing-and-rationalizing-radicals" title="Permanent link">&para;</a></h4>
+<p>Simplify each quotient, rationalizing the denominator when necessary.</p>
+<p><strong>(a)</strong> <span class="arithmatex">\(\frac{\sqrt{50}}{\sqrt{2}}\)</span></p>
+<div class="arithmatex">\[ \frac{\sqrt{50}}{\sqrt{2}} = \sqrt{\frac{50}{2}} = \sqrt{25} = 5 \]</div>
+<p>No rationalization needed — the result is an integer.</p>
+<p><strong>(b)</strong> <span class="arithmatex">\(\frac{12}{\sqrt{3}}\)</span></p>
+<p>Multiply numerator and denominator by <span class="arithmatex">\(\sqrt{3}\)</span> (the radical in the denominator):</p>
+<div class="arithmatex">\[ \frac{12}{\sqrt{3}} \cdot \frac{\sqrt{3}}{\sqrt{3}} = \frac{12\sqrt{3}}{3} = 4\sqrt{3} \]</div>
+<p><strong>(c)</strong> <span class="arithmatex">\(\frac{5}{\sqrt{2} + \sqrt{3}}\)</span></p>
+<p>This requires the <strong>conjugate</strong> of the denominator. The conjugate of <span class="arithmatex">\(\sqrt{2} + \sqrt{3}\)</span> is <span class="arithmatex">\(\sqrt{3} - \sqrt{2}\)</span>. Multiply top and bottom:</p>
+<div class="arithmatex">\[ \frac{5}{\sqrt{3} + \sqrt{2}} \cdot \frac{\sqrt{3} - \sqrt{2}}{\sqrt{3} - \sqrt{2}} = \frac{5(\sqrt{3} - \sqrt{2})}{(\sqrt{3})^2 - (\sqrt{2})^2} = \frac{5(\sqrt{3} - \sqrt{2})}{3 - 2} = 5(\sqrt{3} - \sqrt{2}) \]</div>
+<p>The denominator became <span class="arithmatex">\(3 - 2 = 1\)</span> because the product of conjugates <span class="arithmatex">\((a + b)(a - b)\)</span> always simplifies to <span class="arithmatex">\(a^2 - b^2\)</span>, which eliminates the radicals.</p>
+<h3 id="summary-operations-on-radicals">Summary: Operations on Radicals<a class="headerlink" href="#summary-operations-on-radicals" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Rule</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Addition (like radicals)</td>
+<td>Combine coefficients, keep radical</td>
+<td><span class="arithmatex">\(3\sqrt{7} + 4\sqrt{7} = 7\sqrt{7}\)</span></td>
+</tr>
+<tr>
+<td>Multiplication</td>
+<td>Multiply radicands under one radical</td>
+<td><span class="arithmatex">\(\sqrt{3} \cdot \sqrt{12} = \sqrt{36} = 6\)</span></td>
+</tr>
+<tr>
+<td>Division</td>
+<td>Divide radicands, then rationalize if needed</td>
+<td><span class="arithmatex">\(\frac{\sqrt{8}}{\sqrt{2}} = \sqrt{4} = 2\)</span></td>
+</tr>
+<tr>
+<td>Rationalizing denominator</td>
+<td>Multiply by conjugate or the radical itself</td>
+<td><span class="arithmatex">\(\frac{1}{\sqrt{5}} = \frac{\sqrt{5}}{5}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="radical-equations-and-extraneous-solutions">Radical Equations and Extraneous Solutions<a class="headerlink" href="#radical-equations-and-extraneous-solutions" title="Permanent link">&para;</a></h2>
+<p>A <strong>radical equation</strong> is an equation in which the variable appears under a radical sign. For example, <span class="arithmatex">\(\sqrt{x + 3} = 5\)</span> and <span class="arithmatex">\(\sqrt[3]{2x - 1} = 4\)</span> are radical equations. Solving them requires isolating the radical and then eliminating it by raising both sides to a power.</p>
+<h3 id="the-method-of-solving-radical-equations">The Method of Solving Radical Equations<a class="headerlink" href="#the-method-of-solving-radical-equations" title="Permanent link">&para;</a></h3>
+<p>The general strategy is:
+1. Isolate the radical expression on one side of the equation.
+2. Raise both sides to the power equal to the index of the radical.
+3. Solve the resulting equation.
+4. <strong>Check every solution</strong> in the original equation.</p>
+<h3 id="important-warning-extraneous-solutions">Important Warning: Extraneous Solutions<a class="headerlink" href="#important-warning-extraneous-solutions" title="Permanent link">&para;</a></h3>
+<p>When you raise both sides of an equation to a power, you may introduce solutions that satisfy the powered equation but not the original one. These are called <strong>extraneous solutions</strong>. They must be checked by substituting back into the original equation and discarded if they do not work.</p>
+<p>This happens because squaring (and raising to any even power) loses sign information. For example, both <span class="arithmatex">\(3\)</span> and <span class="arithmatex">\(-3\)</span> square to 9, but <span class="arithmatex">\(\sqrt{9} = 3\)</span>, not <span class="arithmatex">\(-3\)</span>. The equation <span class="arithmatex">\(\sqrt{x} = -3\)</span> has no solution because a principal square root is never negative, yet squaring both sides gives <span class="arithmatex">\(x = 9\)</span>, which appears valid until you substitute back.</p>
+<h4 id="worked-example-solving-a-radical-equation">Worked Example: Solving a Radical Equation<a class="headerlink" href="#worked-example-solving-a-radical-equation" title="Permanent link">&para;</a></h4>
+<p>Solve <span class="arithmatex">\(\sqrt{2x + 5} = x\)</span> and check for extraneous solutions.</p>
+<p><strong>Step 1:</strong> The radical is already isolated (the only radical in the equation).</p>
+<p><strong>Step 2:</strong> Square both sides:
+[ (\sqrt{2x + 5})^2 = x^2 ]
+[ 2x + 5 = x^2 ]</p>
+<p><strong>Step 3:</strong> Solve the resulting quadratic equation. Rearrange to standard form:
+[ x^2 - 2x - 5 = 0 ]
+Using the quadratic formula: <span class="arithmatex">\(x = \frac{2 \pm \sqrt{4 + 20}}{2} = \frac{2 \pm \sqrt{24}}{2} = \frac{2 \pm 2\sqrt{6}}{2} = 1 \pm \sqrt{6}\)</span></p>
+<p>So the candidate solutions are <span class="arithmatex">\(x = 1 + \sqrt{6}\)</span> (approximately 3.45) and <span class="arithmatex">\(x = 1 - \sqrt{6}\)</span> (approximately -1.45).</p>
+<p><strong>Step 4:</strong> Check both in the original equation <span class="arithmatex">\(\sqrt{2x + 5} = x\)</span>.</p>
+<p>For <span class="arithmatex">\(x = 1 + \sqrt{6}\)</span>:
+[ \text{LHS: } \sqrt{2(1 + \sqrt{6}) + 5} = \sqrt{7 + 2\sqrt{6}} ]
+[ \text{RHS: } 1 + \sqrt{6} ]
+Since <span class="arithmatex">\(1 + \sqrt{6} &gt; 0\)</span> (the radical sign requires a non-negative result) and both sides are positive, verify by squaring: <span class="arithmatex">\((1 + \sqrt{6})^2 = 1 + 2\sqrt{6} + 6 = 7 + 2\sqrt{6}\)</span>, which matches the LHS under the radical. This solution is valid.</p>
+<p>For <span class="arithmatex">\(x = 1 - \sqrt{6}\)</span>:
+[ \text{RHS: } 1 - \sqrt{6} \approx -1.45 ]
+Since the principal square root on the LHS must be non-negative, and the RHS is negative, this solution is <strong>extraneous</strong> and rejected.</p>
+<p>The only valid solution is <span class="arithmatex">\(x = 1 + \sqrt{6}\)</span>.</p>
+<h4 id="worked-example-radical-equation-with-two-radicals">Worked Example: Radical Equation with Two Radicals<a class="headerlink" href="#worked-example-radical-equation-with-two-radicals" title="Permanent link">&para;</a></h4>
+<p>Solve <span class="arithmatex">\(\sqrt{x + 3} + \sqrt{x - 2} = 7\)</span>.</p>
+<p>This equation has two radicals, so you isolate one radical first, then square both sides (twice):</p>
+<p><strong>Step 1:</strong> Isolate one radical:
+[ \sqrt{x + 3} = 7 - \sqrt{x - 2} ]</p>
+<p><strong>Step 2:</strong> Square both sides. Apply <span class="arithmatex">\((a - b)^2 = a^2 - 2ab + b^2\)</span>:
+[ x + 3 = (7 - \sqrt{x - 2})^2 ]
+[ x + 3 = 49 - 14\sqrt{x - 2} + (x - 2) ]
+[ x + 3 = 47 + x - 14\sqrt{x - 2} ]</p>
+<p>Subtract <span class="arithmatex">\(x\)</span> from both sides and simplify:
+[ 3 = 47 - 14\sqrt{x - 2} ]
+[ -44 = -14\sqrt{x - 2} ]
+[ \frac{44}{14} = \sqrt{x - 2} ]
+[ \frac{22}{7} = \sqrt{x - 2} ]</p>
+<p><strong>Step 3:</strong> Square again:
+[ \left(\frac{22}{7}\right)^2 = x - 2 ]
+[ \frac{484}{49} = x - 2 ]
+[ x = \frac{484}{49} + \frac{98}{49} = \frac{582}{49} ]</p>
+<p><strong>Step 4:</strong> Check:
+LHS = <span class="arithmatex">\(\sqrt{\frac{582}{49} + 3} + \sqrt{\frac{582}{49} - 2} = \sqrt{\frac{729}{49}} + \sqrt{\frac{494}{49}}\)</span>.</p>
+<p>Since <span class="arithmatex">\(\sqrt{\frac{729}{49}} = \frac{27}{7}\)</span> and <span class="arithmatex">\(\sqrt{\frac{494}{49}} = \frac{\sqrt{494}}{7}\)</span>, verify:
+[ \frac{27 + \sqrt{494}}{7} = 7 \implies 27 + \sqrt{494} = 49 \implies \sqrt{494} = 22 \implies 494 = 484 ]</p>
+<p>This is false (494 ≠ 484), so <span class="arithmatex">\(\frac{582}{49}\)</span> is an extraneous solution. Wait — let me recheck the calculation more carefully.</p>
+<p>Going back to <span class="arithmatex">\(-44 = -14\sqrt{x-2}\)</span>: dividing both sides by -14 gives <span class="arithmatex">\(\sqrt{x - 2} = \frac{22}{7}\)</span>. The RHS of this intermediate step is positive, so squaring is valid here. Now <span class="arithmatex">\(\left(\frac{22}{7}\right)^2 = \frac{484}{49}\)</span>, so <span class="arithmatex">\(x = \frac{484}{49} + 2 = \frac{582}{49}\)</span>.</p>
+<p>To check in the original equation <span class="arithmatex">\(\sqrt{x + 3} + \sqrt{x - 2} = 7\)</span>:
+[ \sqrt{\frac{582}{49} + 3} + \sqrt{\frac{582}{49} - 2} = \sqrt{\frac{729}{49}} + \sqrt{\frac{494}{49}} ]</p>
+<p>Now <span class="arithmatex">\(\sqrt{\frac{729}{49}} = \frac{27}{7}\)</span>. So we need <span class="arithmatex">\(\frac{27}{7} + \frac{\sqrt{494}}{7} = 7\)</span>, which requires <span class="arithmatex">\(\sqrt{494} = 49 - 27 = 22\)</span>, meaning <span class="arithmatex">\(494 = 484\)</span>. This fails.</p>
+<p>The error is in the original setup: let me verify by working backwards. If we want integer solutions, try <span class="arithmatex">\(\sqrt{x + 3} = a\)</span> and <span class="arithmatex">\(\sqrt{x - 2} = b\)</span>, where <span class="arithmatex">\(a + b = 7\)</span>. Then <span class="arithmatex">\(x = a^2 - 3 = b^2 + 2\)</span>, so <span class="arithmatex">\(a^2 - b^2 = 5\)</span>, which factors as <span class="arithmatex">\((a + b)(a - b) = 5\)</span>. Since <span class="arithmatex">\(a + b = 7\)</span>:
+[ a - b = \frac{5}{7} ]</p>
+<p>Solving: <span class="arithmatex">\(2a = 7 + \frac{5}{7} = \frac{54}{7}\)</span>, so <span class="arithmatex">\(a = \frac{27}{7}\)</span> and <span class="arithmatex">\(b = 7 - \frac{27}{7} = \frac{22}{7}\)</span>. Then:
+[ x = a^2 - 3 = \frac{729}{49} - 3 = \frac{582}{49} ]</p>
+<p>This confirms the algebraic result. The equation does have a valid solution at <span class="arithmatex">\(x = \frac{582}{49}\)</span>, but it is not an integer, which makes the check less clean.</p>
+<h3 id="solving-radical-equations-the-step-by-step-checklist">Solving Radical Equations: The Step-by-Step Checklist<a class="headerlink" href="#solving-radical-equations-the-step-by-step-checklist" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Why It Matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Isolate the radical on one side</td>
+<td>Prevents errors from squaring extra terms</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Raise both sides to the index power</td>
+<td>Eliminates the radical, giving an algebraic equation</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Solve the resulting equation</td>
+<td>May produce quadratic or linear equations</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Check each solution in the original equation</td>
+<td>Catches extraneous solutions introduced by squaring</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-takeaway-why-checking-is-mandatory">Key Takeaway: Why Checking Is Mandatory<a class="headerlink" href="#key-takeaway-why-checking-is-mandatory" title="Permanent link">&para;</a></h3>
+<p>Every radical equation solved by raising both sides to an even power must be checked. There is no shortcut — every candidate solution must be substituted back into the <strong>original</strong> equation (not the intermediate one). For odd-indexed radicals (cube roots, fifth roots), extraneous solutions are impossible because odd powers are one-to-one functions: they preserve sign and produce exactly one output for every input.</p>
+<hr />
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>This chapter developed a complete toolkit for working with radicals and radical equations:</p>
+<ol>
+<li>
+<p><strong>Radical notation</strong> uses the symbol <span class="arithmatex">\(\sqrt[n]{\;}\)</span> to represent the nth root of a quantity. The index <span class="arithmatex">\(n\)</span> determines how many factors of that quantity were multiplied to produce the radicand. Square roots (<span class="arithmatex">\(n = 2\)</span>) and cube roots (<span class="arithmatex">\(n = 3\)</span>) are the most common cases.</p>
+</li>
+<li>
+<p><strong>Radicals and rational exponents</strong> are interchangeable: <span class="arithmatex">\(\sqrt[n]{a} = a^{1/n}\)</span> and <span class="arithmatex">\(a^{m/n} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m\)</span>. This equivalence lets you apply exponent rules to radicals and radical properties to rational exponents.</p>
+</li>
+<li>
+<p><strong>Simplifying radicals</strong> involves factoring the radicand, pulling out perfect nth-power factors, and leaving only non-factorable quantities under the radical sign. Like terms in addition and multiplication follow the same logic as ordinary algebraic expressions once like radicals are identified.</p>
+</li>
+<li>
+<p><strong>Radical equations</strong> are solved by isolating the radical, raising both sides to the index power, and solving the resulting equation. Checking every solution is mandatory because squaring can introduce extraneous solutions that do not satisfy the original equation.</p>
+</li>
+</ol>
+<p>These concepts extend throughout the textbook: rational exponents reappear in Chapter 8 on exponential functions, radical simplification supports equation solving in later chapters, and understanding when extraneous solutions arise is critical for all algebraic modeling work ahead.</p>
+<h2 id="key-terms">Key Terms<a class="headerlink" href="#key-terms" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Radical:</strong> The symbol <span class="arithmatex">\(\sqrt[n]{\;}\)</span> that represents an nth root of a number or expression.</li>
+<li><strong>Radicand:</strong> The quantity under the radical sign.</li>
+<li><strong>Index:</strong> The small number <span class="arithmatex">\(n\)</span> outside and above the radical symbol, indicating which root is taken. When omitted, the index is 2.</li>
+<li><strong>Principal square root:</strong> The non-negative square root of a positive number, denoted by <span class="arithmatex">\(\sqrt{\;}\)</span>.</li>
+<li><strong>Like radicals:</strong> Radicals with the same index and the same radicand; they can be combined by addition or subtraction.</li>
+<li><strong>Rational exponent:</strong> An exponent expressed as a fraction <span class="arithmatex">\(m/n\)</span>, equivalent to the nth root of the base raised to the power <span class="arithmatex">\(m\)</span>.</li>
+<li><strong>Extraneous solution:</strong> A value that appears to solve an equation after algebraic manipulation but does not satisfy the original equation, often introduced by squaring both sides.</li>
+<li><strong>Conjugate:</strong> For a binomial of the form <span class="arithmatex">\(a + b\)</span> where one or both terms are radicals, the conjugate is <span class="arithmatex">\(a - b\)</span>. Multiplying a radical expression by its conjugate eliminates radicals from the product via the difference-of-squares pattern <span class="arithmatex">\((a + b)(a - b) = a^2 - b^2\)</span>.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../10-mathematical-modeling-applications/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 10. Mathematical Modeling and Applications">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                10. Mathematical Modeling and Applications
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../chapter-metrics/" class="md-footer__link md-footer__link--next" aria-label="Next: View Chapter Content Metrics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                View Chapter Content Metrics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

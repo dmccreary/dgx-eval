@@ -1,0 +1,2171 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A capstone chapter that brings together algebraic tools to solve real-world problems through mathematical models, linear equations, and exponential functions.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/10-mathematical-modeling-applications/">
+      
+      
+        <link rel="prev" href="../09-sequences-and-statistics/">
+      
+      
+        <link rel="next" href="../11-radicals-and-equations/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Chapter 10: Mathematical Modeling and Applications - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-10-mathematical-modeling-and-applications" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 10: Mathematical Modeling and Applications
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            qwen3.6:35b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5_4" id="__nav_8_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundational-concepts-and-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundational Number Concepts and Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-variables-expressions-polynomial-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Variables, Expressions, and Polynomial Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-factoring-techniques-polynomial-division/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Factoring Techniques and Polynomial Division
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-linear-equations-inequalities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Linear Equations and Inequalities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-linear-relationships-coordinate-graphing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linear Relationships and Coordinate Graphing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-functions-relations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Functions and Relations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-exponential-functions-sequences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Exponential Functions and Sequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-sequences-and-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Sequences and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    10. Mathematical Modeling and Applications
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    10. Mathematical Modeling and Applications
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-mathematical-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is a Mathematical Model?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#translating-word-problems-into-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translating Word Problems into Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Translating Word Problems into Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-translating-and-solving-a-word-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Translating and Solving a Word Problem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Modeling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponential-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Modeling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential Modeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-exponential-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Exponential Decay
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transforming-exponential-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transforming Exponential Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-models-in-stem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Models in STEM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-10-interactive-choosing-the-right-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 10 Interactive: Choosing the Right Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 10 Interactive: Choosing the Right Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-linear-vs-exponential-model-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Linear vs Exponential Model Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-radicals-and-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Radicals and Radical Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-mathematical-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is a Mathematical Model?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#translating-word-problems-into-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translating Word Problems into Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Translating Word Problems into Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-translating-and-solving-a-word-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Translating and Solving a Word Problem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Modeling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponential-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Modeling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential Modeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-exponential-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Exponential Decay
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transforming-exponential-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transforming Exponential Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-models-in-stem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Models in STEM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-10-interactive-choosing-the-right-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 10 Interactive: Choosing the Right Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 10 Interactive: Choosing the Right Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-linear-vs-exponential-model-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Linear vs Exponential Model Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/qwen3.6-35b/chapters/10-mathematical-modeling-applications/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-10-mathematical-modeling-and-applications">Chapter 10: Mathematical Modeling and Applications<a class="headerlink" href="#chapter-10-mathematical-modeling-and-applications" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This final chapter brings together the full range of algebraic tools studied throughout the course to solve real-world problems. Students learn to translate word problems into mathematical equations, build linear models from data or verbal descriptions, model exponential growth and decay scenarios with transformations applied to parent functions, compare different model types using parent function analysis, and explore how these mathematical structures appear in scientific and engineering contexts. This chapter serves as a capstone that reinforces connections across all previously studied topics.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:
+- <a href="../03-factoring-techniques-polynomial-division/">Chapter 3: Factoring Techniques and Polynomial Division</a>
+- <a href="../04-linear-equations-inequalities/">Chapter 4: Linear Equations and Inequalities</a>
+- <a href="../05-linear-relationships-coordinate-graphing/">Chapter 5: Linear Relationships and Coordinate Graphing</a>
+- <a href="../07-functions-relations/">Chapter 7: Functions and Relations</a>
+- <a href="../08-exponential-functions-sequences/">Chapter 8: Exponential Functions and Sequences</a></p>
+<hr />
+<h2 id="what-is-a-mathematical-model">What Is a Mathematical Model?<a class="headerlink" href="#what-is-a-mathematical-model" title="Permanent link">&para;</a></h2>
+<p>A mathematical model is an equation, inequality, or system of equations that represents a real-world situation. Models let us describe patterns in data, make predictions about future outcomes, and answer questions that would be difficult or expensive to investigate by experiment alone. Throughout this book you have encountered several kinds of models without necessarily naming them: linear functions when quantities change at a constant rate, quadratic functions when quantities accelerate, and exponential functions when quantities multiply by the same factor over equal intervals.</p>
+<p>Mathematical models fall into two broad categories. Analytical models express relationships through explicit formulas—such as $d = rt$ for distance, rate, and time. Numerical models approximate behavior through data-driven techniques like regression or simulation. This chapter focuses on analytical models built from algebraic equations and functions.</p>
+<p>Before building any model, you must first decide which family of functions fits the situation. The key distinction is whether the quantity changes by adding a fixed amount (linear) or multiplying by a fixed factor (exponential). This choice determines every step that follows.</p>
+<div class="admonition tip">
+<p class="admonition-title">Choosing Between Linear and Exponential</p>
+<p>Ask yourself: does the situation involve a constant rate of change (the same number added each time) or a constant percent rate of change (the same percentage multiplied each time)? The answer tells you which model family to use immediately.</p>
+</div>
+<h2 id="translating-word-problems-into-equations">Translating Word Problems into Equations<a class="headerlink" href="#translating-word-problems-into-equations" title="Permanent link">&para;</a></h2>
+<p>Translating word problems into mathematical equations is the first and most critical step in modeling. A word problem describes a situation in everyday language; your job is to identify the quantities involved, assign variable names to the unknowns, and write an equation that captures the relationships described.</p>
+<p>The process breaks into four steps:</p>
+<ol>
+<li><strong>Identify what you are looking for.</strong> Underline or highlight the question at the end of the problem. This tells you which quantity to solve for.</li>
+<li><strong>Name the unknown(s).</strong> Assign a variable, typically $x$ or another letter that suggests the quantity (for example, $t$ for time, $w$ for width).</li>
+<li><strong>Translate each sentence into algebra.</strong> Look for key phrases: "sum of" means addition, "twice" means multiplication by 2, "decreased by" means subtraction, "is equal to" becomes an equals sign.</li>
+<li><strong>Solve and check.</strong> Use the equation-solving techniques from Chapters 4 and 7, then verify that your answer makes sense in the context of the problem.</li>
+</ol>
+<p>Consider a worked example to see how these steps work together in practice.</p>
+<h3 id="worked-example-translating-and-solving-a-word-problem">Worked Example: Translating and Solving a Word Problem<a class="headerlink" href="#worked-example-translating-and-solving-a-word-problem" title="Permanent link">&para;</a></h3>
+<p>A cell phone plan charges a flat monthly fee of $20 plus $0.15 per text message sent. Another plan charges a flat fee of $35 with $0.05 per text. At how many text messages do the two plans cost the same amount?</p>
+<p>To translate this into an equation, let $t$ represent the number of text messages sent in a month. The total cost of the first plan is $20 + 0.15t$, since the monthly fee adds to the per-text charge. The total cost of the second plan is $35 + 0.05t$ for the same reasoning. Setting these equal gives the equation:</p>
+<div class="arithmatex">\[20 + 0.15t = 35 + 0.05t\]</div>
+<p>To solve, subtract $0.05t$ from both sides and subtract 20 from both sides:</p>
+<div class="arithmatex">\[0.15t - 0.05t = 35 - 20$$
+$$0.10t = 15$$
+$$t = 150\]</div>
+<p>The plans cost the same at 150 text messages per month. You can verify this by substituting back: Plan A gives $20 + 0.15(150) = 20 + 22.50 = 42.50$, and Plan B gives $35 + 0.05(150) = 35 + 7.50 = 42.50$. Both match, so the answer is correct.</p>
+<hr />
+<h2 id="linear-modeling">Linear Modeling<a class="headerlink" href="#linear-modeling" title="Permanent link">&para;</a></h2>
+<p>Linear modeling applies when a quantity changes at a constant rate—the defining feature of linear relationships studied in Chapter 5. The standard form for a linear model is:</p>
+<div class="arithmatex">\[y = mx + b\]</div>
+<p>where $m$ is the slope (rate of change) and $b$ is the initial value or vertical intercept. In context, $b$ represents the starting amount when the independent variable equals zero, and $m$ tells you how much the dependent variable increases for each unit increase in the independent variable.</p>
+<p>Real-world situations that produce linear models include any scenario with a constant rate of change: a car traveling at constant speed, a savings account earning simple interest, or a printer producing pages at a steady rate. The linear equation $y = mx + b$ captures these relationships compactly and allows you to answer questions about any point on the line.</p>
+<p>When building a linear model from a word problem, identify two key numbers: the starting value ($b$) and the constant rate of change ($m$). Once you have those, writing the equation is straightforward—you substitute each into the slope-intercept form. The resulting model then lets you predict outcomes for any input value within the model's valid range.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Key Properties of Linear Models</p>
+<p>Linear models have these signature characteristics: (1) their graphs are straight lines; (2) the difference between successive outputs is constant when inputs increase by equal amounts; (3) the ratio of output differences to input differences always equals the slope $m$; and (4) they grow or decline by equal increments, not by equal factors.</p>
+</div>
+<hr />
+<h2 id="exponential-modeling">Exponential Modeling<a class="headerlink" href="#exponential-modeling" title="Permanent link">&para;</a></h2>
+<p>Exponential modeling applies when a quantity changes by a constant percent rate over equal intervals—the defining feature studied in Chapter 8. The standard form for an exponential model is:</p>
+<div class="arithmatex">\[y = a \cdot b^x\]</div>
+<p>where $a$ is the initial value (the output when $x = 0$) and $b$ is the growth or decay factor. When $b &gt; 1$, the function represents exponential growth—the quantity multiplies by the factor $b$ each time $x$ increases by 1. When $0 &lt; b &lt; 1$, the function represents exponential decay—the quantity is multiplied by a fraction less than 1 at each step, causing it to shrink toward zero.</p>
+<p>Two key parameters in exponential modeling are the growth rate and the decay factor. The growth rate $r$ (expressed as a percentage) relates to the growth factor by $b = 1 + r$. For example, a 5% annual growth rate corresponds to a growth factor of $b = 1 + 0.05 = 1.05$. Conversely, the decay factor is simply $b$ itself when describing exponential decay; the decay rate is $1 - b$. A decay factor of 0.85 means the quantity retains 85% of its value each period, or equivalently, decreases by 15% per period.</p>
+<p>Real-world situations that produce exponential models include population growth, compound interest, radioactive decay, and the spread of infectious diseases. The hallmark of exponential behavior is that equal changes in input produce equal factors in output—not equal differences. This property distinguishes it fundamentally from linear growth.</p>
+<h3 id="worked-example-exponential-decay">Worked Example: Exponential Decay<a class="headerlink" href="#worked-example-exponential-decay" title="Permanent link">&para;</a></h3>
+<p>A pharmaceutical drug is eliminated from the bloodstream at a rate such that 25% of the remaining amount is cleared each hour. If an initial dose of 200 mg enters the bloodstream, write an exponential model for the amount remaining after $t$ hours.</p>
+<p>The decay factor is $b = 1 - 0.25 = 0.75$, since 75% of the drug remains after each hour. The initial value is $a = 200$. Substituting into the standard form:</p>
+<div class="arithmatex">\[A(t) = 200 \cdot (0.75)^t\]</div>
+<p>After 3 hours, the remaining amount is $A(3) = 200 \cdot 0.75^3 = 200 \cdot 0.421875 \approx 84.38$ mg.</p>
+<hr />
+<h2 id="transforming-exponential-functions">Transforming Exponential Functions<a class="headerlink" href="#transforming-exponential-functions" title="Permanent link">&para;</a></h2>
+<p>Just as with other parent functions studied in Chapter 7, exponential functions can be transformed by shifting, reflecting, or stretching their graphs. These transformations let you adapt the basic model $y = b^x$ to match data that does not start at $(0, 1)$.</p>
+<p>The general transformed form is:</p>
+<div class="arithmatex">\[y = a \cdot b^{(x - h)} + k\]</div>
+<p>Each parameter controls a specific transformation of the parent exponential function:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Effect</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$a$</td>
+<td>Vertical stretch or reflection</td>
+<td>Scales the output vertically; if $a &lt; 0$, the graph reflects across the x-axis</td>
+</tr>
+<tr>
+<td>$b$</td>
+<td>Growth or decay rate</td>
+<td>Determines how quickly the function grows ($b &gt; 1$) or decays ($0 &lt; b &lt; 1$)</td>
+</tr>
+<tr>
+<td>$h$</td>
+<td>Horizontal shift</td>
+<td>Moves the graph left ($h &lt; 0$) or right ($h &gt; 0$); shifts which input produces the initial value</td>
+</tr>
+<tr>
+<td>$k$</td>
+<td>Vertical shift (horizontal asymptote)</td>
+<td>Raises or lowers the entire graph; sets the horizontal asymptote at $y = k$</td>
+</tr>
+</tbody>
+</table>
+<p>The most practically important transformation is the vertical shift $k$, which establishes a nonzero horizontal asymptote. In real-world contexts, this often represents a carrying capacity (for decay toward a baseline) or an equilibrium level. For example, a cooling object approaches room temperature as its asymptote—the exponential model describes how far above that temperature it remains at each moment.</p>
+<div class="admonition info">
+<p class="admonition-title">Horizontal Asymptote in Exponential Models</p>
+<p>Every exponential function of the form $y = a \cdot b^x + k$ has a horizontal asymptote at $y = k$. As $x$ becomes very large (positive or negative depending on whether $b &gt; 1$ or $0 &lt; b &lt; 1$), the term $a \cdot b^x$ dominates for growth and approaches zero for decay, leaving $y$ to approach $k$. This asymptote represents a floor or ceiling that the modeled quantity never crosses.</p>
+</div>
+<hr />
+<h2 id="mathematical-models-in-stem">Mathematical Models in STEM<a class="headerlink" href="#mathematical-models-in-stem" title="Permanent link">&para;</a></h2>
+<p>Mathematical modeling appears throughout science, technology, engineering, and mathematics (STEM). Each discipline uses models to represent systems, predict behavior, and communicate findings. Understanding how algebraic structures manifest across fields builds intuition for choosing the right model in any new context.</p>
+<p>Below is a sampling of common modeling applications across STEM disciplines:</p>
+<table>
+<thead>
+<tr>
+<th>Discipline</th>
+<th>Application</th>
+<th>Model Type</th>
+<th>Key Equation or Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physics</td>
+<td>Free-fall distance near Earth's surface</td>
+<td>Quadratic</td>
+<td>$d = \frac{1}{2}gt^2$</td>
+</tr>
+<tr>
+<td>Biology</td>
+<td>Population growth (unlimited resources)</td>
+<td>Exponential</td>
+<td>$P(t) = P_0 \cdot e^{rt}$</td>
+</tr>
+<tr>
+<td>Chemistry</td>
+<td>Radioactive half-life decay</td>
+<td>Exponential decay</td>
+<td>$N(t) = N_0 \cdot (0.5)^{t/t_{1/2}}$</td>
+</tr>
+<tr>
+<td>Economics</td>
+<td>Compound interest</td>
+<td>Exponential</td>
+<td>$A = P(1 + r/n)^{nt}$</td>
+</tr>
+<tr>
+<td>Engineering</td>
+<td>Linear stress-strain relationship</td>
+<td>Linear</td>
+<td>$\sigma = E \cdot \epsilon$</td>
+</tr>
+<tr>
+<td>Epidemiology</td>
+<td>Disease spread (SIR model)</td>
+<td>System of equations</td>
+<td>Differential equations</td>
+</tr>
+<tr>
+<td>Environmental Science</td>
+<td>Cooling of objects</td>
+<td>Exponential decay</td>
+<td>$T(t) = T_{env} + (T_0 - T_{env})e^{-kt}$</td>
+</tr>
+</tbody>
+</table>
+<p>Each row shows how a real phenomenon maps to a specific algebraic structure. The same exponential form that models bacterial growth also describes drug elimination and radioactive decay—these phenomena share the underlying mechanism of proportional change, where the rate at which something changes depends on the current amount present. Recognizing this shared pattern lets you transfer solution strategies from one domain to another.</p>
+<p>Before building any model in a new field, ask three questions: (1) Does the quantity increase by equal amounts or by equal factors? (2) Is there an initial value and a constant rate? (3) Is there a floor or ceiling that the quantity approaches but never crosses? These answers narrow your choices from "any equation" to one specific model family.</p>
+<hr />
+<h2 id="chapter-10-interactive-choosing-the-right-model">Chapter 10 Interactive: Choosing the Right Model<a class="headerlink" href="#chapter-10-interactive-choosing-the-right-model" title="Permanent link">&para;</a></h2>
+<h4 id="diagram-linear-vs-exponential-model-explorer">Diagram: Linear vs Exponential Model Explorer<a class="headerlink" href="#diagram-linear-vs-exponential-model-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Linear vs Exponential Model Explorer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> linear-vs-exponential-model-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> apply<br/>
+<strong>Learning Objective:</strong> The learner will apply the distinguishing features of linear and exponential growth to select the correct model type for a given word problem.</p>
+<p><strong>Prerequisites:</strong> slope, rate of change, exponential growth, exponential decay, growth factor, horizontal asymptote (all defined in the sections above).</p>
+<p><strong>Evidence of Mastery:</strong> For five described scenarios, the learner selects either "linear" or "exponential" as the correct model type and inputs the equation parameters. A selection is correct when it matches the answer column in Content. Mastery requires 4 of 5 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Confusing constant absolute change with constant percent change. (2) Assuming all growth is linear because numbers increase over time. (3) Believing exponential graphs can cross a horizontal axis rather than their asymptote.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level model selection requires the learner to use distinguishing features—equal differences for linear, equal factors for exponential—to identify the correct family. Providing both the classification and equation parameters ensures the learner can execute the translation from words to algebra, which is the core competency of this chapter.</p>
+<p><strong>Content:</strong></p>
+<p>Five scenarios presented one at a time, each with a short verbal description and a table of sampled data:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Scenario Description</th>
+<th>Data Pattern (x = time in months)</th>
+<th>Correct Model</th>
+<th>Equation Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A savings account starts at $500. Each month, $50 is deposited. Fixed deposit, no interest. x: 0, 1, 2, 3 gives y: 500, 550, 600, 650. Difference between successive y-values is always 50.</td>
+<td>Linear</td>
+<td>m = 50, b = 500 → y = 50x + 500</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>A bacteria culture starts at 100 cells and doubles every hour. x: 0, 1, 2, 3 gives y: 100, 200, 400, 800. Ratio between successive y-values is always 2.</td>
+<td>Exponential</td>
+<td>a = 100, b = 2 → y = 100 · 2^x</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>A car travels at a constant speed of 65 mph. Distance from start increases equally each hour. x: 0, 1, 2, 3 gives y: 0, 65, 130, 195. Difference between successive y-values is always 65.</td>
+<td>Linear</td>
+<td>m = 65, b = 0 → y = 65x</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>A car's value depreciates by 12% each year. It was purchased for $28,000. x: 0, 1, 2, 3 gives y: 28000, 24640, 21683, 19081. Each value is 0.88 of the previous.</td>
+<td>Exponential</td>
+<td>a = 28000, b = 0.88 → y = 28000 · (0.88)^x</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>A printer produces 40 pages per minute. Starting from zero printed pages. x: 0, 1, 2, 3 gives y: 0, 40, 80, 120. Difference is always 40.</td>
+<td>Linear</td>
+<td>m = 40, b = 0 → y = 40x</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>For each scenario, a side-by-side graph shows sample points plotted on the same coordinate plane so the learner can compare straight-line versus curved behavior visually. The horizontal axis represents time; the vertical axis represents the modeled quantity.</p>
+<p><strong>Provenance:</strong> Scenarios are synthetic with seed 10 for reproducibility. Data values are computed from the stated model equations and rounded to the nearest whole number where applicable. The depreciation scenario uses b = 1 − 0.12 = 0.88 exactly.</p>
+<p><strong>Rules:</strong> (a) The learner selects a model type (linear or exponential) for each scenario by clicking one of two buttons. (b) After submitting a selection, the correct answer is revealed with the equation parameters and the computed data column shown explicitly. (c) A numeric score "Score: n of 5" updates after each submission. (d) The learner may proceed through all five scenarios in fixed order.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads scenario 1 and observes the data table with the plotted points below it.</li>
+<li>The learner clicks either "Linear Model" or "Exponential Model" as the correct classification.</li>
+<li>The learner presses Check Answer. The sim reveals whether the selection is correct, displays the equation with its parameters, and shows the data column with differences or ratios highlighted to reinforce the distinguishing feature.</li>
+<li>Steps 1–3 repeat for scenarios 2 through 5 in order.</li>
+<li>After all five, the final score is displayed along with a summary of which types were missed.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct selection: "Correct: this scenario shows equal differences (or equal factors), so it is a [linear / exponential] model." Incorrect selection: "Not quite. Check whether the data has equal <em>differences</em> between successive values (linear) or equal <em>factors</em> (ratios). The table above highlights this pattern." After scenario 5, if the learner scored below 4 of 5, suggest reviewing Sections 3 and 6 on linear and exponential modeling.</p>
+<p><strong>Starting State:</strong> Scenario 1 is displayed with its description, data table, and two unanswered buttons: "Linear Model" and "Exponential Model." The question posed is "Which type of model best fits this situation?"</p>
+<p><strong>Chapter Anchors:</strong> Section 4 states the depreciation rate of 12% per year. Section 3 gives the cell phone plan example with $20 + 0.15t = 35 + 0.05t yielding t = 150 text messages.</p>
+</details>
+<hr />
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>This chapter introduced the concept of mathematical models—equations and functions that represent real-world situations—and showed how to move from word problems to algebraic expressions through a systematic translation process. Linear modeling captures constant-rate change with the form $y = mx + b$, while exponential modeling captures constant-percent change with the form $y = a \cdot b^x$. Transforming exponential functions through vertical shifts, horizontal shifts, stretches, and reflections extends the basic parent function to match real data that does not start at $(0, 1)$. Across science and engineering, these algebraic structures appear repeatedly because many natural and social processes follow proportional-change mechanisms.</p>
+<p>The distinguishing feature between model types is the most practical tool you now carry: equal differences in output for equal input steps signals a linear model, while equal factors (ratios) between successive outputs signals exponential behavior. Recognizing this pattern at the data stage prevents choosing the wrong equation family—a common error that cascades through every subsequent calculation.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A mathematical model translates a real-world situation into an equation that can be analyzed and used for predictions.</li>
+<li>Linear models use constant absolute change ($y = mx + b$); exponential models use constant percent change ($y = a \cdot b^x$).</li>
+<li>The growth factor $b$ relates to the growth rate $r$ by $b = 1 + r$; for decay, the decay rate is $1 - b$.</li>
+<li>Transformations of exponential functions include vertical stretch ($a$), horizontal shift ($h$), and vertical shift with asymptote ($k$).</li>
+<li>Choosing between model families depends on whether data shows equal differences or equal ratios between successive outputs.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../09-sequences-and-statistics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9. Sequences and Statistics">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                9. Sequences and Statistics
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../11-radicals-and-equations/" class="md-footer__link md-footer__link--next" aria-label="Next: 11. Radicals and Radical Equations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                11. Radicals and Radical Equations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

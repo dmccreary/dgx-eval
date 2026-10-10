@@ -54,6 +54,8 @@
     
       <link rel="stylesheet" href="../css/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -557,6 +559,83 @@
   
   
     <li class="md-nav__item">
+      <a href="../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cost-analysis/" class="md-nav__link">
         
   
@@ -690,6 +769,10 @@
   
     
     
+      
+        
+          
+        
       
         
           
@@ -986,9 +1069,9 @@
 <h1 id="design-choices">Design Choices<a class="headerlink" href="#design-choices" title="Permanent link">&para;</a></h1>
 <p>This page records the design decisions behind the testing configuration. For
 each one it gives the choice, the options weighed against it, and the reason.</p>
-<p>Three parties made these decisions: Dan, the author; the Administrator, who
+<p>Three parties made these decisions: the Primary Author; the Administrator, who
 runs the DGX systems; and Claude, the AI assistant that built and ran the tests
-under Dan's direction. The page says who decided each one, because a choice made by
+under the Primary Author's direction. The page says who decided each one, because a choice made by
 a person with a goal and a choice made by an assistant filling a gap deserve
 different scrutiny.</p>
 <p>Some of these choices did not hold up. They are marked where they appear and
@@ -1008,35 +1091,35 @@ collected in the last section.</p>
 </tr>
 <tr>
 <td>Python and Unix shell scripts for automation</td>
-<td>Dan</td>
+<td>The Primary Author</td>
 </tr>
 <tr>
 <td>A dedicated <code>dgx</code> conda environment on the laptop</td>
-<td>Dan</td>
+<td>The Primary Author</td>
 </tr>
 <tr>
 <td>Start testing before Docker access existed</td>
-<td>Dan</td>
+<td>The Primary Author</td>
 </tr>
 <tr>
 <td>Algebra I as the benchmark course</td>
-<td>Dan</td>
+<td>The Primary Author</td>
 </tr>
 <tr>
 <td>Three pipeline stages in the benchmark, and no more</td>
-<td>Dan</td>
+<td>The Primary Author</td>
 </tr>
 <tr>
 <td>Fix the skill's faulty example before the comparison runs</td>
-<td>Dan</td>
+<td>The Primary Author</td>
 </tr>
 <tr>
 <td>Run the harness in a Docker container on the DGX</td>
-<td>Dan, on Claude's recommendation</td>
+<td>The Primary Author, on Claude's recommendation</td>
 </tr>
 <tr>
 <td>Only a local model may generate benchmark content</td>
-<td>Dan</td>
+<td>The Primary Author</td>
 </tr>
 <tr>
 <td>Everything else on this page</td>
@@ -1061,11 +1144,11 @@ to ask for a change to either router.</p>
 <tbody>
 <tr>
 <td><strong>conda-forge <code>tailscale</code> and <code>tailscaled</code> packages</strong></td>
-<td>Chosen. Dan asked for the tools in a conda environment, and these are the open-source client and daemon</td>
+<td>Chosen. The Primary Author asked for the tools in a conda environment, and these are the open-source client and daemon</td>
 </tr>
 <tr>
 <td>The Tailscale macOS application</td>
-<td>Simpler to run, but it lives outside the conda environment Dan asked for</td>
+<td>Simpler to run, but it lives outside the conda environment the Primary Author asked for</td>
 </tr>
 <tr>
 <td>Homebrew</td>
@@ -1076,7 +1159,7 @@ to ask for a change to either router.</p>
 <p>The cost is that the daemon must be started by hand, with <code>sudo</code>, in every
 session.</p>
 <h2 id="automation-python-and-unix-shell">Automation: Python and Unix Shell<a class="headerlink" href="#automation-python-and-unix-shell" title="Permanent link">&para;</a></h2>
-<p><strong>Decided by:</strong> Dan.</p>
+<p><strong>Decided by:</strong> The Primary Author.</p>
 <p>Every test, probe, and runner is a Python or shell script. Claude made three
 choices inside that decision.</p>
 <table>
@@ -1106,7 +1189,7 @@ choices inside that decision.</p>
 </tbody>
 </table>
 <h2 id="login-ssh-keys">Login: SSH Keys<a class="headerlink" href="#login-ssh-keys" title="Permanent link">&para;</a></h2>
-<p><strong>Decided by:</strong> Claude proposed it, and Dan created and installed the key.</p>
+<p><strong>Decided by:</strong> Claude proposed it, and the Primary Author created and installed the key.</p>
 <table>
 <thead>
 <tr>
@@ -1163,7 +1246,7 @@ choices inside that decision.</p>
 almost the whole conversation on every turn, which added one to two minutes
 per turn. The cause was not identified.</p>
 <h2 id="installing-without-administrator-rights">Installing Without Administrator Rights<a class="headerlink" href="#installing-without-administrator-rights" title="Permanent link">&para;</a></h2>
-<p><strong>Decided by:</strong> Dan directed that testing start before Docker access existed.
+<p><strong>Decided by:</strong> The Primary Author directed that testing start before Docker access existed.
 Claude chose the method.</p>
 <table>
 <thead>
@@ -1310,7 +1393,7 @@ harness.</p>
 <p>The first versions of three checks were too strict and failed correct output.
 Each was fixed and the saved output was scored again.</p>
 <h2 id="harness-claude-code">Harness: Claude Code<a class="headerlink" href="#harness-claude-code" title="Permanent link">&para;</a></h2>
-<p><strong>Decided by:</strong> Claude chose it over the alternatives. Dan then confirmed it,
+<p><strong>Decided by:</strong> Claude chose it over the alternatives. The Primary Author then confirmed it,
 with the condition that only a local model generates.</p>
 <table>
 <thead>
@@ -1334,7 +1417,7 @@ with the condition that only a local model generates.</p>
 </tr>
 <tr>
 <td>A cloud model plans and the local model writes</td>
-<td>Offered to Dan as a hybrid. He chose the local harness, because the benchmark tests whether a local harness can execute the skills</td>
+<td>Offered to the Primary Author as a hybrid. He chose the local harness, because the benchmark tests whether a local harness can execute the skills</td>
 </tr>
 </tbody>
 </table>
@@ -1342,7 +1425,7 @@ with the condition that only a local model generates.</p>
 about 19,000 tokens and were written for Claude models. A local model that
 struggles may be struggling with the harness.</p>
 <h2 id="where-the-harness-runs">Where the Harness Runs<a class="headerlink" href="#where-the-harness-runs" title="Permanent link">&para;</a></h2>
-<p><strong>Decided by:</strong> Dan chose the container, on Claude's recommendation.</p>
+<p><strong>Decided by:</strong> The Primary Author chose the container, on Claude's recommendation.</p>
 <table>
 <thead>
 <tr>
@@ -1401,8 +1484,8 @@ use. A few minutes into that model's first long run, the machine stopped
 responding entirely and needed the Administrator. Memory exhaustion is the
 leading suspect and was not confirmed.</p>
 <h2 id="benchmark-definition">Benchmark Definition<a class="headerlink" href="#benchmark-definition" title="Permanent link">&para;</a></h2>
-<p><strong>Decided by:</strong> Dan chose the course and the scope. Claude chose the mechanics.</p>
-<p>Dan set the benchmark as Algebra I, limited to three skills: the learning
+<p><strong>Decided by:</strong> The Primary Author chose the course and the scope. Claude chose the mechanics.</p>
+<p>The Primary Author set the benchmark as Algebra I, limited to three skills: the learning
 graph, the chapter structure, and the chapter content.</p>
 <table>
 <thead>
@@ -1578,6 +1661,12 @@ been made.</p>
     
     
       <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
       
     
   </body>

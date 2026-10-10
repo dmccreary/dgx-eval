@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Variable,,FOUND
+2,Constant,,FOUND
+3,Coefficient,1|2,FOUND
+4,Algebraic Expression,1|2|3,FOUND
+5,Term,4,FOUND
+6,Order of Operations,1|2,FOUND
+7,Commutative Property,6,FOUND
+8, Associative Property,6,FOUND
+9,Distributive Property,6|7|8,FOUND
+10,Identity Property,6,FOUND
+11,Inverse Property,6|10,FOUND
+12,Evaluating Expressions,4|6,FOUND
+13,Substitution,12,FOUND
+14,Simplifying Expressions,4|6|9,FOUND
+15,Like Terms,14,FOUND
+16,Combining Like Terms,15,FOUND
+17,Absolute Value,2,FOUND
+18,Integer,2,FOUND
+19,Rational Number,18,FOUND
+20,Real Number System,19,FOUND
+21,Algebraic Translation,1|4,FOUND
+22,Verbal Expression,21,FOUND
+23,Numerical Expression,6,FOUND
+24,Order of Operations (PEMDAS),6,FOUND
+25,Grouping Symbols,6,FOUND
+26,Base,1,EXP
+27,Exponent,1|26,EXP
+28,Power,26|27,EXP
+29,Exponential Form,28,EXP
+30,Expanded Form,28|29,EXP
+31,Product Rule for Exponents,28|29,EXP
+32,Quotient Rule for Exponents,28|29,EXP
+33,Power of a Power Rule,31|32,EXP
+34,Power of a Product Rule,31|32,EXP
+35,Zero Exponent Rule,28,EXP
+36,Negative Exponent Rule,28,EXP
+37,Rational Exponent,36,EXP
+38,Radical Sign,19,EXP
+39,Radicand,38,EXP
+40,Index,38,EXP
+41,Square Root,38|39|40,EXP
+42,Cube Root,38|39|40,EXP
+43,Simplifying Radicals,41|42,EXP
+44,Sum and Difference of Radicals,43,EXP
+45,Rationalizing the Denominator,43,EXP
+46,Perfect Square,41,EXP
+47,Perfect Cube,42,EXP
+48,Scientific Notation,35|36,EXP
+49,Converting to Standard Form,48,EXP
+50,Converting to Scientific Notation,48,EXP
+51,Equation,4|6,LEQ
+52,Inequality,4|6,LEQ
+53,Solution Set,51|52,LEQ
+54,One-Step Equation,51|14,LEQ
+55,Two-Step Equation,54,LEQ
+56,Multi-Step Equation,55|9,LEQ
+57,Variable on Both Sides,56,LEQ
+58,No Solution,57,LEQ
+59,Infinite Solutions,57,LEQ
+60,Literal Equation,56,LEQ
+61,Solving for a Variable,60,LEQ
+62,Formula,61,LEQ
+63,Addition Property of Equality,51|54,LEQ
+64,Subtraction Property of Equality,51|54,LEQ
+65,Multiplication Property of Equality,51|54,LEQ
+66,Division Property of Equality,51|54,LEQ
+67,Linear Inequality,52|54,LEQ
+68,Inequality Symbols,52,LEQ
+69,Graphing Inequalities,67|68,LEQ
+70,Interval Notation,69,LEQ
+71,Absolute Value Equation,17|51,LEQ
+72,Absolute Value Inequality,17|52,LEQ
+73,Compound Inequality,52|67,LEQ
+74,AND Inequality,73,LEQ
+75,OR Inequality,73,LEQ
+76,Relation,19|20,FUN
+77,Function,76,FUN
+78,Domain,77,FUN
+79,Range,77,FUN
+80,Input,77|78,FUN
+81,Output,77|79,FUN
+82,Function Notation,77|80|81,FUN
+83,Vertical Line Test,77|88,FUN
+84,Coordinate Plane,19|20,FUN
+85,Ordered Pair,84,FUN
+86,Mapping Diagram,76|85,FUN
+87,Table of Values,76|85,FUN
+88,Graph of a Function,84|85|87,FUN
+89,Independent Variable,77|78,FUN
+90,Dependent Variable,77|79,FUN
+91,Piecewise Function,77|88,FUN
+92,Step Function,91,FUN
+93,Constant Function,77|94,FUN
+94,Linear Function,77|88,FUN
+95,Function Transformation,77|94,FUN
+96,Shift,95,FUN
+97,Reflection,95,FUN
+98,Stretch,95,FUN
+99,Compression,95,FUN
+100,Rate of Change,94,FUN
+101,Slope,100|84,LREL
+102,Slope Formula,101|85,LREL
+103,Zero Slope,101,LREL
+104,Undefined Slope,101,LREL
+105,Slope-Intercept Form,101|102|106,LREL
+106,Y-Intercept,88,LREL
+107,X-Intercept,88,LREL
+108,Point-Slope Form,101|102,LREL
+109,Standard Form,105|108,LREL
+110,Graphing with Slope and Intercept,105|106|107,LREL
+111,Parallel Lines,101|105,LREL
+112,Perpendicular Lines,101|105,LREL
+113,Negative Reciprocal,112,LREL
+114,System of Equations,51|105,LREL
+115,Solution to a System,114,LREL
+116,Substitution Method,114|115|61,LREL
+117,Elimination Method,114|115|65|66,LREL
+118,Graphing Method,114|115|110,LREL
+119,Consistent System,115,LREL
+120,Inconsistent System,115,LREL
+121,Dependent System,115|119,LREL
+122,Independent System,115|119,LREL
+123,Linear Modeling,105,LREL
+124,Linear Regression,123|184,LREL
+125,Line of Best Fit,124,LREL
+126,Monomial,4|14,POL
+127,Binomial,126,POL
+128,Trinomial,126|127,POL
+129,Polynomial,128,POL
+130,Degree of a Polynomial,129,POL
+131,Leading Coefficient,130,POL
+132,Adding Polynomials,129|15|16,POL
+133,Subtracting Polynomials,132,POL
+134,Multiplying Monomials,126|31,POL
+135,Multiplying Polynomials,134|127|128,POL
+136,FOIL Method,135,POL
+137,Special Product: Square of a Binomial,135|136,POL
+138,Special Product: Difference of Squares,135|136,POL
+139,Greatest Common Factor (GCF),4|14|126,POL
+140,Factoring GCF,139,POL
+141,Factoring Trinomials (a=1),140|128,POL
+142,Factoring Trinomials (a!=1),141,POL
+143,Factoring by Grouping,140|142,POL
+144,Difference of Two Squares,140|138,POL
+145,Perfect Square Trinomial,140|137,POL
+146,Completely Factoring,140|141|143|144|145,POL
+147,Factoring to Solve Equations,146|51,POL
+148,Zero Product Property,147,POL
+149,Quadratic Form,128|148,POL
+150,Factoring as a Tool,146|147,POL
+151,Quadratic Function,129|77,QUAD
+152,Parabola,151|88,QUAD
+153,Vertex,152,QUAD
+154,Axis of Symmetry,152|153,QUAD
+155,X-Intercepts (Roots),151|152,QUAD
+156,Y-Intercept of a Quadratic,151|152,QUAD
+157,Standard Form of a Quadratic,151|153|154,QUAD
+158,Vertex Form of a Quadratic,151|153,QUAD
+159,Factored Form of a Quadratic,151|146,QUAD
+160,Solving by Square Roots,151|54,QUAD
+161,Completing the Square,151|56,QUAD
+162,Quadratic Formula,151|161,QUAD
+163,Discriminant,162,QUAD
+164,Nature of Roots,163,QUAD
+165,Graphing Quadratics,151|152|153|154|155|156,QUAD
+166,Exponential Function,27|28|77,EXPN
+167,Base of an Exponential,166|26,EXPN
+168,Growth Factor,166|167,EXPN
+169,Decay Factor,166|167,EXPN
+170,Exponential Growth,166|168,EXPN
+171,Exponential Decay,166|169,EXPN
+172,Asymptote,166|170|171,EXPN
+173,Modeling with Exponential Functions,166|170|171,EXPN
+174,Comparing Quadratic and Exponential,151|166,EXPN
+175,Vertex Formula,153|157,EXPN
+176,Data Set,19|20,SDESC
+177,Scatterplot,176|84,SDESC
+178,Independent Variable (Stats),177|89,SDESC
+179,Dependent Variable (Stats),177|90,SDESC
+180,Positive Correlation,177|178|179,SDESC
+181,Negative Correlation,177|178|179,SDESC
+182,No Correlation,177|178|179,SDESC
+183,Correlation Coefficient,180|181|182,SDESC
+184,Line of Best Fit (Stats),177|183,SREG
+185,Least Squares Regression,184,SREG
+186,Extrapolation,184,SREG
+187,Interpolation,184,SREG
+188,Outlier,176|184,SREG
+189,Cluster,176|184,SREG
+190,Bivariate Data,176|177,SREG
+191,Sequence,18|19,SEQ
+192,Arithmetic Sequence,191|101,SEQ
+193,Common Difference,192,SEQ
+194,Geometric Sequence,191|28,SEQ
+195,Common Ratio,194,SEQ
+196,Explicit Formula for Sequences,192|194,SEQ
+197,Recursive Formula for Sequences,192|194,SEQ
+198,Sum of a Sequence,196|197,SEQ
+199,Divergent Sequence,198,SEQ
+200,Convergent Sequence,198,SEQ

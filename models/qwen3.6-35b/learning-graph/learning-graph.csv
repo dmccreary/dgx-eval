@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Real Numbers,,FOUND
+2,Rational Numbers,1,FOUND
+3,Irrational Numbers,1,FOUND
+4,Integers,2|3,FOUND
+5,Whole Numbers,4,FOUND
+6,Natural Numbers,5,FOUND
+7,Absolute Value,1,FOUND
+8,Opposite Numbers,4,FOUND
+9,Commutative Property,1,FOUN
+10,Associative Property,1,FOUN
+11,Distributive Property,9|10,FOUN
+12,Identity Element,1,FOUN
+13,Inverse Element,12|1,FOUN
+14,Addition Property of Equality,,FOUN
+15,Multiplication Property of Equality,,FOUN
+16,Substitution Property,14|15,FOUN
+17,Real Number Line,1|2|3|4,FOUND
+18,Arithmetic Operations,1|4|6,FOUN
+19,Order of Operations,18,FOUN
+20,Parentheses and Grouping,19,FOUN
+21,Exponentiation,19,FOUN
+22,Scientific Notation,1|18|21,EXPO
+23,Significant Figures,19,FOUN
+24,Evaluating Expressions,18|19,EXPR
+25,Simplifying Numerical Expressions,19|24,FOUN
+26,Variables,,EXPR
+27,Constants,26,EXPR
+28,Coefficients,26,EXPR
+29,Algebraic Terms,26|27|28,EXPR
+30,Like Terms,29,EXPR
+31,Unlike Terms,29,EXPR
+32,Algebraic Expressions,26|27|28|29,EXPR
+33,Writing Algebraic Expressions,24|32,EXPR
+34,Expanding Expressions,11|32,EXPR
+35,Factoring Expressions,11|32,FACT
+36,Monomial,32,EXPR
+37,Binomial,32,EXPR
+38,Trinomial,32,EXPR
+39,Polynomial Degree,36|37|38,EXPR
+40,Polynomial Classification,39,EXPR
+41,Adding Polynomials,30|36|37|38,EXPR
+42,Subtracting Polynomials,41,EXPR
+43,Multiplying Monomials,18|21|27,FACT
+44,Distributing Monomials,11|43|34,FACT
+45,Evaluating Polynomials,25|32|39,EXPR
+46,Function Notation,32|45,FUNC
+47,Integer Exponents,21,EXPO
+48,Zero Exponent Rule,47,EXPO
+49,Negative Exponents,47,EXPO
+50,Laws of Exponents,47,EXPO
+51,Product of Powers Property,50,EXPO
+52,Quotient of Powers Property,50,EXPO
+53,Power of a Power Property,50,EXPO
+54,Power of a Product Property,50|11,EXPO
+55,Power of a Quotient Property,50|11,EXPO
+56,Rationalizing Radicals,22,EXPO
+57,Rational Exponents,49|50,EXPO
+58,Radical Notation,,EXPO
+59,Converting Radicals to Exponent Form,57|58,EXPO
+60,Equivalent Radical and Exponent Forms,57|58,EXPO
+61,Radical Expressions,57,EXPO
+62,Square Roots,61,EXPO
+63,Cube Roots,61,EXPO
+64,Nth Roots,62|63,EXPO
+65,Simplifying Radicals,62|63|64,EXPO
+66,Adding Radicals,65,EXPO
+67,Multiplying Radicals,65,EXPO
+68,Dividing Radicals,65,EXPO
+69,Radical Equations,65,EXPO
+70,One-Step Equations,14|15|24,LINEQ
+71,Two-Step Equations,70,LINEQ
+72,Multi-Step Equations,71|34|35,LINEQ
+73,Literal Equations,72|35,LINEQ
+74,Formulas,73,LINEQ
+75,Solving Inequalities,70,LINEQ
+76,Compound Inequalities,75,LINEQ
+77,Absolute Value Equations,7|70|71,LINEQ
+78,Absolute Value Inequalities,77,LINEQ
+79,Distance Formula,46,LINEAR
+80,Midpoint Formula,32,LINEAR
+81,Systems of Equations,72,LINEQ
+82,Substitution Method,72,LINEQ
+83,Elimination Method,72,LINEQ
+84,Graphing Systems,79|83,LINEAR
+85,Slope,,LINEAR
+86,Rate of Change,85,LINEAR
+87,Direct Variation,85|86,LINEAR
+88,Constant of Proportionality,85|86,LINEAR
+89,Coordinate Plane Basics,,LINEAR
+90,Ordered Pairs,89,LINEAR
+91,Plotting Points,90,LINEAR
+92,Quadrants,89,LINEAR
+93,Scatter Plots,85|96,STAT
+94,Linear Graphs,85,LINEAR
+95,Slope-Intercept Form,85,LINEAR
+96,Standard Form,95,LINEAR
+97,Point-Slope Form,85|95,LINEAR
+98,Writing Linear Equations,95|96|97,LINEAR
+99,Graphing Linear Equations,89|90|91|95,LINEAR
+100,Parallel Lines,95,LINEAR
+101,Perpendicular Lines,100,LINEAR
+102,System of Inequalities,75|95,LINEAR
+103,Piecewise Functions,,FUNC
+104,Quadratic Expressions,,QUAD
+105,Completing the Square,72|104,QUAD
+106,Parabola,85,QUAD
+107,Axis of Symmetry,106,QUAD
+108,Vertex Form,107|106,QUAD
+109,Vertex,106,QUAD
+110,Maximum and Minimum,109,QUAD
+111,Roots of Quadratics,72|104,QUAD
+112,Zeros of Functions,111,FUNC
+113,X-Intercepts,112|95,QUAD
+114,Y-Intercepts,95,FUNC
+115,Discriminant,,QUAD
+116,Nature of Solutions,115,QUAD
+117,Quadratic Formula,104|105,QUAD
+118,Factoring Quadratics,35,FACT
+119,Greatest Common Factor,35,FACT
+120,Factoring by GCF,119,FACT
+121,Grouping Method,35,FACT
+122,Difference of Squares,118,FACT
+123,Perfect Square Trinomials,118,FACT
+124,Trinomial Factoring,118,FACT
+125,Prime Polynomials,118,FACT
+126,Polynomial Division,,FACT
+127,Synthetic Division,126,FACT
+128,Remainder Theorem,126,FACT
+129,Factor Theorem,128,FACT
+130,Roots and Factors,129|111,FACT
+131,Rational Root Theorem,124|130,FACT
+132,Multiplicity of Roots,130,FACT
+133,Factoring Strategy,119|120|121|122|123|124,FACT
+134,Solving by Factoring,133|71,LINEQ
+135,Relations,,FUNC
+136,Functions,135,FUNC
+137,Function Definition,136,FUNC
+138,Vertical Line Test,137,FUNC
+139,Domain,137,FUNC
+140,Range,137,FUNC
+141,Independent Variable,139|140,FUNC
+142,Dependent Variable,139|140,FUNC
+143,Function Evaluation,139|140,FUNC
+144,Piecewise Defined Functions,103,FUNC
+145,Step Functions,144,FUNC
+146,Inverse Relations,,FUNC
+147,Inverse Functions,136|146,FUNC
+148,Composition of Functions,136|147,FUNC
+149,Composite Functions,148,FUNC
+150,Transformations,,FUNC
+151,Vertical Translation,150,FUNC
+152,Horizontal Translation,150,FUNC
+153,Reflections,150,FUNC
+154,Stretching and Shrinking,150,FUNC
+155,Exponential Functions,,EXPON
+156,Exponential Growth,155,EXPON
+157,Exponential Decay,155,EXPON
+158,Parent Function,155,EXPON
+159,Graph of Exponential Functions,158|156|157,EXPON
+160,Horizontal Asymptote,159,EXPON
+161,Transforming Exponential Functions,150|158,EXPON
+162,Base of an Exponential,155,EXPON
+163,Natural Base e,162,EXPON
+164,Growth Rate,156,EXPON
+165,Decay Factor,157,EXPON
+166,Continuous Growth,164|165,EXPON
+167,Arithmetic Sequences,,SEQ
+168,Geometric Sequences,,SEQ
+169,Sequence Terms,167|168,SEQ
+170,Recursive Formulas,169,SEQ
+171,Explicit Formulas,169,SEQ
+172,Common Difference,167,SEQ
+173,Common Ratio,168,SEQ
+174,Sum of Arithmetic Series,167|172,SEQ
+175,Sum of Geometric Series,168|173,SEQ
+176,Data Distributions,89,STAT
+177,Frequency Tables,176,STAT
+178,Stem-and-Leaf Plots,176,STAT
+179,Box-and-Whisker Plot,176,STAT
+180,Measures of Central Tendency,93,STAT
+181,Mean,180,STAT
+182,Median,180,STAT
+183,Mode,180,STAT
+184,Range,180,STAT
+185,Variance,181|184,STAT
+186,Standard Deviation,185,STAT
+187,Correlation,,STAT
+188,Positive Correlation,187,STAT
+189,Negative Correlation,187,STAT
+190,No Correlation,187,STAT
+191,Line of Best Fit,93|187,STAT
+192,Regression Analysis,191,STAT
+193,Residuals,192,STAT
+194,Strength of Correlation,187|191,STAT
+195,Mathematical Models,,MODE
+196,Real-World Modeling,195,MODE
+197,Translating Word Problems,196,MODE
+198,Linear Modeling,98|102|197,MODE
+199,Exponential Modeling,155|161|197,EXPON
+200,Mathematical Models in STEM,195|196,MODE

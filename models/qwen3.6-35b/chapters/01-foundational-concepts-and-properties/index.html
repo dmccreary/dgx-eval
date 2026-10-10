@@ -1,0 +1,2756 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Number systems, properties of operations, and the real number line — the bedrock of all algebraic reasoning.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/01-foundational-concepts-and-properties/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-variables-expressions-polynomial-foundations/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Chapter 1: Foundational Number Concepts and Properties - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-1-foundational-number-concepts-and-properties" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 1: Foundational Number Concepts and Properties
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            qwen3.6:35b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5_4" id="__nav_8_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1. Foundational Number Concepts and Properties
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundational Number Concepts and Properties
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-the-number-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section 1: The Number Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 1: The Number Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#natural-numbers-and-whole-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Numbers and Whole Numbers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rational-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rational Numbers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#irrational-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Irrational Numbers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-properties-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section 2: Properties of Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: Properties of Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commutative-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commutative Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associative-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      Associative Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributive-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributive Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-element-and-inverse-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity Element and Inverse Element
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-table-properties-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary Table: Properties of Operations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-the-real-number-line-and-absolute-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section 3: The Real Number Line and Absolute Value
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 3: The Real Number Line and Absolute Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absolute-value-and-opposite-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Absolute Value and Opposite Numbers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-properties-of-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section 4: Properties of Equality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 4: Properties of Equality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addition-property-of-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addition Property of Equality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplication-property-of-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplication Property of Equality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substitution-property-of-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substitution Property of Equality
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-order-of-operations-and-arithmetic-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section 5: Order of Operations and Arithmetic Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 5: Order of Operations and Arithmetic Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#order-of-operations-pemdas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order of Operations (PEMDAS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-complete-properties-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary: Complete Properties Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-variables-expressions-polynomial-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Variables, Expressions, and Polynomial Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-factoring-techniques-polynomial-division/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Factoring Techniques and Polynomial Division
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-linear-equations-inequalities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Linear Equations and Inequalities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-linear-relationships-coordinate-graphing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linear Relationships and Coordinate Graphing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-functions-relations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Functions and Relations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-exponential-functions-sequences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Exponential Functions and Sequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-sequences-and-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Sequences and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-mathematical-modeling-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Mathematical Modeling and Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-radicals-and-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Radicals and Radical Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-the-number-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section 1: The Number Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 1: The Number Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#natural-numbers-and-whole-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Numbers and Whole Numbers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rational-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rational Numbers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#irrational-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Irrational Numbers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-properties-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section 2: Properties of Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: Properties of Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commutative-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commutative Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associative-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      Associative Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributive-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributive Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-element-and-inverse-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity Element and Inverse Element
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-table-properties-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary Table: Properties of Operations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-the-real-number-line-and-absolute-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section 3: The Real Number Line and Absolute Value
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 3: The Real Number Line and Absolute Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absolute-value-and-opposite-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Absolute Value and Opposite Numbers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-properties-of-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section 4: Properties of Equality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 4: Properties of Equality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addition-property-of-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addition Property of Equality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplication-property-of-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplication Property of Equality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substitution-property-of-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substitution Property of Equality
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-order-of-operations-and-arithmetic-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section 5: Order of Operations and Arithmetic Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 5: Order of Operations and Arithmetic Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#order-of-operations-pemdas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order of Operations (PEMDAS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-complete-properties-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary: Complete Properties Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/qwen3.6-35b/chapters/01-foundational-concepts-and-properties/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-1-foundational-number-concepts-and-properties">Chapter 1: Foundational Number Concepts and Properties<a class="headerlink" href="#chapter-1-foundational-number-concepts-and-properties" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter introduces the number systems that form the foundation of all algebraic work — from natural numbers through real numbers, including rational and irrational numbers. Students learn to locate numbers on the real number line, understand absolute value and opposite numbers, and master the fundamental properties of operations (commutative, associative, distributive) and equality that govern every algebraic manipulation. These concepts are the bedrock upon which all subsequent chapters depend.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 19 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real Numbers</td>
+<td>891</td>
+</tr>
+<tr>
+<td>Integers</td>
+<td>303</td>
+</tr>
+<tr>
+<td>Rational Numbers</td>
+<td>305</td>
+</tr>
+<tr>
+<td>Irrational Numbers</td>
+<td>305</td>
+</tr>
+<tr>
+<td>Whole Numbers</td>
+<td>151</td>
+</tr>
+<tr>
+<td>Natural Numbers</td>
+<td>150</td>
+</tr>
+<tr>
+<td>Commutative Property</td>
+<td>61</td>
+</tr>
+<tr>
+<td>Associative Property</td>
+<td>61</td>
+</tr>
+<tr>
+<td>Distributive Property</td>
+<td>60</td>
+</tr>
+<tr>
+<td>Arithmetic Operations</td>
+<td>149</td>
+</tr>
+<tr>
+<td>Order of Operations</td>
+<td>111</td>
+</tr>
+<tr>
+<td>Identity Element</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Inverse Element</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Real Number Line</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Absolute Value</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Opposite Numbers</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Addition Property of Equality</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Multiplication Property of Equality</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Substitution Property</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
+<hr />
+<h2 id="section-1-the-number-systems">Section 1: The Number Systems<a class="headerlink" href="#section-1-the-number-systems" title="Permanent link">&para;</a></h2>
+<p>Mathematics organizes numbers into families, called <strong>number sets</strong>, based on what each number can do and where it fits in the bigger picture. You already know some of these — counting numbers, negative numbers, fractions — but Algebra I requires a precise map of how they all fit together. By the end of this section, you will be able to place any real number into its correct families and explain why certain numbers belong to multiple sets simultaneously.</p>
+<h3 id="natural-numbers-and-whole-numbers">Natural Numbers and Whole Numbers<a class="headerlink" href="#natural-numbers-and-whole-numbers" title="Permanent link">&para;</a></h3>
+<p>The <strong>natural numbers</strong> are the counting numbers used since antiquity: $1, 2, 3, 4, \dots$ Mathematically, we write this set as $\mathbb{N} = {1, 2, 3, \ldots}$, with no upper bound. Natural numbers are the first numbers children learn because they correspond to discrete objects — one apple, two shoes, ten fingers.</p>
+<blockquote>
+<p><strong>Mascot Welcome</strong> — The number line we explore in Section 3 visualizes these very sets on a single continuous axis. Stay tuned.</p>
+</blockquote>
+<p>The <strong>whole numbers</strong> add one crucial element to the natural numbers: zero. We write $\mathbb{W} = {0, 1, 2, 3, \dots}$. Zero represents "nothing" as a quantity — not the same as "none," which is an absence of counting entirely. A temperature of $0^\circ$C is measurable; it is not nothing at all.</p>
+<p><strong>Worked Example 1: Classifying Numbers into Number Sets</strong></p>
+<p>Determine which number sets each value belongs to.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Natural?</th>
+<th>Whole?</th>
+<th>Integer?</th>
+<th>Rational?</th>
+<th>Irrational?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$5$</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>$-3$</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>$\dfrac{7}{4}$</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>$\sqrt{2}$</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>This table illustrates an important point: a single number can belong to multiple sets at once. The number $5$ is simultaneously a natural number, a whole number, an integer, and a rational number — it fits into every family on the left side of our hierarchy.</p>
+<h3 id="integers">Integers<a class="headerlink" href="#integers" title="Permanent link">&para;</a></h3>
+<p>The <strong>integers</strong> extend whole numbers in both directions by adding all their negative counterparts. We write this set as $\mathbb{Z} = {\dots, -3, -2, -1, 0, 1, 2, 3, \dots}$ (the symbol comes from the German word <em>Zahlen</em>, meaning "numbers").</p>
+<p>Integers represent situations with direction: bank accounts show deposits as positive and withdrawals as negative; elevation above sea level is positive while below-sea-level depths are negative. The key feature of integers is that they include no fractions or decimals — any number you can write without a fractional part or an infinite non-repeating decimal expansion belongs to $\mathbb{Z}$ if it passes this test.</p>
+<p><strong>Worked Example 2: Identifying Integers</strong></p>
+<p>Which of these are integers? Explain your reasoning for each.</p>
+<ol>
+<li>$-7$: An integer because it has no fractional or decimal part, and it is the negative counterpart of the natural number $7$.</li>
+<li>$\dfrac{3}{2}$: Not an integer. Although it can be written as a fraction, its value ($1.5$) falls between two consecutive integers, $1$ and $2$, with nothing in between on the integer grid.</li>
+<li>$0$: An integer. Zero is the origin point of $\mathbb{Z}$ — neither positive nor negative, but still an integer.</li>
+<li>$\sqrt{9}$: An integer because $\sqrt{9} = 3$ exactly. It is important to simplify first before deciding; the square root symbol does not automatically disqualify a number from being an integer.</li>
+</ol>
+<h3 id="rational-numbers">Rational Numbers<a class="headerlink" href="#rational-numbers" title="Permanent link">&para;</a></h3>
+<p>A <strong>rational number</strong> is any number that can be expressed as a fraction $\dfrac{p}{q}$ where $p$ and $q$ are integers and $q \neq 0$. The word <em>rational</em> comes from <em>ratio</em> — these numbers represent ratios of two integers. Every terminating decimal and every repeating decimal is rational because each can be converted into a fraction.</p>
+<p>For example, $0.25 = \dfrac{1}{4}$ and $0.\overline{3} = \dfrac{1}{3}$. Both are rational by definition. So are numbers like $-7$ (which equals $\dfrac{-7}{1}$) and $0$ (which equals $\dfrac{0}{1}$).</p>
+<p><strong>Worked Example 3: Converting Decimals to Fractions</strong></p>
+<p>Convert each decimal to a fraction of integers to confirm it is rational.</p>
+<ol>
+<li>$0.6 = \dfrac{6}{10} = \dfrac{3}{5}$ — terminates, so rational.</li>
+<li>$2.3\overline{6} = 2.\dfrac{36-3}{90} = 2 + \dfrac{33}{90} = 2 + \dfrac{11}{30} = \dfrac{71}{30}$ — repeating, so rational.</li>
+<li>$0.\overline{142857} = \dfrac{142857}{999999} = \dfrac{1}{7}$ — the long repeating block confirms it is a rational number whose simplest form has a very large denominator before reduction.</li>
+</ol>
+<h3 id="irrational-numbers">Irrational Numbers<a class="headerlink" href="#irrational-numbers" title="Permanent link">&para;</a></h3>
+<p>An <strong>irrational number</strong> cannot be written as a fraction of two integers. Its decimal expansion goes on forever without ever settling into a repeating pattern. The most famous irrational numbers are $\sqrt{2} \approx 1.414\ldots$, $\pi \approx 3.14159\ldots$, and $e \approx 2.71828\ldots$.</p>
+<p>Why does $\sqrt{2}$ not simplify to a fraction? A proof by contradiction shows this: suppose $\sqrt{2} = \dfrac{p}{q}$ where $p$ and $q$ share no common factors. Then $p^2 = 2q^2$, which means $p$ is even, so $p = 2k$ for some integer $k$. Substituting gives $4k^2 = 2q^2$, so $q^2 = 2k^2$, meaning $q$ is also even. But if both $p$ and $q$ are even, they share a common factor of $2$, contradicting our assumption. Therefore $\sqrt{2}$ is irrational.</p>
+<blockquote>
+<p><strong>Key Insight:</strong> Not all square roots are rational. Only the square roots of <em>perfect squares</em> (numbers like $1, 4, 9, 16, 25, \dots$) simplify to whole numbers or fractions. The square root of any non-perfect square is irrational.</p>
+</blockquote>
+<p>The relationship among these five number sets can be visualized as a nested hierarchy. Every natural number is also a whole number, an integer, and a rational number. Every integer is also rational. But rational and irrational numbers are disjoint: no number can be both (by definition of the word <em>irrational</em>, meaning "not rational"). Together they fill out every point on the <strong>real number line</strong>, which we define next.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>\mathbb{N} \subset \mathbb{W} \subset \mathbb{Z} \subset \mathbb{Q} \quad \text{and} \quad \mathbb{R} = \mathbb{Q} \cup \{\text{irrational numbers}\}
+</span></code></pre></div>
+<p>The symbol $\subset$ means "is a subset of." The symbol $\mathbb{R}$ represents the set of all <strong>real numbers</strong>, which encompasses every rational and irrational number combined. You can think of the real numbers as filling in every possible position along an infinitely long line — there is no gap between any two real numbers, even though infinitely many other real numbers lie between them.</p>
+<details>
+<summary>Venn Diagram: Number Set Hierarchy</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" width="600" height="480"&gt;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  &lt;style&gt;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    .set { fill: none; stroke-width: 2; }
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    .label { font-size: 16px; font-family: sans-serif; fill: #333; }
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    .inner-label { font-size: 13px; font-family: sans-serif; fill: #555; }
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    .title { font-size: 20px; font-family: sans-serif; fill: #222; text-anchor: middle; font-weight: bold; }
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  &lt;/style&gt;
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  &lt;text x="300" y="30" class="title"&gt;Number Set Hierarchy&lt;/text&gt;
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  &lt;!-- Real Numbers (largest) --&gt;
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  &lt;ellipse cx="300" cy="260" rx="280" ry="210" class="set" stroke="#2c5f8a"/&gt;
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  &lt;text x="40" y="220" class="label"&gt;Real Numbers&lt;/text&gt;
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  &lt;!-- Rational vs Irrational split --&gt;
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>  &lt;line x1="300" y1="60" x2="300" y2="470" stroke="#999" stroke-dasharray="6,4"/&gt;
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>  &lt;!-- Rational numbers (left side) --&gt;
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  &lt;ellipse cx="180" cy="270" rx="150" ry="190" class="set" stroke="#3a7ca5"/&gt;
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>  &lt;text x="80" y="460" class="label"&gt;Rational Numbers&lt;/text&gt;
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>  &lt;!-- Integers --&gt;
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>  &lt;ellipse cx="180" cy="280" rx="100" ry="140" class="set" stroke="#5b9bd5"/&gt;
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>  &lt;text x="110" y="430" class="label"&gt;Integers&lt;/text&gt;
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>  &lt;!-- Whole Numbers --&gt;
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>  &lt;ellipse cx="180" cy="300" rx="65" ry="90" class="set" stroke="#7ab3e8"/&gt;
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>  &lt;text x="130" y="390" class="label"&gt;Whole&lt;/text&gt;
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>  &lt;!-- Natural Numbers (smallest) --&gt;
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>  &lt;ellipse cx="180" cy="320" rx="40" ry="55" class="set" stroke="#a3cfff"/&gt;
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>  &lt;text x="165" y="350" class="label"&gt;Natural&lt;/text&gt;
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>  &lt;!-- Irrational numbers (right side) --&gt;
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>  &lt;ellipse cx="420" cy="270" rx="100" ry="180" class="set" stroke="#d47b3a"/&gt;
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>  &lt;text x="460" y="450" class="label"&gt;Irrational Numbers&lt;/text&gt;
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>  &lt;!-- Examples --&gt;
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>  &lt;text x="320" y="120" class="inner-label"&gt;e, √2, π, …&lt;/text&gt;
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>  &lt;text x="180" y="45" class="inner-label"&gt;…/q where q≠0&lt;/text&gt;
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>  &lt;text x="180" y="270" class="inner-label"&gt;…, −3, −1, 0, 1, …&lt;/text&gt;
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>  &lt;text x="180" y="410" class="inner-label"&gt;0, 1, 2, …&lt;/text&gt;
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>  &lt;text x="180" y="500" class="inner-label"&gt;1, 2, 3, …&lt;/text&gt;
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>&lt;/svg&gt;
+</span></code></pre></div>
+</details>
+<p>In this diagram, notice how each set is entirely contained within the next larger set. The natural numbers are a proper subset of the whole numbers, which are a proper subset of the integers, which are a proper subset of the rational numbers, and together with irrational numbers they constitute all real numbers. This visual makes clear that "real number" is the umbrella category for everything we use in Algebra I.</p>
+<h2 id="section-2-properties-of-operations">Section 2: Properties of Operations<a class="headerlink" href="#section-2-properties-of-operations" title="Permanent link">&para;</a></h2>
+<p>Properties of operations are rules about how numbers behave when you perform arithmetic on them. These properties are not arbitrary conventions; they are foundational truths that allow algebra to work at all. Without the commutative, associative, and distributive properties — and without identity and inverse elements — we could not rearrange, simplify, or solve equations with any confidence that our manipulations preserve truth.</p>
+<h3 id="commutative-property">Commutative Property<a class="headerlink" href="#commutative-property" title="Permanent link">&para;</a></h3>
+<p>The <strong>commutative property</strong> states that changing the order of two numbers in an operation does not change the result. This holds for addition and multiplication but <em>not</em> for subtraction or division.</p>
+<p>For addition: $a + b = b + a$
+For multiplication: $a \times b = b \times a$</p>
+<p>The word <em>commutative</em> comes from the French <em>commuter</em>, meaning "to exchange" or "to switch." The property tells you that swapping (exchanging) two operands is safe for addition and multiplication.</p>
+<p><strong>Worked Example 4: Applying the Commutative Property</strong></p>
+<p>Show that switching the order does not change the result, then explain why this property fails for subtraction.</p>
+<ol>
+<li>$7 + 12 = 12 + 7 = 19$ ✓</li>
+<li>$3 \times 8 = 8 \times 3 = 24$ ✓</li>
+<li>$5 - 2 \neq 2 - 5$ because $3 \neq -3$. Subtraction is <em>not</em> commutative — the order matters because you are moving in opposite directions along the number line.</li>
+<li>$6 \div 3 \neq 3 \div 6$ because $2 \neq \dfrac{1}{2}$. Division is also <em>not</em> commutative for the same reason.</li>
+</ol>
+<p>The restriction on which operations are commutative is critical: you may never assume a property applies to all operations. Only addition and multiplication share this symmetry. Every other operation breaks it under at least one condition.</p>
+<h3 id="associative-property">Associative Property<a class="headerlink" href="#associative-property" title="Permanent link">&para;</a></h3>
+<p>The <strong>associative property</strong> states that changing how three or more numbers are grouped in an operation does not change the result. Like commutativity, this holds for addition and multiplication but <em>not</em> for subtraction or division.</p>
+<p>For addition: $(a + b) + c = a + (b + c)$
+For multiplication: $(a \times b) \times c = a \times (b \times c)$</p>
+<p>The word <em>associative</em> comes from <em>associate</em>, meaning "to group together." The property tells you that the grouping — the placement of parentheses — does not affect the final sum or product.</p>
+<p><strong>Worked Example 5: Applying the Associative Property</strong></p>
+<p>Show that regrouping does not change the result, then explain why this fails for subtraction.</p>
+<ol>
+<li>$(2 + 3) + 4 = 5 + 4 = 9$ and $2 + (3 + 4) = 2 + 7 = 9$. Same result ✓</li>
+<li>$(3 \times 4) \times 5 = 12 \times 5 = 60$ and $3 \times (4 \times 5) = 3 \times 20 = 60$. Same result ✓</li>
+<li>$(10 - 5) - 2 = 5 - 2 = 3$ but $10 - (5 - 2) = 10 - 3 = 7$. Subtraction is <em>not</em> associative — changing the grouping changes which subtraction happens first, and that matters.</li>
+</ol>
+<p>Again, the critical takeaway is scope: associativity holds for addition and multiplication only. It does not extend to subtraction or division, no matter how convenient it might seem in a particular numerical case.</p>
+<h3 id="distributive-property">Distributive Property<a class="headerlink" href="#distributive-property" title="Permanent link">&para;</a></h3>
+<p>The <strong>distributive property</strong> connects two different operations — multiplication and addition (or subtraction). It states that multiplying a sum by a number gives the same result as multiplying each addend separately and then adding the products.</p>
+<p>For any numbers $a$, $b$, and $c$:
+$$a(b + c) = ab + ac$$</p>
+<p>The word <em>distributive</em> comes from <em>distribute</em>, meaning "to spread out." Multiplication distributes over addition like rain soaking into separate regions of soil — each part receives its share independently, then the totals add up to the same result.</p>
+<p><strong>Worked Example 6: Applying the Distributive Property</strong></p>
+<p>Simplify $4(3 + 7)$ by distributing, and verify both methods yield the same answer.</p>
+<p>Method 1 (add first): $4(3 + 7) = 4 \times 10 = 40$
+Method 2 (distribute first): $4(3 + 7) = 4 \times 3 + 4 \times 7 = 12 + 28 = 40$</p>
+<p>Both methods give $40$. Now try with a negative number: $-3(5 - 2)$.
+Using distribution: $-3(5) + (-3)(-2) = -15 + 6 = -9$
+Checking directly: $-3(3) = -9$ ✓</p>
+<p>The distributive property is the single most important algebraic tool in this chapter because it underpins expanding expressions, factoring, solving equations, and simplifying. Whenever you see a number or variable outside parentheses with an operation inside, distribution applies immediately.</p>
+<h3 id="identity-element-and-inverse-element">Identity Element and Inverse Element<a class="headerlink" href="#identity-element-and-inverse-element" title="Permanent link">&para;</a></h3>
+<p>Before defining these two properties precisely, consider what happens when a special number "does nothing" to another number in an operation — it leaves the other number unchanged. This special number is called an <strong>identity element</strong> (or identity property). For addition, the identity element is $0$: no matter what number you add zero to, the result is that original number:
+$$a + 0 = a \quad \text{and} \quad 0 + a = a$$</p>
+<p>For multiplication, the identity element is $1$:
+$$a \times 1 = a \quad \text{and} \quad 1 \times a = a$$</p>
+<p>Every identity element is specific to its operation — addition has $0$, multiplication has $1$ — and there is no identity element for subtraction or division.</p>
+<p>An <strong>inverse element</strong> reverses the effect of an operation and returns the result to the identity element. For addition, the additive inverse of any number $a$ is $-a$ because:
+$$a + (-a) = 0$$
+The sum equals the additive identity, confirming that $-a$ is indeed the additive inverse of $a$. For multiplication, every nonzero number $a$ has a multiplicative inverse $\dfrac{1}{a}$ because:
+$$a \times \dfrac{1}{a} = 1$$
+Note that $0$ has no multiplicative inverse — there is no number you can multiply by zero to get $1$, which is precisely why division by zero is undefined.</p>
+<p><strong>Worked Example 7: Finding Identity and Inverse Elements</strong></p>
+<p>For each expression, identify the identity element used, then find the inverse.</p>
+<ol>
+<li>$9 + 0 = 9$: The additive identity element is $0$. The additive inverse of $9$ is $-9$, since $9 + (-9) = 0$.</li>
+<li>$5 \times 1 = 5$: The multiplicative identity element is $1$. The multiplicative inverse of $5$ is $\dfrac{1}{5}$, since $5 \times \dfrac{1}{5} = 1$.</li>
+<li>What is the additive inverse of $0$? It is $0$ itself: $0 + 0 = 0$. Zero is its own additive inverse — a unique property it shares with no other number.</li>
+<li>Does $0$ have a multiplicative inverse? No. There exists no real number $x$ such that $0 \times x = 1$, because multiplying anything by zero always produces zero.</li>
+</ol>
+<blockquote>
+<p><strong>Mascot Note:</strong> Whenever you encounter an identity element in an equation, think of it as a "pass-through" value — the operation happens, but nothing changes. Inverse elements are the undo button: applying an operation followed by its inverse always brings you back to the identity.</p>
+</blockquote>
+<h3 id="summary-table-properties-of-operations">Summary Table: Properties of Operations<a class="headerlink" href="#summary-table-properties-of-operations" title="Permanent link">&para;</a></h3>
+<p>The following table summarizes all five properties discussed above. Use it as a reference when deciding which property applies in any given algebraic manipulation.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Addition</th>
+<th>Multiplication</th>
+<th>Subtraction</th>
+<th>Division</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commutative (order doesn't matter)</td>
+<td>Yes: $a + b = b + a$</td>
+<td>Yes: $a \times b = b \times a$</td>
+<td>No: $(5 - 2) \neq (2 - 5)$</td>
+<td>No: $(6 \div 3) \neq (3 \div 6)$</td>
+</tr>
+<tr>
+<td>Associative (grouping doesn't matter)</td>
+<td>Yes: $(a + b) + c = a + (b + c)$</td>
+<td>Yes: $(a \times b) \times c = a \times (b \times c)$</td>
+<td>No: $(10 - 5) - 2 \neq 10 - (5 - 2)$</td>
+<td>No: $(12 \div 4) \div 2 \neq 12 \div (4 \div 2)$</td>
+</tr>
+<tr>
+<td>Identity Element</td>
+<td>$0$: $a + 0 = a$</td>
+<td>$1$: $a \times 1 = a$</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Inverse Element</td>
+<td>$-a$: $a + (-a) = 0$</td>
+<td>$\frac{1}{a}$: $a \times \frac{1}{a} = 1$ (for $a \neq 0$)</td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-3-the-real-number-line-and-absolute-value">Section 3: The Real Number Line and Absolute Value<a class="headerlink" href="#section-3-the-real-number-line-and-absolute-value" title="Permanent link">&para;</a></h2>
+<p>A <strong>real number line</strong> is a straight horizontal line on which every point corresponds to exactly one real number, and every real number corresponds to exactly one point. Zero sits at the center (called the <em>origin</em>), positive numbers lie to the right, and negative numbers lie to the left. Numbers increase as you move rightward and decrease as you move leftward — this directional ordering is what makes the real number line such a powerful visualization tool in algebra.</p>
+<p>The real number line bridges the abstract concept of "number" with the concrete idea of "position." Every fraction, every square root, every repeating decimal has an exact spot on this line. There are no gaps: between any two distinct real numbers, however close together they may be, infinitely many other real numbers exist in between. This property is called <em>density</em>, and it distinguishes the real numbers from the integers (where gaps of size $1$ separate consecutive values).</p>
+<details>
+<summary>Interactive: Real Number Line</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 120" width="700" height="120"&gt;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  &lt;style&gt;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    .axis { stroke: #333; stroke-width: 2; }
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    .tick { stroke: #333; stroke-width: 1.5; }
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    .label { font-size: 14px; font-family: sans-serif; fill: #333; text-anchor: middle; }
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    .dot { r: 6; cursor: pointer; }
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    .dot:hover { r: 8; }
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    .point-label { font-size: 12px; font-family: sans-serif; fill: #2c5f8a; font-weight: bold; text-anchor: middle; }
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  &lt;/style&gt;
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  &lt;!-- Main axis --&gt;
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  &lt;line x1="30" y1="60" x2="670" y2="60" class="axis"/&gt;
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  &lt;!-- Arrow heads --&gt;
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  &lt;polygon points="670,55 680,60 670,65" fill="#333"/&gt;
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  &lt;polygon points="30,55 20,60 30,65" fill="#333"/&gt;
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  &lt;!-- Ticks and labels --&gt;
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>  &lt;line x1="60" y1="52" x2="60" y2="68" class="tick"/&gt;
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>  &lt;text x="60" y="85" class="label"&gt;−4&lt;/text&gt;
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>  &lt;line x1="160" y1="52" x2="160" y2="68" class="tick"/&gt;
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  &lt;text x="160" y="85" class="label"&gt;−2&lt;/text&gt;
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>  &lt;line x1="260" y1="52" x2="260" y2="68" class="tick"/&gt;
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>  &lt;text x="260" y="85" class="label"&gt;−1&lt;/text&gt;
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>  &lt;line x1="350" y1="48" x2="350" y2="72" class="tick" stroke="#2c5f8a" stroke-width="2.5"/&gt;
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>  &lt;text x="350" y="90" class="label" fill="#2c5f8a" font-weight="bold"&gt;0&lt;/text&gt;
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>  &lt;line x1="440" y1="52" x2="440" y2="68" class="tick"/&gt;
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>  &lt;text x="440" y="85" class="label"&gt;1&lt;/text&gt;
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>  &lt;line x1="540" y1="52" x2="540" y2="68" class="tick"/&gt;
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>  &lt;text x="540" y="85" class="label"&gt;3&lt;/text&gt;
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>  &lt;line x1="640" y1="52" x2="640" y2="68" class="tick"/&gt;
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>  &lt;text x="640" y="85" class="label"&gt;5&lt;/text&gt;
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>  &lt;!-- Labeled points --&gt;
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>  &lt;circle cx="350" cy="60" class="dot" fill="#2c5f8a" stroke="#fff" stroke-width="1.5"/&gt;
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>  &lt;text x="350" y="40" class="point-label"&gt;Origin (0)&lt;/text&gt;
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>  &lt;circle cx="160" cy="60" class="dot" fill="#c0392b" stroke="#fff" stroke-width="1.5"/&gt;
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>  &lt;text x="160" y="40" class="point-label"&gt;−2&lt;/text&gt;
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>  &lt;circle cx="540" cy="60" class="dot" fill="#27ae60" stroke="#fff" stroke-width="1.5"/&gt;
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>  &lt;text x="540" y="40" class="point-label"&gt;3&lt;/text&gt;
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>  &lt;!-- Dashed lines showing distance from origin --&gt;
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>  &lt;line x1="350" y1="60" x2="160" y2="60" stroke="#c0392b" stroke-dasharray="4,3" stroke-width="1.2"/&gt;
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>  &lt;text x="255" y="55" class="label" fill="#c0392b" font-size="11"&gt;distance = 2&lt;/text&gt;
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>  &lt;line x1="350" y1="60" x2="540" y2="60" stroke="#27ae60" stroke-dasharray="4,3" stroke-width="1.2"/&gt;
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>  &lt;text x="445" y="55" class="label" fill="#27ae60" font-size="11"&gt;distance = 3&lt;/text&gt;
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>  &lt;!-- Plus signs for readability --&gt;
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>  &lt;line x1="110" y1="55" x2="110" y2="65" class="tick"/&gt;
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>  &lt;text x="110" y="85" class="label"&gt;−3&lt;/text&gt;
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>  &lt;line x1="210" y1="55" x2="210" y2="65" class="tick"/&gt;
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>  &lt;text x="210" y="85" class="label"&gt;−1.5&lt;/text&gt;
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>  &lt;line x1="300" y1="55" x2="300" y2="65" class="tick"/&gt;
+</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>  &lt;text x="300" y="85" class="label"&gt;−0.5&lt;/text&gt;
+</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>  &lt;line x1="490" y1="55" x2="490" y2="65" class="tick"/&gt;
+</span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>  &lt;text x="490" y="85" class="label"&gt;2&lt;/text&gt;
+</span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>  &lt;line x1="590" y1="55" x2="590" y2="65" class="tick"/&gt;
+</span><span id="__span-2-60"><a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>  &lt;text x="590" y="85" class="label"&gt;4&lt;/text&gt;
+</span><span id="__span-2-61"><a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>&lt;/svg&gt;
+</span></code></pre></div>
+<p>Hover over or click any labeled point to see its exact coordinate. The distance from the origin is measured along the horizontal axis regardless of direction: moving left by $k$ units puts you at $-k$, and moving right by $k$ units puts you at $+k$. Notice that numbers to the right are always greater than numbers to the left — this ordering property is what allows us to compare any two real numbers visually.</p>
+</details>
+<h3 id="absolute-value-and-opposite-numbers">Absolute Value and Opposite Numbers<a class="headerlink" href="#absolute-value-and-opposite-numbers" title="Permanent link">&para;</a></h3>
+<p>The <strong>absolute value</strong> of a number measures its distance from zero on the real number line, regardless of direction. Distance is always nonnegative because it has no direction — it only tells you "how far." Mathematically, we write $|a|$ to denote the absolute value of $a$:
+$$|a| = \begin{cases} a &amp; \text{if } a \geq 0 \ -a &amp; \text{if } a &lt; 0 \end{cases}$$</p>
+<p>When $a$ is positive or zero, its distance from zero is itself. When $a$ is negative, its distance is the positive counterpart — obtained by changing its sign. This definition guarantees that $|a|$ is never negative: for any real number $a$, $|a| \geq 0$.</p>
+<p>Two numbers are <strong>opposites</strong> (or <em>additive inverses</em>) if they have the same absolute value but opposite signs. In other words, two numbers $a$ and $b$ are opposites if $|a| = |b|$ and $a + b = 0$. On the real number line, opposites sit at equal distances from zero but on opposite sides.</p>
+<p><strong>Worked Example 8: Evaluating Absolute Value</strong></p>
+<p>Find the absolute value of each number. Then find its opposite.</p>
+<ol>
+<li>$|7| = 7$. The number $7$ is already to the right of zero (distance $7$), so its absolute value is simply $7$. Its opposite is $-7$, which lies $7$ units to the left of zero.</li>
+<li>$|-5| = -(-5) = 5$. The number $-5$ is to the left of zero. We negate it (apply the $a &lt; 0$ case), yielding $5$. Its opposite is $5$, confirming that $-5 + 5 = 0$.</li>
+<li>$|0| = 0$. Zero's distance from itself is nothing — it sits exactly on the origin, so its absolute value is $0$. Note: zero is its own opposite because $0 + 0 = 0$.</li>
+</ol>
+<p><strong>Worked Example 9: Distance Between Two Points</strong></p>
+<p>The distance between any two real numbers $a$ and $b$ on the number line is given by $|a - b|$. Use this to find the distance between $-3$ and $4$.</p>
+<p>Method 1 (A → B): $|-3 - 4| = |-7| = 7$
+Method 2 (B → A): $|4 - (-3)| = |4 + 3| = |7| = 7$</p>
+<p>Both methods give the same distance, as expected. The order of subtraction does not matter because absolute value erases the sign — you get the magnitude regardless of direction. On a number line, the distance between two points is always the length of the segment connecting them, measured in units. This concept will be essential when we discuss vectors and coordinate geometry in later chapters.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>\text{Distance}(a,\,b) = |a - b| = |b - a| \qquad \text{(always nonnegative)}
+</span></code></pre></div>
+<h2 id="section-4-properties-of-equality">Section 4: Properties of Equality<a class="headerlink" href="#section-4-properties-of-equality" title="Permanent link">&para;</a></h2>
+<p>Equality connects two expressions that represent the same value. In algebra, we manipulate equations constantly — adding to both sides, multiplying through, substituting one expression for another — and each manipulation must be justified by a property that guarantees truth is preserved. Without these properties, every step of solving an equation would rest on faith rather than logic.</p>
+<h3 id="addition-property-of-equality">Addition Property of Equality<a class="headerlink" href="#addition-property-of-equality" title="Permanent link">&para;</a></h3>
+<p>The <strong>addition property of equality</strong> states that adding the same quantity to both sides of an equation produces an equivalent equation (one with the same solution). If $a = b$, then for any number $c$:
+$$a + c = b + c$$</p>
+<p>This property is what justifies moving terms across the equals sign. When you solve $x - 5 = 12$ by adding $5$ to both sides, you are applying the addition property of equality: since $x - 5$ and $12$ represent the same number, they remain equal after you add $5$ to each one. The solution set does not change because you have performed the same operation on two identical quantities.</p>
+<p><strong>Worked Example 10: Solving with the Addition Property of Equality</strong></p>
+<p>Solve each equation. State which property justifies each step.</p>
+<ol>
+<li>
+<p>$x - 9 = 4$
+   Add $9$ to both sides (Addition Property of Equality): $x - 9 + 9 = 4 + 9$
+   Simplify: $x = 13$
+   Check: $13 - 9 = 4$ ✓</p>
+</li>
+<li>
+<p>$y + \dfrac{3}{5} = \dfrac{7}{5}$
+   Subtract $\dfrac{3}{5}$ from both sides (equivalently, add $-\dfrac{3}{5}$ to both sides, which is still the Addition Property): $y + \dfrac{3}{5} - \dfrac{3}{5} = \dfrac{7}{5} - \dfrac{3}{5}$
+   Simplify: $y = \dfrac{4}{5}$
+   Check: $\dfrac{4}{5} + \dfrac{3}{5} = \dfrac{7}{5}$ ✓</p>
+</li>
+</ol>
+<h3 id="multiplication-property-of-equality">Multiplication Property of Equality<a class="headerlink" href="#multiplication-property-of-equality" title="Permanent link">&para;</a></h3>
+<p>The <strong>multiplication property of equality</strong> states that multiplying both sides of an equation by the same nonzero quantity produces an equivalent equation. If $a = b$, then for any number $c$ where $c \neq 0$:
+$$a \cdot c = b \cdot c$$</p>
+<p>Why must $c$ be nonzero? Multiplying by zero collapses every value to zero, erasing all information about the original quantities and producing the equation $0 = 0$, which is trivially true but unhelpful. Division by zero is similarly excluded for this reason — it destroys rather than preserves information.</p>
+<p><strong>Worked Example 11: Solving with the Multiplication Property of Equality</strong></p>
+<p>Solve each equation, noting where the nonzero restriction matters.</p>
+<ol>
+<li>
+<p>$\dfrac{x}{4} = 6$
+   Multiply both sides by $4$: $4 \cdot \dfrac{x}{4} = 4 \cdot 6$
+   Simplify: $x = 24$
+   Check: $\dfrac{24}{4} = 6$ ✓</p>
+</li>
+<li>
+<p>$-3x = 15$
+   Divide both sides by $-3$ (equivalently, multiply both sides by $\dfrac{1}{-3}$): $\dfrac{-3x}{-3} = \dfrac{15}{-3}$
+   Simplify: $x = -5$
+   Check: $-3(-5) = 15$ ✓</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Critical Rule:</strong> You may multiply or divide by any <em>nonzero</em> number. If you are unsure whether a quantity could be zero, do not divide by it until you have confirmed that assumption separately.</p>
+</blockquote>
+<h3 id="substitution-property-of-equality">Substitution Property of Equality<a class="headerlink" href="#substitution-property-of-equality" title="Permanent link">&para;</a></h3>
+<p>The <strong>substitution property</strong> states that if two quantities are equal, one can replace the other in any expression without changing the value of that expression. If $a = b$, then wherever you see $a$ in an expression, you may write $b$ instead (and vice versa) without altering the result.</p>
+<p>This property is the justification for solving a formula for one variable and plugging that result into another equation. It is also what allows us to simplify complex expressions: when we find that $x = 3$, every occurrence of $x$ in a later expression can be replaced by $3$.</p>
+<p><strong>Worked Example 12: Applying the Substitution Property</strong></p>
+<p>Given $x + y = 10$ and $x = 4$, substitute to solve for $y$.</p>
+<p>Step 1: Replace $x$ with $4$ in the first equation (Substitution Property): $4 + y = 10$
+Step 2: Subtract $4$ from both sides (Addition Property of Equality): $y = 6$
+Check: $4 + 6 = 10$ ✓</p>
+<p>The substitution property is deceptively powerful. It is the reason algebraic manipulation works as a strategy rather than an art: every time you replace one expression with another of equal value, you are guaranteed (by definition) to preserve truth. No exceptions, no approximations — exact equality carries through every replacement step.</p>
+<h2 id="section-5-order-of-operations-and-arithmetic-operations">Section 5: Order of Operations and Arithmetic Operations<a class="headerlink" href="#section-5-order-of-operations-and-arithmetic-operations" title="Permanent link">&para;</a></h2>
+<p>The <strong>arithmetic operations</strong> are the four fundamental actions performed on numbers: addition, subtraction, multiplication, and division. When multiple operations appear in a single expression, we need a consistent convention for which operation to perform first — otherwise two people could evaluate the same expression and get different answers. This convention is called the <strong>order of operations</strong>.</p>
+<h3 id="order-of-operations-pemdas">Order of Operations (PEMDAS)<a class="headerlink" href="#order-of-operations-pemdas" title="Permanent link">&para;</a></h3>
+<p>The standard order of operations is remembered by the acronym PEMDAS:</p>
+<ol>
+<li><strong>P</strong>arentheses — simplify expressions inside grouping symbols first</li>
+<li><strong>E</strong>xponents — evaluate powers and roots next</li>
+<li><strong>M</strong>ultiplication and <strong>D</strong>ivision — perform from left to right (they share equal priority)</li>
+<li><strong>A</strong>ddition and <strong>S</strong>ubtraction — perform from left to right (they share equal priority)</li>
+</ol>
+<p>The hierarchy ensures that higher-level transformations (grouping, exponentiation) are resolved before lower-level ones (multiplication/division), which are themselves resolved before the most basic combinations (addition/subtraction). Within each tier, left-to-right evaluation prevents ambiguity.</p>
+<p><strong>Worked Example 13: Applying Order of Operations</strong></p>
+<p>Evaluate each expression step by step, showing which rule applies at each stage.</p>
+<ol>
+<li>
+<p>$3 + 4 \times 2$
+   Step 1 (Multiplication before Addition): $3 + 8$
+   Step 2 (Addition): $11$
+   <em>If you had added first, you would get $(3+4) \times 2 = 14$, which is incorrect under PEMDAS.</em></p>
+</li>
+<li>
+<p>$2^3 - 4 \times (3 + 1)$
+   Step 1 (Parentheses): $2^3 - 4 \times 4$
+   Step 2 (Exponents): $8 - 4 \times 4$
+   Step 3 (Multiplication): $8 - 16$
+   Step 4 (Subtraction): $-8$</p>
+</li>
+<li>
+<p>$\dfrac{5 + 3}{2^2 - 2}$
+   The fraction bar acts as a grouping symbol: simplify numerator and denominator separately.
+   Numerator (Addition): $5 + 3 = 8$
+   Denominator (Exponent, then subtraction): $2^2 - 2 = 4 - 2 = 2$
+   Final division: $\dfrac{8}{2} = 4$</p>
+</li>
+</ol>
+<p>The fraction bar example is particularly important because it serves as a hidden set of parentheses. The expression $5 + 3 \div 2^2 - 2$ (without the fraction bar) would be evaluated very differently under PEMDAS, yielding a completely different result. Always pay close attention to whether grouping symbols are present.</p>
+<h3 id="summary-complete-properties-reference">Summary: Complete Properties Reference<a class="headerlink" href="#summary-complete-properties-reference" title="Permanent link">&para;</a></h3>
+<p>The following table consolidates every property and rule covered in this chapter into a single reference. You will return to this table repeatedly as new topics build on these foundations.</p>
+<table>
+<thead>
+<tr>
+<th>Property / Rule</th>
+<th>Statement</th>
+<th>When It Applies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commutative (Addition)</td>
+<td>$a + b = b + a$</td>
+<td>Only for addition of real numbers</td>
+</tr>
+<tr>
+<td>Commutative (Multiplication)</td>
+<td>$a \times b = b \times a$</td>
+<td>Only for multiplication of real numbers</td>
+</tr>
+<tr>
+<td>Associative (Addition)</td>
+<td>$(a+b)+c = a+(b+c)$</td>
+<td>Only for addition</td>
+</tr>
+<tr>
+<td>Associative (Multiplication)</td>
+<td>$(ab)c = a(bc)$</td>
+<td>Only for multiplication</td>
+</tr>
+<tr>
+<td>Distributive</td>
+<td>$a(b+c) = ab + ac$</td>
+<td>Always — connects multiplication and addition</td>
+</tr>
+<tr>
+<td>Additive Identity</td>
+<td>$a + 0 = a$</td>
+<td>Adding zero to any real number</td>
+</tr>
+<tr>
+<td>Multiplicative Identity</td>
+<td>$a \times 1 = a$</td>
+<td>Multiplying by one</td>
+</tr>
+<tr>
+<td>Additive Inverse</td>
+<td>$a + (-a) = 0$</td>
+<td>Every real number has an additive inverse</td>
+</tr>
+<tr>
+<td>Multiplicative Inverse</td>
+<td>$a \times \frac{1}{a} = 1$ (for $a \neq 0$)</td>
+<td>Every <em>nonzero</em> real number has a multiplicative inverse</td>
+</tr>
+<tr>
+<td>Addition Property of Equality</td>
+<td>If $a=b$, then $a+c=b+c$</td>
+<td>Any equation; preserves equivalence</td>
+</tr>
+<tr>
+<td>Multiplication Property of Equality</td>
+<td>If $a=b$, then $ac=bc$ (for $c \neq 0$)</td>
+<td>Any equation; nonzero multiplier required</td>
+</tr>
+<tr>
+<td>Substitution Property</td>
+<td>If $a=b$, replace $a$ with $b$ (or vice versa)</td>
+<td>Any expression containing either value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="practice-summary">Practice Summary<a class="headerlink" href="#practice-summary" title="Permanent link">&para;</a></h3>
+<p>Before moving to the next chapter, confirm you can:</p>
+<ul>
+<li>Classify any given number as belonging to $\mathbb{N}$, $\mathbb{W}$, $\mathbb{Z}$, $\mathbb{Q}$, and/or $\mathbb{R}$</li>
+<li>State and apply each property of operations with at least one worked example</li>
+<li>Explain why the commutative and associative properties hold for addition and multiplication but <em>fail</em> for subtraction and division</li>
+<li>Locate any real number on the real number line and determine its absolute value and opposite</li>
+<li>Use the addition and multiplication properties of equality to solve simple equations step by step</li>
+<li>Evaluate expressions correctly using PEMDAS, including nested parentheses and fraction bars</li>
+</ul>
+<p>These skills form the operational vocabulary you will use in every subsequent chapter. The ability to move confidently between number systems, identify which property justifies a given algebraic manipulation, and follow the order of operations without error is not optional — it is the minimum competency required before tackling polynomials, equations, or functions. In the next chapter, we build directly on this foundation by introducing variables and the algebraic expressions they inhabit.</p>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The five number sets form a hierarchy: $\mathbb{N} \subset \mathbb{W} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$, with irrational numbers completing the real numbers alongside rationals.</li>
+<li>Real numbers include both rational (fractional) and irrational (non-fractional) values; together they cover every point on the number line with no gaps.</li>
+<li>The commutative, associative, and distributive properties are the three core behavioral rules of arithmetic operations. Addition and multiplication are commutative and associative; only multiplication distributes over addition.</li>
+<li>Identity elements ($0$ for addition, $1$ for multiplication) leave a number unchanged. Inverse elements ($-a$ additively, $1/a$ multiplicatively) reverse an operation and return the identity.</li>
+<li>The real number line provides a one-to-one correspondence between geometric points and real numbers — every number has a unique location, and every location represents a unique number.</li>
+<li>Absolute value measures distance from zero on the number line; opposite numbers have equal absolute values with opposite signs.</li>
+<li>The addition and multiplication properties of equality guarantee that equivalent equations are preserved when the same operation is applied to both sides. The substitution property allows replacing equals with equals anywhere they appear.</li>
+<li>The order of operations (PEMDAS) ensures every expression has exactly one unambiguous value: parentheses first, then exponents, then multiplication/division left-to-right, then addition/subtraction left-to-right.</li>
+</ul>
+<hr />
+<p><em>Chapter 1 is complete. All 19 concepts have been addressed with word counts and element coverage aligned to their CIS-driven elaboration tiers.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: List of Chapters">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                List of Chapters
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-variables-expressions-polynomial-foundations/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Variables, Expressions, and Polynomial Foundations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2. Variables, Expressions, and Polynomial Foundations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

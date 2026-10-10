@@ -1,0 +1,200 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Algebraic Expression,,FOUND
+2,Order of Operations,,FOUND
+3,Variable Identification,,FOUND
+4,Coefficient Recognition,,FOUND
+5,Constant Term,,FOUND
+6,Expand Algebraic Expression,1|3|4|5,POLY
+7,Factor Algebraic Expression,1|3|4|5,MISC
+8,Evaluate Expression With Variable,1|3,MISC
+9,Simplify Exponential Expression,10|12,EXP
+10,Integer Exponent,1|3|4,EXP
+11,Rational Exponent,10,EXP
+12,Law of Exponents,10,EXP
+13,Solve One-Step Equation,3|4,LINEAR
+14,Solve Two-Step Equation,13|3,LINEAR
+15,Solve Multi-Step Equation,14|3|4,LINEAR
+16,Literal Equation,3|4|8,LINEAR
+17,Formula Rearrangement,3|4|8,FUNC
+18,Solve Linear Inequality,3|4|13,LINEAR
+19,Graph Linear Inequality,18|34,LINEAR
+20,Absolute Value Equation,8|15,LINEAR
+21,Absolute Value Inequality,20|15,LINEAR
+22,Function Concept,,FOUND
+23,Function Notation,22,FUNC
+24,Domain of Function,23,FUNC
+25,Range of Function,23,FUNC
+26,Interpret Function Graph,23|34,MISC
+27,Interpret Function Table,23,MISC
+28,Piecewise Function,23|29,FUNC
+29,Step Function,23,FUNC
+30,Slope Rate of Change,2|3|4,LINEAR
+31,Slope-Intercept Form,30,LINEAR
+32,Point-Slope Form,30|33,LINEAR
+33,Standard Form Equation,30,LINEAR
+34,Graph Linear Equation,30|32,LINEAR
+35,Model Linear Relationship,34,LINEAR
+36,System of Linear Equations,34,LINEAR
+37,System of Linear Inequalities,35|36,LINEAR
+38,Polynomial Addition,1|3|4|5,POLY
+39,Polynomial Subtraction,38|1|3|4|5,POLY
+40,Polynomial Multiplication,38|39|1|3|4|5,POLY
+41,Greatest Common Factor,1|3|4,POLY
+42,Factor Trinomial,41|1|3|4,POLY
+43,Difference of Squares,1|4|5,POLY
+44,Solve Quadratic By Factoring,42|43|7|41,QUAD
+45,Solve Quadratic Square Root,8|44,QUAD
+46,Complete Square Quadratic,45|44,QUAD
+47,Quadratic Formula,44|45|46,QUAD
+48,Quadratic Vertex,47,QUAD
+49,Quadratic Axis of Symmetry,47,QUAD
+50,Model Quadratic Data,47|49,QUAD
+51,Model Exponential Data,84,EXP
+52,Create Scatterplot,50|51,STAT
+53,Interpret Scatterplot,52,STAT
+54,Correlation Coefficient,52|53,STAT
+55,Line of Best Fit,52|53,STAT
+56,Compare Linear Model,55|57,LINEAR
+57,Compare Exponential Model,55|51,EXP
+58,Arithmetic Sequence,60,SEQU
+59,Geometric Sequence,60,SEQU
+60,Sequence Term,1|3,SEQU
+61,Sequence Recursive Rule,60,SEQU
+62,Sequence Explicit Rule,60|61,SEQU
+63,Evaluate Algebraic Expression,1|3|8,MISC
+64,Distributive Property,1|3|4|6,MISC
+65,Commutative Property,1|3,MISC
+66,Associative Property,1|3|4,MISC
+67,Expand Binomial,40|64|66,POLY
+68,Factor By Grouping,41|64|67,MISC
+69,Special Product,67|68|40,MISC
+70,Polynomial Degree,38|40|41,POLY
+71,Like Terms,1|70,MISC
+72,Unlike Terms,71|70,MISC
+73,Standard Form Polynomial,70|72,POLY
+74,Leading Coefficient,70|73,MISC
+75,Constant Term Polynomial,70|73,POLY
+76,Vertex Form Quadratic,47|48|49,QUAD
+77,Intercept Form Quadratic,47|49|76,QUAD
+78,Quadratic Maximum,47|76|77,QUAD
+79,Quadratic Minimum,47|76|77,QUAD
+80,Exponential Growth,84,EXP
+81,Exponential Decay,84,EXP
+82,Exponential Base,80|81,EXP
+83,Exponent Growth Factor,9|10|12|82,EXP
+84,Exponent Decay Factor,9|10|12,EXP
+85,Scientific Notation,10|82|84,MISC
+86,Power of Product,83|85,MISC
+87,Power of Quotient,83|85,MISC
+88,Power of Power,83|85,MISC
+89,Zero Exponent,85,EXP
+91,Negative Exponent,85|86|87|88,EXP
+92,Radical Expression,91,EXP
+93,Simplify Radical,91|92,EXP
+94,Radicand,92,MISC
+95,Index of Radical,92,EXP
+96,Square Root Equation,91|95|93,LINEAR
+97,Cube Root Expression,92|96,EXP
+98,Rationalize Denominator,92|96|97,MISC
+99,Function Notation Evaluation,23|24|25,FUNC
+100,Function Input Output,23|24|25,MISC
+101,Independent Variable,23|26,MISC
+102,Dependent Variable,23|26|27,MISC
+103,Function Notation f(x),23|99|100,FUNC
+104,Function Composition,103,FUNC
+105,Function Inverse,103,FUNC
+106,Linear Function,34|35|36,LINEAR
+107,Constant Function,34|35,MISC
+108,Identity Function,34|35|36,MISC
+109,Absolute Value Function,20|21|34|35,MISC
+110,Square Root Function,47|96|96,EXP
+111,Cube Root Function,97|110|96,EXP
+112,Step Function Graph,28|29|34,FUNC
+113,Piecewise Defined Function,28|112|34,FUNC
+114,Domain Notation,24|101,FUNC
+115,Range Notation,25|102,FUNC
+116,Interval Notation,114,MISC
+117,Set Builder Notation,116,MISC
+118,Inequality Notation,13|18|116,LINEAR
+119,Solution Set,13|18|118,MISC
+120,Graph Coordinates,30|34|35,GRAP
+121,Coordinate Plane,120,MISC
+122,Ordered Pair,120|121,GRAP
+123,X-Intercept,34|35|36,GRAP
+124,Y-Intercept,34|35|36,GRAP
+125,Slope Formula,30|31|32,LINEAR
+126,Rise Over Run,30|31,GRAP
+127,Rate of Change Table,30|35|36,LINEAR
+128,Linear Equation Slope,30|31|32,LINEAR
+129,Linear Equation Point-Slope,32|30|33,LINEAR
+130,Linear Equation Standard Form,30|33|34,LINEAR
+131,System Solve by Graphing,35|36|34,LINEAR
+132,System Solve by Substitution,35|131,LINEAR
+133,System Solve by Elimination,35|131,LINEAR
+134,System No Solution,131|132|133,LINEAR
+135,System Infinite Solutions,131|132|133,LINEAR
+136,Polynomial Long Division,38|40|41|42,POLY
+137,Synthetic Division,136|41,MISC
+138,Remainder Theorem,137|136,MISC
+139,Factor Theorem,138|136|43,MISC
+140,Zeros of Polynomial,139|136|137,POLY
+141,Polynomial Roots,140|136|137,POLY
+142,Complex Number,47|140|141,MISC
+143,Imaginary Unit,142|140,MISC
+144,Discriminant,47|46,QUAD
+145,Quadratic Discriminant,144|46,QUAD
+146,Parabola Graph,47|48|49|145,QUAD
+147,Parabola Direction,47|48|49,QUAD
+148,Parabola Opening,47|48|49|145,QUAD
+149,Parabola Vertex Form,47|76|77|146,QUAD
+150,Parabola Standard Form,47|48|49|146,QUAD
+151,Parabola Focus,47|145|146,QUAD
+152,Parabola Directrix,47|145|146,QUAD
+153,Data Display Categorical,50|52|54,STAT
+154,Data Display Numerical,50|52|54,STAT
+155,Data Display Dot Plot,50|52|53,STAT
+156,Data Display Histogram,50|52|53,STAT
+157,Data Display Box Plot,50|52|54,STAT
+158,Bivariate Data,50|52|55,STAT
+159,Univariate Data,50|52,STAT
+160,Two-Way Table,50|52|53|54,STAT
+161,Marginal Frequency,160|52,STAT
+162,Conditional Frequency,160|52|55,STAT
+163,Outlier Data Point,158|159|160,STAT
+164,Cluster Data Pattern,158|159|160,STAT
+165,Linear Association,160,LINEAR
+166,Nonlinear Association,158|159,LINEAR
+167,Positive Association,160,STAT
+168,Negative Association,158|159,STAT
+169,No Association,160,STAT
+170,Fit Line Plot,160|166|167|168,STAT
+171,Residual Plot,160|166|167,STAT
+172,Residual Calculation,171,STAT
+173,Best Fit Line Equation,171|172,LINEAR
+174,Interpolation Prediction,173,STAT
+175,Extrapolation Prediction,173,STAT
+176,Function Notation Output,103|104|105,FUNC
+177,Function Notation Range,103|104|105,FUNC
+178,Function Transformation,34|35|36|103,FUNC
+179,Function Notation Domain,24|101|114,FUNC
+180,Function Transformation Translation,178|179,FUNC
+181,Function Transformation Reflection,178|179,FUNC
+182,Function Transformation Stretch,178|180,FUNC
+183,Function Transformation Compression,178|180,FUNC
+184,Exponential Growth Model,51|80|84,EXP
+185,Exponential Decay Model,51|81|84,EXP
+186,Linear Growth Model,35|36|34,LINEAR
+187,Linear Decay Model,35|36|34,LINEAR
+188,Constant Rate Change,30|34|35|36,MODE
+189,Constant Percent Change,51|80|81|84,MODE
+190,Arithmetic Difference,58|59|60|61,SEQU
+191,Geometric Ratio,58|59|60|61,SEQU
+192,Sequence Term nth,60|61|62,SEQU
+193,Sequence Position,60|61|62,SEQU
+194,Sequence Value,60|61|62,SEQU
+195,Mathematical Model,47|50|51|55|57,MODE
+196,Data Display Scatterplot,52|53|54|55,STAT
+197,Data Display Line Graph,52|53|54|55,STAT
+198,Data Display Bar Graph,52|53|54|55,STAT
+199,Data Display Circle Graph,52|53|54|55,STAT
+200,Statistical Question,158|159|160|161|162|163|164|165|166|167|168|169,STAT

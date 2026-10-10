@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Algebra Foundations,,ALG
+2,Order of Operations,1,ALG
+3,Algebraic Expressions,2,ALG
+4,Variables,3,ALG
+5,Constants,4,ALG
+6,Coefficients,5,ALG
+7,Terms in an Expression,6,ALG
+8,Like Terms,7,ALG
+9,Evaluating Expressions,8,ALG
+10,Exponents,1,EXP
+11,Base of an Exponent,1|10,EXP
+12,Power of an Exponent,1|11,EXP
+13,Integer Exponents,1|12,EXP
+14,Rational Exponents,1|13,EXP
+15,Product Rule of Exponents,1|14,EXP
+16,Quotient Rule of Exponents,1|15,EXP
+17,Power of a Power Rule,1|16,EXP
+18,Power of a Product Rule,1|17,EXP
+19,Power of a Quotient Rule,1|18,EXP
+20,Zero Exponent Rule,1|19,EXP
+21,Negative Exponent Rule,1|20,EXP
+22,Scientific Notation,1|21,EXP
+23,Square Roots,1|10,MIS
+24,Cube Roots,1|10|23,MIS
+25,nth Roots,1|10|24,MIS
+26,Simplifying Radicals,1|10|25,MIS
+27,Rationalizing Denominators,1|10|26,MIS
+28,Radical Expressions,1|10|27,MIS
+29,One-Step Equations,1|10,EQI
+30,Two-Step Equations,1|10|29,EQI
+31,Multi-Step Equations,1|10|30,EQI
+32,Combining Like Terms,1|10|31,EQI
+33,Distributive Property,1|10|32,EQI
+34,Variables on Both Sides,1|10|33,EQI
+35,Literal Equations,1|10|34,EQI
+36,Solving Formulas,1|10|35,EQI
+37,Linear Inequalities,1,EQI
+38,One-Step Inequalities,1|37,EQI
+39,Multi-Step Inequalities,1|38,EQI
+40,Graphing Inequalities,1|39,EQI
+41,Absolute Value Equations,1,EQI
+42,Absolute Value Inequalities,1|41,EQI
+43,Function Concept,1,FUN
+44,Function Notation,1|43,FUN
+45,Domain of a Function,1|44,FUN
+46,Range of a Function,1|45,FUN
+47,Input and Output,1|46,FUN
+48,Independent Variable,1|47,FUN
+49,Dependent Variable,1|48,FUN
+50,Function Tables,1|49,FUN
+51,Function Graphs,1|50,FUN
+52,Relation vs Function,1|51,FUN
+53,Vertical Line Test,1|52,FUN
+54,Piecewise Functions,1,FUN
+55,Step Functions,1|54,FUN
+56,Slope,1|43,LIN
+57,Rate of Change,1|43|56,LIN
+58,Slope-Intercept Form,1|43|57,LIN
+59,Point-Slope Form,1|43|58,LIN
+60,Standard Form of Linear Eq,1|43|59,LIN
+61,Graphing Linear Equations,1|43|60,LIN
+62,X-Intercept,1|43|61,LIN
+63,Y-Intercept,1|43|62,LIN
+64,Linear Modeling,1|43|56|63,MOD
+65,Systems of Linear Equations,1,LIN
+66,Substitution Method,1|65,LIN
+67,Elimination Method,1|66,LIN
+68,Graphing Systems,1|67,LIN
+69,Linear Inequalities Systems,1,LIN
+70,Polynomials,1|31,POL
+71,Monomials,1|31|70,POL
+72,Binomials,1|31|71,POL
+73,Trinomials,1|31|72,POL
+74,Degree of a Polynomial,1|31|73,POL
+75,Leading Coefficient,1|31|74,POL
+76,Adding Polynomials,1|31|75,POL
+77,Subtracting Polynomials,1|31|76,POL
+78,Multiplying Polynomials,1|31|77,POL
+79,FOIL Method,1|31|78,POL
+80,Greatest Common Factor,1|31|79,POL
+81,Factoring by GCF,1|70,POL
+82,Factoring Trinomials,1|70|81,POL
+83,Difference of Squares,1|70|82,POL
+84,Perfect Square Trinomials,1|70|83,POL
+85,Factoring Quadratic Equations,1,MIS
+86,Quadratic Functions,1|10|81,QUA
+87,Vertex of a Parabola,1|10|81|86,QUA
+88,Axis of Symmetry,1|10|81|87,QUA
+89,Graphing Quadratics,1|10|81|88,QUA
+90,Standard Form of Quadratics,1|10|81|89,QUA
+91,Vertex Form of Quadratics,1|10|81|90,QUA
+92,Completing the Square,1|10|81|91,QUA
+93,Quadratic Formula,1|10|81|92,QUA
+94,Solving by Square Roots,1,MIS
+95,Quadratic Modeling,1|43|56|64,MOD
+96,Exponential Functions,1|10,EXN
+97,Exponential Growth,1|10|96,EXN
+98,Exponential Decay,1|10|97,EXN
+99,Exponential Base,1|10|98,EXN
+100,Graphing Exponential Functions,1|10|99,EXN
+101,Comparing Function Models,1,MIS
+102,Scatterplots,1|56,STA
+103,Data Displays,1|56|102,STA
+104,Correlation,1|56|103,STA
+105,Positive Correlation,1|56|104,STA
+106,Negative Correlation,1|56|105,STA
+107,No Correlation,1|56|106,STA
+108,Line of Best Fit,1|56|107,STA
+109,Linear Regression,1|56|108,STA
+110,Arithmetic Sequences,1,SEQ
+111,Common Difference,1|110,SEQ
+112,Geometric Sequences,1|111,SEQ
+113,Common Ratio,1|112,SEQ
+114,Arithmetic Means,1,MIS
+115,Geometric Means,1|114,MIS
+116,Properties of Operations,9,ALG
+117,Commutative Property,116,ALG
+118,Associative Property,117,ALG
+119,Distributive Property,118,ALG
+120,Identity Property,119,ALG
+121,Inverse Property,120,ALG
+122,Combining Like Terms,121,ALG
+123,Expanding Expressions,122,ALG
+124,Factoring Expressions,123,ALG
+125,Rational Exponents,1|22,EXP
+126,Laws of Radicals,1|10|28,MIS
+127,Solving One-Step Equations,1|10|36,EQI
+128,Solving Two-Step Equations,1|10|127,EQI
+129,Solving Multi-Step Equations,1|10|128,EQI
+130,Literal Equations,1|10|129,EQI
+131,Solving for a Variable,1|10|130,EQI
+132,Linear Inequalities,1|40,EQI
+133,Graphing Inequalities,1|132,EQI
+134,Absolute Value Equations,1|42,EQI
+135,Function Domain,1|53,FUN
+136,Function Range,1|135,FUN
+137,Function Notation,1|136,FUN
+138,Piecewise Functions,1|55,FUN
+139,Step Functions,1|138,FUN
+140,Slope Formula,1|43|64,LIN
+141,Rate of Change,1|43|140,LIN
+142,Slope-Intercept Form,1|43|141,LIN
+143,Point-Slope Form,1|43|142,LIN
+144,Standard Form,1|43|143,LIN
+145,Graphing Linear Equations,1|43|144,LIN
+146,Systems of Equations,1|68,LIN
+147,Substitution Method,1|146,LIN
+148,Elimination Method,1|147,LIN
+149,Graphing Systems,1|148,LIN
+150,Linear Inequalities Systems,1|69,LIN
+151,Adding Polynomials,1|31|80,POL
+152,Subtracting Polynomials,1|31|151,POL
+153,Multiplying Polynomials,1|31|152,POL
+154,Factoring by GCF,1|70|84,POL
+155,Factoring Trinomials,1|70|154,POL
+156,Difference of Squares,1|70|155,POL
+157,Quadratic Equations,1|10|81|93,QUA
+158,Solving by Factoring,1|10|81|157,QUA
+159,Completing the Square,1|10|81|158,QUA
+160,Quadratic Formula,1|10|81|159,QUA
+161,Quadratic Functions,1|10|81|160,QUA
+162,Vertex of a Parabola,1|10|81|161,QUA
+163,Axis of Symmetry,1|10|81|162,QUA
+164,Graphing Quadratics,1|10|81|163,QUA
+165,Exponential Functions,1|10|100,EXN
+166,Exponential Growth,1|10|165,EXN
+167,Exponential Decay,1|10|166,EXN
+168,Data Displays,1|56|109,STA
+169,Scatterplots,1|56|168,STA
+170,Correlation,1|56|169,STA
+171,Line of Best Fit,1|56|170,STA
+172,Arithmetic Sequences,1|113,SEQ
+173,Geometric Sequences,1|172,SEQ
+174,Mathematical Modeling,1|43|56|95,MOD
+175,Real-World Applications,1|43|56|174,MOD
+176,Algebraic Reasoning,1,MIS
+177,Abstract Thinking,1|176,MIS
+178,Symbolic Representation,1|177,MIS
+179,Graphical Representation,1|178,MIS
+180,Tabular Representation,1|179,MIS
+181,Mathematical Communication,1|180,MIS
+182,Critical Thinking,1|181,MIS
+183,Problem Solving,1|182,MIS
+184,Quantitative Reasoning,1|183,MIS
+185,STEM Disciplines,1|184,MIS
+186,Linear Models,1|43|56|175,MOD
+187,Quadratic Models,1|43|56|186,MOD
+188,Exponential Models,1|43|56|187,MOD
+189,Linear Regression,1|43|56|188,MOD
+190,Geometric Mean,1|115,MIS
+191,Arithmetic Mean,1|190,MIS
+192,Rational Numbers,1|185,MIS
+193,Integers,1|192,MIS
+194,Decimals,1|193,MIS
+195,Fractions,1|194,MIS
+196,Ratios,1|195,MIS
+197,Proportions,1|196,MIS
+198,Percentages,1|197,MIS
+199,Basic Geometry,1|198,MIS
+200,Mathematical Logic,1|199,MIS

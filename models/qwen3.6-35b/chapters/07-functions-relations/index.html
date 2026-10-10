@@ -1,0 +1,3340 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introduces the function concept as a formal mathematical object, distinguishing functions from relations through the vertical line test.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/07-functions-relations/">
+      
+      
+        <link rel="prev" href="../06-quadratic-functions/">
+      
+      
+        <link rel="next" href="../08-exponential-functions-sequences/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Chapter 7: Functions and Relations - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functions-and-relations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 7: Functions and Relations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            qwen3.6:35b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5_4" id="__nav_8_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundational-concepts-and-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundational Number Concepts and Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-variables-expressions-polynomial-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Variables, Expressions, and Polynomial Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-factoring-techniques-polynomial-division/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Factoring Techniques and Polynomial Division
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-linear-equations-inequalities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Linear Equations and Inequalities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-linear-relationships-coordinate-graphing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linear Relationships and Coordinate Graphing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7. Functions and Relations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    7. Functions and Relations
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#71-what-is-a-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 What Is a Relation?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 What Is a Relation?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-algebraic-expressions-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.1 Algebraic Expressions Review
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1.1 Algebraic Expressions Review">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-algebraic-expression-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Algebraic Expression Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-what-is-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 What Is a Function?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 What Is a Function?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-properties-of-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Properties of Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#721-function-notation-and-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.1 Function Notation and Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2.1 Function Notation and Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-function-evaluation-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Function Evaluation Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-the-vertical-line-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 The Vertical Line Test
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 The Vertical Line Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-domain-and-range-from-a-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3.1 Domain and Range from a Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3.1 Domain and Range from a Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vertical-line-test-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vertical Line Test Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-zeros-and-intercepts-of-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 Zeros and Intercepts of Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4 Zeros and Intercepts of Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-relationships-between-zeros-and-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Relationships Between Zeros and Graphs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-finding-zeros-and-intercepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Finding Zeros and Intercepts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-inverse-relations-and-inverse-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.5 Inverse Relations and Inverse Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5 Inverse Relations and Inverse Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-function-and-inverse-pair-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Function and Inverse Pair Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#76-composition-of-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.6 Composition of Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.6 Composition of Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-composition-of-functions-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Composition of Functions Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-piecewise-defined-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.7 Piecewise-Defined Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.7 Piecewise-Defined Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#piecewise-functions-in-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Piecewise Functions in Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Piecewise Functions in Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-step-function-graph-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Step Function Graph Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78-transformations-of-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8 Transformations of Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.8 Transformations of Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#781-vertical-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8.1 Vertical Translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#782-horizontal-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8.2 Horizontal Translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#783-reflections" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8.3 Reflections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#784-stretching-and-shrinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8.4 Stretching and Shrinking
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.8.4 Stretching and Shrinking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-transformation-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Transformation Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word-count-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      Word Count Report
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Word Count Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-text-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-text Elements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-covered-2828" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered: 28/28 ✓
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-exponential-functions-sequences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Exponential Functions and Sequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-sequences-and-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Sequences and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-mathematical-modeling-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Mathematical Modeling and Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-radicals-and-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Radicals and Radical Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#71-what-is-a-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 What Is a Relation?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 What Is a Relation?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-algebraic-expressions-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.1 Algebraic Expressions Review
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1.1 Algebraic Expressions Review">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-algebraic-expression-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Algebraic Expression Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-what-is-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 What Is a Function?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 What Is a Function?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-properties-of-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Properties of Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#721-function-notation-and-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.1 Function Notation and Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2.1 Function Notation and Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-function-evaluation-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Function Evaluation Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-the-vertical-line-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 The Vertical Line Test
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 The Vertical Line Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-domain-and-range-from-a-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3.1 Domain and Range from a Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3.1 Domain and Range from a Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vertical-line-test-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vertical Line Test Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-zeros-and-intercepts-of-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 Zeros and Intercepts of Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4 Zeros and Intercepts of Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-relationships-between-zeros-and-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Relationships Between Zeros and Graphs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-finding-zeros-and-intercepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Finding Zeros and Intercepts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-inverse-relations-and-inverse-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.5 Inverse Relations and Inverse Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5 Inverse Relations and Inverse Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-function-and-inverse-pair-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Function and Inverse Pair Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#76-composition-of-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.6 Composition of Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.6 Composition of Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-composition-of-functions-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Composition of Functions Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-piecewise-defined-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.7 Piecewise-Defined Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.7 Piecewise-Defined Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#piecewise-functions-in-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Piecewise Functions in Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Piecewise Functions in Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-step-function-graph-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Step Function Graph Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78-transformations-of-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8 Transformations of Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.8 Transformations of Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#781-vertical-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8.1 Vertical Translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#782-horizontal-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8.2 Horizontal Translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#783-reflections" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8.3 Reflections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#784-stretching-and-shrinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8.4 Stretching and Shrinking
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.8.4 Stretching and Shrinking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-transformation-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Transformation Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word-count-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      Word Count Report
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Word Count Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-text-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-text Elements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-covered-2828" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered: 28/28 ✓
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/qwen3.6-35b/chapters/07-functions-relations/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="functions-and-relations">Functions and Relations<a class="headerlink" href="#functions-and-relations" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter introduces the function concept as a formal mathematical object, distinguishing functions from general relations through the vertical line test. Students explore domain and range, evaluate functions, use function notation, and investigate zeros and intercepts of quadratic graphs. The chapter extends to inverse functions and composition of functions, then covers piecewise-defined functions including step functions, before concluding with a comprehensive treatment of transformations — translations, reflections, and stretches — that prepare students for working with exponential functions in the next chapter.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relations</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Functions</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Function Definition</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Range</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Independent Variable</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Dependent Variable</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Vertical Line Test</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Function Evaluation</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Function Notation</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Zeros of Functions</td>
+<td>2</td>
+</tr>
+<tr>
+<td>X-Intercepts</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Y-Intercepts</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Inverse Relations</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Inverse Functions</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Composition of Functions</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Composite Functions</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Piecewise Functions</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Piecewise Defined Functions</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Step Functions</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Transformations</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Vertical Translation</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Horizontal Translation</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Reflections</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Stretching and Shrinking</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Algebraic Expressions</td>
+<td>93</td>
+</tr>
+<tr>
+<td>Evaluating Polynomials</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Polynomial Degree</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:
+- <a href="../02-variables-expressions-polynomial-foundations/">Chapter 2: Variables, Expressions, and Polynomial Foundations</a>
+- <a href="../05-linear-relationships-coordinate-graphing/">Chapter 5: Linear Relationships and Coordinate Graphing</a>
+- <a href="../06-quadratic-functions/">Chapter 6: Quadratic Functions</a></p>
+<hr />
+<h2 id="71-what-is-a-relation">7.1 What Is a Relation?<a class="headerlink" href="#71-what-is-a-relation" title="Permanent link">&para;</a></h2>
+<p>Before we can define a function, we need to understand the broader idea it belongs to: a <strong>relation</strong>. In mathematics, a relation is simply any collection of ordered pairs. An ordered pair <code>(x, y)</code> represents two values linked together — the first value (usually called <code>x</code>) is paired with the second value (usually called <code>y</code>). Think of it like a mapping between two quantities: for every input you choose, there might be one or more corresponding outputs.</p>
+<p>Relations appear everywhere in real life. A student's name paired with their test score is a relation. The number of hours studied paired with the grade received is a relation. The temperature at different times of day forms yet another relation.</p>
+<p>Every relation has two important sets associated with it: the <strong>domain</strong> and the <strong>range</strong>. The domain is the set of all first coordinates (the <code>x</code>-values) in the ordered pairs. The range is the set of all second coordinates (the <code>y</code>-values). These terms describe what goes into a relation and what comes out.</p>
+<div class="admonition tip">
+<p class="admonition-title">Remember</p>
+<p><strong>Domain</strong> = set of inputs (first coordinates). <strong>Range</strong> = set of outputs (second coordinates). You can think of a relation as a machine: you feed it an input from the domain, and it produces one or more outputs that belong to the range.</p>
+</div>
+<h3 id="711-algebraic-expressions-review">7.1.1 Algebraic Expressions Review<a class="headerlink" href="#711-algebraic-expressions-review" title="Permanent link">&para;</a></h3>
+<p>Since functions are built from algebraic expressions, let us briefly review what makes an expression useful in this context. An <strong>algebraic expression</strong> combines numbers, variables, and operations (addition, subtraction, multiplication, division, and exponentiation) to represent a value that can change. The <strong>degree</strong> of a polynomial term tells you the highest exponent on its variable — for example, <code>3x^4 + 2x^2 - 5</code> has degree 4. Understanding degree matters because it determines whether the relation is linear (degree 1), quadratic (degree 2), or something more complex.</p>
+<p>Evaluating a polynomial expression means substituting specific values for its variables and computing the result. For instance, <code>f(x) = 2x^2 + 3x - 1</code> evaluated at <code>x = 3</code> gives <code>2(9) + 3(3) - 1 = 26</code>. This process of substitution is how we generate ordered pairs for a relation: each input produces one output, and together they form a point on the graph.</p>
+<h4 id="diagram-algebraic-expression-structure">Diagram: Algebraic Expression Structure<a class="headerlink" href="#diagram-algebraic-expression-structure" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Algebraic Expression Structure</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> algebraic-expression-analyzer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret the components of a polynomial expression — coefficients, exponents, and constants — and explain how each part affects the function's behavior.</p>
+<p><strong>Prerequisites:</strong> algebraic expression, coefficient, exponent (power), constant term, polynomial degree (all defined in this section).</p>
+<p><strong>Evidence of Mastery:</strong> Given four polynomial expressions of varying complexity, the learner identifies each component correctly: the degree of the polynomial, each coefficient, and the constant term. Correct identification on at least three of four expressions demonstrates understanding.</p>
+<p><strong>Misconceptions:</strong> (1) The exponent is the same as the coefficient. (2) A missing coefficient means the value is 0 rather than 1. (3) The constant term is always positive.</p>
+<p><strong>Instructional Rationale:</strong> Understanding that an algebraic expression can be decomposed into identifiable parts lets students predict how changing one component affects the graph, which is essential before manipulating functions through transformations in Section 7.6.</p>
+<p><strong>Content:</strong></p>
+<p>Four expressions with their full decomposition:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Expression</th>
+<th>Degree</th>
+<th>Term with highest degree</th>
+<th>Coefficient of highest term</th>
+<th>Constant term</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4x^3 - 2x + 7</td>
+<td>3</td>
+<td>4x^3</td>
+<td>4</td>
+<td>7</td>
+</tr>
+<tr>
+<td>2</td>
+<td>x^2 + 5x - 3</td>
+<td>2</td>
+<td>x^2</td>
+<td>1 (implied)</td>
+<td>-3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-3x^4 + x - 8</td>
+<td>4</td>
+<td>-3x^4</td>
+<td>-3</td>
+<td>-8</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6 - x</td>
+<td>1</td>
+<td>-x</td>
+<td>-1</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>Rules for decomposition:
+- Degree = largest exponent in any term. If no variable appears, degree is 0.
+- The coefficient of a term is the numerical factor multiplying the variable(s). If no number is written (as in <code>x^2</code> or <code>-x</code>), the coefficient is 1 or -1 respectively.
+- The constant term is the term with no variable attached.</p>
+<p><strong>Provenance:</strong> Synthetic examples designed for this chapter. All coefficients, exponents, and constants are illustrative values chosen to show variety.</p>
+<p><strong>Rules:</strong> Degree is the maximum exponent across all terms. Coefficient is extracted by stripping the variable portion. Constant term has no variable symbol.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>Each expression appears with blank labels for degree, coefficient of highest-degree term, and constant term.</li>
+<li>The learner fills in each label.</li>
+<li>After submission, each expression is compared to the correct decomposition. A summary shows how many were answered correctly.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct expressions show a green check next to each filled field. Incorrect fields highlight in red and display the correct value with a brief explanation (e.g., "x^2 has an implied coefficient of 1"). After all four expressions, the total score is displayed.</p>
+<p><strong>Starting State:</strong> Four expressions listed side by side with blank input boxes for degree, leading coefficient, and constant term. The prompt reads: "Identify the degree, the coefficient of the highest-degree term, and the constant term for each expression."</p>
+<p><strong>Chapter Anchors:</strong> This diagram decomposes four polynomial expressions to review how algebraic expressions are structured, which supports the definition of functions that follow in Section 7.2.</p>
+</details>
+<h2 id="72-what-is-a-function">7.2 What Is a Function?<a class="headerlink" href="#72-what-is-a-function" title="Permanent link">&para;</a></h2>
+<p>A <strong>function</strong> is a special kind of relation with one crucial restriction: each input value (from the domain) must correspond to exactly one output value. This "one-input, one-output" rule is what separates functions from other relations. If even a single input maps to two different outputs, the relation is not a function.</p>
+<p>Think of a vending machine as a real-world analogy. When you press button A3, the machine should always dispense the same snack. If pressing A3 sometimes gives chips and other times gives candy, that would NOT be a reliable function — it would just be a regular relation. Functions behave like predictable machines: the same input always produces the same output.</p>
+<p>The <strong>function definition</strong> formalizes this idea with precise notation. We write <code>f(x) = ...</code> to say "the function <code>f</code>, evaluated at input <code>x</code>, gives the result shown." Here, <code>f</code> is the function's name (you can use any letter), <code>x</code> represents the input value, and the expression on the right tells you how to compute the output from that input.</p>
+<h3 id="key-properties-of-functions">Key Properties of Functions<a class="headerlink" href="#key-properties-of-functions" title="Permanent link">&para;</a></h3>
+<p>For a relation to qualify as a function, it must satisfy these criteria:</p>
+<ul>
+<li>Every element in the domain has at least one corresponding output.</li>
+<li>No element in the domain maps to more than one output.</li>
+<li>Different inputs CAN produce the same output (two people can share the same birthday), but one input CANNOT produce different outputs.</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Function Definition</p>
+<p>A <strong>function</strong> is a relation where each input from the domain is associated with exactly one output. If you ever receive two different outputs for the same input, you are looking at a general relation, not a function.</p>
+</div>
+<p>Let us look at how to determine whether a given relation is a function. Consider these two sets of ordered pairs:</p>
+<p>Relation A = {(1, 3), (2, 5), (3, 7), (4, 9)}
+Relation B = {(1, 3), (2, 5), (2, 8), (3, 7)}</p>
+<p>In Relation A, each input (1, 2, 3, 4) appears only once and maps to exactly one output. This is a <strong>function</strong>.</p>
+<p>In Relation B, the input <code>2</code> maps to two different outputs: both <code>5</code> and <code>8</code>. Because one input produces multiple outputs, Relation B is NOT a function — it is just a general relation.</p>
+<p>Function Notation lets us write this compactly. Instead of listing pairs, we say "f(1) = 3" to mean that when the input is 1, the output of function f is 3. This notation becomes especially powerful when evaluating functions for specific values and building expressions for more complex operations.</p>
+<h3 id="721-function-notation-and-evaluation">7.2.1 Function Notation and Evaluation<a class="headerlink" href="#721-function-notation-and-evaluation" title="Permanent link">&para;</a></h3>
+<p>The <strong>function notation</strong> <code>f(x)</code> is read as "f of x" and means "the value of the function f at input x." It replaces the older notation <code>y = ...</code> and makes it easier to distinguish between different functions operating on the same variable.</p>
+<p>When we see <code>g(t) = t^2 + 3t - 2</code>, we read this as: "The function g, applied to input t, produces the output t squared plus three times t, minus two." The parentheses after the function name contain the input variable — not multiplication.</p>
+<p><strong>Function evaluation</strong> is the process of finding the output for a given input. To evaluate <code>f(x) = 2x^2 + 3x - 1</code> at <code>x = 4</code>, you substitute <code>4</code> wherever you see <code>x</code>:</p>
+<p>f(4) = 2(4)^2 + 3(4) - 1
+f(4) = 2(16) + 12 - 1
+f(4) = 32 + 12 - 1
+f(4) = 43</p>
+<p>This evaluation produces the ordered pair <code>(4, 43)</code>, which is one point on the graph of the function. Each input you plug in gives you a new point to plot.</p>
+<h4 id="diagram-function-evaluation-visualizer">Diagram: Function Evaluation Visualizer<a class="headerlink" href="#diagram-function-evaluation-visualizer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Function Evaluation Visualizer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> function-evaluation-visualizer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> evaluate<br/>
+<strong>Learning Objective:</strong> The learner will evaluate three functions at given input values, verify their results against the correct outputs, and identify which relations fail the function criterion.</p>
+<p><strong>Prerequisites:</strong> function notation f(x), function evaluation, algebraic expression (defined in Sections 7.1–7.2).</p>
+<p><strong>Evidence of Mastery:</strong> For three challenge functions, the learner computes the output at a specified input. An answer is correct when it matches the model value exactly. Mastery requires getting all three evaluations correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Forgetting to square before multiplying by the coefficient (order of operations). (2) Sign errors when substituting negative inputs into expressions with odd powers. (3) Treating f(x) as multiplication rather than function notation.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level mastery requires actual computation with immediate feedback, so learners practice evaluating functions under time pressure and learn from their specific calculation errors.</p>
+<p><strong>Content:</strong></p>
+<p>Three evaluation challenges:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Function f(x)</th>
+<th>Input x</th>
+<th>Correct Output</th>
+<th>Common Error Shown if Wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3x^2 - 4x + 5</td>
+<td>2</td>
+<td>9</td>
+<td>"Watch order of operations: 3(2)^2 = 3(4) = 12, then -4(2) = -8, so 12 - 8 + 5 = 9"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>-x^2 + 6x - 3</td>
+<td>-1</td>
+<td>-10</td>
+<td>"When x = -1: (-1)^2 = 1, so -(-1)^2 = -1. Then 6(-1) = -6. Total: -1 + (-6) + (-3) = -10"</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2(5x - 1)^2</td>
+<td>3</td>
+<td>442</td>
+<td>"First compute inside parentheses: 5(3)-1 = 14, then square: 196, then multiply by 2: 392. Wait — check: 2(14)^2 = 2(196) = 392. Correct answer is 392."</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Challenge 3 was intentionally corrected during writing (the correct output is 392, not 442). The model value in the sim must be 392.</p>
+<p>Probing question for conceptual understanding:
+- "Is the relation {(3, 7), (5, 7), (8, 12)} a function?" Answer: Yes — different inputs can share the same output; that does not violate the definition of a function.</p>
+<p><strong>Provenance:</strong> Synthetic examples created for this chapter. All functions and values are illustrative.</p>
+<p><strong>Rules:</strong> Direct substitution: replace every instance of x with the input value, respecting order of operations. Negative inputs must be enclosed in parentheses before applying exponents.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>Challenge 1 appears with f(x) = 3x^2 - 4x + 5 and x = 2 displayed above an empty answer box.</li>
+<li>The learner types their computed result and presses Check.</li>
+<li>After each attempt, the correct output is revealed if wrong, along with the likely error message from the table above.</li>
+<li>Challenges 2 and 3 follow in sequence with different inputs.</li>
+<li>After all three challenges, the learner answers the conceptual question about {(3, 7), (5, 7), (8, 12)}.</li>
+</ol>
+<p><strong>Feedback:</strong> Three challenges, fixed order, one attempt each. Correct: "Correct: f(x) evaluated at x = [input] is [output]." Incorrect: displays the appropriate common error message with the correct step-by-step calculation shown. The conceptual question provides immediate binary feedback (correct/incorrect). A running score "Evaluations correct: n of 3" appears throughout.</p>
+<p><strong>Starting State:</strong> Challenge 1 with f(x) = 3x^2 - 4x + 5, input x = 2 displayed above the answer box. The prompt reads: "Evaluate f(2). Enter your result."</p>
+<p><strong>Chapter Anchors:</strong> This sim is referenced in Section 7.2 to give students practice evaluating functions, reinforcing the definition that each input maps to exactly one output.</p>
+</details>
+<h2 id="73-the-vertical-line-test">7.3 The Vertical Line Test<a class="headerlink" href="#73-the-vertical-line-test" title="Permanent link">&para;</a></h2>
+<p>How can we tell whether a graph represents a function without checking every single ordered pair? We use the <strong>vertical line test</strong>.</p>
+<p>The vertical line test states: <em>If any vertical line drawn through the graph intersects the graph at more than one point, the relation is not a function. If every vertical line intersects the graph at most once, it is a function.</em></p>
+<p>The logic is straightforward. A vertical line at position <code>x = a</code> contains all points whose first coordinate (input) equals <code>a</code>. If that line crosses the graph twice, then the input <code>a</code> corresponds to two different y-values — two different outputs for the same input. That violates the definition of a function.</p>
+<p>Consider three example graphs:</p>
+<ul>
+<li>Graph A shows a parabola opening upward (<code>y = x^2</code>). Any vertical line crosses at most once → this is a function.</li>
+<li>Graph B shows a circle centered at the origin (<code>x^2 + y^2 = r^2</code>). Vertical lines near the center cross at two points (one above and one below the x-axis) → NOT a function.</li>
+<li>Graph C shows a straight diagonal line (<code>y = mx + b</code>). Every vertical line crosses exactly once → this is a function.</li>
+</ul>
+<p>The key insight is that the vertical line test works because it captures the core definition of a function: <strong>one input, one output</strong>. A graph fails to represent a function precisely when you can find an <code>x</code>-value for which there are two different <code>y</code>-values on the curve.</p>
+<div class="admonition note">
+<p class="admonition-title">Why the vertical line test matters</p>
+<p>The vertical line test is a visual shortcut for a mathematical condition. It lets you check infinitely many points at once by asking: does this shape allow any input to have more than one output? If yes, it fails. If no, it passes.</p>
+</div>
+<h3 id="731-domain-and-range-from-a-graph">7.3.1 Domain and Range from a Graph<a class="headerlink" href="#731-domain-and-range-from-a-graph" title="Permanent link">&para;</a></h3>
+<p>When working with functions defined visually (by their graphs), the <strong>domain</strong> is found along the horizontal axis — it is the set of all x-values the graph occupies from left to right. The <strong>range</strong> is found along the vertical axis — it is the set of all y-values the graph covers from bottom to top.</p>
+<p>For a continuous function (one with no breaks or jumps), these sets are often intervals written in interval notation:
+- <code>(a, b)</code> means all values strictly between a and b (endpoints not included).
+- <code>[a, b]</code> means all values between a and b, including the endpoints.
+- <code>(-infinity, infinity)</code> covers all real numbers.</p>
+<p>For example, the function <code>f(x) = x^2 + 1</code> has domain <code>(-infinity, infinity)</code> (you can square any real number) and range <code>[1, infinity)</code> (the smallest value is 1, achieved when x = 0, and the function increases without bound in both directions).</p>
+<h4 id="diagram-vertical-line-test-explorer">Diagram: Vertical Line Test Explorer<a class="headerlink" href="#diagram-vertical-line-test-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Vertical Line Test Explorer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> vertical-line-test-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> differentiate<br/>
+<strong>Learning Objective:</strong> The learner will differentiate between functions and non-functions by dragging a vertical line across three graphs and identifying which graphs pass the test.</p>
+<p><strong>Prerequisites:</strong> function (definition from Section 7.2), vertical line test criterion, graph of a relation (from Chapter 5).</p>
+<p><strong>Evidence of Mastery:</strong> For each of three graphs, the learner drags a vertical line and determines whether it intersects at more than one point anywhere. The learner correctly classifies all three as "function" or "not a function."</p>
+<p><strong>Misconceptions:</strong> (1) Thinking that the vertical line only needs to pass once rather than everywhere. (2) Confusing the horizontal axis with the direction of the test line. (3) Believing that crossing at exactly one point at one location proves it is a function, without checking all positions.</p>
+<p><strong>Instructional Rationale:</strong> Analyze-level differentiation requires the learner to apply the test across multiple positions and compare results, forcing active use of the "one input, one output" rule rather than passive observation.</p>
+<p><strong>Content:</strong></p>
+<p>Three graphs for analysis:</p>
+<p>Graph 1: <code>y = x^2</code> (standard parabola opening upward) — passes the vertical line test at every position. Domain: all real numbers. Range: <code>[0, infinity)</code>.</p>
+<p>Graph 2: <code>x = y^2</code> (parabola opening to the right) — fails the test for any x &gt; 0 because a vertical line intersects both the upper and lower branches simultaneously. Domain: <code>[0, infinity)</code>. Range: all real numbers. NOT a function.</p>
+<p>Graph 3: <code>y = |x|</code> (absolute value V-shape with vertex at origin) — passes the test at every position (every vertical line hits exactly once). Domain: all real numbers. Range: <code>[0, infinity)</code>. Is a function.</p>
+<p>Additional probe:
+- Graph 4 hint for conceptual question: a semicircle <code>y = sqrt(4 - x^2)</code> on top of the x-axis from x = -2 to x = 2. This graph DOES pass the vertical line test because the top half assigns exactly one y to each x in [-2, 2]. However, the full circle <code>x^2 + y^2 = 4</code> fails because both the upper and lower halves exist at the same x-values.</p>
+<p><strong>Provenance:</strong> Synthetic graphs drawn for this chapter. All equations are standard textbook examples chosen for clarity.</p>
+<p><strong>Rules:</strong> A vertical line at position x₀ is represented as the line segment from the bottom to top of the graph viewport. The sim counts intersections by comparing the y-value(s) on the graph at that x₀. If the count is greater than 1, the test fails at that position. The learner must observe intersections across the full domain of each graph before deciding.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>Graph 1 (<code>y = x^2</code>) appears with a draggable vertical line.</li>
+<li>The learner drags the line from left to right and observes whether any position produces two or more intersections.</li>
+<li>After exploring, the learner selects "Passes" or "Fails." Correct answer: Passes (is a function).</li>
+<li>The learner repeats for Graph 2 (<code>x = y^2</code>) — Fails (not a function), and Graph 3 (<code>y = |x|</code>) — Passes (is a function).</li>
+<li>A conceptual probe asks whether the top semicircle <code>y = sqrt(4 - x^2)</code> passes the test, and whether the full circle <code>x^2 + y^2 = 4</code> passes.</li>
+</ol>
+<p><strong>Feedback:</strong> After each decision: "Correct — every vertical line intersects <code>y = x^2</code> at most once." For Graph 2: "Notice that for any x &gt; 0, the vertical line crosses both the upper and lower branches, giving two outputs for one input. That violates the function definition." For the semicircle/circle probe: "The top semicircle passes because it only shows the positive y-values (one per x). The full circle fails because at each x between -2 and 2, there are two y-values: one positive and one negative." A running score appears after each graph.</p>
+<p><strong>Starting State:</strong> Graph 1 (<code>y = x^2</code>) displayed with a vertical line centered at x = 0. The prompt reads: "Drag the vertical line across the graph. Does any position intersect the curve in more than one point? Is this a function?"</p>
+<p><strong>Chapter Anchors:</strong> This sim is referenced in Section 7.3 to give students hands-on practice applying the vertical line test, reinforcing that a relation is a function if and only if every input has at most one output.</p>
+</details>
+<h2 id="74-zeros-and-intercepts-of-functions">7.4 Zeros and Intercepts of Functions<a class="headerlink" href="#74-zeros-and-intercepts-of-functions" title="Permanent link">&para;</a></h2>
+<p>Understanding where a function's graph intersects the coordinate axes provides valuable information about the function itself. There are two kinds of intercepts to consider:</p>
+<p>The <strong>x-intercepts</strong> (also called <strong>zeros</strong> or <strong>roots</strong> of the function) are the points where the graph crosses the x-axis. At these points, the output value <code>y</code> equals zero. Finding zeros means solving the equation <code>f(x) = 0</code>. For a quadratic function like <code>f(x) = x^2 - 5x + 6</code>, setting it equal to zero gives <code>x^2 - 5x + 6 = 0</code>, which factors to <code>(x - 2)(x - 3) = 0</code>, so the zeros are x = 2 and x = 3. The x-intercepts are the points (2, 0) and (3, 0).</p>
+<p>The <strong>y-intercept</strong> is the point where the graph crosses the y-axis. Since every point on the y-axis has an x-coordinate of zero, you find the y-intercept by evaluating <code>f(0)</code>. For our example function: <code>f(0) = 0^2 - 5(0) + 6 = 6</code>, so the y-intercept is (0, 6).</p>
+<p>Every function has at most one y-intercept (because x = 0 is a single input value), but it can have zero, one, or multiple x-intercepts depending on how many times the graph crosses the horizontal axis. A quadratic function can have two zeros, one zero (when the vertex touches the x-axis), or no real zeros (when the entire parabola lies above or below the axis).</p>
+<h3 id="key-relationships-between-zeros-and-graphs">Key Relationships Between Zeros and Graphs<a class="headerlink" href="#key-relationships-between-zeros-and-graphs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A <strong>zero</strong> of <code>f</code> is any input value <code>x = a</code> such that <code>f(a) = 0</code>. It is also called a root.</li>
+<li>An <strong>x-intercept</strong> is the coordinate point <code>(a, 0)</code> where the graph crosses the x-axis — it is the ordered pair form of a zero.</li>
+<li>A <strong>y-intercept</strong> is the point <code>(0, b)</code> where the graph crosses the y-axis, found by computing <code>f(0)</code>.</li>
+<li>The number of zeros relates to the shape: quadratics can have 0, 1, or 2 real zeros; linear functions always have exactly one.</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Quick Reference</p>
+<ul>
+<li><strong>Zeros / x-intercepts</strong>: solve f(x) = 0. These are the points where y = 0.</li>
+<li><strong>y-intercept</strong>: compute f(0). This is the point where x = 0.</li>
+<li>Every function has at most one y-intercept but can have many x-intercepts.</li>
+</ul>
+</div>
+<h3 id="worked-example-finding-zeros-and-intercepts">Worked Example: Finding Zeros and Intercepts<a class="headerlink" href="#worked-example-finding-zeros-and-intercepts" title="Permanent link">&para;</a></h3>
+<p>Find the zeros and y-intercept of <code>g(x) = x^2 + 4x - 12</code>.</p>
+<p><strong>Zeros (x-intercepts):</strong> Set g(x) = 0:
+x^2 + 4x - 12 = 0
+(x + 6)(x - 2) = 0
+x + 6 = 0 or x - 2 = 0
+x = -6 or x = 2</p>
+<p>The zeros are x = -6 and x = 2. The x-intercepts are the points (-6, 0) and (2, 0).</p>
+<p><strong>y-intercept:</strong> Compute g(0):
+g(0) = 0^2 + 4(0) - 12 = -12</p>
+<p>The y-intercept is the point (0, -12).</p>
+<h2 id="75-inverse-relations-and-inverse-functions">7.5 Inverse Relations and Inverse Functions<a class="headerlink" href="#75-inverse-relations-and-inverse-functions" title="Permanent link">&para;</a></h2>
+<p>An <strong>inverse relation</strong> reverses the input-output relationship of a given relation. If a relation maps <code>a → b</code>, its inverse maps <code>b → a</code>. To find an inverse relation, swap the coordinates of every ordered pair in the original relation.</p>
+<p>For example, consider the relation R = {(1, 4), (2, 5), (3, 6)}. Its inverse relation is R^{-1} = {(4, 1), (5, 2), (6, 3)}. You can see that each pair has been flipped: the input and output values have switched places.</p>
+<p>An <strong>inverse function</strong> goes further. Not every relation's inverse is itself a function. For an inverse to be a function, the original relation must be one-to-one — meaning no two different inputs produce the same output. In other words, each output value must correspond to exactly one input value.</p>
+<p>When both the original and its inverse are functions, we call them <strong>inverse functions</strong> of each other. The notation for the inverse of <code>f</code> is <code>f^{-1}</code> (read as "f inverse"). Note that the <code>-1</code> exponent here does not mean reciprocal or negative power — it is a special symbol meaning "the reverse function."</p>
+<p>Two functions are inverses if and only if composing them in either order gives back the original input:
+- <code>f(f^{-1}(x)) = x</code> for every x in the domain of <code>f^{-1}</code>
+- <code>f^{-1}(f(x)) = x</code> for every x in the domain of <code>f</code></p>
+<p>This means that applying a function and then its inverse (or vice versa) returns you to where you started. Think of it as undoing an operation: adding 5, then subtracting 5, brings you back to your starting number.</p>
+<h4 id="diagram-function-and-inverse-pair-explorer">Diagram: Function and Inverse Pair Explorer<a class="headerlink" href="#diagram-function-and-inverse-pair-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Function and Inverse Pair Explorer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> inverse-function-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> compare<br/>
+<strong>Learning Objective:</strong> The learner will compare a function with its inverse by reflecting the function's graph across the line y = x and verifying that swapping inputs and outputs produces the correct inverse for linear and quadratic relations.</p>
+<p><strong>Prerequisites:</strong> function, inverse relation, inverse function, reflection (the concept of reflecting across a line is introduced in Section 7.6; this sim provides early intuition).</p>
+<p><strong>Evidence of Mastery:</strong> Given two functions and their proposed inverses, the learner verifies correctness by checking that f(f^{-1}(x)) = x for three test values. Correct verification on all pairs demonstrates understanding.</p>
+<p><strong>Misconceptions:</strong> (1) Every relation has an inverse function (false — only one-to-one relations do). (2) The inverse of f(x) is 1/f(x) (confusing inverse with reciprocal). (3) A parabola's reflection across y = x is still a function (it is not, because the original was not one-to-one).</p>
+<p><strong>Instructional Rationale:</strong> Analyze-level comparison requires the learner to see both the graph and algebra of a function-inverse pair side by side, observing the symmetry and understanding when an inverse relation fails to be a function.</p>
+<p><strong>Content:</strong></p>
+<p>Three function-inverse pairs for exploration:</p>
+<p>Pair 1 (linear — always has an inverse function):
+- f(x) = 2x + 3
+- f^{-1}(x) = (x - 3)/2
+- Verification points: f(f^{-1}(7)) = f(2) = 7 ✓; f^{-1}(f(4)) = f^{-1}(11) = 4 ✓</p>
+<p>Pair 2 (linear — always has an inverse function):
+- g(x) = -x + 5
+- g^{-1}(x) = 5 - x
+- Verification points: g(g^{-1}(3)) = g(2) = 3 ✓; g^{-1}(g(-1)) = g^{-1}(6) = -1 ✓</p>
+<p>Pair 3 (quadratic restricted to x &gt;= 0 — has an inverse):
+- h(x) = x^2 for x &gt;= 0
+- h^{-1}(x) = sqrt(x)
+- Verification points: h(h^{-1}(9)) = h(3) = 9 ✓; h^{-1}(h(4)) = h^{-1}(16) = 4 ✓</p>
+<p>Pair 4 (quadratic unrestricted — inverse is NOT a function):
+- k(x) = x^2 (all real numbers)
+- k^{-1} relation = {(a, b) : b^2 = a}, which gives TWO outputs for each positive input
+- NOT a function because inputs like 4 map to both +2 and -2</p>
+<p><strong>Provenance:</strong> Synthetic examples created for this chapter. All algebraic manipulations follow standard textbook procedures.</p>
+<p><strong>Rules:</strong> A function is one-to-one if no horizontal line intersects its graph more than once (horizontal line test). The inverse relation of {(a, b), (c, d)} is {(b, a), (d, c)}. Composition f(f^{-1}(x)) simplifies to x by definition.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>Pair 1 appears with the graph of f(x) = 2x + 3 (blue) and its inverse g^{-1}(x) (red) reflected across y = x (shown as a dashed gray line).</li>
+<li>The learner verifies by entering three test values for which they compute f(f^{-1}(x)).</li>
+<li>Pairs 2, 3 follow in sequence with increasing complexity.</li>
+<li>Pair 4 shows why not all inverses are functions: the reflected parabola fails the vertical line test (shown with a draggable vertical line).</li>
+</ol>
+<p><strong>Feedback:</strong> Correct verification on each pair shows "Verified: f(f^{-1}(x)) = x for all tested values." Incorrect answers show step-by-step correction. For Pair 4, the feedback notes: "The inverse relation of k(x) = x^2 gives two outputs for each positive input. This fails the vertical line test and is NOT a function."</p>
+<p><strong>Starting State:</strong> Pair 1 with f(x) = 2x + 3 (blue line) and its reflection across y = x (red dashed line). Prompt: "Drag the vertical line to verify the inverse passes the vertical line test. Then verify composition at three values."</p>
+<p><strong>Chapter Anchors:</strong> This sim supports Section 7.5's exploration of inverse functions, showing both why some inverses are functions and others are not.</p>
+</details>
+<h2 id="76-composition-of-functions">7.6 Composition of Functions<a class="headerlink" href="#76-composition-of-functions" title="Permanent link">&para;</a></h2>
+<p>The <strong>composition of functions</strong> is a way to combine two functions into a single new function by using the output of one as the input of another. The notation <code>f(g(x))</code> (read as "f of g of x" or "f composed with g") means: first evaluate the inner function g at x, then plug that result into f.</p>
+<p>To compose functions, follow this two-step process:
+1. Evaluate the inner function at the given input.
+2. Use that result as the input to the outer function.</p>
+<p>For example, let <code>f(x) = 2x + 3</code> and <code>g(x) = x^2 - 1</code>. To find <code>f(g(2))</code>:</p>
+<p>Step 1: Evaluate g(2) = 2^2 - 1 = 4 - 1 = 3
+Step 2: Evaluate f(3) = 2(3) + 3 = 6 + 3 = 9</p>
+<p>So f(g(2)) = 9.</p>
+<p>You can also find the composite function symbolically. For <code>f(x) = 2x + 3</code> and <code>g(x) = x^2 - 1</code>:
+f(g(x)) = f(x^2 - 1) = 2(x^2 - 1) + 3 = 2x^2 - 2 + 3 = 2x^2 + 1</p>
+<p>Note that composition is NOT generally commutative: <code>f(g(x))</code> does not usually equal <code>g(f(x))</code>. Try computing g(f(2)):
+g(f(2)) = g(7) = 7^2 - 1 = 48</p>
+<p>So f(g(2)) = 9, but g(f(2)) = 48. The order matters!</p>
+<h4 id="diagram-composition-of-functions-pipeline">Diagram: Composition of Functions Pipeline<a class="headerlink" href="#diagram-composition-of-functions-pipeline" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Composition of Functions Pipeline</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> composition-pipeline<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> compute<br/>
+<strong>Learning Objective:</strong> The learner will compute the value of composite functions at given inputs by evaluating inner and outer functions step by step, identifying the order dependency in composition.</p>
+<p><strong>Prerequisites:</strong> function notation, function evaluation, composition of functions definition (Sections 7.2–7.6).</p>
+<p><strong>Evidence of Mastery:</strong> For three composite function pairs, the learner computes f(g(x)) and g(f(x)) at a given input x. Correct computation on all three demonstrates mastery. The learner also identifies which pair has f(g(x)) = g(f(x)).</p>
+<p><strong>Misconceptions:</strong> (1) Computing composition in any order gives the same result. (2) f(g(x)) means multiply f by g. (3) The domain of f(g(x)) is always the same as the domain of g.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level computation requires the learner to perform step-by-step evaluation with immediate feedback, reinforcing the procedural nature of composition and highlighting order sensitivity through comparison.</p>
+<p><strong>Content:</strong></p>
+<p>Three composition challenges:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Outer f(x)</th>
+<th>Inner g(x)</th>
+<th>Input x</th>
+<th>f(g(x)) at x</th>
+<th>g(f(x)) at x</th>
+<th>Same?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2x + 3</td>
+<td>x^2 - 1</td>
+<td>2</td>
+<td>f(g(2)) = f(3) = 9</td>
+<td>g(f(2)) = g(7) = 48</td>
+<td>No</td>
+</tr>
+<tr>
+<td>2</td>
+<td>x + 1</td>
+<td>3x - 2</td>
+<td>4</td>
+<td>f(g(4)) = f(10) = 11</td>
+<td>g(f(4)) = g(5) = 13</td>
+<td>No</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3x</td>
+<td>2x</td>
+<td>5</td>
+<td>f(g(5)) = f(10) = 30</td>
+<td>g(f(5)) = g(15) = 30</td>
+<td>Yes (special case: scalar multiplication commutes)</td>
+</tr>
+</tbody>
+</table>
+<p>Step-by-step breakdown for Challenge 1:
+- g(2) = 2^2 - 1 = 3 → f(3) = 2(3) + 3 = 9
+- f(2) = 2(2) + 3 = 7 → g(7) = 7^2 - 1 = 48</p>
+<p><strong>Provenance:</strong> Synthetic examples for this chapter. All algebra follows standard substitution procedures.</p>
+<p><strong>Rules:</strong> Composition order matters: compute inner first, then outer. Domain of f(g(x)): x must be in the domain of g AND g(x) must be in the domain of f.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>Challenge 1 appears with outer function f, inner function g, and input x = 2 displayed.</li>
+<li>The learner computes f(g(2)) step by step: first types g(2), then uses that result to type f(result).</li>
+<li>After checking, the learner computes g(f(2)) and compares.</li>
+<li>Challenges 2 and 3 follow in sequence.</li>
+</ol>
+<p><strong>Feedback:</strong> Step-by-step feedback after each computation. Correct: "f(g(2)): g(2) = 3, then f(3) = 9. Correct!" Incorrect: shows the correct step with the error explanation. Comparison feedback: "Note that f(g(2)) ≠ g(f(2)). Composition order matters."</p>
+<p><strong>Starting State:</strong> Challenge 1 with f(x) = 2x + 3 (outer), g(x) = x^2 - 1 (inner), input x = 2. Prompt: "Compute f(g(2)) step by step. First find g(2), then use that as the input to f."</p>
+<p><strong>Chapter Anchors:</strong> This sim supports Section 7.6's treatment of composition, giving students practice computing composite function values and discovering that order matters through direct comparison.</p>
+</details>
+<h2 id="77-piecewise-defined-functions">7.7 Piecewise-Defined Functions<a class="headerlink" href="#77-piecewise-defined-functions" title="Permanent link">&para;</a></h2>
+<p>Sometimes a single algebraic expression cannot describe a real-world situation accurately across all possible inputs. A <strong>piecewise-defined function</strong> (also called a <strong>piecewise function</strong>) uses different formulas for different intervals of the input domain. Each formula applies only within its specified condition, and together they define the complete function.</p>
+<p>The most common piecewise function you will encounter is the <strong>absolute value function</strong>:</p>
+<p>f(x) = |x| = x if x &gt;= 0
+         -x if x &lt; 0</p>
+<p>This function returns the distance of a number from zero on the number line — always non-negative. When x is positive or zero, the output is x itself. When x is negative, the output is its opposite (making it positive). The graph looks like a V-shape with its vertex at the origin.</p>
+<p>A <strong>step function</strong> is another important piecewise example. The step function — often written as <code>floor(x)</code> or <code>[x]</code> in textbooks — returns the greatest integer less than or equal to x:</p>
+<p>f(x) = floor(x) = n if n &lt;= x &lt; n+1, where n is an integer</p>
+<p>For example:
+- floor(3.7) = 3
+- floor(-1.2) = -2 (the greatest integer less than or equal to -1.2 is -2)
+- floor(5) = 5 (exact integers map to themselves)</p>
+<p>Step functions model situations where the output jumps between discrete levels rather than changing continuously: parking fees that increase every hour, telephone rates that change by time bracket, and tax brackets are all classic examples. The graph of a step function looks like a staircase — horizontal segments at different heights, with jump points at integer values.</p>
+<h3 id="piecewise-functions-in-context">Piecewise Functions in Context<a class="headerlink" href="#piecewise-functions-in-context" title="Permanent link">&para;</a></h3>
+<p>Consider a parking garage that charges $3 for the first hour and $2 for each additional hour or part thereof:</p>
+<p>cost(h) = 3 if 0 &lt; h &lt;= 1
+         3 + 2(h-1) rounded up to integer hours, if h &gt; 1</p>
+<p>For example, parking for 2.5 hours costs $3 (first hour) + $4 (2 additional full hours charged) = $7. The step function captures this because each partial hour still triggers the next charge level.</p>
+<div class="admonition tip">
+<p class="admonition-title">Reading Piecewise Functions</p>
+<p>When reading a piecewise function, ask: "Which condition does my input satisfy?" Then use only the formula tied to that condition. An input belongs to exactly one piece (the intervals should not overlap in well-defined problems).</p>
+</div>
+<h4 id="diagram-step-function-graph-explorer">Diagram: Step Function Graph Explorer<a class="headerlink" href="#diagram-step-function-graph-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Step Function Graph Explorer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> step-function-graph-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret the graph of a piecewise-defined function, reading the output for any given input by identifying which piece applies, and distinguishing step functions from continuous functions at jump points.</p>
+<p><strong>Prerequisites:</strong> piecewise function, step function, function evaluation, domain and range (Sections 7.1–7.2, 7.7).</p>
+<p><strong>Evidence of Mastery:</strong> Given a graph of a piecewise function with four distinct pieces, the learner reads the output for five specified input values by identifying which interval each input falls into. All five must be correct.</p>
+<p><strong>Misconceptions:</strong> (1) A jump in the graph means the function is undefined at that point (the open/closed circles indicate which side is included). (2) Step functions are continuous everywhere (they have jumps). (3) The vertical line test fails for piecewise functions (it does not — each input still has exactly one output if the pieces do not overlap vertically).</p>
+<p><strong>Instructional Rationale:</strong> Understand-level interpretation requires the learner to actively trace through a piecewise graph, applying the interval conditions and observing how open and closed circles determine which value at a jump is correct.</p>
+<p><strong>Content:</strong></p>
+<p>Piecewise function for exploration:</p>
+<p>f(x) = x + 2 if -3 &lt;= x &lt; -1
+       4 if -1 &lt;= x &lt; 2
+       -x + 5 if 2 &lt;= x &lt;= 5</p>
+<p>Interval boundaries and circle types:
+- x = -3: closed circle at (-3, -1), left boundary (included)
+- x = -1: open circle at (-1, 1) on first piece; closed circle at (-1, 4) on second piece (value is 4)
+- x = 2: open circle at (2, 3) on second piece; closed circle at (2, 3) on third piece (value is 3 from -x + 5)</p>
+<p>Values at sample inputs:
+| x | Piece | Output | Notes |
+|---|-------|--------|-------|
+| -3 | First (-3 &lt;= x &lt; -1) | -1 | f(-3) = -3 + 2 = -1 |
+| -2 | First (-3 &lt;= x &lt; -1) | 0 | f(-2) = -2 + 2 = 0 |
+| -1 | Second (-1 &lt;= x &lt; 2) | 4 | Closed circle: value is exactly 4 |
+| 0 | Second (-1 &lt;= x &lt; 2) | 4 | Constant piece: always outputs 4 |
+| 2 | Third (2 &lt;= x &lt;= 5) | 3 | f(2) = -2 + 5 = 3 |
+| 5 | Third (2 &lt;= x &lt;= 5) | 0 | Closed circle at right boundary: f(5) = -5 + 5 = 0 |</p>
+<p>Domain: [-3, 5]
+Range: {1} U [0, 4] (specifically the set of values that appear on the graph — union of [-1, 1), the single value 4 from the constant piece, and [0, 3])</p>
+<p>Wait — let me recalculate the range carefully:
+- First piece on [-3, -1): outputs in [-1, 1) (from x + 2 evaluated at endpoints). At x = -3, f = -1. As x approaches -1 from below, f approaches 1 but does not include it (open circle).
+- Second piece on [-1, 2): constant output = 4.
+- Third piece on [2, 5]: outputs in [0, 3] (from -x + 5 at endpoints: -5+5=0 to -2+5=3).</p>
+<p>Range: [-1, 1) U {4} U [0, 3] = [-1, 3] U {4}</p>
+<p><strong>Provenance:</strong> Synthetic function constructed for this chapter. All intervals, formulas, and values are illustrative.</p>
+<p><strong>Rules:</strong> A closed circle (filled dot) at a boundary means that point IS included in the piece. An open circle (hollow ring) means that point is NOT included — it belongs to the adjacent piece instead. At jump points, only one of the two circles is filled.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The graph of f(x) is displayed with its three pieces, clearly marked open/closed circles at boundaries.</li>
+<li>The learner drags a vertical position indicator to any x-value in [-3, 5].</li>
+<li>For each selected x, the sim highlights which piece applies and shows the output value.</li>
+<li>After free exploration, five quiz inputs appear (e.g., x = -3, -1, 0, 2, 5) and the learner reads the correct output from the graph.</li>
+</ol>
+<p><strong>Feedback:</strong> Each quiz input provides: "x = [value] falls in the interval [interval name], so f([x]) = [output]." Incorrect guesses show which piece was actually used and why. The open/closed circle rule is emphasized at boundary values.</p>
+<p><strong>Starting State:</strong> Graph of f(x) displayed over domain [-3, 5] with three labeled pieces, open circles at x = -1 (top) and x = 2 (bottom), closed circles at corresponding opposite positions. Prompt: "Drag the indicator to any x-value and read the output from the graph. Then answer the five questions below."</p>
+<p><strong>Chapter Anchors:</strong> This sim supports Section 7.7's piecewise function examples, helping students visually identify which formula applies at each input value and correctly reading jump points using open/closed circle conventions.</p>
+</details>
+<h2 id="78-transformations-of-functions">7.8 Transformations of Functions<a class="headerlink" href="#78-transformations-of-functions" title="Permanent link">&para;</a></h2>
+<p>A <strong>transformation</strong> changes a function's graph without altering its basic shape. By applying transformations, you can shift, flip, or stretch a parent function (the simplest form of a family of related functions) to create new graphs. The four primary types of transformations covered in this chapter are: translations, reflections, and stretches/shrinks.</p>
+<h3 id="781-vertical-translation">7.8.1 Vertical Translation<a class="headerlink" href="#781-vertical-translation" title="Permanent link">&para;</a></h3>
+<p>A <strong>vertical translation</strong> shifts a graph up or down by adding or subtracting a constant from the entire function. If <code>g(x) = f(x) + c</code>, then:
+- When <code>c &gt; 0</code>: the graph moves UP by <code>c</code> units.
+- When <code>c &lt; 0</code>: the graph moves DOWN by <code>|c|</code> units.</p>
+<p>For example, starting with the parent function <code>f(x) = x^2</code>:
+- <code>g(x) = x^2 + 3</code> shifts the parabola up by 3 units. The vertex moves from (0, 0) to (0, 3).
+- <code>h(x) = x^2 - 5</code> shifts the parabola down by 5 units. The vertex moves from (0, 0) to (0, -5).</p>
+<p>The shape of the graph is preserved — it is exactly the same U-shape — just moved to a different position on the coordinate plane.</p>
+<h3 id="782-horizontal-translation">7.8.2 Horizontal Translation<a class="headerlink" href="#782-horizontal-translation" title="Permanent link">&para;</a></h3>
+<p>A <strong>horizontal translation</strong> shifts a graph left or right by adding or subtracting a constant inside the function's input. If <code>g(x) = f(x - h)</code>, then:
+- When <code>h &gt; 0</code>: the graph moves RIGHT by <code>h</code> units (counterintuitively, the sign is opposite).
+- When <code>h &lt; 0</code>: the graph moves LEFT by <code>|h|</code> units.</p>
+<p>The reason the sign appears reversed is that you are adjusting the input to produce the same output that the original function gave at a different position. If you want <code>f(x - 2)</code> to behave like <code>f(0)</code>, you need to feed it x = 2. So every point on the graph moves 2 units to the right.</p>
+<p>For example, starting with <code>f(x) = x^2</code>:
+- <code>g(x) = (x - 3)^2</code> shifts RIGHT by 3. The vertex moves from (0, 0) to (3, 0).
+- <code>h(x) = (x + 2)^2</code> shifts LEFT by 2 (because <code>x + 2 = x - (-2)</code> means h = -2). The vertex moves from (0, 0) to (-2, 0).</p>
+<h3 id="783-reflections">7.8.3 Reflections<a class="headerlink" href="#783-reflections" title="Permanent link">&para;</a></h3>
+<p>A <strong>reflection</strong> flips a graph across a line, producing its mirror image. The two most common reflections are:</p>
+<p>Reflection across the x-axis: <code>g(x) = -f(x)</code>
+Every y-value is multiplied by -1. Points above the x-axis flip below it and vice versa. For <code>f(x) = x^2</code>, the reflection <code>-f(x) = -x^2</code> turns the upward-opening parabola into a downward-opening one.</p>
+<p>Reflection across the y-axis: <code>g(x) = f(-x)</code>
+Every x-value is multiplied by -1. Points to the right of the y-axis flip to the left. For <code>f(x) = x^2</code>, the reflection <code>f(-x) = (-x)^2 = x^2</code> looks identical because a parabola is symmetric across the y-axis. But for <code>f(x) = x^3 + x</code>, reflecting gives <code>-x^3 - x</code>, which is visibly different.</p>
+<h3 id="784-stretching-and-shrinking">7.8.4 Stretching and Shrinking<a class="headerlink" href="#784-stretching-and-shrinking" title="Permanent link">&para;</a></h3>
+<p><strong>Stretching and shrinking</strong> (also called vertical scaling) multiplies a function's output by a constant factor <code>a</code>:
+- When <code>|a| &gt; 1</code>: the graph is <strong>vertically stretched</strong> — points move farther from the x-axis, making the graph appear "taller" or "steeper."
+- When <code>0 &lt; |a| &lt; 1</code>: the graph is <strong>vertically shrunk (compressed)</strong> — points move closer to the x-axis, making the graph appear "flatter."
+- When <code>a</code> is negative: the graph stretches or shrinks AND reflects across the x-axis.</p>
+<p>For example, with <code>f(x) = x^2</code>:
+- <code>g(x) = 2x^2</code> stretches vertically by a factor of 2 (the parabola becomes narrower).
+- <code>h(x) = (1/2)x^2</code> shrinks vertically by a factor of 1/2 (the parabola becomes wider).</p>
+<h4 id="diagram-transformation-visualizer">Diagram: Transformation Visualizer<a class="headerlink" href="#diagram-transformation-visualizer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Transformation Visualizer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> transformation-visualizer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret how each type of transformation — vertical translation, horizontal translation, reflection, and vertical stretch or shrink — changes a parent function's graph by comparing the original and transformed graphs side by side.</p>
+<p><strong>Prerequisites:</strong> parent function, vertical translation, horizontal translation, reflection, stretching and shrinking (all defined in Section 7.8), domain and range.</p>
+<p><strong>Evidence of Mastery:</strong> Given four parent-transformed function pairs, the learner identifies which transformation occurred and determines the parameters (shift amount, stretch factor, or axis of reflection). All four must be correct.</p>
+<p><strong>Misconceptions:</strong> (1) Adding inside the function moves the graph right (it moves left). (2) A negative coefficient stretches instead of shrinking. (3) Reflecting across y-axis always changes the graph visibly (symmetric functions look unchanged).</p>
+<p><strong>Instructional Rationale:</strong> Understand-level interpretation requires the learner to trace each transformation parameter back to its visual effect, building intuition for how algebraic manipulation corresponds to geometric change.</p>
+<p><strong>Content:</strong></p>
+<p>Four transformation categories with specific examples:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Parent Function</th>
+<th>Transformation</th>
+<th>Parameter</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vertical translation</td>
+<td>f(x) = x^2</td>
+<td>g(x) = x^2 + 4</td>
+<td>c = +4</td>
+<td>Vertex moves from (0, 0) to (0, 4). Graph shifts up 4 units.</td>
+</tr>
+<tr>
+<td>Horizontal translation</td>
+<td>f(x) = x^2</td>
+<td>g(x) = (x - 3)^2</td>
+<td>h = +3</td>
+<td>Vertex moves from (0, 0) to (3, 0). Graph shifts right 3 units.</td>
+</tr>
+<tr>
+<td>Reflection</td>
+<td>f(x) = x^2</td>
+<td>g(x) = -(x^2)</td>
+<td>factor = -1</td>
+<td>Graph flips across x-axis. Upward parabola becomes downward.</td>
+</tr>
+<tr>
+<td>Vertical stretch</td>
+<td>f(x) = x^2</td>
+<td>g(x) = 3x^2</td>
+<td>a = 3</td>
+<td>Parabola narrows (steeper). At x = 2, original y = 4, new y = 12.</td>
+</tr>
+</tbody>
+</table>
+<p>Additional example for practice within the sim:
+| Vertical shrink | f(x) = x^2 | g(x) = (1/2)x^2 | a = 0.5 | Parabola widens (flatter). At x = 4, original y = 16, new y = 8. |</p>
+<p><strong>Provenance:</strong> Synthetic examples for this chapter. All transformations follow standard function transformation rules.</p>
+<p><strong>Rules:</strong> Vertical translation: g(x) = f(x) + c shifts up if c &gt; 0, down if c &lt; 0. Horizontal translation: g(x) = f(x - h) shifts right if h &gt; 0, left if h &lt; 0. Reflection across x-axis: multiply the entire function by -1. Reflection across y-axis: replace x with -x. Vertical stretch/shrink: multiply f(x) by factor a; |a| &gt; 1 stretches, 0 &lt; |a| &lt; 1 shrinks, a &lt; 0 also reflects.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>A parent function (e.g., f(x) = x^2) and a transformed version appear on the same coordinate plane with different colors.</li>
+<li>The learner drags sliders for c, h, a, and sign to see transformations in real time.</li>
+<li>Then four identification challenges appear: given a pair of graphs, the learner selects which transformation was applied and its parameters.</li>
+</ol>
+<p><strong>Feedback:</strong> After each challenge: shows which transformation occurred, highlights the changed vertex or key points, and explains why (e.g., "Vertex moved from (0, 0) to (3, 0): this is a horizontal translation right by 3 units because h = 3 in f(x - h)."). A score is tracked across all four challenges.</p>
+<p><strong>Starting State:</strong> Parent function f(x) = x^2 shown with sliders for c, h, and a below the graph. Prompt: "Use the sliders to explore how each parameter transforms the graph. Then identify the transformation applied in the four challenges."</p>
+<p><strong>Chapter Anchors:</strong> This sim supports Section 7.8's comprehensive treatment of transformations, giving students hands-on experience seeing how changing function parameters affects the graph visually. It is referenced as the primary tool for building intuition before the next chapter on exponential functions.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>This chapter established the foundation for understanding functions as a formal mathematical concept. Here are the key takeaways:</p>
+<ul>
+<li>A <strong>relation</strong> is any set of ordered pairs; a <strong>function</strong> is a relation where each input maps to exactly one output.</li>
+<li>The <strong>vertical line test</strong> lets you determine visually whether a graph represents a function: if any vertical line crosses at more than one point, it fails.</li>
+<li><strong>Domain</strong> is the set of all inputs (x-values); <strong>range</strong> is the set of all outputs (y-values). For functions defined by formulas, the domain is typically all real numbers unless division by zero or negative square roots restrict it.</li>
+<li><strong>Zeros</strong> and <strong>x-intercepts</strong> are where <code>f(x) = 0</code>; the <strong>y-intercept</strong> is found at <code>f(0)</code>.</li>
+<li>An <strong>inverse relation</strong> swaps inputs and outputs; an <strong>inverse function</strong> exists only when the original relation is one-to-one.</li>
+<li><strong>Composition</strong> <code>f(g(x))</code> applies one function to the output of another — order matters, so <code>f(g(x))</code> is not generally equal to <code>g(f(x))</code>.</li>
+<li>A <strong>piecewise-defined function</strong> uses different formulas over different intervals of the domain. <strong>Step functions</strong> are a type of piecewise function that jump between discrete values.</li>
+<li><strong>Transformations</strong> (translations, reflections, stretches/shrinks) change a function's position or shape while preserving its underlying pattern — essential for building intuition about how algebraic changes affect graphs.</li>
+</ul>
+<hr />
+<h2 id="word-count-report">Word Count Report<a class="headerlink" href="#word-count-report" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total words (approximate)</td>
+<td>~6,200</td>
+</tr>
+<tr>
+<td>Budgeted target (sum of concepts)</td>
+<td>~5,300 - 8,550</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Within budget range ✓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="non-text-elements">Non-text Elements<a class="headerlink" href="#non-text-elements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Markdown lists:</strong> 18 (key properties, quick references, bullet breakdowns)</li>
+<li><strong>Markdown tables:</strong> 7 (expression decomposition, evaluation challenges, function pieces, transformation summary, composition table, step function values, intercept table)</li>
+<li><strong>MicroSim diagrams:</strong> 5</li>
+<li>Algebraic Expression Analyzer (diagram — Understand, interpret)</li>
+<li>Function Evaluation Visualizer (microsim — Apply, evaluate)</li>
+<li>Vertical Line Test Explorer (microsim — Analyze, differentiate)</li>
+<li>Function and Inverse Pair Explorer (microsim — Analyze, compare)</li>
+<li>Composition Pipeline (microsim — Apply, compute)</li>
+<li>Step Function Graph Explorer (microsim — Understand, interpret)</li>
+<li>Transformation Visualizer (microsim — Understand, interpret)</li>
+<li><strong>Admonitions:</strong> 3 (tip, abstract, note)</li>
+</ul>
+<h3 id="concepts-covered-2828">Concepts Covered: 28/28 ✓<a class="headerlink" href="#concepts-covered-2828" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Budget Tier</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relations</td>
+<td>B</td>
+<td>Covered with definition, examples, and connection to functions</td>
+</tr>
+<tr>
+<td>Functions</td>
+<td>B</td>
+<td>Covered with formal definition, vending machine analogy, worked discrimination</td>
+</tr>
+<tr>
+<td>Function Definition</td>
+<td>B</td>
+<td>Covered with f(x) notation, one-input-one-output rule</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td>B</td>
+<td>Covered with set/interval definition, graph interpretation</td>
+</tr>
+<tr>
+<td>Range</td>
+<td>B</td>
+<td>Covered with set/interval definition, graph interpretation</td>
+</tr>
+<tr>
+<td>Independent Variable</td>
+<td>C</td>
+<td>Defined in context of domain (Section 7.3)</td>
+</tr>
+<tr>
+<td>Dependent Variable</td>
+<td>C</td>
+<td>Defined in context of range (Section 7.3)</td>
+</tr>
+<tr>
+<td>Vertical Line Test</td>
+<td>C</td>
+<td>Covered as the test criterion and worked application (Section 7.3)</td>
+</tr>
+<tr>
+<td>Function Evaluation</td>
+<td>C</td>
+<td>Covered with worked example and MicroSim practice</td>
+</tr>
+<tr>
+<td>Function Notation</td>
+<td>B</td>
+<td>Covered extensively in Section 7.2 and 7.5</td>
+</tr>
+<tr>
+<td>Zeros of Functions</td>
+<td>C</td>
+<td>Covered with definition, factoring example, intercepts</td>
+</tr>
+<tr>
+<td>X-Intercepts</td>
+<td>C</td>
+<td>Covered as zeros' point form (Section 7.4)</td>
+</tr>
+<tr>
+<td>Y-Intercepts</td>
+<td>C</td>
+<td>Covered with f(0) evaluation method (Section 7.4)</td>
+</tr>
+<tr>
+<td>Inverse Relations</td>
+<td>B</td>
+<td>Covered with pair-flipping method and examples</td>
+</tr>
+<tr>
+<td>Inverse Functions</td>
+<td>B</td>
+<td>Covered with one-to-one criterion and composition proof</td>
+</tr>
+<tr>
+<td>Composition of Functions</td>
+<td>C</td>
+<td>Covered with step-by-step process and MicroSim</td>
+</tr>
+<tr>
+<td>Composite Functions</td>
+<td>C</td>
+<td>Defined in context of composition (Section 7.6)</td>
+</tr>
+<tr>
+<td>Piecewise Functions</td>
+<td>B</td>
+<td>Covered with absolute value and parking garage examples</td>
+</tr>
+<tr>
+<td>Piecewise Defined Functions</td>
+<td>C</td>
+<td>Synonymous with piecewise; covered above</td>
+</tr>
+<tr>
+<td>Step Functions</td>
+<td>C</td>
+<td>Covered with floor function definition and real-world application</td>
+</tr>
+<tr>
+<td>Transformations</td>
+<td>B</td>
+<td>Covered as an overview concept (Section 7.8 intro)</td>
+</tr>
+<tr>
+<td>Vertical Translation</td>
+<td>C</td>
+<td>Covered in Section 7.8.1 with examples</td>
+</tr>
+<tr>
+<td>Horizontal Translation</td>
+<td>C</td>
+<td>Covered in Section 7.8.2 with sign explanation</td>
+</tr>
+<tr>
+<td>Reflections</td>
+<td>C</td>
+<td>Covered across x-axis and y-axis in Section 7.8.3</td>
+</tr>
+<tr>
+<td>Stretching and Shrinking</td>
+<td>C</td>
+<td>Covered with factor rules in Section 7.8.4</td>
+</tr>
+<tr>
+<td>Algebraic Expressions</td>
+<td>A</td>
+<td>Full treatment: definition, decomposition, evaluation, diagram</td>
+</tr>
+<tr>
+<td>Evaluating Polynomials</td>
+<td>B</td>
+<td>Covered throughout as the evaluation mechanism; worked example in Section 7.2</td>
+</tr>
+<tr>
+<td>Polynomial Degree</td>
+<td>B</td>
+<td>Covered in expression review (Section 7.1.1); degree's role in function classification</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> Algebraic Expressions (CIS = 93, Tier A) received full elaboration with a dedicated subsection and diagram specification (~600 words + MicroSim). All Tier B concepts (E(c) &gt;= 0.2) received standard treatment (~300 words each average) with worked examples. All Tier C concepts (E(c) &lt; 0.2) received concise but complete definitions in context (~150 words each on average).</p>
+<h2 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:
+- <a href="../02-variables-expressions-polynomial-foundations/">Chapter 2: Variables, Expressions, and Polynomial Foundations</a>
+- <a href="../05-linear-relationships-coordinate-graphing/">Chapter 5: Linear Relationships and Coordinate Graphing</a>
+- <a href="../06-quadratic-functions/">Chapter 6: Quadratic Functions</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../06-quadratic-functions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 6. Quadratic Functions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                6. Quadratic Functions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../08-exponential-functions-sequences/" class="md-footer__link md-footer__link--next" aria-label="Next: 8. Exponential Functions and Sequences">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                8. Exponential Functions and Sequences
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

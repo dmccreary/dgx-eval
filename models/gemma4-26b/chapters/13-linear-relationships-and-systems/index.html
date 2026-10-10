@@ -1,0 +1,2388 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Explore the connections between ratios, algebraic expressions, and the equations that model real-world changes.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/13-linear-relationships-and-systems/">
+      
+      
+        <link rel="prev" href="../12-advanced-polynomials-and-function-behavior/">
+      
+      
+        <link rel="next" href="../14-advanced-modeling-and-statistics/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Linear Relationships and Systems - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linear-relationships-and-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linear Relationships and Systems
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            gemma4:26b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_2_4" id="__nav_8_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-algebra-foundations-and-basic-operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Algebra Foundations and Basic Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-algebraic-expressions-and-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Algebraic Expressions and Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-advanced-algebra-and-relations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Advanced Algebra and Relations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-exponents-and-mathematical-constants/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Exponents and Mathematical Constants
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-laws-of-exponents-and-modeling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Laws of Exponents and Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-radicals-and-algebraic-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Radicals and Algebraic Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-rational-exponents-and-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Rational Exponents and Logic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-equations-and-inequalities-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Equations and Inequalities Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-polynomial-operations-and-factoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Polynomial Operations and Factoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-functions-modeling-and-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Functions, Modeling, and Logic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-linear-and-exponential-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Linear and Exponential Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-advanced-polynomials-and-function-behavior/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Advanced Polynomials and Function Behavior
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    13. Linear Relationships and Systems
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    13. Linear Relationships and Systems
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Content
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ratios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ratios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fractions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fractions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-like-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combining Like Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expanding-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanding Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#greatest-common-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greatest Common Factor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Polynomials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solving-by-factoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving by Factoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quadratic Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-shape-of-a-quadratic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Shape of a Quadratic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Form
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-slope-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point-Slope Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point-Slope Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-point-slope-on-a-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Point-Slope on a Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphing-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphing Linear Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-exponential-growth-vs-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Exponential Growth vs Decay
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#line-of-best-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Line of Best Fit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-advanced-modeling-and-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Advanced Modeling and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Content
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ratios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ratios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fractions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fractions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-like-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combining Like Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expanding-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanding Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#greatest-common-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greatest Common Factor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Polynomials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solving-by-factoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving by Factoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quadratic Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-shape-of-a-quadratic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Shape of a Quadratic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Form
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-slope-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point-Slope Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point-Slope Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-point-slope-on-a-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Point-Slope on a Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphing-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphing Linear Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-exponential-growth-vs-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Exponential Growth vs Decay
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#line-of-best-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Line of Best Fit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/gemma4-26b/chapters/13-linear-relationships-and-systems/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="linear-relationships-and-systems">Linear Relationships and Systems<a class="headerlink" href="#linear-relationships-and-systems" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter introduces key algebraic concepts, building on foundational knowledge to develop new skills in modeling and problem-solving.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 14 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Point-Slope Form</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Line of Best Fit</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Fractions</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Combining Like Terms</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Greatest Common Factor</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Quadratic Equations</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Quadratic Models</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Standard Form</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Ratios</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Expanding Expressions</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Adding Polynomials</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Solving by Factoring</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Exponential Models</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Graphing Linear Equations</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-algebra-foundations-and-basic-operations/">Chapter 1: Algebra Foundations and Basic Operations</a></li>
+<li><a href="../02-algebraic-expressions-and-functions/">Chapter 2: Algebraic Expressions and Functions</a></li>
+<li><a href="../04-exponents-and-mathematical-constants/">Chapter 4: Exponents and Mathematical Constants</a></li>
+<li><a href="../06-radicals-and-algebraic-properties/">Chapter 6: Radicals and Algebraic Properties</a></li>
+<li><a href="../12-advanced-polynomials-and-function-behavior/">Chapter 12: Advanced Polynomials and Function Behavior</a></li>
+</ul>
+<h2 id="detailed-content">Detailed Content<a class="headerlink" href="#detailed-content" title="Permanent link">&para;</a></h2>
+<p>Algebra is more than just finding $x$; it is about describing how things change and relate to one another. In this chapter, we will see how simple ideas like ratios and fractions evolve into the powerful tools of linear and quadratic equations, allowing us to model everything from the path of a ball to the growth of a population.</p>
+<h3 id="ratios">Ratios<a class="headerlink" href="#ratios" title="Permanent link">&para;</a></h3>
+<p>A ratio is a comparison of two quantities. For example, if you have 3 apples and 2 oranges, the ratio of apples to oranges is 3 to 2, often written as $3:2$ or $\frac{3}{2}$. Ratios help us understand the relationship between different parts of a whole or between two separate groups.</p>
+<h3 id="fractions">Fractions<a class="headerlink" href="#fractions" title="Permanent link">&para;</a></h3>
+<p>Fractions represent parts of a whole. When we work with algebraic expressions, we often encounter fractions that require careful manipulation.</p>
+<p><strong>Worked Example: Multiplying Fractions</strong></p>
+<p>To multiply two fractions, multiply their numerators together and their denominators together.
+Suppose we want to find $\frac{2}{3} \times \frac{4}{5}$.
+1. Multiply the numerators: $2 \times 4 = 8$.
+2. Multiply the denominators: $3 \times 5 = 15$.
+The result is $\frac{8}{15}$.</p>
+<table>
+<thead>
+<tr>
+<th>Comparison</th>
+<th>Ratios</th>
+<th>Fractions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Representation</td>
+<td>$3:2$ or $3/2$</td>
+<td>$\frac{3}{2}$</td>
+</tr>
+<tr>
+<td>Focus</td>
+<td>Relationship between quantities</td>
+<td>Part of a whole</td>
+</tr>
+</tbody>
+</table>
+<h3 id="combining-like-terms">Combining Like Terms<a class="headerlink" href="#combining-like-terms" title="Permanent link">&para;</a></h3>
+<p>In algebra, "like terms" are terms that have the exact same variable part. For example, $3x$ and $5x$ are like terms, but $3x$ and $3x^2$ are not. To combine like terms, you add or subtract their coefficients. For $3x + 5x$, the result is $8x$.</p>
+<h3 id="expanding-expressions">Expanding Expressions<a class="headerlink" href="#expanding-expressions" title="Permanent link">&para;</a></h3>
+<p>Expanding an expression means removing parentheses by multiplying the terms inside by the term outside. This is often done using the distributive property. For instance, expanding $3(x + 2)$ results in $3x + 6$.</p>
+<h3 id="greatest-common-factor">Greatest Common Factor<a class="headerlink" href="#greatest-common-factor" title="Permanent link">&para;</a></h3>
+<p>The Greatest Common Factor (GCF) is the largest number or term that divides evenly into two or more terms. For $6x$ and $9$, the GCF is $3$. In algebra, finding the GCF is a crucial first step in factoring.</p>
+<h3 id="adding-polynomials">Adding Polynomials<a class="headerlink" href="#adding-polynomials" title="Permanent link">&para;</a></h3>
+<p>A polynomial is an expression consisting of variables and coefficients. To add polynomials, you simply combine like terms from both expressions. For example, $(2x + 3) + (x - 1)$ becomes $3x + 2$.</p>
+<h3 id="solving-by-factoring">Solving by Factoring<a class="headerlink" href="#solving-by-factoring" title="Permanent link">&para;</a></h3>
+<p>Factoring is the process of breaking an expression down into a product of simpler expressions. This is particularly useful for solving equations.</p>
+<p><strong>Worked Example: Factoring a Trinomial</strong></p>
+<p>To solve $x^2 + 5x + 6 = 0$, we look for two numbers that multiply to $6$ and add to $5$. These numbers are $2$ and $3$.
+So, we can rewrite the equation as:
+[ (x + 2)(x + 3) = 0 ]
+This gives us two possible solutions: $x = -2$ or $x = -3$.</p>
+<h3 id="quadratic-equations">Quadratic Equations<a class="headerlink" href="#quadratic-equations" title="Permanent link">&para;</a></h3>
+<p>A quadratic equation is an equation where the highest power of the variable is 2, such as $ax^2 + bx + c = 0$. These equations describe parabolic shapes.</p>
+<p><strong>Worked Example: Solving via Quadratic Formula</strong></p>
+<p>For the equation $x^2 - 4x + 3 = 0$, where $a=1, b=-4, c=3$:
+Using the formula <span class="arithmatex">\( x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \)</span>:
+[ x = \frac{4 \pm \sqrt{(-4)^2 - 4(1)(3)}}{2(1)} ]
+[ x = \frac{4 \pm \sqrt{16 - 12}}{2} ]
+[ x = \frac{4 \pm \sqrt{4}}{2} = \frac{4 \pm 2}{2} ]
+<span class="arithmatex">\( x = 3 \)</span> or <span class="arithmatex">\( x = 1 \)</span>.</p>
+<h4 id="diagram-the-shape-of-a-quadratic">Diagram: The Shape of a Quadratic<a class="headerlink" href="#diagram-the-shape-of-a-quadratic" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Parabola Visualization</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> quadratic-parabola-shape<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> Describe<br/>
+<strong>Learning Objective:</strong> The learner will describe the visual characteristics of a quadratic function's graph.</p>
+<p><strong>Prerequisites:</strong> Quadratic Equations, Variable, Coefficient</p>
+<p><strong>Evidence of Mastery:</strong> The learner can identify the vertex and the upward/downward opening of a parabola from a provided graph.</p>
+<p><strong>Misconceptions:</strong> Thinking all parabolas open upward; thinking a parabola is a straight line.</p>
+<p><strong>Instructional Rationale:</strong> Visualizing the shape helps connect the algebraic equation to its geometric representation.</p>
+<p><strong>Content:</strong> A parabola opening upwards with a clear vertex, axis of symmetry, and x-intercepts.</p>
+<p><strong>Provenance:</strong> Illustrative</p>
+<p><strong>Rules:</strong> Vertex at $(h, k)$, opening depends on sign of $a$.</p>
+<p><strong>Learner Activity:</strong> 1. Observe the graph. 2. Identify the lowest point (vertex). 3. Determine if it opens up or down.</p>
+<p><strong>Feedback:</strong> If asked about the vertex, the tool highlights the minimum/maximum point.</p>
+<p><strong>Starting State:</strong> A coordinate plane with a parabola rendered.</p>
+<p><strong>Chapter Anchors:</strong> Quadratic Equations, Vertex, Axis of Symmetry, Graphing Quadratics</p>
+</details>
+<h3 id="quadratic-models">Quadratic Models<a class="headerlink" href="#quadratic-models" title="Permanent link">&para;</a></h3>
+<p>Quadratic models use quadratic equations to represent real-world phenomena, such as the trajectory of a projectile. The resulting graph is a parabola, which can open upward or downward.</p>
+<h3 id="standard-form">Standard Form<a class="headerlink" href="#standard-form" title="Permanent link">&para;</a></h3>
+<p>The standard form of a linear equation is <span class="arithmatex">\( Ax + By = C \)</span>. This form is useful for finding intercepts and is often used in systems of equations.</p>
+<table>
+<thead>
+<tr>
+<th>Form Name</th>
+<th>Equation</th>
+<th>Best Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slope-Intercept</td>
+<td><span class="arithmatex">\( y = mx + b \)</span></td>
+<td>Graphing</td>
+</tr>
+<tr>
+<td>Point-Slope</td>
+<td><span class="arithmatex">\( y - y_1 = m(x - x_1) \)</span></td>
+<td>Writing eq from a point</td>
+</tr>
+<tr>
+<td>Standard Form</td>
+<td><span class="arithmatex">\( Ax + By = C \)</span></td>
+<td>Finding intercepts</td>
+</tr>
+</tbody>
+</table>
+<h3 id="point-slope-form">Point-Slope Form<a class="headerlink" href="#point-slope-form" title="Permanent link">&para;</a></h3>
+<p>The point-slope form of a linear equation is <span class="arithmatex">\( y - y_1 = m(x - x_1) \)</span>, where <span class="arithmatex">\( m \)</span> is the slope and <span class="arithmatex">\( (x_1, y_1) \)</span> is a point on the line. This is a very efficient way to write the equation of a line when you know its steepness and one specific location.</p>
+<h4 id="diagram-point-slope-on-a-graph">Diagram: Point-Slope on a Graph<a class="headerlink" href="#diagram-point-slope-on-a-graph" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Point-Slope Visualization</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> point-slope-line<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> Demonstrate<br/>
+<strong>Learning Objective:</strong> The learner will demonstrate how the point-slope formula is used to define a line on a coordinate plane.</p>
+<p><strong>Prerequisites:</strong> Slope, Coordinates, Linear Equation</p>
+<p><strong>Evidence of Mastery:</strong> The learner can select a point and a slope to render the correct line.</p>
+<p><strong>Misconceptions:</strong> Confusing $x_1$ and $y_1$; forgetting to negate the coordinates in the formula.</p>
+<p><strong>Instructional Rationale:</strong> Applying the formula to a visual tool reinforces the relationship between algebraic components and geometric placement.</p>
+<p><strong>Content:</strong> A grid with a draggable point and a slider for slope.</p>
+<p><strong>Provenance:</strong> Illustrative</p>
+<p><strong>Rules:</strong> Line must pass through the selected point and have the chosen slope.</p>
+<p><strong>Learner Activity:</strong> 1. Drag the point to a new location. 2. Adjust the slope slider. 3. Observe the line changing.</p>
+<p><strong>Feedback:</strong> The equation updates in real-time as the learner interacts.</p>
+<p><strong>Starting State:</strong> A line at $y=x$ with a point at $(0,0)$.</p>
+<p><strong>Chapter Anchors:</strong> Point-Slope Form, Slope, Graphing Linear Equations</p>
+</details>
+<h3 id="graphing-linear-equations">Graphing Linear Equations<a class="headerlink" href="#graphing-linear-equations" title="Permanent link">&para;</a></h3>
+<p>Graphing a linear equation involves plotting points on a coordinate plane that satisfy the equation. One common method is to find the x-intercept and y-intercept and then draw a line through them.</p>
+<h3 id="exponential-models">Exponential Models<a class="headerlink" href="#exponential-models" title="Permanent link">&para;</a></h3>
+<p>Exponential models describe situations where a quantity grows or decays at a constant percentage rate, such as population growth or compound interest. These are represented by equations like <span class="arithmatex">\( y = ab^x \)</span>.</p>
+<h4 id="diagram-exponential-growth-vs-decay">Diagram: Exponential Growth vs Decay<a class="headerlink" href="#diagram-exponential-growth-vs-decay" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Exponential Curves</summary>
+<p>Type: chart<br/>
+<strong>sim-id:</strong> exponential-growth-decay<br/>
+<strong>Library:</strong> Chart.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> Compare<br/>
+<strong>Learning Objective:</strong> The learner will compare the visual differences between exponential growth and exponential decay.</p>
+<p><strong>Prerequisites:</strong> Exponents, Function Concept</p>
+<p><strong>Evidence of Mastery:</strong> The learner can correctly identify which curve represents growth and which represents decay based on the base $b$.</p>
+<p><strong>Misconceptions:</strong> Thinking all increasing curves are exponential; confusing growth with linear increase.</p>
+<p><strong>Instructional Rationale:</strong> Comparing the two fundamental types of exponential behavior visually reinforces the role of the base $b$.</p>
+<p><strong>Content:</strong> Two curves: one increasing rapidly (growth) and one decreasing towards an asymptote (decay).</p>
+<p><strong>Provenance:</strong> Illustrative</p>
+<p><strong>Rules:</strong> Growth for $b &gt; 1$; decay for $0 &lt; b &lt; 1$.</p>
+<p><strong>Learner Activity:</strong> 1. Toggle the base $b$ between values $&gt;1$ and $&lt;1$. 2. Observe the change in curvature.</p>
+<p><strong>Feedback:</strong> Labels "Growth" and "Decay" appear when the correct base range is selected.</p>
+<p><strong>Starting State:</strong> A graph with $y = 2^x$.</p>
+<p><strong>Chapter Anchors:</strong> Exponential Functions, Exponential Growth, Exponential Decay</p>
+</details>
+<h3 id="line-of-best-fit">Line of Best Fit<a class="headerlink" href="#line-of-best-fit" title="Permanent link">&para;</a></h3>
+<p>A line of best fit is a straight line drawn through a set of data points on a scatterplot to represent the general trend. It is often found using linear regression.</p>
+<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h2>
+<p>In this chapter, we moved from basic ratios and fractions to the complex world of quadratic and exponential modeling. We learned how to manipulate algebraic expressions, solve equations through factoring and formulas, and use different forms of linear equations to describe relationships. These tools form the bedrock of advanced mathematical modeling.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../12-advanced-polynomials-and-function-behavior/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 12. Advanced Polynomials and Function Behavior">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                12. Advanced Polynomials and Function Behavior
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../14-advanced-modeling-and-statistics/" class="md-footer__link md-footer__link--next" aria-label="Next: 14. Advanced Modeling and Statistics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                14. Advanced Modeling and Statistics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

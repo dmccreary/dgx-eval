@@ -1,0 +1,2847 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive study of factoring methods — GCF, grouping, special products, trinomial factoring — plus exponent laws, polynomial division, and the connection between roots and factors.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/03-factoring-techniques-polynomial-division/">
+      
+      
+        <link rel="prev" href="../02-variables-expressions-polynomial-foundations/">
+      
+      
+        <link rel="next" href="../04-linear-equations-inequalities/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Chapter 3: Factoring Techniques and Polynomial Division - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#factoring-techniques-and-polynomial-division" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 3: Factoring Techniques and Polynomial Division
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            qwen3.6:35b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5_4" id="__nav_8_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundational-concepts-and-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundational Number Concepts and Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-variables-expressions-polynomial-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Variables, Expressions, and Polynomial Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3. Factoring Techniques and Polynomial Division
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    3. Factoring Techniques and Polynomial Division
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-a-exponent-laws-and-integer-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part A: Exponent Laws and Integer Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part A: Exponent Laws and Integer Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#laws-of-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laws of Exponents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integer Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integer Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-integer-exponents-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Integer Exponents Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-exponent-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero Exponent Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Negative Exponents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponents-and-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponents and Radicals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponents and Radicals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-factoring-strategy-selector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Factoring Strategy Selector
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-b-factoring-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part B: Factoring Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part B: Factoring Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greatest-common-factor-gcf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greatest Common Factor (GCF)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#factoring-by-grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factoring by Grouping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-of-squares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difference of Squares
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perfect-square-trinomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perfect Square Trinomials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trinomial-factoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trinomial Factoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prime-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prime Polynomials
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-c-polynomial-and-synthetic-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part C: Polynomial and Synthetic Division
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part C: Polynomial and Synthetic Division">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polynomial-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomial Division
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synthetic-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synthetic Division
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-remainder-and-factor-theorems" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Remainder and Factor Theorems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roots-and-factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roots and Factors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplicity-of-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplicity of Roots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-d-solving-by-factoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part D: Solving by Factoring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part D: Solving by Factoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prime-polynomials_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prime Polynomials
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-linear-equations-inequalities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Linear Equations and Inequalities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-linear-relationships-coordinate-graphing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linear Relationships and Coordinate Graphing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-functions-relations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Functions and Relations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-exponential-functions-sequences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Exponential Functions and Sequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-sequences-and-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Sequences and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-mathematical-modeling-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Mathematical Modeling and Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-radicals-and-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Radicals and Radical Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-a-exponent-laws-and-integer-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part A: Exponent Laws and Integer Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part A: Exponent Laws and Integer Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#laws-of-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laws of Exponents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integer Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integer Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-integer-exponents-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Integer Exponents Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-exponent-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero Exponent Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Negative Exponents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponents-and-radicals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponents and Radicals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponents and Radicals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-factoring-strategy-selector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Factoring Strategy Selector
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-b-factoring-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part B: Factoring Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part B: Factoring Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greatest-common-factor-gcf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greatest Common Factor (GCF)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#factoring-by-grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factoring by Grouping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-of-squares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difference of Squares
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perfect-square-trinomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perfect Square Trinomials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trinomial-factoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trinomial Factoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prime-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prime Polynomials
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-c-polynomial-and-synthetic-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part C: Polynomial and Synthetic Division
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part C: Polynomial and Synthetic Division">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polynomial-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomial Division
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synthetic-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synthetic Division
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-remainder-and-factor-theorems" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Remainder and Factor Theorems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roots-and-factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roots and Factors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplicity-of-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplicity of Roots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-d-solving-by-factoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part D: Solving by Factoring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part D: Solving by Factoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prime-polynomials_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prime Polynomials
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/qwen3.6-35b/chapters/03-factoring-techniques-polynomial-division/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="factoring-techniques-and-polynomial-division">Factoring Techniques and Polynomial Division<a class="headerlink" href="#factoring-techniques-and-polynomial-division" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the full range of factoring methods that allow students to decompose polynomials into their component factors. Beginning with Greatest Common Factor and progressing through grouping, special products (difference of squares and perfect square trinomials), and trinomial factoring, students build a comprehensive factoring strategy. The second half introduces polynomial and synthetic division along with the remainder and factor theorems, connecting algebraic factoring to the study of roots and their multiplicity. Along the way, integer exponents (including negative and zero exponents) and the laws of exponents provide the tools needed to simplify expressions before and after factoring.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 27 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Greatest Common Factor</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Factoring Strategy</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Factoring by GCF</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Grouping Method</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Difference of Squares</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Perfect Square Trinomials</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Trinomial Factoring</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Prime Polynomials</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Polynomial Division</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Synthetic Division</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Remainder Theorem</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Factor Theorem</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Roots and Factors</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Rational Root Theorem</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Multiplicity of Roots</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Solving by Factoring</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Integer Exponents</td>
+<td>65</td>
+</tr>
+<tr>
+<td>Zero Exponent Rule</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Negative Exponents</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Laws of Exponents</td>
+<td>34</td>
+</tr>
+<tr>
+<td>Product of Powers Property</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Quotient of Powers Property</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Power of a Power Property</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Power of a Product Property</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Power of a Quotient Property</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Radical Notation</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Rationalizing Radicals</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-a-exponent-laws-and-integer-exponents">Part A: Exponent Laws and Integer Exponents<a class="headerlink" href="#part-a-exponent-laws-and-integer-exponents" title="Permanent link">&para;</a></h2>
+<p>Before diving into factoring, it helps to have solid command of the exponent rules that appear throughout simplification. You may recall from earlier work that exponents represent repeated multiplication: <span class="arithmatex">\(x^n\)</span> means multiplying the base <span class="arithmatex">\(x\)</span> by itself <span class="arithmatex">\(n\)</span> times when <span class="arithmatex">\(n\)</span> is a positive integer. The remaining exponent laws extend this idea consistently to zero, negative, and compound exponents.</p>
+<h3 id="laws-of-exponents">Laws of Exponents<a class="headerlink" href="#laws-of-exponents" title="Permanent link">&para;</a></h3>
+<p>The <strong>laws of exponents</strong> are five rules that govern how powers combine under multiplication, division, nesting, and scalar multiplication. Each rule preserves the base while transforming the exponent arithmetically. Memorizing the formulas is necessary but not sufficient — you should be able to justify each one by unwinding what an exponent means as repeated multiplication.</p>
+<table>
+<thead>
+<tr>
+<th>Law</th>
+<th>Formula</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product of Powers</td>
+<td><span class="arithmatex">\(x^m \cdot x^n = x^{m+n}\)</span></td>
+<td>same base</td>
+</tr>
+<tr>
+<td>Quotient of Powers</td>
+<td><span class="arithmatex">\(\frac{x^m}{x^n} = x^{m-n}\)</span></td>
+<td><span class="arithmatex">\(x \ne 0\)</span></td>
+</tr>
+<tr>
+<td>Power of a Power</td>
+<td><span class="arithmatex">\((x^m)^n = x^{m \cdot n}\)</span></td>
+<td>any real <span class="arithmatex">\(m, n\)</span></td>
+</tr>
+<tr>
+<td>Power of a Product</td>
+<td><span class="arithmatex">\((xy)^n = x^n \cdot y^n\)</span></td>
+<td>any real <span class="arithmatex">\(n\)</span></td>
+</tr>
+<tr>
+<td>Power of a Quotient</td>
+<td><span class="arithmatex">\(\left(\frac{x}{y}\right)^n = \frac{x^n}{y^n}\)</span></td>
+<td><span class="arithmatex">\(y \ne 0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Product of Powers Property.</strong> When two powers with the same base are multiplied, add the exponents. For example:
+[x^3 \cdot x^5 = x^{3+5} = x^8]
+This follows directly from counting factors: <span class="arithmatex">\(x^3 = xxx\)</span> and <span class="arithmatex">\(x^5 = xxxxx\)</span>, so their product has eight factors of <span class="arithmatex">\(x\)</span>.</p>
+<p><strong>Quotient of Powers Property.</strong> When two powers with the same base are divided, subtract the exponent of the denominator from the exponent of the numerator. For example:
+[\frac{x^7}{x^4} = x^{7-4} = x^3]
+This follows from canceling factors: four <span class="arithmatex">\(x\)</span>'s in the denominator cancel four <span class="arithmatex">\(x\)</span>'s in the numerator, leaving three.</p>
+<p><strong>Power of a Power Property.</strong> When a power is raised to another exponent, multiply the exponents. For example:
+[(x^3)^4 = x^{3 \cdot 4} = x^{12}]
+This follows because <span class="arithmatex">\((x^3)^4\)</span> means <span class="arithmatex">\(x^3\)</span> multiplied by itself four times, giving a total of <span class="arithmatex">\(3+3+3+3 = 12\)</span> factors.</p>
+<p><strong>Power of a Product Property.</strong> When a product is raised to an exponent, each factor is raised to that exponent. For example:
+[(3x)^4 = 3^4 \cdot x^4 = 81x^4]
+This follows from the commutative property of multiplication — you can reorder and regroup factors.</p>
+<p><strong>Power of a Quotient Property.</strong> When a quotient is raised to an exponent, both numerator and denominator are raised to that exponent. For example:
+[\left(\frac{2}{x}\right)^3 = \frac{2^3}{x^3} = \frac{8}{x^3}]
+This follows from applying the power of a product rule to <span class="arithmatex">\(2 \cdot x^{-1}\)</span>.</p>
+<p><strong>Combining multiple laws.</strong> In practice, you will often need to apply more than one law in sequence. Consider simplifying <span class="arithmatex">\(\frac{(2x^3)^4}{4x^5}\)</span>:</p>
+<p>Step 1: Apply Power of a Product to the numerator — <span class="arithmatex">\((2x^3)^4 = 2^4 \cdot (x^3)^4 = 16x^{12}\)</span>.
+Step 2: Rewrite the expression — <span class="arithmatex">\(\frac{16x^{12}}{4x^5}\)</span>.
+Step 3: Apply Quotient of Powers to coefficients and variables separately — <span class="arithmatex">\(\frac{16}{4} = 4\)</span> and <span class="arithmatex">\(x^{12-5} = x^7\)</span>.</p>
+<p>Result: <span class="arithmatex">\(4x^7\)</span>. When combining laws, apply them in this order: (1) power of a product or quotient first (expand nested powers), (2) product or quotient of powers second (combine like bases), (3) simplify coefficients. This ordering prevents double-counting exponents, which is a common error when students try to combine steps mentally.</p>
+<p>Here is a summary table showing each law with a worked example:</p>
+<table>
+<thead>
+<tr>
+<th>Law</th>
+<th>Formula</th>
+<th>Worked Example</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product of Powers</td>
+<td><span class="arithmatex">\(x^m \cdot x^n = x^{m+n}\)</span></td>
+<td><span class="arithmatex">\(x^4 \cdot x^6\)</span></td>
+<td><span class="arithmatex">\(x^{10}\)</span></td>
+</tr>
+<tr>
+<td>Quotient of Powers</td>
+<td><span class="arithmatex">\(\frac{x^m}{x^n} = x^{m-n}\)</span></td>
+<td><span class="arithmatex">\(\frac{y^9}{y^4}\)</span></td>
+<td><span class="arithmatex">\(y^5\)</span></td>
+</tr>
+<tr>
+<td>Power of a Power</td>
+<td><span class="arithmatex">\((x^m)^n = x^{mn}\)</span></td>
+<td><span class="arithmatex">\((z^2)^5\)</span></td>
+<td><span class="arithmatex">\(z^{10}\)</span></td>
+</tr>
+<tr>
+<td>Power of a Product</td>
+<td><span class="arithmatex">\((xy)^n = x^n y^n\)</span></td>
+<td><span class="arithmatex">\((3a)^3\)</span></td>
+<td><span class="arithmatex">\(27a^3\)</span></td>
+</tr>
+<tr>
+<td>Power of a Quotient</td>
+<td><span class="arithmatex">\(\left(\frac{x}{y}\right)^n = \frac{x^n}{y^n}\)</span></td>
+<td><span class="arithmatex">\(\left(\frac{b}{4}\right)^2\)</span></td>
+<td><span class="arithmatex">\(\frac{b^2}{16}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="integer-exponents">Integer Exponents<a class="headerlink" href="#integer-exponents" title="Permanent link">&para;</a></h3>
+<p><strong>Integer exponents</strong> extend the concept of exponentiation beyond positive integers to include zero and negative whole numbers. This extension is not arbitrary — it is defined by requiring the five laws above to remain valid for all integer exponents simultaneously. The rules below are the direct consequences of that requirement.</p>
+<p>Before examining how zero and negative exponents work, let's define two terms: a <strong>positive exponent</strong> means repeated multiplication of the base (<span class="arithmatex">\(x^n\)</span> for <span class="arithmatex">\(n &gt; 0\)</span>), and a <strong>negative exponent</strong> represents the reciprocal of the same positive power. The key insight is that both must satisfy the quotient-of-powers law consistently.</p>
+<p>Consider <span class="arithmatex">\(\frac{x^3}{x^5}\)</span> using the quotient rule:
+[\frac{x^3}{x^5} = x^{3-5} = x^{-2}]
+But expanding and canceling by hand gives:
+[\frac{x \cdot x \cdot x}{x \cdot x \cdot x \cdot x \cdot x} = \frac{1}{x^2}]
+Since both approaches must agree, we define <span class="arithmatex">\(x^{-2} = \frac{1}{x^2}\)</span> for <span class="arithmatex">\(x \ne 0\)</span>.</p>
+<h4 id="diagram-integer-exponents-explorer">Diagram: Integer Exponents Explorer<a class="headerlink" href="#diagram-integer-exponents-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Integer Exponents Explorer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> integer-exponents-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will evaluate expressions with positive, zero, and negative integer exponents for a given base value, achieving at least 4 of 5 correct.</p>
+<p><strong>Prerequisites:</strong> exponent (repeated multiplication), base, reciprocal (the number that multiplies to give 1, e.g., the reciprocal of 3 is 1/3), fraction notation</p>
+<p><strong>Evidence of Mastery:</strong> For five challenge expressions of the form <span class="arithmatex">\(b^e\)</span> where <span class="arithmatex">\(b\)</span> is an integer from <span class="arithmatex">\(-4\)</span> to <span class="arithmatex">\(4\)</span> (excluding 0) and <span class="arithmatex">\(e\)</span> is any integer from <span class="arithmatex">\(-5\)</span> to <span class="arithmatex">\(5\)</span>, the learner types the simplified value. An answer is correct when it matches the computed model value exactly. Mastery: at least 4 of 5 correct.</p>
+<p><strong>Misconceptions:</strong> (1) Any base raised to power 0 equals 0. (2) A negative exponent makes the result negative. (3) <span class="arithmatex">\((-3)^2 = -9\)</span> instead of <span class="arithmatex">\(+9\)</span>. (4) Confusing <span class="arithmatex">\(b^{-n}\)</span> with <span class="arithmatex">\(-b^n\)</span>.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level evaluation requires committed numerical answers followed by immediate verification, which is more instructive than passive observation. The five-challenge format gives enough practice to reveal patterns without fatiguing the learner.</p>
+<p><strong>Content:</strong></p>
+<p>Base values available: <span class="arithmatex">\(-4, -3, -2, -1, 1, 2, 3, 4\)</span> (0 excluded to avoid undefined expressions).
+Exponent range for challenges: integers from <span class="arithmatex">\(-5\)</span> to <span class="arithmatex">\(5\)</span>.</p>
+<p>Five challenge sets with computed answers:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Expression</th>
+<th>Correct Answer</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="arithmatex">\(3^0\)</span></td>
+<td>1</td>
+<td>Any nonzero base raised to power 0 equals 1</td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="arithmatex">\(2^{-3}\)</span></td>
+<td>1/8 or 0.125</td>
+<td>Negative exponent means reciprocal: <span class="arithmatex">\(1/(2^3) = 1/8\)</span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="arithmatex">\((-3)^2\)</span></td>
+<td>9</td>
+<td>The base is negative but the exponent is even, so the result is positive: <span class="arithmatex">\((-3)(-3) = 9\)</span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="arithmatex">\(5^{-1}\)</span></td>
+<td>1/5 or 0.2</td>
+<td>Reciprocal of 5</td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="arithmatex">\((-2)^{-2}\)</span></td>
+<td>1/4 or 0.25</td>
+<td>First flip: <span class="arithmatex">\(1/(−2)^2\)</span>, then square: <span class="arithmatex">\((−2)^2 = 4\)</span>, so result is 1/4</td>
+</tr>
+</tbody>
+</table>
+<p>All values are synthetic, generated by computing <span class="arithmatex">\(b^e\)</span> using integer arithmetic and rational conversion.</p>
+<p><strong>Provenance:</strong> Synthetic with integer base values from <span class="arithmatex">\(-4\)</span> to <span class="arithmatex">\(4\)</span> (excluding 0) and exponents from <span class="arithmatex">\(-5\)</span> to <span class="arithmatex">\(5\)</span>. Model values computed exactly using integer arithmetic, then converted to fractions and decimal approximations.</p>
+<p><strong>Rules:</strong> <span class="arithmatex">\(b^0 = 1\)</span> for all <span class="arithmatex">\(b \ne 0\)</span>. <span class="arithmatex">\(b^{-n} = \frac{1}{b^n}\)</span> for all <span class="arithmatex">\(b \ne 0\)</span> and positive integer <span class="arithmatex">\(n\)</span>. <span class="arithmatex">\((-b)^{\text{even}} &gt; 0\)</span>, <span class="arithmatex">\((-b)^{\text{odd}} &lt; 0\)</span>. A learner's answer is correct when it matches the model value exactly (fraction or decimal accepted within ±0.001 tolerance).</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner selects a base from the available values (<span class="arithmatex">\(-4\)</span> to <span class="arithmatex">\(4\)</span>, excluding 0) and an exponent from <span class="arithmatex">\(-5\)</span> to <span class="arithmatex">\(5\)</span>, then types the simplified result in the answer box.</li>
+<li>The learner presses Check. The sim displays whether the answer is correct along with the worked evaluation step by step.</li>
+<li>After each challenge, a new challenge appears automatically until all five are complete.</li>
+<li>A running score "Correct: n of 5" is displayed throughout.</li>
+</ol>
+<p><strong>Feedback:</strong> Five challenges in fixed order, two attempts each. Correct response: "Correct! <span class="arithmatex">\([expression] = [answer]\)</span>." Incorrect response on first attempt: the step-by-step worked evaluation showing how to handle the base sign, exponent type (zero or negative), and final computation. After the second wrong attempt, the correct answer is shown and the challenge counts as missed. A running tally "Correct: n of 5" appears at all times.</p>
+<p><strong>Starting State:</strong> Challenge 1 (<span class="arithmatex">\(3^0\)</span>) with an empty answer box and the question "What does any nonzero base raised to the power 0 equal?" The base selector is pre-set to positive values for the first challenge.</p>
+<p><strong>Chapter Anchors:</strong> The chapter defines three key misconceptions about integer exponents (zero exponent equals zero, negative exponent yields a negative result, even powers of negatives are negative). Chapter Anchors lists the five example expressions and their exact computed answers shown above.</p>
+</details>
+<h3 id="zero-exponent-rule">Zero Exponent Rule<a class="headerlink" href="#zero-exponent-rule" title="Permanent link">&para;</a></h3>
+<p>The <strong>zero exponent rule</strong> states that any nonzero number raised to the power 0 equals 1. This is written as:
+[x^0 = 1 \quad \text{for all } x \ne 0]</p>
+<p>This rule is not a definition chosen for convenience — it is forced by consistency with the quotient-of-powers law. Consider <span class="arithmatex">\(\frac{x^3}{x^3}\)</span>:</p>
+<p>Expanding gives <span class="arithmatex">\(\frac{x \cdot x \cdot x}{x \cdot x \cdot x} = 1\)</span> (all factors cancel).
+Using the quotient rule gives <span class="arithmatex">\(x^{3-3} = x^0\)</span>.</p>
+<p>For both results to agree, we must have <span class="arithmatex">\(x^0 = 1\)</span>. The exclusion of zero is critical: <span class="arithmatex">\(0^0\)</span> is <strong>undefined</strong> because it creates a contradiction — expanding <span class="arithmatex">\(\frac{0^3}{0^3}\)</span> fails since division by zero has no meaning.</p>
+<p>Note that <span class="arithmatex">\(0^0\)</span> is sometimes <em>defined</em> as 1 in combinatorics and algebra for notational convenience, but in the context of exponent laws applied to variable expressions, leaving it undefined avoids errors when substituting values.</p>
+<p>Here are several examples confirming the rule:
+- <span class="arithmatex">\(7^0 = 1\)</span>: Any positive number to power 0 is 1.
+- <span class="arithmatex">\((-5)^0 = 1\)</span>: The base can be negative; zero power always yields 1 (as long as the base itself is not 0).
+- <span class="arithmatex">\((3x)^0 = 1\)</span> for <span class="arithmatex">\(x \ne 0\)</span>: Even an algebraic expression raised to power 0 equals 1.</p>
+<p>A common error is confusing <span class="arithmatex">\(x^0\)</span> with <span class="arithmatex">\(0^x\)</span>. The former (any nonzero base to power 0) always equals 1, while the latter (zero to any positive power) always equals 0. These are fundamentally different operations:</p>
+<p>[5^0 = 1 \quad \text{(base is nonzero, so result is 1)}]
+[0^5 = 0 \quad \text{(base is zero, so result is 0)}]</p>
+<h3 id="negative-exponents">Negative Exponents<a class="headerlink" href="#negative-exponents" title="Permanent link">&para;</a></h3>
+<p>A <strong>negative exponent</strong> indicates the reciprocal of the corresponding positive power. The rule is:
+[x^{-n} = \frac{1}{x^n} \quad \text{for } x \ne 0]</p>
+<p>Conversely, moving a factor with a negative exponent across the fraction bar flips the sign:
+[\frac{1}{x^{-n}} = x^n]</p>
+<p>The key pattern is that a negative exponent does <strong>not</strong> make the result negative — it makes the base reciprocal. For example:
+[2^{-3} = \frac{1}{2^3} = \frac{1}{8} \quad \text{(positive, not negative)}]
+[(−5)^{-2} = \frac{1}{(−5)^2} = \frac{1}{25} \quad \text{(also positive because the even power removed the negative sign)}]</p>
+<p>A common error is confusing <span class="arithmatex">\(x^{-n}\)</span> with <span class="arithmatex">\(-x^n\)</span>. The first flips the base to its reciprocal; the second negates the result of a positive exponent. They are fundamentally different:
+[3^{-2} = \frac{1}{9} \neq -9 = -3^2]</p>
+<p><strong>Worked Examples: Simplifying Negative Exponents.</strong> Here are several examples showing step-by-step simplification:</p>
+<ul>
+<li><span class="arithmatex">\(4^{-2}\)</span>: Step 1 — write reciprocal: <span class="arithmatex">\(\frac{1}{4^2}\)</span>. Step 2 — evaluate: <span class="arithmatex">\(\frac{1}{16}\)</span>.</li>
+<li><span class="arithmatex">\((-3)^{-1}\)</span>: Step 1 — write reciprocal: <span class="arithmatex">\(\frac{1}{(-3)^1}\)</span>. Step 2 — simplify: <span class="arithmatex">\(-\frac{1}{3}\)</span>. Note the negative sign on the base carries through, unlike the previous example where a negative base with an even power became positive.</li>
+<li><span class="arithmatex">\(\frac{1}{5^{-3}}\)</span>: Step 1 — flip the negative exponent across the fraction bar: <span class="arithmatex">\(5^3\)</span>. Step 2 — evaluate: <span class="arithmatex">\(125\)</span>. This illustrates the reciprocal-of-reciprocal pattern: dividing by <span class="arithmatex">\(\frac{1}{x}\)</span> gives back <span class="arithmatex">\(x\)</span>.</li>
+<li><span class="arithmatex">\(2^{-4} \cdot 6^2\)</span>: Step 1 — convert negative exponent: <span class="arithmatex">\(\frac{1}{2^4} \cdot 36 = \frac{36}{16}\)</span>. Step 2 — simplify: <span class="arithmatex">\(\frac{9}{4}\)</span>. When a term with a negative exponent multiplies another term, you first rewrite the reciprocal and then combine normally.</li>
+</ul>
+<p><strong>Negative exponents with coefficients.</strong> A common pitfall occurs when there is a coefficient in front of the variable. Consider <span class="arithmatex">\(3x^{-2}\)</span>. This does <strong>not</strong> mean <span class="arithmatex">\(\frac{1}{3x^2}\)</span> — the negative exponent only applies to the base immediately before it, which is <span class="arithmatex">\(x\)</span>, not <span class="arithmatex">\(3\)</span>:</p>
+<div class="arithmatex">\[3x^{-2} = 3 \cdot \frac{1}{x^2} = \frac{3}{x^2}\]</div>
+<p>The coefficient 3 remains in the numerator. To see why this matters, compare:
+- <span class="arithmatex">\(3x^{-2} = \frac{3}{x^2}\)</span> (only the variable part has the negative exponent)
+- <span class="arithmatex">\((3x)^{-2} = \frac{1}{(3x)^2} = \frac{1}{9x^2}\)</span> (the parentheses include 3, so both flip)</p>
+<p><strong>Combining negative exponents with other laws.</strong> When simplifying expressions that mix negative exponents with quotient or product rules, convert all negative exponents to positive first, then apply the standard laws. For example:
+[\frac{x^{-3}}{x^{-5}} = \frac{\frac{1}{x^3}}{\frac{1}{x^5}} = \frac{1}{x^3} \cdot x^5 = x^{5-3} = x^2]</p>
+<p>Alternatively, use the quotient rule directly: <span class="arithmatex">\(x^{-3 - (-5)} = x^{-3+5} = x^2\)</span>. Both methods agree, confirming the consistency of the rules.</p>
+<h3 id="exponents-and-radicals">Exponents and Radicals<a class="headerlink" href="#exponents-and-radicals" title="Permanent link">&para;</a></h3>
+<p><strong>Radical notation</strong> uses the symbol <span class="arithmatex">\(\sqrt[n]{\phantom{x}}\)</span> to represent roots — the inverse operation of exponentiation. The <strong>radicand</strong> is the expression under the radical sign, the <strong>index</strong> <span class="arithmatex">\(n\)</span> specifies which root (2 for square root, 3 for cube root), and when the index is 2 it is conventionally omitted: <span class="arithmatex">\(\sqrt{x}\)</span> means the square root of <span class="arithmatex">\(x\)</span>.</p>
+<p>The relationship between radicals and rational exponents is:
+[\sqrt[n]{x} = x^{1/n}]</p>
+<p>This equivalence lets you apply all five exponent laws to radical expressions. For example, simplifying a product of radicals:
+[\sqrt[3]{x^2} \cdot \sqrt{x} = x^{2/3} \cdot x^{1/2} = x^{2/3 + 1/2} = x^{7/6}]</p>
+<p>Converting between forms follows directly: to rewrite a radical as an exponential expression, the numerator of the fractional exponent becomes the power inside the radical and the denominator becomes the index. Conversely, to convert an exponential expression to radical form, the denominator of the fractional exponent becomes the index and the numerator remains as the power on the base.</p>
+<p><strong>Worked Examples: Converting between forms.</strong></p>
+<ul>
+<li><span class="arithmatex">\(\sqrt[4]{x^3} = x^{3/4}\)</span>: Index 4 becomes the denominator, power 3 stays in the numerator.</li>
+<li><span class="arithmatex">\(y^{2/5} = \sqrt[5]{y^2}\)</span>: Denominator 5 is the root index; numerator 2 is the power on <span class="arithmatex">\(y\)</span>.</li>
+<li><span class="arithmatex">\(\sqrt{x^3} = x^{3/2}\)</span>: When no explicit index is shown (square root), the denominator is 2.</li>
+<li><span class="arithmatex">\((2x)^{1/2} = \sqrt{2x}\)</span>: The entire expression inside the parentheses gets the square root.</li>
+</ul>
+<p><strong>Simplifying radical expressions.</strong> You can simplify radicals by extracting perfect powers from under the radical sign. For example:
+[\sqrt{50} = \sqrt{25 \cdot 2} = \sqrt{25} \cdot \sqrt{2} = 5\sqrt{2}]</p>
+<p>The strategy is to factor the radicand into a product where at least one factor is a perfect square (or perfect cube, etc., depending on the index), extract that factor, and leave the remainder under the radical. This works because <span class="arithmatex">\(\sqrt{ab} = \sqrt{a} \cdot \sqrt{b}\)</span> for non-negative <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span>.</p>
+<p>When simplifying variable radicals, the same logic applies:
+[\sqrt{x^8} = x^{8/2} = x^4]
+[\sqrt[3]{x^{12}} = x^{12/3} = x^4]
+[\sqrt{x^5} = \sqrt{x^4 \cdot x} = x^2\sqrt{x}]</p>
+<p>For a radical expression to be in simplest form, the radicand should contain no perfect-square factors (for square roots), no fractions, and no radicals in the denominator. The last requirement leads directly to rationalizing the denominator.</p>
+<h4 id="diagram-factoring-strategy-selector">Diagram: Factoring Strategy Selector<a class="headerlink" href="#diagram-factoring-strategy-selector" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Factoring Strategy Selector</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> factoring-strategy-selector<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> classify<br/>
+<strong>Learning Objective:</strong> The learner will classify each of ten polynomials into the correct factoring method (GCF, grouping, difference of squares, perfect square trinomial, or trinomial) and justify the choice based on structural features.</p>
+<p><strong>Prerequisites:</strong> GCF (greatest common factor), grouping method, difference of squares, perfect square trinomial, trinomial factoring, polynomial degree (the highest exponent on the variable in a polynomial), monomial, binomial, trinomial</p>
+<p><strong>Evidence of Mastery:</strong> For ten challenge polynomials, the learner selects the appropriate factoring method from five options and submits. A selection is correct when it matches the intended method for that polynomial's structure. Mastery: at least 8 of 10 correct.</p>
+<p><strong>Misconceptions:</strong> (1) Every polynomial can be factored. (2) If a polynomial has three terms, it must use trinomial factoring. (3) Difference of squares applies to any binomial. (4) GCF is always greater than 1.</p>
+<p><strong>Instructional Rationale:</strong> Analyze-level classification requires the learner to inspect structural features and decide which pattern applies, rather than being told the method in advance. This mirrors how students actually approach factoring problems — they must first recognize the structure before selecting a tool.</p>
+<p><strong>Content:</strong></p>
+<p>Ten challenge polynomials with correct classifications:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Polynomial</th>
+<th>Correct Method</th>
+<th>Why (structural clue)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="arithmatex">\(6x^2 + 9x\)</span></td>
+<td>GCF</td>
+<td>Both terms share a factor of <span class="arithmatex">\(3x\)</span> → <span class="arithmatex">\(3x(2x + 3)\)</span></td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="arithmatex">\(x^2 + 7x + 12\)</span></td>
+<td>Trinomial</td>
+<td>Three terms, <span class="arithmatex">\(a=1\)</span>, look for two numbers that multiply to 12 and add to 7 → <span class="arithmatex">\((x+3)(x+4)\)</span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="arithmatex">\(4x^2 - 25\)</span></td>
+<td>Difference of Squares</td>
+<td>Two terms, both perfect squares with subtraction → <span class="arithmatex">\((2x+5)(2x-5)\)</span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="arithmatex">\(x^2 + 6x + 9\)</span></td>
+<td>Perfect Square Trinomial</td>
+<td>Three terms, first and last are perfect squares, middle is <span class="arithmatex">\(2 \cdot 1 \cdot 3 = 6\)</span> → <span class="arithmatex">\((x+3)^2\)</span></td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="arithmatex">\(x^3 + 2x^2 + 3x + 6\)</span></td>
+<td>Grouping</td>
+<td>Four terms, group in pairs: <span class="arithmatex">\((x^3+2x^2)+(3x+6) = x^2(x+2)+3(x+2)\)</span> → <span class="arithmatex">\((x^2+3)(x+2)\)</span></td>
+</tr>
+<tr>
+<td>6</td>
+<td><span class="arithmatex">\(8x^3 - 27\)</span></td>
+<td>Difference of Cubes (not in scope, classify as none of the five listed)</td>
+<td>Two terms, not difference of squares (cubes) → no match among options</td>
+</tr>
+<tr>
+<td>7</td>
+<td><span class="arithmatex">\(5x^2 - 20\)</span></td>
+<td>GCF first, then Difference of Squares</td>
+<td>Factor out 5: <span class="arithmatex">\(5(x^2-4)\)</span>, then <span class="arithmatex">\(5(x+2)(x-2)\)</span></td>
+</tr>
+<tr>
+<td>8</td>
+<td><span class="arithmatex">\(x^2 - 16x + 64\)</span></td>
+<td>Perfect Square Trinomial</td>
+<td>First and last are perfect squares (<span class="arithmatex">\(x^2\)</span>, <span class="arithmatex">\(64 = 8^2\)</span>), middle is <span class="arithmatex">\(-2 \cdot x \cdot 8 = -16x\)</span> → <span class="arithmatex">\((x-8)^2\)</span></td>
+</tr>
+<tr>
+<td>9</td>
+<td><span class="arithmatex">\(3x^2 + 15x\)</span></td>
+<td>GCF</td>
+<td>Both terms share <span class="arithmatex">\(3x\)</span> → <span class="arithmatex">\(3x(x+5)\)</span></td>
+</tr>
+<tr>
+<td>10</td>
+<td><span class="arithmatex">\(x^2 + 5x + 6\)</span></td>
+<td>Trinomial</td>
+<td>Three terms, look for factors of 6 that add to 5 → <span class="arithmatex">\((x+2)(x+3)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>All polynomial content is synthetic, generated by choosing a factorization and expanding.</p>
+<p><strong>Provenance:</strong> Synthetic polynomials constructed by selecting a factoring method, performing the factorization, then expanding to get the challenge form. This ensures correctness and complete coverage of the five methods.</p>
+<p><strong>Rules:</strong> The learner selects exactly one method from: GCF, Grouping, Difference of Squares, Perfect Square Trinomial, Trinomial. The correct answer is determined by matching the polynomial's structural features to the classification table above. A selection for #6 (which does not match any of the five listed methods) is considered incorrect. Mastery threshold: 8 of 10 correct.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>For each challenge, the learner examines the polynomial's structure (number of terms, whether terms are perfect squares, common factors).</li>
+<li>The learner selects the appropriate method from the five options and presses Check.</li>
+<li>After each response, the sim displays the classification result, the correct answer with a brief structural explanation, then advances to the next challenge automatically.</li>
+<li>A running score "Correct: n of 10" is displayed throughout.</li>
+</ol>
+<p><strong>Feedback:</strong> Ten challenges in fixed order, two attempts each. Correct: "Correct! <span class="arithmatex">\([polynomial]\)</span> is a [correct method] pattern because [structural reason]." Incorrect on first attempt: the structural analysis showing which features led to the correct method (number of terms, perfect squares present, common factors). After second wrong attempt, full factorization is shown and the challenge counts as missed.</p>
+<p><strong>Starting State:</strong> Challenge 1 (<span class="arithmatex">\(6x^2 + 9x\)</span>) with five method buttons (GCF, Grouping, Difference of Squares, Perfect Square Trinomial, Trinomial) and the question "Which factoring method applies to this polynomial?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter lists ten polynomials classified into five methods: GCF (3 times), Trinomial (2 times), Difference of Squares (1 time perfect square context), Perfect Square Trinomial (2 times), Grouping (1 time). Mastery requires 8 of 10 correct.</p>
+</details>
+<h2 id="part-b-factoring-techniques">Part B: Factoring Techniques<a class="headerlink" href="#part-b-factoring-techniques" title="Permanent link">&para;</a></h2>
+<p>Factoring is the process of expressing a polynomial as a product of simpler polynomials — essentially the reverse of multiplication. Every factoring method identifies a structural pattern in the polynomial and uses that pattern to write it in factored form. The methods below are arranged from simplest (finding a common factor) to most complex (recognizing special algebraic identities).</p>
+<h3 id="greatest-common-factor-gcf">Greatest Common Factor (GCF)<a class="headerlink" href="#greatest-common-factor-gcf" title="Permanent link">&para;</a></h3>
+<p>The <strong>greatest common factor</strong> of two or more terms is the largest expression that divides each term evenly. Factoring by GCF means pulling this common factor out in front of a set of parentheses containing what remains.</p>
+<p>To find the GCF:
+1. Break each coefficient into its prime factors.
+2. Identify common prime factors across all terms.
+3. For each variable, use the smallest exponent that appears in every term.
+4. Multiply these together.</p>
+<p><strong>Worked Example:</strong> Factor <span class="arithmatex">\(12x^3 + 18x^2\)</span>.</p>
+<p>Step 1: Coefficients — <span class="arithmatex">\(12 = 2 \cdot 2 \cdot 3\)</span> and <span class="arithmatex">\(18 = 2 \cdot 3 \cdot 3\)</span>. Common factors: one 2 and one 3, giving GCF coefficient = <span class="arithmatex">\(6\)</span>.
+Step 2: Variables — <span class="arithmatex">\(x^3\)</span> and <span class="arithmatex">\(x^2\)</span>, the smaller exponent is 2, so common variable part is <span class="arithmatex">\(x^2\)</span>.
+Step 3: The GCF is <span class="arithmatex">\(6x^2\)</span>.
+Step 4: Divide each term by the GCF: <span class="arithmatex">\(\frac{12x^3}{6x^2} = 2x\)</span> and <span class="arithmatex">\(\frac{18x^2}{6x^2} = 3\)</span>.</p>
+<p>Result: <span class="arithmatex">\(12x^3 + 18x^2 = 6x^2(2x + 3)\)</span>.</p>
+<p><strong>Verification:</strong> Multiply back — <span class="arithmatex">\(6x^2 \cdot 2x = 12x^3\)</span> and <span class="arithmatex">\(6x^2 \cdot 3 = 18x^2\)</span>, which recovers the original.</p>
+<p>GCF factoring always works when terms share a common factor. A useful rule: if the GCF of the coefficients is 1 and no variable appears in every term, there is no further GCF to factor out. In such cases, move to another method.</p>
+<h3 id="factoring-by-grouping">Factoring by Grouping<a class="headerlink" href="#factoring-by-grouping" title="Permanent link">&para;</a></h3>
+<p>The <strong>grouping method</strong> applies when a polynomial has four or more terms that do not share a single common factor across all terms. The strategy is to split the polynomial into two groups, factor each group separately, then check whether the resulting binomials match. If they do, that shared binomial becomes the second factor.</p>
+<p>For a four-term polynomial <span class="arithmatex">\(ax^3 + bx^2 + cx + d\)</span>:
+1. Group terms: <span class="arithmatex">\((ax^3 + bx^2) + (cx + d)\)</span>.
+2. Factor the GCF from each group.
+3. If the remaining binomials are identical, factor it out.</p>
+<p><strong>Worked Example:</strong> Factor <span class="arithmatex">\(x^3 + 4x^2 + 3x + 12\)</span>.</p>
+<p>Step 1: Group → <span class="arithmatex">\((x^3 + 4x^2) + (3x + 12)\)</span>.
+Step 2: Factor each group → <span class="arithmatex">\(x^2(x + 4) + 3(x + 4)\)</span>.
+Step 3: The binomial <span class="arithmatex">\((x + 4)\)</span> appears in both groups, so factor it out.</p>
+<p>Result: <span class="arithmatex">\(x^3 + 4x^2 + 3x + 12 = (x + 4)(x^2 + 3)\)</span>.</p>
+<p>The grouping method fails when the binomials after step 2 do not match. This usually signals that either (a) a GCF should have been pulled out first, or (b) this polynomial is not factorable by grouping and requires a different approach.</p>
+<h3 id="difference-of-squares">Difference of Squares<a class="headerlink" href="#difference-of-squares" title="Permanent link">&para;</a></h3>
+<p>A <strong>difference of squares</strong> is a binomial where both terms are perfect squares and they are separated by a minus sign. The pattern is:
+[a^2 - b^2 = (a + b)(a - b)]</p>
+<p>To factor a difference of squares, take the square root of each term (which gives <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span>), write the two factors as a sum and a difference of those roots, and verify by multiplying back.</p>
+<p><strong>Worked Example:</strong> Factor <span class="arithmatex">\(9x^2 - 16\)</span>.</p>
+<p>Step 1: Identify perfect squares — <span class="arithmatex">\(9x^2 = (3x)^2\)</span> and <span class="arithmatex">\(16 = 4^2\)</span>, so <span class="arithmatex">\(a = 3x\)</span> and <span class="arithmatex">\(b = 4\)</span>.
+Step 2: Apply the pattern → <span class="arithmatex">\((3x + 4)(3x - 4)\)</span>.
+Step 3: Verify — <span class="arithmatex">\((3x+4)(3x-4) = 9x^2 - 12x + 12x - 16 = 9x^2 - 16\)</span>. ✓</p>
+<p>The difference of squares pattern works in multiple dimensions: <span class="arithmatex">\(4x^4 - 81y^2 = (2x^2 + 9y^2)(2x^2 - 9y)\)</span>, and sometimes the result can be factored further. For example, <span class="arithmatex">\(16 - x^4 = (4 + x^2)(4 - x^2)\)</span>, and <span class="arithmatex">\((4 - x^2)\)</span> itself is a difference of squares: <span class="arithmatex">\((4-x^2) = (2+x)(2-x)\)</span>, giving the complete factorization <span class="arithmatex">\((4+x^2)(2+x)(2-x)\)</span>.</p>
+<p>A common error is applying this pattern to a sum of squares, <span class="arithmatex">\(a^2 + b^2\)</span>. <strong>Sums of squares do not factor over the real numbers</strong> — there is no real-number factorization analogous to the difference-of-squares formula. The expression <span class="arithmatex">\(x^2 + 9\)</span> is irreducible (cannot be factored) in the real number system.</p>
+<h3 id="perfect-square-trinomials">Perfect Square Trinomials<a class="headerlink" href="#perfect-square-trinomials" title="Permanent link">&para;</a></h3>
+<p>A <strong>perfect square trinomial</strong> is a three-term polynomial that results from squaring a binomial. There are two forms:
+[(a + b)^2 = a^2 + 2ab + b^2 \quad \text{(plus pattern)}]
+[(a - b)^2 = a^2 - 2ab + b^2 \quad \text{(minus pattern)}]</p>
+<p>To recognize a perfect square trinomial, check three things: (1) is the first term a perfect square? (2) is the last term a perfect square? (3) is the middle term exactly twice the product of those two square roots? All three must be true.</p>
+<p><strong>Worked Example:</strong> Factor <span class="arithmatex">\(x^2 + 10x + 25\)</span>.</p>
+<p>Step 1: First term — <span class="arithmatex">\(x^2 = (x)^2\)</span>, so <span class="arithmatex">\(a = x\)</span>.
+Step 2: Last term — <span class="arithmatex">\(25 = 5^2\)</span>, so <span class="arithmatex">\(b = 5\)</span>.
+Step 3: Middle term check — is <span class="arithmatex">\(10x = 2 \cdot x \cdot 5\)</span>? Yes, <span class="arithmatex">\(2 \cdot x \cdot 5 = 10x\)</span>. ✓</p>
+<p>Result: <span class="arithmatex">\(x^2 + 10x + 25 = (x + 5)^2\)</span>.</p>
+<p><strong>Worked Example:</strong> Factor <span class="arithmatex">\(4y^2 - 20y + 25\)</span>.</p>
+<p>Step 1: First term — <span class="arithmatex">\(4y^2 = (2y)^2\)</span>, so <span class="arithmatex">\(a = 2y\)</span>.
+Step 2: Last term — <span class="arithmatex">\(25 = 5^2\)</span>, so <span class="arithmatex">\(b = 5\)</span>.
+Step 3: Middle term check — is <span class="arithmatex">\(-20y = -2 \cdot 2y \cdot 5\)</span>? Yes, <span class="arithmatex">\(-2(2y)(5) = -20y\)</span>. ✓</p>
+<p>Result: <span class="arithmatex">\(4y^2 - 20y + 25 = (2y - 5)^2\)</span>. Note the minus sign on the middle term produces a binomial with subtraction.</p>
+<p>If the middle term fails the check (it is not exactly <span class="arithmatex">\(2ab\)</span>), the trinomial is <strong>not</strong> a perfect square, regardless of whether the first and last terms are perfect squares. For example, <span class="arithmatex">\(x^2 + 8x + 9\)</span> has perfect-square ends (<span class="arithmatex">\(x^2\)</span> and 9) but <span class="arithmatex">\(8 \neq 2 \cdot x \cdot 3 = 6\)</span>, so it is not a perfect square trinomial.</p>
+<h3 id="trinomial-factoring">Trinomial Factoring<a class="headerlink" href="#trinomial-factoring" title="Permanent link">&para;</a></h3>
+<p><strong>Trinomial factoring</strong> handles expressions of the form <span class="arithmatex">\(ax^2 + bx + c\)</span> where <span class="arithmatex">\(a \neq 1\)</span>. When <span class="arithmatex">\(a = 1\)</span>, you look for two integers that multiply to <span class="arithmatex">\(c\)</span> and add to <span class="arithmatex">\(b\)</span>. When <span class="arithmatex">\(a \neq 1\)</span>, the process requires an additional step: find two numbers whose product equals <span class="arithmatex">\(a \cdot c\)</span> and whose sum equals <span class="arithmatex">\(b\)</span>, then use grouping.</p>
+<p><strong>Worked Example:</strong> Factor <span class="arithmatex">\(2x^2 + 7x + 3\)</span>.</p>
+<p>Step 1: Compute <span class="arithmatex">\(ac = 2 \cdot 3 = 6\)</span>. Find two numbers that multiply to 6 and add to 7: those are 6 and 1 (since <span class="arithmatex">\(6 \cdot 1 = 6\)</span> and <span class="arithmatex">\(6 + 1 = 7\)</span>).
+Step 2: Rewrite the middle term using these numbers: <span class="arithmatex">\(2x^2 + 6x + x + 3\)</span>.
+Step 3: Factor by grouping: <span class="arithmatex">\((2x^2 + 6x) + (x + 3) = 2x(x + 3) + 1(x + 3)\)</span>.
+Step 4: Factor out the common binomial: <span class="arithmatex">\((x + 3)(2x + 1)\)</span>.</p>
+<p><strong>Worked Example:</strong> Factor <span class="arithmatex">\(3x^2 - 10x + 8\)</span>.</p>
+<p>Step 1: Compute <span class="arithmatex">\(ac = 3 \cdot 8 = 24\)</span>. Find two numbers that multiply to 24 and add to −10: those are −6 and −4 (since <span class="arithmatex">\((-6)(-4) = 24\)</span> and <span class="arithmatex">\(-6 + (-4) = -10\)</span>).
+Step 2: Rewrite: <span class="arithmatex">\(3x^2 - 6x - 4x + 8\)</span>.
+Step 3: Group: <span class="arithmatex">\((3x^2 - 6x) + (-4x + 8) = 3x(x - 2) - 4(x - 2)\)</span>.
+Step 4: Common binomial → <span class="arithmatex">\((x - 2)(3x - 4)\)</span>.</p>
+<p>A critical check at the end is to multiply the factors back and confirm you recover the original expression. If any step introduces an error, it usually occurs in the sign during rewriting or grouping — double-check that both numbers from step 1 satisfy <strong>both</strong> the product and sum conditions simultaneously.</p>
+<h3 id="prime-polynomials">Prime Polynomials<a class="headerlink" href="#prime-polynomials" title="Permanent link">&para;</a></h3>
+<p>A <strong>prime polynomial</strong> (also called irreducible) is a polynomial that cannot be factored into simpler polynomials with integer coefficients. Not every polynomial can be factored, and recognizing when to stop is as important as knowing which method to use.</p>
+<p>To determine if a trinomial <span class="arithmatex">\(ax^2 + bx + c\)</span> is prime:
+1. Check for GCF first — if all terms share a factor greater than 1, factor it out and try again on the remainder.
+2. For quadratics (<span class="arithmatex">\(a \neq 0\)</span>), compute <span class="arithmatex">\(ac\)</span> and check whether any pair of integers multiplies to <span class="arithmatex">\(ac\)</span> and adds to <span class="arithmatex">\(b\)</span>. If no such pair exists, the trinomial cannot be factored using integer coefficients.</p>
+<p><strong>Example:</strong> Factor (or determine prime) <span class="arithmatex">\(x^2 + 4x + 6\)</span>.
+Product = <span class="arithmatex">\(1 \cdot 6 = 6\)</span>, need factors of 6 that add to 4. Pairs: (1,6) sum=7; (2,3) sum=5. No pair sums to 4, so <span class="arithmatex">\(x^2 + 4x + 6\)</span> is prime over the integers.</p>
+<p>Note that "prime over the integers" does not necessarily mean the polynomial has no real roots — it simply means no factorization with integer coefficients exists. The quadratic formula may still yield real solutions even for prime polynomials (when the discriminant is nonnegative but not a perfect square).</p>
+<h2 id="part-c-polynomial-and-synthetic-division">Part C: Polynomial and Synthetic Division<a class="headerlink" href="#part-c-polynomial-and-synthetic-division" title="Permanent link">&para;</a></h2>
+<p>When factoring does not apply or when you need to find possible factors of a polynomial, polynomial division provides the mechanism. Like arithmetic long division with numbers, polynomial division breaks down a complex expression into a quotient and remainder.</p>
+<h3 id="polynomial-division">Polynomial Division<a class="headerlink" href="#polynomial-division" title="Permanent link">&para;</a></h3>
+<p><strong>Polynomial division</strong> (long division) divides one polynomial by another, yielding a quotient and a remainder. The process mirrors arithmetic long division: divide the leading term of the dividend by the leading term of the divisor, multiply the entire divisor by that result, subtract from the dividend, bring down the next term, and repeat until the degree of what remains is less than the degree of the divisor.</p>
+<p><strong>Worked Example:</strong> Divide <span class="arithmatex">\(x^3 + 2x^2 - 5x + 3\)</span> by <span class="arithmatex">\(x - 1\)</span>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>                x^2 + 3x - 2   (quotient)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>              ──────────────────
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>       x - 1 | x^3 + 2x^2 - 5x + 3
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>              -(x^3 - x^2)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>               ────────
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                      3x^2 - 5x
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                    -(3x^2 - 3x)
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                       ────────
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                           -2x + 3
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                         -(-2x + 2)
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                            ──────
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                                 1   (remainder)
+</span></code></pre></div>
+<p>Result: <span class="arithmatex">\(\frac{x^3 + 2x^2 - 5x + 3}{x - 1} = x^2 + 3x - 2 + \frac{1}{x-1}\)</span>.</p>
+<p>The key insight is that the remainder <span class="arithmatex">\(r\)</span> is a constant (degree 0) because its degree is less than the divisor's degree (1). If the remainder is 0, then the divisor divides the dividend evenly and is therefore a factor.</p>
+<p>The division process always terminates because the degree of the partial dividend decreases with each subtraction step. When the degree drops below the degree of the divisor, no further division is possible.</p>
+<h3 id="synthetic-division">Synthetic Division<a class="headerlink" href="#synthetic-division" title="Permanent link">&para;</a></h3>
+<p><strong>Synthetic division</strong> is a condensed version of polynomial long division that works only when dividing by a binomial of the form <span class="arithmatex">\(x - c\)</span> (monic linear factor, i.e., the coefficient of <span class="arithmatex">\(x\)</span> must be 1). Instead of writing variables and powers, synthetic division uses only the coefficients.</p>
+<p>The procedure:
+1. Write the value <span class="arithmatex">\(c\)</span> (from <span class="arithmatex">\(x - c\)</span>) on the left.
+2. List the coefficients of the dividend in descending order of degree, inserting 0 for any missing terms.
+3. Bring down the leading coefficient.
+4. Multiply by <span class="arithmatex">\(c\)</span>, add to the next coefficient, and repeat across all coefficients.
+5. The final row gives the quotient's coefficients (one degree less than the dividend) and the remainder.</p>
+<p><strong>Worked Example:</strong> Divide <span class="arithmatex">\(x^3 - 4x^2 + 2x - 8\)</span> by <span class="arithmatex">\(x - 4\)</span>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    4 |  1   -4    2   -8
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>      |       4    0    8
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>      ───────────────────
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>         1    0    2    0
+</span></code></pre></div>
+<p>The bottom row (1, 0, 2, 0) represents: quotient = <span class="arithmatex">\(x^2 + 0x + 2 = x^2 + 2\)</span>, remainder = 0. Since the remainder is 0, we know that <span class="arithmatex">\((x - 4)\)</span> divides evenly into the polynomial.</p>
+<p>Synthetic division fails when the divisor's leading coefficient is not 1 (e.g., <span class="arithmatex">\(2x - 3\)</span>). In those cases, polynomial long division or synthetic division with a modified setup (dividing by <span class="arithmatex">\(2\)</span> after synthetic division) is required.</p>
+<h3 id="the-remainder-and-factor-theorems">The Remainder and Factor Theorems<a class="headerlink" href="#the-remainder-and-factor-theorems" title="Permanent link">&para;</a></h3>
+<p>Two theorems connect division to factoring and roots:</p>
+<p>The <strong>Remainder Theorem</strong> states that when a polynomial <span class="arithmatex">\(f(x)\)</span> is divided by <span class="arithmatex">\(x - c\)</span>, the remainder equals <span class="arithmatex">\(f(c)\)</span>. This means you can evaluate a polynomial at any value without expanding — just perform synthetic or long division. If the remainder is 0, then <span class="arithmatex">\(c\)</span> is a root (or zero) of the polynomial.</p>
+<p><strong>Example:</strong> To check whether <span class="arithmatex">\(x = 2\)</span> is a root of <span class="arithmatex">\(f(x) = x^3 - 6x^2 + 11x - 6\)</span>, divide by <span class="arithmatex">\((x - 2)\)</span>:
+Using synthetic division: coefficients (1, −6, 11, −6), c = 2.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    2 |  1   -6   11   -6
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>      |       2   -8    6
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>      ───────────────────
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>         1   -4    3    0
+</span></code></pre></div>
+Remainder is 0, so <span class="arithmatex">\(f(2) = 0\)</span> and <span class="arithmatex">\(x = 2\)</span> is a root.</p>
+<p>The <strong>Factor Theorem</strong> states that <span class="arithmatex">\(x - c\)</span> is a factor of polynomial <span class="arithmatex">\(f(x)\)</span> if and only if <span class="arithmatex">\(f(c) = 0\)</span>. This is essentially the contrapositive of the Remainder Theorem: zero remainder <span class="arithmatex">\(\iff\)</span> divisibility <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(c\)</span> is a root. The Factor Theorem is what allows you to build factors from roots — find a value <span class="arithmatex">\(c\)</span> where <span class="arithmatex">\(f(c) = 0\)</span>, and you immediately know that <span class="arithmatex">\((x - c)\)</span> is one factor of <span class="arithmatex">\(f(x)\)</span>.</p>
+<p><strong>Worked Example:</strong> Given that <span class="arithmatex">\(x = 3\)</span> is a root of <span class="arithmatex">\(f(x) = x^3 - 7x^2 + 14x - 6\)</span>, find the remaining factors.</p>
+<p>By the Factor Theorem, <span class="arithmatex">\((x - 3)\)</span> is a factor. Divide <span class="arithmatex">\(f(x)\)</span> by <span class="arithmatex">\((x - 3)\)</span>:
+Using synthetic division: c = 3.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    3 |  1   -7   14   -6
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>      |       3  -12    6
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>      ───────────────────
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>         1   -4    2    0
+</span></code></pre></div></p>
+<p>The quotient is <span class="arithmatex">\(x^2 - 4x + 2\)</span>, so <span class="arithmatex">\(f(x) = (x-3)(x^2-4x+2)\)</span>. The quadratic <span class="arithmatex">\(x^2-4x+2\)</span> does not factor nicely over integers (discriminant = <span class="arithmatex">\(16-8=8\)</span>, not a perfect square), so this is the complete factorization over the integers.</p>
+<h3 id="roots-and-factors">Roots and Factors<a class="headerlink" href="#roots-and-factors" title="Permanent link">&para;</a></h3>
+<p><strong>Roots and factors</strong> are two sides of the same coin: a root (or zero) of a polynomial is a value <span class="arithmatex">\(x = r\)</span> where <span class="arithmatex">\(f(r) = 0\)</span>; a factor is an expression <span class="arithmatex">\((x - r)\)</span> that divides evenly into the polynomial. Every real root corresponds to a linear factor, and every linear factor reveals a root.</p>
+<p>If you know all the roots of a polynomial, you can write it as a product of its factors (up to a constant multiplier):
+[f(x) = a(x - r_1)(x - r_2)\cdots(x - r_n)]</p>
+<p>where <span class="arithmatex">\(a\)</span> is the leading coefficient and each <span class="arithmatex">\(r_i\)</span> is a root. The number of roots (counting multiplicities) equals the degree of the polynomial, though some may be complex rather than real.</p>
+<p>For integer-coefficient polynomials, the <strong>Rational Root Theorem</strong> provides a systematic way to find possible rational roots. If <span class="arithmatex">\(f(x) = a_n x^n + \ldots + a_1 x + a_0\)</span> with integer coefficients, then any rational root <span class="arithmatex">\(p/q\)</span> (in lowest terms) must satisfy: <span class="arithmatex">\(p\)</span> divides the constant term <span class="arithmatex">\(a_0\)</span> and <span class="arithmatex">\(q\)</span> divides the leading coefficient <span class="arithmatex">\(a_n\)</span>. This gives a finite list of candidates to test using the Remainder Theorem.</p>
+<h3 id="multiplicity-of-roots">Multiplicity of Roots<a class="headerlink" href="#multiplicity-of-roots" title="Permanent link">&para;</a></h3>
+<p>The <strong>multiplicity</strong> of a root is the number of times its corresponding factor appears in the polynomial's factored form. A root with multiplicity 1 is called a <strong>simple root</strong>; higher multiplicities are labeled accordingly.</p>
+<p>Consider <span class="arithmatex">\(f(x) = (x - 2)^3(x + 1)\)</span>. The roots and their multiplicities are:
+- <span class="arithmatex">\(x = 2\)</span> with multiplicity 3 (the factor <span class="arithmatex">\((x-2)\)</span> appears three times)
+- <span class="arithmatex">\(x = -1\)</span> with multiplicity 1 (simple root)</p>
+<p>The total number of roots counting multiplicities equals the degree of the polynomial: <span class="arithmatex">\(3 + 1 = 4\)</span>, which matches the degree of the expanded form (degree 4).</p>
+<p>Graphically, a root's multiplicity determines how the graph behaves at that root:
+- <strong>Odd multiplicity (1, 3, 5, ...):</strong> the graph crosses the x-axis at this root.
+- <strong>Even multiplicity (2, 4, 6, ...):</strong> the graph touches the x-axis but does not cross it (the graph is tangent to the axis at that point).</p>
+<p>For example, <span class="arithmatex">\((x-2)^3\)</span> crosses the x-axis at <span class="arithmatex">\(x = 2\)</span> (odd), and the shape near that root resembles a flattened cubic. Meanwhile, <span class="arithmatex">\((x+1)^2\)</span> touches the axis at <span class="arithmatex">\(x = -1\)</span> without crossing it (even multiplicity), creating a local minimum or maximum at that point.</p>
+<p>A useful rule for counting roots: if a degree-<span class="arithmatex">\(n\)</span> polynomial is factored into linear terms with integer coefficients, the sum of all multiplicities equals <span class="arithmatex">\(n\)</span>. For instance, <span class="arithmatex">\((x-2)^3(x+1)\)</span> has degree 4 and three + one equals four total roots counting multiplicity. This bookkeeping rule helps verify that a factorization is complete: if the multiplicities do not sum to the degree, at least one factor may be missing or incorrectly expanded.</p>
+<h2 id="part-d-solving-by-factoring">Part D: Solving by Factoring<a class="headerlink" href="#part-d-solving-by-factoring" title="Permanent link">&para;</a></h2>
+<p><strong>Solving by factoring</strong> is a method for finding the roots of a polynomial equation by rewriting the equation so that one side is zero and the other is a product of factors. Once in this form, you apply the <strong>Zero Product Property</strong>: if <span class="arithmatex">\(a \cdot b = 0\)</span>, then either <span class="arithmatex">\(a = 0\)</span> or <span class="arithmatex">\(b = 0\)</span> (or both).</p>
+<p>The procedure:
+1. Set the equation equal to zero.
+2. Factor the nonzero side completely.
+3. Set each factor equal to zero and solve.
+4. Check solutions in the original equation (especially important when denominators are involved).</p>
+<p><strong>Worked Example:</strong> Solve <span class="arithmatex">\(x^3 - 6x^2 + 11x - 6 = 0\)</span>.</p>
+<p>Step 1: Already set to zero.
+Step 2: Factor — try possible roots using the Rational Root Theorem. Possible rational roots: <span class="arithmatex">\(\pm 1, \pm 2, \pm 3, \pm 6\)</span> (factors of constant term 6 divided by factors of leading coefficient 1). Testing <span class="arithmatex">\(x = 1\)</span>: <span class="arithmatex">\(f(1) = 1 - 6 + 11 - 6 = 0\)</span>, so <span class="arithmatex">\(x = 1\)</span> is a root and <span class="arithmatex">\((x-1)\)</span> is a factor. Dividing gives: <span class="arithmatex">\(x^3 - 6x^2 + 11x - 6 = (x-1)(x^2 - 5x + 6)\)</span>. The quadratic factors further: <span class="arithmatex">\((x^2-5x+6) = (x-2)(x-3)\)</span>.</p>
+<p>So the complete factorization is <span class="arithmatex">\(f(x) = (x-1)(x-2)(x-3)\)</span>.</p>
+<p>Step 3: Set each factor to zero: <span class="arithmatex">\(x - 1 = 0 \Rightarrow x = 1\)</span>, <span class="arithmatex">\(x - 2 = 0 \Rightarrow x = 2\)</span>, <span class="arithmatex">\(x - 3 = 0 \Rightarrow x = 3\)</span>.</p>
+<p>Step 4: Check — all three values produce <span class="arithmatex">\(f(x) = 0\)</span> when substituted back. ✓</p>
+<p>Solution set: <span class="arithmatex">\(\boxed{x = 1, \; x = 2, \; x = 3}\)</span>.</p>
+<p>When solving equations by factoring, always verify that each solution does not make any denominator zero (for rational expressions) and that no extraneous solutions were introduced during the process. The Zero Product Property applies to multiplication over real numbers but has no direct analogue for addition or subtraction — <span class="arithmatex">\(a + b = 0\)</span> does not imply that either term must be zero individually, so factorization remains essential before you can set any expression equal to zero and conclude anything about its parts.</p>
+<p><strong>Worked Example (continued from the previous section):</strong> Solve <span class="arithmatex">\(2x^3 - 8x^2 - x + 4 = 0\)</span>.</p>
+<p>This polynomial does not have an obvious GCF across all four terms, but grouping works:
+Step 1: Group → <span class="arithmatex">\((2x^3 - 8x^2) + (-x + 4)\)</span>.
+Step 2: Factor each group → <span class="arithmatex">\(2x^2(x - 4) - 1(x - 4)\)</span>.
+Step 3: Common binomial → <span class="arithmatex">\((x - 4)(2x^2 - 1)\)</span>.</p>
+<p>Now apply the Zero Product Property:
+<span class="arithmatex">\(x - 4 = 0 \Rightarrow x = 4\)</span>, and <span class="arithmatex">\(2x^2 - 1 = 0 \Rightarrow x^2 = \frac{1}{2} \Rightarrow x = \pm \frac{1}{\sqrt{2}} = \pm \frac{\sqrt{2}}{2}\)</span>.</p>
+<p>Solution set: <span class="arithmatex">\(\boxed{x = 4, \; x = \frac{\sqrt{2}}{2}, \; x = -\frac{\sqrt{2}}{2}}\)</span>. Notice that this cubic equation (degree 3) has three real roots, matching its degree — a consequence of the Fundamental Theorem of Algebra, which states that a polynomial of degree <span class="arithmatex">\(n\)</span> has exactly <span class="arithmatex">\(n\)</span> roots counting multiplicity. In this case all three roots are real and distinct.</p>
+<h3 id="prime-polynomials_1">Prime Polynomials<a class="headerlink" href="#prime-polynomials_1" title="Permanent link">&para;</a></h3>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>This chapter covered three major themes in algebraic manipulation:</p>
+<p><strong>Exponent laws and integer exponents</strong> provide the foundation for simplifying expressions at every stage. The five laws — product of powers, quotient of powers, power of a power, power of a product, and power of a quotient — extend naturally to zero and negative exponents by requiring consistency across all cases. The key takeaway is that exponent rules are not memorized in isolation; each one follows from the definition of an exponent as repeated multiplication.</p>
+<p><strong>Factoring techniques</strong> — GCF, grouping, difference of squares, perfect square trinomials, and trinomial factoring — form a toolkit for decomposing polynomials into products of simpler factors. The critical skill is pattern recognition: before applying any method, ask what the polynomial's structure looks like (how many terms, are there perfect squares, is there a common factor?). A systematic approach that tries GCF first, then identifies the pattern in the remaining expression, prevents wasted effort on methods that do not apply.</p>
+<p><strong>Polynomial and synthetic division</strong>, together with the remainder and factor theorems, connect algebraic factoring to root-finding. When factoring by inspection fails or when you need to test whether a particular value is a root, division provides the answer directly: zero remainder means the divisor is a factor and the tested value is a root. The <strong>Rational Root Theorem</strong> narrows the search for rational roots to a finite candidate list, making it possible to exhaustively test all possibilities in polynomial time.</p>
+<p>Together, these tools form the core of algebraic problem-solving — every subsequent topic in Algebra I (from solving quadratics by multiple methods to analyzing function behavior) relies on the ability to factor expressions and understand the relationship between roots, factors, and multiplicities.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Every exponent law can be justified from the definition of an exponent as repeated multiplication. The zero and negative exponent rules are forced by consistency, not chosen arbitrarily.</li>
+<li>GCF factoring is always the first step — if all terms share a common factor, pull it out before trying any other method.</li>
+<li>Recognize special patterns: two terms with subtraction that are both perfect squares → difference of squares; three terms where ends are perfect squares and middle equals <span class="arithmatex">\(2ab\)</span> → perfect square trinomial.</li>
+<li>Polynomial division reduces to arithmetic on coefficients when dividing by <span class="arithmatex">\(x - c\)</span> (synthetic division). The remainder from this process equals <span class="arithmatex">\(f(c)\)</span> (Remainder Theorem).</li>
+<li>The Factor Theorem (<span class="arithmatex">\(x-c\)</span> is a factor <span class="arithmatex">\(\iff f(c)=0\)</span>) is the bridge between roots and factors, enabling systematic root-finding by testing candidates from the Rational Root Theorem.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02-variables-expressions-polynomial-foundations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Variables, Expressions, and Polynomial Foundations">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2. Variables, Expressions, and Polynomial Foundations
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04-linear-equations-inequalities/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Linear Equations and Inequalities">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4. Linear Equations and Inequalities
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

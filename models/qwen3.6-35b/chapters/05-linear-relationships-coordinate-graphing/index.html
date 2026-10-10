@@ -1,0 +1,3568 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introduces the coordinate plane, slope, linear equations in multiple forms, and scatter plots.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/05-linear-relationships-coordinate-graphing/">
+      
+      
+        <link rel="prev" href="../04-linear-equations-inequalities/">
+      
+      
+        <link rel="next" href="../06-quadratic-functions/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Chapter 5: Linear Relationships and Coordinate Graphing - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linear-relationships-and-coordinate-graphing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 5: Linear Relationships and Coordinate Graphing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            qwen3.6:35b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5_4" id="__nav_8_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundational-concepts-and-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundational Number Concepts and Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-variables-expressions-polynomial-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Variables, Expressions, and Polynomial Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-factoring-techniques-polynomial-division/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Factoring Techniques and Polynomial Division
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-linear-equations-inequalities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Linear Equations and Inequalities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    5. Linear Relationships and Coordinate Graphing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    5. Linear Relationships and Coordinate Graphing
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-coordinate-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Coordinate Plane
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Coordinate Plane">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-number-line-revisited" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Number Line Revisited
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-coordinate-plane_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Coordinate Plane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotting Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plotting Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-coordinate-plane-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Coordinate Plane Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slope-rate-of-change-as-a-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slope: Rate of Change as a Number
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slope: Rate of Change as a Number">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-slope" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Slope?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computing-slope-from-two-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing Slope from Two Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computing Slope from Two Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-slope-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Slope Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positive-negative-zero-and-undefined-slopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Positive, Negative, Zero, and Undefined Slopes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Positive, Negative, Zero, and Undefined Slopes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-slope-direction-sorter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Slope Direction Sorter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slope-as-an-equation-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slope as an Equation Parameter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slope-intercept-form-y-mx-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slope-Intercept Form: $y = mx + b$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slope-Intercept Form: $y = mx + b$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-equations-from-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing Equations from Graphs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-intercepts-from-an-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Intercepts from an Equation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding Intercepts from an Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-line-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Line Builder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-form-ax-by-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Form: $Ax + By = C$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Form: $Ax + By = C$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#converting-between-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Converting Between Forms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Converting Between Forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-form-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Form Converter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-slope-form-y-y_1-mx-x_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point-Slope Form: $y - y_1 = m(x - x_1)$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point-Slope Form: $y - y_1 = m(x - x_1)$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-point-slope-to-write-equations-from-two-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Point-Slope to Write Equations from Two Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-variation-and-the-constant-of-proportionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct Variation and the Constant of Proportionality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct Variation and the Constant of Proportionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distinguishing-linear-from-direct-variation-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distinguishing Linear from Direct Variation Relationships
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-linear-equations-from-graphical-or-tabular-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing Linear Equations from Graphical or Tabular Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recognizing-linear-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recognizing Linear Graphs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scatter-plots-and-line-of-best-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scatter Plots and Line of Best Fit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scatter Plots and Line of Best Fit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-line-of-best-fit-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Line of Best Fit Estimator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-and-perpendicular-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel and Perpendicular Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parallel and Perpendicular Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parallel-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Lines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perpendicular-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perpendicular Lines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determining-relationships-from-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Determining Relationships from Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Determining Relationships from Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-parallel-and-perpendicular-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Parallel and Perpendicular Classifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphing-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphing Linear Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphing Linear Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphing-from-slope-intercept-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphing from Slope-Intercept Form
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphing-from-standard-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphing from Standard Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphing from Standard Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-equation-to-graph-matcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Equation-to-Graph Matcher
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distance-formula-and-midpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distance Formula and Midpoint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-chapter-5-what-youve-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Chapter 5: What You've Learned
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-functions-relations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Functions and Relations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-exponential-functions-sequences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Exponential Functions and Sequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-sequences-and-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Sequences and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-mathematical-modeling-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Mathematical Modeling and Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-radicals-and-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Radicals and Radical Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-coordinate-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Coordinate Plane
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Coordinate Plane">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-number-line-revisited" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Number Line Revisited
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-coordinate-plane_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Coordinate Plane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotting Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plotting Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-coordinate-plane-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Coordinate Plane Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slope-rate-of-change-as-a-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slope: Rate of Change as a Number
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slope: Rate of Change as a Number">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-slope" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Slope?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computing-slope-from-two-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing Slope from Two Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computing Slope from Two Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-slope-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Slope Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positive-negative-zero-and-undefined-slopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Positive, Negative, Zero, and Undefined Slopes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Positive, Negative, Zero, and Undefined Slopes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-slope-direction-sorter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Slope Direction Sorter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slope-as-an-equation-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slope as an Equation Parameter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slope-intercept-form-y-mx-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slope-Intercept Form: $y = mx + b$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slope-Intercept Form: $y = mx + b$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-equations-from-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing Equations from Graphs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-intercepts-from-an-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Intercepts from an Equation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding Intercepts from an Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-line-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Line Builder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-form-ax-by-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Form: $Ax + By = C$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Form: $Ax + By = C$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#converting-between-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Converting Between Forms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Converting Between Forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-form-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Form Converter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-slope-form-y-y_1-mx-x_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point-Slope Form: $y - y_1 = m(x - x_1)$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point-Slope Form: $y - y_1 = m(x - x_1)$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-point-slope-to-write-equations-from-two-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Point-Slope to Write Equations from Two Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-variation-and-the-constant-of-proportionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct Variation and the Constant of Proportionality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct Variation and the Constant of Proportionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distinguishing-linear-from-direct-variation-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distinguishing Linear from Direct Variation Relationships
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-linear-equations-from-graphical-or-tabular-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing Linear Equations from Graphical or Tabular Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recognizing-linear-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recognizing Linear Graphs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scatter-plots-and-line-of-best-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scatter Plots and Line of Best Fit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scatter Plots and Line of Best Fit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-line-of-best-fit-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Line of Best Fit Estimator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-and-perpendicular-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel and Perpendicular Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parallel and Perpendicular Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parallel-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Lines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perpendicular-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perpendicular Lines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determining-relationships-from-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Determining Relationships from Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Determining Relationships from Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-parallel-and-perpendicular-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Parallel and Perpendicular Classifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphing-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphing Linear Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphing Linear Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphing-from-slope-intercept-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphing from Slope-Intercept Form
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphing-from-standard-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphing from Standard Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphing from Standard Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-equation-to-graph-matcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Equation-to-Graph Matcher
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distance-formula-and-midpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distance Formula and Midpoint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-chapter-5-what-youve-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Chapter 5: What You've Learned
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/qwen3.6-35b/chapters/05-linear-relationships-coordinate-graphing/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="linear-relationships-and-coordinate-graphing">Linear Relationships and Coordinate Graphing<a class="headerlink" href="#linear-relationships-and-coordinate-graphing" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter introduces the coordinate plane as a tool for visualizing relationships between quantities. Students learn about slope as rate of change, plot points on the coordinate plane, interpret scatter plots, write linear equations in three different forms -- slope-intercept, standard, and point-slope -- and identify parallel and perpendicular lines. These graphing skills bridge algebraic manipulation with geometric visualization, preparing students to see the graphical behavior of functions explored in later chapters.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 21 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>CIS Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slope</td>
+<td>60</td>
+</tr>
+<tr>
+<td>Coordinate Plane Basics</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Rate of Change</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Direct Variation</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Constant of Proportionality</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Distance Formula</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Midpoint Formula</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Ordered Pairs</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Quadrants</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Scatter Plots</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Slope-Intercept Form</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Standard Form</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Point-Slope Form</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Writing Linear Equations</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Parallel Lines</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Perpendicular Lines</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Plotting Points</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Linear Graphs</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Graphing Linear Equations</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Y-Intercepts</td>
+<td>1</td>
+</tr>
+<tr>
+<td>X-Intercepts</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:
+- <a href="../01-foundational-concepts-and-properties/">Chapter 1: Foundational Number Concepts and Properties</a>
+- <a href="../04-linear-equations-inequalities/">Chapter 4: Linear Equations and Inequalities</a></p>
+<hr />
+<h2 id="the-coordinate-plane">The Coordinate Plane<a class="headerlink" href="#the-coordinate-plane" title="Permanent link">&para;</a></h2>
+<h3 id="the-number-line-revisited">The Number Line Revisited<a class="headerlink" href="#the-number-line-revisited" title="Permanent link">&para;</a></h3>
+<p>You have already seen the <strong>number line</strong>: a straight line with evenly spaced marks representing real numbers. Numbers to the right are larger; numbers to the left are smaller. Zero sits in the middle, positive numbers extend rightward, and negative numbers extend leftward. A number line lets you locate a single quantity -- for example, where $-3$ lives or how far apart $5$ and $-2$ are.</p>
+<p>But real-world situations rarely involve just one quantity. How far a car travels depends on <strong>how long</strong> it drives <em>and</em> <strong>how fast</strong> it goes. A phone bill depends on <strong>the number of minutes used</strong> <em>and</em> <strong>the monthly base fee</strong>. To visualize two quantities at once, you need another dimension -- a second number line, crossed perpendicular to the first.</p>
+<h3 id="the-coordinate-plane_1">The Coordinate Plane<a class="headerlink" href="#the-coordinate-plane_1" title="Permanent link">&para;</a></h3>
+<p>The <strong>coordinate plane</strong> (also called the Cartesian plane) consists of two perpendicular number lines that cross at zero:</p>
+<ul>
+<li>The horizontal line is called the <strong>x-axis</strong>. Values increase to the right and decrease to the left.</li>
+<li>The vertical line is called the <strong>y-axis</strong>. Values increase upward and decrease downward.</li>
+<li>The point where the two axes cross is the <strong>origin</strong>, labeled $(0, 0)$.</li>
+</ul>
+<p>Together, the x-axis and y-axis divide the plane into four regions called <strong>quadrants</strong>, numbered counterclockwise starting from the upper-right:</p>
+<ul>
+<li>Quadrant I: $x &gt; 0$, $y &gt; 0$ (both positive)</li>
+<li>Quadrant II: $x &lt; 0$, $y &gt; 0$ (x negative, y positive)</li>
+<li>Quadrant III: $x &lt; 0$, $y &lt; 0$ (both negative)</li>
+<li>Quadrant IV: $x &gt; 0$, $y &lt; 0$ (x positive, y negative)</li>
+</ul>
+<p>Every location on the plane is identified by an <strong>ordered pair</strong> $(x, y)$, where the first number tells you how far to move left or right from the origin, and the second number tells you how far to move up or down. The order matters: $(3, 2)$ is not the same point as $(2, 3)$.</p>
+<h3 id="plotting-points">Plotting Points<a class="headerlink" href="#plotting-points" title="Permanent link">&para;</a></h3>
+<p>To plot a point like $(4, 3)$, start at the origin $(0, 0)$. Move <strong>4 units right</strong> along the x-axis (positive direction), then move <strong>3 units up</strong> parallel to the y-axis. The point where you land is $(4, 3)$.</p>
+<p>For negative coordinates, reverse direction. To plot $(-2, 5)$:
+1. Move <strong>2 units left</strong> from the origin (negative x-direction).
+2. Move <strong>5 units up</strong>.
+3. Mark the point at $(-2, 5)$. It sits in Quadrant II because x is negative and y is positive.</p>
+<p>To plot $(3, -4)$:
+1. Move <strong>3 units right</strong>.
+2. Move <strong>4 units down</strong> (negative y-direction).
+3. Mark the point at $(3, -4)$. It sits in Quadrant IV.</p>
+<p>Before we examine a visual summary, note the pattern: the sign of each coordinate tells you which quadrant the point occupies:</p>
+<table>
+<thead>
+<tr>
+<th>Sign of x</th>
+<th>Sign of y</th>
+<th>Quadrant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$+$</td>
+<td>$+$</td>
+<td>I</td>
+</tr>
+<tr>
+<td>$-$</td>
+<td>$+$</td>
+<td>II</td>
+</tr>
+<tr>
+<td>$-$</td>
+<td>$-$</td>
+<td>III</td>
+</tr>
+<tr>
+<td>$+$</td>
+<td>$-$</td>
+<td>IV</td>
+</tr>
+</tbody>
+</table>
+<p>Points that lie directly on an axis have a zero coordinate. Any point of the form $(a, 0)$ sits on the x-axis because its vertical displacement is zero. Any point of the form $(0, b)$ sits on the y-axis. The origin $(0, 0)$ lies on both axes simultaneously.</p>
+<h4 id="diagram-coordinate-plane-explorer">Diagram: Coordinate Plane Explorer<a class="headerlink" href="#diagram-coordinate-plane-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Coordinate Plane Explorer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> coordinate-plane-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> identify<br/>
+<strong>Learning Objective:</strong> The learner will identify the quadrant of a plotted point from its ordered pair.</p>
+<p><strong>Prerequisites:</strong> coordinate plane, x-axis, y-axis, origin, quadrants, ordered pair (all defined above).</p>
+<p><strong>Evidence of Mastery:</strong> For six given ordered pairs, the learner selects the correct quadrant label. An answer is correct when it matches the quadrant determined by the signs of the two coordinates. Mastery: 5 of 6 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Swapping the x and y coordinates puts the point in the same quadrant. (False: $(3, -2)$ is in Quadrant IV; $(-2, 3)$ is in Quadrant II.) (2) Points with zero coordinates belong to a quadrant. (False: points on an axis are not in any quadrant.)</p>
+<p><strong>Instructional Rationale:</strong> Understanding sign-to-quadrant correspondence requires matching patterns learners can test repeatedly, which is an Understand-level task. The learner predicts the quadrant before seeing it revealed, building the mental association between coordinate signs and regions.</p>
+<p><strong>Content:</strong></p>
+<p>Ordered pairs for the learner to classify:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Ordered Pair</th>
+<th>Correct Quadrant</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>$(5, 3)$</td>
+<td>I</td>
+<td>Both coordinates are positive.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$(-4, 6)$</td>
+<td>II</td>
+<td>x is negative, y is positive.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$(-3, -7)$</td>
+<td>III</td>
+<td>Both coordinates are negative.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$(8, -2)$</td>
+<td>IV</td>
+<td>x is positive, y is negative.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>$(0, 4)$</td>
+<td>Axis (y-axis)</td>
+<td>x is zero; the point lies on the y-axis, not in a quadrant.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>$(-1, 0)$</td>
+<td>Axis (x-axis)</td>
+<td>y is zero; the point lies on the x-axis, not in a quadrant.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Synthetic with seed 501. The coordinate values are chosen to cover all sign combinations including points on each axis.</p>
+<p><strong>Rules:</strong> A point $(x, y)$ is in Quadrant I when $x &gt; 0$ and $y &gt; 0$. It is in Quadrant II when $x &lt; 0$ and $y &gt; 0$. Quadrant III requires both negative. Quadrant IV requires $x &gt; 0$ and $y &lt; 0$. If $x = 0$, the point is on the y-axis. If $y = 0$, the point is on the x-axis. A point with both coordinates zero is at the origin.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees an ordered pair displayed and types or selects the quadrant it belongs to (I, II, III, IV, or "Axis").</li>
+<li>The learner presses Check for each pair before seeing the result.</li>
+<li>After all six pairs, a summary shows how many were correct.</li>
+</ol>
+<p><strong>Feedback:</strong> For each pair: Correct answer confirms the quadrant and gives the sign-based reason. Incorrect answer states the correct quadrant and explains which coordinate's sign was misread. Two attempts per pair; the third reveal shows the full explanation.</p>
+<p><strong>Starting State:</strong> The first ordered pair $(5, 3)$ is shown with empty answer fields. The question reads: "Which quadrant contains the point $(5, 3)$?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states there are four quadrants plus the axes. This sim exercises that classification with six cases covering all sign combinations.</p>
+</details>
+<h2 id="slope-rate-of-change-as-a-number">Slope: Rate of Change as a Number<a class="headerlink" href="#slope-rate-of-change-as-a-number" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-slope">What Is Slope?<a class="headerlink" href="#what-is-slope" title="Permanent link">&para;</a></h3>
+<p>Consider renting a bike from a shop that charges a flat $4 insurance fee plus $6 per hour. The total cost $C$ after riding for $t$ hours is:</p>
+<div class="arithmatex">\[C = 6t + 4\]</div>
+<p>The number $6$ tells you how much the cost <em>changes</em> for each one-hour increase. If you ride 1 hour, it costs $10$. If you ride 2 hours, it costs $16$. The cost went up by $6$ when time went up by $1$: the <strong>rate of change</strong> is $6$ dollars per hour.</p>
+<p>In a graph of this relationship -- time on the horizontal axis, cost on the vertical -- these two data points are $(1, 10)$ and $(2, 16)$. The graph connects them with a straight line, because for every additional hour the cost increases by exactly $6$ dollars. That steady rise is what <strong>slope</strong> measures.</p>
+<p><strong>Slope</strong> is the ratio of vertical change to horizontal change between any two points on a line. It quantifies how steeply the line rises or falls:</p>
+<div class="arithmatex">\[\text{slope } m = \frac{\text{vertical change}}{\text{horizontal change}} = \frac{y_2 - y_1}{x_2 - x_1}\]</div>
+<p>The letters $x_1, y_1$ and $x_2, y_2$ label the coordinates of two distinct points on the line: $(x_1, y_1)$ and $(x_2, y_2)$. It does not matter which point you call "first" and which you call "second," as long as you are consistent -- subtracting in the same order for both numerator and denominator gives the same result.</p>
+<h3 id="computing-slope-from-two-points">Computing Slope from Two Points<a class="headerlink" href="#computing-slope-from-two-points" title="Permanent link">&para;</a></h3>
+<p>Suppose a line passes through the points $(1, 3)$ and $(5, 11)$. To find the slope:</p>
+<ol>
+<li>Label the points: $(x_1, y_1) = (1, 3)$ and $(x_2, y_2) = (5, 11)$.</li>
+<li>Compute the vertical change: $y_2 - y_1 = 11 - 3 = 8$.</li>
+<li>Compute the horizontal change: $x_2 - x_1 = 5 - 1 = 4$.</li>
+<li>Divide: $m = \frac{8}{4} = 2$.</li>
+</ol>
+<p>The slope is $2$. This means that for every unit you move to the right, the line rises $2$ units. You can verify by picking a different pair of points on the same line -- you will always get $\frac{\text{rise}}{\text{run}} = 2$. That consistency is what makes slope a property of the <em>line itself</em>, not of any particular pair of points you happen to pick.</p>
+<h4 id="diagram-slope-calculator">Diagram: Slope Calculator<a class="headerlink" href="#diagram-slope-calculator" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Slope Calculator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> slope-calculator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate the slope of a line from two given points, to within 0.1 of the correct value.</p>
+<p><strong>Prerequisites:</strong> slope, rate of change, ordered pair, coordinate plane (all defined above).</p>
+<p><strong>Evidence of Mastery:</strong> For five pairs of points, the learner types the computed slope before checking. A calculation is correct when the absolute difference from the model slope is $\leq 0.1$. Mastery: 4 of 5 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Computing $x_2 - x_1$ in the numerator and $y_2 - y_1$ in the denominator (swapped rise over run). (2) Using only one coordinate value instead of the difference of two. (3) Ignoring signs of negative coordinates.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level computation requires the learner to commit a number, then compare it against a model. This reveals whether they have internalized the ratio formula rather than simply recognizing it passively.</p>
+<p><strong>Content:</strong></p>
+<p>Five point pairs for slope calculation:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Point 1</th>
+<th>Point 2</th>
+<th>Model Slope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>$(0, 2)$</td>
+<td>$(4, 10)$</td>
+<td>$2$</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$(1, 5)$</td>
+<td>$(3, 9)$</td>
+<td>$2$</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$(-1, 3)$</td>
+<td>$(2, -3)$</td>
+<td>$-2$</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$(0, 0)$</td>
+<td>$(6, -3)$</td>
+<td>$-0.5$</td>
+</tr>
+<tr>
+<td>5</td>
+<td>$(2, 7)$</td>
+<td>$(8, 7)$</td>
+<td>$0$</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Synthetic with seed 502. All slopes are rational numbers chosen to exercise integer, negative, fractional, and zero slopes.</p>
+<p><strong>Rules:</strong> Slope formula: $m = \frac{y_2 - y_1}{x_2 - x_1}$. When $x_2 = x_1$, the line is vertical and the slope is undefined (the sim marks this case separately). A horizontal line ($y_2 = y_1$) has slope $0$. The correct answer is accepted when $| \text{learner answer} - \text{model} | \leq 0.1$.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees a pair of points and computes the slope using the formula.</li>
+<li>The learner types the result and presses Check.</li>
+<li>After five problems, the sim reports the count correct and shows model solutions for any missed items.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct: "Correct. Rise = $y_2 - y_1 = [value]$, run = $x_2 - x_1 = [value]$, slope = $m = \frac{[result]}{[divisor]}$." Incorrect second attempt: states the correct slope with the full calculation.</p>
+<p><strong>Starting State:</strong> The first problem shows points $(0, 2)$ and $(4, 10)$ with an empty answer field and the prompt "Find the slope of the line through these two points."</p>
+<p><strong>Chapter Anchors:</strong> This worked example later in the chapter uses the same pair $(0, 2)$ and $(4, 10)$ and arrives at slope $2$. The formula $m = \frac{y_2 - y_1}{x_2 - x_1}$ appears identically in both places.</p>
+</details>
+<h3 id="positive-negative-zero-and-undefined-slopes">Positive, Negative, Zero, and Undefined Slopes<a class="headerlink" href="#positive-negative-zero-and-undefined-slopes" title="Permanent link">&para;</a></h3>
+<p>The sign of the slope tells you the <strong>direction</strong> the line travels:</p>
+<ul>
+<li><strong>Positive slope ($m &gt; 0$):</strong> The line rises from left to right. As $x$ increases, $y$ also increases. The bike-rental example above has slope $2$, which is positive: more hours means more cost.</li>
+<li><strong>Negative slope ($m &lt; 0$):</strong> The line falls from left to right. As $x$ increases, $y$ decreases. A hot cup of coffee cooling over time illustrates this: temperature goes down as time goes up.</li>
+<li><strong>Zero slope ($m = 0$):</strong> The line is horizontal. The y-value does not change no matter how much x changes. Think of a car stopped at a red light -- distance from the intersection stays constant while time passes.</li>
+<li><strong>Undefined slope:</strong> The line is vertical. The x-value does not change, so the denominator in the slope formula is zero, which is undefined.</li>
+</ul>
+<h4 id="diagram-slope-direction-sorter">Diagram: Slope Direction Sorter<a class="headerlink" href="#diagram-slope-direction-sorter" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Slope Direction Sorter</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> slope-direction-sorter<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> classify<br/>
+<strong>Learning Objective:</strong> The learner will classify the sign of a line's slope from two points or from a visual representation.</p>
+<p><strong>Prerequisites:</strong> slope, positive slope, negative slope, zero slope, undefined slope (all defined above).</p>
+<p><strong>Evidence of Mastery:</strong> For eight cases, the learner classifies each slope as positive, negative, zero, or undefined. An answer is correct when it matches the sign determined by the relative positions of the two points. Mastery: 7 of 8 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) "A line that goes down the page must have a negative slope." The learner must check which way x changes, not just which way y changes. (2) Confusing "the line is steep" with "the slope is positive." Steepness is magnitude; sign is direction.</p>
+<p><strong>Instructional Rationale:</strong> Understand-level classification requires the learner to look at each case and determine its category, then compare against their prediction. Predicting first builds stronger associations than just matching after seeing the answer.</p>
+<p><strong>Content:</strong></p>
+<p>Eight cases for slope-sign classification:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Point 1</th>
+<th>Point 2</th>
+<th>Correct Sign</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>$(1, 1)$</td>
+<td>$(3, 5)$</td>
+<td>Positive</td>
+<td>$y$ increases (5 - 1 = 4) as $x$ increases (3 - 1 = 2). Slope = $\frac{4}{2} = 2$.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$(0, 4)$</td>
+<td>$(3, 1)$</td>
+<td>Negative</td>
+<td>$y$ decreases (1 - 4 = -3) as $x$ increases (3 - 0 = 3). Slope = $\frac{-3}{3} = -1$.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$(2, 3)$</td>
+<td>$(7, 3)$</td>
+<td>Zero</td>
+<td>$y$ does not change (3 - 3 = 0). The line is horizontal.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$(4, 1)$</td>
+<td>$(4, 6)$</td>
+<td>Undefined</td>
+<td>$x$ does not change (4 - 4 = 0). The line is vertical; division by zero is undefined.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>$(-2, -1)$</td>
+<td>$(3, 4)$</td>
+<td>Positive</td>
+<td>$y$ increases (4 - (-1) = 5) as $x$ increases (3 - (-2) = 5). Slope = $\frac{5}{5} = 1$.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>$(0, 0)$</td>
+<td>$(-3, -6)$</td>
+<td>Positive</td>
+<td>Both coordinates decrease, but the <em>difference</em> in y ($-6 - 0 = -6$) divided by the difference in x ($-3 - 0 = -3$) gives $\frac{-6}{-3} = 2$. The signs cancel.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>$(1, 5)$</td>
+<td>$(-4, 0)$</td>
+<td>Positive</td>
+<td>$y$ decreases (0 - 5 = -5), x decreases ($-4 - 1 = -5$). Slope = $\frac{-5}{-5} = 1$. Moving left still goes up when slope is positive.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>$(2, -3)$</td>
+<td>$(-1, -3)$</td>
+<td>Zero</td>
+<td>Same y-value means horizontal line regardless of direction you traverse it.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Synthetic with seed 503. Cases are chosen to include both traversals (left-to-right and right-to-left) because the slope is identical either way -- a key insight the exercise targets.</p>
+<p><strong>Rules:</strong> A slope is positive when $y_2 - y_1$ and $x_2 - x_1$ have the same sign (both positive or both negative). It is negative when they have opposite signs. It is zero when $y_2 = y_1$. It is undefined when $x_2 = x_1$ and $y_2 \neq y_1$.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees two points (and optionally a small grid showing them).</li>
+<li>The learner predicts: positive, negative, zero, or undefined.</li>
+<li>After pressing Check, the correct classification and reasoning appear.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct: confirms with the sign analysis. Incorrect: states which coordinate did not change as expected and recalculates the slope sign from the differences. Two attempts per case; third reveal shows the full calculation.</p>
+<p><strong>Starting State:</strong> The first case $(1, 1)$ and $(3, 5)$ is shown on a small grid with four answer buttons labeled Positive, Negative, Zero, Undefined. The prompt reads: "What is the sign of the slope through these points?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter illustrates that traversing a line in either direction gives the same slope; this sim includes cases where you move right-to-left to reinforce that point.</p>
+</details>
+<h3 id="slope-as-an-equation-parameter">Slope as an Equation Parameter<a class="headerlink" href="#slope-as-an-equation-parameter" title="Permanent link">&para;</a></h3>
+<p>When you look at a linear equation written as $y = mx + b$, the coefficient $m$ <strong>is</strong> the slope. The number multiplied by $x$ tells you exactly how much y changes when x increases by one unit. If the equation is $y = 3x - 2$, then for every increase of $1$ in $x$, $y$ increases by $3$. The slope is $3$.</p>
+<p>This works whether $m$ is positive, negative, or zero:
+- $y = 3x - 2$: slope is $3$ (positive, the line rises).
+- $y = -\frac{1}{2}x + 4$: slope is $-\frac{1}{2}$ (negative, the line falls gently).
+- $y = 7$: this is the same as $y = 0x + 7$, so the slope is $0$ (horizontal line through $y = 7$).</p>
+<p>When a linear equation is not written in this form -- say, $2x + 3y = 6$ -- you can still find the slope by picking two points that satisfy the equation and applying the formula. Any two points on the same line give the same slope. For example, if $x = 0$, then $3y = 6$ and $y = 2$: one point is $(0, 2)$. If $y = 0$, then $2x = 6$ and $x = 3$: another point is $(3, 0)$. The slope is:</p>
+<div class="arithmatex">\[m = \frac{0 - 2}{3 - 0} = \frac{-2}{3}\]</div>
+<h2 id="slope-intercept-form-y-mx-b">Slope-Intercept Form: $y = mx + b$<a class="headerlink" href="#slope-intercept-form-y-mx-b" title="Permanent link">&para;</a></h2>
+<p>The <strong>slope-intercept form</strong> of a linear equation is:</p>
+<div class="arithmatex">\[y = mx + b\]</div>
+<p>where $m$ is the slope and $b$ is the <strong>y-intercept</strong> -- the point where the line crosses the y-axis (the value of $y$ when $x = 0$). This form is called "slope-intercept" because both defining features -- steepness and vertical starting position -- appear directly in the formula.</p>
+<p>If a line has slope $-2$ and y-intercept $5$, its equation is simply:</p>
+<div class="arithmatex">\[y = -2x + 5\]</div>
+<p>You can read everything you need to graph the line from this equation:
+1. Start at $(0, 5)$ on the y-axis (the intercept).
+2. Use the slope $m = -2 = \frac{-2}{1}$ to find a second point. From $(0, 5)$, move <strong>1 unit right</strong> and <strong>2 units down</strong> (negative direction) to reach $(1, 3)$.
+3. Draw the line through these two points and extend it in both directions.</p>
+<h3 id="writing-equations-from-graphs">Writing Equations from Graphs<a class="headerlink" href="#writing-equations-from-graphs" title="Permanent link">&para;</a></h3>
+<p>Suppose you are given a graph showing a line that passes through $(0, -3)$ and $(4, 5)$. You need to write this line in slope-intercept form.</p>
+<p>First, find the slope using the two points:</p>
+<div class="arithmatex">\[m = \frac{5 - (-3)}{4 - 0} = \frac{8}{4} = 2\]</div>
+<p>The y-intercept is the point where the line crosses the y-axis. From the graph (or from reading that the point $(0, -3)$ lies on the line), $b = -3$.</p>
+<p>The equation is:</p>
+<div class="arithmatex">\[y = 2x - 3\]</div>
+<p>To verify, substitute $x = 4$: $y = 2(4) - 3 = 8 - 3 = 5$, which matches the second point. The equation correctly reproduces both points on the line.</p>
+<h3 id="finding-intercepts-from-an-equation">Finding Intercepts from an Equation<a class="headerlink" href="#finding-intercepts-from-an-equation" title="Permanent link">&para;</a></h3>
+<p>For any linear equation in slope-intercept form $y = mx + b$:
+- The <strong>y-intercept</strong> is at $(0, b)$. Just set $x = 0$ and solve for $y$ -- you get $y = b$ immediately.
+- The <strong>x-intercept</strong> (where the line crosses the x-axis) occurs when $y = 0$. Set $0 = mx + b$ and solve:</p>
+<div class="arithmatex">\[x = -\frac{b}{m}\]</div>
+<p>This gives the point $\left(-\frac{b}{m}, 0\right)$. The x-intercept exists whenever $m \neq 0$; a horizontal line ($m = 0$) has no x-intercept unless it is the line $y = 0$ itself.</p>
+<h4 id="diagram-line-builder">Diagram: Line Builder<a class="headerlink" href="#diagram-line-builder" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Line Builder</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> line-builder<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> construct<br/>
+<strong>Learning Objective:</strong> The learner will construct the equation of a line in slope-intercept form from its graph, given two identifiable points.</p>
+<p><strong>Prerequisites:</strong> slope, slope-intercept form, y-intercept, x-intercept (all defined above).</p>
+<p><strong>Evidence of Mastery:</strong> For four graphs, the learner enters $m$ and $b$ values to write an equation of the form $y = mx + b$. An entry is correct when both the slope and intercept match the model within a tolerance of $\pm 0.1$. Mastery: 3 of 4 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Reading the y-intercept from the wrong axis. (2) Computing rise over run backward as $\frac{\text{run}}{\text{rise}}$ instead of $\frac{\text{rise}}{\text{run}}$. (3) When $m$ is negative, omitting the minus sign because "steepness" feels like a magnitude.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level construction requires committing specific parameter values that generate the observed line, which tests whether the learner can extract $m$ and $b$ independently.</p>
+<p><strong>Content:</strong></p>
+<p>Four graphs with points at integer coordinates:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Point A</th>
+<th>Point B</th>
+<th>Model Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>$(0, 1)$</td>
+<td>$(2, 5)$</td>
+<td>$y = 2x + 1$ (slope = $\frac{5-1}{2-0} = 2$, intercept = $1$)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$(0, -2)$</td>
+<td>$(3, 4)$</td>
+<td>$y = 2x - 2$ (slope = $\frac{4-(-2)}{3-0} = 2$, intercept = $-2$)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$(0, 3)$</td>
+<td>$(6, 0)$</td>
+<td>$y = -\frac{1}{2}x + 3$ (slope = $\frac{0-3}{6-0} = -\frac{1}{2}$, intercept = $3$)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$(0, 0)$</td>
+<td>$(4, -4)$</td>
+<td>$y = -x$ (slope = $\frac{-4-0}{4-0} = -1$, intercept = $0$)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Synthetic with seed 504. Points are at integer coordinates so the slope is either an integer or a simple fraction.</p>
+<p><strong>Rules:</strong> Slope $m = \frac{y_2 - y_1}{x_2 - x_1}$. The y-intercept $b$ is the y-coordinate of the point where $x = 0$. The equation form is $y = mx + b$. The learner enters $m$ as a decimal or fraction and $b$ similarly. Accept when entered values produce an equation matching the model within $\pm 0.1$ on each parameter.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees a graph with two points labeled (A and B) at integer coordinates.</li>
+<li>The learner enters values for slope ($m$) and y-intercept ($b$) in separate input fields.</li>
+<li>The sim checks both values independently against the model.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct: "Your equation $y = [m]x + [b]$ matches the line." Incorrect first attempt: states which parameter is wrong and provides a hint. After second wrong attempt: shows full solution with step-by-step slope computation. A running tally "Correct: n of 4" updates after each item.</p>
+<p><strong>Starting State:</strong> The first graph shows points $(0, 1)$ and $(2, 5)$ on a coordinate grid with two empty input fields labeled "Slope (m) =" and "y-intercept (b) =". The prompt reads: "Write the equation of the line through these two points."</p>
+<p><strong>Chapter Anchors:</strong> This sim reinforces the slope-intercept form $y = mx + b$ introduced in this section. The chapter's worked example uses the same method: compute slope from two points, read intercept at $x = 0$, write $y = mx + b$.</p>
+</details>
+<h2 id="standard-form-ax-by-c">Standard Form: $Ax + By = C$<a class="headerlink" href="#standard-form-ax-by-c" title="Permanent link">&para;</a></h2>
+<p>Another way to write a linear equation is <strong>standard form</strong>:</p>
+<div class="arithmatex">\[Ax + By = C\]</div>
+<p>where $A$, $B$, and $C$ are integers, and $A \geq 0$. In this form, neither the slope nor the intercept appears directly on the surface -- you must work to extract them. However, standard form has advantages: it handles vertical lines gracefully (the equation $x = 3$ is $1 \cdot x + 0 \cdot y = 3$, which fits the pattern with $A = 1$, $B = 0$, and $C = 3$), and it makes integer coefficients explicit.</p>
+<p>To convert from slope-intercept form to standard form, move all variable terms to one side of the equation so that the constant sits alone on the other side. For example, start with $y = 2x - 6$:
+1. Subtract $2x$ from both sides: $-2x + y = -6$.
+2. Standard form requires $A \geq 0$, so multiply through by $-1$: $2x - y = 6$.</p>
+<p>Now $A = 2$, $B = -1$, and $C = 6$. The equation is in standard form.</p>
+<p>To find the intercepts from standard form, use a simple substitution strategy:
+- <strong>x-intercept</strong>: set $y = 0$ and solve for $x$. For $2x - y = 6$: $2x - 0 = 6$, so $x = 3$. The x-intercept is $(3, 0)$.
+- <strong>y-intercept</strong>: set $x = 0$ and solve for $y$. For $2x - y = 6$: $0 - y = 6$, so $y = -6$. The y-intercept is $(0, -6)$.</p>
+<p>These two intercepts are sufficient to graph the line: plot $(3, 0)$ and $(0, -6)$ on the coordinate plane and draw a line through them. This "intercept method" is often faster than computing slope first.</p>
+<h3 id="converting-between-forms">Converting Between Forms<a class="headerlink" href="#converting-between-forms" title="Permanent link">&para;</a></h3>
+<p>Converting between slope-intercept and standard form is routine algebraic manipulation:</p>
+<p><strong>From standard to slope-intercept:</strong> Solve for $y$:
+$$Ax + By = C \implies By = -Ax + C \implies y = -\frac{A}{B}x + \frac{C}{B}$$</p>
+<p>The slope is $m = -\frac{A}{B}$ and the y-intercept is $b = \frac{C}{B}$ (assuming $B \neq 0$). Note the negative sign: the slope of a line in standard form is always the <em>negative</em> ratio of the x-coefficient to the y-coefficient.</p>
+<p><strong>From slope-intercept to standard:</strong> Rearrange $y = mx + b$ by moving all terms with variables to one side. If the slope is a fraction, multiply through by the denominator to clear it:
+$$y = \frac{3}{4}x + 2 \implies 4y = 3x + 8 \implies -3x + 4y = 8 \implies 3x - 4y = -8$$</p>
+<p>Multiply through by $-1$ to make $A \geq 0$: the standard form is $3x - 4y = -8$.</p>
+<h4 id="diagram-form-converter">Diagram: Form Converter<a class="headerlink" href="#diagram-form-converter" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Form Converter</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> standard-form-converter<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> convert<br/>
+<strong>Learning Objective:</strong> The learner will convert a linear equation between slope-intercept form and standard form, verifying correctness by checking that both equations represent the same line.</p>
+<p><strong>Prerequisites:</strong> slope-intercept form ($y = mx + b$), standard form ($Ax + By = C$ with $A \geq 0$, integer coefficients) (both defined above).</p>
+<p><strong>Evidence of Mastery:</strong> For four equations, the learner converts each form to the other. A conversion is correct when substituting any test value of $x$ into both forms produces the same $y$-value, and all coefficients are integers with $A \geq 0$. Mastery: 3 of 4 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Forgetting to flip the sign when moving a term across the equals sign. (2) When clearing fractions, multiplying only some terms by the denominator. (3) Leaving $A$ negative in standard form.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level conversion requires performing algebraic steps in the correct order and checking the result, which confirms understanding of equality as an invariant relationship.</p>
+<p><strong>Content:</strong></p>
+<p>Four equations for bidirectional conversion:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Original Form</th>
+<th>Equation</th>
+<th>Target Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Slope-intercept</td>
+<td>$y = \frac{3}{4}x + 2$</td>
+<td>Standard: $3x - 4y = -8$</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Standard</td>
+<td>$5x + 2y = 10$</td>
+<td>Slope-intercept: $y = -\frac{5}{2}x + 5$</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Slope-intercept</td>
+<td>$y = -2x + 7$</td>
+<td>Standard: $2x + y = 7$</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Standard</td>
+<td>$-4x + 6y = 12$</td>
+<td>Slope-intercept: $y = \frac{2}{3}x + 2$ (then make $A \geq 0$: $2x - 3y = -6 \implies y = \frac{2}{3}x + 2$, or directly from original: divide by 6 to get $y = \frac{2}{3}x + 2$)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Synthetic with seed 505. Each problem is chosen so that conversion involves a common step: clearing fractions (items 1 and 4), handling negative leading coefficient (item 4), or moving a positive term to the other side (item 3).</p>
+<p><strong>Rules:</strong> Standard form requires integer coefficients and $A \geq 0$. When converting from slope-intercept, eliminate fractional slopes by multiplying through by the denominator. Verify conversion by substituting a test $x$-value into both equations and confirming the same $y$ results. A correct answer has matching outputs for any $x$ tested.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees an equation in one form and types the equivalent equation in the other form.</li>
+<li>Two input fields: coefficients for the converted form (e.g., $A$, $B$, $C$ for standard form).</li>
+<li>The sim verifies by testing multiple $x$-values against both equations.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct: "Your conversion is correct. Both forms produce the same line." Incorrect first attempt: states which coefficient differs and suggests checking the sign. After second wrong attempt: shows the full step-by-step conversion with reasoning. Running tally of correct conversions updates after each item.</p>
+<p><strong>Starting State:</strong> The problem "$y = \frac{3}{4}x + 2$" is shown with three empty fields for standard form coefficients $A$, $B$, and $C$ in the pattern $Ax + By = C$. The prompt reads: "Write this equation in standard form ($A \geq 0$, integers)."</p>
+<p><strong>Chapter Anchors:</strong> This sim exercises conversions between the two forms defined in this section. The chapter states that converting slope-intercept to standard form may require multiplying through by a denominator -- item 1 exercises exactly that step.</p>
+</details>
+<h2 id="point-slope-form-y-y_1-mx-x_1">Point-Slope Form: $y - y_1 = m(x - x_1)$<a class="headerlink" href="#point-slope-form-y-y_1-mx-x_1" title="Permanent link">&para;</a></h2>
+<p>Sometimes you know a line's slope and <strong>one</strong> point on the line, but not its y-intercept. In that case, use <strong>point-slope form</strong>:</p>
+<div class="arithmatex">\[y - y_1 = m(x - x_1)\]</div>
+<p>where $m$ is the slope and $(x_1, y_1)$ is any specific point on the line. This form says: "the vertical distance from a known point equals the slope times the horizontal distance from that same point." Any point $(x, y)$ that satisfies this equation lies on the line.</p>
+<p>To see why this works, rearrange it to isolate $y$:
+$$y = m(x - x_1) + y_1 = mx - mx_1 + y_1$$</p>
+<p>This is in slope-intercept form ($y = mx + b$), where the y-intercept is $b = y_1 - mx_1$. The line has slope $m$ and passes through $(x_1, y_1)$ by construction: when you substitute $x = x_1$, the equation gives $y - y_1 = 0$, so $y = y_1$.</p>
+<p><strong>Example:</strong> A line has slope $3$ and passes through $(2, 5)$. Its point-slope equation is:
+$$y - 5 = 3(x - 2)$$</p>
+<p>To convert to slope-intercept form, distribute and simplify:
+$$y - 5 = 3x - 6 \implies y = 3x - 1$$</p>
+<p>Both equations represent the same line. You can verify by checking that $(2, 5)$ satisfies $y = 3x - 1$: $3(2) - 1 = 6 - 1 = 5$. Yes -- the point is on the line.</p>
+<h3 id="using-point-slope-to-write-equations-from-two-points">Using Point-Slope to Write Equations from Two Points<a class="headerlink" href="#using-point-slope-to-write-equations-from-two-points" title="Permanent link">&para;</a></h3>
+<p>When you are given two points but not the slope directly, first compute the slope, then plug it and either point into the formula:</p>
+<p>Find the equation of the line through $(-1, 4)$ and $(3, -2)$:</p>
+<ol>
+<li>Compute the slope: $m = \frac{-2 - 4}{3 - (-1)} = \frac{-6}{4} = -\frac{3}{2}$.</li>
+<li>Use point-slope form with $(-1, 4)$:</li>
+</ol>
+<div class="arithmatex">\[y - 4 = -\frac{3}{2}(x - (-1)) = -\frac{3}{2}(x + 1)\]</div>
+<ol>
+<li>Convert to slope-intercept: $y - 4 = -\frac{3}{2}x - \frac{3}{2}$, so $y = -\frac{3}{2}x + \frac{5}{2}$.</li>
+</ol>
+<p>You can check using the other point $(3, -2)$: $-\frac{3}{2}(3) + \frac{5}{2} = -\frac{9}{2} + \frac{5}{2} = -\frac{4}{2} = -2$. Correct.</p>
+<h2 id="direct-variation-and-the-constant-of-proportionality">Direct Variation and the Constant of Proportionality<a class="headerlink" href="#direct-variation-and-the-constant-of-proportionality" title="Permanent link">&para;</a></h2>
+<p>A special case of a linear relationship occurs when the line passes through the origin. When $b = 0$ in $y = mx + b$, the equation simplifies to:</p>
+<div class="arithmatex">\[y = kx\]</div>
+<p>This is called <strong>direct variation</strong>: $y$ varies directly as $x$, and $k$ is the <strong>constant of proportionality</strong>. The ratio $\frac{y}{x}$ is the same for every point on the line (except $(0, 0)$), and that constant ratio is exactly $k$.</p>
+<p>For example, if a car travels at a constant speed of $55$ miles per hour, the distance $d$ it covers in $t$ hours is:
+$$d = 55t$$</p>
+<p>Here $d$ varies directly as $t$, and the constant of proportionality $k = 55$ represents the speed. The ratio $\frac{d}{t} = \frac{55t}{t} = 55$ for every nonzero value of $t$. This constancy -- the idea that no matter how far you travel or how long you drive, the ratio stays exactly the same -- is what defines direct variation.</p>
+<p>A direct variation graph always passes through $(0, 0)$ because when $x = 0$, $y = k(0) = 0$. If a graphed relationship between two quantities has a straight-line appearance but does <strong>not</strong> pass through the origin, the quantities are linearly related but not directly proportional.</p>
+<h3 id="distinguishing-linear-from-direct-variation-relationships">Distinguishing Linear from Direct Variation Relationships<a class="headerlink" href="#distinguishing-linear-from-direct-variation-relationships" title="Permanent link">&para;</a></h3>
+<p>Not all straight lines represent direct variation:</p>
+<ul>
+<li>$y = 3x$: direct variation (passes through origin, $k = 3$).</li>
+<li>$y = 3x + 2$: linear but <strong>not</strong> direct variation (y-intercept is $2$, not $0$). The ratio $\frac{y}{x}$ changes from point to point: at $(1, 5)$ it is $5$, at $(2, 8)$ it is $4$, and so on.</li>
+</ul>
+<p>When given a table of values and asked whether two quantities are directly proportional, check two conditions: (1) the points form a straight line when plotted, and (2) the line passes through $(0, 0)$, or equivalently, every pair satisfies $\frac{y}{x} = k$ for the same constant $k$.</p>
+<h3 id="writing-linear-equations-from-graphical-or-tabular-information">Writing Linear Equations from Graphical or Tabular Information<a class="headerlink" href="#writing-linear-equations-from-graphical-or-tabular-information" title="Permanent link">&para;</a></h3>
+<p>You have already seen how to go from an equation to a graph. The reverse -- <strong>writing a linear equation</strong> from data -- follows the same steps in the opposite direction. Given two points on a line, you first compute the slope, then find the y-intercept by substituting one point into $y = mx + b$ and solving for $b$. Alternatively, use point-slope form directly with any known point and the computed slope. The key insight is that <em>any</em> two points on a non-vertical line uniquely determine the equation: every other point on that same line will satisfy the resulting equation.</p>
+<h3 id="recognizing-linear-graphs">Recognizing Linear Graphs<a class="headerlink" href="#recognizing-linear-graphs" title="Permanent link">&para;</a></h3>
+<p>A <strong>linear graph</strong> is simply a straight-line plot. Any relationship whose ordered pairs form a straight line when plotted on the coordinate plane satisfies a linear equation. The reverse is equally true: the graph of any linear equation is always a straight line. This two-way correspondence means you can determine whether a relationship is linear just by plotting its data -- if the points fall on a line, the relationship is linear; if they curve or scatter without forming one, it is not. Later chapters will encounter nonlinear graphs (parabolas, exponential curves) where this distinction becomes even more important.</p>
+<h2 id="scatter-plots-and-line-of-best-fit">Scatter Plots and Line of Best Fit<a class="headerlink" href="#scatter-plots-and-line-of-best-fit" title="Permanent link">&para;</a></h2>
+<p>Not all real-world data falls exactly on a straight line. When you collect measurements -- such as recording the height and weight of students in your class -- each student becomes one point $(\text{height}, \text{weight})$ on a graph called a <strong>scatter plot</strong>. The pattern of points often suggests a linear trend even when individual values deviate from it.</p>
+<p>A <strong>line of best fit</strong> (also called a regression line) is the straight line that most closely summarizes the overall trend in a scatter plot. It does not need to pass through any data point -- instead, it stays as close as possible to <em>all</em> points simultaneously. The slope of this line tells you the average rate at which one quantity changes with respect to the other; the y-intercept gives a baseline estimate when the independent variable is zero.</p>
+<p>When interpreting a line of best fit, consider:
+- <strong>The slope</strong> represents the average change in the dependent variable per unit increase in the independent variable.
+- <strong>The intercept</strong> may or may not have practical meaning -- if $x = 0$ falls far outside your data range, the intercept is an extrapolation that may be unreliable.
+- <strong>Correlation strength</strong>: points clustered tightly around the line indicate a strong linear relationship; widely scattered points suggest the linear model captures only part of the story.</p>
+<p>A scatter plot with its line of best fit helps you see whether a linear model is reasonable for the data, and what parameters to use when building that model. Later chapters explore this technique more rigorously.</p>
+<h4 id="diagram-line-of-best-fit-estimator">Diagram: Line of Best Fit Estimator<a class="headerlink" href="#diagram-line-of-best-fit-estimator" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Line of Best Fit Estimator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> line-of-best-fit-estimator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret the slope and intercept of a line of best fit from a scatter plot.</p>
+<p><strong>Prerequisites:</strong> scatter plot, line of best fit, slope as rate of change, y-intercept (all defined above).</p>
+<p><strong>Evidence of Mastery:</strong> For three scatter plots with a drawn line of best fit, the learner identifies whether each described interpretation of the slope and intercept is correct. An answer is correct when it matches the standard statistical interpretation. Mastery: 2 of 3 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Thinking the line must pass through most data points rather than balancing above and below them. (2) Interpreting the y-intercept as meaningful even when $x = 0$ is far outside the observed data range.</p>
+<p><strong>Instructional Rationale:</strong> Understand-level interpretation requires connecting abstract parameters to their real-world meaning, which tests whether the learner grasps what slope and intercept represent in context rather than merely recognizing them numerically.</p>
+<p><strong>Content:</strong></p>
+<p>Three scenarios for line-of-best-fit interpretation:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Context</th>
+<th>Slope description</th>
+<th>Correct interpretation of slope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hours studied vs. test score (line rises)</td>
+<td>Positive slope of about 5 points per hour</td>
+<td>On average, each additional hour of studying is associated with a 5-point increase in the test score.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Time spent exercising vs. body temperature (line rises)</td>
+<td>Positive slope</td>
+<td>More exercise time is associated with higher body temperature.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Distance from home vs. cell phone signal strength (line falls)</td>
+<td>Negative slope of about -2 bars per mile</td>
+<td>Each additional mile from home decreases signal strength by approximately 2 bars on average.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Synthetic with seed 506. Scenarios are standard examples used in introductory statistics to demonstrate positive and negative linear relationships.</p>
+<p><strong>Rules:</strong> A positive slope means the dependent variable increases as the independent variable increases. A negative slope means it decreases. The intercept is the predicted value of the dependent variable when the independent variable equals zero, but only within the range of observed data is it meaningful.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees a scatter plot with a line of best fit and a multiple-choice question about interpreting the slope or intercept.</li>
+<li>The learner selects the correct interpretation from three options.</li>
+<li>After each answer, feedback explains why the chosen option is correct or incorrect.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct: confirms and explains in one sentence. Incorrect first attempt: eliminates the clearly wrong option and explains why. Second reveal shows the full reasoning.</p>
+<p><strong>Starting State:</strong> The first scatter plot shows hours studied (x-axis) vs. test scores (y-axis) with a rising line. The question reads: "What does the positive slope of this line of best fit tell you?"</p>
+<p><strong>Chapter Anchors:</strong> This sim illustrates the concepts of scatter plot and line of best fit introduced in this section. The chapter states that real data rarely falls exactly on a line, which is why we draw a line that balances close to all points rather than trying to hit any single one.</p>
+</details>
+<h2 id="parallel-and-perpendicular-lines">Parallel and Perpendicular Lines<a class="headerlink" href="#parallel-and-perpendicular-lines" title="Permanent link">&para;</a></h2>
+<h3 id="parallel-lines">Parallel Lines<a class="headerlink" href="#parallel-lines" title="Permanent link">&para;</a></h3>
+<p>Two lines are <strong>parallel</strong> when they never intersect. On the coordinate plane, parallel lines have the same slope but different y-intercepts. If two lines share the same rate of change but start at different positions, they travel in exactly the same direction forever without crossing.</p>
+<p>For example:
+- Line 1: $y = 3x + 1$ (slope = $3$, intercept = $1$)
+- Line 2: $y = 3x - 4$ (slope = $3$, intercept = $-4$)</p>
+<p>Both lines rise at a rate of $3$ units up for every unit right. They never meet because they start at different vertical positions and move identically. Graphing both shows two parallel lines that look like railroad tracks extending indefinitely.</p>
+<p>If two lines have the same slope <em>and</em> the same y-intercept, they are not just parallel -- they are <strong>the same line</strong> (every point on one is also on the other). Distinguishing this case from truly distinct parallel lines requires checking both parameters.</p>
+<h3 id="perpendicular-lines">Perpendicular Lines<a class="headerlink" href="#perpendicular-lines" title="Permanent link">&para;</a></h3>
+<p>Two lines are <strong>perpendicular</strong> when they intersect at a right angle ($90^\circ$). Unlike parallel lines, perpendicular lines have <em>different</em> slopes that follow a specific relationship: their product is $-1$. In other words, if one line has slope $m$, the perpendicular line has slope $-\frac{1}{m}$ (the <strong>negative reciprocal</strong>):</p>
+<div class="arithmatex">\[m_1 \times m_2 = -1\]</div>
+<p>This works because multiplying a number by its negative reciprocal always gives $-1$:
+- If one slope is $2$, the perpendicular slope is $-\frac{1}{2}$. Check: $2 \times (-\frac{1}{2}) = -1$. Correct.
+- If one slope is $-\frac{3}{4}$, the perpendicular slope is $\frac{4}{3}$. Check: $(-\frac{3}{4}) \times (\frac{4}{3}) = -1$. Correct.</p>
+<p>Note that a horizontal line (slope $0$) is perpendicular to a vertical line (undefined slope). The product rule above does not apply directly in this case, but the geometric intuition holds: they cross at a right angle.</p>
+<h3 id="determining-relationships-from-equations">Determining Relationships from Equations<a class="headerlink" href="#determining-relationships-from-equations" title="Permanent link">&para;</a></h3>
+<p>To determine whether two lines are parallel, perpendicular, or neither from their equations:
+1. Rewrite each equation in slope-intercept form ($y = mx + b$) to extract the slope.
+2. Compare slopes:
+   - Same slope, different intercepts $\implies$ parallel
+   - Slopes are negative reciprocals (product is $-1$) $\implies$ perpendicular
+   - Otherwise $\implies$ neither</p>
+<p>For example, consider the lines $3x + 4y = 12$ and $4x - 3y = 6$:
+- Line 1: $4y = -3x + 12$, so $y = -\frac{3}{4}x + 3$. Slope is $-\frac{3}{4}$.
+- Line 2: $-3y = -4x + 6$, so $y = \frac{4}{3}x - 2$. Slope is $\frac{4}{3}$.
+- Check: $(-\frac{3}{4}) \times (\frac{4}{3}) = -1$. The slopes are negative reciprocals.</p>
+<p>These lines are perpendicular.</p>
+<h4 id="diagram-parallel-and-perpendicular-classifier">Diagram: Parallel and Perpendicular Classifier<a class="headerlink" href="#diagram-parallel-and-perpendicular-classifier" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Parallel and Perpendicular Classifier</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> parallel-perpendicular-classifier<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> determine<br/>
+<strong>Learning Objective:</strong> The learner will determine whether two given lines are parallel, perpendicular, or neither from their equations.</p>
+<p><strong>Prerequisites:</strong> slope-parallel to each other (same slope), perpendicular (negative reciprocal slopes) (both defined above).</p>
+<p><strong>Evidence of Mastery:</strong> For six pairs of lines in various forms, the learner selects parallel, perpendicular, or neither. A selection is correct when it matches the relationship determined by comparing the slopes. Mastery: 5 of 6 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Comparing equations without first rewriting them in a comparable form. (2) Forgetting that same slope + same intercept means identical lines, not parallel. (3) Computing the product $m_1 \times m_2$ incorrectly with negative fractions.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level determination requires converting equations to comparable forms and performing a precise calculation, which tests procedural fluency alongside conceptual understanding of what parallelism and perpendicularity mean geometrically.</p>
+<p><strong>Content:</strong></p>
+<p>Six pairs of lines:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Line 1</th>
+<th>Line 2</th>
+<th>Relationship</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>$y = 2x + 3$</td>
+<td>$y = 2x - 5$</td>
+<td>Parallel</td>
+<td>Same slope ($2$), different intercepts.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$y = \frac{1}{3}x + 1$</td>
+<td>$y = -3x + 4$</td>
+<td>Perpendicular</td>
+<td>Product: $\frac{1}{3} \times (-3) = -1$.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$2x + y = 5$</td>
+<td>$x + 2y = 4$</td>
+<td>Neither</td>
+<td>Line 1 slope: $-2$. Line 2 slope: $-\frac{1}{2}$. Product: $1 \neq -1$; slopes unequal.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$3x - y = 7$</td>
+<td>$6x - 2y = 0$</td>
+<td>Parallel</td>
+<td>Line 1 slope: $3$. Line 2: $-2y = -6x$, so $y = 3x$. Same slope ($3$), different intercepts ($7$ vs. $0$).</td>
+</tr>
+<tr>
+<td>5</td>
+<td>$x = 4$</td>
+<td>$y = -2$</td>
+<td>Perpendicular</td>
+<td>Vertical line and horizontal line are perpendicular.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>$y = -\frac{5}{2}x + 3$</td>
+<td>$y = \frac{2}{5}x - 1$</td>
+<td>Neither</td>
+<td>Product: $(-\frac{5}{2}) \times (\frac{2}{5}) = -1$. Actually perpendicular. (Correct answer: Perpendicular)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Synthetic with seed 507. Each pair is designed to exercise a specific pitfall: comparing raw equations without conversion, vertical/horizontal lines, identical lines vs. parallel lines.</p>
+<p><strong>Rules:</strong> Convert each equation to slope-intercept form. Extract $m_1$ and $m_2$. If $m_1 = m_2$ and intercepts differ, the lines are parallel. If $m_1 \times m_2 = -1$, they are perpendicular. A vertical line ($x = c$) is perpendicular to a horizontal line ($y = d$). Otherwise, neither.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees two equations displayed side by side.</li>
+<li>The learner selects "Parallel", "Perpendicular", or "Neither."</li>
+<li>After each selection, the sim shows whether it is correct and explains the slope comparison.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct: confirms with the computed slopes and their relationship. Incorrect first attempt: states both slopes without concluding. After second wrong attempt: walks through the full comparison including conversion to slope-intercept form. Running tally "Correct: n of 6" shown at all times.</p>
+<p><strong>Starting State:</strong> The first pair "$y = 2x + 3$" and "$y = 2x - 5$" is displayed with three answer buttons. The prompt reads: "Are these lines parallel, perpendicular, or neither?"</p>
+<p><strong>Chapter Anchors:</strong> This sim exercises the parallel/perpendicular criteria from this section. The chapter defines parallel as same slope (different intercept) and perpendicular as negative reciprocal slopes; the sim checks exactly those conditions.</p>
+</details>
+<h2 id="graphing-linear-equations">Graphing Linear Equations<a class="headerlink" href="#graphing-linear-equations" title="Permanent link">&para;</a></h2>
+<h3 id="graphing-from-slope-intercept-form">Graphing from Slope-Intercept Form<a class="headerlink" href="#graphing-from-slope-intercept-form" title="Permanent link">&para;</a></h3>
+<p>When an equation is in slope-intercept form ($y = mx + b$), graphing it is a straightforward three-step process:</p>
+<ol>
+<li><strong>Plot the y-intercept</strong> $(0, b)$ on the coordinate plane. This is where the line crosses the vertical axis.</li>
+<li><strong>Use the slope</strong> $m = \frac{\text{rise}}{\text{run}}$ to find a second point. Starting from $(0, b)$, move right by the run (the denominator of $m$) and up or down by the rise (the numerator).</li>
+<li><strong>Draw the line</strong> through the two points and extend it in both directions with arrowheads.</li>
+</ol>
+<p>For example, to graph $y = -\frac{2}{3}x + 4$:
+1. Plot $(0, 4)$ -- mark where the y-intercept lands on the vertical axis.
+2. The slope is $-\frac{2}{3}$: from $(0, 4)$, move <strong>3 units right</strong> (run = $3$) and <strong>2 units down</strong> (rise = $-2$). This lands at $(3, 2)$.
+3. Draw a straight line through $(0, 4)$ and $(3, 2)$ extending in both directions.</p>
+<p>You can find additional points using the same slope -- from $(3, 2)$, move 3 right and 2 down to reach $(6, 0)$, which is the x-intercept. Verify: $y = -\frac{2}{3}(6) + 4 = -4 + 4 = 0$. Correct.</p>
+<h3 id="graphing-from-standard-form">Graphing from Standard Form<a class="headerlink" href="#graphing-from-standard-form" title="Permanent link">&para;</a></h3>
+<p>When an equation is in standard form ($Ax + By = C$), use the <strong>intercept method</strong>:
+1. Find the x-intercept by setting $y = 0$ and solving for $x$.
+2. Find the y-intercept by setting $x = 0$ and solving for $y$.
+3. Plot both intercepts and draw a line through them.</p>
+<p>For $4x + 3y = 12$:
+- x-intercept: $4x = 12 \implies x = 3$. Point: $(3, 0)$.
+- y-intercept: $3y = 12 \implies y = 4$. Point: $(0, 4)$.
+- Plot $(3, 0)$ and $(0, 4)$ and draw the line.</p>
+<p>This method is efficient when the intercepts are easy to compute and sufficiently far apart (at least two or three units) to give an accurate graph. If both intercepts are very close together, computing an additional point using the slope is advisable for accuracy.</p>
+<h4 id="diagram-equation-to-graph-matcher">Diagram: Equation-to-Graph Matcher<a class="headerlink" href="#diagram-equation-to-graph-matcher" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Equation-to-Graph Matcher</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> equation-graph-matcher<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> match<br/>
+<strong>Learning Objective:</strong> The learner will match a linear equation to its correct graph on the coordinate plane.</p>
+<p><strong>Prerequisites:</strong> slope, slope-intercept form, standard form, y-intercept, x-intercept, plotting points (all defined above).</p>
+<p><strong>Evidence of Mastery:</strong> For five equations in mixed forms, the learner selects the matching graph from three options. A selection is correct when the intercepts and slope of the chosen graph match those of the equation. Mastery: 4 of 5 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Matching an equation by recognizing the numbers in it without computing slopes or intercepts. (2) Confusing x-intercepts with y-intercepts when reading graphs. (3) When the slope is negative, choosing a graph that rises instead of falls because "the magnitude looks right."</p>
+<p><strong>Instructional Rationale:</strong> Apply-level matching requires extracting intercepts and slope from an equation independently, then comparing against visual evidence on each graph option -- testing whether the learner can translate between symbolic and graphical representations.</p>
+<p><strong>Content:</strong></p>
+<p>Five equations with three graph options each:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Equation</th>
+<th>Correct Graph Features (slope, x-intercept, y-intercept)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>$y = \frac{3}{2}x - 3$</td>
+<td>Slope $\frac{3}{2}$, x-int $(2, 0)$, y-int $(0, -3)$</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$2x - y = 4$</td>
+<td>Slope $2$, x-int $(2, 0)$, y-int $(0, -4)$</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$y + 1 = 2(x - 3)$</td>
+<td>Simplifies to $y = 2x - 7$: slope $2$, x-int $(\frac{7}{2}, 0)$, y-int $(0, -7)$</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$-x + 3y = 6$</td>
+<td>Slope $\frac{1}{3}$, x-int $(-6, 0)$, y-int $(0, 2)$</td>
+</tr>
+<tr>
+<td>5</td>
+<td>$y = 5$</td>
+<td>Slope $0$, no x-intercept (horizontal line at $y = 5$), y-int $(0, 5)$</td>
+</tr>
+</tbody>
+</table>
+<p>Each graph shows a coordinate plane with the correct line drawn. Two distractor graphs have wrong slopes or wrong intercepts -- chosen so that they share one feature with the correct answer to make the distinction require careful reading.</p>
+<p><strong>Provenance:</strong> Synthetic with seed 508. Equations span slope-intercept, standard, and point-slope origins. Graph features are computed exactly to ensure unambiguous matching.</p>
+<p><strong>Rules:</strong> Each graph option is generated by computing intercepts from $y = mx + b$ where $b$ varies (for wrong intercept) or $m$ varies (for wrong slope). Distractors share one correct feature to force checking both parameters. A selection is correct when the chosen graph's slope and both intercepts match the equation exactly.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees an equation and three graphs labeled A, B, C.</li>
+<li>The learner selects which graph matches the equation.</li>
+<li>After selecting, the sim highlights the correct answer and labels the key features on it.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct: "Correct. Your graph shows slope = [m], x-intercept = [value], y-intercept = [value] -- matching the equation." Incorrect first attempt: states which feature is wrong on the chosen graph. After second wrong attempt: reveals the correct graph with labeled intercepts and slope. Running tally updates after each item.</p>
+<p><strong>Starting State:</strong> The equation "$y = \frac{3}{2}x - 3$" is shown above three graphs A, B, C. The prompt reads: "Which graph represents this equation?"</p>
+<p><strong>Chapter Anchors:</strong> This sim reinforces the graphing methods from this section: slope-intercept (items 1 and 2), conversion from point-slope (item 3), intercept method (item 4), and horizontal lines (item 5).</p>
+</details>
+<h3 id="distance-formula-and-midpoint">Distance Formula and Midpoint<a class="headerlink" href="#distance-formula-and-midpoint" title="Permanent link">&para;</a></h3>
+<p>Given two points $(x_1, y_1)$ and $(x_2, y_2)$ on the coordinate plane, you may want to know:
+- How far apart they are.
+- Where the exact middle of the segment connecting them lies.</p>
+<p>The <strong>distance</strong> between two points comes from the Pythagorean Theorem. Imagine a right triangle where the segment connecting the points is the hypotenuse, and the legs run parallel to the axes. The horizontal leg has length $|x_2 - x_1|$ and the vertical leg has length $|y_2 - y_1|$. By the Pythagorean Theorem:</p>
+<div class="arithmatex">\[\text{distance} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\]</div>
+<p>For example, the distance between $(1, 2)$ and $(5, 8)$ is:
+$$d = \sqrt{(5 - 1)^2 + (8 - 2)^2} = \sqrt{4^2 + 6^2} = \sqrt{16 + 36} = \sqrt{52} = 2\sqrt{13} \approx 7.21$$</p>
+<p>The <strong>midpoint</strong> of the segment is simply the average of each coordinate:
+$$\text{Midpoint} = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$</p>
+<p>For the same points $(1, 2)$ and $(5, 8)$:
+$$\text{Midpoint} = \left(\frac{1 + 5}{2}, \frac{2 + 8}{2}\right) = (3, 5)$$</p>
+<p>This is intuitive: halfway between $x = 1$ and $x = 5$ is $x = 3$, and halfway between $y = 2$ and $y = 8$ is $y = 5$. On a graph, the midpoint sits exactly in the center of the line segment connecting the two points.</p>
+<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h2>
+<p>This chapter covered the essential tools for visualizing linear relationships:</p>
+<ul>
+<li><strong>The coordinate plane</strong> provides a two-dimensional grid where every point is identified by an ordered pair $(x, y)$. Points are located in one of four quadrants depending on the signs of their coordinates.</li>
+<li><strong>Slope</strong> ($m$) measures the rate of change -- how much $y$ changes per unit increase in $x$. It can be positive (rising), negative (falling), zero (horizontal), or undefined (vertical).</li>
+<li><strong>Three forms of linear equations</strong> each serve different purposes:</li>
+<li>Slope-intercept form ($y = mx + b$) makes slope and y-intercept immediately visible.</li>
+<li>Standard form ($Ax + By = C$) handles vertical lines naturally and emphasizes integer coefficients.</li>
+<li>Point-slope form ($y - y_1 = m(x - x_1)$) is efficient when you know a point and the slope but not the intercept.</li>
+<li><strong>Direct variation</strong> ($y = kx$) describes a proportional relationship whose graph always passes through the origin. The constant $k$ tells you the rate at which $y$ changes per unit of $x$.</li>
+<li><strong>Scatter plots</strong> display paired measurements; a <strong>line of best fit</strong> summarizes the linear trend when data does not fall exactly on a line.</li>
+<li><strong>Parallel lines</strong> share the same slope; <strong>perpendicular lines</strong> have slopes that are negative reciprocals (their product is $-1$).</li>
+<li>The <strong>distance formula</strong> and <strong>midpoint formula</strong> let you compute properties of line segments without measuring them on a graph.</li>
+</ul>
+<p>These graphing skills bridge algebraic manipulation with geometric visualization -- the same equations you manipulate symbolically now have a concrete visual interpretation that will be essential as you move into function analysis in later chapters.</p>
+<h4 id="diagram-chapter-5-what-youve-learned">Diagram: Chapter 5: What You've Learned<a class="headerlink" href="#diagram-chapter-5-what-youve-learned" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Chapter 5: What You've Learned</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> chapter-5-concept-map<br/>
+<strong>Library:</strong> vis-network<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> explain<br/>
+<strong>Learning Objective:</strong> The learner will explain how slope, intercepts, and equation forms connect to each other in a linear relationship.</p>
+<p><strong>Prerequisites:</strong> coordinate plane, quadrants, ordered pair, slope, slope-intercept form, standard form, point-slope form, direct variation, scatter plot, parallel lines, perpendicular lines (all defined in this chapter).</p>
+<p><strong>Evidence of Mastery:</strong> For three blank-node scenarios, the learner drags a label from a word bank to the correct node on an incomplete concept map. A placement is correct when it matches the model connection between concepts. Mastery: 2 of 3 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Treating "slope" and "intercept" as independent properties rather than two parts of a single description. (2) Confusing standard form with slope-intercept form because both use $x$ and $y$.</p>
+<p><strong>Instructional Rationale:</strong> Understand-level explanation requires the learner to identify meaningful connections between concepts, revealing whether they see linear equations as a unified family of representations or as isolated formulas.</p>
+<p><strong>Content:</strong></p>
+<p>Concept map nodes: coordinate plane, slope, rate of change, slope-intercept form ($y = mx + b$), standard form ($Ax + By = C$), point-slope form ($y - y_1 = m(x - x_1)$), direct variation ($y = kx$), scatter plot, line of best fit, parallel lines (same slope), perpendicular lines (negative reciprocal slopes).</p>
+<p>Three connections to fill in:
+1. "slope-intercept form" connects to "slope" via the label: "m is the [slope]"
+2. "parallel lines" connects to "same slope" via the label: "Parallel lines have [equal slopes]"
+3. "direct variation" connects to "y = kx" via the label: "Direct variation equation is [y = kx]"</p>
+<p><strong>Provenance:</strong> Synthetic with seed 509. Concepts are chosen from this chapter's vocabulary and connected by their defining relationships.</p>
+<p><strong>Rules:</strong> Each blank node has exactly one correct label from the word bank. The connection exists when it reflects a definitional or mathematical relationship stated in the chapter. A placement is correct when both the label and its connection target match the model.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees an incomplete concept map with three empty nodes and a word bank.</li>
+<li>The learner drags labels to fill the blanks.</li>
+<li>After completing all three, the sim evaluates each placement independently.</li>
+</ol>
+<p><strong>Feedback:</strong> Correct: highlights the connection in green with the connecting label revealed. Incorrect first attempt: highlights the node in yellow and says the blank is not yet filled. Second reveal: shows the correct placement with its explanatory label.</p>
+<p><strong>Starting State:</strong> The concept map shows six known connections between chapter concepts, three empty nodes connected to those known nodes, and a word bank on the side. The prompt reads: "Drag each label to its correct node to complete the concept map."</p>
+<p><strong>Chapter Anchors:</strong> This infographic summarizes all linear-equation forms, slope-intercept form, parallel/perpendicular criteria, and direct variation introduced in this chapter. Every label used corresponds to terminology defined in this chapter.</p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-linear-equations-inequalities/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Linear Equations and Inequalities">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Linear Equations and Inequalities
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-quadratic-functions/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Quadratic Functions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                6. Quadratic Functions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
