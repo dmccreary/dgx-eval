@@ -2,7 +2,7 @@
   "title": "Parameters That Fit in Memory",
   "creator": "Dan McCreary",
   "subject": "DGX Evaluation for Textbook Generation",
-  "description": "A memory slider moves three limits along a parameter-count axis, showing the most parameters that fit at 16-bit, 8-bit, and 4-bit precision, with five candidate language models plotted as points.",
+  "description": "A fixed chart places ten candidate language models, read from a separate data file, as points along a parameter-count axis. A memory slider moves one dashed line: the largest model whose weights fit in memory.",
   "date": "2026-10-09",
   "educational": {
     "gradeLevel": [
@@ -28,7 +28,7 @@
     "version": "1.0",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 540
+      "height": 680
     },
     "responsive": true,
     "dependencies": [],
@@ -40,7 +40,7 @@
   "pedagogical": {
     "teachingStrategy": "Parameter exploration with immediate feedback, followed by a worked calculation",
     "keyQuestions": [
-      "At what memory size does each model first fit at 4-bit?",
+      "At what memory size does each of the two largest models first fit?",
       "How does halving the precision change the number of parameters that fit?",
       "Why is a 4-bit download larger than four bits per parameter?",
       "What uses the memory that the formula sets aside?"

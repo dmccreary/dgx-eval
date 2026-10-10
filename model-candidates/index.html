@@ -18,7 +18,7 @@
         <link rel="prev" href="../design-choices/">
       
       
-        <link rel="next" href="../course-description/">
+        <link rel="next" href="../cost-analysis/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -474,6 +474,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#first-round-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      First-Round Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#other-qualities-that-matter-for-a-textbook" class="md-nav__link">
     <span class="md-ellipsis">
       Other Qualities That Matter for a Textbook
@@ -504,6 +513,26 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -830,6 +859,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#first-round-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      First-Round Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#other-qualities-that-matter-for-a-textbook" class="md-nav__link">
     <span class="md-ellipsis">
       Other Qualities That Matter for a Textbook
@@ -882,7 +920,7 @@
 <h1 id="model-candidates">Model Candidates<a class="headerlink" href="#model-candidates" title="Permanent link">&para;</a></h1>
 <p>These are the ten open-weight models most worth testing for textbook
 generation on this hardware: one DGX unit with 128 GB of unified memory. They
-are listed in the order they should be evaluated.</p>
+are listed in the order they were chosen for evaluation, before any results.</p>
 <table>
 <thead>
 <tr>
@@ -895,7 +933,7 @@ are listed in the order they should be evaluated.</p>
 <tr>
 <td><code>qwen3.8:27b</code></td>
 <td>27 billion</td>
-<td>Built for long agent tasks; the only model so far to finish a full benchmark stage</td>
+<td>Built for long agent tasks; produced the cleanest learning graph, and took the longest</td>
 </tr>
 <tr>
 <td><code>gemma4:31b</code></td>
@@ -950,39 +988,43 @@ reference documents, templates, and scripts beside it that the model must find
 and use at the right step. The second is tool calling: reading files, writing
 files, and running commands through the harness, correctly, dozens of times in
 one session.</p>
-<p>The order puts evidence first: the models already tested here, then the models
-whose publishers make claims closest to those two abilities. Four have been
-tested. For the other six, the claims below come from each publisher's own
-page as of October 2026 and have not been checked.</p>
+<p>The order was set before testing: the four models with early results first,
+then the models whose publishers make claims closest to those two abilities.
+All ten have since been through a first round on one unit, and each section
+ends with what happened. A first round is one run of each test, so every
+result here is provisional. Claims attributed to a publisher come from that
+publisher's own page as of October 2026 and have not been checked.</p>
 <h2 id="1-qwen3827b">1. <code>qwen3.8:27b</code><a class="headerlink" href="#1-qwen3827b" title="Permanent link">&para;</a></h2>
-<p>This is the model with the most evidence behind it. It is the only one to
-complete a benchmark stage: the learning graph for Algebra I. Its graph had
-exactly 200 concepts and 299 dependencies with no cycles, the JSON matched the
-CSV, and the resulting site passed a strict build. It made 55 tool calls and
-one failed.</p>
+<p>This model produced the cleanest result of the first benchmark stage, the
+learning graph for Algebra I. Its graph had exactly 200 concepts and 299
+dependencies with no cycles and no duplicate labels, every expected file was
+present, the JSON matched the CSV, and the resulting site passed a strict
+build. It made 55 tool calls and one failed.</p>
 <p>Its publisher describes it as improved for long-running agent work, planning,
 and handling feedback from tools, which is a description of running a skill.
 In the model-only tests it followed every formatting rule.</p>
 <p>The reason to keep evaluating it is its cost in time. That stage took 102
-minutes. The server re-read almost the whole conversation on every turn, and
+minutes, where the five other models that finished took between 6 and 22. The server re-read almost the whole conversation on every turn, and
 one turn ran for nineteen minutes, nearly all of it reasoning. Both need
 investigating before the longer stages.</p>
 <p><strong>Download:</strong> 17 GB. <strong>Context window:</strong> 256,000 tokens. <strong>License:</strong> reported
-as Apache 2.0, not yet verified. <strong>Status:</strong> tested.</p>
+as Apache 2.0, not yet verified. <strong>Status:</strong> tested through stage 1.</p>
 <h2 id="2-gemma431b">2. <code>gemma4:31b</code><a class="headerlink" href="#2-gemma431b" title="Permanent link">&para;</a></h2>
 <p>No other model has been as consistent. It passed every rule in the model-only
-tests, and it is the only model whose skill runs all ended with a site that
-builds: three runs out of three. It is a dense model, so every parameter takes
+tests, twice, and every one of its four analyzer smoke runs ended with a
+correct result and a site that builds. It is a dense model, so every parameter takes
 part in every token, and it still generated 28 to 40 tokens per second.</p>
 <p>Its publisher gives it built-in function calling and a 256,000-token window.
 In one published comparison it scored within a point of the leader on an
 instruction-following benchmark.</p>
-<p>It has not completed a benchmark stage. Its learning-graph run was lost when
-the machine froze, at a context setting that is now treated as unsafe. Running
-that stage again at a smaller context is the most informative next test on
-this list.</p>
+<p>Its first attempt at the learning graph was lost when a machine froze, at a
+context setting that is now treated as unsafe. The second attempt, at a
+smaller context, finished in 21 minutes with a 200-concept graph, no cycles,
+and no duplicate labels. It left out two things the skill asks for: the
+concept taxonomy page and the navigation entries. Eight of its 50 tool calls
+failed.</p>
 <p><strong>Download:</strong> 20 GB. <strong>Context window:</strong> 256,000 tokens. <strong>License:</strong> Apache
-2.0. <strong>Status:</strong> tested, benchmark stage incomplete.</p>
+2.0. <strong>Status:</strong> tested through stage 1.</p>
 <h2 id="3-muse-glimmer30b">3. <code>muse-glimmer:30b</code><a class="headerlink" href="#3-muse-glimmer30b" title="Permanent link">&para;</a></h2>
 <p>This model is aimed at exactly what the benchmark measures. Its publisher,
 Meta, describes it as built for local agents that run unattended, and stresses
@@ -994,8 +1036,14 @@ long-context test at 128,000 tokens. The same table shows it behind
 <code>qwen3.6:27b</code> on several coding benchmarks, so the claim is specific to
 following instructions and using tools.</p>
 <p>It also accepts images, which matters for reviewing MicroSim screenshots.</p>
+<p><strong>First-round result.</strong> It did not complete either harness test. After a few
+steps it lost the task and answered with a greeting. The cause looks like
+context: its first prompt took 35,000 tokens where the other models took
+17,000 to 21,000, and within eight turns it was at 120,000, the edge of its
+window. In the model-only test it ran at 13 tokens per second and returned
+invalid JSON on the structured-output task.</p>
 <p><strong>Download:</strong> 18 GB. <strong>Context window:</strong> 128,000 tokens. <strong>License:</strong> Apache
-2.0. <strong>Status:</strong> not tested.</p>
+2.0. <strong>Status:</strong> tested; failed in the harness.</p>
 <h2 id="4-qwen3635b">4. <code>qwen3.6:35b</code><a class="headerlink" href="#4-qwen3635b" title="Permanent link">&para;</a></h2>
 <p>This is the release before <code>qwen3.8</code>, in a larger mixture-of-experts form. A
 mixture-of-experts model uses only a few billion parameters for each token, and
@@ -1007,8 +1055,15 @@ from earlier turns, which should help on a skill with many steps. If
 family can do the work faster.</p>
 <p>The parameter split is taken from a chart name on its page and is not stated
 in the text.</p>
-<p><strong>Download:</strong> about 24 GB. <strong>Context window:</strong> 256,000 tokens. <strong>License:</strong>
-not stated on its page. <strong>Status:</strong> not tested.</p>
+<p><strong>First-round result.</strong> It was the best combination of speed and correctness.
+It ran at 83 to 105 tokens per second, passed the analyzer smoke test in 65
+seconds, and finished the learning graph in 22 minutes with every file
+present, the navigation updated, and a site that builds. The graph is looser
+than the one from <code>qwen3.8:27b</code>: 19 concepts have no prerequisite, where that
+model had 2, and five labels run past the length limit. Its conversation
+peaked at 135,000 tokens, the second largest of any run.</p>
+<p><strong>Download:</strong> 22 GB. <strong>Context window:</strong> 256,000 tokens. <strong>License:</strong> not
+stated on its page. <strong>Status:</strong> tested through stage 1.</p>
 <h2 id="5-gemma426b">5. <code>gemma4:26b</code><a class="headerlink" href="#5-gemma426b" title="Permanent link">&para;</a></h2>
 <p>This is the fastest model tested: 86 to 130 tokens per second, and it read a
 30,000-token prompt in ten seconds. It finished the skill smoke test in about a
@@ -1019,10 +1074,13 @@ copied from a faulty example in the skill, which has since been corrected.
 The other reason stands: in the model-only tests it twice broke two rules,
 omitting the blank line before a list and writing a p5.js call that fails when
 run.</p>
-<p>It deserves a retest against the corrected skill. A model this fast can afford
-a second attempt at a step and still finish first.</p>
+<p>Retested against the corrected skill, it passed the analyzer smoke test in 57
+seconds, and it finished the learning graph in under six minutes. That graph
+has a serious flaw: 40 of its 200 concept labels are duplicates. It also left
+out the index page and the navigation entries. A model this fast can afford a
+second attempt at a step, but something has to notice that one is needed.</p>
 <p><strong>Download:</strong> 18 GB. <strong>Context window:</strong> 256,000 tokens. <strong>License:</strong> Apache
-2.0. <strong>Status:</strong> tested, retest needed.</p>
+2.0. <strong>Status:</strong> tested through stage 1.</p>
 <h2 id="6-nemotron-35-lightning30b">6. <code>nemotron-3.5-lightning:30b</code><a class="headerlink" href="#6-nemotron-35-lightning30b" title="Permanent link">&para;</a></h2>
 <p>This model comes from NVIDIA, which also makes the hardware. Its publisher
 describes it as the execution layer for always-on agents and claims four times
@@ -1033,8 +1091,15 @@ many reference files can use a long window, though on unified memory a long
 context competes directly with everything else.</p>
 <p>It accepts text only, so it cannot review screenshots. Its page states no
 license.</p>
+<p><strong>First-round result.</strong> It was as fast as claimed, at 84 to 105 tokens per
+second, and it finished the learning graph in 18 minutes. It got there the
+long way: 140 tool calls, nearly three times as many as any other model, and
+a conversation that peaked at 147,000 tokens. The graph has 199 concepts, one
+short of the 200 asked for, and the navigation was not updated. In the
+model-only test it broke four formatting rules, and its analyzer report left
+out the score in the frontmatter.</p>
 <p><strong>Download:</strong> 25 GB. <strong>Context window:</strong> 1,000,000 tokens. <strong>License:</strong> not
-stated on its page. <strong>Status:</strong> not tested.</p>
+stated on its page. <strong>Status:</strong> tested through stage 1.</p>
 <h2 id="7-mistral-medium-35128b">7. <code>mistral-medium-3.5:128b</code><a class="headerlink" href="#7-mistral-medium-35128b" title="Permanent link">&para;</a></h2>
 <p>This is the test of whether size helps. It is a dense model more than four
 times larger than <code>gemma4:31b</code>, and its publisher names instruction following
@@ -1047,8 +1112,12 @@ than 50 GB remain for the context and the system, which probably rules out
 the largest context settings.</p>
 <p>Its license allows commercial use with exceptions for companies with large
 revenue, which should be read before relying on it.</p>
+<p><strong>First-round result.</strong> It loaded and ran, at 3 tokens per second. It used
+88 GiB of memory at a 32,000-token context, so no context of 64,000 tokens or
+more would fit, and the harness tests were not run. On one unit of this
+hardware it is not a usable choice.</p>
 <p><strong>Download:</strong> 80 GB. <strong>Context window:</strong> 256,000 tokens. <strong>License:</strong> modified
-MIT. <strong>Status:</strong> not tested.</p>
+MIT. <strong>Status:</strong> tested; not usable on one unit.</p>
 <h2 id="8-gpt-oss120b">8. <code>gpt-oss:120b</code><a class="headerlink" href="#8-gpt-oss120b" title="Permanent link">&para;</a></h2>
 <p>This is the largest model that still ran at a usable speed: 38 to 44 tokens
 per second from 117 billion parameters, because only about 5 billion are
@@ -1061,8 +1130,15 @@ single turn. In the model-only tests it twice returned the wrong value from a
 long skills, but two runs are not enough to settle it.</p>
 <p>It used 69 GB of memory at a modest context, which leaves less room than the
 smaller models have.</p>
+<p><strong>First-round result.</strong> It finished the learning graph in 17 minutes, and all
+28 of its tool calls succeeded. Every file was present and the navigation was
+updated. The graph itself is thin: 180 dependencies for 200 concepts, with 19
+concepts connected to nothing. In the analyzer smoke test it wrote its
+navigation entries into the wrong part of the site configuration, and the
+site no longer built. It also returned the wrong value from the long prompt
+for a third time.</p>
 <p><strong>Download:</strong> 65 GB. <strong>Context window:</strong> 128,000 tokens. <strong>License:</strong> Apache
-2.0. <strong>Status:</strong> tested.</p>
+2.0. <strong>Status:</strong> tested through stage 1.</p>
 <h2 id="9-devstral-small-224b">9. <code>devstral-small-2:24b</code><a class="headerlink" href="#9-devstral-small-224b" title="Permanent link">&para;</a></h2>
 <p>This model was built to drive software-engineering agents: exploring a set of
 files, editing several of them, and calling tools along the way. A skill run
@@ -1073,8 +1149,12 @@ software-engineering benchmark.</p>
 <p>The open question is prose. Nothing on its page speaks to long-form writing,
 and a textbook is mostly prose. It is most likely to earn a place on the code
 that MicroSims need.</p>
+<p><strong>First-round result.</strong> It did no work in either harness test. Both times it
+wrote its first tool call as plain text, the harness saw no tool call, and
+the run ended after one turn. In the model-only test it ran at 15 tokens per
+second and worked the example at the wrong precision.</p>
 <p><strong>Download:</strong> 15 GB. <strong>Context window:</strong> 384,000 tokens. <strong>License:</strong> Apache
-2.0. <strong>Status:</strong> not tested.</p>
+2.0. <strong>Status:</strong> tested; failed in the harness.</p>
 <h2 id="10-granite4230b">10. <code>granite4.2:30b</code><a class="headerlink" href="#10-granite4230b" title="Permanent link">&para;</a></h2>
 <p>This model is the conservative choice. Its publisher, IBM, lists tool calling,
 general instruction following, structured JSON output, and reasoning that can
@@ -1087,8 +1167,102 @@ justify a model choice to an employer, those points can matter more than a
 benchmark score.</p>
 <p>Its page gives no benchmark results, and its context window is among the
 smallest here.</p>
-<p><strong>Download:</strong> 18 GB. <strong>Context window:</strong> 128,000 tokens. <strong>License:</strong> Apache
-2.0. <strong>Status:</strong> not tested.</p>
+<p><strong>First-round result.</strong> It was too slow to finish. It ran at 12 tokens per
+second, took eleven minutes over the analyzer smoke test, and was stopped at
+the 150-minute limit on the learning graph, having reached only the concept
+list. Its analyzer report was written, but the navigation was not updated.</p>
+<p><strong>Download:</strong> 17 GB. <strong>Context window:</strong> 128,000 tokens. <strong>License:</strong> Apache
+2.0. <strong>Status:</strong> tested; too slow to finish.</p>
+<h2 id="first-round-results">First-Round Results<a class="headerlink" href="#first-round-results" title="Permanent link">&para;</a></h2>
+<p>Each model attempted the first benchmark stage once: generating the Algebra I
+learning graph, with a 150-minute limit.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Time</th>
+<th>Concepts</th>
+<th>Dependencies</th>
+<th>What was wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen3.8:27b</code></td>
+<td>102 min</td>
+<td>200</td>
+<td>299</td>
+<td>Nothing structural</td>
+</tr>
+<tr>
+<td><code>qwen3.6:35b</code></td>
+<td>22 min</td>
+<td>200</td>
+<td>273</td>
+<td>19 concepts with no prerequisite, 1 duplicate label</td>
+</tr>
+<tr>
+<td><code>gemma4:31b</code></td>
+<td>21 min</td>
+<td>200</td>
+<td>348</td>
+<td>Taxonomy page missing, navigation not updated</td>
+</tr>
+<tr>
+<td><code>nemotron-3.5-lightning:30b</code></td>
+<td>18 min</td>
+<td>199</td>
+<td>494</td>
+<td>One concept short, navigation not updated</td>
+</tr>
+<tr>
+<td><code>gemma4:26b</code></td>
+<td>6 min</td>
+<td>200</td>
+<td>483</td>
+<td>40 duplicate labels, index page missing, navigation not updated</td>
+</tr>
+<tr>
+<td><code>gpt-oss:120b</code></td>
+<td>17 min</td>
+<td>200</td>
+<td>180</td>
+<td>19 concepts connected to nothing</td>
+</tr>
+<tr>
+<td><code>granite4.2:30b</code></td>
+<td>Stopped at 150 min</td>
+<td>none</td>
+<td>none</td>
+<td>Reached only the concept list</td>
+</tr>
+<tr>
+<td><code>muse-glimmer:30b</code></td>
+<td>6 min</td>
+<td>none</td>
+<td>none</td>
+<td>Lost the task after a few steps</td>
+</tr>
+<tr>
+<td><code>devstral-small-2:24b</code></td>
+<td>Under 1 min</td>
+<td>none</td>
+<td>none</td>
+<td>Tool call written as text</td>
+</tr>
+<tr>
+<td><code>mistral-medium-3.5:128b</code></td>
+<td>Not run</td>
+<td>none</td>
+<td>none</td>
+<td>No usable context fits in memory</td>
+</tr>
+</tbody>
+</table>
+<p>Every graph that was produced had no cycles, and its JSON file matched its
+CSV. These checks cover structure only. Whether the concepts are the right
+ones for Algebra I, and whether the dependencies make sense, has not been
+judged.</p>
 <h2 id="other-qualities-that-matter-for-a-textbook">Other Qualities That Matter for a Textbook<a class="headerlink" href="#other-qualities-that-matter-for-a-textbook" title="Permanent link">&para;</a></h2>
 <p>Following a skill and calling tools decide whether a run finishes. These
 qualities decide whether the result is worth reading.</p>
@@ -1212,13 +1386,13 @@ qualities decide whether the result is worth reading.</p>
         
         
           
-          <a href="../course-description/" class="md-footer__link md-footer__link--next" aria-label="Next: Course Description">
+          <a href="../cost-analysis/" class="md-footer__link md-footer__link--next" aria-label="Next: Cost Analysis">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Course Description
+                Cost Analysis
               </div>
             </div>
             <div class="md-footer__button md-icon">

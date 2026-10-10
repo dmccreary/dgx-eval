@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Move a memory slider to see how many model parameters fit at 16-bit, 8-bit, and 4-bit precision, and which candidate models fall inside each limit.">
+        <meta name="description" content="Move a memory slider to see the largest model whose weights fit in memory, marked by one dashed line on a fixed chart of ten candidate models placed by parameter count.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -360,6 +360,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../course-description/" class="md-nav__link">
         
   
@@ -497,7 +517,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
         
           
           
@@ -513,14 +533,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             MicroSims
           </label>
@@ -609,6 +629,15 @@
   <a href="#how-to-use" class="md-nav__link">
     <span class="md-ellipsis">
       How to Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-the-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Models
     </span>
   </a>
   
@@ -849,6 +878,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#changing-the-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#iframe-embed-code" class="md-nav__link">
     <span class="md-ellipsis">
       Iframe Embed Code
@@ -977,34 +1015,82 @@
 
 
 <h1 id="parameters-that-fit-in-memory">Parameters That Fit in Memory<a class="headerlink" href="#parameters-that-fit-in-memory" title="Permanent link">&para;</a></h1>
-<iframe src="main.html" height="542px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="682px" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Parameters That Fit in Memory MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>A model's weights have to fit in memory before the model can run. This
-MicroSim turns an amount of memory into a parameter count. The slider sets the
-memory, and the three vertical lines show the most parameters that fit at
-16-bit, 8-bit, and 4-bit precision.</p>
-<p>The slider starts at 128 GB, the unified memory in each DGX unit used in this
-evaluation. The five points are the models the evaluation considered. Four were
-tested. The fifth, drawn as a ring, was considered and not downloaded.</p>
+<p>A model's weights have to fit in memory before the model can run at full
+speed. This MicroSim turns an amount of memory into a parameter count.</p>
+<p>The chart itself never changes. The ten points are the
+<a href="../../model-candidates/">model candidates</a>, one per row, placed by parameter
+count and ordered from the smallest to the largest. A solid point is a model
+tested in this evaluation, and a ring is one not yet tested. All ten have now
+been tested, so a ring appears only if you add a model of your own. A second scale
+under the axis shows the memory those parameters need at 4-bit precision.</p>
+<p>The slider moves one thing: a dashed line at the largest model whose weights
+fit. A model to the left of the line fits. A model to the right does not, and
+it would slow badly or fail to load. The slider starts at 128 GB, the unified
+memory in each DGX unit used in this evaluation.</p>
 <h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Drag the <strong>Memory</strong> slider. The limits move, and each model's point changes
-  color to show the highest precision at which it still fits.</li>
-<li>Point at a model's row to see how much memory its weights need at each
-  precision, next to the size of its real download.</li>
+<li>Drag the <strong>Memory</strong> slider. Only the dashed line moves. The box under the
+  chart shows the arithmetic and names any model that no longer fits.</li>
+<li>Point at a model's row to see how much memory its weights need, the size of
+  its real download, and whether it fits at the current setting. For a
+  mixture-of-experts model it also shows how few parameters are active for
+  each token.</li>
 <li>Press <strong>Reset</strong> to return to 128 GB.</li>
 </ul>
-<p>Try three settings: 128 GB, where every model fits at 4-bit; 64 GB, where the
-two largest stop fitting; and 32 GB, where even a 27-billion-parameter model
-needs 4-bit.</p>
+<p>Try three settings: 128 GB, where every model fits; 64 GB, where the two
+largest fall to the right of the line; and 16 GB, where only the two smallest
+fit.</p>
+<h2 id="changing-the-models">Changing the Models<a class="headerlink" href="#changing-the-models" title="Permanent link">&para;</a></h2>
+<p>The models and the assumptions are not written into the program. They are read
+from <code>model-data.json</code>, a file in the same folder as the MicroSim. Edit that
+file and reload the page.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>defaultMemoryGB</code></td>
+<td>Where the slider starts, and where Reset returns it</td>
+</tr>
+<tr>
+<td><code>keptFreeFraction</code></td>
+<td>Share of memory kept free for the system and the context</td>
+</tr>
+<tr>
+<td><code>bitsPerParameter</code></td>
+<td>Precision of the weights that the dashed line is drawn for</td>
+</tr>
+<tr>
+<td><code>axisMaxBillions</code></td>
+<td>Parameter count at the right end of the axis</td>
+</tr>
+<tr>
+<td><code>models</code></td>
+<td>The list of models, in any order</td>
+</tr>
+</tbody>
+</table>
+<p>Each entry in <code>models</code> has a <code>name</code>, its <code>parametersBillions</code>, the <code>downloadGB</code>
+of its 4-bit file, and <code>tested</code> as <code>true</code> or <code>false</code>. A mixture-of-experts
+model can also give <code>activeBillions</code>. The rows share a fixed height, so a
+longer list makes each row thinner.</p>
+<p>The MicroSim must be opened through a web server, because a browser will not
+read a data file for a page opened from a local folder. To use the program in
+the p5.js editor, upload <code>model-data.json</code> to the sketch as well.</p>
 <h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/dgx-eval/sims/model-fit-by-memory/main.html"</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">height</span><span class="o">=</span><span class="s">"542px"</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">height</span><span class="o">=</span><span class="s">"682px"</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </span></code></pre></div>
@@ -1015,9 +1101,11 @@ left by the size of one parameter:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>memory for weights  = memory × 0.80
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>parameters that fit = memory for weights × 8 ÷ bits per parameter
 </span></code></pre></div>
-<p>At 128 GB, that leaves 102 GB for weights. One billion parameters at 8 bits
-take 1 GB, so the limits are 51 billion at 16-bit, 102 billion at 8-bit, and
-205 billion at 4-bit.</p>
+<p>At 128 GB, that leaves 102 GB for weights. At 4 bits, one billion parameters
+take half a gigabyte, so the dashed line sits at 205 billion parameters.</p>
+<p>Precision changes the answer in proportion. Set <code>bitsPerParameter</code> to 8 in the
+data file and the line moves to 102 billion. Set it to 16 and it moves to 51
+billion.</p>
 <h2 id="what-the-formula-leaves-out">What the Formula Leaves Out<a class="headerlink" href="#what-the-formula-leaves-out" title="Permanent link">&para;</a></h2>
 <p>The formula is a first estimate. Measurements from this evaluation show two
 ways it runs low.</p>
@@ -1072,8 +1160,9 @@ ways it runs low.</p>
   download is 20 GB, so the rest is far more than the 20% this MicroSim sets
   aside.</li>
 </ul>
-<p>Each memory figure is a single measurement. The parameter counts for the two
-Qwen models are taken from their names.</p>
+<p>Each memory figure is a single measurement. The parameter counts for the
+Qwen models are taken from their names. Every download size in the data file
+is the size reported after the model was downloaded for testing.</p>
 <h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
 <h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
 <p>Calculate whether a model with a given parameter count fits in a given amount
@@ -1090,18 +1179,19 @@ of memory at a given precision.</p>
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Exploration</strong> (5 min): Move the slider from 8 GB to 256 GB. Note the
-   memory at which each model first fits at 4-bit, then at 8-bit.</li>
-<li><strong>Guided Practice</strong> (5 min): Without the MicroSim, work out the limits for
-   a 48 GB system. Check the answers with the slider.</li>
+   memory at which each of the two largest models first fits.</li>
+<li><strong>Guided Practice</strong> (5 min): Without the MicroSim, work out the largest
+   model that fits in a 48 GB system at 4-bit. Check the answer with the
+   slider.</li>
 <li><strong>Assessment</strong> (5 min): A 70-billion-parameter model is to run on a 64 GB
-   system. State the precision it needs, then explain why the real answer may
-   be worse than the formula says.</li>
+   system at 4-bit. State whether it fits, then explain why the real answer
+   may be worse than the formula says.</li>
 </ol>
 <h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
 <p>A learner who can apply the formula can:</p>
 <ul>
 <li>Convert a parameter count and a precision into gigabytes of weights</li>
-<li>Find the largest model that fits in a given memory at each precision</li>
+<li>Find the largest model that fits in a given memory at a given precision</li>
 <li>Name two things the formula leaves out and say which direction each one pushes</li>
 </ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
