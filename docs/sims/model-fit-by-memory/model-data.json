@@ -1,0 +1,72 @@
+{
+  "description": "Data for the Parameters That Fit in Memory MicroSim. Edit this file to change the models or the assumptions. The MicroSim reads it every time the page loads and sorts the models by size.",
+  "defaultMemoryGB": 128,
+  "keptFreeFraction": 0.20,
+  "axisMaxBillions": 250,
+  "models": [
+    {
+      "name": "qwen3.8:27b",
+      "parametersBillions": 27,
+      "downloadGB": 17,
+      "tested": true
+    },
+    {
+      "name": "gemma4:31b",
+      "parametersBillions": 30.7,
+      "downloadGB": 20,
+      "tested": true
+    },
+    {
+      "name": "muse-glimmer:30b",
+      "parametersBillions": 30,
+      "downloadGB": 18,
+      "tested": false
+    },
+    {
+      "name": "qwen3.6:35b",
+      "parametersBillions": 35,
+      "activeBillions": 3,
+      "downloadGB": 24,
+      "tested": false
+    },
+    {
+      "name": "gemma4:26b",
+      "parametersBillions": 25.2,
+      "activeBillions": 3.8,
+      "downloadGB": 18,
+      "tested": true
+    },
+    {
+      "name": "nemotron-3.5-lightning:30b",
+      "parametersBillions": 30,
+      "activeBillions": 3,
+      "downloadGB": 25,
+      "tested": false
+    },
+    {
+      "name": "mistral-medium-3.5:128b",
+      "parametersBillions": 128,
+      "downloadGB": 80,
+      "tested": false
+    },
+    {
+      "name": "gpt-oss:120b",
+      "parametersBillions": 117,
+      "activeBillions": 5.1,
+      "downloadGB": 65,
+      "tested": true
+    },
+    {
+      "name": "devstral-small-2:24b",
+      "parametersBillions": 24,
+      "downloadGB": 15,
+      "tested": false
+    },
+    {
+      "name": "granite4.2:30b",
+      "parametersBillions": 30,
+      "downloadGB": 18,
+      "tested": false
+    }
+  ]
+}

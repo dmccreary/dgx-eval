@@ -1,0 +1,60 @@
+{
+  "title": "Testing Architecture",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "A step-through architecture diagram of a laptop, two home networks, the internet, Tailscale, and two DGX systems, showing which machine does each job when a local model generates textbook content.",
+  "date": "2026-10-09",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Testing Architecture",
+    "learningObjectives": [
+      "Explain which machine does each job in a local-model evaluation",
+      "Identify which data crosses each network boundary",
+      "Distinguish the Tailscale coordination server from the encrypted tunnel",
+      "Explain why a unified-memory GPU shares its memory with the CPU"
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "What SSH is and what a home router does",
+      "The difference between a model and the program that runs it"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 712
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Step-through worked example with concrete components visible at every step",
+    "keyQuestions": [
+      "Which components could read a generation prompt?",
+      "Which components see only encrypted packets?",
+      "What does the coordination server learn about the machines?",
+      "What changed when the harness moved from the laptop to the DGX?"
+    ],
+    "commonMisconceptions": [
+      "The Tailscale coordination server carries the data. It carries only keys and addresses.",
+      "The GPU has its own memory. On this system it shares 128 GB of unified memory with the CPU.",
+      "The harness and the model are the same thing. The harness is the agent loop; the model generates the tokens."
+    ],
+    "assessmentOpportunities": [
+      "Sketch the generation loop from memory and mark the boundary it never crosses",
+      "Name the machines that take part in each flow before reading the explanation"
+    ]
+  },
+  "chapter": ""
+}

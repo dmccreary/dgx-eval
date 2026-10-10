@@ -1,0 +1,3 @@
+Run the course-description-analyzer skill on this project. The course description already exists at docs/course-description.md.
+
+I am not available to answer questions. Whenever the skill tells you to ask me something, assume the answer is yes and continue. Stop when the assessment report has been written and mkdocs.yml has been updated. Do not start the next skill.

@@ -1,0 +1,59 @@
+{
+  "title": "Parameters That Fit in Memory",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "A memory slider moves three limits along a parameter-count axis, showing the most parameters that fit at 16-bit, 8-bit, and 4-bit precision, with five candidate language models plotted as points.",
+  "date": "2026-10-09",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Model sizing and model fit",
+    "learningObjectives": [
+      "Calculate the memory a model's weights need from its parameter count and precision",
+      "Determine the largest model that fits in a given amount of memory at each precision",
+      "Explain why a real model needs more memory than the formula predicts"
+    ],
+    "bloomsTaxonomy": "Apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "A bit, a byte, and a gigabyte",
+      "That a language model is a large set of numeric parameters"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 540
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Parameter exploration with immediate feedback, followed by a worked calculation",
+    "keyQuestions": [
+      "At what memory size does each model first fit at 4-bit?",
+      "How does halving the precision change the number of parameters that fit?",
+      "Why is a 4-bit download larger than four bits per parameter?",
+      "What uses the memory that the formula sets aside?"
+    ],
+    "commonMisconceptions": [
+      "A model fits if its download is smaller than memory. The context and the operating system need memory too.",
+      "A 4-bit model uses exactly four bits per parameter. Real quantized files keep some layers at higher precision.",
+      "A GPU with unified memory has its own memory budget. It shares one pool with the CPU."
+    ],
+    "assessmentOpportunities": [
+      "Work out the limits for a memory size by hand, then check with the slider",
+      "State the precision a given model needs on a given system and explain what could make the estimate too optimistic"
+    ]
+  },
+  "chapter": ""
+}

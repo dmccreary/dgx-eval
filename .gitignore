@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+
+# MkDocs
+site/
+.cache/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Raw logs — never publish output captured from the device under test
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+~$*

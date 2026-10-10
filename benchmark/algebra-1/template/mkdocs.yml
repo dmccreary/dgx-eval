@@ -1,0 +1,10 @@
+site_name: 'Algebra I'
+nav:
+  - Home: index.md
+  - About: about.md
+theme:
+  name: material
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
