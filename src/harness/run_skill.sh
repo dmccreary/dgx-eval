@@ -15,6 +15,9 @@
 # The container shares the host network so it can reach Ollama; it is a
 # filesystem sandbox, not a network sandbox.
 #
+# Set MAX_SECONDS to stop a run that takes too long. A run stopped this way
+# reports exit code 124, and what it wrote so far is kept.
+#
 # Outputs, all under RUNS_DIR (kept outside the repository on purpose):
 #   <label>/          the run directory after the run
 #   <label>.jsonl     every harness event: messages, tool calls, results
@@ -36,6 +39,7 @@ mkdir -p "$runs" "$state/skills"
 cp -R "$start_dir" "$run"
 
 started=$(date +%s)
+timeout --signal=TERM --kill-after=30 "${MAX_SECONDS:-0}" \
 docker run --rm -i --network host --name "harness-$label" \
   -v "$run":/work -w /work \
   -v "$state":/home/agent/.claude \
@@ -54,6 +58,10 @@ docker run --rm -i --network host --name "harness-$label" \
     --max-turns "${MAX_TURNS:-150}" --dangerously-skip-permissions \
   < "$prompt_file" > "$runs/$label.jsonl" 2> "$runs/$label.stderr"
 code=$?
+# a timed-out client leaves its container running, so stop that too
+if [ "$code" -eq 124 ] || [ "$code" -eq 137 ]; then
+  docker kill "harness-$label" > /dev/null 2>&1
+fi
 
 grep '"type":"result"' "$runs/$label.jsonl" | tail -1 > "$runs/$label.json"
 echo "exit=$code wall_s=$(( $(date +%s) - started ))" | tee "$runs/$label.status"

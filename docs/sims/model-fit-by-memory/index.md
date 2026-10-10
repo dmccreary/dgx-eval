@@ -1,6 +1,6 @@
 ---
 title: Parameters That Fit in Memory
-description: Move a memory slider to see how many model parameters fit at 16-bit, 8-bit, and 4-bit precision, and which candidate models fall inside each limit.
+description: Move a memory slider to see the largest model whose weights fit in memory, marked by one dashed line on a fixed chart of ten candidate models placed by parameter count.
 image: /sims/model-fit-by-memory/model-fit-by-memory.png
 og:image: /sims/model-fit-by-memory/model-fit-by-memory.png
 twitter:image: /sims/model-fit-by-memory/model-fit-by-memory.png
@@ -12,7 +12,7 @@ status: built
 
 # Parameters That Fit in Memory
 
-<iframe src="main.html" height="542px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="682px" width="100%" scrolling="no"></iframe>
 
 [Run the Parameters That Fit in Memory MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -20,26 +20,57 @@ status: built
 
 ## About This MicroSim
 
-A model's weights have to fit in memory before the model can run. This
-MicroSim turns an amount of memory into a parameter count. The slider sets the
-memory, and the three vertical lines show the most parameters that fit at
-16-bit, 8-bit, and 4-bit precision.
+A model's weights have to fit in memory before the model can run at full
+speed. This MicroSim turns an amount of memory into a parameter count.
 
-The slider starts at 128 GB, the unified memory in each DGX unit used in this
-evaluation. The five points are the models the evaluation considered. Four were
-tested. The fifth, drawn as a ring, was considered and not downloaded.
+The chart itself never changes. The ten points are the
+[model candidates](../../model-candidates.md), one per row, placed by parameter
+count and ordered from the smallest to the largest. A solid point is a model
+tested in this evaluation, and a ring is one not yet tested. All ten have now
+been tested, so a ring appears only if you add a model of your own. A second scale
+under the axis shows the memory those parameters need at 4-bit precision.
+
+The slider moves one thing: a dashed line at the largest model whose weights
+fit. A model to the left of the line fits. A model to the right does not, and
+it would slow badly or fail to load. The slider starts at 128 GB, the unified
+memory in each DGX unit used in this evaluation.
 
 ## How to Use
 
-- Drag the **Memory** slider. The limits move, and each model's point changes
-  color to show the highest precision at which it still fits.
-- Point at a model's row to see how much memory its weights need at each
-  precision, next to the size of its real download.
+- Drag the **Memory** slider. Only the dashed line moves. The box under the
+  chart shows the arithmetic and names any model that no longer fits.
+- Point at a model's row to see how much memory its weights need, the size of
+  its real download, and whether it fits at the current setting. For a
+  mixture-of-experts model it also shows how few parameters are active for
+  each token.
 - Press **Reset** to return to 128 GB.
 
-Try three settings: 128 GB, where every model fits at 4-bit; 64 GB, where the
-two largest stop fitting; and 32 GB, where even a 27-billion-parameter model
-needs 4-bit.
+Try three settings: 128 GB, where every model fits; 64 GB, where the two
+largest fall to the right of the line; and 16 GB, where only the two smallest
+fit.
+
+## Changing the Models
+
+The models and the assumptions are not written into the program. They are read
+from `model-data.json`, a file in the same folder as the MicroSim. Edit that
+file and reload the page.
+
+| Field | Meaning |
+|---|---|
+| `defaultMemoryGB` | Where the slider starts, and where Reset returns it |
+| `keptFreeFraction` | Share of memory kept free for the system and the context |
+| `bitsPerParameter` | Precision of the weights that the dashed line is drawn for |
+| `axisMaxBillions` | Parameter count at the right end of the axis |
+| `models` | The list of models, in any order |
+
+Each entry in `models` has a `name`, its `parametersBillions`, the `downloadGB`
+of its 4-bit file, and `tested` as `true` or `false`. A mixture-of-experts
+model can also give `activeBillions`. The rows share a fixed height, so a
+longer list makes each row thinner.
+
+The MicroSim must be opened through a web server, because a browser will not
+read a data file for a page opened from a local folder. To use the program in
+the p5.js editor, upload `model-data.json` to the sketch as well.
 
 ## Iframe Embed Code
 
@@ -47,7 +78,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/dgx-eval/sims/model-fit-by-memory/main.html"
-        height="542px"
+        height="682px"
         width="100%"
         scrolling="no"></iframe>
 ```
@@ -63,9 +94,12 @@ memory for weights  = memory × 0.80
 parameters that fit = memory for weights × 8 ÷ bits per parameter
 ```
 
-At 128 GB, that leaves 102 GB for weights. One billion parameters at 8 bits
-take 1 GB, so the limits are 51 billion at 16-bit, 102 billion at 8-bit, and
-205 billion at 4-bit.
+At 128 GB, that leaves 102 GB for weights. At 4 bits, one billion parameters
+take half a gigabyte, so the dashed line sits at 205 billion parameters.
+
+Precision changes the answer in proportion. Set `bitsPerParameter` to 8 in the
+data file and the line moves to 102 billion. Set it to 16 and it moves to 51
+billion.
 
 ## What the Formula Leaves Out
 
@@ -88,8 +122,9 @@ ways it runs low.
   download is 20 GB, so the rest is far more than the 20% this MicroSim sets
   aside.
 
-Each memory figure is a single measurement. The parameter counts for the two
-Qwen models are taken from their names.
+Each memory figure is a single measurement. The parameter counts for the
+Qwen models are taken from their names. Every download size in the data file
+is the size reported after the model was downloaded for testing.
 
 ## Lesson Plan
 
@@ -114,19 +149,20 @@ Professional development and adult continuing education
 ### Activities
 
 1. **Exploration** (5 min): Move the slider from 8 GB to 256 GB. Note the
-   memory at which each model first fits at 4-bit, then at 8-bit.
-2. **Guided Practice** (5 min): Without the MicroSim, work out the limits for
-   a 48 GB system. Check the answers with the slider.
+   memory at which each of the two largest models first fits.
+2. **Guided Practice** (5 min): Without the MicroSim, work out the largest
+   model that fits in a 48 GB system at 4-bit. Check the answer with the
+   slider.
 3. **Assessment** (5 min): A 70-billion-parameter model is to run on a 64 GB
-   system. State the precision it needs, then explain why the real answer may
-   be worse than the formula says.
+   system at 4-bit. State whether it fits, then explain why the real answer
+   may be worse than the formula says.
 
 ### Assessment
 
 A learner who can apply the formula can:
 
 - Convert a parameter count and a precision into gigabytes of weights
-- Find the largest model that fits in a given memory at each precision
+- Find the largest model that fits in a given memory at a given precision
 - Name two things the formula leaves out and say which direction each one pushes
 
 ## References

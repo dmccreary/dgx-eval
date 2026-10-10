@@ -1,0 +1,14 @@
+# The candidate models, in the order they are tested.
+# Each line: <model> <reasoning setting for the model-only test>
+# The reasoning setting is off, on, default, or a level such as low.
+# "default" leaves the setting out, for models that do not accept one.
+devstral-small-2:24b default
+gemma4:26b off
+qwen3.8:27b off
+muse-glimmer:30b off
+granite4.2:30b off
+gemma4:31b off
+qwen3.6:35b off
+nemotron-3.5-lightning:30b off
+gpt-oss:120b low
+mistral-medium-3.5:128b off

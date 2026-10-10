@@ -15,8 +15,9 @@ harness, then score what the runs produced.
 | `orchestration/` | Copy code to the DGX units and wait on them | The laptop |
 | `microsim-review/` | Capture a MicroSim at each step for layout review | The laptop |
 
-The benchmark's fixed input, the workspace template and the prompts, is not
-code and lives in [`benchmark/`](../benchmark/algebra-1/README.md).
+The benchmark's fixed input is not code and lives in `benchmark/`: the
+[workspace template and prompts](../benchmark/algebra-1/README.md), and
+`models.txt`, the list of models to test.
 
 ## dgx-setup
 
@@ -27,7 +28,7 @@ code and lives in [`benchmark/`](../benchmark/algebra-1/README.md).
 | `install_ollama.sh` | Install a pinned Ollama release under `~/opt/ollama`, verifying its SHA-256 |
 | `start_ollama.sh` | Start or restart the server in tmux, on localhost only, with a given context length |
 | `pull_models.sh` | Download models and mark when every download has finished |
-| `mem_watchdog.sh` | Stop runs and unload models before the machine runs out of memory |
+| `mem_watchdog.sh` | Stop runs and unload models before the machine runs out of memory or the GPU overheats |
 
 The two read-only scripts can be piped over SSH without copying anything to
 the DGX first:
@@ -55,6 +56,7 @@ many turns.
 | `run_skill.sh` | Run one skill in the container against a model on the same DGX. This is the benchmark runner |
 | `run_skill_from_laptop.sh` | The earlier arrangement: the harness on the laptop, reaching the model through an SSH port forward. It has no sandbox, so it allows no shell access |
 | `run_report.py` | Summarize runs from their event streams: turns, tool calls, failed tool calls, tokens, and time. Works on a run that is still going |
+| `test_models.sh` | Work through a list of models one at a time: download, model-only test, choose a context that leaves memory free, harness smoke test, then benchmark stage 1 with a time limit |
 
 In both runners Claude Code is only the agent loop. It is given a placeholder
 credential and its endpoint is Ollama, so every token comes from the local
@@ -66,6 +68,7 @@ model.
 |---|---|
 | `score_learning_graph.py` | Structural checks on stage 1 output: file presence, concept count, valid dependencies, no cycles, and a JSON file that agrees with the CSV |
 | `score_analyzer_runs.py` | Checks on the analyzer smoke test: report written, score given, frontmatter and nav updated, strict site build |
+| `summarize_tests.py` | One block per model for everything `test_models.sh` has produced so far |
 
 These scripts check structure, which a program can verify. Whether the
 concepts or the prose are good is a separate judgment that they do not make.
@@ -89,9 +92,10 @@ export DGX_HOSTS="<user>@<dgx-host-a> <user>@<dgx-host-b>"
 | File | Purpose |
 |---|---|
 | `capture_steps.py` | Save an image of the testing-architecture MicroSim at every step |
-| `capture_hover.py` | Save the info panel at four widths, to confirm long text still fits |
+| `capture_hover.py` | Save the testing-architecture info panel at four widths, to confirm long text still fits |
+| `capture_model_fit.py` | Save the model-fit-by-memory MicroSim at several memory settings, hovered rows, and widths |
 
-Both are tied to one MicroSim's layout constants. They need Playwright.
+Each is tied to one MicroSim's layout constants. They need Playwright.
 
 ## A Typical Sequence
 

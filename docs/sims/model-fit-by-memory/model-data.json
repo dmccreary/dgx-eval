@@ -1,7 +1,8 @@
 {
   "description": "Data for the Parameters That Fit in Memory MicroSim. Edit this file to change the models or the assumptions. The MicroSim reads it every time the page loads and sorts the models by size.",
   "defaultMemoryGB": 128,
-  "keptFreeFraction": 0.20,
+  "keptFreeFraction": 0.2,
+  "bitsPerParameter": 4,
   "axisMaxBillions": 250,
   "models": [
     {
@@ -20,14 +21,14 @@
       "name": "muse-glimmer:30b",
       "parametersBillions": 30,
       "downloadGB": 18,
-      "tested": false
+      "tested": true
     },
     {
       "name": "qwen3.6:35b",
       "parametersBillions": 35,
       "activeBillions": 3,
-      "downloadGB": 24,
-      "tested": false
+      "downloadGB": 22,
+      "tested": true
     },
     {
       "name": "gemma4:26b",
@@ -41,13 +42,13 @@
       "parametersBillions": 30,
       "activeBillions": 3,
       "downloadGB": 25,
-      "tested": false
+      "tested": true
     },
     {
       "name": "mistral-medium-3.5:128b",
       "parametersBillions": 128,
       "downloadGB": 80,
-      "tested": false
+      "tested": true
     },
     {
       "name": "gpt-oss:120b",
@@ -60,13 +61,13 @@
       "name": "devstral-small-2:24b",
       "parametersBillions": 24,
       "downloadGB": 15,
-      "tested": false
+      "tested": true
     },
     {
       "name": "granite4.2:30b",
       "parametersBillions": 30,
-      "downloadGB": 18,
-      "tested": false
+      "downloadGB": 17,
+      "tested": true
     }
   ]
 }
