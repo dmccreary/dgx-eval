@@ -11,8 +11,13 @@ with a context of 163,840 tokens. The model has 30.7 billion parameters.
 | Stage | Produced | Time | View |
 |---|---|---|---|
 | 1. Learning graph | 200 concepts, 348 dependencies | 21 min | [Graph](learning-graph-viewer.md), [quality report](learning-graph-quality.md) |
-| 2. Book structure | Not run yet | — | — |
-| 3. Chapter content | Not run yet | — | — |
+| 2. Book structure | 12 chapters, 200 of 200 concepts assigned | 10 min | [Chapter list](chapters/index.md) |
+| 3. Chapter content | 4 of 12 chapters written, 11,742 words | 60 min in 4 runs | [Chapters](chapters/index.md), [metrics](chapter-metrics.md) |
+
+!!! note "Still running"
+
+    `gemma4:31b` had not finished stage 3 when this page was built. Chapters it
+    has not reached yet are counted as not written.
 
 ## What to Look At
 
@@ -20,8 +25,10 @@ with a context of 163,840 tokens. The model has 30.7 billion parameters.
   in the interactive viewer.
 - [View Learning Graph Quality Report](learning-graph-quality.md): what a
   program found when it checked the graph's structure.
-
-The chapter pages appear here once this model has run stages 2 and 3.
+- [View Chapter Content](chapters/index.md): the chapters, as the model wrote
+  them.
+- [View Chapter Content Metrics](chapter-metrics.md): words, diagrams
+  specified, and reading level for each chapter.
 
 The learning graph and the chapters are the model's own work, shown as it
 wrote them. Two things were changed. Links to pages that do not exist were

@@ -242,6 +242,15 @@ def publish_model(model, runs, facts, levels, problems):
     book, book_unit = find_run(runs, f"book-{name}", need_status=False)
     content = book or s2
     summary = {"model": model, "name": name, "chapters": [], "has_chapters": False}
+    logs = "".join(f.read_text(errors="replace") for f in sorted(runs.glob("unit-*/queue-*.txt")))
+    running = bool(book) and f"book finished: {model}" not in logs
+    summary["running"] = running
+    still_running = f"""
+!!! note "Still running"
+
+    `{model}` had not finished stage 3 when this page was built. Chapters it
+    has not reached yet are counted as not written.
+""" if running else ""
 
     # ---- chapters
     removed_links = {}
@@ -379,7 +388,7 @@ A program measured the chapters `{model}` wrote in stage 3. These numbers
 describe the text. They do not say whether it is correct.
 
 [View the chapters](chapters/index.md){{ .md-button }}
-{reading_note}
+{reading_note}{still_running}
 | | Result |
 |---|---|
 | Chapters written | {c['chapters_written']} of {c['chapter_count']} |
@@ -456,7 +465,7 @@ with a context of {int(context):,} tokens. {facts.get(model, '')}
 | Stage | Produced | Time | View |
 |---|---|---|---|
 """ + "\n".join(stage_rows) + f"""
-{f'''
+{still_running}{f'''
 {timed_out} of the {len(stage3)} chapter runs reached the time limit.
 ''' if timed_out else ''}
 ## What to Look At
@@ -548,6 +557,8 @@ def main():
     for s in summaries:
         chapters = (f"{s['chapters_written']} of {s['chapter_count']}" if s["has_chapters"] and "chapters_written" in s
                     else "—")
+        if s.get("running"):
+            chapters += " so far"
         rows.append(f"| [`{s['model']}`]({s['name']}/index.md) | {s['concepts']} | {chapters} | "
                     f"{format(s['total_words'], ',') if 'total_words' in s else '—'} | "
                     f"{s.get('diagrams', '—')} | {s.get('fk_mean', '—')} |")

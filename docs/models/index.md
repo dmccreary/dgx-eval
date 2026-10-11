@@ -14,7 +14,7 @@ model has got.
 |---|---:|:---:|---:|---:|---:|
 | [`gemma4:26b`](gemma4-26b/index.md) | 200 | 10 of 14 | 27,217 | 18 | 11.5 |
 | [`qwen3.8:27b`](qwen3.8-27b/index.md) | 200 | 0 of 14 | 2,919 | 0 | — |
-| [`gemma4:31b`](gemma4-31b/index.md) | 200 | — | — | — | — |
+| [`gemma4:31b`](gemma4-31b/index.md) | 200 | 4 of 12 so far | 11,742 | 17 | 10.9 |
 | [`qwen3.6:35b`](qwen3.6-35b/index.md) | 200 | 11 of 11 | 75,425 | 33 | 11.3 |
 | [`nemotron-3.5-lightning:30b`](nemotron-3.5-lightning-30b/index.md) | 199 | 12 of 12 | 81,739 | 51 | 12.0 |
 | [`gpt-oss:120b`](gpt-oss-120b/index.md) | 200 | 6 of 10 | 18,624 | 88 | 12.5 |

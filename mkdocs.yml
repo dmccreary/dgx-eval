@@ -94,6 +94,22 @@ nav:
       - Summary: models/gemma4-31b/index.md
       - View Learning Graph: models/gemma4-31b/learning-graph-viewer.md
       - View Learning Graph Quality Report: models/gemma4-31b/learning-graph-quality.md
+      - View Chapter Content:
+        - List of Chapters: models/gemma4-31b/chapters/index.md
+        - '1. Algebra Foundations': models/gemma4-31b/chapters/01-algebra-foundations/index.md
+        - '2. Exponents and Radicals': models/gemma4-31b/chapters/02-exponents-radicals/index.md
+        - '3. Linear Equations': models/gemma4-31b/chapters/03-linear-equations/index.md
+        - '4. Linear Inequalities and Absolute Value': models/gemma4-31b/chapters/04-linear-inequalities-abs-value/index.md
+        - '5. Introduction to Functions': models/gemma4-31b/chapters/05-intro-to-functions/index.md
+        - '6. Linear Functions and Slope': models/gemma4-31b/chapters/06-linear-functions-slope/index.md
+        - '7. Systems of Linear Equations': models/gemma4-31b/chapters/07-systems-linear-equations/index.md
+        - '8. Polynomials and Factoring': models/gemma4-31b/chapters/08-polynomials-factoring/index.md
+        - '9. Quadratic Functions': models/gemma4-31b/chapters/09-quadratic-functions/index.md
+        - '10. Exponential Functions': models/gemma4-31b/chapters/10-exponential-functions/index.md
+        - '11. Data Analysis and Statistics': models/gemma4-31b/chapters/11-data-analysis-stats/index.md
+        - '12. Sequences and Series': models/gemma4-31b/chapters/12-sequences-series/index.md
+      - View Chapter Content Metrics: models/gemma4-31b/chapter-metrics.md
+      - Course Description Given to the Model: models/gemma4-31b/course-description.md
     - 'qwen3.6:35b':
       - Summary: models/qwen3.6-35b/index.md
       - View Learning Graph: models/qwen3.6-35b/learning-graph-viewer.md

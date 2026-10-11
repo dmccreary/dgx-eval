@@ -5,7 +5,7 @@ description: 'A status table for the ten candidate models: the parameter count a
 
 # Evaluation Status
 
-Last updated October 10, 2026, at 7:15 PM. Stages 2 and 3 are done for five
+Last updated October 10, 2026, at 8:45 PM. Stages 2 and 3 are done for five
 models and running for the last one. [Model Results](models/index.md) holds what each model
 produced.
 
@@ -14,7 +14,7 @@ produced.
 | Model Name | Params | Disk Space Used | Learning Graph | Book Structure | Chapters Generated | Automated Quality Score | Human Quality Score |
 |---|---:|---:|:---:|:---:|:---:|:---:|:---:|
 | [`qwen3.8:27b`](models/qwen3.8-27b/index.md) | 27 B | 17 GB | ✅ | ✅ | ❌ | — | — |
-| [`gemma4:31b`](models/gemma4-31b/index.md) | 30.7 B | 20 GB | ✅ | — | — | — | — |
+| [`gemma4:31b`](models/gemma4-31b/index.md) | 30.7 B | 20 GB | ✅ | ✅ | Running | — | — |
 | `muse-glimmer:30b` | 30 B | 18 GB | ❌ | — | — | — | — |
 | [`qwen3.6:35b`](models/qwen3.6-35b/index.md) | 35 B | 22 GB | ✅ | ✅ | ✅ | — | — |
 | [`gemma4:26b`](models/gemma4-26b/index.md) | 25.2 B | 18 GB | ✅ | ✅ | 10 of 14 | — | — |
@@ -38,6 +38,7 @@ fourteen chapters and wrote none. No quality score exists yet.
 - ❌ **Not done.** The stage was tried and failed, or could not be run.
 - **A count**, such as 10 of 14. The stage ended with only that many chapters
   written.
+- **Running.** The stage has started and has not finished.
 - — **Not started.**
 
 A green check records that a stage finished. It says nothing about how good
@@ -97,9 +98,10 @@ This is the model that produced the cleanest learning graph.
 
 ## What Is Left
 
-- **Stages 2 and 3.** One model, `gemma4:31b`, still has to finish them. Its
-  first attempt was cut short when the second DGX unit stopped responding a
-  few minutes in, so it is running last, on the other unit.
+- **Stage 3 for `gemma4:31b`.** It designed twelve chapters and had written
+  four of them at the time of this update. Its first attempt was cut short
+  when the second DGX unit stopped responding a few minutes in, so it is
+  running last, on the other unit.
 - **Repeated runs.** Every test so far has been run once, so nobody knows
   whether a model gives a comparable result the second time.
 - **Scoring.** The automated score has to be defined, and a person has to
