@@ -1,0 +1,507 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Command Line Basics,,FOUND
+2,Python Scripting Basics,,FOUND
+3,Git Version Control,,FOUND
+4,GitHub Repository,3,FOUND
+5,Generative AI Assistant Use,,FOUND
+6,Intelligent Textbook,5,FOUND
+7,Levels of Intelligent Textbooks,6,FOUND
+8,Course Description,6,FOUND
+9,Learning Graph,8|11,FOUND
+10,Concept Dependency,6,FOUND
+11,Directed Acyclic Graph,10,FOUND
+12,Concept Taxonomy,9,FOUND
+13,Chapter Content,9|8,FOUND
+14,MicroSim,6,FOUND
+15,Glossary,9,FOUND
+16,FAQ,13,FOUND
+17,Quiz,13|22,FOUND
+18,ibook-skills Skill Chain,331|6,FOUND
+19,MkDocs Material,20,FOUND
+20,Markdown Source Files,,FOUND
+21,Static Site Build,19,FOUND
+22,Bloom's Taxonomy,,FOUND
+23,Learning Outcomes,22,FOUND
+24,Course Description Quality Score,8|23,FOUND
+25,Concept Impact Score,9,FOUND
+26,Elaboration Budget,25|27,FOUND
+27,Word-Count Targets,13,FOUND
+28,Anti-Padding Rules,27,FOUND
+29,Content Generation Guide,13|20,FOUND
+30,AGENTS.md File,321|20,FOUND
+31,Learning Graph Viewer,9|37,FOUND
+32,Foundational Concepts,10,FOUND
+33,MkDocs Navigation,19,FOUND
+34,Lesson Plan,14|23,FOUND
+35,MicroSim Status Levels,14,FOUND
+36,p5.js,14,FOUND
+37,vis-network,14,FOUND
+38,Iframe Embedding,14|19,FOUND
+39,Data-Driven MicroSim,36|38,FOUND
+40,Generative AI Model,5,SLM
+41,Large Language Model,40,SLM
+42,Frontier Model,41,SLM
+43,Small Language Model,41|44,SLM
+44,Parameter Count,40,SLM
+45,Token,40,SLM
+46,Tokenizer,45,SLM
+47,Context Window,45,SLM
+48,Inference,40,SLM
+49,Open-Weight Model,40,SLM
+50,Open-Source License,,SLM
+51,Model License Terms,49|50,SLM
+52,Model Family,40,SLM
+53,Llama Family,52|49,SLM
+54,Qwen Family,52|49,SLM
+55,Gemma Family,52|49,SLM
+56,Mistral Family,52|49,SLM
+57,Phi Family,52|49,SLM
+58,Model Card,49,SLM
+59,Long-Form Writing,41,SLM
+60,Structured Output,41,SLM
+61,Tool Calling,60,SLM
+62,Code Generation,41,SLM
+63,Instruction Following,41,SLM
+64,Multimodal Model,41,SLM
+65,Image Input,64,SLM
+66,Reasoning Mode,41|45,SLM
+67,Tokens per Word,45|46,SLM
+68,Local Model Deployment,43|48,LVC
+69,Cloud LLM Service,41,LVC
+70,Anthropic Claude,69,LVC
+71,OpenAI ChatGPT,69,LVC
+72,Google Antigravity,69|74,LVC
+73,Devin,69|74,LVC
+74,Agentic Framework,41|61,LVC
+75,Privacy,,LVC
+76,Data Sovereignty,75|69,LVC
+77,Rate Limits,69,LVC
+78,Service Availability,69,LVC
+79,Vendor Lock-In,69,LVC
+80,Version Pinning,85|68,LVC
+81,Operational Burden,68,LVC
+82,Hybrid Workflow,68|69,LVC
+83,Cloud Baseline,69|42,LVC
+84,Frontier Model Capability Gap,42|43,LVC
+85,Model Deprecation,69,LVC
+86,Offline Operation,68,LVC
+87,Data Egress Trace,75|360,LVC
+88,Supervision Data Exposure,345|69|87,LVC
+89,Cost,68,COST
+90,Price,69,COST
+91,Quality,13,COST
+92,Capital Cost,89|119,COST
+93,Depreciation,92,COST
+94,Electricity Cost,89|135,COST
+95,Administration Time,89|185,COST
+96,Per-Token Pricing,90|45,COST
+97,Subscription Pricing,90,COST
+98,Per-Seat Pricing,90,COST
+99,Total Cost of Ownership,92|94|95,COST
+100,Fixed Costs,89,COST
+101,Variable Costs,89,COST
+102,Cost per Chapter,112|13,COST
+103,Break-Even Volume,100|101|96,COST
+104,Quality-Adjusted Cost,112|91,COST
+105,Cost Model,100|101,COST
+106,Utilization Rate,100,COST
+107,Hardware Lifespan,92|93,COST
+108,Sensitivity Analysis,105,COST
+109,Setup Labor,95,COST
+110,Operations Labor,95,COST
+111,Idle Power Draw,135,COST
+112,Cost per Textbook,99|118|106,COST
+113,Books per Year,106|118,COST
+114,Profit Margin,90|89,COST
+115,Margin Versus Markup,114,COST
+116,Service Price Calculation,114|112,COST
+117,Human Review Cost,420|89,COST
+118,Whole-Book Time Estimate,373|384|434,COST
+119,NVIDIA DGX,126,HW
+120,DGX Product Family,119,HW
+121,CPU Architecture,,HW
+122,x86_64 Architecture,121,HW
+123,aarch64 Architecture,121,HW
+124,CPU Core Count,121,HW
+125,System RAM,,HW
+126,GPU,,HW
+127,GPU Configuration,126,HW
+128,Multi-GPU System,127,HW
+129,Dedicated GPU Memory,126|125,HW
+130,Unified Memory,126|125,HW
+131,Memory Bandwidth,125,HW
+132,Storage Capacity,,HW
+133,Storage Read Speed,132,HW
+134,NVMe Storage,132,HW
+135,Power Draw,126,HW
+136,Thermal Design Power,135,HW
+137,Thermals,135,HW
+138,DGX OS,119,HW
+139,NVIDIA Driver,138|126,HW
+140,CUDA,139,HW
+141,Compute Capability,140,HW
+142,Hardware Variation Branching,122|123|130|129,HW
+143,DGX Spark,120|130|123,HW
+144,NVIDIA GB10,143|126,HW
+145,Blackwell Architecture,144,HW
+146,CUDA Cores,140|126,HW
+147,Remote Access,1,NET
+148,Mesh VPN,147,NET
+149,WireGuard,148,NET
+150,Tailscale,148|149,NET
+151,Tailnet,150,NET
+152,Coordination Plane,150,NET
+153,Data Plane,150|149,NET
+154,Peer-to-Peer Connection,153|182,NET
+155,DERP Relay,182|153,NET
+156,Tailscale Installation,150|206,NET
+157,Tailscale Authentication,171|151,NET
+158,Tailscale Auth Key,157,NET
+159,Device Key Expiry,157,NET
+160,MagicDNS,151,NET
+161,SSH,1,NET
+162,SSH Key Pair,161,NET
+163,Tailscale SSH,161|150|164,NET
+164,Access Control List,151,NET
+165,Tailscale Status Command,172,NET
+166,Tailscale Ping,151,NET
+167,Connectivity Test,165|166,NET
+168,Tailscale Serve,151|308,NET
+169,Endpoint Sharing,168|305,NET
+170,Host Hygiene,184|162,NET
+171,Tailscale Daemon,156|184,NET
+172,Tailscale Up Command,171,NET
+173,Tailnet Invitation,151|185,NET
+174,Node Sharing,151|185,NET
+175,Host Key Fingerprint,161,NET
+176,Ed25519 Key,162,NET
+177,Passphrase-Free Key,176,NET
+178,ssh-copy-id,162,NET
+179,Unattended SSH Login,178|177,NET
+180,BatchMode,179,NET
+181,SSH Port Forward,161,NET
+182,NAT Traversal,148|183,NET
+183,Home Router,147,NET
+184,Administrator Privileges,1,NET
+185,System Administrator,184,NET
+186,Python Environment,2,ENV
+187,Environment Isolation,186,ENV
+188,Miniforge,186|1,ENV
+189,Conda,188,ENV
+190,pip,2,ENV
+191,Conda Create Command,189,ENV
+192,Conda Activate Command,191,ENV
+193,Conda List and Export,192,ENV
+194,Conda Remove Command,191,ENV
+195,Python Version Pinning,191,ENV
+196,Conda Versus pip,189|190,ENV
+197,environment.yml,193,ENV
+198,requirements.txt,190,ENV
+199,Package Channel,189,ENV
+200,Architecture-Specific Wheels,190|121,ENV
+201,PyTorch,186,ENV
+202,CUDA-Enabled PyTorch,201|200|140,ENV
+203,Environment Rebuild,197|198,ENV
+204,Reproducibility,187|195,ENV
+205,Install Script,203|1,ENV
+206,Dedicated Tool Environment,187|191,ENV
+207,Hardware Probe,2|126,ENV
+208,Probe Script,207,ENV
+209,psutil,208|190,ENV
+210,nvidia-smi,139|1,ENV
+211,nvidia-smi Output,210,ENV
+212,NVML,210,ENV
+213,NVML Python Bindings,212|186,ENV
+214,CPU Probe,208|124,ENV
+215,RAM Probe,208|125,ENV
+216,Storage Probe,208|132,ENV
+217,Disk Read Benchmark,216|133,ENV
+218,GPU Probe,208|211,ENV
+219,GPU Memory Total and Free,218|129,ENV
+220,Driver Version Probe,218|139,ENV
+221,CUDA Version Probe,218|140,ENV
+222,GPU Temperature,218|137,ENV
+223,GPU Power Draw,218|135,ENV
+224,Machine-Readable Report,208,ENV
+225,JSON Report,224,ENV
+226,Probe Suite,214|215|216|218|225,ENV
+227,Redacted-by-Default Fields,226|491,ENV
+228,PyTorch CUDA Check,202|218,ENV
+229,Probe Verification Test,226,ENV
+230,Unified Memory Probe,219|130|215,ENV
+231,Read-Only Inventory,232|161,ENV
+232,Linux Inventory Commands,1,ENV
+233,Standard-Library-Only Python,2,ENV
+234,Piping Scripts Over SSH,161|233,ENV
+235,Vitals Logging,222|223|215,ENV
+236,Model Weights,44,FIT
+237,Dense Model,236,FIT
+238,Mixture of Experts,236|44,FIT
+239,Active Parameters,238,FIT
+240,Numeric Precision,236,FIT
+241,Bytes per Weight,240,FIT
+242,FP16 and BF16,240,FIT
+243,Quantization,240,FIT
+244,Quantization Level,243,FIT
+245,8-Bit Quantization,244,FIT
+246,4-Bit Quantization,244,FIT
+247,GGUF Format,243|236,FIT
+248,Safetensors Format,236,FIT
+249,Size on Disk,241|44,FIT
+250,KV Cache,47|48,FIT
+251,Context Length Memory,250,FIT
+252,Runtime Overhead,250|236,FIT
+253,Safety Headroom,252|125,FIT
+254,Memory Estimation Formula,241|251|253,FIT
+255,Model-Fit Calculation,254|44,FIT
+256,Model-Fit Calculator,255|2,FIT
+257,Fit Verdict,255,FIT
+258,Unified Memory Fit,255|130,FIT
+259,Bits per Parameter,240|44,FIT
+260,Memory for Weights,259,FIT
+261,Quantized File Overhead,243|259,FIT
+262,Model Selection Criteria,61|47|51,MSEL
+263,Hugging Face Hub,49,MSEL
+264,Model Repository,263,MSEL
+265,License Review,51|58,MSEL
+266,Model Download,264|132,MSEL
+267,Checksum Verification,266,MSEL
+268,Storage Management,266|249,MSEL
+269,Model Shortlist,262|255,MSEL
+270,Model Leaderboard,58,MSEL
+271,Tool-Calling Reliability,61,MSEL
+272,Writing Quality,59,MSEL
+273,Model Comparison,269|265|271|272,MSEL
+274,Gated Model Access,263,MSEL
+275,Access Token Handling,274|263,MSEL
+276,Model Cache Directory,266,MSEL
+277,Ollama Model Library,298,MSEL
+278,Apache 2.0 License,50,MSEL
+279,Commercial Use Terms,51,MSEL
+280,Publisher Provenance,58,MSEL
+281,Public Benchmark Score,270,MSEL
+282,Publisher Claims,58|281,MSEL
+283,Exclusion Rationale,262|280|265,MSEL
+284,qwen3.8:27b,54|277,MSEL
+285,gemma4:31b,55|237|277,MSEL
+286,muse-glimmer:30b,277|63,MSEL
+287,qwen3.6:35b,54|238,MSEL
+288,gemma4:26b,55|238,MSEL
+289,nemotron-3.5-lightning:30b,294|238,MSEL
+290,mistral-medium-3.5:128b,56|237,MSEL
+291,gpt-oss:120b,295|238,MSEL
+292,devstral-small-2:24b,56|62,MSEL
+293,granite4.2:30b,296|237|278,MSEL
+294,Nemotron Family,52,MSEL
+295,gpt-oss Family,52,MSEL
+296,Granite Family,52,MSEL
+297,Inference Server,48|236|68,INFER
+298,Ollama,297,INFER
+299,llama.cpp,297|247,INFER
+300,vLLM,297|248,INFER
+301,Runtime Installation,297|231,INFER
+302,Runtime Configuration,301,INFER
+303,GPU Offload,297|126,INFER
+304,Model Loading,297|266,INFER
+305,Local API Endpoint,297,INFER
+306,OpenAI-Compatible API,305,INFER
+307,Chat Completions Endpoint,306,INFER
+308,localhost Binding,305,INFER
+309,curl Request,307|1,INFER
+310,Python Client,307|2,INFER
+311,First-Prompt Smoke Test,309|310|304,INFER
+312,Server Logs,297,INFER
+313,Background Service,302,INFER
+314,Model Keep-Alive,304,INFER
+315,User-Space Installation,301|316,INFER
+316,Release Archive,267,INFER
+317,tmux Session,1|161,INFER
+318,Anthropic-Compatible API,305|70,INFER
+319,Batched Serving,300|368,INFER
+320,Prompt Re-Reading,298|369|47,INFER
+321,AI Agent Harness,41|61,AGENT
+322,Agent Loop,321,AGENT
+323,Tool Definition,61,AGENT
+324,File Editing Tool,323,AGENT
+325,Shell Execution Tool,323|1,AGENT
+326,Permission Model,325|324,AGENT
+327,Context Management,322|47,AGENT
+328,Context Compaction,327,AGENT
+329,System Prompt,321,AGENT
+330,Subagent,322,AGENT
+331,Agent Skill,321,AGENT
+332,SKILL.md Format,331|20,AGENT
+333,Skill Loading,332|322,AGENT
+334,Skill Installation,332,AGENT
+335,Claude Code,321,AGENT
+336,OpenCode,321,AGENT
+337,Codex CLI,321,AGENT
+338,Goose,321,AGENT
+339,Local Endpoint Connection,321|305,AGENT
+340,Harness Configuration,339|335,AGENT
+341,Skill Execution Verification,334|340|333,AGENT
+342,Harness Compatibility Test,340|341,AGENT
+343,Harness Prompt Overhead,329|323|47,AGENT
+344,Skill Defect Correction,341|421,AGENT
+345,Orchestrator,321|69,AGENT
+346,Role Separation,345|321|297,AGENT
+347,Harness on Laptop,335|181|339,AGENT
+348,Harness on DGX,352|339,AGENT
+349,Docker,1,AGENT
+350,Docker Group Membership,349|185,AGENT
+351,NVIDIA Container Toolkit,349|139,AGENT
+352,Harness Container,349|335,AGENT
+353,Container Sandbox,352|326,AGENT
+354,Non-Root Container User,352,AGENT
+355,Read-Only Skill Mount,352|331,AGENT
+356,Placeholder Credential,339,AGENT
+357,Telemetry Disabled,340,AGENT
+358,Host Network Mode,352|308,AGENT
+359,Network Sandbox Gap,353|358,AGENT
+360,Network Boundary,151|183,AGENT
+361,Packet Capture Verification,360|357,AGENT
+362,Memory Watchdog,382|235,AGENT
+363,System Freeze,382|130,AGENT
+364,Performance Optimization,297|373,INFER
+365,Quantization Tradeoffs,246|245|373,INFER
+366,Context Length Setting,47|251,INFER
+367,Batch Size,297,INFER
+368,Concurrency,367,INFER
+369,Prompt Caching,250|297,INFER
+370,Sampling Parameters,48,INFER
+371,Temperature Setting,370,INFER
+372,Top-p and Top-k,370,INFER
+373,Tokens per Second,45|297,INFER
+374,Time to First Token,375|378,INFER
+375,Prompt Processing Speed,45|297,INFER
+376,Throughput,373|368,INFER
+377,Latency,374,INFER
+378,Model Load Time,304|133,INFER
+379,GPU Utilization,126|210,INFER
+380,GPU Monitoring,379|222|223,INFER
+381,Thermal Throttling,137|380,INFER
+382,Memory Pressure,130|251|304,INFER
+383,Out-of-Memory Error,382,INFER
+384,Turn Overhead,385|320|375,INFER
+385,Agent Turn,322,INFER
+386,Peak Context Size,47|385,INFER
+387,Context Truncation,47|327,INFER
+388,Evaluation Question,68|69,EVAL
+389,Independent Variable,388,EVAL
+390,Controlled Variables,389,EVAL
+391,Uncontrolled Variable,390,EVAL
+392,Fixed Inputs,390,EVAL
+393,Repeated Runs,390,EVAL
+394,Run Variance,393,EVAL
+395,Sample Size,394,EVAL
+396,Metric Selection,388,EVAL
+397,Scoring Rubric,396,EVAL
+398,Logging,396|2,EVAL
+399,Bias in Evaluation,397,EVAL
+400,LLM-as-Judge,399|41,EVAL
+401,Blind Human Review,399|397,EVAL
+402,Reproducible Experiment,204|392|398,EVAL
+403,Baseline Comparison,83|396,EVAL
+404,Fair Comparison,403|390,EVAL
+405,Experimental Design Critique,399|391|395|404,EVAL
+406,Limitations Statement,405,EVAL
+407,Explicit Assumptions,388|105,EVAL
+408,Measured Versus Assumed Values,407|398,EVAL
+409,Provisional Results,393|408,EVAL
+410,Design Decision Record,388,EVAL
+411,Decision Attribution,410,EVAL
+412,Negative Result Reporting,410|409,EVAL
+413,Two-Layer Testing,414|415,EVAL
+414,Model-Only Test,311|60,EVAL
+415,Harness Smoke Test,342|341,EVAL
+416,Control Run,393|414,EVAL
+417,Scoring Check Calibration,418,EVAL
+418,Structural Checks,397|2,EVAL
+419,Automated Quality Score,418|396,EVAL
+420,Human Quality Score,401,EVAL
+421,Retest After Fix,393,EVAL
+422,Evaluation Status Tracking,436,EVAL
+423,Run Time Limit,441,EVAL
+424,Long-Context Recall Test,47|414,EVAL
+425,Schema-Constrained JSON,60,EVAL
+426,Reading Level Measure,13|396,EVAL
+427,Faithfulness to Description,8|91,EVAL
+428,Dependency Reasoning,10|41,EVAL
+429,Markdown Validity,20|21,EVAL
+430,MicroSim Code Correctness,14|62,EVAL
+431,Mathematical Notation,20|91,EVAL
+432,Textbook Benchmark,388|18|392,BENCH
+433,Benchmark Runner,432|352,BENCH
+434,Pipeline Stage,18,BENCH
+435,Stage Sensitivity,434|91,BENCH
+436,Per-Stage Metrics,434|396,BENCH
+437,Skill Completion Rate,436|341,BENCH
+438,Tool-Call Success Rate,436|467|468,BENCH
+439,Build Success,476|436,BENCH
+440,Structural Validity,418|436,BENCH
+441,Wall-Clock Time,434|377,BENCH
+442,Time Breakdown,441|378|375|373,BENCH
+443,Energy per Textbook,223|441,BENCH
+444,Failure Diagnosis,383|445|446|447|312,BENCH
+445,Context Overflow,47|387,BENCH
+446,Malformed Tool Call,61|60,BENCH
+447,Harness Misconfiguration,340,BENCH
+448,Baseline Textbook,83|432,BENCH
+449,Textbook Preview,21|168,BENCH
+450,DGX Sufficiency Judgment,226|436|257,BENCH
+451,Evaluation Report,406|409|403,BENCH
+452,Report Structure,451,BENCH
+453,Recommendation,451|450|99|91,BENCH
+454,Local Cloud or Hybrid Decision,453|82,BENCH
+455,Capstone Evaluation,432|448|451|499,BENCH
+456,Algebra I Benchmark,432|392,BENCH
+457,Benchmark Workspace Template,456|392,BENCH
+458,Stage Prompt,459|434,BENCH
+459,Standing Approval Answer,326|392,BENCH
+460,Stage Chaining,434|457,BENCH
+461,Per-Chapter Generation Run,460|13,BENCH
+462,Chapter Completion Criterion,461|27,BENCH
+463,Chapter Dependency Check,461|10,BENCH
+464,Reference Book for Scale,456|6,BENCH
+465,Run Event Stream,433|398,BENCH
+466,Run Report,465|467,BENCH
+467,Tool Call Count,465|61,BENCH
+468,Failed Tool Calls,467,BENCH
+469,Duplicate Concept Labels,418|9,BENCH
+470,Orphaned Concepts,418|9,BENCH
+471,Dependency Cycle Check,418|11,BENCH
+472,CSV-JSON Agreement,418|9,BENCH
+473,Label Length Limit,418|9,BENCH
+474,Required Output Files,418|434,BENCH
+475,Navigation Entries,33|474,BENCH
+476,Strict Site Build,21|33,BENCH
+477,Run Output Retrieval,433|161,BENCH
+478,Results Publishing,477|482,BENCH
+479,Text-Emitted Tool Call,446,BENCH
+480,Premature Turn Termination,385|341,BENCH
+481,Task Loss,327|386,BENCH
+482,Sanitization,75|87,SAN
+483,Device-Identifying Details,482|119,SAN
+484,IP Address,483|151,SAN
+485,Hostname,483|160,SAN
+486,Tailnet Name,483|151,SAN
+487,Usernames and Passwords,483|161,SAN
+488,Keys and Tokens,483|162|158,SAN
+489,Hardware Identifiers,483|207,SAN
+490,Access Configuration,483|164,SAN
+491,Redaction,482,SAN
+492,Placeholder Conventions,491,SAN
+493,Documentation Address Ranges,492|484,SAN
+494,Secret Scanning,488|3,SAN
+495,gitleaks,494,SAN
+496,Pre-Commit Scan,494|3,SAN
+497,Git History Persistence,3|4,SAN
+498,Screenshot Redaction,491,SAN
+499,Publication Safety Review,496|497|491,SAN
+500,Sanitized Sample Output,491|211,SAN
+501,Raw Output Isolation,398|482,SAN
+502,Hosts via Environment Variable,485|1,SAN
+503,Public Repository Risk,4|482,SAN
+504,Gitignore Rules,3|501,SAN
+505,Identifiers in System Files,489|232,SAN
+506,Home Directory Paths,483|478,SAN

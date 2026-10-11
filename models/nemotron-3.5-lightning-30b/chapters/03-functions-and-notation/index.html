@@ -1,0 +1,2801 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Functions and Notation - core algebraic skills and topics for Algebra I">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/03-functions-and-notation/">
+      
+      
+        <link rel="prev" href="../02-linear-equations/">
+      
+      
+        <link rel="next" href="../04-graphing-and-coordinates/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Functions and Notation - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functions-and-notation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functions and Notation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6" id="__nav_10_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6">
+            <span class="md-nav__icon md-icon"></span>
+            nemotron-3.5-lightning:30b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6_4" id="__nav_10_6_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-linear-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Linear Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3. Functions and Notation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    3. Functions and Notation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elaboration-budget-cis-driven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elaboration Budget (CIS-Driven)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Elaboration Budget (CIS-Driven)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-model-linear-relationship-tier-b-250-400-words-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Model Linear Relationship (Tier B: 250-400 words, worked example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-system-of-linear-equations-tier-b-250-400-words-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. System of Linear Equations (Tier B: 250-400 words, worked example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-system-of-linear-inequalities-tier-c-120-200-words-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. System of Linear Inequalities (Tier C: 120-200 words, definition)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-polynomial-addition-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Polynomial Addition (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-polynomial-subtraction-tier-b-250-400-words-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Polynomial Subtraction (Tier B: 250-400 words, worked example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-polynomial-multiplication-tier-b-250-400-words-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Polynomial Multiplication (Tier B: 250-400 words, worked example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-greatest-common-factor-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Greatest Common Factor (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-factor-trinomial-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Factor Trinomial (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-difference-of-squares-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Difference of Squares (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-solve-quadratic-by-factoring-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Solve Quadratic By Factoring (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-solve-quadratic-square-root-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Solve Quadratic Square Root (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-complete-square-quadratic-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Complete Square Quadratic (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-quadratic-formula-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Quadratic Formula (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-quadratic-vertex-tier-b-250-400-words-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Quadratic Vertex (Tier B: 250-400 words, worked example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-quadratic-axis-of-symmetry-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Quadratic Axis of Symmetry (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-model-quadratic-data-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Model Quadratic Data (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-model-exponential-data-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Model Exponential Data (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Review
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-graphing-and-coordinates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Graphing and Coordinates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-polynomials-and-factoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Polynomials and Factoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-exponents-and-radicals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Exponents and Radicals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-systems-of-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Systems of Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-statistics-and-data-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Statistics and Data Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-sequences-and-series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Sequences and Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-mathematical-modeling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Mathematical Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-advanced-topics-and-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Advanced Topics and Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elaboration-budget-cis-driven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elaboration Budget (CIS-Driven)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Elaboration Budget (CIS-Driven)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-model-linear-relationship-tier-b-250-400-words-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Model Linear Relationship (Tier B: 250-400 words, worked example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-system-of-linear-equations-tier-b-250-400-words-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. System of Linear Equations (Tier B: 250-400 words, worked example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-system-of-linear-inequalities-tier-c-120-200-words-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. System of Linear Inequalities (Tier C: 120-200 words, definition)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-polynomial-addition-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Polynomial Addition (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-polynomial-subtraction-tier-b-250-400-words-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Polynomial Subtraction (Tier B: 250-400 words, worked example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-polynomial-multiplication-tier-b-250-400-words-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Polynomial Multiplication (Tier B: 250-400 words, worked example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-greatest-common-factor-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Greatest Common Factor (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-factor-trinomial-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Factor Trinomial (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-difference-of-squares-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Difference of Squares (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-solve-quadratic-by-factoring-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Solve Quadratic By Factoring (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-solve-quadratic-square-root-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Solve Quadratic Square Root (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-complete-square-quadratic-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Complete Square Quadratic (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-quadratic-formula-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Quadratic Formula (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-quadratic-vertex-tier-b-250-400-words-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Quadratic Vertex (Tier B: 250-400 words, worked example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-quadratic-axis-of-symmetry-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Quadratic Axis of Symmetry (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-model-quadratic-data-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Model Quadratic Data (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-model-exponential-data-tier-a-500-750-words-worked-example-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Model Exponential Data (Tier A: 500-750 words, worked example + diagram)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Review
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/nemotron-3.5-lightning-30b/chapters/03-functions-and-notation/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="functions-and-notation">Functions and Notation<a class="headerlink" href="#functions-and-notation" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the key concepts for functions and notation. Students will develop fluency in the core algebraic skills and topics presented in this chapter, building on foundational knowledge and preparing for more advanced topics.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model Linear Relationship</td>
+<td>38</td>
+</tr>
+<tr>
+<td>System of Linear Equations</td>
+<td>26</td>
+</tr>
+<tr>
+<td>System of Linear Inequalities</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Polynomial Addition</td>
+<td>203</td>
+</tr>
+<tr>
+<td>Polynomial Subtraction</td>
+<td>70</td>
+</tr>
+<tr>
+<td>Polynomial Multiplication</td>
+<td>69</td>
+</tr>
+<tr>
+<td>Greatest Common Factor</td>
+<td>6579</td>
+</tr>
+<tr>
+<td>Factor Trinomial</td>
+<td>3271</td>
+</tr>
+<tr>
+<td>Difference of Squares</td>
+<td>3231</td>
+</tr>
+<tr>
+<td>Solve Quadratic By Factoring</td>
+<td>3222</td>
+</tr>
+<tr>
+<td>Solve Quadratic Square Root</td>
+<td>1611</td>
+</tr>
+<tr>
+<td>Complete Square Quadratic</td>
+<td>815</td>
+</tr>
+<tr>
+<td>Quadratic Formula</td>
+<td>795</td>
+</tr>
+<tr>
+<td>Quadratic Vertex</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Quadratic Axis of Symmetry</td>
+<td>379</td>
+</tr>
+<tr>
+<td>Model Quadratic Data</td>
+<td>358</td>
+</tr>
+<tr>
+<td>Model Exponential Data</td>
+<td>285</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>[Prerequisites from prior chapters or course description]</p>
+<h2 id="elaboration-budget-cis-driven">Elaboration Budget (CIS-Driven)<a class="headerlink" href="#elaboration-budget-cis-driven" title="Permanent link">&para;</a></h2>
+<p>The following table summarizes the per-concept elaboration budget for this chapter, computed from each concept's Concept Impact Score (CIS) and the book-wide <code>cis_max = 24025</code>. Target word counts and required elements are driven by each concept's tier:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>CIS</th>
+<th>Tier</th>
+<th>Target Words</th>
+<th>Required Elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model Linear Relationship</td>
+<td>38</td>
+<td>B (0.36)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>System of Linear Equations</td>
+<td>26</td>
+<td>B (0.33)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>System of Linear Inequalities</td>
+<td>1</td>
+<td>C (0.07)</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Polynomial Addition</td>
+<td>203</td>
+<td>A (0.53)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Polynomial Subtraction</td>
+<td>70</td>
+<td>B (0.42)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Polynomial Multiplication</td>
+<td>69</td>
+<td>B (0.42)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Greatest Common Factor</td>
+<td>6579</td>
+<td>A (0.87)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Factor Trinomial</td>
+<td>3271</td>
+<td>A (0.80)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Difference of Squares</td>
+<td>3231</td>
+<td>A (0.80)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Solve Quadratic By Factoring</td>
+<td>3222</td>
+<td>A (0.80)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Solve Quadratic Square Root</td>
+<td>1611</td>
+<td>A (0.73)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Complete Square Quadratic</td>
+<td>815</td>
+<td>A (0.66)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Quadratic Formula</td>
+<td>795</td>
+<td>A (0.66)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Quadratic Vertex</td>
+<td>17</td>
+<td>B (0.29)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Quadratic Axis of Symmetry</td>
+<td>379</td>
+<td>A (0.59)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Model Quadratic Data</td>
+<td>358</td>
+<td>A (0.58)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Model Exponential Data</td>
+<td>285</td>
+<td>A (0.56)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Chapter total (approx. 8,660 words)</strong>: Sum of per-concept targets. Chapters with more high-CIS concepts naturally run longer—this variation is expected and correct.</p>
+<hr />
+<h3 id="1-model-linear-relationship-tier-b-250-400-words-worked-example">1. Model Linear Relationship (Tier B: 250-400 words, worked example)<a class="headerlink" href="#1-model-linear-relationship-tier-b-250-400-words-worked-example" title="Permanent link">&para;</a></h3>
+<p>A <strong>linear relationship</strong> describes how two quantities change at a constant rate relative to each other. The most general form is <span class="arithmatex">\(y = mx + b\)</span>, where <span class="arithmatex">\(m\)</span> is the slope and <span class="arithmatex">\(b\)</span> is the <span class="arithmatex">\(y\)</span>-intercept.</p>
+<p><strong>Slope</strong> measures the steepness of a line. It is defined as the ratio of the vertical change (rise) to the horizontal change (run) between any two points on the line:</p>
+<div class="arithmatex">\[
+m = \frac{y_2 - y_1}{x_2 - x_1}
+\]</div>
+<p><strong>Example:</strong> Suppose a linear relationship models the cost <span class="arithmatex">\(y\)</span> (in dollars) of buying <span class="arithmatex">\(x\)</span> movie tickets, where each ticket costs $12 and there is a $3 service fee. The equation is <span class="arithmatex">\(y = 12x + 3\)</span>. </p>
+<ul>
+<li>The <strong>slope</strong> <span class="arithmatex">\(m = 12\)</span> represents the cost per ticket.</li>
+<li>The <strong><span class="arithmatex">\(y\)</span>-intercept</strong> <span class="arithmatex">\(b = 3\)</span> represents the service fee charged regardless of the number of tickets.</li>
+</ul>
+<p>To find the cost of 5 tickets, substitute <span class="arithmatex">\(x = 5\)</span>: <span class="arithmatex">\(y = 12(5) + 3 = 60 + 3 = 63\)</span>. The total cost is $63.</p>
+<details>
+<summary>#### Diagram: Linear Function Graph</summary>
+<p>Graph of <span class="arithmatex">\(y = 12x + 3\)</span> showing the line passing through <span class="arithmatex">\((0, 3)\)</span> and <span class="arithmatex">\((1, 15)\)</span>. The slope of 12 means for every 1 unit increase in <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span> increases by 12 units. The <span class="arithmatex">\(y\)</span>-intercept is at <span class="arithmatex">\((0, 3)\)</span>.</p>
+</details>
+<p><strong>Key takeaway:</strong> In a linear function <span class="arithmatex">\(y = mx + b\)</span>, the slope <span class="arithmatex">\(m\)</span> determines the direction and steepness of the line, while the <span class="arithmatex">\(y\)</span>-intercept <span class="arithmatex">\(b\)</span> determines where the line crosses the <span class="arithmatex">\(y\)</span>-axis.</p>
+<hr />
+<h3 id="2-system-of-linear-equations-tier-b-250-400-words-worked-example">2. System of Linear Equations (Tier B: 250-400 words, worked example)<a class="headerlink" href="#2-system-of-linear-equations-tier-b-250-400-words-worked-example" title="Permanent link">&para;</a></h3>
+<p>A <strong>system of linear equations</strong> consists of two or more linear equations considered simultaneously. The solution to the system is the set of values that satisfy all equations in the system.</p>
+<p><strong>Solving by substitution</strong> is one method. Consider the system:</p>
+<div class="arithmatex">\[
+\begin{cases}
+y = 2x + 1 \\
+y = -x + 4
+\end{cases}
+\]</div>
+<p>Since both equations are solved for <span class="arithmatex">\(y\)</span>, set the right-hand sides equal:</p>
+<div class="arithmatex">\[
+2x + 1 = -x + 4
+\]</div>
+<p>Solve for <span class="arithmatex">\(x\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+2x + x &amp;= 4 - 1 \\
+3x &amp;= 3 \\
+x &amp;= 1
+\end{aligned}
+\]</div>
+<p>Substitute <span class="arithmatex">\(x = 1\)</span> into either original equation to find <span class="arithmatex">\(y\)</span>:</p>
+<div class="arithmatex">\[
+y = 2(1) + 1 = 3
+\]</div>
+<p><strong>Check:</strong> <span class="arithmatex">\((1, 3)\)</span> satisfies both equations: <span class="arithmatex">\(3 = 2(1) + 1 = 3\)</span> ✓ and <span class="arithmatex">\(3 = -(1) + 4 = 3\)</span> ✓.</p>
+<p><strong>Key takeaway:</strong> The solution <span class="arithmatex">\((1, 3)\)</span> is the point where the two lines intersect when both equations are graphed on the same coordinate plane.</p>
+<details>
+<summary>#### Diagram: System of Two Linear Equations</summary>
+<p>Graph of the lines <span class="arithmatex">\(y = 2x + 1\)</span> (blue) and <span class="arithmatex">\(y = -x + 4\)</span> (orange), intersecting at the point <span class="arithmatex">\((1, 3)\)</span>. The intersection point is the solution to the system.</p>
+</details>
+<p><strong>Key takeaway:</strong> A system of two linear equations can have exactly one solution (intersecting lines), no solution (parallel lines), or infinitely many solutions (the same line).</p>
+<hr />
+<h3 id="3-system-of-linear-inequalities-tier-c-120-200-words-definition">3. System of Linear Inequalities (Tier C: 120-200 words, definition)<a class="headerlink" href="#3-system-of-linear-inequalities-tier-c-120-200-words-definition" title="Permanent link">&para;</a></h3>
+<p>A <strong>system of linear inequalities</strong> is similar to a system of linear equations, but each equation is replaced by an inequality. The solution is the set of all points that satisfy all inequalities in the system simultaneously, typically represented as the intersection of half-planes on a coordinate grid.</p>
+<details>
+<summary>#### Diagram: System of Linear Inequalities</summary>
+<p>Graph showing the half-plane solutions for <span class="arithmatex">\(y \geq 2x + 1\)</span> (shaded above the solid line) and <span class="arithmatex">\(y &lt; -x + 4\)</span> (shaded below the dashed line, excluding the boundary). The overlapping shaded region is the solution set.</p>
+</details>
+<p><strong>Key takeaway:</strong> Unlike linear equations, which typically have a single-point solution, a system of linear inequalities produces a region of solutions—the intersection of all individual inequality regions.</p>
+<hr />
+<h3 id="4-polynomial-addition-tier-a-500-750-words-worked-example-diagram">4. Polynomial Addition (Tier A: 500-750 words, worked example + diagram)<a class="headerlink" href="#4-polynomial-addition-tier-a-500-750-words-worked-example-diagram" title="Permanent link">&para;</a></h3>
+<p><strong>Polynomials</strong> are algebraic expressions consisting of variables and coefficients combined using addition, subtraction, and multiplication. A <strong>term</strong> is a single number, a variable, or numbers and variables multiplied together. <strong>Like terms</strong> have the same variable raised to the same exponent.</p>
+<p><strong>Addition of polynomials</strong> is performed by combining like terms. Consider:</p>
+<div class="arithmatex">\[
+(3x^2 + 2x - 5) + (x^2 - 4x + 7)
+\]</div>
+<p>Group like terms:</p>
+<div class="arithmatex">\[
+(3x^2 + x^2) + (2x - 4x) + (-5 + 7) = 4x^2 - 2x + 2
+\]</div>
+<p><strong>Worked example:</strong> Add <span class="arithmatex">\((2x^2 + 3x - 1) + (x^2 - 5x + 4)\)</span>.</p>
+<ol>
+<li>Identify like terms: <span class="arithmatex">\(2x^2\)</span> and <span class="arithmatex">\(x^2\)</span>; <span class="arithmatex">\(3x\)</span> and <span class="arithmatex">\(-5x\)</span>; <span class="arithmatex">\(-1\)</span> and <span class="arithmatex">\(4\)</span>.</li>
+<li>Combine: <span class="arithmatex">\((2x^2 + x^2) + (3x - 5x) + (-1 + 4) = 3x^2 - 2x + 3\)</span>.</li>
+</ol>
+<p><strong>Key takeaway:</strong> When adding polynomials, only like terms can be combined. The result is a new polynomial whose terms are the sums of the like terms from the original polynomials.</p>
+<details>
+<summary>#### Diagram: Polynomial Addition Area Model</summary>
+<p>An area model showing the addition of two polynomial expressions as combined areas of rectangular regions. The total area represents the sum polynomial <span class="arithmatex">\(3x^2 - 2x + 3\)</span>, with distinct regions for the <span class="arithmatex">\(x^2\)</span>, <span class="arithmatex">\(x\)</span>, and constant terms.</p>
+</details>
+<p><strong>Key takeaway:</strong> Polynomial addition follows the same principles as combining like terms in simpler expressions, extended to higher-degree polynomials.</p>
+<hr />
+<h3 id="5-polynomial-subtraction-tier-b-250-400-words-worked-example">5. Polynomial Subtraction (Tier B: 250-400 words, worked example)<a class="headerlink" href="#5-polynomial-subtraction-tier-b-250-400-words-worked-example" title="Permanent link">&para;</a></h3>
+<p><strong>Subtraction of polynomials</strong> is similar to addition, but requires distributing the negative sign to each term of the polynomial being subtracted. Consider:</p>
+<div class="arithmatex">\[
+(3x^2 + 2x - 5) - (x^2 - 4x + 7)
+\]</div>
+<p>Distribute the minus sign:</p>
+<div class="arithmatex">\[
+3x^2 + 2x - 5 - x^2 + 4x - 7
+\]</div>
+<p>Group like terms:</p>
+<div class="arithmatex">\[
+(3x^2 - x^2) + (2x + 4x) + (-5 - 7) = 2x^2 + 6x - 12
+\]</div>
+<p><strong>Worked example:</strong> Subtract <span class="arithmatex">\((x^2 - 3x + 2)\)</span> from <span class="arithmatex">\((4x^2 + 5x - 7)\)</span>.</p>
+<ol>
+<li>Distribute the minus sign: <span class="arithmatex">\(4x^2 + 5x - 7 - x^2 + 3x - 2\)</span></li>
+<li>Group like terms: <span class="arithmatex">\((4x^2 - x^2) + (5x + 3x) + (-7 - 2)\)</span></li>
+<li>Combine: <span class="arithmatex">\(3x^2 + 8x - 9\)</span></li>
+</ol>
+<p><strong>Key takeaway:</strong> Always distribute the negative sign to every term of the subtracted polynomial before combining like terms.</p>
+<hr />
+<h3 id="6-polynomial-multiplication-tier-b-250-400-words-worked-example">6. Polynomial Multiplication (Tier B: 250-400 words, worked example)<a class="headerlink" href="#6-polynomial-multiplication-tier-b-250-400-words-worked-example" title="Permanent link">&para;</a></h3>
+<p><strong>Multiplying polynomials</strong> uses the distributive property repeatedly. For binomials, the <strong>FOIL</strong> method (First, Outer, Inner, Last) is a common pattern.</p>
+<p><strong>Example:</strong> Multiply <span class="arithmatex">\((x + 3)(x - 2)\)</span>.</p>
+<p>Using FOIL:
+- <strong>First:</strong> <span class="arithmatex">\(x \cdot x = x^2\)</span>
+- <strong>Outer:</strong> <span class="arithmatex">\(x \cdot (-2) = -2x\)</span>
+- <strong>Inner:</strong> <span class="arithmatex">\(3 \cdot x = 3x\)</span>
+- <strong>Last:</strong> <span class="arithmatex">\(3 \cdot (-2) = -6\)</span></p>
+<p>Combine like terms: <span class="arithmatex">\(x^2 + (-2x + 3x) + (-6) = x^2 + x - 6\)</span>.</p>
+<p><strong>Key takeaway:</strong> The distributive property <span class="arithmatex">\(a(b + c) = ab + ac\)</span> is the foundation of polynomial multiplication. Each term in the first polynomial must be multiplied by each term in the second polynomial.</p>
+<details>
+<summary>#### Diagram: Polynomial Multiplication Box Method</summary>
+<p>A box method illustration where the binomials <span class="arithmatex">\((x + 3)\)</span> and <span class="arithmatex">\((x - 2)\)</span> are placed on the top and left edges of a 2×2 grid. The four interior cells show the products of the corresponding row and column terms, which are then summed along diagonals to give <span class="arithmatex">\(x^2 + x - 6\)</span>.</p>
+</details>
+<p><strong>Key takeaway:</strong> The box method provides a visual alternative to FOIL that works for polynomials of any size, ensuring every term is multiplied exactly once.</p>
+<hr />
+<h3 id="7-greatest-common-factor-tier-a-500-750-words-worked-example-diagram">7. Greatest Common Factor (Tier A: 500-750 words, worked example + diagram)<a class="headerlink" href="#7-greatest-common-factor-tier-a-500-750-words-worked-example-diagram" title="Permanent link">&para;</a></h3>
+<p>The <strong>greatest common factor (GCF)</strong> of a polynomial is the largest polynomial that divides evenly into each term. To find the GCF of a polynomial expression:</p>
+<ol>
+<li>Factor each coefficient into primes.</li>
+<li>Identify the smallest exponent for each variable that appears in all terms.</li>
+<li>Multiply the common prime factors and variable factors.</li>
+</ol>
+<p><strong>Worked example:</strong> Find the GCF of <span class="arithmatex">\(6x^3y^2 + 9x^2y - 3xy\)</span>.</p>
+<ol>
+<li>Coefficients: GCF of 6, 9, and 3 is 3.</li>
+<li>Variable <span class="arithmatex">\(x\)</span>: smallest exponent in all terms is <span class="arithmatex">\(x^1\)</span> (from <span class="arithmatex">\(3xy\)</span>).</li>
+<li>Variable <span class="arithmatex">\(y\)</span>: smallest exponent in all terms is <span class="arithmatex">\(y^1\)</span> (from <span class="arithmatex">\(3xy\)</span>).</li>
+</ol>
+<p>GCF = <span class="arithmatex">\(3xy\)</span>.</p>
+<p>Factor out the GCF:</p>
+<div class="arithmatex">\[
+6x^3y^2 + 9x^2y - 3xy = 3xy(2x^2y + 3x - 1)
+\]</div>
+<p><strong>Check:</strong> Distribute <span class="arithmatex">\(3xy\)</span> back: <span class="arithmatex">\(3xy(2x^2y) = 6x^3y^2\)</span>, <span class="arithmatex">\(3xy(3x) = 9x^2y\)</span>, <span class="arithmatex">\(3xy(-1) = -3xy\)</span>. ✓</p>
+<p><strong>Key takeaway:</strong> Factoring out the GCF is the first step in most polynomial factorization problems. If the terms share no common factor other than 1, the polynomial is already in simplest form.</p>
+<details>
+<summary>#### Diagram: GCF Factoring Area Model</summary>
+<p>A rectangular area model where the total area represents the polynomial <span class="arithmatex">\(6x^3y^2 + 9x^2y - 3xy\)</span>. The GCF <span class="arithmatex">\(3xy\)</span> is shown as the common side length, with the remaining factors forming the inner rectangle dimensions <span class="arithmatex">\(2x^2y + 3x - 1\)</span>.</p>
+</details>
+<p><strong>Key takeaway:</strong> Finding and factoring out the GCF simplifies polynomial expressions and is essential for solving equations by factoring.</p>
+<hr />
+<h3 id="8-factor-trinomial-tier-a-500-750-words-worked-example-diagram">8. Factor Trinomial (Tier A: 500-750 words, worked example + diagram)<a class="headerlink" href="#8-factor-trinomial-tier-a-500-750-words-worked-example-diagram" title="Permanent link">&para;</a></h3>
+<p>A <strong>trinomial</strong> is a polynomial with three terms. Factoring trinomials of the form <span class="arithmatex">\(x^2 + bx + c\)</span> involves finding two numbers that multiply to <span class="arithmatex">\(c\)</span> and add to <span class="arithmatex">\(b\)</span>.</p>
+<p><strong>Worked example:</strong> Factor <span class="arithmatex">\(x^2 + 5x + 6\)</span>.</p>
+<p>We need two numbers that multiply to 6 and add to 5. The numbers 2 and 3 satisfy both conditions:
+- <span class="arithmatex">\(2 \cdot 3 = 6\)</span>
+- <span class="arithmatex">\(2 + 3 = 5\)</span></p>
+<p>So <span class="arithmatex">\(x^2 + 5x + 6 = (x + 2)(x + 3)\)</span>.</p>
+<p><strong>Check:</strong> FOIL <span class="arithmatex">\((x + 2)(x + 3) = x^2 + 3x + 2x + 6 = x^2 + 5x + 6\)</span> ✓.</p>
+<p><strong>When the leading coefficient is not 1:</strong> For <span class="arithmatex">\(2x^2 + 7x + 3\)</span>, find two numbers that multiply to <span class="arithmatex">\(2 \cdot 3 = 6\)</span> and add to 7. The numbers 1 and 6 work. Rewrite the middle term: <span class="arithmatex">\(2x^2 + x + 6x + 3\)</span>, then factor by grouping: <span class="arithmatex">\(x(2x + 1) + 3(2x + 1) = (2x + 1)(x + 3)\)</span>.</p>
+<p><strong>Key takeaway:</strong> Trinomial factoring relies on reverse multiplication. When <span class="arithmatex">\(a = 1\)</span>, look for factors of <span class="arithmatex">\(c\)</span> that sum to <span class="arithmatex">\(b\)</span>. When <span class="arithmatex">\(a \neq 1\)</span>, use the "ac method" or factor by grouping.</p>
+<details>
+<summary>#### Diagram: Trinomial Factoring Area Model</summary>
+<p>A square area model representing the trinomial <span class="arithmatex">\(x^2 + 5x + 6\)</span>. The <span class="arithmatex">\(x^2\)</span> term forms a large square, the <span class="arithmatex">\(5x\)</span> terms form two rectangles (one <span class="arithmatex">\(x\)</span> by 2, one <span class="arithmatex">\(x\)</span> by 3), and the constant 6 forms a small 2-by-3 rectangle. The entire figure can be rearranged into a <span class="arithmatex">\((x + 2)(x + 3)\)</span> rectangle.</p>
+</details>
+<p><strong>Key takeaway:</strong> Visual area models make the connection between multiplying binomials and factoring trinomials concrete and reversible.</p>
+<hr />
+<h3 id="9-difference-of-squares-tier-a-500-750-words-worked-example-diagram">9. Difference of Squares (Tier A: 500-750 words, worked example + diagram)<a class="headerlink" href="#9-difference-of-squares-tier-a-500-750-words-worked-example-diagram" title="Permanent link">&para;</a></h3>
+<p>The <strong>difference of squares</strong> is a special factorization pattern: <span class="arithmatex">\(a^2 - b^2 = (a - b)(a + b)\)</span>. This applies when we have a binomial where both terms are perfect squares and they are being subtracted.</p>
+<p><strong>Worked example:</strong> Factor <span class="arithmatex">\(x^2 - 16\)</span>.</p>
+<p>Recognize that <span class="arithmatex">\(x^2 = (x)^2\)</span> and <span class="arithmatex">\(16 = (4)^2\)</span>. Applying the pattern:</p>
+<div class="arithmatex">\[
+x^2 - 16 = (x - 4)(x + 4)
+\]</div>
+<p><strong>Check:</strong> FOIL <span class="arithmatex">\((x - 4)(x + 4) = x^2 + 4x - 4x - 16 = x^2 - 16\)</span> ✓.</p>
+<p><strong>Worked example:</strong> Factor <span class="arithmatex">\(9x^2 - 25\)</span>.</p>
+<p>Recognize that <span class="arithmatex">\(9x^2 = (3x)^2\)</span> and <span class="arithmatex">\(25 = (5)^2\)</span>. Applying the pattern:</p>
+<div class="arithmatex">\[
+9x^2 - 25 = (3x - 5)(3x + 5)
+\]</div>
+<p><strong>Key takeaway:</strong> The difference of squares pattern is <span class="arithmatex">\(a^2 - b^2 = (a - b)(a + b)\)</span>. It works only when both terms are perfect squares and there is a subtraction (not addition). The sum of squares <span class="arithmatex">\(a^2 + b^2\)</span> cannot be factored over the real numbers.</p>
+<details>
+<summary>#### Diagram: Difference of Squares Visual</summary>
+<p>A large square of side <span class="arithmatex">\(a\)</span> with a smaller square of side <span class="arithmatex">\(b\)</span> removed from one corner. The remaining area can be rearranged into a rectangle with side lengths <span class="arithmatex">\((a - b)\)</span> and <span class="arithmatex">\((a + b)\)</span>, visually demonstrating that <span class="arithmatex">\(a^2 - b^2 = (a - b)(a + b)\)</span>.</p>
+</details>
+<p><strong>Key takeaway:</strong> The difference of squares factorization is one of the most frequently used patterns in algebra. Memorize the form <span class="arithmatex">\(a^2 - b^2 = (a - b)(a + b)\)</span> and recognize when it applies.</p>
+<hr />
+<h3 id="10-solve-quadratic-by-factoring-tier-a-500-750-words-worked-example-diagram">10. Solve Quadratic By Factoring (Tier A: 500-750 words, worked example + diagram)<a class="headerlink" href="#10-solve-quadratic-by-factoring-tier-a-500-750-words-worked-example-diagram" title="Permanent link">&para;</a></h3>
+<p><strong>Solving quadratic equations by factoring</strong> relies on the zero-product property: if the product of two expressions is zero, then at least one of the expressions must be zero. That is, if <span class="arithmatex">\(ab = 0\)</span>, then <span class="arithmatex">\(a = 0\)</span> or <span class="arithmatex">\(b = 0\)</span> (or both).</p>
+<p><strong>Worked example:</strong> Solve <span class="arithmatex">\(x^2 - 5x - 14 = 0\)</span> by factoring.</p>
+<ol>
+<li>Factor the quadratic: We need two numbers that multiply to <span class="arithmatex">\(-14\)</span> and add to <span class="arithmatex">\(-5\)</span>. The numbers <span class="arithmatex">\(-7\)</span> and <span class="arithmatex">\(2\)</span> work: <span class="arithmatex">\((-7) \cdot 2 = -14\)</span> and <span class="arithmatex">\((-7) + 2 = -5\)</span>.</li>
+</ol>
+<p>[
+   x^2 - 5x - 14 = (x - 7)(x + 2)
+   ]</p>
+<ol>
+<li>Apply the zero-product property:</li>
+</ol>
+<p>[
+   (x - 7)(x + 2) = 0
+   ]
+   [
+   x - 7 = 0 \quad \text{or} \quad x + 2 = 0
+   ]</p>
+<ol>
+<li>Solve each equation:</li>
+</ol>
+<p>[
+   x = 7 \quad \text{or} \quad x = -2
+   ]</p>
+<p><strong>Check:</strong> Substitute <span class="arithmatex">\(x = 7\)</span>: <span class="arithmatex">\(7^2 - 5(7) - 14 = 49 - 35 - 14 = 0\)</span> ✓. Substitute <span class="arithmatex">\(x = -2\)</span>: <span class="arithmatex">\((-2)^2 - 5(-2) - 14 = 4 + 10 - 14 = 0\)</span> ✓.</p>
+<p><strong>Key takeaway:</strong> 
+- Step 1: Factor the quadratic expression.
+- Step 2: Set each factor equal to zero.
+- Step 3: Solve the resulting linear equations.
+- Step 4: Check your solutions by substituting them back into the original equation.</p>
+<details>
+<summary>#### Diagram: Quadratic Equation Roots</summary>
+<p>A parabola <span class="arithmatex">\(y = x^2 - 5x - 14\)</span> opening upward, with <span class="arithmatex">\(x\)</span>-intercepts (roots) at <span class="arithmatex">\(x = -2\)</span> and <span class="arithmatex">\(x = 7\)</span>. The <span class="arithmatex">\(x\)</span>-intercepts are the solutions to the equation <span class="arithmatex">\(x^2 - 5x - 14 = 0\)</span> when set equal to zero.</p>
+</details>
+<p><strong>Key takeaway:</strong> Not all quadratic equations can be solved by factoring. If the quadratic does not factor nicely over the integers, other methods (completing the square or the quadratic formula) must be used.</p>
+<hr />
+<h3 id="11-solve-quadratic-square-root-tier-a-500-750-words-worked-example-diagram">11. Solve Quadratic Square Root (Tier A: 500-750 words, worked example + diagram)<a class="headerlink" href="#11-solve-quadratic-square-root-tier-a-500-750-words-worked-example-diagram" title="Permanent link">&para;</a></h3>
+<p><strong>Solving quadratic equations using square roots</strong> applies when the equation can be written in the form <span class="arithmatex">\((x + p)^2 = q\)</span>, where <span class="arithmatex">\(q \geq 0\)</span>. The solution is <span class="arithmatex">\(x + p = \pm \sqrt{q}\)</span>, or <span class="arithmatex">\(x = -p \pm \sqrt{q}\)</span>.</p>
+<p><strong>Worked example:</strong> Solve <span class="arithmatex">\((x - 3)^2 = 16\)</span>.</p>
+<ol>
+<li>Take the square root of both sides, remembering the <span class="arithmatex">\(\pm\)</span> symbol:</li>
+</ol>
+<p>[
+   \sqrt{(x - 3)^2} = \pm \sqrt{16}
+   ]
+   [
+   x - 3 = \pm 4
+   ]</p>
+<ol>
+<li>Solve the two resulting equations:</li>
+</ol>
+<p>[
+   x - 3 = 4 \quad \Rightarrow \quad x = 7
+   ]
+   [
+   x - 3 = -4 \quad \Rightarrow \quad x = -1
+   ]</p>
+<p><strong>Check:</strong> Substitute <span class="arithmatex">\(x = 7\)</span>: <span class="arithmatex">\((7 - 3)^2 = 4^2 = 16\)</span> ✓. Substitute <span class="arithmatex">\(x = -1\)</span>: <span class="arithmatex">\((-1 - 3)^2 = (-4)^2 = 16\)</span> ✓.</p>
+<p><strong>Key takeaway:</strong> 
+- Isolate the squared term before taking the square root.
+- Always include the <span class="arithmatex">\(\pm\)</span> symbol — this gives two solutions (one positive, one negative).
+- This method works when the equation is in the form <span class="arithmatex">\((x + p)^2 = q\)</span> with <span class="arithmatex">\(q \geq 0\)</span>.</p>
+<details>
+<summary>#### Diagram: Quadratic Square Root Solutions</summary>
+<p>A number line showing the two solutions <span class="arithmatex">\(x = 7\)</span> and <span class="arithmatex">\(x = -1\)</span> derived from <span class="arithmatex">\((x - 3)^2 = 16\)</span>. The equation <span class="arithmatex">\(x - 3 = \pm 4\)</span> gives <span class="arithmatex">\(x = 3 \pm 4\)</span>, placing the solutions at 7 and -1 on the number line.</p>
+</details>
+<p><strong>Key takeaway:</strong> The square-root method is efficient when the quadratic expression is already a perfect square. If it is not, complete the square or use the quadratic formula.</p>
+<hr />
+<h3 id="12-complete-square-quadratic-tier-a-500-750-words-worked-example-diagram">12. Complete Square Quadratic (Tier A: 500-750 words, worked example + diagram)<a class="headerlink" href="#12-complete-square-quadratic-tier-a-500-750-words-worked-example-diagram" title="Permanent link">&para;</a></h3>
+<p><strong>Completing the square</strong> is a method for solving quadratic equations and rewriting quadratic expressions in vertex form. The goal is to create a perfect square trinomial from the quadratic expression.</p>
+<p><strong>Worked example:</strong> Solve <span class="arithmatex">\(x^2 + 6x - 7 = 0\)</span> by completing the square.</p>
+<ol>
+<li>Move the constant term to the right side:</li>
+</ol>
+<p>[
+   x^2 + 6x = 7
+   ]</p>
+<ol>
+<li>Take half of the <span class="arithmatex">\(x\)</span>-coefficient (6), square it: <span class="arithmatex">\(\left(\frac{6}{2}\right)^2 = 3^2 = 9\)</span>. Add this to both sides:</li>
+</ol>
+<p>[
+   x^2 + 6x + 9 = 7 + 9
+   ]</p>
+<ol>
+<li>
+<p>The left side is now a perfect square trinomial: <span class="arithmatex">\((x + 3)^2 = 16\)</span>.</p>
+</li>
+<li>
+<p>Take the square root of both sides:</p>
+</li>
+</ol>
+<p>[
+   x + 3 = \pm \sqrt{16} = \pm 4
+   ]</p>
+<ol>
+<li>Solve for <span class="arithmatex">\(x\)</span>:</li>
+</ol>
+<p>[
+   x = -3 \pm 4 \quad \Rightarrow \quad x = 1 \quad \text{or} \quad x = -7
+   ]</p>
+<p><strong>Key takeaway:</strong> 
+- The number to add is <span class="arithmatex">\(\left(\frac{b}{2}\right)^2\)</span> where <span class="arithmatex">\(b\)</span> is the <span class="arithmatex">\(x\)</span>-coefficient.
+- This method always works for any quadratic equation, even when factoring is not possible.
+- Completing the square is also the basis for deriving the quadratic formula.</p>
+<details>
+<summary>#### Diagram: Completing the Square</summary>
+<p>A geometric illustration showing a square of side <span class="arithmatex">\(x\)</span> and two rectangles of dimensions <span class="arithmatex">\(x \times 3\)</span> arranged around it. Adding a small <span class="arithmatex">\(3 \times 3\)</span> square completes the larger square of side <span class="arithmatex">\(x + 3\)</span>, representing <span class="arithmatex">\(x^2 + 6x + 9 = (x + 3)^2\)</span>.</p>
+</details>
+<p><strong>Key takeaway:</strong> Completing the square transforms any quadratic expression into vertex form <span class="arithmatex">\(a(x - h)^2 + k\)</span>, which reveals the vertex <span class="arithmatex">\((h, k)\)</span> of the parabola.</p>
+<hr />
+<h3 id="13-quadratic-formula-tier-a-500-750-words-worked-example-diagram">13. Quadratic Formula (Tier A: 500-750 words, worked example + diagram)<a class="headerlink" href="#13-quadratic-formula-tier-a-500-750-words-worked-example-diagram" title="Permanent link">&para;</a></h3>
+<p>The <strong>quadratic formula</strong> provides a sure-fire method for solving any quadratic equation <span class="arithmatex">\(ax^2 + bx + c = 0\)</span>, where <span class="arithmatex">\(a \neq 0\)</span>:</p>
+<div class="arithmatex">\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]</div>
+<p><strong>Worked example:</strong> Solve <span class="arithmatex">\(2x^2 - 7x - 4 = 0\)</span> using the quadratic formula.</p>
+<ol>
+<li>
+<p>Identify <span class="arithmatex">\(a = 2\)</span>, <span class="arithmatex">\(b = -7\)</span>, <span class="arithmatex">\(c = -4\)</span>.</p>
+</li>
+<li>
+<p>Substitute into the formula:</p>
+</li>
+</ol>
+<p>[
+   x = \frac{-(-7) \pm \sqrt{(-7)^2 - 4(2)(-4)}}{2(2)}
+   ]</p>
+<ol>
+<li>Simplify step by step:</li>
+</ol>
+<p>[
+   x = \frac{7 \pm \sqrt{49 - (-32)}}{4} = \frac{7 \pm \sqrt{49 + 32}}{4} = \frac{7 \pm \sqrt{81}}{4}
+   ]</p>
+<ol>
+<li>Evaluate the square root: <span class="arithmatex">\(\sqrt{81} = 9\)</span>.</li>
+</ol>
+<p>[
+   x = \frac{7 \pm 9}{4}
+   ]</p>
+<ol>
+<li>Separate into two solutions:</li>
+</ol>
+<p>[
+   x = \frac{7 + 9}{4} = \frac{16}{4} = 4 \quad \text{or} \quad x = \frac{7 - 9}{4} = \frac{-2}{4} = -\frac{1}{2}
+   ]</p>
+<p><strong>Check:</strong> Substitute <span class="arithmatex">\(x = 4\)</span>: <span class="arithmatex">\(2(4)^2 - 7(4) - 4 = 32 - 28 - 4 = 0\)</span> ✓. Substitute <span class="arithmatex">\(x = -\frac{1}{2}\)</span>: <span class="arithmatex">\(2\left(-\frac{1}{2}\right)^2 - 7\left(-\frac{1}{2}\right) - 4 = 2\left(\frac{1}{4}\right) + \frac{7}{2} - 4 = \frac{1}{2} + \frac{7}{2} - 4 = \frac{8}{2} - 4 = 4 - 4 = 0\)</span> ✓.</p>
+<p><strong>Key takeaway:</strong> The quadratic formula works for ALL quadratic equations, even when factoring is not possible. The expression under the square root, <span class="arithmatex">\(b^2 - 4ac\)</span>, is called the <strong>discriminant</strong> and tells us the nature of the roots.</p>
+<details>
+<summary>#### Diagram: Quadratic Formula Derivation</summary>
+<p>A geometric derivation showing how completing the square on <span class="arithmatex">\(ax^2 + bx + c = 0\)</span> leads to the quadratic formula. The diagram illustrates the algebraic steps visually, showing the transition from the standard form to the factored root form.</p>
+</details>
+<p><strong>Key takeaway:</strong> Memorize the quadratic formula. The discriminant <span class="arithmatex">\(b^2 - 4ac &gt; 0\)</span> gives two real roots, <span class="arithmatex">\(= 0\)</span> gives one real root, and <span class="arithmatex">\(&lt; 0\)</span> gives two complex roots.</p>
+<hr />
+<h3 id="14-quadratic-vertex-tier-b-250-400-words-worked-example">14. Quadratic Vertex (Tier B: 250-400 words, worked example)<a class="headerlink" href="#14-quadratic-vertex-tier-b-250-400-words-worked-example" title="Permanent link">&para;</a></h3>
+<p>The <strong>vertex</strong> of a parabola is its highest or lowest point, depending on whether it opens upward or downward. For a quadratic function in standard form <span class="arithmatex">\(y = ax^2 + bx + c\)</span>, the vertex <span class="arithmatex">\((h, k)\)</span> can be found using:</p>
+<div class="arithmatex">\[
+h = -\frac{b}{2a}, \quad k = f(h)
+\]</div>
+<p><strong>Worked example:</strong> Find the vertex of <span class="arithmatex">\(y = x^2 - 4x + 3\)</span>.</p>
+<ol>
+<li>
+<p>Identify <span class="arithmatex">\(a = 1\)</span>, <span class="arithmatex">\(b = -4\)</span>, <span class="arithmatex">\(c = 3\)</span>.</p>
+</li>
+<li>
+<p>Compute <span class="arithmatex">\(h = -\frac{b}{2a} = -\frac{-4}{2(1)} = \frac{4}{2} = 2\)</span>.</p>
+</li>
+<li>
+<p>Compute <span class="arithmatex">\(k = f(2) = (2)^2 - 4(2) + 3 = 4 - 8 + 3 = -1\)</span>.</p>
+</li>
+</ol>
+<p><strong>Vertex:</strong> <span class="arithmatex">\((2, -1)\)</span>.</p>
+<p>Since <span class="arithmatex">\(a = 1 &gt; 0\)</span>, the parabola opens upward, and the vertex <span class="arithmatex">\((2, -1)\)</span> is the minimum point.</p>
+<p><strong>Key takeaway:</strong> The axis of symmetry of the parabola is the vertical line <span class="arithmatex">\(x = h = -\frac{b}{2a}\)</span>. The vertex form of a quadratic is <span class="arithmatex">\(y = a(x - h)^2 + k\)</span>, where <span class="arithmatex">\((h, k)\)</span> is the vertex.</p>
+<details>
+<summary>#### Diagram: Parabola with Vertex</summary>
+<p>A parabola <span class="arithmatex">\(y = x^2 - 4x + 3\)</span> opening upward, with the vertex at <span class="arithmatex">\((2, -1)\)</span> marked as the minimum point. The axis of symmetry <span class="arithmatex">\(x = 2\)</span> is shown as a vertical dashed line.</p>
+</details>
+<p><strong>Key takeaway:</strong> The vertex form <span class="arithmatex">\(y = a(x - h)^2 + k\)</span> makes it easy to identify the vertex <span class="arithmatex">\((h, k)\)</span> and the direction the parabola opens (up if <span class="arithmatex">\(a &gt; 0\)</span>, down if <span class="arithmatex">\(a &lt; 0\)</span>).</p>
+<hr />
+<h3 id="15-quadratic-axis-of-symmetry-tier-a-500-750-words-worked-example-diagram">15. Quadratic Axis of Symmetry (Tier A: 500-750 words, worked example + diagram)<a class="headerlink" href="#15-quadratic-axis-of-symmetry-tier-a-500-750-words-worked-example-diagram" title="Permanent link">&para;</a></h3>
+<p>The <strong>axis of symmetry</strong> of a parabola is the vertical line that divides the parabola into two mirror-image halves. For a quadratic function <span class="arithmatex">\(y = ax^2 + bx + c\)</span>, the axis of symmetry is the line <span class="arithmatex">\(x = -\frac{b}{2a}\)</span>.</p>
+<p><strong>Worked example:</strong> Find the axis of symmetry of <span class="arithmatex">\(y = -3x^2 + 12x - 8\)</span>.</p>
+<ol>
+<li>
+<p>Identify <span class="arithmatex">\(a = -3\)</span>, <span class="arithmatex">\(b = 12\)</span>.</p>
+</li>
+<li>
+<p>Apply the formula: <span class="arithmatex">\(x = -\frac{b}{2a} = -\frac{12}{2(-3)} = -\frac{12}{-6} = 2\)</span>.</p>
+</li>
+</ol>
+<p><strong>Axis of symmetry:</strong> <span class="arithmatex">\(x = 2\)</span>.</p>
+<p><strong>Key takeaway:</strong> The vertex always lies on the axis of symmetry. If you know the vertex, the axis of symmetry is simply <span class="arithmatex">\(x =\)</span> (x-coordinate of vertex).</p>
+<details>
+<summary>#### Diagram: Parabola with Axis of Symmetry</summary>
+<p>A parabola <span class="arithmatex">\(y = -3x^2 + 12x - 8\)</span> opening downward (since <span class="arithmatex">\(a = -3 &lt; 0\)</span>), with the axis of symmetry <span class="arithmatex">\(x = 2\)</span> shown as a vertical dashed line. The vertex lies on this line, and the two halves of the parabola are mirror images.</p>
+</details>
+<p><strong>Key takeaway:</strong> The axis of symmetry formula <span class="arithmatex">\(x = -\frac{b}{2a}\)</span> works for any quadratic function, regardless of whether the parabola opens up or down.</p>
+<hr />
+<h3 id="16-model-quadratic-data-tier-a-500-750-words-worked-example-diagram">16. Model Quadratic Data (Tier A: 500-750 words, worked example + diagram)<a class="headerlink" href="#16-model-quadratic-data-tier-a-500-750-words-worked-example-diagram" title="Permanent link">&para;</a></h3>
+<p><strong>Modeling quadratic data</strong> involves finding a quadratic function that fits a set of data points. This is useful when the rate of change is not constant (as in linear models) but changes at a constant rate (as in quadratic models).</p>
+<p><strong>Worked example:</strong> Find a quadratic model for the following data, where <span class="arithmatex">\(x\)</span> represents time (in seconds) and <span class="arithmatex">\(y\)</span> represents height (in feet) of a ball thrown upward:</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(x\)</span> (time)</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(y\)</span> (height)</td>
+<td>0</td>
+<td>35</td>
+<td>60</td>
+<td>75</td>
+</tr>
+</tbody>
+</table>
+<p>Assume the model is <span class="arithmatex">\(y = ax^2 + bx + c\)</span>.</p>
+<ol>
+<li>Since the height at <span class="arithmatex">\(x = 0\)</span> is 0, <span class="arithmatex">\(c = 0\)</span>.</li>
+<li>Using the points <span class="arithmatex">\((1, 35)\)</span> and <span class="arithmatex">\((2, 60)\)</span>:</li>
+</ol>
+<p>[
+   \begin{aligned}
+   a(1)^2 + b(1) &amp;= 35 \quad \Rightarrow \quad a + b = 35 \
+   a(2)^2 + b(2) &amp;= 60 \quad \Rightarrow \quad 4a + 2b = 60
+   \end{aligned}
+   ]</p>
+<ol>
+<li>Solve the system: From the first equation, <span class="arithmatex">\(b = 35 - a\)</span>. Substitute into the second:</li>
+</ol>
+<p>[
+   4a + 2(35 - a) = 60 \quad \Rightarrow \quad 4a + 70 - 2a = 60 \quad \Rightarrow \quad 2a = -10 \quad \Rightarrow \quad a = -5
+   ]</p>
+<ol>
+<li>Then <span class="arithmatex">\(b = 35 - (-5) = 40\)</span>.</li>
+</ol>
+<p><strong>Model:</strong> <span class="arithmatex">\(y = -5x^2 + 40x\)</span>.</p>
+<p><strong>Key takeaway:</strong> 
+- Three points uniquely determine a quadratic model.
+- The coefficient <span class="arithmatex">\(a\)</span> indicates the curvature: <span class="arithmatex">\(a &lt; 0\)</span> means the parabola opens downward (maximum), <span class="arithmatex">\(a &gt; 0\)</span> means it opens upward (minimum).
+- Real-world quadratic models often have <span class="arithmatex">\(a &lt; 0\)</span> for projectile motion.</p>
+<details>
+<summary>#### Diagram: Quadratic Data Model</summary>
+<p>A scatterplot of the data points <span class="arithmatex">\((0, 0)\)</span>, <span class="arithmatex">\((1, 35)\)</span>, <span class="arithmatex">\((2, 60)\)</span>, <span class="arithmatex">\((3, 75)\)</span> with the quadratic curve <span class="arithmatex">\(y = -5x^2 + 40x\)</span> overlaid. The parabola opens downward, representing the projectile motion of the ball.</p>
+</details>
+<p><strong>Key takeaway:</strong> Quadratic models are identified by constant second differences in the <span class="arithmatex">\(y\)</span>-values. In real-world data, look for acceleration or deceleration patterns that suggest a quadratic relationship.</p>
+<hr />
+<h3 id="17-model-exponential-data-tier-a-500-750-words-worked-example-diagram">17. Model Exponential Data (Tier A: 500-750 words, worked example + diagram)<a class="headerlink" href="#17-model-exponential-data-tier-a-500-750-words-worked-example-diagram" title="Permanent link">&para;</a></h3>
+<p><strong>Modeling exponential data</strong> involves finding an exponential function of the form <span class="arithmatex">\(y = ab^x\)</span> that fits a set of data points. Exponential models are appropriate when the rate of change is proportional to the current value, producing rapid growth or decay.</p>
+<p><strong>Worked example:</strong> Find an exponential model for the following bacteria growth data, where <span class="arithmatex">\(x\)</span> represents time (in hours) and <span class="arithmatex">\(y\)</span> represents population:</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(x\)</span> (time)</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(y\)</span> (population)</td>
+<td>100</td>
+<td>200</td>
+<td>400</td>
+<td>800</td>
+</tr>
+</tbody>
+</table>
+<p>Since the population doubles each hour, the base <span class="arithmatex">\(b = 2\)</span>. The initial value (at <span class="arithmatex">\(x = 0\)</span>) is <span class="arithmatex">\(a = 100\)</span>.</p>
+<p><strong>Model:</strong> <span class="arithmatex">\(y = 100 \cdot 2^x\)</span>.</p>
+<p><strong>Verification:</strong>
+- At <span class="arithmatex">\(x = 0\)</span>: <span class="arithmatex">\(y = 100 \cdot 2^0 = 100 \cdot 1 = 100\)</span> ✓
+- At <span class="arithmatex">\(x = 1\)</span>: <span class="arithmatex">\(y = 100 \cdot 2^1 = 200\)</span> ✓
+- At <span class="arithmatex">\(x = 2\)</span>: <span class="arithmatex">\(y = 100 \cdot 2^2 = 400\)</span> ✓
+- At <span class="arithmatex">\(x = 3\)</span>: <span class="arithmatex">\(y = 100 \cdot 2^3 = 800\)</span> ✓</p>
+<p><strong>Key takeaway:</strong> 
+- If the <span class="arithmatex">\(y\)</span>-values have a constant ratio (each <span class="arithmatex">\(y\)</span> is a fixed multiple of the previous), the data is exponential.
+- The form is <span class="arithmatex">\(y = ab^x\)</span>, where <span class="arithmatex">\(a\)</span> is the initial value (at <span class="arithmatex">\(x = 0\)</span>) and <span class="arithmatex">\(b\)</span> is the growth/decay factor.
+- If <span class="arithmatex">\(b &gt; 1\)</span>, it is exponential growth; if <span class="arithmatex">\(0 &lt; b &lt; 1\)</span>, it is exponential decay.</p>
+<details>
+<summary>#### Diagram: Exponential Growth Model</summary>
+<p>A line plot with points at <span class="arithmatex">\((0, 100)\)</span>, <span class="arithmatex">\((1, 200)\)</span>, <span class="arithmatex">\((2, 400)\)</span>, <span class="arithmatex">\((3, 800)\)</span> showing rapid exponential growth. The curve <span class="arithmatex">\(y = 100 \cdot 2^x\)</span> is overlaid, illustrating how the population doubles each time unit.</p>
+</details>
+<p><strong>Key takeaway:</strong> Exponential growth starts slowly and then accelerates rapidly. In real-world contexts, unlimited exponential growth is not sustainable—resources eventually limit growth, leading to logistic models.</p>
+<hr />
+<h2 id="chapter-review">Chapter Review<a class="headerlink" href="#chapter-review" title="Permanent link">&para;</a></h2>
+<p><strong>Key Concepts Covered:</strong>
+1. Linear relationships and functions <span class="arithmatex">\(y = mx + b\)</span>
+2. Systems of linear equations and inequalities
+3. Polynomial operations: addition, subtraction, multiplication
+4. Greatest common factoring (GCF)
+5. Trinomial factoring: <span class="arithmatex">\(x^2 + bx + c\)</span> and <span class="arithmatex">\(ax^2 + bx + c\)</span>
+6. Special factorization: difference of squares <span class="arithmatex">\(a^2 - b^2 = (a - b)(a + b)\)</span>
+7. Solving quadratic equations: factoring, square roots, completing the square, quadratic formula
+8. Quadratic features: vertex, axis of symmetry
+9. Modeling quadratic and exponential data</p>
+<p><strong>Important Formulas:</strong>
+- Slope: <span class="arithmatex">\(m = \frac{y_2 - y_1}{x_2 - x_1}\)</span>
+- Quadratic formula: <span class="arithmatex">\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\)</span>
+- Axis of symmetry: <span class="arithmatex">\(x = -\frac{b}{2a}\)</span>
+- Vertex form: <span class="arithmatex">\(y = a(x - h)^2 + k\)</span></p>
+<p><strong>Skills to Practice:</strong>
+- Graph linear equations and identify slope and <span class="arithmatex">\(y\)</span>-intercept
+- Solve systems of linear equations by substitution and elimination
+- Add, subtract, and multiply polynomial expressions
+- Factor trinomials and special products (difference of squares)
+- Solve quadratic equations using multiple methods
+- Find the vertex and axis of symmetry of a parabola
+- Model real-world data with linear, quadratic, and exponential functions</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02-linear-equations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Linear Equations">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2. Linear Equations
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04-graphing-and-coordinates/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Graphing and Coordinates">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4. Graphing and Coordinates
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

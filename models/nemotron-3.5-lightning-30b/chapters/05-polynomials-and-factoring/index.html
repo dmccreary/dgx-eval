@@ -1,0 +1,2494 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Algebra I chapter covering polynomial operations and factoring techniques">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/05-polynomials-and-factoring/">
+      
+      
+        <link rel="prev" href="../04-graphing-and-coordinates/">
+      
+      
+        <link rel="next" href="../06-quadratic-functions/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Polynomials and Factoring - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#polynomials-and-factoring" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Polynomials and Factoring
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6" id="__nav_10_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6">
+            <span class="md-nav__icon md-icon"></span>
+            nemotron-3.5-lightning:30b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6_4" id="__nav_10_6_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-linear-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Linear Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-functions-and-notation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Functions and Notation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-graphing-and-coordinates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Graphing and Coordinates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    5. Polynomials and Factoring
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    5. Polynomials and Factoring
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polynomials-and-their-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomials and Their Parts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Polynomials and Their Parts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#special-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Product
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polynomial-degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomial Degree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#like-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Like Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unlike-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unlike Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-form-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Form Polynomial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leading-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leading Coefficient
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant-term-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant Term Polynomial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quadratic-functions-and-their-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Functions and Their Forms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quadratic Functions and Their Forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex-form-quadratic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex Form Quadratic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intercept-form-quadratic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intercept Form Quadratic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-maximum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Maximum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-minimum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Minimum
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponential-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exponential-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Growth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Decay
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponent-growth-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponent Growth Factor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponent-decay-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponent Decay Factor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientific-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scientific Notation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-elements-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Elements (MicroSims)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Problems
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-exponents-and-radicals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Exponents and Radicals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-systems-of-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Systems of Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-statistics-and-data-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Statistics and Data Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-sequences-and-series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Sequences and Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-mathematical-modeling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Mathematical Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-advanced-topics-and-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Advanced Topics and Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polynomials-and-their-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomials and Their Parts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Polynomials and Their Parts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#special-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Product
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polynomial-degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomial Degree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#like-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Like Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unlike-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unlike Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-form-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Form Polynomial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leading-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leading Coefficient
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant-term-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant Term Polynomial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quadratic-functions-and-their-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Functions and Their Forms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quadratic Functions and Their Forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex-form-quadratic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex Form Quadratic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intercept-form-quadratic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intercept Form Quadratic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-maximum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Maximum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-minimum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Minimum
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponential-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exponential-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Growth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Decay
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponent-growth-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponent Growth Factor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponent-decay-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponent Decay Factor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientific-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scientific Notation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-elements-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Elements (MicroSims)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Problems
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/nemotron-3.5-lightning-30b/chapters/05-polynomials-and-factoring/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="polynomials-and-factoring">Polynomials and Factoring<a class="headerlink" href="#polynomials-and-factoring" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the key concepts for polynomials and factoring. Students will develop fluency in the core algebraic skills and topics presented in this chapter, building on foundational knowledge and preparing for more advanced topics.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Special Product</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Polynomial Degree</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Like Terms</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Unlike Terms</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Standard Form Polynomial</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Leading Coefficient</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Constant Term Polynomial</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Vertex Form Quadratic</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Intercept Form Quadratic</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Quadratic Maximum</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Quadratic Minimum</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Exponential Growth</td>
+<td>363</td>
+</tr>
+<tr>
+<td>Exponential Decay</td>
+<td>363</td>
+</tr>
+<tr>
+<td>Exponential Base</td>
+<td>360</td>
+</tr>
+<tr>
+<td>Exponent Growth Factor</td>
+<td>154</td>
+</tr>
+<tr>
+<td>Exponent Decay Factor</td>
+<td>1220</td>
+</tr>
+<tr>
+<td>Scientific Notation</td>
+<td>205</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Order of operations</li>
+<li>Variable identification</li>
+<li>Coefficient recognition</li>
+<li>Constant term recognition</li>
+</ul>
+<h2 id="polynomials-and-their-parts">Polynomials and Their Parts<a class="headerlink" href="#polynomials-and-their-parts" title="Permanent link">&para;</a></h2>
+<p>Polynomials are algebraic expressions consisting of variables and coefficients, combined using addition, subtraction, and multiplication. A polynomial can have one term (a monomial), two terms (a binomial), or three terms (a trinomial). The <strong>degree</strong> of a polynomial is the highest power of the variable present, and the <strong>leading coefficient</strong> is the coefficient of the term with the highest degree.</p>
+<h3 id="special-product">Special Product<a class="headerlink" href="#special-product" title="Permanent link">&para;</a></h3>
+<p>A <strong>special product</strong> is a polynomial product that follows a predictable pattern, allowing for faster multiplication without distributing each term individually. The most common special products are the difference of squares and perfect square trinomials.</p>
+<ul>
+<li><strong>Difference of squares:</strong> <span class="arithmatex">\((a + b)(a - b) = a^2 - b^2\)</span></li>
+<li><strong>Perfect square trinomial:</strong> <span class="arithmatex">\((a + b)^2 = a^2 + 2ab + b^2\)</span> and <span class="arithmatex">\((a - b)^2 = a^2 - 2ab + b^2\)</span></li>
+</ul>
+<p>These patterns are useful because they appear frequently in algebra and higher mathematics, and recognizing them saves time and reduces errors.</p>
+<h3 id="polynomial-degree">Polynomial Degree<a class="headerlink" href="#polynomial-degree" title="Permanent link">&para;</a></h3>
+<p>The <strong>degree</strong> of a polynomial is the highest exponent of the variable in the expression. For a single-term polynomial (monomial), the degree is the exponent on the variable. For a polynomial with multiple terms, the degree is the highest degree among all terms.</p>
+<p><strong>Worked example:</strong> Find the degree of <span class="arithmatex">\(4x^3 - 2x^2 + 7x - 5\)</span>.</p>
+<ul>
+<li>The first term <span class="arithmatex">\(4x^3\)</span> has degree 3</li>
+<li>The second term <span class="arithmatex">\(-2x^2\)</span> has degree 2</li>
+<li>The third term <span class="arithmatex">\(7x\)</span> has degree 1</li>
+<li>The fourth term <span class="arithmatex">\(-5\)</span> has degree 0 (constant)</li>
+</ul>
+<p>The highest degree is 3, so the polynomial has degree 3.</p>
+<h3 id="like-terms">Like Terms<a class="headerlink" href="#like-terms" title="Permanent link">&para;</a></h3>
+<p><strong>Like terms</strong> are terms that have the same variable raised to the same power. Only the coefficients can differ. When combining like terms, we add or subtract the coefficients while keeping the variable part unchanged.</p>
+<p>For example, <span class="arithmatex">\(3x^2\)</span> and <span class="arithmatex">\(-5x^2\)</span> are like terms because both contain <span class="arithmatex">\(x^2\)</span>. Their sum is <span class="arithmatex">\((3 + (-5))x^2 = -2x^2\)</span>.</p>
+<p>Unlike terms, such as <span class="arithmatex">\(3x^2\)</span> and <span class="arithmatex">\(5x\)</span>, cannot be combined because the variable parts are different.</p>
+<h3 id="unlike-terms">Unlike Terms<a class="headerlink" href="#unlike-terms" title="Permanent link">&para;</a></h3>
+<p><strong>Unlike terms</strong> are terms that have different variable parts — either different variables or the same variable raised to different powers. Unlike terms cannot be combined through addition or subtraction.</p>
+<p>For example, <span class="arithmatex">\(3x^2\)</span> and <span class="arithmatex">\(5x\)</span> are unlike terms because one has <span class="arithmatex">\(x^2\)</span> and the other has <span class="arithmatex">\(x\)</span>. Similarly, <span class="arithmatex">\(2xy\)</span> and <span class="arithmatex">\(3x\)</span> are unlike terms because the first contains both <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> while the second contains only <span class="arithmatex">\(x\)</span>.</p>
+<p>Recognizing unlike terms is just as important as recognizing like terms when simplifying polynomial expressions.</p>
+<h3 id="standard-form-polynomial">Standard Form Polynomial<a class="headerlink" href="#standard-form-polynomial" title="Permanent link">&para;</a></h3>
+<p>A polynomial is in <strong>standard form</strong> when its terms are written in descending order of degree, from highest to lowest. The leading coefficient is positioned first, followed by terms of decreasing degree, and the constant term comes last.</p>
+<p>For example, the polynomial <span class="arithmatex">\(3x^2 + 7 - 4x^3 + x\)</span> in non-standard form becomes <span class="arithmatex">\(-4x^3 + 3x^2 + x + 7\)</span> in standard form.</p>
+<p>Writing polynomials in standard form makes it easy to identify the degree and leading coefficient at a glance.</p>
+<h3 id="leading-coefficient">Leading Coefficient<a class="headerlink" href="#leading-coefficient" title="Permanent link">&para;</a></h3>
+<p>The <strong>leading coefficient</strong> is the coefficient of the term with the highest degree in a polynomial written in standard form. It determines the overall direction and steepness of the polynomial's graph.</p>
+<p>In the polynomial <span class="arithmatex">\(-3x^4 + 2x^3 - x + 7\)</span>, the leading coefficient is <span class="arithmatex">\(-3\)</span>. The sign of the leading coefficient affects the end behavior of the polynomial graph: a positive leading coefficient typically means the graph rises to the right, while a negative leading coefficient means the graph falls to the right.</p>
+<h3 id="constant-term-polynomial">Constant Term Polynomial<a class="headerlink" href="#constant-term-polynomial" title="Permanent link">&para;</a></h3>
+<p>The <strong>constant term</strong> is the term in a polynomial that does not contain a variable — it is purely a number. In standard form, the constant term is always written last.</p>
+<p>In the polynomial <span class="arithmatex">\(2x^3 - 4x^2 + 5x - 8\)</span>, the constant term is <span class="arithmatex">\(-8\)</span>. The constant term represents the value of the polynomial when the variable equals zero, and it corresponds to the y-intercept of the graph when the polynomial is written in standard form.</p>
+<h2 id="quadratic-functions-and-their-forms">Quadratic Functions and Their Forms<a class="headerlink" href="#quadratic-functions-and-their-forms" title="Permanent link">&para;</a></h2>
+<p>A <strong>quadratic function</strong> is a polynomial of degree 2, typically written in the form <span class="arithmatex">\(f(x) = ax^2 + bx + c\)</span>, where <span class="arithmatex">\(a \neq 0\)</span>. The graph of a quadratic function is a parabola. Understanding the different forms of quadratic functions makes it easier to identify key features such as the vertex, axis of symmetry, and intercepts.</p>
+<h3 id="vertex-form-quadratic">Vertex Form Quadratic<a class="headerlink" href="#vertex-form-quadratic" title="Permanent link">&para;</a></h3>
+<p>The <strong>vertex form</strong> of a quadratic function is <span class="arithmatex">\(f(x) = a(x - h)^2 + k\)</span>, where <span class="arithmatex">\((h, k)\)</span> is the vertex of the parabola and the axis of symmetry is the line <span class="arithmatex">\(x = h\)</span>. The parameter <span class="arithmatex">\(a\)</span> affects the width and direction of the parabola: if <span class="arithmatex">\(a &gt; 0\)</span>, the parabola opens upward; if <span class="arithmatex">\(a &lt; 0\)</span>, it opens downward.</p>
+<p><strong>Worked example:</strong> Graph <span class="arithmatex">\(f(x) = 2(x - 3)^2 - 4\)</span> and identify the vertex and direction of opening.</p>
+<ul>
+<li>The vertex is <span class="arithmatex">\((h, k) = (3, -4)\)</span></li>
+<li>Since <span class="arithmatex">\(a = 2 &gt; 0\)</span>, the parabola opens upward</li>
+<li>The axis of symmetry is <span class="arithmatex">\(x = 3\)</span></li>
+</ul>
+<p>To graph, start at the vertex <span class="arithmatex">\((3, -4)\)</span> and plot additional points by choosing <span class="arithmatex">\(x\)</span>-values around the vertex, then connect them with a smooth parabolic curve.</p>
+<h3 id="intercept-form-quadratic">Intercept Form Quadratic<a class="headerlink" href="#intercept-form-quadratic" title="Permanent link">&para;</a></h3>
+<p>The <strong>intercept form</strong> (or factored form) of a quadratic function is <span class="arithmatex">\(f(x) = a(x - p)(x - q)\)</span>, where <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> are the <span class="arithmatex">\(x\)</span>-intercepts (roots or zeros) of the function. The parameter <span class="arithmatex">\(a\)</span> still affects the width and direction of the parabola.</p>
+<p><strong>Worked example:</strong> Write the quadratic function with <span class="arithmatex">\(x\)</span>-intercepts at <span class="arithmatex">\(x = -2\)</span> and <span class="arithmatex">\(x = 5\)</span> that passes through the point <span class="arithmatex">\((1, 12)\)</span>.</p>
+<p>Using the intercept form: <span class="arithmatex">\(f(x) = a(x - (-2))(x - 5) = a(x + 2)(x - 5)\)</span></p>
+<p>Substitute <span class="arithmatex">\(x = 1\)</span> and <span class="arithmatex">\(f(1) = 12\)</span>:
+<span class="arithmatex">\(12 = a(1 + 2)(1 - 5) = a(3)(-4) = -12a\)</span>
+<span class="arithmatex">\(a = -1\)</span></p>
+<p>So the function is <span class="arithmatex">\(f(x) = -(x + 2)(x - 5) = -(x^2 - 3x - 10) = -x^2 + 3x + 10\)</span>.</p>
+<h3 id="quadratic-maximum">Quadratic Maximum<a class="headerlink" href="#quadratic-maximum" title="Permanent link">&para;</a></h3>
+<p>When the leading coefficient <span class="arithmatex">\(a &lt; 0\)</span> in a quadratic function, the parabola opens <strong>downward</strong>, and the vertex represents the <strong>maximum</strong> value of the function. The <span class="arithmatex">\(y\)</span>-coordinate of the vertex is the maximum value of <span class="arithmatex">\(y\)</span> for the given quadratic.</p>
+<p><strong>Worked example:</strong> Find the maximum value of <span class="arithmatex">\(f(x) = -2(x - 3)^2 + 5\)</span>.</p>
+<p>Since <span class="arithmatex">\(a = -2 &lt; 0\)</span>, the parabola opens downward, so the vertex gives the maximum value. The vertex is <span class="arithmatex">\((h, k) = (3, 5)\)</span>, so the maximum value of <span class="arithmatex">\(f(x)\)</span> is 5, achieved when <span class="arithmatex">\(x = 3\)</span>.</p>
+<h3 id="quadratic-minimum">Quadratic Minimum<a class="headerlink" href="#quadratic-minimum" title="Permanent link">&para;</a></h3>
+<p>When the leading coefficient <span class="arithmatex">\(a &gt; 0\)</span> in a quadratic function, the parabola opens <strong>upward</strong>, and the vertex represents the <strong>minimum</strong> value of the function. The <span class="arithmatex">\(y\)</span>-coordinate of the vertex is the minimum value of <span class="arithmatex">\(y\)</span> for the given quadratic.</p>
+<p><strong>Worked example:</strong> Find the minimum value of <span class="arithmatex">\(f(x) = 3(x + 1)^2 - 4\)</span>.</p>
+<p>Since <span class="arithmatex">\(a = 3 &gt; 0\)</span>, the parabola opens upward, so the vertex gives the minimum value. The vertex is <span class="arithmatex">\((h, k) = (-1, -4)\)</span>, so the minimum value of <span class="arithmatex">\(f(x)\)</span> is <span class="arithmatex">\(-4\)</span>, achieved when <span class="arithmatex">\(x = -1\)</span>.</p>
+<h2 id="exponential-functions">Exponential Functions<a class="headerlink" href="#exponential-functions" title="Permanent link">&para;</a></h2>
+<p>An <strong>exponential function</strong> has the form <span class="arithmatex">\(f(x) = ab^x\)</span>, where <span class="arithmatex">\(a \neq 0\)</span>, <span class="arithmatex">\(b &gt; 0\)</span>, and <span class="arithmatex">\(b \neq 1\)</span>. The base <span class="arithmatex">\(b\)</span> determines whether the function represents growth (<span class="arithmatex">\(b &gt; 1\)</span>) or decay (<span class="arithmatex">\(0 &lt; b &lt; 1\)</span>). Exponential functions model many real-world phenomena, including population growth, radioactive decay, and compound interest.</p>
+<h3 id="exponential-growth">Exponential Growth<a class="headerlink" href="#exponential-growth" title="Permanent link">&para;</a></h3>
+<p><strong>Exponential growth</strong> occurs when a quantity increases by a constant percentage over equal time intervals. The base <span class="arithmatex">\(b &gt; 1\)</span> in the exponential function <span class="arithmatex">\(f(x) = ab^x\)</span> represents the growth factor.</p>
+<p><strong>Worked example:</strong> A bacterial culture doubles every hour. If the initial population is 500 bacteria, write a function for the population after <span class="arithmatex">\(t\)</span> hours and find the population after 3 hours.</p>
+<p>The function is <span class="arithmatex">\(f(t) = 500(2)^t\)</span>. After 3 hours: <span class="arithmatex">\(f(3) = 500(2)^3 = 500(8) = 4000\)</span> bacteria.</p>
+<h3 id="exponential-decay">Exponential Decay<a class="headerlink" href="#exponential-decay" title="Permanent link">&para;</a></h3>
+<p><strong>Exponential decay</strong> occurs when a quantity decreases by a constant percentage over equal time intervals. The base <span class="arithmatex">\(0 &lt; b &lt; 1\)</span> in the exponential function <span class="arithmatex">\(f(x) = ab^x\)</span> represents the decay factor.</p>
+<p><strong>Worked example:</strong> A radioactive substance loses 10% of its mass each year. If the initial mass is 200 grams, write a function for the remaining mass after <span class="arithmatex">\(t\)</span> years and find the mass after 3 years.</p>
+<p>The decay factor is <span class="arithmatex">\(b = 1 - 0.10 = 0.90\)</span>. The function is <span class="arithmatex">\(f(t) = 200(0.90)^t\)</span>. After 3 years: <span class="arithmatex">\(f(3) = 200(0.90)^3 = 200(0.729) = 145.8\)</span> grams remaining.</p>
+<h3 id="exponential-base">Exponential Base<a class="headerlink" href="#exponential-base" title="Permanent link">&para;</a></h3>
+<p>The <strong>base</strong> <span class="arithmatex">\(b\)</span> of an exponential function <span class="arithmatex">\(f(x) = ab^x\)</span> determines the rate of growth or decay:
+- If <span class="arithmatex">\(b &gt; 1\)</span>, the function represents exponential growth
+- If <span class="arithmatex">\(0 &lt; b &lt; 1\)</span>, the function represents exponential decay
+- The distance of <span class="arithmatex">\(b\)</span> from 1 indicates the rate of increase or decrease</p>
+<p><strong>Worked example:</strong> Compare the functions <span class="arithmatex">\(f(x) = 100(1.05)^x\)</span> and <span class="arithmatex">\(g(x) = 100(0.95)^x\)</span>. Which represents growth and which represents decay? What are the growth/decay rates?</p>
+<ul>
+<li><span class="arithmatex">\(f(x) = 100(1.05)^x\)</span>: growth base <span class="arithmatex">\(b = 1.05\)</span>, so the growth rate is <span class="arithmatex">\(5\%\)</span> per unit increase in <span class="arithmatex">\(x\)</span></li>
+<li><span class="arithmatex">\(g(x) = 100(0.95)^x\)</span>: decay base <span class="arithmatex">\(b = 0.95\)</span>, so the decay rate is <span class="arithmatex">\(5\%\)</span> per unit increase in <span class="arithmatex">\(x\)</span></li>
+</ul>
+<h3 id="exponent-growth-factor">Exponent Growth Factor<a class="headerlink" href="#exponent-growth-factor" title="Permanent link">&para;</a></h3>
+<p>The <strong>exponent growth factor</strong> is the base <span class="arithmatex">\(b\)</span> in an exponential growth function <span class="arithmatex">\(f(x) = ab^x\)</span> where <span class="arithmatex">\(b &gt; 1\)</span>. It represents the multiplicative factor by which the quantity increases for each unit increase in the exponent.</p>
+<p><strong>Worked example:</strong> If a population grows by a factor of 1.5 each year, starting with 100 individuals, the population after 4 years is <span class="arithmatex">\(100(1.5)^4 = 100(5.0625) = 506.25\)</span> individuals.</p>
+<h3 id="exponent-decay-factor">Exponent Decay Factor<a class="headerlink" href="#exponent-decay-factor" title="Permanent link">&para;</a></h3>
+<p>The <strong>exponent decay factor</strong> is the base <span class="arithmatex">\(b\)</span> in an exponential decay function <span class="arithmatex">\(f(x) = ab^x\)</span> where <span class="arithmatex">\(0 &lt; b &lt; 1\)</span>. It represents the multiplicative factor by which the quantity decreases for each unit increase in the exponent.</p>
+<p><strong>Worked example:</strong> If a substance decays by a factor of 0.8 each day, starting with 100 grams, the remaining amount after 3 days is <span class="arithmatex">\(100(0.8)^3 = 100(0.512) = 51.2\)</span> grams.</p>
+<h3 id="scientific-notation">Scientific Notation<a class="headerlink" href="#scientific-notation" title="Permanent link">&para;</a></h3>
+<p><strong>Scientific notation</strong> is a way of writing very large or very small numbers in a compact form as a product of a number between 1 and 10 and a power of 10. The format is <span class="arithmatex">\(m \times 10^n\)</span>, where <span class="arithmatex">\(1 \leq |m| &lt; 10\)</span> and <span class="arithmatex">\(n\)</span> is an integer.</p>
+<p><strong>Worked example:</strong> Write <span class="arithmatex">\(450,000\)</span> in scientific notation.</p>
+<p>Move the decimal point 5 places to the left: <span class="arithmatex">\(4.5 \times 10^5\)</span>.</p>
+<p>Write <span class="arithmatex">\(0.00003\)</span> in scientific notation.</p>
+<p>Move the decimal point 5 places to the right: <span class="arithmatex">\(3 \times 10^{-5}\)</span>.</p>
+<h2 id="interactive-elements-microsims">Interactive Elements (MicroSims)<a class="headerlink" href="#interactive-elements-microsims" title="Permanent link">&para;</a></h2>
+<p>For the following concepts, interactive MicroSims are recommended to support learner engagement and track progress. Each sim targets the specific Bloom level and verb identified for the concept. The microsim-generator will insert the correct canvas height and interactive controls after the sim is built.</p>
+<details>
+<summary>Exponential Growth Sim</summary>
+<p>Type: microsim<br/>
+<strong>sim-id:</strong> exponential-growth-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> Explain<br/>
+<strong>Learning Objective:</strong> The learner will explain how exponential growth behaves with different growth factors.<br/>
+<strong>Prerequisites:</strong> Exponential functions, base b &gt; 1<br/>
+<strong>Evidence of Mastery:</strong> Learner can predict the population after t time units given initial value and growth factor.<br/>
+<strong>Misconceptions:</strong> Growth always follows the same pattern; ignoring the compounding effect.<br/>
+<strong>Instructional Rationale:</strong> Working with interactive sims helps learners visualize the compounding effect of exponential growth, connecting the algebraic form ab^x to real-world population models.<br/>
+<strong>Content:</strong> Initial population P₀ = 100; growth factor b = 1.5; time t ranges from 0 to 5; learner adjusts the growth factor and observes how the population changes.<br/>
+<strong>Provenance:</strong> Chapter 5, exponential growth section; synthetic with seed values matching worked examples.<br/>
+<strong>Rules:</strong> b &gt; 1 for growth; population = P₀ × b^t; default step size for b is 0.1; t increments by 1.<br/>
+<strong>Learner Activity:</strong> 1) Set the growth factor b using a slider (range 1.1 to 2.0, step 0.1). 2) Observe the population after each time unit t = 0, 1, 2, 3, 4, 5. 3) Notice how the population changes more rapidly for larger b values. 4) Answer the question: "If b = 1.5 and t = 3, what is the population starting from 100?"<br/>
+<strong>Feedback:</strong> After each attempt, learner receives immediate feedback. Correct answers receive affirmation with a brief explanation. Incorrect answers reveal the correct value and a one-sentence reason referencing the formula.<br/>
+<strong>Starting State:</strong> The sim loads with P₀ = 100, b = 1.5, t = 0. The question "If b = 1.5 and t = 3, what is the population starting from 100?" is displayed.<br/>
+<strong>Chapter Anchors:</strong> This sim covers exponential growth with base b &gt; 1, consistent with the chapter's worked example of bacterial culture doubling every hour starting with 500 bacteria.</p>
+</details>
+<details>
+<summary>Exponential Decay Sim</summary>
+<p>Type: microsim<br/>
+<strong>sim-id:</strong> exponential-decay-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> Explain<br/>
+<strong>Learning Objective:</strong> The learner will explain how exponential decay behaves with different decay factors.<br/>
+<strong>Prerequisites:</strong> Exponential functions, 0 &lt; b &lt; 1<br/>
+<strong>Evidence of Mastery:</strong> Learner can predict the remaining amount after t time units given initial value and decay factor.<br/>
+<strong>Misconceptions:</strong> Decay always follows the same pattern; ignoring the compounding effect.<br/>
+<strong>Instructional Rationale:</strong> Working with interactive sims helps learners visualize the compounding effect of exponential decay, connecting the algebraic form ab^x to real-world radioactive decay and depreciation models.<br/>
+<strong>Content:</strong> Initial mass P₀ = 200 grams; decay factor b = 0.90; time t ranges from 0 to 5; learner adjusts the decay factor and observes how the remaining mass changes.<br/>
+<strong>Provenance:</strong> Chapter 5, exponential decay section; synthetic with seed values matching worked examples.<br/>
+<strong>Rules:</strong> 0 &lt; b &lt; 1 for decay; remaining amount = P₀ × b^t; default step size for b is 0.05; t increments by 1.<br/>
+<strong>Learner Activity:</strong> 1) Set the decay factor b using a slider (range 0.8 to 0.95, step 0.05). 2) Observe the remaining mass after each time unit t = 0, 1, 2, 3, 4, 5. 3) Notice how the remaining amount decreases more rapidly for smaller b values. 4) Answer the question: "If b = 0.90 and t = 3, what is the remaining mass starting from 200 grams?"<br/>
+<strong>Feedback:</strong> After each attempt, learner receives immediate feedback. Correct answers receive affirmation with a brief explanation. Incorrect answers reveal the correct value and a one-sentence reason referencing the formula.<br/>
+<strong>Starting State:</strong> The sim loads with P₀ = 200, b = 0.90, t = 0. The question "If b = 0.90 and t = 3, what is the remaining mass starting from 200 grams?" is displayed.<br/>
+<strong>Chapter Anchors:</strong> This sim covers exponential decay with base 0 &lt; b &lt; 1, consistent with the chapter's worked example of radioactive substance losing 10% per year starting with 200 grams.</p>
+</details>
+<details>
+<summary>Exponential Base Sim</summary>
+<p>Type: microsim<br/>
+<strong>sim-id:</strong> exponential-base-explorer<br/>
+<strong>Library:</strong> p5.js<br/
+**Status:** Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> Use<br/>
+<strong>Learning Objective:</strong> The learner will use the exponential base to determine whether a function represents growth or decay.<br/>
+<strong>Prerequisites:</strong> Exponential functions, b &gt; 0, b ≠ 1<br/>
+<strong>Evidence of Mastery:</strong> Learner can correctly classify a function f(x) = ab^x as growth or decay based on the value of b.<br/>
+<strong>Misconceptions:</strong> Any positive b means growth; b = 1 is neither growth nor decay.<br/>
+<strong>Instructional Rationale:</strong> Interactive exploration of the base parameter helps learners distinguish between growth and decay regimes and understand the boundary condition b = 1.<br/>
+<strong>Content:</strong> Two function families are displayed: f(x) = 100(1.05)^x and g(x) = 100(0.95)^x. Learner toggles between growth and decay modes and observes the different trajectories.<br/>
+<strong>Provenance:</strong> Chapter 5, exponential base section; synthetic with seed values matching worked examples.<br/>
+<strong>Rules:</strong> b &gt; 1 → growth; 0 &lt; b &lt; 1 → decay; b = 1 → constant function (neither).<br/>
+<strong>Learner Activity:</strong> 1) Given a function f(x) = ab^x, identify whether b represents growth or decay. 2) Adjust the base value using a slider and observe the graph's direction. 3) Classify five given functions as growth, decay, or neither.<br/>
+<strong>Feedback:</strong> After each response, learner receives immediate feedback. Correct answers receive affirmation with a brief explanation. Incorrect answers reveal the correct classification and a one-sentence reason.<br/>
+<strong>Starting State:</strong> The sim loads with f(x) = 100(1.05)^x in growth mode. The prompt "Classify f(x) = 100(0.95)^x as growth, decay, or neither" is displayed.<br/>
+<strong>Chapter Anchors:</strong> This sim covers the exponential base parameter, consistent with the chapter's comparison of f(x) = 100(1.05)^x and g(x) = 100(0.95)^x.</p>
+</details>
+<details>
+<summary>Exponent Decay Factor Sim</summary>
+<p>Type: microsim<br/>
+<strong>sim-id:</strong> exponent-decay-factor-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> Compare<br/>
+<strong>Learning Objective:</strong> The learner will compare exponential decay factors and their effects on the rate of decrease.<br/>
+<strong>Prerequisites:</strong> Exponential decay, base 0 &lt; b &lt; 1<br/>
+<strong>Evidence of Mastery:</strong> Learner can compare two decay factors and determine which results in faster or slower decay.<br/>
+<strong>Misconceptions:</strong> A smaller b always means "more decay" in absolute terms without considering the starting value.<br/>
+<strong>Instructional Rationale:</strong> Comparing decay factors side-by-side helps learners understand the relationship between the base value and the rate of decrease in exponential decay models.<br/>
+<strong>Content:</strong> Two decay scenarios are presented: b = 0.8 (faster decay) and b = 0.9 (slower decay), both starting from the same initial amount. Learner adjusts both factors and compares the remaining amounts after each time unit.<br/>
+<strong>Provenance:</strong> Chapter 5, exponent decay factor section; synthetic with seed values matching worked examples.<br/>
+<strong>Rules:</strong> 0 &lt; b &lt; 1 for decay; for comparing two factors b₁ and b₂ with b₁ &lt; b₂, decay with factor b₁ is faster; remaining amounts after t units: P₀ × b₁ᵗ vs P₀ × b₂ᵗ.<br/>
+<strong>Learner Activity:</strong> 1) Set decay factor b₁ = 0.8 and b₂ = 0.9 using sliders. 2) Observe remaining amounts after t = 1, 2, 3, 4, 5 time units. 3) Answer the question: "Which decay factor results in more remaining amount after t = 3: b = 0.8 or b = 0.9?"<br/>
+<strong>Feedback:</strong> After each attempt, learner receives immediate feedback. Correct answers receive affirmation with a brief explanation. Incorrect answers reveal the correct answer and a one-sentence reason referencing the formula comparison.<br/>
+<strong>Starting State:</strong> The sim loads with b₁ = 0.8, b₂ = 0.9, t = 0. The question "Which decay factor results in more remaining amount after t = 3: b = 0.8 or b = 0.9?" is displayed.<br/>
+<strong>Chapter Anchors:</strong> This sim covers comparing exponent decay factors, consistent with the chapter's worked example of comparing decay factors 0.8 and 0.9.</p>
+</details>
+<details>
+<summary>Scientific Notation Sim</summary>
+<p>Type: microsim<br/>
+<strong>sim-id:</strong> scientific-notation-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> Use<br/>
+<strong>Learning Objective:</strong> The learner will use scientific notation to represent very large and very small numbers.<br/>
+<strong>Prerequisites:</strong> Place value, powers of 10<br/>
+<strong>Evidence of Mastery:</strong> Learner can convert between standard form and scientific notation for numbers of any size.<br/>
+<strong>Misconceptions:</strong> The exponent indicates the number of zeros; the coefficient can be any number.<br/>
+<strong>Instructional Rationale:</strong> Interactive practice with scientific notation helps learners build fluency in converting between standard and scientific notation, addressing common misconceptions about exponent meaning.<br/>
+<strong>Content:</strong> Converter between standard form and scientific notation. Learner enters either a very large or very small number in standard form and clicks "Convert" to see the scientific notation equivalent, and vice versa.<br/>
+<strong>Provenance:</strong> Chapter 5, scientific notation section; synthetic with seed values matching worked examples.<br/>
+<strong>Rules:</strong> Format is m × 10^n where 1 ≤ |m| &lt; 10 and n is an integer; moving decimal left increases n; moving decimal right decreases n; for numbers ≥ 10, n ≥ 0; for numbers &lt; 1, n &lt; 0.<br/>
+<strong>Learner Activity:</strong> 1) Convert 450,000 to scientific notation. 2) Convert 0.00003 to scientific notation. 3) Convert between scientific notation and standard form for five additional practice problems.<br/>
+<strong>Feedback:</strong> After each attempt, learner receives immediate feedback. Correct answers receive affirmation with a brief explanation. Incorrect answers reveal the correct conversion and a one-sentence reason.<br/>
+<strong>Starting State:</strong> The sim loads with the converter in "standard to scientific" mode. The prompt "Convert 450,000 to scientific notation" is displayed.<br/>
+<strong>Chapter Anchors:</strong> This sim covers scientific notation, consistent with the chapter's worked examples of writing 450,000 and 0.00003 in scientific notation.</p>
+</details>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Special products like difference of squares and perfect square trinomials follow predictable patterns that speed up polynomial multiplication.</li>
+<li>The degree of a polynomial is the highest exponent of the variable; standard form arranges terms in descending order of degree.</li>
+<li>Like terms have identical variable parts and can be combined; unlike terms cannot.</li>
+<li>Quadratic functions have three common forms: standard, vertex, and intercept form, each highlighting different features.</li>
+<li>When a &lt; 0 in a quadratic, the vertex is a maximum; when a &gt; 0, the vertex is a minimum.</li>
+<li>Exponential growth uses a base b &gt; 1; exponential decay uses a base 0 &lt; b &lt; 1.</li>
+<li>Scientific notation simplifies writing and working with extremely large or small numbers.</li>
+</ul>
+<h2 id="practice-problems">Practice Problems<a class="headerlink" href="#practice-problems" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Multiply (x + 3)(x - 3) using the difference of squares pattern.</li>
+<li>Find the degree of 5x^4 - 3x^3 + 2x - 7.</li>
+<li>Combine like terms: 2x^2 + 3x - x^2 + 4x - 5.</li>
+<li>Write y = 2x^2 - 8x + 6 in vertex form by completing the square.</li>
+<li>Graph f(x) = -3(x + 2)^2 + 4 and identify the vertex and whether it's a maximum or minimum.</li>
+<li>Write an exponential function for a car's value decreasing by 15% each year, starting at $20,000.</li>
+<li>Convert 0.000052 to scientific notation.</li>
+<li>Find the maximum value of f(x) = -x^2 + 6x - 5.</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-graphing-and-coordinates/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Graphing and Coordinates">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Graphing and Coordinates
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-quadratic-functions/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Quadratic Functions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                6. Quadratic Functions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

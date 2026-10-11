@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/evaluation-status/">
       
       
-        <link rel="prev" href="../model-candidates/">
+        <link rel="prev" href="../cost-analysis/">
       
       
         <link rel="next" href="../models/">
@@ -280,6 +280,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../getting-started/" class="md-nav__link">
         
   
@@ -345,6 +365,26 @@
   
   <span class="md-ellipsis">
     Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
   </span>
   
 
@@ -503,46 +543,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../course-description/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Course Description
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
     
     
       
@@ -593,6 +593,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -803,8 +811,8 @@
 
 
 <h1 id="evaluation-status">Evaluation Status<a class="headerlink" href="#evaluation-status" title="Permanent link">&para;</a></h1>
-<p>Last updated October 10, 2026, at 11:30 AM. Stages 2 and 3 are running, one
-model at a time. <a href="../models/">Model Results</a> holds what each model
+<p>Last updated October 10, 2026, at 7:15 PM. Stages 2 and 3 are done for five
+models and running for the last one. <a href="../models/">Model Results</a> holds what each model
 produced.</p>
 <div class="eval-status">
 <table>
@@ -826,8 +834,8 @@ produced.</p>
 <td style="text-align: right;">27 B</td>
 <td style="text-align: right;">17 GB</td>
 <td style="text-align: center;">✅</td>
-<td style="text-align: center;">—</td>
-<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
 <td style="text-align: center;">—</td>
 <td style="text-align: center;">—</td>
 </tr>
@@ -876,8 +884,8 @@ produced.</p>
 <td style="text-align: right;">30 B</td>
 <td style="text-align: right;">25 GB</td>
 <td style="text-align: center;">✅</td>
-<td style="text-align: center;">—</td>
-<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
 <td style="text-align: center;">—</td>
 <td style="text-align: center;">—</td>
 </tr>
@@ -896,8 +904,8 @@ produced.</p>
 <td style="text-align: right;">117 B</td>
 <td style="text-align: right;">65 GB</td>
 <td style="text-align: center;">✅</td>
-<td style="text-align: center;">—</td>
-<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">6 of 10</td>
 <td style="text-align: center;">—</td>
 <td style="text-align: center;">—</td>
 </tr>
@@ -924,9 +932,11 @@ produced.</p>
 </tbody>
 </table>
 </div>
-<p>Six of the ten models have produced a learning graph. Two of them have been
-through all three stages: <code>qwen3.6:35b</code> wrote all eleven of its chapters, and
-<code>gemma4:26b</code> wrote ten of its fourteen. No quality score exists yet.</p>
+<p>Six of the ten models have produced a learning graph. Five of them have been
+through all three stages. <code>nemotron-3.5-lightning:30b</code> wrote all twelve of
+its chapters and <code>qwen3.6:35b</code> wrote all eleven. <code>gemma4:26b</code> wrote ten of
+its fourteen, and <code>gpt-oss:120b</code> wrote six of its ten. <code>qwen3.8:27b</code> designed
+fourteen chapters and wrote none. No quality score exists yet.</p>
 <h2 id="how-to-read-the-table">How to Read the Table<a class="headerlink" href="#how-to-read-the-table" title="Permanent link">&para;</a></h2>
 <ul>
 <li>✅ <strong>Done.</strong> The stage ran to the end and produced its output.</li>
@@ -953,6 +963,13 @@ them. In three runs the skill's own check found that the chapter depended on
 concepts placed in later chapters, and the model stopped as the skill
 requires. That traces back to the chapter structure the same model designed
 in stage 2. In one run the model ended without writing anything.</p>
+<p><code>gpt-oss:120b</code> ran once for each of its ten chapters and wrote six. In the
+other four runs it announced that the skill was running, as if something else
+would do the work, and ended its turn without writing the chapter.</p>
+<p><code>qwen3.8:27b</code> was too slow to write a chapter. Its first two chapter runs
+each used the full 90 minutes and had made about twenty tool calls without
+reaching the step that writes the file. The remaining twelve were not run.
+This is the model that produced the cleanest learning graph.</p>
 <h2 id="what-each-column-means">What Each Column Means<a class="headerlink" href="#what-each-column-means" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Params.</strong> The total number of parameters, in billions, as the publisher
@@ -981,10 +998,9 @@ in stage 2. In one run the model ended without writing anything.</p>
 </ul>
 <h2 id="what-is-left">What Is Left<a class="headerlink" href="#what-is-left" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Stages 2 and 3.</strong> Four of the six models with a learning graph still have
-  to run them. The run of <code>gemma4:31b</code> was cut short when the second DGX
-  unit stopped responding a few minutes in, so that model has no stage 2
-  result yet.</li>
+<li><strong>Stages 2 and 3.</strong> One model, <code>gemma4:31b</code>, still has to finish them. Its
+  first attempt was cut short when the second DGX unit stopped responding a
+  few minutes in, so it is running last, on the other unit.</li>
 <li><strong>Repeated runs.</strong> Every test so far has been run once, so nobody knows
   whether a model gives a comparable result the second time.</li>
 <li><strong>Scoring.</strong> The automated score has to be defined, and a person has to
@@ -1030,7 +1046,7 @@ in stage 2. In one run the model ended without writing anything.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../model-candidates/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Model Candidates">
+          <a href="../cost-analysis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cost Analysis">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1040,7 +1056,7 @@ in stage 2. In one run the model ended without writing anything.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Model Candidates
+                Cost Analysis
               </div>
             </div>
           </a>

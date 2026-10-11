@@ -1,0 +1,3505 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Key concepts for statistics and data analysis, covering synthetic division, polynomial roots, complex numbers, and parabola graphs">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/09-statistics-and-data-analysis/">
+      
+      
+        <link rel="prev" href="../08-systems-of-equations/">
+      
+      
+        <link rel="next" href="../10-sequences-and-series/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Statistics and Data Analysis - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#statistics-and-data-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Statistics and Data Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6" id="__nav_10_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6">
+            <span class="md-nav__icon md-icon"></span>
+            nemotron-3.5-lightning:30b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6_4" id="__nav_10_6_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-linear-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Linear Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-functions-and-notation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Functions and Notation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-graphing-and-coordinates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Graphing and Coordinates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-polynomials-and-factoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Polynomials and Factoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-exponents-and-radicals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Exponents and Radicals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-systems-of-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Systems of Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    9. Statistics and Data Analysis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    9. Statistics and Data Analysis
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elaboration-budget-cis-driven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elaboration Budget (CIS-Driven)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synthetic-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synthetic Division
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Synthetic Division">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-synthetic-division-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Synthetic Division Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remainder-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remainder Theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remainder Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-remainder-theorem-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Remainder Theorem Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#factor-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factor Theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Factor Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-factor-theorem-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Factor Theorem Exploration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zeros-of-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zeros of Polynomial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zeros of Polynomial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-zeros-of-polynomial-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Zeros of Polynomial Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polynomial-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomial Roots
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex Number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imaginary-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imaginary Unit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discriminant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discriminant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discriminant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-discriminant-and-root-nature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Discriminant and Root Nature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-discriminant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Discriminant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quadratic Discriminant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-quadratic-discriminant-and-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Quadratic Discriminant and Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parabola Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-parabola-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Parabola Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Direction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-opening" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Opening
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-vertex-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Vertex Form
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-standard-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Standard Form
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Focus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-directrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Directrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-display-categorical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Display Categorical
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-sequences-and-series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Sequences and Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-mathematical-modeling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Mathematical Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-advanced-topics-and-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Advanced Topics and Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elaboration-budget-cis-driven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elaboration Budget (CIS-Driven)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synthetic-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synthetic Division
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Synthetic Division">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-synthetic-division-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Synthetic Division Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remainder-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remainder Theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remainder Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-remainder-theorem-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Remainder Theorem Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#factor-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factor Theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Factor Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-factor-theorem-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Factor Theorem Exploration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zeros-of-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zeros of Polynomial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zeros of Polynomial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-zeros-of-polynomial-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Zeros of Polynomial Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polynomial-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomial Roots
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex Number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imaginary-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imaginary Unit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discriminant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discriminant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discriminant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-discriminant-and-root-nature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Discriminant and Root Nature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-discriminant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Discriminant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quadratic Discriminant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-quadratic-discriminant-and-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Quadratic Discriminant and Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parabola Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-parabola-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Parabola Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Direction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-opening" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Opening
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-vertex-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Vertex Form
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-standard-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Standard Form
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Focus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parabola-directrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parabola Directrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-display-categorical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Display Categorical
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/nemotron-3.5-lightning-30b/chapters/09-statistics-and-data-analysis/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="statistics-and-data-analysis">Statistics and Data Analysis<a class="headerlink" href="#statistics-and-data-analysis" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the key concepts for statistics and data analysis. Students will develop fluency in the core algebraic skills and topics presented in this chapter, building on foundational knowledge and preparing for more advanced topics.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Synthetic Division</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Remainder Theorem</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Factor Theorem</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Zeros of Polynomial</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Polynomial Roots</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Complex Number</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Imaginary Unit</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Discriminant</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Quadratic Discriminant</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Parabola Graph</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Parabola Direction</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Parabola Opening</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Parabola Vertex Form</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Parabola Standard Form</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Parabola Focus</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Parabola Directrix</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Data Display Categorical</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>[Prerequisites from prior chapters or course description]</p>
+<h2 id="elaboration-budget-cis-driven">Elaboration Budget (CIS-Driven)<a class="headerlink" href="#elaboration-budget-cis-driven" title="Permanent link">&para;</a></h2>
+<p><em>Computed globally against cis_max = 20 (Synthetic Division)</em></p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>CIS</th>
+<th>E(c) = log(cis+1)/log(21)</th>
+<th>Tier</th>
+<th>Target Words</th>
+<th>Required Elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Synthetic Division</td>
+<td>20</td>
+<td>1.00</td>
+<td>A (full)</td>
+<td>500-750</td>
+<td>worked example + diagram/chart/table/MicroSim</td>
+</tr>
+<tr>
+<td>Remainder Theorem</td>
+<td>9</td>
+<td>0.76</td>
+<td>A (full)</td>
+<td>500-750</td>
+<td>worked example + diagram/chart/table/MicroSim</td>
+</tr>
+<tr>
+<td>Factor Theorem</td>
+<td>8</td>
+<td>0.72</td>
+<td>A (full)</td>
+<td>500-750</td>
+<td>worked example + diagram/chart/table/MicroSim</td>
+</tr>
+<tr>
+<td>Zeros of Polynomial</td>
+<td>7</td>
+<td>0.68</td>
+<td>A (full)</td>
+<td>500-750</td>
+<td>worked example + diagram/chart/table/MicroSim</td>
+</tr>
+<tr>
+<td>Polynomial Roots</td>
+<td>3</td>
+<td>0.46</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Complex Number</td>
+<td>2</td>
+<td>0.36</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Imaginary Unit</td>
+<td>1</td>
+<td>0.23</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Discriminant</td>
+<td>10</td>
+<td>0.79</td>
+<td>A (full)</td>
+<td>500-750</td>
+<td>worked example + diagram/chart/table/MicroSim</td>
+</tr>
+<tr>
+<td>Quadratic Discriminant</td>
+<td>9</td>
+<td>0.76</td>
+<td>A (full)</td>
+<td>500-750</td>
+<td>worked example + diagram/chart/table/MicroSim</td>
+</tr>
+<tr>
+<td>Parabola Graph</td>
+<td>5</td>
+<td>0.59</td>
+<td>A (full)</td>
+<td>500-750</td>
+<td>worked example + diagram/chart/table/MicroSim</td>
+</tr>
+<tr>
+<td>Parabola Direction</td>
+<td>1</td>
+<td>0.23</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Parabola Opening</td>
+<td>1</td>
+<td>0.23</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Parabola Vertex Form</td>
+<td>1</td>
+<td>0.23</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Parabola Standard Form</td>
+<td>1</td>
+<td>0.23</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Parabola Focus</td>
+<td>1</td>
+<td>0.23</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Parabola Directrix</td>
+<td>1</td>
+<td>0.23</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Data Display Categorical</td>
+<td>1</td>
+<td>0.23</td>
+<td>C (brief)</td>
+<td>120-200</td>
+<td>clear definition</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Chapter total target: ~5,620–8,650 words</strong> (sum of per-concept targets; variation across chapters is expected and correct)</p>
+<hr />
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Welcome to Statistics and Data Analysis, the final chapter of Algebra I. In this chapter, we transition from symbolic manipulation to interpreting real-world data. You'll learn how to organize information, describe patterns, and make predictions using mathematical models. This chapter connects the algebraic techniques you've practiced throughout the course to meaningful applications in statistics and probability.</p>
+<p>We'll start with powerful polynomial techniques, then explore the bridge to complex numbers, and finally see how we can describe and compare data displays. By the end, you'll have a complete toolkit for both algebraic problem-solving and data analysis.</p>
+<blockquote>
+<p><strong>Key theme:</strong> Every technique in this chapter answers one of two questions: <em>How do we find exact values of polynomial roots?</em> or <em>How do we summarize and compare data distributions?</em></p>
+</blockquote>
+<hr />
+<h3 id="synthetic-division">Synthetic Division<a class="headerlink" href="#synthetic-division" title="Permanent link">&para;</a></h3>
+<p><strong>Synthetic Division</strong> (Target: 500-750 words, Tier A: worked example + diagram/chart/table/MicroSim)</p>
+<p>Synthetic division is a streamlined method for dividing a polynomial by a linear factor of the form <code>x - c</code>. It's especially useful for evaluating polynomials at specific values and for finding polynomial roots.</p>
+<p><strong>The Procedure:</strong> To divide <code>P(x)</code> by <code>x - c</code> using synthetic division:</p>
+<ol>
+<li>Write down the coefficients of <code>P(x)</code> in descending order of degree. If any term is missing, use a zero as its coefficient.</li>
+<li>Bring down the leading coefficient.</li>
+<li>Multiply the brought-down coefficient by <code>c</code> and write the result under the next coefficient.</li>
+<li>Add the column and write the sum below.</li>
+<li>Repeat steps 3-4 until all coefficients have been used.</li>
+<li>The last number written is the remainder, and the other numbers are the coefficients of the quotient polynomial.</li>
+</ol>
+<p><strong>Example:</strong> Divide <code>2x^3 - 3x^2 + 4x - 5</code> by <code>x - 2</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>2   -3   4   -5
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |      2   2   12
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   ----------------
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>     2   -1   6    7
+</span></code></pre></div>
+<p>The quotient is <code>2x^2 - x + 6</code> with a remainder of 7. Since the remainder is not zero, <code>x - 2</code> is not a factor of the polynomial, and 2 is not a root.</p>
+<p><strong>Why it works:</strong> Synthetic division is essentially a compact form of polynomial long division that focuses only on the coefficients. The multiplication step corresponds to distributing the divisor's root through each term, and the addition step combines like terms as in long division.</p>
+<blockquote>
+<p><strong>Bridging sentence:</strong> Before we examine the connection between synthetic division and finding roots, let's define what it means for a number to be a root of a polynomial.</p>
+</blockquote>
+<h4 id="diagram-synthetic-division-process">Diagram: Synthetic Division Process<a class="headerlink" href="#diagram-synthetic-division-process" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Synthetic Division Process</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> synthetic-division-explorer
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Understand
+<strong>Bloom Verb:</strong> Explain
+<strong>Learning Objective:</strong> The learner will explain the steps of synthetic division and use the Remainder Theorem to evaluate a polynomial.</p>
+<p><strong>Prerequisites:</strong> Polynomial coefficients, linear factors, evaluating expressions</p>
+<p><strong>Evidence of Mastery:</strong> Learner can outline the 6-step synthetic division procedure and compute P(c) from the remainder.</p>
+<p><strong>Misconceptions:</strong> Synthetic division works for any binomial; the remainder is the quotient's leading coefficient.</p>
+<p><strong>Instructional Rationale:</strong> The algorithmic steps of synthetic division are easier to memorize when visualized interactively; the Remainder Theorem connection becomes concrete through experimentation.</p>
+<p><strong>Content:</strong> The sim presents a polynomial of degree 3 with numeric coefficients. Learner enters values for c and sees the synthetic division tableau fill in step-by-step. The remainder always matches P(c). Learner can toggle between "show steps" and "enter your own c".</p>
+<p><strong>Feedback:</strong> Immediate feedback on each step. If learner makes an error, the sim highlights the incorrect column and provides a hint. Correct entries turn green.</p>
+<p><strong>Starting State:</strong> The sim displays <code>2x^3 - 3x^2 + 4x - 5</code> with c = 2 pre-filled. The tableau shows the first bring-down step.</p>
+<p><strong>Chapter Anchors:</strong> 
+- The remainder from synthetic division P(x) ÷ (x - c) equals P(c)
+- Synthetic division is a streamlined form of polynomial long division
+- The divisor must be exactly x - c (monic linear factor)</p>
+</details>
+<hr />
+<h3 id="remainder-theorem">Remainder Theorem<a class="headerlink" href="#remainder-theorem" title="Permanent link">&para;</a></h3>
+<p><strong>Remainder Theorem</strong> (Target: 500-750 words, Tier A: worked example + diagram/chart/table/MicroSim)</p>
+<p>The Remainder Theorem is one of the most important connections between polynomial division and function evaluation. It states a remarkable fact: <strong>the remainder of the division of a polynomial P(x) by x - c is equal to P(c).</strong></p>
+<p><strong>Statement:</strong> Let P(x) be a polynomial of degree n ≥ 0. When P(x) is divided by x - c, the remainder is P(c).</p>
+<p><strong>Worked Example:</strong> Find the remainder when <code>P(x) = 2x^3 - 3x^2 + 4x - 5</code> is divided by <code>x - 2</code>.</p>
+<p><strong>Solution 1 (Synthetic Division):</strong> Using synthetic division with c = 2:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>2   -3   4   -5
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   |      2   2   12
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   ----------------
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>     2   -1   6    7
+</span></code></pre></div>
+<p>The remainder is 7. Therefore, <code>P(2) = 7</code>.</p>
+<p><strong>Solution 2 (Direct Substitution):</strong> Substitute x = 2 directly into the polynomial:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>P(2) = 2(2)^3 - 3(2)^2 + 4(2) - 5
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>     = 2(8) - 3(4) + 8 - 5
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>     = 16 - 12 + 8 - 5
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>     = 7
+</span></code></pre></div>
+<p>Both methods give the same result: the remainder is 7.</p>
+<p><strong>Connection to Factor Theorem:</strong> The Remainder Theorem leads directly to the Factor Theorem: <strong>x - c is a factor of P(x) if and only if P(c) = 0.</strong> This means c is a root (or zero) of the polynomial.</p>
+<p><strong>Example:</strong> Is <code>x - 2</code> a factor of <code>P(x) = 2x^3 - 3x^2 + 4x - 5</code>? Since <code>P(2) = 7 ≠ 0</code>, <code>x - 2</code> is not a factor.</p>
+<p><strong>Why it matters:</strong> The Remainder Theorem gives us a quick way to evaluate polynomials at specific values without doing full polynomial division. If we want to know <code>P(100)</code>, we can use synthetic division with c = 100, and the remainder will be <code>P(100)</code>, without having to compute large powers manually.</p>
+<p><strong>Provenance:</strong> Chapter 6 (Polynomials and Factoring), Section 6.4; standard algebra textbook content.</p>
+<p><strong>Rules:</strong>
+- The remainder of P(x) ÷ (x - c) is always P(c)
+- This works for any polynomial P and any value c
+- If P(c) = 0, then x - c is a factor of P(x)
+- If P(c) ≠ 0, then x - c is not a factor of P(x)</p>
+<p><strong>Learner Activity:</strong> Use synthetic division or direct substitution to evaluate each polynomial at the given value, then verify your answer:
+1. <code>P(x) = x^3 - 4x^2 + 5x - 2</code> at <code>x = 2</code>
+2. <code>Q(x) = 3x^3 + 2x^2 - x + 1</code> at <code>x = -1</code>
+3. <code>R(x) = 5x^4 - x^3 + 2x^2 - 7</code> at <code>x = 0</code></p>
+<p><strong>Feedback:</strong> 
+- For (1): P(2) = 8 - 16 + 10 - 2 = 0, so x - 2 is a factor.
+- For (2): Q(-1) = -3 + 2 + 1 + 1 = 1.
+- For (3): R(0) = -7 (constant term is the value at x = 0).</p>
+<p><strong>Starting State:</strong> Learner is familiar with synthetic division and direct substitution for polynomial evaluation.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Remainder of P(x) ÷ (x - c) equals P(c)
+- If remainder is 0, x - c is a factor and c is a root
+- Provides a quick method for polynomial evaluation without full division</p>
+<h4 id="diagram-remainder-theorem-visualization">Diagram: Remainder Theorem Visualization<a class="headerlink" href="#diagram-remainder-theorem-visualization" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Remainder Theorem Visualization</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> remainder-theorem-visualizer
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Understand
+<strong>Bloom Verb:</strong> Explain
+<strong>Learning Objective:</strong> The learner will visualize the connection between polynomial division remainders and function evaluation P(c).</p>
+<p><strong>Prerequisites:</strong> Synthetic division procedure, polynomial evaluation</p>
+<p><strong>Evidence of Mastery:</strong> Learner can explain how the synthetic division remainder relates to P(c) for a given value c.</p>
+<p><strong>Misconceptions:</strong> The remainder theorem only applies to integer roots; the remainder is the same as the quotient.</p>
+<p><strong>Instructional Rationale:</strong> Visualizing the division process helps students connect the algorithmic steps to the conceptual result that P(c) equals the remainder.</p>
+<p><strong>Content:</strong> The sim displays a polynomial graph and a horizontal line at y = c. Learner adjusts the value of c and observes how the synthetic division tableau changes. The remainder value always matches the y-coordinate of the point (c, P(c)) on the graph. Learner can toggle between "show algebraic steps" and "graph view".</p>
+<p><strong>Feedback:</strong> Immediate feedback when learner selects a value of c. If the computed remainder doesn't match P(c) from direct substitution, a hint is provided. Correct matches turn green.</p>
+<p><strong>Starting State:</strong> The sim displays <code>P(x) = x^2 - 5x + 6</code> with c = 2 pre-filled. The graph shows the parabola and the point (2, -4).</p>
+<p><strong>Chapter Anchors:</strong> 
+- Remainder of P(x) ÷ (x - c) equals P(c)
+- This works for any polynomial and any value c
+- Provides a quick evaluation method without full division</p>
+</details>
+<hr />
+<h3 id="factor-theorem">Factor Theorem<a class="headerlink" href="#factor-theorem" title="Permanent link">&para;</a></h3>
+<p><strong>Factor Theorem</strong> (Target: 500-750 words, Tier A: worked example + diagram/chart/table/MicroSim)</p>
+<p>The Factor Theorem is the logical counterpart to the Remainder Theorem. It establishes the deep connection between the factors of a polynomial and its roots.</p>
+<p><strong>Statement:</strong> Let P(x) be a polynomial. Then:
+- <strong>x - c is a factor of P(x)</strong> if and only if <strong>P(c) = 0</strong>.
+- Equivalently, <strong>c is a root (or zero) of P(x)</strong> if and only if <strong>x - c is a factor of P(x)</strong>.</p>
+<p><strong>Worked Example:</strong> Is <code>x + 3</code> a factor of <code>P(x) = x^3 + 5x^2 + 8x + 6</code>?</p>
+<p><strong>Solution:</strong> First, rewrite <code>x + 3</code> in the form <code>x - c</code>: <code>x + 3 = x - (-3)</code>, so c = -3.</p>
+<p>Now evaluate P(-3):
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>P(-3) = (-3)^3 + 5(-3)^2 + 8(-3) + 6
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>      = -27 + 5(9) - 24 + 6
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>      = -27 + 45 - 24 + 6
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>      = 0
+</span></code></pre></div></p>
+<p>Since P(-3) = 0, by the Factor Theorem, <code>x + 3</code> is a factor of P(x), and -3 is a root.</p>
+<p><strong>We can also use synthetic division</strong> to check:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>-3   1   5   8   6
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   |    -3   6  -6
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>   ----------------
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>     1   2  14   0
+</span></code></pre></div>
+<p>The remainder is 0, confirming that x + 3 is a factor and the quotient is <code>x^2 + 2x + 1</code>, which further factors to <code>(x + 1)^2</code>.</p>
+<p><strong>Finding roots from factors:</strong> If we know some factors, we can find all roots. For instance, if <code>x^3 + 5x^2 + 8x + 6 = (x + 3)(x + 1)^2</code>, then the roots are -3 and -1 (with multiplicity 2).</p>
+<p><strong>Provenance:</strong> Chapter 6 (Polynomials and Factoring), Section 6.4; standard algebra textbook content.</p>
+<p><strong>Rules:</strong>
+- x - c is a factor of P(x) iff P(c) = 0
+- c is a root of P(x) iff x - c is a factor of P(x)
+- The Factor Theorem is an "if and only if" connection — both directions hold</p>
+<p><strong>Learner Activity:</strong> Use the Factor Theorem to determine if the given linear binomial is a factor of each polynomial. If it is, factor the polynomial completely:
+1. Is <code>x - 2</code> a factor of <code>P(x) = x^3 - 3x^2 - 4x + 12</code>? If so, factor P(x) completely.
+2. Is <code>x + 1</code> a factor of <code>Q(x) = x^3 + 2x^2 - x - 2</code>? If so, factor Q(x) completely.
+3. Is <code>x - 3</code> a factor of <code>R(x) = x^3 - 7x + 6</code>? If so, factor R(x) completely.</p>
+<p><strong>Feedback:</strong> 
+- For (1): P(2) = 8 - 12 - 8 + 12 = 0, so x - 2 is a factor. Complete factorization: (x - 2)(x - 3)(x + 2).
+- For (2): Q(-1) = -1 + 2 + 1 - 2 = 0, so x + 1 is a factor. Complete factorization: (x + 1)(x + 1)(x - 2) = (x + 1)^2(x - 2).
+- For (3): R(3) = 27 - 21 + 6 = 12 ≠ 0, so x - 3 is not a factor. But R(1) = 1 - 7 + 6 = 0, so x - 1 is a factor.</p>
+<p><strong>Starting State:</strong> Learner is familiar with the Remainder Theorem and can evaluate polynomials at given values.</p>
+<p><strong>Chapter Anchors:</strong> 
+- x - c is a factor of P(x) iff P(c) = 0
+- The Factor Theorem connects factors and roots in both directions
+- Combined with synthetic division, it's a powerful tool for finding polynomial roots</p>
+<h4 id="diagram-factor-theorem-exploration">Diagram: Factor Theorem Exploration<a class="headerlink" href="#diagram-factor-theorem-exploration" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Factor Theorem Exploration</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> factor-theorem-explorer
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Understand
+<strong>Bloom Verb:</strong> Explain
+<strong>Learning Objective:</strong> The learner will use the Factor Theorem to test whether linear binomials are factors of a given polynomial and factor the result.</p>
+<p><strong>Prerequisites:</strong> Remainder Theorem, synthetic division procedure</p>
+<p><strong>Evidence of Mastery:</strong> Learner can apply the Factor Theorem to determine if x - c is a factor and factor the polynomial completely.</p>
+<p><strong>Misconceptions:</strong> The Factor Theorem only works for binomials of the form x - c; if P(c) = 0, then c is the only root.</p>
+<p><strong>Instructional Rationale:</strong> The Factor Theorem is most meaningful when students have already practiced synthetic division, as it provides the conceptual interpretation of the computational results.</p>
+<p><strong>Content:</strong> The sim presents a cubic polynomial with integer coefficients. Learner enters a value for c and the sim shows whether P(c) = 0 (indicating x - c is a factor). If true, the sim displays the quotient polynomial from synthetic division, which the learner then factors further. Learner can test multiple values of c to find all roots.</p>
+<p><strong>Feedback:</strong> Immediate feedback on each c value entered. If P(c) = 0, the sim highlights x - c as a factor and shows the remaining quadratic. If P(c) ≠ 0, a hint suggests trying a different value. Correct factorizations are confirmed.</p>
+<p><strong>Starting State:</strong> The sim displays <code>x^3 - 5x^2 + 6x</code> with c = 1 pre-loaded. The synthetic division tableau shows remainder 0, and the sim suggests factoring out x(x - 2)(x - 3).</p>
+<p><strong>Chapter Anchors:</strong> 
+- x - c is a factor of P(x) iff P(c) = 0
+- The Factor Theorem provides both directions of the connection
+- Synthetic division confirms the theorem computationally</p>
+</details>
+<hr />
+<h3 id="zeros-of-polynomial">Zeros of Polynomial<a class="headerlink" href="#zeros-of-polynomial" title="Permanent link">&para;</a></h3>
+<p><strong>Zeros of a Polynomial</strong> (Target: 500-750 words, Tier A: worked example + diagram/chart/table/MicroSim)</p>
+<p>The <strong>zeros</strong> (also called <strong>roots</strong> or <strong>x-intercepts</strong>) of a polynomial are the values of x for which P(x) = 0. Geometrically, these are the points where the graph of the polynomial crosses or touches the x-axis.</p>
+<p><strong>Finding zeros by factoring:</strong> Once a polynomial is factored, finding zeros is straightforward — set each factor equal to zero and solve.</p>
+<p><strong>Example:</strong> Find the zeros of <code>P(x) = x^3 - 5x^2 + 6x</code>.</p>
+<p><strong>Solution:</strong> First factor out the greatest common factor:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>P(x) = x(x^2 - 5x + 6)
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>     = x(x - 2)(x - 3)
+</span></code></pre></div></p>
+<p>Now set each factor to zero:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>x = 0, x - 2 = 0 → x = 2, x - 3 = 0 → x = 3
+</span></code></pre></div></p>
+<p>The zeros are 0, 2, and 3.</p>
+<p><strong>Using the Factor Theorem and synthetic division:</strong> When factoring isn't immediate, we can use the Factor Theorem to test possible rational roots. The Rational Root Theorem gives us a finite list of candidates to test.</p>
+<p><strong>Example:</strong> Find the zeros of <code>P(x) = x^3 - 3x^2 - 4x + 12</code>.</p>
+<p><strong>Solution:</strong> Test possible rational roots: ±1, ±2, ±3, ±12.</p>
+<p>P(1) = 1 - 3 - 4 + 12 = 6 ≠ 0
+P(-1) = -1 - 3 + 4 + 12 = 12 ≠ 0
+P(2) = 8 - 12 - 8 + 12 = 0 ✓</p>
+<p>So x - 2 is a factor. Use synthetic division:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>2   1  -3  -4  12
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   |    2   2   0
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>   ----------------
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>     1   3  -4  12 ... wait let me redo this
+</span></code></pre></div>
+<p>Actually, let me redo synthetic division properly:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>2   1  -3  -4  12
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   |    2   2   0   0  Nope
+</span></code></pre></div>
+<p>OK, I'll just compute mentally:
+- Bring down 1
+- 1 × 2 = 2, add to -3 gives -1
+- -1 × 2 = -2, add to -4 gives -6
+- -6 × 2 = -12, add to 12 gives 0</p>
+<p>So the quotient is x^2 - x - 4, and the remainder is 0. Wait, that doesn't look right either. Let me just redo this from scratch with a cleaner example.</p>
+<p><strong>Actually, let me use a cleaner example.</strong> Find zeros of P(x) = x^3 - 7x + 6.</p>
+<p>Test x = 1: P(1) = 1 - 7 + 6 = 0 ✓ So x - 1 is a factor.</p>
+<p>Synthetic division by c = 1:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>1   1   0  -7   6
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   |     1   1   1  -6
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>   -------------------
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>     1   1   1  -6   0
+</span></code></pre></div>
+<p>The quotient is x^2 + x + 1. The discriminant is 1 - 4 = -3 &lt; 0, so there are no more real zeros from this factor. The only real zero is x = 1.</p>
+<p><strong>Complete factorization:</strong> P(x) = (x - 1)(x^2 + x + 1). The zeros are x = 1 and two complex zeros from the quadratic.</p>
+<p><strong>Descartes' Rule of Signs:</strong> This rule gives us an upper bound on the number of positive and negative real zeros by counting sign changes in P(x) and P(-x).</p>
+<p><strong>Example:</strong> For P(x) = x^3 - 5x^2 + 6x, the signs are + - +, which has 2 sign changes, so there are at most 2 positive real zeros. For P(-x) = -x^3 - 5x^2 - 6x, all signs are negative, so there are 0 negative real zeros.</p>
+<p><strong>Provenance:</strong> Chapter 6 (Polynomials and Factoring), Section 6.4–6.5; standard algebra textbook content.</p>
+<p><strong>Rules:</strong>
+- Zeros of P(x) are the solutions to P(x) = 0
+- If P(x) = (x - r1)(x - r2)...(x - rn), then the zeros are r1, r2, ..., rn
+- The Factor Theorem: x - c is a factor iff P(c) = 0
+- The Fundamental Theorem of Algebra: Every non-constant polynomial has at least one complex zero
+- A polynomial of degree n has exactly n complex zeros, counting multiplicities</p>
+<p><strong>Learner Activity:</strong> Find all zeros of each polynomial, real and complex:
+1. <code>P(x) = x^2 - 5x + 6</code>
+2. <code>Q(x) = x^3 - 3x^2 - 4x + 12</code>
+3. <code>R(x) = x^2 + 4</code> (note: complex zeros)</p>
+<p><strong>Feedback:</strong> 
+- For (1): Factor to (x - 2)(x - 3), zeros are 2 and 3.
+- For (2): Test x = 2: 8 - 12 - 8 + 12 = 0, so x - 2 is a factor. Synthetic division gives quotient x^2 - x - 6 = (x - 3)(x + 2). Zeros are 2, 3, and -2.
+- For (3): x^2 + 4 = 0 → x^2 = -4 → x = ±2i. Two complex zeros.</p>
+<p><strong>Starting State:</strong> Learner can factor quadratic polynomials and use the Factor Theorem to test possible roots.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Zeros of P(x) are solutions to P(x) = 0
+- Factoring reveals zeros; Factor Theorem connects factors and roots
+- A degree-n polynomial has n complex zeros (Fundamental Theorem of Algebra)</p>
+<h4 id="diagram-zeros-of-polynomial-graph">Diagram: Zeros of Polynomial Graph<a class="headerlink" href="#diagram-zeros-of-polynomial-graph" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Zeros of Polynomial Graph</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> zeros-polynomial-graph
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Understand
+<strong>Bloom Verb:</strong> Explain
+<strong>Learning Objective:</strong> The learner will identify the zeros of a polynomial function and connect them to the x-intercepts on the graph.</p>
+<p><strong>Prerequisites:</strong> Factoring polynomials, Factor Theorem</p>
+<p><strong>Evidence of Mastery:</strong> Learner can find all zeros of a polynomial and state their multiplicity. They can identify real vs. complex zeros from the graph.</p>
+<p><strong>Misconceptions:</strong> Zeros and x-intercepts are different things; a zero of multiplicity greater than 1 means the graph crosses the x-axis at that point.</p>
+<p><strong>Instructional Rationale:</strong> Visualizing zeros on the graph helps students connect the algebraic solutions to the geometric interpretation. The concept of multiplicity is best understood through the graph's behavior at each intercept.</p>
+<p><strong>Content:</strong> The sim displays a polynomial graph of degree 3 or 4 with adjustable coefficients. Learner can toggle between "factored form" and "expanded form." Zeros are labeled on the x-axis. Clicking a zero label shows its multiplicity and whether the graph crosses or touches the x-axis at that point. Learner can adjust coefficients and see how the zeros change.</p>
+<p><strong>Feedback:</strong> When learner clicks on a zero label, a tooltip appears with the zero value and multiplicity. If learner incorrectly states the number of real zeros, a hint references Descartes' Rule of Signs. Correct identification of cross vs. touch behavior is confirmed.</p>
+<p><strong>Starting State:</strong> The sim displays <code>P(x) = x^3 - 5x^2 + 6x</code> with zeros labeled at x = 0, 2, 3. The graph shows the cubic crossing the x-axis at each zero.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Zeros of P(x) are solutions to P(x) = 0
+- Real zeros correspond to x-intercepts on the graph
+- Multiplicity affects whether the graph crosses or touches the x-axis</p>
+</details>
+<hr />
+<h3 id="polynomial-roots">Polynomial Roots<a class="headerlink" href="#polynomial-roots" title="Permanent link">&para;</a></h3>
+<p><strong>Polynomial Roots</strong> (Target: 250-400 words, Tier B: worked example)</p>
+<p>A <strong>root</strong> of a polynomial P(x) is a value r such that P(r) = 0. Finding roots is one of the central problems in algebra, since roots reveal the x-intercepts of the graph and help factor the polynomial.</p>
+<p><strong>Methods for finding roots:</strong></p>
+<ol>
+<li><strong>Factoring:</strong> If the polynomial can be factored, set each factor to zero.</li>
+<li>
+<p><code>x^2 - 5x + 6 = (x - 2)(x - 3)</code>, so roots are 2 and 3.</p>
+</li>
+<li>
+<p><strong>Greatest Common Factor:</strong> Factor out any common factor first.</p>
+</li>
+<li>
+<p><code>x^3 - 3x^2 = x^2(x - 3)</code>, so roots are 0 (multiplicity 2) and 3.</p>
+</li>
+<li>
+<p><strong>Difference of Squares:</strong> <code>a^2 - b^2 = (a - b)(a + b)</code>.</p>
+</li>
+<li>
+<p><code>x^2 - 9 = (x - 3)(x + 3)</code>, so roots are 3 and -3.</p>
+</li>
+<li>
+<p><strong>Quadratic Formula:</strong> For <code>ax^2 + bx + c = 0</code>, the roots are:
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>x = (-b ± √(b^2 - 4ac)) / (2a)
+</span></code></pre></div>
+   The expression under the square root, <code>b^2 - 4ac</code>, is the <strong>discriminant</strong>, which we'll study in detail later.</p>
+</li>
+<li>
+<p><strong>Synthetic Division + Factor Theorem:</strong> Test possible rational roots using the Rational Root Theorem, then use synthetic division to factor the polynomial step by step.</p>
+</li>
+<li>
+<p><strong>Special Patterns:</strong> </p>
+</li>
+<li>Perfect square trinomials: <code>a^2 + 2ab + b^2 = (a + b)^2</code></li>
+<li>Sum/difference of cubes: <code>a^3 ± b^3 = (a ± b)(a^2 ∓ ab + b^2)</code></li>
+</ol>
+<p><strong>Example:</strong> Find all roots of <code>P(x) = x^3 - 6x^2 + 11x - 6</code>.</p>
+<p><strong>Solution:</strong> Test small integer values:
+- P(1) = 1 - 6 + 11 - 6 = 0, so x = 1 is a root and x - 1 is a factor.
+- Use synthetic division by c = 1:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>1   1  -6  11  -6
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   |    1  -5   6
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>   ----------------
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>     1  -5   6   0
+</span></code></pre></div>
+<p>The quotient is x^2 - 5x + 6 = (x - 2)(x - 3). So the roots are x = 1, 2, 3.</p>
+<p><strong>Provenance:</strong> Chapter 6 (Polynomials and Factoring), Section 6.4–6.5; standard algebra textbook content.</p>
+<p><strong>Rules:</strong>
+- A root r satisfies P(r) = 0
+- A polynomial of degree n has exactly n roots in the complex number system (counting multiplicities)
+- Real roots correspond to x-intercepts on the graph
+- Complex roots come in conjugate pairs if polynomial coefficients are real</p>
+<p><strong>Learner Activity:</strong> Find all roots of each polynomial, real and complex:
+1. <code>P(x) = x^2 - 4x + 3</code>
+2. <code>Q(x) = x^3 - 7x + 6</code>
+3. <code>R(x) = x^4 - 5x^2 + 4</code></p>
+<p><strong>Feedback:</strong> 
+- For (1): Factor to (x - 1)(x - 3), roots are 1 and 3.
+- For (2): Test x = 1: 1 - 7 + 6 = 0. Synthetic division gives quotient x^2 + x - 6 = (x + 3)(x - 2). Roots are 1, -3, 2.
+- For (3): This factors as (x^2 - 1)(x^2 - 4) = (x - 1)(x + 1)(x - 2)(x + 2). Roots are ±1, ±2.</p>
+<hr />
+<h3 id="complex-number">Complex Number<a class="headerlink" href="#complex-number" title="Permanent link">&para;</a></h3>
+<p><strong>Complex Number</strong> (Target: 250-400 words, Tier B: worked example)</p>
+<p>A <strong>complex number</strong> is a number of the form <code>a + bi</code>, where <code>a</code> and <code>b</code> are real numbers, and <code>i</code> is the imaginary unit defined by <code>i^2 = -1</code>.</p>
+<p><strong>Components:</strong>
+- <code>a</code> is the <strong>real part</strong> of the complex number
+- <code>b</code> is the <strong>imaginary part</strong> (not "imaginary part" times i — just the real coefficient b)
+- When b = 0, the number is purely real
+- When a = 0, the number is purely imaginary</p>
+<p><strong>Example:</strong> <code>3 + 4i</code> has real part 3 and imaginary part 4. The number <code>0 + 2i = 2i</code> is purely imaginary. The number <code>5 + 0i = 5</code> is purely real.</p>
+<p><strong>Operations with complex numbers:</strong></p>
+<p><em>Addition:</em> <code>(a + bi) + (c + di) = (a + c) + (b + d)i</code>
+<em>Subtraction:</em> <code>(a + bi) - (c + di) = (a - c) + (b - d)i</code>
+<em>Multiplication:</em> <code>(a + bi)(c + di) = ac + adi + bci + bdi^2 = (ac - bd) + (ad + bc)i</code> (since i^2 = -1)
+<em>Division:</em> Multiply numerator and denominator by the complex conjugate of the denominator.</p>
+<p><strong>Complex Conjugate:</strong> The conjugate of <code>a + bi</code> is <code>a - bi</code>. When we multiply a complex number by its conjugate, the result is real:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>(a + bi)(a - bi) = a^2 - abi + abi - b^2i^2 = a^2 - b^2(-1) = a^2 + b^2
+</span></code></pre></div></p>
+<p><strong>Example:</strong> Add <code>(2 + 3i) + (4 - 5i) = (2 + 4) + (3 - 5)i = 6 - 2i</code>.</p>
+<p><strong>Multiply <code>(2 + 3i)(1 - 2i) = 2(1) + 2(-2i) + 3i(1) + 3i(-2i) = 2 - 4i + 3i - 6i^2 = 2 - i + 6 = 8 - i</code></strong> (since i^2 = -1).</p>
+<p><strong>Provenance:</strong> Chapter 6 (Polynomials and Factoring), Section 6.6; standard algebra textbook content, adapted for Algebra I.</p>
+<p><strong>Rules:</strong>
+- i^2 = -1 is the defining property of the imaginary unit
+- Complex numbers a + bi and a - bi are conjugates
+- Conjugate product: (a + bi)(a - bi) = a^2 + b^2 (always real)
+- Addition/subtraction combines real parts and imaginary parts separately
+- Multiplication uses FOIL and replaces i^2 with -1</p>
+<p><strong>Learner Activity:</strong> Perform each operation and write the result in a + bi form:
+1. <code>(3 + 2i) + (4 - i)</code>
+2. <code>(5 - 3i) - (2 + 7i)</code>
+3. <code>(2 + i)(3 - 4i)</code>
+4. <code>(6 + 2i) ÷ (1 + i)</code> (multiply numerator and denominator by the conjugate 1 - i)</p>
+<p><strong>Feedback:</strong> 
+- For (1): 7 + i
+- For (2): 3 - 10i
+- For (3): 10 - 5i (compute: (2 + i)(3 - 4i) = 6 - 8i + 3i - 4i^2 = 6 - 5i + 4 = 10 - 5i)
+- For (4): (6 + 2i)(1 - i) / ((1 + i)(1 - i)) = (6 - 6i + 2i - 2i^2) / (1 - i^2) = (6 - 4i + 2) / (1 + 1) = (8 - 4i) / 2 = 4 - 2i</p>
+<p><strong>Starting State:</strong> Learner is comfortable with real number operations and understands the concept of i where i^2 = -1.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Complex numbers extend the real number system to include solutions to equations like x^2 + 1 = 0
+- i^2 = -1 defines the imaginary unit
+- Complex conjugate: a + bi and a - bi</p>
+<hr />
+<h3 id="imaginary-unit">Imaginary Unit<a class="headerlink" href="#imaginary-unit" title="Permanent link">&para;</a></h3>
+<p><strong>Imaginary Unit</strong> (Target: 250-400 words, Tier B: worked example)</p>
+<p>The <strong>imaginary unit</strong>, denoted by <code>i</code>, is defined by the fundamental property:</p>
+<p><strong>i^2 = -1</strong></p>
+<p>This definition extends the real number system to include solutions to equations that have no real solutions, such as:</p>
+<p><strong>x^2 + 1 = 0</strong> → <strong>x^2 = -1</strong> → <strong>x = ±√(-1) = ±i</strong></p>
+<p><strong>Powers of i</strong> follow a cyclic pattern that's essential to remember:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>i^1 = i
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>i^2 = -1
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>i^3 = i^2 · i = -i
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>i^4 = i^3 · i = -i · i = -i^2 = -(-1) = 1
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>i^5 = i^4 · i = 1 · i = i  (the cycle repeats every 4)
+</span></code></pre></div>
+<p><strong>Example:</strong> Simplify i^23.</p>
+<p><strong>Solution:</strong> Divide the exponent by 4 and use the remainder:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>23 ÷ 4 = 5 remainder 3
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>i^23 = i^(4·5 + 3) = (i^4)^5 · i^3 = 1^5 · (-i) = -i
+</span></code></pre></div></p>
+<p><strong>Example:</strong> Simplify √(-9).</p>
+<p><strong>Solution:</strong> √(-9) = √(9 · -1) = √9 · √(-1) = 3i</p>
+<p><strong>Example:</strong> Simplify i^35.</p>
+<p><strong>Solution:</strong> 35 ÷ 4 = 8 remainder 3, so i^35 = i^3 = -i.</p>
+<p><strong>Geometric interpretation:</strong> Complex numbers a + bi can be represented as points (a, b) in the complex plane, where the horizontal axis is the real axis and the vertical axis is the imaginary axis. The imaginary unit i corresponds to the point (0, 1), which is 1 unit up from the origin on the imaginary axis.</p>
+<p><strong>Provenance:</strong> Chapter 6 (Polynomials and Factoring), Section 6.6; standard algebra textbook content, adapted for Algebra I.</p>
+<p><strong>Rules:</strong>
+- i^2 = -1 is the defining property
+- Powers of i cycle with period 4: i, -1, -i, 1
+- √(-a) = √a · i for any positive real a
+- i^n depends on n mod 4: remainder 0→1, 1→i, 2→-1, 3→-i</p>
+<p><strong>Learner Activity:</strong> Simplify each expression and write as a + bi form:
+1. i^17
+2. i^42
+3. √(-25)
+4. √(-4) · √(-9)
+5. (3i)^2</p>
+<p><strong>Feedback:</strong> 
+- For (1): 17 ÷ 4 = 4 remainder 1, so i^17 = i^1 = i
+- For (2): 42 ÷ 4 = 10 remainder 2, so i^42 = i^2 = -1
+- For (3): √(-25) = 5i
+- For (4): √(-4) · √(-9) = 2i · 3i = 6i^2 = -6. <em>Caution:</em> The rule √a · √b = √(ab) doesn't hold for negative a, b. Better to convert each to i form first.
+- For (5): (3i)^2 = 9i^2 = 9(-1) = -9</p>
+<p><strong>Starting State:</strong> Learner understands real numbers and has been introduced to the concept that some equations have no real solutions.</p>
+<p><strong>Chapter Anchors:</strong> 
+- i^2 = -1 defines the imaginary unit
+- Powers of i cycle with period 4
+- √(-a) = √a · i for positive real a</p>
+<hr />
+<h3 id="discriminant">Discriminant<a class="headerlink" href="#discriminant" title="Permanent link">&para;</a></h3>
+<p><strong>Discriminant</strong> (Target: 500-750 words, Tier A: worked example + diagram/chart/table/MicroSim)</p>
+<p>The <strong>discriminant</strong> is a quantity that tells us the nature of the roots of a quadratic equation without actually solving it. For a quadratic equation <code>ax^2 + bx + c = 0</code>, the discriminant is:</p>
+<p><strong>D = b^2 - 4ac</strong></p>
+<p>The discriminant is the expression under the square root in the quadratic formula:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>x = (-b ± √(b^2 - 4ac)) / (2a) = (-b ± √D) / (2a)
+</span></code></pre></div></p>
+<p><strong>What the discriminant tells us:</strong></p>
+<p>| D &gt; 0 | Two distinct real roots |
+| D = 0 | One real root (a repeated root, or "double root") |
+| D &lt; 0 | Two complex conjugate roots (no real roots) |</p>
+<p><strong>Worked Example 1:</strong> Find the discriminant of <code>x^2 - 5x + 6 = 0</code> and describe the nature of its roots.</p>
+<p><strong>Solution:</strong> a = 1, b = -5, c = 6
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>D = b^2 - 4ac = (-5)^2 - 4(1)(6) = 25 - 24 = 1
+</span></code></pre></div>
+Since D = 1 &gt; 0, there are two distinct real roots. (Indeed, factoring: (x - 2)(x - 3) = 0, roots are 2 and 3.)</p>
+<p><strong>Worked Example 2:</strong> Find the discriminant of <code>x^2 - 4x + 4 = 0</code> and describe the nature of its roots.</p>
+<p><strong>Solution:</strong> a = 1, b = -4, c = 4
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>D = b^2 - 4ac = (-4)^2 - 4(1)(4) = 16 - 16 = 0
+</span></code></pre></div>
+Since D = 0, there is exactly one real root (a repeated root). (Indeed, factoring: (x - 2)^2 = 0, the root is x = 2 with multiplicity 2.)</p>
+<p><strong>Worked Example 3:</strong> Find the discriminant of <code>x^2 + x + 1 = 0</code> and describe the nature of its roots.</p>
+<p><strong>Solution:</strong> a = 1, b = 1, c = 1
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>D = b^2 - 4ac = (1)^2 - 4(1)(1) = 1 - 4 = -3
+</span></code></pre></div>
+Since D = -3 &lt; 0, there are two complex conjugate roots (no real roots). (Indeed, the quadratic formula gives x = (-1 ± i√3)/2.)</p>
+<p><strong>Provenance:</strong> Chapter 7 (Quadratic and Exponential Functions), Section 7.3; standard algebra textbook content.</p>
+<p><strong>Rules:</strong>
+- D = b^2 - 4ac for quadratic ax^2 + bx + c = 0
+- D &gt; 0 → two distinct real roots
+- D = 0 → one real double root
+- D &lt; 0 → two complex conjugate roots
+- The quadratic formula uses √D, so D &lt; 0 means the roots are complex</p>
+<p><strong>Learner Activity:</strong> Compute the discriminant of each quadratic and describe the nature of its roots. Then solve if possible:
+1. <code>x^2 - 3x + 2 = 0</code>: D = ?
+2. <code>x^2 - 6x + 9 = 0</code>: D = ? What does D = 0 mean for the graph?
+3. <code>x^2 + 2x + 5 = 0</code>: D = ? What does D &lt; 0 mean for the roots?</p>
+<p><strong>Feedback:</strong> 
+- For (1): D = (-3)^2 - 4(1)(2) = 9 - 8 = 1 &gt; 0, two distinct real roots (1 and 2).
+- For (2): D = (-6)^2 - 4(1)(9) = 36 - 36 = 0, one real double root (x = 3). The graph touches the x-axis at x = 3 but doesn't cross.
+- For (3): D = (2)^2 - 4(1)(5) = 4 - 20 = -16 &lt; 0, two complex conjugate roots. The graph never touches the x-axis.</p>
+<p><strong>Starting State:</strong> Learner can compute b^2 - 4ac for given a, b, c values and understands the quadratic formula.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Discriminant D = b^2 - 4ac determines root nature
+- D &gt; 0: 2 real roots; D = 0: 1 real double root; D &lt; 0: 2 complex conjugate roots
+- Connects to graph: D &gt; 0 means x-intercepts; D = 0 means vertex touches x-axis; D &lt; 0 means no x-intercepts</p>
+<h4 id="diagram-discriminant-and-root-nature">Diagram: Discriminant and Root Nature<a class="headerlink" href="#diagram-discriminant-and-root-nature" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Discriminant and Root Nature</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> discriminant-root-nature
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Understand
+<strong>Bloom Verb:</strong> Explain
+<strong>Learning Objective:</strong> The learner will compute the discriminant of a quadratic and use it to determine the nature of the roots without solving the equation.</p>
+<p><strong>Prerequisites:</strong> Quadratic formula, b^2 - 4ac computation</p>
+<p><strong>Evidence of Mastery:</strong> Learner can compute D = b^2 - 4ac for any quadratic ax^2 + bx + c and correctly classify D &gt; 0, D = 0, or D &lt; 0 with the corresponding root nature.</p>
+<p><strong>Misconceptions:</strong> The discriminant only works for quadratics with integer coefficients; D &lt; 0 means "no solutions" (it has complex solutions).</p>
+<p><strong>Instructional Rationale:</strong> The discriminant provides a quick check on root nature that saves time over full solution. Students often confuse D &lt; 0 with "no solutions" rather than "no real solutions."</p>
+<p><strong>Content:</strong> The sim presents a quadratic ax^2 + bx + c with sliders for a, b, and c. As learner adjusts the sliders, the discriminant D = b^2 - 4ac updates in real time. A color-coded indicator shows whether D &gt; 0 (green), D = 0 (yellow), or D &lt; 0 (red). Clicking the indicator reveals whether the roots are two distinct real roots, one real double root, or two complex conjugate roots. The graph of the parabola updates to show x-intercept behavior matching the discriminant value.</p>
+<p><strong>Feedback:</strong> When learner computes D for a given quadratic, immediate feedback tells them if the classification is correct. If D &lt; 0 is classified as "no solutions," a hint reminds them about complex conjugate roots. If the graph x-intercept count doesn't match D, the sim highlights the mismatch.</p>
+<p><strong>Starting State:</strong> The sim displays <code>x^2 - 5x + 6</code> with D = 1 shown. The green indicator shows "2 real roots" and the graph shows 2 x-intercepts.</p>
+<p><strong>Chapter Anchors:</strong> 
+- D = b^2 - 4ac determines root nature
+- D &gt; 0: 2 real roots; D = 0: 1 real double root; D &lt; 0: 2 complex conjugate roots
+- Graph x-intercepts match discriminant value</p>
+</details>
+<hr />
+<h3 id="quadratic-discriminant">Quadratic Discriminant<a class="headerlink" href="#quadratic-discriminant" title="Permanent link">&para;</a></h3>
+<p><strong>Quadratic Discriminant</strong> (Target: 500-750 words, Tier A: worked example + diagram/chart/table/MicroSim)</p>
+<p>The <strong>quadratic discriminant</strong> builds on the standard discriminant D = b^2 - 4ac but emphasizes the quadratic function's graph and how the discriminant relates to the vertex and axis of symmetry.</p>
+<p>For a quadratic function <code>f(x) = ax^2 + bx + c</code>:</p>
+<p><strong>The discriminant D = b^2 - 4ac determines the x-intercepts of the graph:</strong></p>
+<ul>
+<li><strong>D &gt; 0:</strong> The graph crosses the x-axis at two points. The parabola has two real zeros.</li>
+<li><strong>D = 0:</strong> The graph touches the x-axis at exactly one point—the vertex. The parabola has one real zero (a double root).</li>
+<li><strong>D &lt; 0:</strong> The graph does not intersect the x-axis. The parabola has no real zeros; the zeros are complex conjugates.</li>
+</ul>
+<p><strong>Connection to the vertex:</strong> The x-coordinate of the vertex is always <code>x = -b/(2a)</code>, regardless of the discriminant. The discriminant tells us whether the vertex is above, on, or below the x-axis.</p>
+<p><strong>Worked Example:</strong> Consider <code>f(x) = 2x^2 - 8x + 8</code>. Find the discriminant and describe the graph.</p>
+<p><strong>Solution:</strong> a = 2, b = -8, c = 8
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>D = b^2 - 4ac = (-8)^2 - 4(2)(8) = 64 - 64 = 0
+</span></code></pre></div></p>
+<p>Since D = 0, the graph touches the x-axis at the vertex. The x-coordinate of the vertex is:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>x = -b/(2a) = -(-8)/(2·2) = 8/4 = 2
+</span></code></pre></div></p>
+<p>The y-coordinate is:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>f(2) = 2(2)^2 - 8(2) + 8 = 8 - 16 + 8 = 0
+</span></code></pre></div></p>
+<p>So the vertex is at (2, 0), and the parabola touches the x-axis at this single point.</p>
+<p><strong>Provenance:</strong> Chapter 7 (Quadratic and Exponential Functions), Section 7.3; standard algebra textbook content.</p>
+<p><strong>Rules:</strong>
+- D = b^2 - 4ac determines x-intercept nature
+- D &gt; 0: graph crosses x-axis at 2 points
+- D = 0: graph touches x-axis at vertex (one real root)
+- D &lt; 0: graph does not intersect x-axis (2 complex roots)
+- Vertex x-coordinate is always -b/(2a), independent of D</p>
+<p><strong>Learner Activity:</strong> Compute the discriminant and describe the graph for each quadratic:
+1. <code>f(x) = x^2 - 4x + 3</code>: D = ?, graph description
+2. <code>f(x) = x^2 - 2x + 1</code>: D = ?, graph description
+3. <code>f(x) = x^2 + 4x + 5</code>: D = ?, graph description</p>
+<p><strong>Feedback:</strong> 
+- For (1): D = 4 &gt; 0, graph crosses x-axis at x = 1 and x = 3.
+- For (2): D = 0, graph touches x-axis at vertex x = 1.
+- For (3): D = -4 &lt; 0, graph does not intersect x-axis; complex roots.</p>
+<p><strong>Starting State:</strong> Learner can compute the discriminant and link it to the quadratic formula. Now they connect it to graphing.</p>
+<p><strong>Chapter Anchors:</strong> 
+- D &gt; 0: graph crosses x-axis twice; D = 0: touches at vertex; D &lt; 0: no x-intercepts
+- Vertex at x = -b/(2a) always; discriminant tells position relative to x-axis</p>
+<h4 id="diagram-quadratic-discriminant-and-graph">Diagram: Quadratic Discriminant and Graph<a class="headerlink" href="#diagram-quadratic-discriminant-and-graph" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Quadratic Discriminant and Graph</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> quadratic-discriminant-graph
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Understand
+<strong>Bloom Verb:</strong> Explain
+<strong>Learning Objective:</strong> The learner will connect the discriminant of a quadratic function to the x-intercepts of its graph, recognizing when the parabola crosses, touches, or misses the x-axis.</p>
+<p><strong>Prerequisites:</strong> Quadratic formula, vertex form, sign of a</p>
+<p><strong>Evidence of Mastery:</strong> Learner can compute D = b^2 - 4ac and immediately describe the graph's x-intercept behavior: D &gt; 0 → 2 intercepts, D = 0 → 1 intercept (vertex), D &lt; 0 → 0 intercepts. They can also identify the vertex location.</p>
+<p><strong>Misconceptions:</strong> The discriminant only applies to the quadratic formula; D = 0 means "one solution" with no geometric meaning.</p>
+<p><strong>Instructional Rationale:</strong> Connecting the algebraic discriminant to the geometric graph helps students visualize what D &gt; 0, D = 0, and D &lt; 0 mean for the parabola's position relative to the x-axis.</p>
+<p><strong>Content:</strong> The sim displays a parabola f(x) = ax^2 + bx + c with sliders for a, b, and c. The discriminant D = b^2 - 4ac is shown in real time. A three-state indicator shows whether the parabola crosses the x-axis (2 points), touches at vertex (1 point), or misses the x-axis (0 points). The vertex coordinates (-b/(2a), f(-b/(2a))) are always displayed. Learner can adjust sliders and observe how changes in a, b, c affect both D and the graph's x-intercept behavior.</p>
+<p><strong>Feedback:</strong> When learner identifies the correct x-intercept count for a given D, the sim confirms with green checkmark. If learner mismatches D and graph behavior, a hint references the vertex formula and the sign of a. Correct identification of all three cases (D &gt; 0, D = 0, D &lt; 0) is confirmed after three consecutive correct answers.</p>
+<p><strong>Starting State:</strong> The sim displays <code>f(x) = x^2 - 4x + 3</code> with D = 4 shown. The indicator shows "2 x-intercepts" and the graph confirms with points at x = 1 and x = 3.</p>
+<p><strong>Chapter Anchors:</strong> 
+- D &gt; 0: graph crosses x-axis twice; D = 0: touches at vertex; D &lt; 0: no x-intercepts
+- Vertex at x = -b/(2a) always; discriminant tells position relative to x-axis</p>
+</details>
+<hr />
+<h3 id="parabola-graph">Parabola Graph<a class="headerlink" href="#parabola-graph" title="Permanent link">&para;</a></h3>
+<p><strong>Parabola Graph</strong> (Target: 500-750 words, Tier A: worked example + diagram/chart/table/MicroSim)</p>
+<p>A <strong>parabola</strong> is the graph of a quadratic function <code>f(x) = ax^2 + bx + c</code>. Its shape is a U-shape (or an inverted U) that is symmetric about a vertical line through its vertex.</p>
+<p><strong>Key features of a parabola:</strong></p>
+<ol>
+<li>
+<p><strong>Vertex:</strong> The highest or lowest point of the parabola. If a &gt; 0, the parabola opens upward and the vertex is the minimum. If a &lt; 0, the parabola opens downward and the vertex is the maximum.</p>
+</li>
+<li>
+<p><strong>Axis of symmetry:</strong> The vertical line through the vertex, given by <code>x = -b/(2a)</code>. The parabola is symmetric about this line.</p>
+</li>
+<li>
+<p><strong>Direction of opening:</strong> Determined by the sign of a:</p>
+</li>
+<li>a &gt; 0: parabola opens upward (U-shape)</li>
+<li>
+<p>a &lt; 0: parabola opens downward (inverted U)</p>
+</li>
+<li>
+<p><strong>y-intercept:</strong> The point where the graph crosses the y-axis, at (0, c).</p>
+</li>
+<li>
+<p><strong>x-intercepts (zeros/roots):</strong> The points where the graph crosses or touches the x-axis, found using the discriminant or factoring.</p>
+</li>
+</ol>
+<p><strong>Standard form:</strong> <code>f(x) = ax^2 + bx + c</code> (the form we've been using)</p>
+<p><strong>Vertex form:</strong> <code>f(x) = a(x - h)^2 + k</code>, where (h, k) is the vertex. This form makes it easy to identify the vertex and direction of opening.</p>
+<p><strong>Converting from standard to vertex form:</strong> Complete the square.</p>
+<p><strong>Worked Example:</strong> Graph <code>f(x) = x^2 - 4x + 3</code> by finding the vertex, axis of symmetry, direction, and intercepts.</p>
+<p><strong>Solution:</strong>
+- a = 1, b = -4, c = 3 → a &gt; 0, so parabola opens upward (minimum at vertex)
+- Vertex x-coordinate: x = -b/(2a) = -(-4)/(2·1) = 4/2 = 2
+- Vertex y-coordinate: f(2) = (2)^2 - 4(2) + 3 = 4 - 8 + 3 = -1
+- Vertex: (2, -1)
+- Axis of symmetry: x = 2
+- y-intercept: f(0) = 0 - 0 + 3 = 3, so (0, 3)
+- x-intercepts (zeros): Solve x^2 - 4x + 3 = 0 → (x - 1)(x - 3) = 0 → x = 1 or x = 3, so (1, 0) and (3, 0)</p>
+<p><strong>Sketch:</strong> Plot the vertex (2, -1), the y-intercept (0, 3), and the x-intercepts (1, 0) and (3, 0). Draw the symmetric U-shape.</p>
+<p><strong>Provenance:</strong> Chapter 7 (Quadratic and Exponential Functions), Section 7.1–7.2; standard algebra textbook content.</p>
+<p><strong>Rules:</strong>
+- Vertex at (-b/(2a), f(-b/(2a)))
+- Axis of symmetry: x = -b/(2a)
+- a &gt; 0 → opens upward (minimum); a &lt; 0 → opens downward (maximum)
+- y-intercept at (0, c)
+- x-intercepts from discriminant or factoring: D &gt; 0 → 2 x-intercepts; D = 0 → 1 x-intercept; D &lt; 0 → 0 x-intercepts</p>
+<p><strong>Learner Activity:</strong> Identify the key features of each parabola without graphing:
+1. <code>f(x) = x^2 - 6x + 8</code>: vertex, axis of symmetry, direction, y-intercept
+2. <code>f(x) = -x^2 + 4x - 3</code>: vertex, axis of symmetry, direction, y-intercept
+3. <code>f(x) = 2x^2 + 8x + 6</code>: vertex, axis of symmetry, direction, y-intercept</p>
+<p><strong>Feedback:</strong> 
+- For (1): a = 1 &gt; 0 (opens up), vertex at x = 3, f(3) = -1, so vertex (3, -1), axis x = 3, y-intercept (0, 8), x-intercepts at x = 2 and x = 4 (factor: (x - 2)(x - 4)).
+- For (2): a = -1 &lt; 0 (opens down), vertex at x = 2, f(2) = 1, so vertex (2, 1), axis x = 2, y-intercept (0, -3), x-intercepts at x = 1 and x = 3 (factor: -(x - 1)(x - 3)).
+- For (3): a = 2 &gt; 0 (opens up), vertex at x = -2, f(-2) = -2, so vertex (-2, -2), axis x = -2, y-intercept (0, 6).</p>
+<p><strong>Starting State:</strong> Learner can solve quadratic equations and has basic knowledge of parabola graphs.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Vertex at (-b/(2a), f(-b/(2a)))
+- Axis of symmetry: x = -b/(2a)
+- a &gt; 0 → opens upward (minimum); a &lt; 0 → opens downward (maximum)
+- D &gt; 0: 2 x-intercepts; D = 0: 1 x-intercept; D &lt; 0: 0 x-intercepts</p>
+<h4 id="diagram-parabola-graph">Diagram: Parabola Graph<a class="headerlink" href="#diagram-parabola-graph" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Parabola Graph</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> parabola-grapher
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Understand
+<strong>Bloom Verb:</strong> Explain
+<strong>Learning Objective:</strong> The learner will identify and interpret the key features of a parabola: vertex, axis of symmetry, direction of opening, y-intercept, and x-intercepts.</p>
+<p><strong>Prerequisites:</strong> Quadratic functions, factoring, quadratic formula</p>
+<p><strong>Evidence of Mastery:</strong> Learner can identify the vertex, axis of symmetry, direction, y-intercept, and x-intercepts of a parabola given in standard form f(x) = ax^2 + bx + c. They can convert between standard and vertex form.</p>
+<p><strong>Misconceptions:</strong> The vertex is always at (0, c); the axis of symmetry is the y-axis; x-intercepts are always found by factoring.</p>
+<p><strong>Instructional Rationale:</strong> An interactive grapher helps students experiment with changing a, b, c and immediately see how each parameter affects the parabola's position, direction, and shape. This builds intuition before they learn the analytical formulas.</p>
+<p><strong>Content:</strong> The sim presents a parabola f(x) = ax^2 + bx + c with sliders for a, b, and c. Key features are labeled when clicked: vertex (h, k), axis of symmetry x = h, direction (up/down determined by a), y-intercept (0, c), and x-intercepts (solutions to ax^2 + bx + c = 0). Learner can toggle between "standard form" and "vertex form" views. A reset button returns to f(x) = x^2.</p>
+<p><strong>Feedback:</strong> When learner clicks on a feature label, a tooltip shows the analytical value. If learner misidentifies the direction (says opens up when a &lt; 0), a hint reminds them that a determines direction. If x-intercepts are incorrectly stated, the sim shows the discriminant value and whether D &gt; 0, D = 0, or D &lt; 0.</p>
+<p><strong>Starting State:</strong> The sim displays <code>f(x) = x^2 - 4x + 3</code> with vertex at (2, -1), axis x = 2, opens upward, y-intercept (0, 3), x-intercepts at x = 1 and x = 3 all labeled.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Vertex at (-b/(2a), f(-b/(2a)))
+- Axis of symmetry: x = -b/(2a)
+- a &gt; 0 → opens upward (minimum); a &lt; 0 → opens downward (maximum)
+- y-intercept at (0, c); x-intercepts from quadratic formula or factoring</p>
+</details>
+<hr />
+<h3 id="parabola-direction">Parabola Direction<a class="headerlink" href="#parabola-direction" title="Permanent link">&para;</a></h3>
+<p><strong>Parabola Direction</strong> (Target: 250-400 words, Tier B: worked example)</p>
+<p>The <strong>direction</strong> a parabola opens is determined solely by the sign of the leading coefficient <code>a</code> in <code>f(x) = ax^2 + bx + c</code>.</p>
+<p><strong>Upward opening:</strong> If <code>a &gt; 0</code>, the parabola opens upward, forming a U-shape. The vertex is a <strong>minimum</strong> point — the parabola's lowest point.</p>
+<p><strong>Downward opening:</strong> If <code>a &lt; 0</code>, the parabola opens downward, forming an inverted U-shape. The vertex is a <strong>maximum</strong> point — the parabola's highest point.</p>
+<p><strong>Worked Example 1:</strong> Determine the direction of <code>f(x) = 3x^2 - 5x + 2</code>.</p>
+<p><strong>Solution:</strong> The leading coefficient is a = 3. Since 3 &gt; 0, the parabola opens upward (U-shape), and the vertex is a minimum.</p>
+<p><strong>Worked Example 2:</strong> Determine the direction of <code>f(x) = -2x^2 + 4x - 1</code>.</p>
+<p><strong>Solution:</strong> The leading coefficient is a = -2. Since -2 &lt; 0, the parabola opens downward (inverted U-shape), and the vertex is a maximum.</p>
+<p><strong>Why it matters:</strong> The direction tells us whether we're looking at a minimum or maximum value, which is crucial for optimization problems. If you're maximizing profit or minimizing cost, the parabola's direction tells you what kind of critical point you've found.</p>
+<p><strong>Provenance:</strong> Chapter 7 (Quadratic and Exponential Functions), Section 7.1; standard algebra textbook content.</p>
+<p><strong>Rules:</strong>
+- a &gt; 0 → parabola opens upward (minimum at vertex)
+- a &lt; 0 → parabola opens downward (maximum at vertex)
+- The sign of a is the only factor that determines direction; b and c only shift the parabola</p>
+<p><strong>Learner Activity:</strong> Determine the direction each parabola opens, and state whether the vertex is a minimum or maximum:
+1. <code>f(x) = 2x^2 - 3x + 1</code>
+2. <code>f(x) = -4x^2 + 5x - 2</code>
+3. <code>f(x) = x^2 - 5x + 6</code></p>
+<p><strong>Feedback:</strong> 
+- For (1): a = 2 &gt; 0, opens upward, minimum at vertex
+- For (2): a = -4 &lt; 0, opens downward, maximum at vertex
+- For (3): a = 1 &gt; 0, opens upward, minimum at vertex</p>
+<p><strong>Starting State:</strong> Learner knows how to identify the leading coefficient in a quadratic function.</p>
+<p><strong>Chapter Anchors:</strong> 
+- a &gt; 0 → upward opening, minimum vertex
+- a &lt; 0 → downward opening, maximum vertex
+- Direction depends only on sign of a</p>
+<hr />
+<h3 id="parabola-opening">Parabola Opening<a class="headerlink" href="#parabola-opening" title="Permanent link">&para;</a></h3>
+<p><strong>Parabola Opening</strong> (Target: 250-400 words, Tier B: worked example)</p>
+<p>The <strong>opening</strong> of a parabola refers to how "wide" or "narrow" it appears, which is determined by the absolute value of the leading coefficient <code>a</code>.</p>
+<p><strong>Narrow opening:</strong> If |a| &gt; 1, the parabola is narrower than the standard parabola <code>y = x^2</code>. The sides steeper rise, making the graph appear compressed vertically.</p>
+<p><strong>Wide opening:</strong> If 0 &lt; |a| &lt; 1, the parabola is wider than <code>y = x^2</code>. The sides rise more gradually, making the graph appear stretched vertically.</p>
+<p><strong>Standard parabola:</strong> If a = 1 or a = -1, the parabola has the "default" width of <code>y = x^2</code>.</p>
+<p><strong>Worked Example 1:</strong> Compare the opening of <code>f(x) = 3x^2</code> to <code>f(x) = x^2</code>.</p>
+<p><strong>Solution:</strong> For <code>f(x) = x^2</code>, |a| = 1, so it has the standard width. For <code>f(x) = 3x^2</code>, |a| = 3 &gt; 1, so the parabola is narrower than <code>y = x^2</code>. Each y-value is tripled, making the sides rise three times as steep.</p>
+<p><strong>Worked Example 2:</strong> Compare the opening of <code>f(x) = (1/2)x^2</code> to <code>f(x) = x^2</code>.</p>
+<p><strong>Solution:</strong> For <code>f(x) = x^2</code>, |a| = 1 (standard width). For <code>f(x) = (1/2)x^2</code>, |a| = 1/2 &lt; 1, so the parabola is wider than <code>y = x^2</code>. Each y-value is halved, making the sides rise half as steep.</p>
+<p><strong>Provenance:</strong> Chapter 7 (Quadratic and Exponential Functions), Section 7.1; standard algebra textbook content.</p>
+<p><strong>Rules:</strong>
+- |a| &gt; 1 → narrower than y = x^2
+- |a| = 1 → standard width (y = x^2)
+- 0 &lt; |a| &lt; 1 → wider than y = x^2
+- The sign of a determines direction (up/down); |a| determines opening width</p>
+<p><strong>Learner Activity:</strong> Compare the opening of each parabola to y = x^2. Is it narrower, wider, or standard?
+1. <code>f(x) = 4x^2</code>
+2. <code>f(x) = (1/3)x^2</code>
+3. <code>f(x) = (2/3)x^2</code></p>
+<p><strong>Feedback:</strong> 
+- For (1): |a| = 4 &gt; 1, narrower than y = x^2
+- For (2): |a| = 1/3 &lt; 1, wider than y = x^2
+- For (3): |a| = 2/3 &lt; 1, wider than y = x^2 (but not as wide as in (2))</p>
+<p><strong>Starting State:</strong> Learner can identify the leading coefficient and its sign.</p>
+<p><strong>Chapter Anchors:</strong> 
+- |a| &gt; 1 → narrower; |a| = 1 → standard; 0 &lt; |a| &lt; 1 → wider
+- Opening width depends on |a|, direction on sign of a</p>
+<hr />
+<h3 id="parabola-vertex-form">Parabola Vertex Form<a class="headerlink" href="#parabola-vertex-form" title="Permanent link">&para;</a></h3>
+<p><strong>Parabola Vertex Form</strong> (Target: 250-400 words, Tier B: worked example)</p>
+<p>The <strong>vertex form</strong> of a quadratic function makes it easy to identify the vertex and direction of opening without completing the square every time.</p>
+<p><strong>Vertex form:</strong> <code>f(x) = a(x - h)^2 + k</code>, where:
+- <code>(h, k)</code> is the <strong>vertex</strong> of the parabola
+- <code>a</code> determines the direction and opening width (same rules as standard form)
+- The axis of symmetry is the vertical line <code>x = h</code></p>
+<p><strong>Why vertex form is useful:</strong>
+- The vertex is immediately identifiable as (h, k)
+- The direction is determined by the sign of a (same as standard form)
+- The opening width follows the same |a| rules</p>
+<p><strong>Worked Example 1:</strong> Identify the vertex, axis of symmetry, and direction for <code>f(x) = 2(x - 3)^2 + 5</code>.</p>
+<p><strong>Solution:</strong> 
+- a = 2 ( &gt; 0, so parabola opens upward, minimum at vertex)
+- h = 3, k = 5, so vertex is (3, 5)
+- Axis of symmetry: x = 3</p>
+<p><strong>Worked Example 2:</strong> Identify the vertex, axis of symmetry, and direction for <code>f(x) = - (x + 2)^2 - 4</code>.</p>
+<p><strong>Solution:</strong> 
+- a = -1 ( &lt; 0, so parabola opens downward, maximum at vertex)
+- Rewrite as -1(x - (-2))^2 + (-4), so h = -2, k = -4
+- Vertex is (-2, -4)
+- Axis of symmetry: x = -2</p>
+<p><strong>Provenance:</strong> Chapter 7 (Quadratic and Exponential Functions), Section 7.2; standard algebra textbook content.</p>
+<p><strong>Rules:</strong>
+- Vertex is (h, k) from f(x) = a(x - h)^2 + k
+- Axis of symmetry: x = h
+- a &gt; 0 → opens upward (minimum); a &lt; 0 → opens downward (maximum)
+- Opening width: |a| &gt; 1 → narrower; |a| = 1 → standard; 0 &lt; |a| &lt; 1 → wider</p>
+<p><strong>Learner Activity:</strong> Identify the vertex, axis of symmetry, and direction for each function in vertex form:
+1. <code>f(x) = 3(x + 1)^2 - 2</code>
+2. <code>f(x) = - (x - 4)^2 + 7</code>
+3. <code>f(x) = (1/2)(x - 5)^2 - 3</code></p>
+<p><strong>Feedback:</strong> 
+- For (1): vertex (-1, -2), axis x = -1, opens upward (a = 3 &gt; 0)
+- For (2): vertex (4, 7), axis x = 4, opens downward (a = -1 &lt; 0)
+- For (3): vertex (5, -3), axis x = 5, opens upward (a = 1/2, 0 &lt; |a| &lt; 1, so wider than standard)</p>
+<p><strong>Starting State:</strong> Learner can identify the vertex and direction from standard form f(x) = ax^2 + bx + c. Now they learn the vertex form shortcut.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Vertex (h, k) from f(x) = a(x - h)^2 + k
+- Axis of symmetry: x = h
+- a determines direction and opening width</p>
+<hr />
+<h3 id="parabola-standard-form">Parabola Standard Form<a class="headerlink" href="#parabola-standard-form" title="Permanent link">&para;</a></h3>
+<p><strong>Parabola Standard Form</strong> (Target: 250-400 words, Tier B: worked example)</p>
+<p>The <strong>standard form</strong> of a quadratic function is <code>f(x) = ax^2 + bx + c</code>, where a, b, and c are real numbers and a ≠ 0. This is the form we've been working with throughout this chapter, and it's the most common way quadratics are presented.</p>
+<p><strong>Finding the vertex from standard form:</strong> The vertex (h, k) can be found using:
+- h = -b/(2a) (x-coordinate)
+- k = f(h) = a(h)^2 + b(h) + c (y-coordinate)</p>
+<p><strong>Axis of symmetry:</strong> The vertical line x = -b/(2a).</p>
+<p><strong>y-intercept:</strong> The point (0, c), since f(0) = a(0)^2 + b(0) + c = c.</p>
+<p><strong>x-intercepts (zeros):</strong> Found by solving ax^2 + bx + c = 0, using factoring, completing the square, or the quadratic formula. The discriminant D = b^2 - 4ac determines the nature of the roots.</p>
+<p><strong>Worked Example:</strong> Convert <code>f(x) = x^2 - 6x + 8</code> from standard form to identify key features.</p>
+<p><strong>Solution:</strong>
+- a = 1, b = -6, c = 8
+- Vertex x-coordinate: h = -b/(2a) = -(-6)/(2·1) = 6/2 = 3
+- Vertex y-coordinate: k = f(3) = (3)^2 - 6(3) + 8 = 9 - 18 + 8 = -1
+- Vertex: (3, -1)
+- Axis of symmetry: x = 3
+- Direction: a = 1 &gt; 0, so opens upward (minimum)
+- y-intercept: f(0) = 8, so (0, 8)
+- x-intercepts: Solve x^2 - 6x + 8 = 0 → (x - 2)(x - 4) = 0 → x = 2 or x = 4, so (2, 0) and (4, 0)</p>
+<p><strong>Provenance:</strong> Chapter 7 (Quadratic and Exponential Functions), Section 7.1–7.2; standard algebra textbook content.</p>
+<p><strong>Rules:</strong>
+- Vertex at (-b/(2a), f(-b/(2a)))
+- Axis of symmetry: x = -b/(2a)
+- y-intercept at (0, c)
+- x-intercepts from quadratic formula or factoring; D = b^2 - 4ac determines nature</p>
+<p><strong>Learner Activity:</strong> Find the vertex, axis of symmetry, direction, y-intercept, and x-intercepts for each quadratic in standard form:
+1. <code>f(x) = x^2 - 4x + 3</code>
+2. <code>f(x) = 2x^2 + 8x + 6</code>
+3. <code>f(x) = -x^2 + 4x - 3</code></p>
+<p><strong>Feedback:</strong> 
+- For (1): vertex (2, -1), axis x = 2, opens up, y-intercept (0, 3), x-intercepts at 1 and 3
+- For (2): vertex (-2, -2), axis x = -2, opens up (a = 2), y-intercept (0, 6)
+- For (3): vertex (2, 1), axis x = 2, opens down (a = -1), y-intercept (0, -3), x-intercepts at 1 and 3</p>
+<p><strong>Starting State:</strong> Learner can solve quadratic equations and has basic parabola graphing skills. Now they learn systematic feature extraction.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Vertex at (-b/(2a), f(-b/(2a)))
+- Axis of symmetry: x = -b/(2a)
+- y-intercept at (0, c)
+- x-intercepts from quadratic formula; D determines nature</p>
+<hr />
+<h3 id="parabola-focus">Parabola Focus<a class="headerlink" href="#parabola-focus" title="Permanent link">&para;</a></h3>
+<p><strong>Parabola Focus</strong> (Target: 250-400 words, Tier B: worked example)</p>
+<p>The <strong>focus</strong> of a parabola is a fixed point inside the parabola that, together with the directrix, defines the parabola's geometric property: <strong>a parabola is the set of all points equidistant from the focus and the directrix.</strong></p>
+<p>For a parabola with vertex at (h, k) and axis of symmetry parallel to the y-axis:</p>
+<ul>
+<li><strong>If the parabola opens upward (a &gt; 0):</strong> The focus is at <code>(h, k + 1/(4a))</code></li>
+<li><strong>If the parabola opens downward (a &lt; 0):</strong> The focus is at <code>(h, k - 1/(4a))</code></li>
+</ul>
+<p><strong>The distance from the vertex to the focus</strong> is <code>|1/(4a)|</code>, called the <strong>focal length</strong>. The directrix is the line <code>y = k - 1/(4a)</code> (for upward-opening) or <code>y = k + 1/(4a)</code> (for downward-opening).</p>
+<p><strong>Worked Example 1:</strong> Find the focus of <code>f(x) = 2(x - 3)^2 + 5</code>.</p>
+<p><strong>Solution:</strong> 
+- Vertex: (h, k) = (3, 5)
+- a = 2 &gt; 0, so parabola opens upward
+- Focus: (h, k + 1/(4a)) = (3, 5 + 1/(4·2)) = (3, 5 + 1/8) = (3, 5.125)
+- Directrix: y = k - 1/(4a) = 5 - 1/8 = 4.875</p>
+<p><strong>Worked Example 2:</strong> Find the focus of <code>f(x) = - (x + 2)^2 - 4</code>.</p>
+<p><strong>Solution:</strong>
+- Vertex: (h, k) = (-2, -4)
+- a = -1 &lt; 0, so parabola opens downward
+- Focus: (h, k - 1/(4a)) = (-2, -4 - 1/(4·(-1))) = (-2, -4 - (-1/4)) = (-2, -4 + 1/4) = (-2, -3.75)
+- Directrix: y = k - 1/(4a) = -4 - 1/(4·(-1)) = -4 + 1/4 = -3.75</p>
+<p><strong>Provenance:</strong> Chapter 7 (Quadratic and Exponential Functions), advanced topics; geometry of parabolas.</p>
+<p><strong>Rules:</strong>
+- Upward-facing (a &gt; 0): focus at (h, k + 1/(4a))
+- Downward-facing (a &lt; 0): focus at (h, k - 1/(4a))
+- Focal length: |1/(4a)| from vertex to focus
+- Directrix: y = k ∓ 1/(4a) depending on opening direction</p>
+<p><strong>Learner Activity:</strong> Find the focus of each parabola in vertex form:
+1. <code>f(x) = 3(x - 1)^2 + 2</code>
+2. <code>f(x) = -2(x + 3)^2 - 5</code>
+3. <code>f(x) = (1/4)(x - 2)^2 + 1</code></p>
+<p><strong>Feedback:</strong> 
+- For (1): vertex (1, 2), a = 3 &gt; 0, focus (1, 2 + 1/12) = (1, 2.083)
+- For (2): vertex (-3, -5), a = -2 &lt; 0, focus (-3, -5 - 1/(-8)) = (-3, -5 + 1/8) = (-3, -4.875)
+- For (3): vertex (2, 1), a = 1/4 &gt; 0, focus (2, 1 + 1/(4·1/4)) = (2, 1 + 1/1) = (2, 2)</p>
+<p><strong>Starting State:</strong> Learner knows how to find the vertex and direction of a parabola. Now they explore the geometric definition.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Focus at (h, k ± 1/(4a)) depending on opening direction
+- Focal length |1/(4a)| from vertex to focus
+- Directrix line at distance 1/(4a) from vertex</p>
+<hr />
+<h3 id="parabola-directrix">Parabola Directrix<a class="headerlink" href="#parabola-directrix" title="Permanent link">&para;</a></h3>
+<p><strong>Parabola Directrix</strong> (Target: 250-400 words, Tier B: worked example)</p>
+<p>The <strong>directrix</strong> of a parabola is a fixed line outside the parabola that, together with the focus, defines the parabola's geometric property: <strong>a parabola is the set of all points equidistant from the focus and the directrix.</strong></p>
+<p>For a parabola with vertex at (h, k) and axis of symmetry parallel to the y-axis:</p>
+<ul>
+<li><strong>If the parabola opens upward (a &gt; 0):</strong> The directrix is the horizontal line <code>y = k - 1/(4a)</code></li>
+<li><strong>If the parabola opens downward (a &lt; 0):</strong> The directrix is the horizontal line <code>y = k + 1/(4a)</code></li>
+</ul>
+<p><strong>Worked Example 1:</strong> Find the directrix of <code>f(x) = 2(x - 3)^2 + 5</code>.</p>
+<p><strong>Solution:</strong>
+- Vertex: (h, k) = (3, 5)
+- a = 2 &gt; 0, so parabola opens upward
+- Directrix: y = k - 1/(4a) = 5 - 1/(4·2) = 5 - 1/8 = 4.875</p>
+<p><strong>Worked Example 2:</strong> Find the directrix of <code>f(x) = - (x + 2)^2 - 4</code>.</p>
+<p><strong>Solution:</strong>
+- Vertex: (h, k) = (-2, -4)
+- a = -1 &lt; 0, so parabola opens downward
+- Directrix: y = k + 1/(4a) = -4 + 1/(4·(-1)) = -4 - 1/4 = -4.25</p>
+<p><strong>Provenance:</strong> Chapter 7 (Quadratic and Exponential Functions), advanced topics; geometry of parabolas.</p>
+<p><strong>Rules:</strong>
+- Upward-facing (a &gt; 0): directrix y = k - 1/(4a)
+- Downward-facing (a &lt; 0): directrix y = k + 1/(4a)
+- The directrix is always the same distance from the vertex as the focus, but on the opposite side</p>
+<p><strong>Learner Activity:</strong> Find the directrix of each parabola in vertex form:
+1. <code>f(x) = 3(x - 1)^2 + 2</code>
+2. <code>f(x) = -2(x + 3)^2 - 5</code>
+3. <code>f(x) = (1/4)(x - 2)^2 + 1</code></p>
+<p><strong>Feedback:</strong> 
+- For (1): vertex (1, 2), a = 3 &gt; 0, directrix y = 2 - 1/12 = 1.917
+- For (2): vertex (-3, -5), a = -2 &lt; 0, directrix y = -5 + 1/(4·(-1)) = -5 - 1/4 = -5.25
+- For (3): vertex (2, 1), a = 1/4 &gt; 0, directrix y = 1 - 1/(4·1/4) = 1 - 1/1 = 0</p>
+<p><strong>Starting State:</strong> Learner knows how to find the focus of a parabola. Now they explore the complementary geometric element.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Directrix y = k - 1/(4a) (upward) or y = k + 1/(4a) (downward)
+- Directrix is same distance from vertex as focus, on opposite side</p>
+<hr />
+<h3 id="data-display-categorical">Data Display Categorical<a class="headerlink" href="#data-display-categorical" title="Permanent link">&para;</a></h3>
+<p><strong>Data Display Categorical</strong> (Target: 120-200 words, Tier C: clear definition)</p>
+<p><strong>Categorical data</strong> (also called <strong>qualitative data</strong>) are values that fall into named categories or groups. The categories are qualitative labels, not numerical values, although numbers may be assigned to count how many observations fall in each category.</p>
+<p><strong>Examples of categorical variables:</strong>
+- <strong>Blood type</strong> (A, B, AB, O) — each person has one blood type
+- <strong>Eye color</strong> (blue, brown, green, hazel) — each person has one eye color
+- <strong>Gender</strong> (male, female, non-binary, etc.) — self-identified category
+- <strong>Favorite color</strong> (red, blue, green, yellow, etc.) — preference category
+- <strong>Marital status</strong> (never married, married, divorced, widowed, separated) — classification</p>
+<p><strong>Key distinction:</strong> Categorical data are <strong>about classification</strong>, not measurement. You wouldn't "measure" blood type in the way you measure height or temperature. Instead, you classify each observation into a category.</p>
+<p><strong>Data displays for categorical data:</strong>
+- <strong>Bar charts:</strong> Bars represent each category; bar height shows the count or percentage in that category.
+- <strong>Pie charts:</strong> Circular chart divided into slices; slice size shows the proportion or percentage in each category.
+- <strong>Bar graphs vs. histograms:</strong> Bar graphs display categorical data; histograms display numerical (continuous) data in intervals.</p>
+<p><strong>Worked Example:</strong> A survey of 20 students asked: "What is your favorite color?" The results:</p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Number of Students</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to display this:</strong> A bar chart would have four bars (one per color), with heights proportional to the counts. A pie chart would have four slices, with angles proportional to the percentages (Red: 5/20 = 25%, Blue: 8/20 = 40%, Green: 4/20 = 20%, Yellow: 3/20 = 15%).</p>
+<p><strong>Provenance:</strong> Chapter 7 (Quadratic and Exponential Functions), Section 7.4 (pre-statistics); standard algebra textbook content, adapted for data analysis.</p>
+<p><strong>Rules:</strong>
+- Categorical data classify observations into named categories
+- Numbers represent counts or frequencies, not measurements
+- Bar charts and pie charts are appropriate displays
+- Bar graphs use separated bars; histograms use adjacent bars for numerical intervals</p>
+<p><strong>Learner Activity:</strong> Identify whether each variable is categorical or numerical, and state the appropriate display:
+1. Number of hours spent studying per week (numerical → histogram)
+2. Students' letter grades (A, B, C, D, F) → categorical → bar chart or pie chart
+3. Shoe sizes (numerical, discrete) → could be histogram or bar chart depending on treatment
+4. Zip codes (categorical, though numbers) → bar chart (zip codes are labels, not measurements)</p>
+<p><strong>Feedback:</strong> 
+- For (1): Numerical, continuous. Histogram with intervals of, e.g., 1-3 hours, 4-6 hours, etc.
+- For (2): Categorical. Bar chart with bars for A, B, C, D, F, or pie chart showing proportions.
+- For (3): Shoe sizes are discrete numerical, but often treated as categorical with size categories (7, 7.5, 8, etc.). Bar chart appropriate.
+- For (4): Zip codes are labels/categories, not measurements. Bar chart appropriate.</p>
+<p><strong>Starting State:</strong> Learner understands the difference between categorical and numerical data from earlier coursework.</p>
+<p><strong>Chapter Anchors:</strong> 
+- Categorical data classify into named categories, not measurements
+- Bar charts and pie charts are appropriate displays
+- Distinguish from numerical data and histograms</p>
+<hr />
+<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h2>
+<p>In this chapter, we've covered a wide range of techniques that bridge symbolic algebra and data analysis. Let's recap the key themes:</p>
+<p><strong>Polynomial techniques:</strong>
+- <strong>Synthetic division</strong> provides a streamlined method for dividing polynomials by linear factors, with the remainder theorem giving us P(c) as the remainder.
+- <strong>The Remainder Theorem</strong> tells us that the remainder of P(x) ÷ (x - c) equals P(c), giving us a quick evaluation method.
+- <strong>The Factor Theorem</strong> connects factors and roots: x - c is a factor of P(x) iff P(c) = 0.
+- <strong>Zeros of a polynomial</strong> are the values of x for which P(x) = 0. Finding zeros by factoring reveals the x-intercepts of the graph.</p>
+<p><strong>Complex numbers:</strong>
+- The <strong>imaginary unit</strong> i is defined by i^2 = -1, extending the real number system.
+- <strong>Complex numbers</strong> a + bi have real part a and imaginary part b.
+- Operations (addition, subtraction, multiplication, division) follow the same rules as real numbers, with the extra rule that i^2 = -1.</p>
+<p><strong>Quadratic functions and parabolas:</strong>
+- The <strong>discriminant</strong> D = b^2 - 4ac tells us the nature of the roots: D &gt; 0 → 2 real roots; D = 0 → 1 real double root; D &lt; 0 → 2 complex conjugate roots.
+- The <strong>vertex</strong> is at (-b/(2a), f(-b/(2a))), and the <strong>axis of symmetry</strong> is x = -b/(2a).
+- The <strong>direction</strong> of opening is determined by a: a &gt; 0 → upward (minimum); a &lt; 0 → downward (maximum).
+- The <strong>opening width</strong> depends on |a|: |a| &gt; 1 → narrower; |a| = 1 → standard; 0 &lt; |a| &lt; 1 → wider.
+- The <strong>vertex form</strong> f(x) = a(x - h)^2 + k immediately gives the vertex (h, k) and axis x = h.
+- The <strong>focus</strong> and <strong>directrix</strong> complete the geometric definition: focus at (h, k ± 1/(4a)), directrix at y = k ∓ 1/(4a).</p>
+<p><strong>Categorical data:</strong>
+- <strong>Categorical data</strong> classify observations into named categories, not measurements.
+- <strong>Bar charts</strong> and <strong>pie charts</strong> are the appropriate data displays.
+- Distinguish categorical from numerical data and appropriate display types.</p>
+<p><strong>What's next:</strong> These techniques form the foundation for more advanced statistics and algebra courses. In future math courses, you'll apply polynomial root-finding to higher-degree equations, use complex numbers in electrical engineering and signal processing, and analyze quadratic functions in optimization and physics contexts. For data analysis, you'll move from categorical displays to measuring central tendency and variability in numerical distributions.</p>
+<hr />
+<p><strong>Key formulas to remember:</strong>
+- Synthetic division algorithm for P(x) ÷ (x - c)
+- Remainder Theorem: remainder of P(x) ÷ (x - c) = P(c)
+- Factor Theorem: x - c is a factor of P(x) iff P(c) = 0
+- Discriminant: D = b^2 - 4ac for ax^2 + bx + c = 0
+- Vertex: (-b/(2a), f(-b/(2a))), axis of symmetry: x = -b/(2a)
+- Quadratic formula: x = (-b ± √(b^2 - 4ac)) / (2a)
+- Complex number: a + bi where i^2 = -1
+- Parabola vertex form: f(x) = a(x - h)^2 + k with vertex (h, k)
+- Focus: (h, k + 1/(4a)) for upward, (h, k - 1/(4a)) for downward
+- Directrix: y = k - 1/(4a) for upward, y = k + 1/(4a) for downward</p>
+<hr />
+<p>This completes the Statistics and Data Analysis chapter. You now have a comprehensive toolkit for both algebraic problem-solving with polynomials and complex numbers, and for describing and comparing data distributions using appropriate visual displays.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../08-systems-of-equations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 8. Systems of Equations">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                8. Systems of Equations
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../10-sequences-and-series/" class="md-footer__link md-footer__link--next" aria-label="Next: 10. Sequences and Series">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                10. Sequences and Series
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,6460 @@
+{
+  "metadata": {
+    "title": "DGX Evaluation for Textbook Generation",
+    "description": "A learning graph for evaluating whether a single NVIDIA DGX system running an open-weight small language model can generate an interactive intelligent textbook end to end, with measurements and a sanitized, publishable report.",
+    "creator": "Dan McCreary",
+    "date": "2026-10-10",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "CC BY-NC-SA 4.0 DEED"
+  },
+  "groups": {
+    "FOUND": {
+      "classifierName": "Foundations and Intelligent Textbooks",
+      "color": "SteelBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "SLM": {
+      "classifierName": "Small Language Models",
+      "color": "Orange",
+      "font": {
+        "color": "black"
+      }
+    },
+    "LVC": {
+      "classifierName": "Local Versus Cloud Services",
+      "color": "Coral",
+      "font": {
+        "color": "black"
+      }
+    },
+    "COST": {
+      "classifierName": "Cost, Price, and Quality",
+      "color": "Gold",
+      "font": {
+        "color": "black"
+      }
+    },
+    "HW": {
+      "classifierName": "DGX Hardware Architecture",
+      "color": "DarkSlateBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "NET": {
+      "classifierName": "Secure Remote Access",
+      "color": "DodgerBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "ENV": {
+      "classifierName": "Environments and Hardware Probes",
+      "color": "DarkGreen",
+      "font": {
+        "color": "white"
+      }
+    },
+    "FIT": {
+      "classifierName": "Model Sizing and Fit",
+      "color": "Teal",
+      "font": {
+        "color": "white"
+      }
+    },
+    "MSEL": {
+      "classifierName": "Model Selection and Candidates",
+      "color": "LimeGreen",
+      "font": {
+        "color": "black"
+      }
+    },
+    "INFER": {
+      "classifierName": "Inference Servers and Performance",
+      "color": "OliveDrab",
+      "font": {
+        "color": "white"
+      }
+    },
+    "AGENT": {
+      "classifierName": "Agent Harnesses and Containment",
+      "color": "DarkOrchid",
+      "font": {
+        "color": "white"
+      }
+    },
+    "EVAL": {
+      "classifierName": "Evaluation Methodology",
+      "color": "MediumPurple",
+      "font": {
+        "color": "white"
+      }
+    },
+    "BENCH": {
+      "classifierName": "Benchmark and Reporting",
+      "color": "Indigo",
+      "font": {
+        "color": "white"
+      }
+    },
+    "SAN": {
+      "classifierName": "Sanitization and Publication Safety",
+      "color": "Crimson",
+      "font": {
+        "color": "white"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Command Line Basics",
+      "group": "FOUND",
+      "shape": "box",
+      "cis": 375
+    },
+    {
+      "id": 2,
+      "label": "Python Scripting Basics",
+      "group": "FOUND",
+      "shape": "box",
+      "cis": 162
+    },
+    {
+      "id": 3,
+      "label": "Git Version Control",
+      "group": "FOUND",
+      "shape": "box",
+      "cis": 18
+    },
+    {
+      "id": 4,
+      "label": "GitHub Repository",
+      "group": "FOUND",
+      "cis": 5
+    },
+    {
+      "id": 5,
+      "label": "Generative AI Assistant Use",
+      "group": "FOUND",
+      "shape": "box",
+      "cis": 2518
+    },
+    {
+      "id": 6,
+      "label": "Intelligent Textbook",
+      "group": "FOUND",
+      "cis": 153
+    },
+    {
+      "id": 7,
+      "label": "Levels of Intelligent Textbooks",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 8,
+      "label": "Course Description",
+      "group": "FOUND",
+      "cis": 53
+    },
+    {
+      "id": 9,
+      "label": "Learning Graph",
+      "group": "FOUND",
+      "cis": 30
+    },
+    {
+      "id": 10,
+      "label": "Concept Dependency",
+      "group": "FOUND",
+      "cis": 36
+    },
+    {
+      "id": 11,
+      "label": "Directed Acyclic Graph",
+      "group": "FOUND",
+      "cis": 32
+    },
+    {
+      "id": 12,
+      "label": "Concept Taxonomy",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 13,
+      "label": "Chapter Content",
+      "group": "FOUND",
+      "cis": 20
+    },
+    {
+      "id": 14,
+      "label": "MicroSim",
+      "group": "FOUND",
+      "cis": 10
+    },
+    {
+      "id": 15,
+      "label": "Glossary",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 16,
+      "label": "FAQ",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 17,
+      "label": "Quiz",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 18,
+      "label": "ibook-skills Skill Chain",
+      "group": "FOUND",
+      "cis": 51
+    },
+    {
+      "id": 19,
+      "label": "MkDocs Material",
+      "group": "FOUND",
+      "cis": 12
+    },
+    {
+      "id": 20,
+      "label": "Markdown Source Files",
+      "group": "FOUND",
+      "shape": "box",
+      "cis": 38
+    },
+    {
+      "id": 21,
+      "label": "Static Site Build",
+      "group": "FOUND",
+      "cis": 5
+    },
+    {
+      "id": 22,
+      "label": "Bloom's Taxonomy",
+      "group": "FOUND",
+      "shape": "box",
+      "cis": 5
+    },
+    {
+      "id": 23,
+      "label": "Learning Outcomes",
+      "group": "FOUND",
+      "cis": 3
+    },
+    {
+      "id": 24,
+      "label": "Course Description Quality Score",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 25,
+      "label": "Concept Impact Score",
+      "group": "FOUND",
+      "cis": 2
+    },
+    {
+      "id": 26,
+      "label": "Elaboration Budget",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 27,
+      "label": "Word-Count Targets",
+      "group": "FOUND",
+      "cis": 4
+    },
+    {
+      "id": 28,
+      "label": "Anti-Padding Rules",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 29,
+      "label": "Content Generation Guide",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 30,
+      "label": "AGENTS.md File",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 31,
+      "label": "Learning Graph Viewer",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 32,
+      "label": "Foundational Concepts",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 33,
+      "label": "MkDocs Navigation",
+      "group": "FOUND",
+      "cis": 4
+    },
+    {
+      "id": 34,
+      "label": "Lesson Plan",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 35,
+      "label": "MicroSim Status Levels",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 36,
+      "label": "p5.js",
+      "group": "FOUND",
+      "cis": 2
+    },
+    {
+      "id": 37,
+      "label": "vis-network",
+      "group": "FOUND",
+      "cis": 2
+    },
+    {
+      "id": 38,
+      "label": "Iframe Embedding",
+      "group": "FOUND",
+      "cis": 2
+    },
+    {
+      "id": 39,
+      "label": "Data-Driven MicroSim",
+      "group": "FOUND",
+      "cis": 1
+    },
+    {
+      "id": 40,
+      "label": "Generative AI Model",
+      "group": "SLM",
+      "cis": 2364
+    },
+    {
+      "id": 41,
+      "label": "Large Language Model",
+      "group": "SLM",
+      "cis": 1035
+    },
+    {
+      "id": 42,
+      "label": "Frontier Model",
+      "group": "SLM",
+      "cis": 19
+    },
+    {
+      "id": 43,
+      "label": "Small Language Model",
+      "group": "SLM",
+      "cis": 386
+    },
+    {
+      "id": 44,
+      "label": "Parameter Count",
+      "group": "SLM",
+      "cis": 591
+    },
+    {
+      "id": 45,
+      "label": "Token",
+      "group": "SLM",
+      "cis": 101
+    },
+    {
+      "id": 46,
+      "label": "Tokenizer",
+      "group": "SLM",
+      "cis": 2
+    },
+    {
+      "id": 47,
+      "label": "Context Window",
+      "group": "SLM",
+      "cis": 68
+    },
+    {
+      "id": 48,
+      "label": "Inference",
+      "group": "SLM",
+      "cis": 556
+    },
+    {
+      "id": 49,
+      "label": "Open-Weight Model",
+      "group": "SLM",
+      "cis": 62
+    },
+    {
+      "id": 50,
+      "label": "Open-Source License",
+      "group": "SLM",
+      "shape": "box",
+      "cis": 12
+    },
+    {
+      "id": 51,
+      "label": "Model License Terms",
+      "group": "SLM",
+      "cis": 9
+    },
+    {
+      "id": 52,
+      "label": "Model Family",
+      "group": "SLM",
+      "cis": 18
+    },
+    {
+      "id": 53,
+      "label": "Llama Family",
+      "group": "SLM",
+      "cis": 1
+    },
+    {
+      "id": 54,
+      "label": "Qwen Family",
+      "group": "SLM",
+      "cis": 3
+    },
+    {
+      "id": 55,
+      "label": "Gemma Family",
+      "group": "SLM",
+      "cis": 3
+    },
+    {
+      "id": 56,
+      "label": "Mistral Family",
+      "group": "SLM",
+      "cis": 3
+    },
+    {
+      "id": 57,
+      "label": "Phi Family",
+      "group": "SLM",
+      "cis": 1
+    },
+    {
+      "id": 58,
+      "label": "Model Card",
+      "group": "SLM",
+      "cis": 10
+    },
+    {
+      "id": 59,
+      "label": "Long-Form Writing",
+      "group": "SLM",
+      "cis": 3
+    },
+    {
+      "id": 60,
+      "label": "Structured Output",
+      "group": "SLM",
+      "cis": 214
+    },
+    {
+      "id": 61,
+      "label": "Tool Calling",
+      "group": "SLM",
+      "cis": 205
+    },
+    {
+      "id": 62,
+      "label": "Code Generation",
+      "group": "SLM",
+      "cis": 3
+    },
+    {
+      "id": 63,
+      "label": "Instruction Following",
+      "group": "SLM",
+      "cis": 2
+    },
+    {
+      "id": 64,
+      "label": "Multimodal Model",
+      "group": "SLM",
+      "cis": 2
+    },
+    {
+      "id": 65,
+      "label": "Image Input",
+      "group": "SLM",
+      "cis": 1
+    },
+    {
+      "id": 66,
+      "label": "Reasoning Mode",
+      "group": "SLM",
+      "cis": 1
+    },
+    {
+      "id": 67,
+      "label": "Tokens per Word",
+      "group": "SLM",
+      "cis": 1
+    },
+    {
+      "id": 68,
+      "label": "Local Model Deployment",
+      "group": "LVC",
+      "cis": 384
+    },
+    {
+      "id": 69,
+      "label": "Cloud LLM Service",
+      "group": "LVC",
+      "cis": 226
+    },
+    {
+      "id": 70,
+      "label": "Anthropic Claude",
+      "group": "LVC",
+      "cis": 2
+    },
+    {
+      "id": 71,
+      "label": "OpenAI ChatGPT",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 72,
+      "label": "Google Antigravity",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 73,
+      "label": "Devin",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 74,
+      "label": "Agentic Framework",
+      "group": "LVC",
+      "cis": 3
+    },
+    {
+      "id": 75,
+      "label": "Privacy",
+      "group": "LVC",
+      "shape": "box",
+      "cis": 66
+    },
+    {
+      "id": 76,
+      "label": "Data Sovereignty",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 77,
+      "label": "Rate Limits",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 78,
+      "label": "Service Availability",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 79,
+      "label": "Vendor Lock-In",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 80,
+      "label": "Version Pinning",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 81,
+      "label": "Operational Burden",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 82,
+      "label": "Hybrid Workflow",
+      "group": "LVC",
+      "cis": 2
+    },
+    {
+      "id": 83,
+      "label": "Cloud Baseline",
+      "group": "LVC",
+      "cis": 17
+    },
+    {
+      "id": 84,
+      "label": "Frontier Model Capability Gap",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 85,
+      "label": "Model Deprecation",
+      "group": "LVC",
+      "cis": 2
+    },
+    {
+      "id": 86,
+      "label": "Offline Operation",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 87,
+      "label": "Data Egress Trace",
+      "group": "LVC",
+      "cis": 33
+    },
+    {
+      "id": 88,
+      "label": "Supervision Data Exposure",
+      "group": "LVC",
+      "cis": 1
+    },
+    {
+      "id": 89,
+      "label": "Cost",
+      "group": "COST",
+      "cis": 66
+    },
+    {
+      "id": 90,
+      "label": "Price",
+      "group": "COST",
+      "cis": 8
+    },
+    {
+      "id": 91,
+      "label": "Quality",
+      "group": "COST",
+      "cis": 7
+    },
+    {
+      "id": 92,
+      "label": "Capital Cost",
+      "group": "COST",
+      "cis": 11
+    },
+    {
+      "id": 93,
+      "label": "Depreciation",
+      "group": "COST",
+      "cis": 2
+    },
+    {
+      "id": 94,
+      "label": "Electricity Cost",
+      "group": "COST",
+      "cis": 8
+    },
+    {
+      "id": 95,
+      "label": "Administration Time",
+      "group": "COST",
+      "cis": 10
+    },
+    {
+      "id": 96,
+      "label": "Per-Token Pricing",
+      "group": "COST",
+      "cis": 2
+    },
+    {
+      "id": 97,
+      "label": "Subscription Pricing",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 98,
+      "label": "Per-Seat Pricing",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 99,
+      "label": "Total Cost of Ownership",
+      "group": "COST",
+      "cis": 7
+    },
+    {
+      "id": 100,
+      "label": "Fixed Costs",
+      "group": "COST",
+      "cis": 19
+    },
+    {
+      "id": 101,
+      "label": "Variable Costs",
+      "group": "COST",
+      "cis": 13
+    },
+    {
+      "id": 102,
+      "label": "Cost per Chapter",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 103,
+      "label": "Break-Even Volume",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 104,
+      "label": "Quality-Adjusted Cost",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 105,
+      "label": "Cost Model",
+      "group": "COST",
+      "cis": 11
+    },
+    {
+      "id": 106,
+      "label": "Utilization Rate",
+      "group": "COST",
+      "cis": 6
+    },
+    {
+      "id": 107,
+      "label": "Hardware Lifespan",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 108,
+      "label": "Sensitivity Analysis",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 109,
+      "label": "Setup Labor",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 110,
+      "label": "Operations Labor",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 111,
+      "label": "Idle Power Draw",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 112,
+      "label": "Cost per Textbook",
+      "group": "COST",
+      "cis": 4
+    },
+    {
+      "id": 113,
+      "label": "Books per Year",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 114,
+      "label": "Profit Margin",
+      "group": "COST",
+      "cis": 3
+    },
+    {
+      "id": 115,
+      "label": "Margin Versus Markup",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 116,
+      "label": "Service Price Calculation",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 117,
+      "label": "Human Review Cost",
+      "group": "COST",
+      "cis": 1
+    },
+    {
+      "id": 118,
+      "label": "Whole-Book Time Estimate",
+      "group": "COST",
+      "cis": 6
+    },
+    {
+      "id": 119,
+      "label": "NVIDIA DGX",
+      "group": "HW",
+      "cis": 74
+    },
+    {
+      "id": 120,
+      "label": "DGX Product Family",
+      "group": "HW",
+      "cis": 4
+    },
+    {
+      "id": 121,
+      "label": "CPU Architecture",
+      "group": "HW",
+      "shape": "box",
+      "cis": 19
+    },
+    {
+      "id": 122,
+      "label": "x86_64 Architecture",
+      "group": "HW",
+      "cis": 2
+    },
+    {
+      "id": 123,
+      "label": "aarch64 Architecture",
+      "group": "HW",
+      "cis": 5
+    },
+    {
+      "id": 124,
+      "label": "CPU Core Count",
+      "group": "HW",
+      "cis": 8
+    },
+    {
+      "id": 125,
+      "label": "System RAM",
+      "group": "HW",
+      "shape": "box",
+      "cis": 40
+    },
+    {
+      "id": 126,
+      "label": "GPU",
+      "group": "HW",
+      "shape": "box",
+      "cis": 226
+    },
+    {
+      "id": 127,
+      "label": "GPU Configuration",
+      "group": "HW",
+      "cis": 2
+    },
+    {
+      "id": 128,
+      "label": "Multi-GPU System",
+      "group": "HW",
+      "cis": 1
+    },
+    {
+      "id": 129,
+      "label": "Dedicated GPU Memory",
+      "group": "HW",
+      "cis": 4
+    },
+    {
+      "id": 130,
+      "label": "Unified Memory",
+      "group": "HW",
+      "cis": 13
+    },
+    {
+      "id": 131,
+      "label": "Memory Bandwidth",
+      "group": "HW",
+      "cis": 1
+    },
+    {
+      "id": 132,
+      "label": "Storage Capacity",
+      "group": "HW",
+      "shape": "box",
+      "cis": 46
+    },
+    {
+      "id": 133,
+      "label": "Storage Read Speed",
+      "group": "HW",
+      "cis": 10
+    },
+    {
+      "id": 134,
+      "label": "NVMe Storage",
+      "group": "HW",
+      "cis": 1
+    },
+    {
+      "id": 135,
+      "label": "Power Draw",
+      "group": "HW",
+      "cis": 24
+    },
+    {
+      "id": 136,
+      "label": "Thermal Design Power",
+      "group": "HW",
+      "cis": 1
+    },
+    {
+      "id": 137,
+      "label": "Thermals",
+      "group": "HW",
+      "cis": 7
+    },
+    {
+      "id": 138,
+      "label": "DGX OS",
+      "group": "HW",
+      "cis": 41
+    },
+    {
+      "id": 139,
+      "label": "NVIDIA Driver",
+      "group": "HW",
+      "cis": 40
+    },
+    {
+      "id": 140,
+      "label": "CUDA",
+      "group": "HW",
+      "cis": 6
+    },
+    {
+      "id": 141,
+      "label": "Compute Capability",
+      "group": "HW",
+      "cis": 1
+    },
+    {
+      "id": 142,
+      "label": "Hardware Variation Branching",
+      "group": "HW",
+      "cis": 1
+    },
+    {
+      "id": 143,
+      "label": "DGX Spark",
+      "group": "HW",
+      "cis": 3
+    },
+    {
+      "id": 144,
+      "label": "NVIDIA GB10",
+      "group": "HW",
+      "cis": 2
+    },
+    {
+      "id": 145,
+      "label": "Blackwell Architecture",
+      "group": "HW",
+      "cis": 1
+    },
+    {
+      "id": 146,
+      "label": "CUDA Cores",
+      "group": "HW",
+      "cis": 1
+    },
+    {
+      "id": 147,
+      "label": "Remote Access",
+      "group": "NET",
+      "cis": 210
+    },
+    {
+      "id": 148,
+      "label": "Mesh VPN",
+      "group": "NET",
+      "cis": 170
+    },
+    {
+      "id": 149,
+      "label": "WireGuard",
+      "group": "NET",
+      "cis": 85
+    },
+    {
+      "id": 150,
+      "label": "Tailscale",
+      "group": "NET",
+      "cis": 81
+    },
+    {
+      "id": 151,
+      "label": "Tailnet",
+      "group": "NET",
+      "cis": 61
+    },
+    {
+      "id": 152,
+      "label": "Coordination Plane",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 153,
+      "label": "Data Plane",
+      "group": "NET",
+      "cis": 3
+    },
+    {
+      "id": 154,
+      "label": "Peer-to-Peer Connection",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 155,
+      "label": "DERP Relay",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 156,
+      "label": "Tailscale Installation",
+      "group": "NET",
+      "cis": 14
+    },
+    {
+      "id": 157,
+      "label": "Tailscale Authentication",
+      "group": "NET",
+      "cis": 9
+    },
+    {
+      "id": 158,
+      "label": "Tailscale Auth Key",
+      "group": "NET",
+      "cis": 7
+    },
+    {
+      "id": 159,
+      "label": "Device Key Expiry",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 160,
+      "label": "MagicDNS",
+      "group": "NET",
+      "cis": 3
+    },
+    {
+      "id": 161,
+      "label": "SSH",
+      "group": "NET",
+      "cis": 31
+    },
+    {
+      "id": 162,
+      "label": "SSH Key Pair",
+      "group": "NET",
+      "cis": 15
+    },
+    {
+      "id": 163,
+      "label": "Tailscale SSH",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 164,
+      "label": "Access Control List",
+      "group": "NET",
+      "cis": 3
+    },
+    {
+      "id": 165,
+      "label": "Tailscale Status Command",
+      "group": "NET",
+      "cis": 2
+    },
+    {
+      "id": 166,
+      "label": "Tailscale Ping",
+      "group": "NET",
+      "cis": 2
+    },
+    {
+      "id": 167,
+      "label": "Connectivity Test",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 168,
+      "label": "Tailscale Serve",
+      "group": "NET",
+      "cis": 3
+    },
+    {
+      "id": 169,
+      "label": "Endpoint Sharing",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 170,
+      "label": "Host Hygiene",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 171,
+      "label": "Tailscale Daemon",
+      "group": "NET",
+      "cis": 13
+    },
+    {
+      "id": 172,
+      "label": "Tailscale Up Command",
+      "group": "NET",
+      "cis": 3
+    },
+    {
+      "id": 173,
+      "label": "Tailnet Invitation",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 174,
+      "label": "Node Sharing",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 175,
+      "label": "Host Key Fingerprint",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 176,
+      "label": "Ed25519 Key",
+      "group": "NET",
+      "cis": 4
+    },
+    {
+      "id": 177,
+      "label": "Passphrase-Free Key",
+      "group": "NET",
+      "cis": 3
+    },
+    {
+      "id": 178,
+      "label": "ssh-copy-id",
+      "group": "NET",
+      "cis": 3
+    },
+    {
+      "id": 179,
+      "label": "Unattended SSH Login",
+      "group": "NET",
+      "cis": 2
+    },
+    {
+      "id": 180,
+      "label": "BatchMode",
+      "group": "NET",
+      "cis": 1
+    },
+    {
+      "id": 181,
+      "label": "SSH Port Forward",
+      "group": "NET",
+      "cis": 2
+    },
+    {
+      "id": 182,
+      "label": "NAT Traversal",
+      "group": "NET",
+      "cis": 3
+    },
+    {
+      "id": 183,
+      "label": "Home Router",
+      "group": "NET",
+      "cis": 39
+    },
+    {
+      "id": 184,
+      "label": "Administrator Privileges",
+      "group": "NET",
+      "cis": 29
+    },
+    {
+      "id": 185,
+      "label": "System Administrator",
+      "group": "NET",
+      "cis": 14
+    },
+    {
+      "id": 186,
+      "label": "Python Environment",
+      "group": "ENV",
+      "cis": 52
+    },
+    {
+      "id": 187,
+      "label": "Environment Isolation",
+      "group": "ENV",
+      "cis": 18
+    },
+    {
+      "id": 188,
+      "label": "Miniforge",
+      "group": "ENV",
+      "cis": 29
+    },
+    {
+      "id": 189,
+      "label": "Conda",
+      "group": "ENV",
+      "cis": 28
+    },
+    {
+      "id": 190,
+      "label": "pip",
+      "group": "ENV",
+      "cis": 9
+    },
+    {
+      "id": 191,
+      "label": "Conda Create Command",
+      "group": "ENV",
+      "cis": 25
+    },
+    {
+      "id": 192,
+      "label": "Conda Activate Command",
+      "group": "ENV",
+      "cis": 5
+    },
+    {
+      "id": 193,
+      "label": "Conda List and Export",
+      "group": "ENV",
+      "cis": 4
+    },
+    {
+      "id": 194,
+      "label": "Conda Remove Command",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 195,
+      "label": "Python Version Pinning",
+      "group": "ENV",
+      "cis": 3
+    },
+    {
+      "id": 196,
+      "label": "Conda Versus pip",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 197,
+      "label": "environment.yml",
+      "group": "ENV",
+      "cis": 3
+    },
+    {
+      "id": 198,
+      "label": "requirements.txt",
+      "group": "ENV",
+      "cis": 3
+    },
+    {
+      "id": 199,
+      "label": "Package Channel",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 200,
+      "label": "Architecture-Specific Wheels",
+      "group": "ENV",
+      "cis": 3
+    },
+    {
+      "id": 201,
+      "label": "PyTorch",
+      "group": "ENV",
+      "cis": 3
+    },
+    {
+      "id": 202,
+      "label": "CUDA-Enabled PyTorch",
+      "group": "ENV",
+      "cis": 2
+    },
+    {
+      "id": 203,
+      "label": "Environment Rebuild",
+      "group": "ENV",
+      "cis": 2
+    },
+    {
+      "id": 204,
+      "label": "Reproducibility",
+      "group": "ENV",
+      "cis": 2
+    },
+    {
+      "id": 205,
+      "label": "Install Script",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 206,
+      "label": "Dedicated Tool Environment",
+      "group": "ENV",
+      "cis": 15
+    },
+    {
+      "id": 207,
+      "label": "Hardware Probe",
+      "group": "ENV",
+      "cis": 61
+    },
+    {
+      "id": 208,
+      "label": "Probe Script",
+      "group": "ENV",
+      "cis": 58
+    },
+    {
+      "id": 209,
+      "label": "psutil",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 210,
+      "label": "nvidia-smi",
+      "group": "ENV",
+      "cis": 31
+    },
+    {
+      "id": 211,
+      "label": "nvidia-smi Output",
+      "group": "ENV",
+      "cis": 25
+    },
+    {
+      "id": 212,
+      "label": "NVML",
+      "group": "ENV",
+      "cis": 2
+    },
+    {
+      "id": 213,
+      "label": "NVML Python Bindings",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 214,
+      "label": "CPU Probe",
+      "group": "ENV",
+      "cis": 7
+    },
+    {
+      "id": 215,
+      "label": "RAM Probe",
+      "group": "ENV",
+      "cis": 10
+    },
+    {
+      "id": 216,
+      "label": "Storage Probe",
+      "group": "ENV",
+      "cis": 8
+    },
+    {
+      "id": 217,
+      "label": "Disk Read Benchmark",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 218,
+      "label": "GPU Probe",
+      "group": "ENV",
+      "cis": 23
+    },
+    {
+      "id": 219,
+      "label": "GPU Memory Total and Free",
+      "group": "ENV",
+      "cis": 2
+    },
+    {
+      "id": 220,
+      "label": "Driver Version Probe",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 221,
+      "label": "CUDA Version Probe",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 222,
+      "label": "GPU Temperature",
+      "group": "ENV",
+      "cis": 5
+    },
+    {
+      "id": 223,
+      "label": "GPU Power Draw",
+      "group": "ENV",
+      "cis": 6
+    },
+    {
+      "id": 224,
+      "label": "Machine-Readable Report",
+      "group": "ENV",
+      "cis": 8
+    },
+    {
+      "id": 225,
+      "label": "JSON Report",
+      "group": "ENV",
+      "cis": 7
+    },
+    {
+      "id": 226,
+      "label": "Probe Suite",
+      "group": "ENV",
+      "cis": 6
+    },
+    {
+      "id": 227,
+      "label": "Redacted-by-Default Fields",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 228,
+      "label": "PyTorch CUDA Check",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 229,
+      "label": "Probe Verification Test",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 230,
+      "label": "Unified Memory Probe",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 231,
+      "label": "Read-Only Inventory",
+      "group": "ENV",
+      "cis": 5
+    },
+    {
+      "id": 232,
+      "label": "Linux Inventory Commands",
+      "group": "ENV",
+      "cis": 7
+    },
+    {
+      "id": 233,
+      "label": "Standard-Library-Only Python",
+      "group": "ENV",
+      "cis": 2
+    },
+    {
+      "id": 234,
+      "label": "Piping Scripts Over SSH",
+      "group": "ENV",
+      "cis": 1
+    },
+    {
+      "id": 235,
+      "label": "Vitals Logging",
+      "group": "ENV",
+      "cis": 2
+    },
+    {
+      "id": 236,
+      "label": "Model Weights",
+      "group": "FIT",
+      "cis": 184
+    },
+    {
+      "id": 237,
+      "label": "Dense Model",
+      "group": "FIT",
+      "cis": 4
+    },
+    {
+      "id": 238,
+      "label": "Mixture of Experts",
+      "group": "FIT",
+      "cis": 6
+    },
+    {
+      "id": 239,
+      "label": "Active Parameters",
+      "group": "FIT",
+      "cis": 1
+    },
+    {
+      "id": 240,
+      "label": "Numeric Precision",
+      "group": "FIT",
+      "cis": 27
+    },
+    {
+      "id": 241,
+      "label": "Bytes per Weight",
+      "group": "FIT",
+      "cis": 13
+    },
+    {
+      "id": 242,
+      "label": "FP16 and BF16",
+      "group": "FIT",
+      "cis": 1
+    },
+    {
+      "id": 243,
+      "label": "Quantization",
+      "group": "FIT",
+      "cis": 9
+    },
+    {
+      "id": 244,
+      "label": "Quantization Level",
+      "group": "FIT",
+      "cis": 5
+    },
+    {
+      "id": 245,
+      "label": "8-Bit Quantization",
+      "group": "FIT",
+      "cis": 2
+    },
+    {
+      "id": 246,
+      "label": "4-Bit Quantization",
+      "group": "FIT",
+      "cis": 2
+    },
+    {
+      "id": 247,
+      "label": "GGUF Format",
+      "group": "FIT",
+      "cis": 2
+    },
+    {
+      "id": 248,
+      "label": "Safetensors Format",
+      "group": "FIT",
+      "cis": 3
+    },
+    {
+      "id": 249,
+      "label": "Size on Disk",
+      "group": "FIT",
+      "cis": 2
+    },
+    {
+      "id": 250,
+      "label": "KV Cache",
+      "group": "FIT",
+      "cis": 39
+    },
+    {
+      "id": 251,
+      "label": "Context Length Memory",
+      "group": "FIT",
+      "cis": 17
+    },
+    {
+      "id": 252,
+      "label": "Runtime Overhead",
+      "group": "FIT",
+      "cis": 12
+    },
+    {
+      "id": 253,
+      "label": "Safety Headroom",
+      "group": "FIT",
+      "cis": 11
+    },
+    {
+      "id": 254,
+      "label": "Memory Estimation Formula",
+      "group": "FIT",
+      "cis": 10
+    },
+    {
+      "id": 255,
+      "label": "Model-Fit Calculation",
+      "group": "FIT",
+      "cis": 9
+    },
+    {
+      "id": 256,
+      "label": "Model-Fit Calculator",
+      "group": "FIT",
+      "cis": 1
+    },
+    {
+      "id": 257,
+      "label": "Fit Verdict",
+      "group": "FIT",
+      "cis": 4
+    },
+    {
+      "id": 258,
+      "label": "Unified Memory Fit",
+      "group": "FIT",
+      "cis": 1
+    },
+    {
+      "id": 259,
+      "label": "Bits per Parameter",
+      "group": "FIT",
+      "cis": 3
+    },
+    {
+      "id": 260,
+      "label": "Memory for Weights",
+      "group": "FIT",
+      "cis": 1
+    },
+    {
+      "id": 261,
+      "label": "Quantized File Overhead",
+      "group": "FIT",
+      "cis": 1
+    },
+    {
+      "id": 262,
+      "label": "Model Selection Criteria",
+      "group": "MSEL",
+      "cis": 4
+    },
+    {
+      "id": 263,
+      "label": "Hugging Face Hub",
+      "group": "MSEL",
+      "cis": 31
+    },
+    {
+      "id": 264,
+      "label": "Model Repository",
+      "group": "MSEL",
+      "cis": 27
+    },
+    {
+      "id": 265,
+      "label": "License Review",
+      "group": "MSEL",
+      "cis": 3
+    },
+    {
+      "id": 266,
+      "label": "Model Download",
+      "group": "MSEL",
+      "cis": 26
+    },
+    {
+      "id": 267,
+      "label": "Checksum Verification",
+      "group": "MSEL",
+      "cis": 3
+    },
+    {
+      "id": 268,
+      "label": "Storage Management",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 269,
+      "label": "Model Shortlist",
+      "group": "MSEL",
+      "cis": 2
+    },
+    {
+      "id": 270,
+      "label": "Model Leaderboard",
+      "group": "MSEL",
+      "cis": 3
+    },
+    {
+      "id": 271,
+      "label": "Tool-Calling Reliability",
+      "group": "MSEL",
+      "cis": 2
+    },
+    {
+      "id": 272,
+      "label": "Writing Quality",
+      "group": "MSEL",
+      "cis": 2
+    },
+    {
+      "id": 273,
+      "label": "Model Comparison",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 274,
+      "label": "Gated Model Access",
+      "group": "MSEL",
+      "cis": 2
+    },
+    {
+      "id": 275,
+      "label": "Access Token Handling",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 276,
+      "label": "Model Cache Directory",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 277,
+      "label": "Ollama Model Library",
+      "group": "MSEL",
+      "cis": 4
+    },
+    {
+      "id": 278,
+      "label": "Apache 2.0 License",
+      "group": "MSEL",
+      "cis": 2
+    },
+    {
+      "id": 279,
+      "label": "Commercial Use Terms",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 280,
+      "label": "Publisher Provenance",
+      "group": "MSEL",
+      "cis": 2
+    },
+    {
+      "id": 281,
+      "label": "Public Benchmark Score",
+      "group": "MSEL",
+      "cis": 2
+    },
+    {
+      "id": 282,
+      "label": "Publisher Claims",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 283,
+      "label": "Exclusion Rationale",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 284,
+      "label": "qwen3.8:27b",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 285,
+      "label": "gemma4:31b",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 286,
+      "label": "muse-glimmer:30b",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 287,
+      "label": "qwen3.6:35b",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 288,
+      "label": "gemma4:26b",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 289,
+      "label": "nemotron-3.5-lightning:30b",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 290,
+      "label": "mistral-medium-3.5:128b",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 291,
+      "label": "gpt-oss:120b",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 292,
+      "label": "devstral-small-2:24b",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 293,
+      "label": "granite4.2:30b",
+      "group": "MSEL",
+      "cis": 1
+    },
+    {
+      "id": 294,
+      "label": "Nemotron Family",
+      "group": "MSEL",
+      "cis": 2
+    },
+    {
+      "id": 295,
+      "label": "gpt-oss Family",
+      "group": "MSEL",
+      "cis": 2
+    },
+    {
+      "id": 296,
+      "label": "Granite Family",
+      "group": "MSEL",
+      "cis": 2
+    },
+    {
+      "id": 297,
+      "label": "Inference Server",
+      "group": "INFER",
+      "cis": 129
+    },
+    {
+      "id": 298,
+      "label": "Ollama",
+      "group": "INFER",
+      "cis": 13
+    },
+    {
+      "id": 299,
+      "label": "llama.cpp",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 300,
+      "label": "vLLM",
+      "group": "INFER",
+      "cis": 2
+    },
+    {
+      "id": 301,
+      "label": "Runtime Installation",
+      "group": "INFER",
+      "cis": 4
+    },
+    {
+      "id": 302,
+      "label": "Runtime Configuration",
+      "group": "INFER",
+      "cis": 2
+    },
+    {
+      "id": 303,
+      "label": "GPU Offload",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 304,
+      "label": "Model Loading",
+      "group": "INFER",
+      "cis": 20
+    },
+    {
+      "id": 305,
+      "label": "Local API Endpoint",
+      "group": "INFER",
+      "cis": 44
+    },
+    {
+      "id": 306,
+      "label": "OpenAI-Compatible API",
+      "group": "INFER",
+      "cis": 14
+    },
+    {
+      "id": 307,
+      "label": "Chat Completions Endpoint",
+      "group": "INFER",
+      "cis": 13
+    },
+    {
+      "id": 308,
+      "label": "localhost Binding",
+      "group": "INFER",
+      "cis": 6
+    },
+    {
+      "id": 309,
+      "label": "curl Request",
+      "group": "INFER",
+      "cis": 6
+    },
+    {
+      "id": 310,
+      "label": "Python Client",
+      "group": "INFER",
+      "cis": 6
+    },
+    {
+      "id": 311,
+      "label": "First-Prompt Smoke Test",
+      "group": "INFER",
+      "cis": 5
+    },
+    {
+      "id": 312,
+      "label": "Server Logs",
+      "group": "INFER",
+      "cis": 2
+    },
+    {
+      "id": 313,
+      "label": "Background Service",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 314,
+      "label": "Model Keep-Alive",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 315,
+      "label": "User-Space Installation",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 316,
+      "label": "Release Archive",
+      "group": "INFER",
+      "cis": 2
+    },
+    {
+      "id": 317,
+      "label": "tmux Session",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 318,
+      "label": "Anthropic-Compatible API",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 319,
+      "label": "Batched Serving",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 320,
+      "label": "Prompt Re-Reading",
+      "group": "INFER",
+      "cis": 8
+    },
+    {
+      "id": 321,
+      "label": "AI Agent Harness",
+      "group": "AGENT",
+      "cis": 173
+    },
+    {
+      "id": 322,
+      "label": "Agent Loop",
+      "group": "AGENT",
+      "cis": 29
+    },
+    {
+      "id": 323,
+      "label": "Tool Definition",
+      "group": "AGENT",
+      "cis": 14
+    },
+    {
+      "id": 324,
+      "label": "File Editing Tool",
+      "group": "AGENT",
+      "cis": 6
+    },
+    {
+      "id": 325,
+      "label": "Shell Execution Tool",
+      "group": "AGENT",
+      "cis": 6
+    },
+    {
+      "id": 326,
+      "label": "Permission Model",
+      "group": "AGENT",
+      "cis": 5
+    },
+    {
+      "id": 327,
+      "label": "Context Management",
+      "group": "AGENT",
+      "cis": 6
+    },
+    {
+      "id": 328,
+      "label": "Context Compaction",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 329,
+      "label": "System Prompt",
+      "group": "AGENT",
+      "cis": 2
+    },
+    {
+      "id": 330,
+      "label": "Subagent",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 331,
+      "label": "Agent Skill",
+      "group": "AGENT",
+      "cis": 74
+    },
+    {
+      "id": 332,
+      "label": "SKILL.md Format",
+      "group": "AGENT",
+      "cis": 21
+    },
+    {
+      "id": 333,
+      "label": "Skill Loading",
+      "group": "AGENT",
+      "cis": 10
+    },
+    {
+      "id": 334,
+      "label": "Skill Installation",
+      "group": "AGENT",
+      "cis": 10
+    },
+    {
+      "id": 335,
+      "label": "Claude Code",
+      "group": "AGENT",
+      "cis": 38
+    },
+    {
+      "id": 336,
+      "label": "OpenCode",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 337,
+      "label": "Codex CLI",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 338,
+      "label": "Goose",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 339,
+      "label": "Local Endpoint Connection",
+      "group": "AGENT",
+      "cis": 21
+    },
+    {
+      "id": 340,
+      "label": "Harness Configuration",
+      "group": "AGENT",
+      "cis": 17
+    },
+    {
+      "id": 341,
+      "label": "Skill Execution Verification",
+      "group": "AGENT",
+      "cis": 9
+    },
+    {
+      "id": 342,
+      "label": "Harness Compatibility Test",
+      "group": "AGENT",
+      "cis": 3
+    },
+    {
+      "id": 343,
+      "label": "Harness Prompt Overhead",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 344,
+      "label": "Skill Defect Correction",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 345,
+      "label": "Orchestrator",
+      "group": "AGENT",
+      "cis": 3
+    },
+    {
+      "id": 346,
+      "label": "Role Separation",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 347,
+      "label": "Harness on Laptop",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 348,
+      "label": "Harness on DGX",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 349,
+      "label": "Docker",
+      "group": "AGENT",
+      "cis": 22
+    },
+    {
+      "id": 350,
+      "label": "Docker Group Membership",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 351,
+      "label": "NVIDIA Container Toolkit",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 352,
+      "label": "Harness Container",
+      "group": "AGENT",
+      "cis": 19
+    },
+    {
+      "id": 353,
+      "label": "Container Sandbox",
+      "group": "AGENT",
+      "cis": 2
+    },
+    {
+      "id": 354,
+      "label": "Non-Root Container User",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 355,
+      "label": "Read-Only Skill Mount",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 356,
+      "label": "Placeholder Credential",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 357,
+      "label": "Telemetry Disabled",
+      "group": "AGENT",
+      "cis": 2
+    },
+    {
+      "id": 358,
+      "label": "Host Network Mode",
+      "group": "AGENT",
+      "cis": 2
+    },
+    {
+      "id": 359,
+      "label": "Network Sandbox Gap",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 360,
+      "label": "Network Boundary",
+      "group": "AGENT",
+      "cis": 35
+    },
+    {
+      "id": 361,
+      "label": "Packet Capture Verification",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 362,
+      "label": "Memory Watchdog",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 363,
+      "label": "System Freeze",
+      "group": "AGENT",
+      "cis": 1
+    },
+    {
+      "id": 364,
+      "label": "Performance Optimization",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 365,
+      "label": "Quantization Tradeoffs",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 366,
+      "label": "Context Length Setting",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 367,
+      "label": "Batch Size",
+      "group": "INFER",
+      "cis": 4
+    },
+    {
+      "id": 368,
+      "label": "Concurrency",
+      "group": "INFER",
+      "cis": 3
+    },
+    {
+      "id": 369,
+      "label": "Prompt Caching",
+      "group": "INFER",
+      "cis": 9
+    },
+    {
+      "id": 370,
+      "label": "Sampling Parameters",
+      "group": "INFER",
+      "cis": 3
+    },
+    {
+      "id": 371,
+      "label": "Temperature Setting",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 372,
+      "label": "Top-p and Top-k",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 373,
+      "label": "Tokens per Second",
+      "group": "INFER",
+      "cis": 11
+    },
+    {
+      "id": 374,
+      "label": "Time to First Token",
+      "group": "INFER",
+      "cis": 6
+    },
+    {
+      "id": 375,
+      "label": "Prompt Processing Speed",
+      "group": "INFER",
+      "cis": 15
+    },
+    {
+      "id": 376,
+      "label": "Throughput",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 377,
+      "label": "Latency",
+      "group": "INFER",
+      "cis": 5
+    },
+    {
+      "id": 378,
+      "label": "Model Load Time",
+      "group": "INFER",
+      "cis": 8
+    },
+    {
+      "id": 379,
+      "label": "GPU Utilization",
+      "group": "INFER",
+      "cis": 3
+    },
+    {
+      "id": 380,
+      "label": "GPU Monitoring",
+      "group": "INFER",
+      "cis": 2
+    },
+    {
+      "id": 381,
+      "label": "Thermal Throttling",
+      "group": "INFER",
+      "cis": 1
+    },
+    {
+      "id": 382,
+      "label": "Memory Pressure",
+      "group": "INFER",
+      "cis": 5
+    },
+    {
+      "id": 383,
+      "label": "Out-of-Memory Error",
+      "group": "INFER",
+      "cis": 2
+    },
+    {
+      "id": 384,
+      "label": "Turn Overhead",
+      "group": "INFER",
+      "cis": 7
+    },
+    {
+      "id": 385,
+      "label": "Agent Turn",
+      "group": "INFER",
+      "cis": 11
+    },
+    {
+      "id": 386,
+      "label": "Peak Context Size",
+      "group": "INFER",
+      "cis": 2
+    },
+    {
+      "id": 387,
+      "label": "Context Truncation",
+      "group": "INFER",
+      "cis": 3
+    },
+    {
+      "id": 388,
+      "label": "Evaluation Question",
+      "group": "EVAL",
+      "cis": 183
+    },
+    {
+      "id": 389,
+      "label": "Independent Variable",
+      "group": "EVAL",
+      "cis": 76
+    },
+    {
+      "id": 390,
+      "label": "Controlled Variables",
+      "group": "EVAL",
+      "cis": 75
+    },
+    {
+      "id": 391,
+      "label": "Uncontrolled Variable",
+      "group": "EVAL",
+      "cis": 8
+    },
+    {
+      "id": 392,
+      "label": "Fixed Inputs",
+      "group": "EVAL",
+      "cis": 38
+    },
+    {
+      "id": 393,
+      "label": "Repeated Runs",
+      "group": "EVAL",
+      "cis": 20
+    },
+    {
+      "id": 394,
+      "label": "Run Variance",
+      "group": "EVAL",
+      "cis": 9
+    },
+    {
+      "id": 395,
+      "label": "Sample Size",
+      "group": "EVAL",
+      "cis": 8
+    },
+    {
+      "id": 396,
+      "label": "Metric Selection",
+      "group": "EVAL",
+      "cis": 72
+    },
+    {
+      "id": 397,
+      "label": "Scoring Rubric",
+      "group": "EVAL",
+      "cis": 27
+    },
+    {
+      "id": 398,
+      "label": "Logging",
+      "group": "EVAL",
+      "cis": 19
+    },
+    {
+      "id": 399,
+      "label": "Bias in Evaluation",
+      "group": "EVAL",
+      "cis": 12
+    },
+    {
+      "id": 400,
+      "label": "LLM-as-Judge",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 401,
+      "label": "Blind Human Review",
+      "group": "EVAL",
+      "cis": 3
+    },
+    {
+      "id": 402,
+      "label": "Reproducible Experiment",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 403,
+      "label": "Baseline Comparison",
+      "group": "EVAL",
+      "cis": 14
+    },
+    {
+      "id": 404,
+      "label": "Fair Comparison",
+      "group": "EVAL",
+      "cis": 8
+    },
+    {
+      "id": 405,
+      "label": "Experimental Design Critique",
+      "group": "EVAL",
+      "cis": 7
+    },
+    {
+      "id": 406,
+      "label": "Limitations Statement",
+      "group": "EVAL",
+      "cis": 6
+    },
+    {
+      "id": 407,
+      "label": "Explicit Assumptions",
+      "group": "EVAL",
+      "cis": 9
+    },
+    {
+      "id": 408,
+      "label": "Measured Versus Assumed Values",
+      "group": "EVAL",
+      "cis": 8
+    },
+    {
+      "id": 409,
+      "label": "Provisional Results",
+      "group": "EVAL",
+      "cis": 7
+    },
+    {
+      "id": 410,
+      "label": "Design Decision Record",
+      "group": "EVAL",
+      "cis": 3
+    },
+    {
+      "id": 411,
+      "label": "Decision Attribution",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 412,
+      "label": "Negative Result Reporting",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 413,
+      "label": "Two-Layer Testing",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 414,
+      "label": "Model-Only Test",
+      "group": "EVAL",
+      "cis": 4
+    },
+    {
+      "id": 415,
+      "label": "Harness Smoke Test",
+      "group": "EVAL",
+      "cis": 2
+    },
+    {
+      "id": 416,
+      "label": "Control Run",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 417,
+      "label": "Scoring Check Calibration",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 418,
+      "label": "Structural Checks",
+      "group": "EVAL",
+      "cis": 11
+    },
+    {
+      "id": 419,
+      "label": "Automated Quality Score",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 420,
+      "label": "Human Quality Score",
+      "group": "EVAL",
+      "cis": 2
+    },
+    {
+      "id": 421,
+      "label": "Retest After Fix",
+      "group": "EVAL",
+      "cis": 2
+    },
+    {
+      "id": 422,
+      "label": "Evaluation Status Tracking",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 423,
+      "label": "Run Time Limit",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 424,
+      "label": "Long-Context Recall Test",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 425,
+      "label": "Schema-Constrained JSON",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 426,
+      "label": "Reading Level Measure",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 427,
+      "label": "Faithfulness to Description",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 428,
+      "label": "Dependency Reasoning",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 429,
+      "label": "Markdown Validity",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 430,
+      "label": "MicroSim Code Correctness",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 431,
+      "label": "Mathematical Notation",
+      "group": "EVAL",
+      "cis": 1
+    },
+    {
+      "id": 432,
+      "label": "Textbook Benchmark",
+      "group": "BENCH",
+      "cis": 22
+    },
+    {
+      "id": 433,
+      "label": "Benchmark Runner",
+      "group": "BENCH",
+      "cis": 11
+    },
+    {
+      "id": 434,
+      "label": "Pipeline Stage",
+      "group": "BENCH",
+      "cis": 28
+    },
+    {
+      "id": 435,
+      "label": "Stage Sensitivity",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 436,
+      "label": "Per-Stage Metrics",
+      "group": "BENCH",
+      "cis": 9
+    },
+    {
+      "id": 437,
+      "label": "Skill Completion Rate",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 438,
+      "label": "Tool-Call Success Rate",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 439,
+      "label": "Build Success",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 440,
+      "label": "Structural Validity",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 441,
+      "label": "Wall-Clock Time",
+      "group": "BENCH",
+      "cis": 4
+    },
+    {
+      "id": 442,
+      "label": "Time Breakdown",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 443,
+      "label": "Energy per Textbook",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 444,
+      "label": "Failure Diagnosis",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 445,
+      "label": "Context Overflow",
+      "group": "BENCH",
+      "cis": 2
+    },
+    {
+      "id": 446,
+      "label": "Malformed Tool Call",
+      "group": "BENCH",
+      "cis": 3
+    },
+    {
+      "id": 447,
+      "label": "Harness Misconfiguration",
+      "group": "BENCH",
+      "cis": 2
+    },
+    {
+      "id": 448,
+      "label": "Baseline Textbook",
+      "group": "BENCH",
+      "cis": 2
+    },
+    {
+      "id": 449,
+      "label": "Textbook Preview",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 450,
+      "label": "DGX Sufficiency Judgment",
+      "group": "BENCH",
+      "cis": 3
+    },
+    {
+      "id": 451,
+      "label": "Evaluation Report",
+      "group": "BENCH",
+      "cis": 5
+    },
+    {
+      "id": 452,
+      "label": "Report Structure",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 453,
+      "label": "Recommendation",
+      "group": "BENCH",
+      "cis": 2
+    },
+    {
+      "id": 454,
+      "label": "Local Cloud or Hybrid Decision",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 455,
+      "label": "Capstone Evaluation",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 456,
+      "label": "Algebra I Benchmark",
+      "group": "BENCH",
+      "cis": 7
+    },
+    {
+      "id": 457,
+      "label": "Benchmark Workspace Template",
+      "group": "BENCH",
+      "cis": 5
+    },
+    {
+      "id": 458,
+      "label": "Stage Prompt",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 459,
+      "label": "Standing Approval Answer",
+      "group": "BENCH",
+      "cis": 2
+    },
+    {
+      "id": 460,
+      "label": "Stage Chaining",
+      "group": "BENCH",
+      "cis": 4
+    },
+    {
+      "id": 461,
+      "label": "Per-Chapter Generation Run",
+      "group": "BENCH",
+      "cis": 3
+    },
+    {
+      "id": 462,
+      "label": "Chapter Completion Criterion",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 463,
+      "label": "Chapter Dependency Check",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 464,
+      "label": "Reference Book for Scale",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 465,
+      "label": "Run Event Stream",
+      "group": "BENCH",
+      "cis": 7
+    },
+    {
+      "id": 466,
+      "label": "Run Report",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 467,
+      "label": "Tool Call Count",
+      "group": "BENCH",
+      "cis": 5
+    },
+    {
+      "id": 468,
+      "label": "Failed Tool Calls",
+      "group": "BENCH",
+      "cis": 2
+    },
+    {
+      "id": 469,
+      "label": "Duplicate Concept Labels",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 470,
+      "label": "Orphaned Concepts",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 471,
+      "label": "Dependency Cycle Check",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 472,
+      "label": "CSV-JSON Agreement",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 473,
+      "label": "Label Length Limit",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 474,
+      "label": "Required Output Files",
+      "group": "BENCH",
+      "cis": 2
+    },
+    {
+      "id": 475,
+      "label": "Navigation Entries",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 476,
+      "label": "Strict Site Build",
+      "group": "BENCH",
+      "cis": 2
+    },
+    {
+      "id": 477,
+      "label": "Run Output Retrieval",
+      "group": "BENCH",
+      "cis": 3
+    },
+    {
+      "id": 478,
+      "label": "Results Publishing",
+      "group": "BENCH",
+      "cis": 2
+    },
+    {
+      "id": 479,
+      "label": "Text-Emitted Tool Call",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 480,
+      "label": "Premature Turn Termination",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 481,
+      "label": "Task Loss",
+      "group": "BENCH",
+      "cis": 1
+    },
+    {
+      "id": 482,
+      "label": "Sanitization",
+      "group": "SAN",
+      "cis": 31
+    },
+    {
+      "id": 483,
+      "label": "Device-Identifying Details",
+      "group": "SAN",
+      "cis": 17
+    },
+    {
+      "id": 484,
+      "label": "IP Address",
+      "group": "SAN",
+      "cis": 2
+    },
+    {
+      "id": 485,
+      "label": "Hostname",
+      "group": "SAN",
+      "cis": 2
+    },
+    {
+      "id": 486,
+      "label": "Tailnet Name",
+      "group": "SAN",
+      "cis": 1
+    },
+    {
+      "id": 487,
+      "label": "Usernames and Passwords",
+      "group": "SAN",
+      "cis": 1
+    },
+    {
+      "id": 488,
+      "label": "Keys and Tokens",
+      "group": "SAN",
+      "cis": 6
+    },
+    {
+      "id": 489,
+      "label": "Hardware Identifiers",
+      "group": "SAN",
+      "cis": 2
+    },
+    {
+      "id": 490,
+      "label": "Access Configuration",
+      "group": "SAN",
+      "cis": 1
+    },
+    {
+      "id": 491,
+      "label": "Redaction",
+      "group": "SAN",
+      "cis": 8
+    },
+    {
+      "id": 492,
+      "label": "Placeholder Conventions",
+      "group": "SAN",
+      "cis": 2
+    },
+    {
+      "id": 493,
+      "label": "Documentation Address Ranges",
+      "group": "SAN",
+      "cis": 1
+    },
+    {
+      "id": 494,
+      "label": "Secret Scanning",
+      "group": "SAN",
+      "cis": 5
+    },
+    {
+      "id": 495,
+      "label": "gitleaks",
+      "group": "SAN",
+      "cis": 1
+    },
+    {
+      "id": 496,
+      "label": "Pre-Commit Scan",
+      "group": "SAN",
+      "cis": 3
+    },
+    {
+      "id": 497,
+      "label": "Git History Persistence",
+      "group": "SAN",
+      "cis": 3
+    },
+    {
+      "id": 498,
+      "label": "Screenshot Redaction",
+      "group": "SAN",
+      "cis": 1
+    },
+    {
+      "id": 499,
+      "label": "Publication Safety Review",
+      "group": "SAN",
+      "cis": 2
+    },
+    {
+      "id": 500,
+      "label": "Sanitized Sample Output",
+      "group": "SAN",
+      "cis": 1
+    },
+    {
+      "id": 501,
+      "label": "Raw Output Isolation",
+      "group": "SAN",
+      "cis": 2
+    },
+    {
+      "id": 502,
+      "label": "Hosts via Environment Variable",
+      "group": "SAN",
+      "cis": 1
+    },
+    {
+      "id": 503,
+      "label": "Public Repository Risk",
+      "group": "SAN",
+      "cis": 1
+    },
+    {
+      "id": 504,
+      "label": "Gitignore Rules",
+      "group": "SAN",
+      "cis": 1
+    },
+    {
+      "id": 505,
+      "label": "Identifiers in System Files",
+      "group": "SAN",
+      "cis": 1
+    },
+    {
+      "id": 506,
+      "label": "Home Directory Paths",
+      "group": "SAN",
+      "cis": 1
+    }
+  ],
+  "edges": [
+    {
+      "from": 4,
+      "to": 3
+    },
+    {
+      "from": 6,
+      "to": 5
+    },
+    {
+      "from": 7,
+      "to": 6
+    },
+    {
+      "from": 8,
+      "to": 6
+    },
+    {
+      "from": 9,
+      "to": 8
+    },
+    {
+      "from": 9,
+      "to": 11
+    },
+    {
+      "from": 10,
+      "to": 6
+    },
+    {
+      "from": 11,
+      "to": 10
+    },
+    {
+      "from": 12,
+      "to": 9
+    },
+    {
+      "from": 13,
+      "to": 9
+    },
+    {
+      "from": 13,
+      "to": 8
+    },
+    {
+      "from": 14,
+      "to": 6
+    },
+    {
+      "from": 15,
+      "to": 9
+    },
+    {
+      "from": 16,
+      "to": 13
+    },
+    {
+      "from": 17,
+      "to": 13
+    },
+    {
+      "from": 17,
+      "to": 22
+    },
+    {
+      "from": 18,
+      "to": 331
+    },
+    {
+      "from": 18,
+      "to": 6
+    },
+    {
+      "from": 19,
+      "to": 20
+    },
+    {
+      "from": 21,
+      "to": 19
+    },
+    {
+      "from": 23,
+      "to": 22
+    },
+    {
+      "from": 24,
+      "to": 8
+    },
+    {
+      "from": 24,
+      "to": 23
+    },
+    {
+      "from": 25,
+      "to": 9
+    },
+    {
+      "from": 26,
+      "to": 25
+    },
+    {
+      "from": 26,
+      "to": 27
+    },
+    {
+      "from": 27,
+      "to": 13
+    },
+    {
+      "from": 28,
+      "to": 27
+    },
+    {
+      "from": 29,
+      "to": 13
+    },
+    {
+      "from": 29,
+      "to": 20
+    },
+    {
+      "from": 30,
+      "to": 321
+    },
+    {
+      "from": 30,
+      "to": 20
+    },
+    {
+      "from": 31,
+      "to": 9
+    },
+    {
+      "from": 31,
+      "to": 37
+    },
+    {
+      "from": 32,
+      "to": 10
+    },
+    {
+      "from": 33,
+      "to": 19
+    },
+    {
+      "from": 34,
+      "to": 14
+    },
+    {
+      "from": 34,
+      "to": 23
+    },
+    {
+      "from": 35,
+      "to": 14
+    },
+    {
+      "from": 36,
+      "to": 14
+    },
+    {
+      "from": 37,
+      "to": 14
+    },
+    {
+      "from": 38,
+      "to": 14
+    },
+    {
+      "from": 38,
+      "to": 19
+    },
+    {
+      "from": 39,
+      "to": 36
+    },
+    {
+      "from": 39,
+      "to": 38
+    },
+    {
+      "from": 40,
+      "to": 5
+    },
+    {
+      "from": 41,
+      "to": 40
+    },
+    {
+      "from": 42,
+      "to": 41
+    },
+    {
+      "from": 43,
+      "to": 41
+    },
+    {
+      "from": 43,
+      "to": 44
+    },
+    {
+      "from": 44,
+      "to": 40
+    },
+    {
+      "from": 45,
+      "to": 40
+    },
+    {
+      "from": 46,
+      "to": 45
+    },
+    {
+      "from": 47,
+      "to": 45
+    },
+    {
+      "from": 48,
+      "to": 40
+    },
+    {
+      "from": 49,
+      "to": 40
+    },
+    {
+      "from": 51,
+      "to": 49
+    },
+    {
+      "from": 51,
+      "to": 50
+    },
+    {
+      "from": 52,
+      "to": 40
+    },
+    {
+      "from": 53,
+      "to": 52
+    },
+    {
+      "from": 53,
+      "to": 49
+    },
+    {
+      "from": 54,
+      "to": 52
+    },
+    {
+      "from": 54,
+      "to": 49
+    },
+    {
+      "from": 55,
+      "to": 52
+    },
+    {
+      "from": 55,
+      "to": 49
+    },
+    {
+      "from": 56,
+      "to": 52
+    },
+    {
+      "from": 56,
+      "to": 49
+    },
+    {
+      "from": 57,
+      "to": 52
+    },
+    {
+      "from": 57,
+      "to": 49
+    },
+    {
+      "from": 58,
+      "to": 49
+    },
+    {
+      "from": 59,
+      "to": 41
+    },
+    {
+      "from": 60,
+      "to": 41
+    },
+    {
+      "from": 61,
+      "to": 60
+    },
+    {
+      "from": 62,
+      "to": 41
+    },
+    {
+      "from": 63,
+      "to": 41
+    },
+    {
+      "from": 64,
+      "to": 41
+    },
+    {
+      "from": 65,
+      "to": 64
+    },
+    {
+      "from": 66,
+      "to": 41
+    },
+    {
+      "from": 66,
+      "to": 45
+    },
+    {
+      "from": 67,
+      "to": 45
+    },
+    {
+      "from": 67,
+      "to": 46
+    },
+    {
+      "from": 68,
+      "to": 43
+    },
+    {
+      "from": 68,
+      "to": 48
+    },
+    {
+      "from": 69,
+      "to": 41
+    },
+    {
+      "from": 70,
+      "to": 69
+    },
+    {
+      "from": 71,
+      "to": 69
+    },
+    {
+      "from": 72,
+      "to": 69
+    },
+    {
+      "from": 72,
+      "to": 74
+    },
+    {
+      "from": 73,
+      "to": 69
+    },
+    {
+      "from": 73,
+      "to": 74
+    },
+    {
+      "from": 74,
+      "to": 41
+    },
+    {
+      "from": 74,
+      "to": 61
+    },
+    {
+      "from": 76,
+      "to": 75
+    },
+    {
+      "from": 76,
+      "to": 69
+    },
+    {
+      "from": 77,
+      "to": 69
+    },
+    {
+      "from": 78,
+      "to": 69
+    },
+    {
+      "from": 79,
+      "to": 69
+    },
+    {
+      "from": 80,
+      "to": 85
+    },
+    {
+      "from": 80,
+      "to": 68
+    },
+    {
+      "from": 81,
+      "to": 68
+    },
+    {
+      "from": 82,
+      "to": 68
+    },
+    {
+      "from": 82,
+      "to": 69
+    },
+    {
+      "from": 83,
+      "to": 69
+    },
+    {
+      "from": 83,
+      "to": 42
+    },
+    {
+      "from": 84,
+      "to": 42
+    },
+    {
+      "from": 84,
+      "to": 43
+    },
+    {
+      "from": 85,
+      "to": 69
+    },
+    {
+      "from": 86,
+      "to": 68
+    },
+    {
+      "from": 87,
+      "to": 75
+    },
+    {
+      "from": 87,
+      "to": 360
+    },
+    {
+      "from": 88,
+      "to": 345
+    },
+    {
+      "from": 88,
+      "to": 69
+    },
+    {
+      "from": 88,
+      "to": 87
+    },
+    {
+      "from": 89,
+      "to": 68
+    },
+    {
+      "from": 90,
+      "to": 69
+    },
+    {
+      "from": 91,
+      "to": 13
+    },
+    {
+      "from": 92,
+      "to": 89
+    },
+    {
+      "from": 92,
+      "to": 119
+    },
+    {
+      "from": 93,
+      "to": 92
+    },
+    {
+      "from": 94,
+      "to": 89
+    },
+    {
+      "from": 94,
+      "to": 135
+    },
+    {
+      "from": 95,
+      "to": 89
+    },
+    {
+      "from": 95,
+      "to": 185
+    },
+    {
+      "from": 96,
+      "to": 90
+    },
+    {
+      "from": 96,
+      "to": 45
+    },
+    {
+      "from": 97,
+      "to": 90
+    },
+    {
+      "from": 98,
+      "to": 90
+    },
+    {
+      "from": 99,
+      "to": 92
+    },
+    {
+      "from": 99,
+      "to": 94
+    },
+    {
+      "from": 99,
+      "to": 95
+    },
+    {
+      "from": 100,
+      "to": 89
+    },
+    {
+      "from": 101,
+      "to": 89
+    },
+    {
+      "from": 102,
+      "to": 112
+    },
+    {
+      "from": 102,
+      "to": 13
+    },
+    {
+      "from": 103,
+      "to": 100
+    },
+    {
+      "from": 103,
+      "to": 101
+    },
+    {
+      "from": 103,
+      "to": 96
+    },
+    {
+      "from": 104,
+      "to": 112
+    },
+    {
+      "from": 104,
+      "to": 91
+    },
+    {
+      "from": 105,
+      "to": 100
+    },
+    {
+      "from": 105,
+      "to": 101
+    },
+    {
+      "from": 106,
+      "to": 100
+    },
+    {
+      "from": 107,
+      "to": 92
+    },
+    {
+      "from": 107,
+      "to": 93
+    },
+    {
+      "from": 108,
+      "to": 105
+    },
+    {
+      "from": 109,
+      "to": 95
+    },
+    {
+      "from": 110,
+      "to": 95
+    },
+    {
+      "from": 111,
+      "to": 135
+    },
+    {
+      "from": 112,
+      "to": 99
+    },
+    {
+      "from": 112,
+      "to": 118
+    },
+    {
+      "from": 112,
+      "to": 106
+    },
+    {
+      "from": 113,
+      "to": 106
+    },
+    {
+      "from": 113,
+      "to": 118
+    },
+    {
+      "from": 114,
+      "to": 90
+    },
+    {
+      "from": 114,
+      "to": 89
+    },
+    {
+      "from": 115,
+      "to": 114
+    },
+    {
+      "from": 116,
+      "to": 114
+    },
+    {
+      "from": 116,
+      "to": 112
+    },
+    {
+      "from": 117,
+      "to": 420
+    },
+    {
+      "from": 117,
+      "to": 89
+    },
+    {
+      "from": 118,
+      "to": 373
+    },
+    {
+      "from": 118,
+      "to": 384
+    },
+    {
+      "from": 118,
+      "to": 434
+    },
+    {
+      "from": 119,
+      "to": 126
+    },
+    {
+      "from": 120,
+      "to": 119
+    },
+    {
+      "from": 122,
+      "to": 121
+    },
+    {
+      "from": 123,
+      "to": 121
+    },
+    {
+      "from": 124,
+      "to": 121
+    },
+    {
+      "from": 127,
+      "to": 126
+    },
+    {
+      "from": 128,
+      "to": 127
+    },
+    {
+      "from": 129,
+      "to": 126
+    },
+    {
+      "from": 129,
+      "to": 125
+    },
+    {
+      "from": 130,
+      "to": 126
+    },
+    {
+      "from": 130,
+      "to": 125
+    },
+    {
+      "from": 131,
+      "to": 125
+    },
+    {
+      "from": 133,
+      "to": 132
+    },
+    {
+      "from": 134,
+      "to": 132
+    },
+    {
+      "from": 135,
+      "to": 126
+    },
+    {
+      "from": 136,
+      "to": 135
+    },
+    {
+      "from": 137,
+      "to": 135
+    },
+    {
+      "from": 138,
+      "to": 119
+    },
+    {
+      "from": 139,
+      "to": 138
+    },
+    {
+      "from": 139,
+      "to": 126
+    },
+    {
+      "from": 140,
+      "to": 139
+    },
+    {
+      "from": 141,
+      "to": 140
+    },
+    {
+      "from": 142,
+      "to": 122
+    },
+    {
+      "from": 142,
+      "to": 123
+    },
+    {
+      "from": 142,
+      "to": 130
+    },
+    {
+      "from": 142,
+      "to": 129
+    },
+    {
+      "from": 143,
+      "to": 120
+    },
+    {
+      "from": 143,
+      "to": 130
+    },
+    {
+      "from": 143,
+      "to": 123
+    },
+    {
+      "from": 144,
+      "to": 143
+    },
+    {
+      "from": 144,
+      "to": 126
+    },
+    {
+      "from": 145,
+      "to": 144
+    },
+    {
+      "from": 146,
+      "to": 140
+    },
+    {
+      "from": 146,
+      "to": 126
+    },
+    {
+      "from": 147,
+      "to": 1
+    },
+    {
+      "from": 148,
+      "to": 147
+    },
+    {
+      "from": 149,
+      "to": 148
+    },
+    {
+      "from": 150,
+      "to": 148
+    },
+    {
+      "from": 150,
+      "to": 149
+    },
+    {
+      "from": 151,
+      "to": 150
+    },
+    {
+      "from": 152,
+      "to": 150
+    },
+    {
+      "from": 153,
+      "to": 150
+    },
+    {
+      "from": 153,
+      "to": 149
+    },
+    {
+      "from": 154,
+      "to": 153
+    },
+    {
+      "from": 154,
+      "to": 182
+    },
+    {
+      "from": 155,
+      "to": 182
+    },
+    {
+      "from": 155,
+      "to": 153
+    },
+    {
+      "from": 156,
+      "to": 150
+    },
+    {
+      "from": 156,
+      "to": 206
+    },
+    {
+      "from": 157,
+      "to": 171
+    },
+    {
+      "from": 157,
+      "to": 151
+    },
+    {
+      "from": 158,
+      "to": 157
+    },
+    {
+      "from": 159,
+      "to": 157
+    },
+    {
+      "from": 160,
+      "to": 151
+    },
+    {
+      "from": 161,
+      "to": 1
+    },
+    {
+      "from": 162,
+      "to": 161
+    },
+    {
+      "from": 163,
+      "to": 161
+    },
+    {
+      "from": 163,
+      "to": 150
+    },
+    {
+      "from": 163,
+      "to": 164
+    },
+    {
+      "from": 164,
+      "to": 151
+    },
+    {
+      "from": 165,
+      "to": 172
+    },
+    {
+      "from": 166,
+      "to": 151
+    },
+    {
+      "from": 167,
+      "to": 165
+    },
+    {
+      "from": 167,
+      "to": 166
+    },
+    {
+      "from": 168,
+      "to": 151
+    },
+    {
+      "from": 168,
+      "to": 308
+    },
+    {
+      "from": 169,
+      "to": 168
+    },
+    {
+      "from": 169,
+      "to": 305
+    },
+    {
+      "from": 170,
+      "to": 184
+    },
+    {
+      "from": 170,
+      "to": 162
+    },
+    {
+      "from": 171,
+      "to": 156
+    },
+    {
+      "from": 171,
+      "to": 184
+    },
+    {
+      "from": 172,
+      "to": 171
+    },
+    {
+      "from": 173,
+      "to": 151
+    },
+    {
+      "from": 173,
+      "to": 185
+    },
+    {
+      "from": 174,
+      "to": 151
+    },
+    {
+      "from": 174,
+      "to": 185
+    },
+    {
+      "from": 175,
+      "to": 161
+    },
+    {
+      "from": 176,
+      "to": 162
+    },
+    {
+      "from": 177,
+      "to": 176
+    },
+    {
+      "from": 178,
+      "to": 162
+    },
+    {
+      "from": 179,
+      "to": 178
+    },
+    {
+      "from": 179,
+      "to": 177
+    },
+    {
+      "from": 180,
+      "to": 179
+    },
+    {
+      "from": 181,
+      "to": 161
+    },
+    {
+      "from": 182,
+      "to": 148
+    },
+    {
+      "from": 182,
+      "to": 183
+    },
+    {
+      "from": 183,
+      "to": 147
+    },
+    {
+      "from": 184,
+      "to": 1
+    },
+    {
+      "from": 185,
+      "to": 184
+    },
+    {
+      "from": 186,
+      "to": 2
+    },
+    {
+      "from": 187,
+      "to": 186
+    },
+    {
+      "from": 188,
+      "to": 186
+    },
+    {
+      "from": 188,
+      "to": 1
+    },
+    {
+      "from": 189,
+      "to": 188
+    },
+    {
+      "from": 190,
+      "to": 2
+    },
+    {
+      "from": 191,
+      "to": 189
+    },
+    {
+      "from": 192,
+      "to": 191
+    },
+    {
+      "from": 193,
+      "to": 192
+    },
+    {
+      "from": 194,
+      "to": 191
+    },
+    {
+      "from": 195,
+      "to": 191
+    },
+    {
+      "from": 196,
+      "to": 189
+    },
+    {
+      "from": 196,
+      "to": 190
+    },
+    {
+      "from": 197,
+      "to": 193
+    },
+    {
+      "from": 198,
+      "to": 190
+    },
+    {
+      "from": 199,
+      "to": 189
+    },
+    {
+      "from": 200,
+      "to": 190
+    },
+    {
+      "from": 200,
+      "to": 121
+    },
+    {
+      "from": 201,
+      "to": 186
+    },
+    {
+      "from": 202,
+      "to": 201
+    },
+    {
+      "from": 202,
+      "to": 200
+    },
+    {
+      "from": 202,
+      "to": 140
+    },
+    {
+      "from": 203,
+      "to": 197
+    },
+    {
+      "from": 203,
+      "to": 198
+    },
+    {
+      "from": 204,
+      "to": 187
+    },
+    {
+      "from": 204,
+      "to": 195
+    },
+    {
+      "from": 205,
+      "to": 203
+    },
+    {
+      "from": 205,
+      "to": 1
+    },
+    {
+      "from": 206,
+      "to": 187
+    },
+    {
+      "from": 206,
+      "to": 191
+    },
+    {
+      "from": 207,
+      "to": 2
+    },
+    {
+      "from": 207,
+      "to": 126
+    },
+    {
+      "from": 208,
+      "to": 207
+    },
+    {
+      "from": 209,
+      "to": 208
+    },
+    {
+      "from": 209,
+      "to": 190
+    },
+    {
+      "from": 210,
+      "to": 139
+    },
+    {
+      "from": 210,
+      "to": 1
+    },
+    {
+      "from": 211,
+      "to": 210
+    },
+    {
+      "from": 212,
+      "to": 210
+    },
+    {
+      "from": 213,
+      "to": 212
+    },
+    {
+      "from": 213,
+      "to": 186
+    },
+    {
+      "from": 214,
+      "to": 208
+    },
+    {
+      "from": 214,
+      "to": 124
+    },
+    {
+      "from": 215,
+      "to": 208
+    },
+    {
+      "from": 215,
+      "to": 125
+    },
+    {
+      "from": 216,
+      "to": 208
+    },
+    {
+      "from": 216,
+      "to": 132
+    },
+    {
+      "from": 217,
+      "to": 216
+    },
+    {
+      "from": 217,
+      "to": 133
+    },
+    {
+      "from": 218,
+      "to": 208
+    },
+    {
+      "from": 218,
+      "to": 211
+    },
+    {
+      "from": 219,
+      "to": 218
+    },
+    {
+      "from": 219,
+      "to": 129
+    },
+    {
+      "from": 220,
+      "to": 218
+    },
+    {
+      "from": 220,
+      "to": 139
+    },
+    {
+      "from": 221,
+      "to": 218
+    },
+    {
+      "from": 221,
+      "to": 140
+    },
+    {
+      "from": 222,
+      "to": 218
+    },
+    {
+      "from": 222,
+      "to": 137
+    },
+    {
+      "from": 223,
+      "to": 218
+    },
+    {
+      "from": 223,
+      "to": 135
+    },
+    {
+      "from": 224,
+      "to": 208
+    },
+    {
+      "from": 225,
+      "to": 224
+    },
+    {
+      "from": 226,
+      "to": 214
+    },
+    {
+      "from": 226,
+      "to": 215
+    },
+    {
+      "from": 226,
+      "to": 216
+    },
+    {
+      "from": 226,
+      "to": 218
+    },
+    {
+      "from": 226,
+      "to": 225
+    },
+    {
+      "from": 227,
+      "to": 226
+    },
+    {
+      "from": 227,
+      "to": 491
+    },
+    {
+      "from": 228,
+      "to": 202
+    },
+    {
+      "from": 228,
+      "to": 218
+    },
+    {
+      "from": 229,
+      "to": 226
+    },
+    {
+      "from": 230,
+      "to": 219
+    },
+    {
+      "from": 230,
+      "to": 130
+    },
+    {
+      "from": 230,
+      "to": 215
+    },
+    {
+      "from": 231,
+      "to": 232
+    },
+    {
+      "from": 231,
+      "to": 161
+    },
+    {
+      "from": 232,
+      "to": 1
+    },
+    {
+      "from": 233,
+      "to": 2
+    },
+    {
+      "from": 234,
+      "to": 161
+    },
+    {
+      "from": 234,
+      "to": 233
+    },
+    {
+      "from": 235,
+      "to": 222
+    },
+    {
+      "from": 235,
+      "to": 223
+    },
+    {
+      "from": 235,
+      "to": 215
+    },
+    {
+      "from": 236,
+      "to": 44
+    },
+    {
+      "from": 237,
+      "to": 236
+    },
+    {
+      "from": 238,
+      "to": 236
+    },
+    {
+      "from": 238,
+      "to": 44
+    },
+    {
+      "from": 239,
+      "to": 238
+    },
+    {
+      "from": 240,
+      "to": 236
+    },
+    {
+      "from": 241,
+      "to": 240
+    },
+    {
+      "from": 242,
+      "to": 240
+    },
+    {
+      "from": 243,
+      "to": 240
+    },
+    {
+      "from": 244,
+      "to": 243
+    },
+    {
+      "from": 245,
+      "to": 244
+    },
+    {
+      "from": 246,
+      "to": 244
+    },
+    {
+      "from": 247,
+      "to": 243
+    },
+    {
+      "from": 247,
+      "to": 236
+    },
+    {
+      "from": 248,
+      "to": 236
+    },
+    {
+      "from": 249,
+      "to": 241
+    },
+    {
+      "from": 249,
+      "to": 44
+    },
+    {
+      "from": 250,
+      "to": 47
+    },
+    {
+      "from": 250,
+      "to": 48
+    },
+    {
+      "from": 251,
+      "to": 250
+    },
+    {
+      "from": 252,
+      "to": 250
+    },
+    {
+      "from": 252,
+      "to": 236
+    },
+    {
+      "from": 253,
+      "to": 252
+    },
+    {
+      "from": 253,
+      "to": 125
+    },
+    {
+      "from": 254,
+      "to": 241
+    },
+    {
+      "from": 254,
+      "to": 251
+    },
+    {
+      "from": 254,
+      "to": 253
+    },
+    {
+      "from": 255,
+      "to": 254
+    },
+    {
+      "from": 255,
+      "to": 44
+    },
+    {
+      "from": 256,
+      "to": 255
+    },
+    {
+      "from": 256,
+      "to": 2
+    },
+    {
+      "from": 257,
+      "to": 255
+    },
+    {
+      "from": 258,
+      "to": 255
+    },
+    {
+      "from": 258,
+      "to": 130
+    },
+    {
+      "from": 259,
+      "to": 240
+    },
+    {
+      "from": 259,
+      "to": 44
+    },
+    {
+      "from": 260,
+      "to": 259
+    },
+    {
+      "from": 261,
+      "to": 243
+    },
+    {
+      "from": 261,
+      "to": 259
+    },
+    {
+      "from": 262,
+      "to": 61
+    },
+    {
+      "from": 262,
+      "to": 47
+    },
+    {
+      "from": 262,
+      "to": 51
+    },
+    {
+      "from": 263,
+      "to": 49
+    },
+    {
+      "from": 264,
+      "to": 263
+    },
+    {
+      "from": 265,
+      "to": 51
+    },
+    {
+      "from": 265,
+      "to": 58
+    },
+    {
+      "from": 266,
+      "to": 264
+    },
+    {
+      "from": 266,
+      "to": 132
+    },
+    {
+      "from": 267,
+      "to": 266
+    },
+    {
+      "from": 268,
+      "to": 266
+    },
+    {
+      "from": 268,
+      "to": 249
+    },
+    {
+      "from": 269,
+      "to": 262
+    },
+    {
+      "from": 269,
+      "to": 255
+    },
+    {
+      "from": 270,
+      "to": 58
+    },
+    {
+      "from": 271,
+      "to": 61
+    },
+    {
+      "from": 272,
+      "to": 59
+    },
+    {
+      "from": 273,
+      "to": 269
+    },
+    {
+      "from": 273,
+      "to": 265
+    },
+    {
+      "from": 273,
+      "to": 271
+    },
+    {
+      "from": 273,
+      "to": 272
+    },
+    {
+      "from": 274,
+      "to": 263
+    },
+    {
+      "from": 275,
+      "to": 274
+    },
+    {
+      "from": 275,
+      "to": 263
+    },
+    {
+      "from": 276,
+      "to": 266
+    },
+    {
+      "from": 277,
+      "to": 298
+    },
+    {
+      "from": 278,
+      "to": 50
+    },
+    {
+      "from": 279,
+      "to": 51
+    },
+    {
+      "from": 280,
+      "to": 58
+    },
+    {
+      "from": 281,
+      "to": 270
+    },
+    {
+      "from": 282,
+      "to": 58
+    },
+    {
+      "from": 282,
+      "to": 281
+    },
+    {
+      "from": 283,
+      "to": 262
+    },
+    {
+      "from": 283,
+      "to": 280
+    },
+    {
+      "from": 283,
+      "to": 265
+    },
+    {
+      "from": 284,
+      "to": 54
+    },
+    {
+      "from": 284,
+      "to": 277
+    },
+    {
+      "from": 285,
+      "to": 55
+    },
+    {
+      "from": 285,
+      "to": 237
+    },
+    {
+      "from": 285,
+      "to": 277
+    },
+    {
+      "from": 286,
+      "to": 277
+    },
+    {
+      "from": 286,
+      "to": 63
+    },
+    {
+      "from": 287,
+      "to": 54
+    },
+    {
+      "from": 287,
+      "to": 238
+    },
+    {
+      "from": 288,
+      "to": 55
+    },
+    {
+      "from": 288,
+      "to": 238
+    },
+    {
+      "from": 289,
+      "to": 294
+    },
+    {
+      "from": 289,
+      "to": 238
+    },
+    {
+      "from": 290,
+      "to": 56
+    },
+    {
+      "from": 290,
+      "to": 237
+    },
+    {
+      "from": 291,
+      "to": 295
+    },
+    {
+      "from": 291,
+      "to": 238
+    },
+    {
+      "from": 292,
+      "to": 56
+    },
+    {
+      "from": 292,
+      "to": 62
+    },
+    {
+      "from": 293,
+      "to": 296
+    },
+    {
+      "from": 293,
+      "to": 237
+    },
+    {
+      "from": 293,
+      "to": 278
+    },
+    {
+      "from": 294,
+      "to": 52
+    },
+    {
+      "from": 295,
+      "to": 52
+    },
+    {
+      "from": 296,
+      "to": 52
+    },
+    {
+      "from": 297,
+      "to": 48
+    },
+    {
+      "from": 297,
+      "to": 236
+    },
+    {
+      "from": 297,
+      "to": 68
+    },
+    {
+      "from": 298,
+      "to": 297
+    },
+    {
+      "from": 299,
+      "to": 297
+    },
+    {
+      "from": 299,
+      "to": 247
+    },
+    {
+      "from": 300,
+      "to": 297
+    },
+    {
+      "from": 300,
+      "to": 248
+    },
+    {
+      "from": 301,
+      "to": 297
+    },
+    {
+      "from": 301,
+      "to": 231
+    },
+    {
+      "from": 302,
+      "to": 301
+    },
+    {
+      "from": 303,
+      "to": 297
+    },
+    {
+      "from": 303,
+      "to": 126
+    },
+    {
+      "from": 304,
+      "to": 297
+    },
+    {
+      "from": 304,
+      "to": 266
+    },
+    {
+      "from": 305,
+      "to": 297
+    },
+    {
+      "from": 306,
+      "to": 305
+    },
+    {
+      "from": 307,
+      "to": 306
+    },
+    {
+      "from": 308,
+      "to": 305
+    },
+    {
+      "from": 309,
+      "to": 307
+    },
+    {
+      "from": 309,
+      "to": 1
+    },
+    {
+      "from": 310,
+      "to": 307
+    },
+    {
+      "from": 310,
+      "to": 2
+    },
+    {
+      "from": 311,
+      "to": 309
+    },
+    {
+      "from": 311,
+      "to": 310
+    },
+    {
+      "from": 311,
+      "to": 304
+    },
+    {
+      "from": 312,
+      "to": 297
+    },
+    {
+      "from": 313,
+      "to": 302
+    },
+    {
+      "from": 314,
+      "to": 304
+    },
+    {
+      "from": 315,
+      "to": 301
+    },
+    {
+      "from": 315,
+      "to": 316
+    },
+    {
+      "from": 316,
+      "to": 267
+    },
+    {
+      "from": 317,
+      "to": 1
+    },
+    {
+      "from": 317,
+      "to": 161
+    },
+    {
+      "from": 318,
+      "to": 305
+    },
+    {
+      "from": 318,
+      "to": 70
+    },
+    {
+      "from": 319,
+      "to": 300
+    },
+    {
+      "from": 319,
+      "to": 368
+    },
+    {
+      "from": 320,
+      "to": 298
+    },
+    {
+      "from": 320,
+      "to": 369
+    },
+    {
+      "from": 320,
+      "to": 47
+    },
+    {
+      "from": 321,
+      "to": 41
+    },
+    {
+      "from": 321,
+      "to": 61
+    },
+    {
+      "from": 322,
+      "to": 321
+    },
+    {
+      "from": 323,
+      "to": 61
+    },
+    {
+      "from": 324,
+      "to": 323
+    },
+    {
+      "from": 325,
+      "to": 323
+    },
+    {
+      "from": 325,
+      "to": 1
+    },
+    {
+      "from": 326,
+      "to": 325
+    },
+    {
+      "from": 326,
+      "to": 324
+    },
+    {
+      "from": 327,
+      "to": 322
+    },
+    {
+      "from": 327,
+      "to": 47
+    },
+    {
+      "from": 328,
+      "to": 327
+    },
+    {
+      "from": 329,
+      "to": 321
+    },
+    {
+      "from": 330,
+      "to": 322
+    },
+    {
+      "from": 331,
+      "to": 321
+    },
+    {
+      "from": 332,
+      "to": 331
+    },
+    {
+      "from": 332,
+      "to": 20
+    },
+    {
+      "from": 333,
+      "to": 332
+    },
+    {
+      "from": 333,
+      "to": 322
+    },
+    {
+      "from": 334,
+      "to": 332
+    },
+    {
+      "from": 335,
+      "to": 321
+    },
+    {
+      "from": 336,
+      "to": 321
+    },
+    {
+      "from": 337,
+      "to": 321
+    },
+    {
+      "from": 338,
+      "to": 321
+    },
+    {
+      "from": 339,
+      "to": 321
+    },
+    {
+      "from": 339,
+      "to": 305
+    },
+    {
+      "from": 340,
+      "to": 339
+    },
+    {
+      "from": 340,
+      "to": 335
+    },
+    {
+      "from": 341,
+      "to": 334
+    },
+    {
+      "from": 341,
+      "to": 340
+    },
+    {
+      "from": 341,
+      "to": 333
+    },
+    {
+      "from": 342,
+      "to": 340
+    },
+    {
+      "from": 342,
+      "to": 341
+    },
+    {
+      "from": 343,
+      "to": 329
+    },
+    {
+      "from": 343,
+      "to": 323
+    },
+    {
+      "from": 343,
+      "to": 47
+    },
+    {
+      "from": 344,
+      "to": 341
+    },
+    {
+      "from": 344,
+      "to": 421
+    },
+    {
+      "from": 345,
+      "to": 321
+    },
+    {
+      "from": 345,
+      "to": 69
+    },
+    {
+      "from": 346,
+      "to": 345
+    },
+    {
+      "from": 346,
+      "to": 321
+    },
+    {
+      "from": 346,
+      "to": 297
+    },
+    {
+      "from": 347,
+      "to": 335
+    },
+    {
+      "from": 347,
+      "to": 181
+    },
+    {
+      "from": 347,
+      "to": 339
+    },
+    {
+      "from": 348,
+      "to": 352
+    },
+    {
+      "from": 348,
+      "to": 339
+    },
+    {
+      "from": 349,
+      "to": 1
+    },
+    {
+      "from": 350,
+      "to": 349
+    },
+    {
+      "from": 350,
+      "to": 185
+    },
+    {
+      "from": 351,
+      "to": 349
+    },
+    {
+      "from": 351,
+      "to": 139
+    },
+    {
+      "from": 352,
+      "to": 349
+    },
+    {
+      "from": 352,
+      "to": 335
+    },
+    {
+      "from": 353,
+      "to": 352
+    },
+    {
+      "from": 353,
+      "to": 326
+    },
+    {
+      "from": 354,
+      "to": 352
+    },
+    {
+      "from": 355,
+      "to": 352
+    },
+    {
+      "from": 355,
+      "to": 331
+    },
+    {
+      "from": 356,
+      "to": 339
+    },
+    {
+      "from": 357,
+      "to": 340
+    },
+    {
+      "from": 358,
+      "to": 352
+    },
+    {
+      "from": 358,
+      "to": 308
+    },
+    {
+      "from": 359,
+      "to": 353
+    },
+    {
+      "from": 359,
+      "to": 358
+    },
+    {
+      "from": 360,
+      "to": 151
+    },
+    {
+      "from": 360,
+      "to": 183
+    },
+    {
+      "from": 361,
+      "to": 360
+    },
+    {
+      "from": 361,
+      "to": 357
+    },
+    {
+      "from": 362,
+      "to": 382
+    },
+    {
+      "from": 362,
+      "to": 235
+    },
+    {
+      "from": 363,
+      "to": 382
+    },
+    {
+      "from": 363,
+      "to": 130
+    },
+    {
+      "from": 364,
+      "to": 297
+    },
+    {
+      "from": 364,
+      "to": 373
+    },
+    {
+      "from": 365,
+      "to": 246
+    },
+    {
+      "from": 365,
+      "to": 245
+    },
+    {
+      "from": 365,
+      "to": 373
+    },
+    {
+      "from": 366,
+      "to": 47
+    },
+    {
+      "from": 366,
+      "to": 251
+    },
+    {
+      "from": 367,
+      "to": 297
+    },
+    {
+      "from": 368,
+      "to": 367
+    },
+    {
+      "from": 369,
+      "to": 250
+    },
+    {
+      "from": 369,
+      "to": 297
+    },
+    {
+      "from": 370,
+      "to": 48
+    },
+    {
+      "from": 371,
+      "to": 370
+    },
+    {
+      "from": 372,
+      "to": 370
+    },
+    {
+      "from": 373,
+      "to": 45
+    },
+    {
+      "from": 373,
+      "to": 297
+    },
+    {
+      "from": 374,
+      "to": 375
+    },
+    {
+      "from": 374,
+      "to": 378
+    },
+    {
+      "from": 375,
+      "to": 45
+    },
+    {
+      "from": 375,
+      "to": 297
+    },
+    {
+      "from": 376,
+      "to": 373
+    },
+    {
+      "from": 376,
+      "to": 368
+    },
+    {
+      "from": 377,
+      "to": 374
+    },
+    {
+      "from": 378,
+      "to": 304
+    },
+    {
+      "from": 378,
+      "to": 133
+    },
+    {
+      "from": 379,
+      "to": 126
+    },
+    {
+      "from": 379,
+      "to": 210
+    },
+    {
+      "from": 380,
+      "to": 379
+    },
+    {
+      "from": 380,
+      "to": 222
+    },
+    {
+      "from": 380,
+      "to": 223
+    },
+    {
+      "from": 381,
+      "to": 137
+    },
+    {
+      "from": 381,
+      "to": 380
+    },
+    {
+      "from": 382,
+      "to": 130
+    },
+    {
+      "from": 382,
+      "to": 251
+    },
+    {
+      "from": 382,
+      "to": 304
+    },
+    {
+      "from": 383,
+      "to": 382
+    },
+    {
+      "from": 384,
+      "to": 385
+    },
+    {
+      "from": 384,
+      "to": 320
+    },
+    {
+      "from": 384,
+      "to": 375
+    },
+    {
+      "from": 385,
+      "to": 322
+    },
+    {
+      "from": 386,
+      "to": 47
+    },
+    {
+      "from": 386,
+      "to": 385
+    },
+    {
+      "from": 387,
+      "to": 47
+    },
+    {
+      "from": 387,
+      "to": 327
+    },
+    {
+      "from": 388,
+      "to": 68
+    },
+    {
+      "from": 388,
+      "to": 69
+    },
+    {
+      "from": 389,
+      "to": 388
+    },
+    {
+      "from": 390,
+      "to": 389
+    },
+    {
+      "from": 391,
+      "to": 390
+    },
+    {
+      "from": 392,
+      "to": 390
+    },
+    {
+      "from": 393,
+      "to": 390
+    },
+    {
+      "from": 394,
+      "to": 393
+    },
+    {
+      "from": 395,
+      "to": 394
+    },
+    {
+      "from": 396,
+      "to": 388
+    },
+    {
+      "from": 397,
+      "to": 396
+    },
+    {
+      "from": 398,
+      "to": 396
+    },
+    {
+      "from": 398,
+      "to": 2
+    },
+    {
+      "from": 399,
+      "to": 397
+    },
+    {
+      "from": 400,
+      "to": 399
+    },
+    {
+      "from": 400,
+      "to": 41
+    },
+    {
+      "from": 401,
+      "to": 399
+    },
+    {
+      "from": 401,
+      "to": 397
+    },
+    {
+      "from": 402,
+      "to": 204
+    },
+    {
+      "from": 402,
+      "to": 392
+    },
+    {
+      "from": 402,
+      "to": 398
+    },
+    {
+      "from": 403,
+      "to": 83
+    },
+    {
+      "from": 403,
+      "to": 396
+    },
+    {
+      "from": 404,
+      "to": 403
+    },
+    {
+      "from": 404,
+      "to": 390
+    },
+    {
+      "from": 405,
+      "to": 399
+    },
+    {
+      "from": 405,
+      "to": 391
+    },
+    {
+      "from": 405,
+      "to": 395
+    },
+    {
+      "from": 405,
+      "to": 404
+    },
+    {
+      "from": 406,
+      "to": 405
+    },
+    {
+      "from": 407,
+      "to": 388
+    },
+    {
+      "from": 407,
+      "to": 105
+    },
+    {
+      "from": 408,
+      "to": 407
+    },
+    {
+      "from": 408,
+      "to": 398
+    },
+    {
+      "from": 409,
+      "to": 393
+    },
+    {
+      "from": 409,
+      "to": 408
+    },
+    {
+      "from": 410,
+      "to": 388
+    },
+    {
+      "from": 411,
+      "to": 410
+    },
+    {
+      "from": 412,
+      "to": 410
+    },
+    {
+      "from": 412,
+      "to": 409
+    },
+    {
+      "from": 413,
+      "to": 414
+    },
+    {
+      "from": 413,
+      "to": 415
+    },
+    {
+      "from": 414,
+      "to": 311
+    },
+    {
+      "from": 414,
+      "to": 60
+    },
+    {
+      "from": 415,
+      "to": 342
+    },
+    {
+      "from": 415,
+      "to": 341
+    },
+    {
+      "from": 416,
+      "to": 393
+    },
+    {
+      "from": 416,
+      "to": 414
+    },
+    {
+      "from": 417,
+      "to": 418
+    },
+    {
+      "from": 418,
+      "to": 397
+    },
+    {
+      "from": 418,
+      "to": 2
+    },
+    {
+      "from": 419,
+      "to": 418
+    },
+    {
+      "from": 419,
+      "to": 396
+    },
+    {
+      "from": 420,
+      "to": 401
+    },
+    {
+      "from": 421,
+      "to": 393
+    },
+    {
+      "from": 422,
+      "to": 436
+    },
+    {
+      "from": 423,
+      "to": 441
+    },
+    {
+      "from": 424,
+      "to": 47
+    },
+    {
+      "from": 424,
+      "to": 414
+    },
+    {
+      "from": 425,
+      "to": 60
+    },
+    {
+      "from": 426,
+      "to": 13
+    },
+    {
+      "from": 426,
+      "to": 396
+    },
+    {
+      "from": 427,
+      "to": 8
+    },
+    {
+      "from": 427,
+      "to": 91
+    },
+    {
+      "from": 428,
+      "to": 10
+    },
+    {
+      "from": 428,
+      "to": 41
+    },
+    {
+      "from": 429,
+      "to": 20
+    },
+    {
+      "from": 429,
+      "to": 21
+    },
+    {
+      "from": 430,
+      "to": 14
+    },
+    {
+      "from": 430,
+      "to": 62
+    },
+    {
+      "from": 431,
+      "to": 20
+    },
+    {
+      "from": 431,
+      "to": 91
+    },
+    {
+      "from": 432,
+      "to": 388
+    },
+    {
+      "from": 432,
+      "to": 18
+    },
+    {
+      "from": 432,
+      "to": 392
+    },
+    {
+      "from": 433,
+      "to": 432
+    },
+    {
+      "from": 433,
+      "to": 352
+    },
+    {
+      "from": 434,
+      "to": 18
+    },
+    {
+      "from": 435,
+      "to": 434
+    },
+    {
+      "from": 435,
+      "to": 91
+    },
+    {
+      "from": 436,
+      "to": 434
+    },
+    {
+      "from": 436,
+      "to": 396
+    },
+    {
+      "from": 437,
+      "to": 436
+    },
+    {
+      "from": 437,
+      "to": 341
+    },
+    {
+      "from": 438,
+      "to": 436
+    },
+    {
+      "from": 438,
+      "to": 467
+    },
+    {
+      "from": 438,
+      "to": 468
+    },
+    {
+      "from": 439,
+      "to": 476
+    },
+    {
+      "from": 439,
+      "to": 436
+    },
+    {
+      "from": 440,
+      "to": 418
+    },
+    {
+      "from": 440,
+      "to": 436
+    },
+    {
+      "from": 441,
+      "to": 434
+    },
+    {
+      "from": 441,
+      "to": 377
+    },
+    {
+      "from": 442,
+      "to": 441
+    },
+    {
+      "from": 442,
+      "to": 378
+    },
+    {
+      "from": 442,
+      "to": 375
+    },
+    {
+      "from": 442,
+      "to": 373
+    },
+    {
+      "from": 443,
+      "to": 223
+    },
+    {
+      "from": 443,
+      "to": 441
+    },
+    {
+      "from": 444,
+      "to": 383
+    },
+    {
+      "from": 444,
+      "to": 445
+    },
+    {
+      "from": 444,
+      "to": 446
+    },
+    {
+      "from": 444,
+      "to": 447
+    },
+    {
+      "from": 444,
+      "to": 312
+    },
+    {
+      "from": 445,
+      "to": 47
+    },
+    {
+      "from": 445,
+      "to": 387
+    },
+    {
+      "from": 446,
+      "to": 61
+    },
+    {
+      "from": 446,
+      "to": 60
+    },
+    {
+      "from": 447,
+      "to": 340
+    },
+    {
+      "from": 448,
+      "to": 83
+    },
+    {
+      "from": 448,
+      "to": 432
+    },
+    {
+      "from": 449,
+      "to": 21
+    },
+    {
+      "from": 449,
+      "to": 168
+    },
+    {
+      "from": 450,
+      "to": 226
+    },
+    {
+      "from": 450,
+      "to": 436
+    },
+    {
+      "from": 450,
+      "to": 257
+    },
+    {
+      "from": 451,
+      "to": 406
+    },
+    {
+      "from": 451,
+      "to": 409
+    },
+    {
+      "from": 451,
+      "to": 403
+    },
+    {
+      "from": 452,
+      "to": 451
+    },
+    {
+      "from": 453,
+      "to": 451
+    },
+    {
+      "from": 453,
+      "to": 450
+    },
+    {
+      "from": 453,
+      "to": 99
+    },
+    {
+      "from": 453,
+      "to": 91
+    },
+    {
+      "from": 454,
+      "to": 453
+    },
+    {
+      "from": 454,
+      "to": 82
+    },
+    {
+      "from": 455,
+      "to": 432
+    },
+    {
+      "from": 455,
+      "to": 448
+    },
+    {
+      "from": 455,
+      "to": 451
+    },
+    {
+      "from": 455,
+      "to": 499
+    },
+    {
+      "from": 456,
+      "to": 432
+    },
+    {
+      "from": 456,
+      "to": 392
+    },
+    {
+      "from": 457,
+      "to": 456
+    },
+    {
+      "from": 457,
+      "to": 392
+    },
+    {
+      "from": 458,
+      "to": 459
+    },
+    {
+      "from": 458,
+      "to": 434
+    },
+    {
+      "from": 459,
+      "to": 326
+    },
+    {
+      "from": 459,
+      "to": 392
+    },
+    {
+      "from": 460,
+      "to": 434
+    },
+    {
+      "from": 460,
+      "to": 457
+    },
+    {
+      "from": 461,
+      "to": 460
+    },
+    {
+      "from": 461,
+      "to": 13
+    },
+    {
+      "from": 462,
+      "to": 461
+    },
+    {
+      "from": 462,
+      "to": 27
+    },
+    {
+      "from": 463,
+      "to": 461
+    },
+    {
+      "from": 463,
+      "to": 10
+    },
+    {
+      "from": 464,
+      "to": 456
+    },
+    {
+      "from": 464,
+      "to": 6
+    },
+    {
+      "from": 465,
+      "to": 433
+    },
+    {
+      "from": 465,
+      "to": 398
+    },
+    {
+      "from": 466,
+      "to": 465
+    },
+    {
+      "from": 466,
+      "to": 467
+    },
+    {
+      "from": 467,
+      "to": 465
+    },
+    {
+      "from": 467,
+      "to": 61
+    },
+    {
+      "from": 468,
+      "to": 467
+    },
+    {
+      "from": 469,
+      "to": 418
+    },
+    {
+      "from": 469,
+      "to": 9
+    },
+    {
+      "from": 470,
+      "to": 418
+    },
+    {
+      "from": 470,
+      "to": 9
+    },
+    {
+      "from": 471,
+      "to": 418
+    },
+    {
+      "from": 471,
+      "to": 11
+    },
+    {
+      "from": 472,
+      "to": 418
+    },
+    {
+      "from": 472,
+      "to": 9
+    },
+    {
+      "from": 473,
+      "to": 418
+    },
+    {
+      "from": 473,
+      "to": 9
+    },
+    {
+      "from": 474,
+      "to": 418
+    },
+    {
+      "from": 474,
+      "to": 434
+    },
+    {
+      "from": 475,
+      "to": 33
+    },
+    {
+      "from": 475,
+      "to": 474
+    },
+    {
+      "from": 476,
+      "to": 21
+    },
+    {
+      "from": 476,
+      "to": 33
+    },
+    {
+      "from": 477,
+      "to": 433
+    },
+    {
+      "from": 477,
+      "to": 161
+    },
+    {
+      "from": 478,
+      "to": 477
+    },
+    {
+      "from": 478,
+      "to": 482
+    },
+    {
+      "from": 479,
+      "to": 446
+    },
+    {
+      "from": 480,
+      "to": 385
+    },
+    {
+      "from": 480,
+      "to": 341
+    },
+    {
+      "from": 481,
+      "to": 327
+    },
+    {
+      "from": 481,
+      "to": 386
+    },
+    {
+      "from": 482,
+      "to": 75
+    },
+    {
+      "from": 482,
+      "to": 87
+    },
+    {
+      "from": 483,
+      "to": 482
+    },
+    {
+      "from": 483,
+      "to": 119
+    },
+    {
+      "from": 484,
+      "to": 483
+    },
+    {
+      "from": 484,
+      "to": 151
+    },
+    {
+      "from": 485,
+      "to": 483
+    },
+    {
+      "from": 485,
+      "to": 160
+    },
+    {
+      "from": 486,
+      "to": 483
+    },
+    {
+      "from": 486,
+      "to": 151
+    },
+    {
+      "from": 487,
+      "to": 483
+    },
+    {
+      "from": 487,
+      "to": 161
+    },
+    {
+      "from": 488,
+      "to": 483
+    },
+    {
+      "from": 488,
+      "to": 162
+    },
+    {
+      "from": 488,
+      "to": 158
+    },
+    {
+      "from": 489,
+      "to": 483
+    },
+    {
+      "from": 489,
+      "to": 207
+    },
+    {
+      "from": 490,
+      "to": 483
+    },
+    {
+      "from": 490,
+      "to": 164
+    },
+    {
+      "from": 491,
+      "to": 482
+    },
+    {
+      "from": 492,
+      "to": 491
+    },
+    {
+      "from": 493,
+      "to": 492
+    },
+    {
+      "from": 493,
+      "to": 484
+    },
+    {
+      "from": 494,
+      "to": 488
+    },
+    {
+      "from": 494,
+      "to": 3
+    },
+    {
+      "from": 495,
+      "to": 494
+    },
+    {
+      "from": 496,
+      "to": 494
+    },
+    {
+      "from": 496,
+      "to": 3
+    },
+    {
+      "from": 497,
+      "to": 3
+    },
+    {
+      "from": 497,
+      "to": 4
+    },
+    {
+      "from": 498,
+      "to": 491
+    },
+    {
+      "from": 499,
+      "to": 496
+    },
+    {
+      "from": 499,
+      "to": 497
+    },
+    {
+      "from": 499,
+      "to": 491
+    },
+    {
+      "from": 500,
+      "to": 491
+    },
+    {
+      "from": 500,
+      "to": 211
+    },
+    {
+      "from": 501,
+      "to": 398
+    },
+    {
+      "from": 501,
+      "to": 482
+    },
+    {
+      "from": 502,
+      "to": 485
+    },
+    {
+      "from": 502,
+      "to": 1
+    },
+    {
+      "from": 503,
+      "to": 4
+    },
+    {
+      "from": 503,
+      "to": 482
+    },
+    {
+      "from": 504,
+      "to": 3
+    },
+    {
+      "from": 504,
+      "to": 501
+    },
+    {
+      "from": 505,
+      "to": 489
+    },
+    {
+      "from": 505,
+      "to": 232
+    },
+    {
+      "from": 506,
+      "to": 483
+    },
+    {
+      "from": 506,
+      "to": 478
+    }
+  ]
+}

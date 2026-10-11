@@ -1,0 +1,10 @@
+{
+  "title": "DGX Evaluation for Textbook Generation",
+  "description": "A learning graph for evaluating whether a single NVIDIA DGX system running an open-weight small language model can generate an interactive intelligent textbook end to end, with measurements and a sanitized, publishable report.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-10",
+  "version": "1.0",
+  "format": "Learning Graph JSON v1.0",
+  "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+  "license": "CC BY-NC-SA 4.0 DEED"
+}

@@ -1,0 +1,3882 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Advanced function concepts including piecewise, step, inverse functions, and related topics.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/06-functions-advanced-topics/">
+      
+      
+        <link rel="prev" href="../05-functions-foundations/">
+      
+      
+        <link rel="next" href="../07-data-analysis-core-concepts/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Functions – Advanced Topics - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functions-advanced-topics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functions – Advanced Topics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_7" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_7" id="__nav_10_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_7">
+            <span class="md-nav__icon md-icon"></span>
+            gpt-oss:120b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_7_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_7_4" id="__nav_10_7_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_7_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations-of-algebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations of Algebra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-algebraic-operations-part-i/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Algebraic Operations – Part I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-algebraic-operations-part-ii/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Algebraic Operations – Part II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-algebraic-operations-part-iii/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Algebraic Operations – Part III
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-functions-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Functions – Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    6. Functions – Advanced Topics
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    6. Functions – Advanced Topics
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ratios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ratios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ratios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-ratios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Ratios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proportions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proportions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proportions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-proportions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Proportions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#percentages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Percentages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Percentages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-percentages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Percentages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scientific-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scientific Notation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scientific Notation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-scientific-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Scientific Notation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-substitution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable Substitution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variable Substitution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-variable-substitution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Variable Substitution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern Recognition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Recognition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-pattern-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Pattern Recognition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursive-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recursive Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recursive Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-recursive-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Recursive Patterns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct Variation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct Variation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-direct-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Direct Variation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inverse-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse Variation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inverse Variation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-inverse-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Inverse Variation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinate-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinate Plane
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coordinate Plane">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-coordinate-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Coordinate Plane
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cartesian-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cartesian Coordinates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cartesian Coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cartesian-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cartesian Coordinates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plotting-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotting Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plotting Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-plotting-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Plotting Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordered-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordered Pairs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordered Pairs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-ordered-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Ordered Pairs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-function-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Function Transformations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shifts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shifts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shifts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-shifts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Shifts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stretches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stretches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stretches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-stretches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Stretches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reflections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-reflections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Reflections
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symmetry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Symmetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-symmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Symmetry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#number-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number Line
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Number Line">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-number-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Number Line
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real Numbers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-real-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Real Numbers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-data-analysis-core-concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Data Analysis – Core Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-data-analysis-and-statistics-part-i/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Data Analysis and Statistics – Part I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-statistics-core-concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Statistics – Core Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-miscellaneous-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Miscellaneous Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ratios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ratios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ratios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-ratios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Ratios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proportions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proportions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proportions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-proportions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Proportions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#percentages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Percentages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Percentages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-percentages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Percentages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scientific-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scientific Notation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scientific Notation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-scientific-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Scientific Notation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-substitution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable Substitution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variable Substitution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-variable-substitution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Variable Substitution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern Recognition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Recognition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-pattern-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Pattern Recognition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursive-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recursive Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recursive Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-recursive-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Recursive Patterns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct Variation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct Variation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-direct-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Direct Variation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inverse-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse Variation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inverse Variation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-inverse-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Inverse Variation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinate-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinate Plane
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coordinate Plane">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-coordinate-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Coordinate Plane
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cartesian-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cartesian Coordinates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cartesian Coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cartesian-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cartesian Coordinates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plotting-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotting Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plotting Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-plotting-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Plotting Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordered-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordered Pairs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordered Pairs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-ordered-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Ordered Pairs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-function-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Function Transformations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shifts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shifts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shifts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-shifts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Shifts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stretches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stretches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stretches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-stretches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Stretches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reflections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-reflections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Reflections
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symmetry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Symmetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-symmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Symmetry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#number-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number Line
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Number Line">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-number-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Number Line
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real Numbers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-real-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Real Numbers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/gpt-oss-120b/chapters/06-functions-advanced-topics/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="functions-advanced-topics">Functions – Advanced Topics<a class="headerlink" href="#functions-advanced-topics" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Explores advanced function concepts including piecewise, step, and inverse functions.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ratios</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Proportions</td>
+<td>99</td>
+</tr>
+<tr>
+<td>Percentages</td>
+<td>98</td>
+</tr>
+<tr>
+<td>Scientific Notation</td>
+<td>97</td>
+</tr>
+<tr>
+<td>Variable Substitution</td>
+<td>96</td>
+</tr>
+<tr>
+<td>Pattern Recognition</td>
+<td>95</td>
+</tr>
+<tr>
+<td>Recursive Patterns</td>
+<td>94</td>
+</tr>
+<tr>
+<td>Direct Variation</td>
+<td>93</td>
+</tr>
+<tr>
+<td>Inverse Variation</td>
+<td>92</td>
+</tr>
+<tr>
+<td>Coordinate Plane</td>
+<td>91</td>
+</tr>
+<tr>
+<td>Cartesian Coordinates</td>
+<td>90</td>
+</tr>
+<tr>
+<td>Plotting Points</td>
+<td>89</td>
+</tr>
+<tr>
+<td>Ordered Pairs</td>
+<td>88</td>
+</tr>
+<tr>
+<td>Function Transformations</td>
+<td>87</td>
+</tr>
+<tr>
+<td>Shifts</td>
+<td>86</td>
+</tr>
+<tr>
+<td>Stretches</td>
+<td>85</td>
+</tr>
+<tr>
+<td>Reflections</td>
+<td>84</td>
+</tr>
+<tr>
+<td>Symmetry</td>
+<td>83</td>
+</tr>
+<tr>
+<td>Number Line</td>
+<td>82</td>
+</tr>
+<tr>
+<td>Real Numbers</td>
+<td>81</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../05-functions-foundations/">5 Chapter 5: Functions – Foundations</a></li>
+</ul>
+<hr />
+<h2 id="ratios">Ratios<a class="headerlink" href="#ratios" title="Permanent link">&para;</a></h2>
+<p>Ratios compare two quantities by showing how many times one value contains another. They are expressed as a colon (e.g., 3:2) or as a fraction.</p>
+<h3 id="worked-example">Worked Example<a class="headerlink" href="#worked-example" title="Permanent link">&para;</a></h3>
+<p>A recipe calls for 3 cups of flour for every 2 cups of sugar. If you have 9 cups of flour, how many cups of sugar are needed?</p>
+<p><strong>Solution:</strong> The ratio flour:sugar is 3:2. For 9 cups of flour, the factor is 9/3 = 3. Multiply the sugar part of the ratio by this factor: 2 × 3 = 6 cups of sugar.</p>
+<h4 id="diagram-ratios">Diagram: Ratios<a class="headerlink" href="#diagram-ratios" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Ratios Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> ratios-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply ratios to solve real-world problems.</p>
+<p><strong>Prerequisites:</strong> Understanding of fractions and multiplication.</p>
+<p><strong>Evidence of Mastery:</strong> Solve ratio problems correctly.</p>
+<p><strong>Misconceptions:</strong> Confusing ratio with fraction.</p>
+<p><strong>Instructional Rationale:</strong> Visual representation aids comprehension.</p>
+<p><strong>Content:</strong> Diagram showing ratio 3:2 with labeled parts.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Ratios.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Identify parts of the diagram and compute missing values.</p>
+<p><strong>Feedback:</strong> Immediate correct/incorrect messages.</p>
+<p><strong>Starting State:</strong> Diagram displayed without values.</p>
+<p><strong>Chapter Anchors:</strong> Ratios concept.</p>
+</details>
+<h2 id="proportions">Proportions<a class="headerlink" href="#proportions" title="Permanent link">&para;</a></h2>
+<p>A proportion states that two ratios are equal. It is used to solve problems where the relationship between quantities is constant.</p>
+<h3 id="worked-example_1">Worked Example<a class="headerlink" href="#worked-example_1" title="Permanent link">&para;</a></h3>
+<p>If 5 pencils cost $2, how much do 12 pencils cost?</p>
+<p><strong>Solution:</strong> Set up the proportion 5/2 = 12/x. Cross‑multiply: 5x = 24 → x = 24/5 = $4.80.</p>
+<h4 id="diagram-proportions">Diagram: Proportions<a class="headerlink" href="#diagram-proportions" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Proportions Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> proportions-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply proportions to solve scaling problems.</p>
+<p><strong>Prerequisites:</strong> Understanding of ratios.</p>
+<p><strong>Evidence of Mastery:</strong> Correctly solve proportion problems.</p>
+<p><strong>Misconceptions:</strong> Misapplying cross‑multiplication.</p>
+<p><strong>Instructional Rationale:</strong> Diagram reinforces the equality of two ratios.</p>
+<p><strong>Content:</strong> Diagram illustrating 5/2 = 12/x with placeholders.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Proportions.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Fill in the missing value x.</p>
+<p><strong>Feedback:</strong> Shows correct answer and explanation.</p>
+<p><strong>Starting State:</strong> Diagram with empty x.</p>
+<p><strong>Chapter Anchors:</strong> Proportions concept.</p>
+</details>
+<h2 id="percentages">Percentages<a class="headerlink" href="#percentages" title="Permanent link">&para;</a></h2>
+<p>Percentages express a number as a fraction of 100. They are used to compare parts of a whole.</p>
+<h3 id="worked-example_2">Worked Example<a class="headerlink" href="#worked-example_2" title="Permanent link">&para;</a></h3>
+<p>What is 25% of 80?</p>
+<p><strong>Solution:</strong> Convert 25% to decimal 0.25. Multiply: 0.25 × 80 = 20.</p>
+<h4 id="diagram-percentages">Diagram: Percentages<a class="headerlink" href="#diagram-percentages" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Percentages Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> percentages-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply percentages to compute parts of a whole.</p>
+<p><strong>Prerequisites:</strong> Understanding of fractions and decimals.</p>
+<p><strong>Evidence of Mastery:</strong> Correctly compute percentage values.</p>
+<p><strong>Misconceptions:</strong> Forgetting to convert percent to decimal.</p>
+<p><strong>Instructional Rationale:</strong> Visual mapping of percent to part of 100.</p>
+<p><strong>Content:</strong> Diagram showing 25% of a circle shaded representing 20 out of 80.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Percentages.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Identify shaded portion and calculate value.</p>
+<p><strong>Feedback:</strong> Immediate correctness check.</p>
+<p><strong>Starting State:</strong> Circle with 25% shading.</p>
+<p><strong>Chapter Anchors:</strong> Percentages concept.</p>
+</details>
+<h2 id="scientific-notation">Scientific Notation<a class="headerlink" href="#scientific-notation" title="Permanent link">&para;</a></h2>
+<p>Scientific notation expresses numbers as a product of a coefficient and a power of ten, useful for very large or small numbers.</p>
+<h3 id="worked-example_3">Worked Example<a class="headerlink" href="#worked-example_3" title="Permanent link">&para;</a></h3>
+<p>Write 4,500,000 in scientific notation.</p>
+<p><strong>Solution:</strong> 4.5 × 10⁶.</p>
+<h4 id="diagram-scientific-notation">Diagram: Scientific Notation<a class="headerlink" href="#diagram-scientific-notation" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Scientific Notation Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> sci-notn-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply scientific notation to represent large numbers.</p>
+<p><strong>Prerequisites:</strong> Understanding of powers of ten.</p>
+<p><strong>Evidence of Mastery:</strong> Correctly convert numbers.</p>
+<p><strong>Misconceptions:</strong> Misplacing decimal point.</p>
+<p><strong>Instructional Rationale:</strong> Diagram links numeric value to exponent.</p>
+<p><strong>Content:</strong> Diagram showing 4,500,000 → 4.5 × 10⁶.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Scientific Notation.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Convert given numbers.</p>
+<p><strong>Feedback:</strong> Shows correct scientific form.</p>
+<p><strong>Starting State:</strong> Number displayed without notation.</p>
+<p><strong>Chapter Anchors:</strong> Scientific Notation concept.</p>
+</details>
+<h2 id="variable-substitution">Variable Substitution<a class="headerlink" href="#variable-substitution" title="Permanent link">&para;</a></h2>
+<p>Variable substitution replaces a variable with a specific value to simplify expressions.</p>
+<h3 id="worked-example_4">Worked Example<a class="headerlink" href="#worked-example_4" title="Permanent link">&para;</a></h3>
+<p>Simplify 2x + 3 when x = 4.</p>
+<p><strong>Solution:</strong> Substitute x = 4 → 2·4 + 3 = 8 + 3 = 11.</p>
+<h4 id="diagram-variable-substitution">Diagram: Variable Substitution<a class="headerlink" href="#diagram-variable-substitution" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Variable Substitution Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> var-subst-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply variable substitution to evaluate expressions.</p>
+<p><strong>Prerequisites:</strong> Understanding of variables.</p>
+<p><strong>Evidence of Mastery:</strong> Correct evaluation.</p>
+<p><strong>Misconceptions:</strong> Forgetting to replace all instances.</p>
+<p><strong>Instructional Rationale:</strong> Visual substitution aids understanding.</p>
+<p><strong>Content:</strong> Diagram showing 2x+3 with x replaced by 4.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Variable Substitution.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Perform substitution.</p>
+<p><strong>Feedback:</strong> Shows result.</p>
+<p><strong>Starting State:</strong> Expression with variable.</p>
+<p><strong>Chapter Anchors:</strong> Variable Substitution concept.</p>
+</details>
+<h2 id="pattern-recognition">Pattern Recognition<a class="headerlink" href="#pattern-recognition" title="Permanent link">&para;</a></h2>
+<p>Pattern recognition involves identifying regularities in data or sequences.</p>
+<h3 id="worked-example_5">Worked Example<a class="headerlink" href="#worked-example_5" title="Permanent link">&para;</a></h3>
+<p>Identify the next term in the sequence 2, 4, 8, 16, ...</p>
+<p><strong>Solution:</strong> Each term doubles; next term is 32.</p>
+<h4 id="diagram-pattern-recognition">Diagram: Pattern Recognition<a class="headerlink" href="#diagram-pattern-recognition" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Pattern Recognition Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> pattern-recognition-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply pattern recognition to predict sequence terms.</p>
+<p><strong>Prerequisites:</strong> Understanding of sequences.</p>
+<p><strong>Evidence of Mastery:</strong> Correct prediction.</p>
+<p><strong>Misconceptions:</strong> Assuming linear growth.</p>
+<p><strong>Instructional Rationale:</strong> Diagram visualizes pattern.</p>
+<p><strong>Content:</strong> Diagram showing sequence with arrows.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Pattern Recognition.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Extend sequence.</p>
+<p><strong>Feedback:</strong> Immediate check.</p>
+<p><strong>Starting State:</strong> Partial sequence displayed.</p>
+<p><strong>Chapter Anchors:</strong> Pattern Recognition concept.</p>
+</details>
+<h2 id="recursive-patterns">Recursive Patterns<a class="headerlink" href="#recursive-patterns" title="Permanent link">&para;</a></h2>
+<p>Recursive patterns define each term based on previous terms.</p>
+<h3 id="worked-example_6">Worked Example<a class="headerlink" href="#worked-example_6" title="Permanent link">&para;</a></h3>
+<p>Given a₁ = 1 and aₙ = aₙ₋₁ + 2, find a₅.</p>
+<p><strong>Solution:</strong> a₂=3, a₃=5, a₄=7, a₅=9.</p>
+<h4 id="diagram-recursive-patterns">Diagram: Recursive Patterns<a class="headerlink" href="#diagram-recursive-patterns" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Recursive Patterns Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> recursive-patterns-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply recursion to generate sequence terms.</p>
+<p><strong>Prerequisites:</strong> Understanding of recursion.</p>
+<p><strong>Evidence of Mastery:</strong> Correct term generation.</p>
+<p><strong>Misconceptions:</strong> Forgetting base case.</p>
+<p><strong>Instructional Rationale:</strong> Diagram shows recursion steps.</p>
+<p><strong>Content:</strong> Diagram of recursion tree.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Recursive Patterns.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Compute next terms.</p>
+<p><strong>Feedback:</strong> Shows correct term.</p>
+<p><strong>Starting State:</strong> Base case displayed.</p>
+<p><strong>Chapter Anchors:</strong> Recursive Patterns concept.</p>
+</details>
+<h2 id="direct-variation">Direct Variation<a class="headerlink" href="#direct-variation" title="Permanent link">&para;</a></h2>
+<p>Direct variation describes a relationship where y = kx, with k constant.</p>
+<h3 id="worked-example_7">Worked Example<a class="headerlink" href="#worked-example_7" title="Permanent link">&para;</a></h3>
+<p>If y varies directly with x and y = 12 when x = 3, find y when x = 5.</p>
+<p><strong>Solution:</strong> k = y/x = 12/3 = 4. Then y = 4·5 = 20.</p>
+<h4 id="diagram-direct-variation">Diagram: Direct Variation<a class="headerlink" href="#diagram-direct-variation" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Direct Variation Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> direct-variation-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply direct variation formulas.</p>
+<p><strong>Prerequisites:</strong> Understanding of proportionality.</p>
+<p><strong>Evidence of Mastery:</strong> Correct computation.</p>
+<p><strong>Misconceptions:</strong> Confusing with inverse variation.</p>
+<p><strong>Instructional Rationale:</strong> Visual line through origin.</p>
+<p><strong>Content:</strong> Graph showing line through origin.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Direct Variation.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Plot points.</p>
+<p><strong>Feedback:</strong> Checks points.</p>
+<p><strong>Starting State:</strong> Empty graph.</p>
+<p><strong>Chapter Anchors:</strong> Direct Variation concept.</p>
+</details>
+<h2 id="inverse-variation">Inverse Variation<a class="headerlink" href="#inverse-variation" title="Permanent link">&para;</a></h2>
+<p>Inverse variation describes a relationship where y = k/x.</p>
+<h3 id="worked-example_8">Worked Example<a class="headerlink" href="#worked-example_8" title="Permanent link">&para;</a></h3>
+<p>If y varies inversely with x and y = 6 when x = 2, find y when x = 3.</p>
+<p><strong>Solution:</strong> k = y·x = 6·2 = 12. Then y = 12/3 = 4.</p>
+<h4 id="diagram-inverse-variation">Diagram: Inverse Variation<a class="headerlink" href="#diagram-inverse-variation" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Inverse Variation Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> inverse-variation-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply inverse variation formulas.</p>
+<p><strong>Prerequisites:</strong> Understanding of reciprocals.</p>
+<p><strong>Evidence of Mastery:</strong> Correct computation.</p>
+<p><strong>Misconceptions:</strong> Treating as direct variation.</p>
+<p><strong>Instructional Rationale:</strong> Hyperbola visual.</p>
+<p><strong>Content:</strong> Graph of hyperbola.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Inverse Variation.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Plot hyperbola points.</p>
+<p><strong>Feedback:</strong> Checks accuracy.</p>
+<p><strong>Starting State:</strong> Empty graph.</p>
+<p><strong>Chapter Anchors:</strong> Inverse Variation concept.</p>
+</details>
+<h2 id="coordinate-plane">Coordinate Plane<a class="headerlink" href="#coordinate-plane" title="Permanent link">&para;</a></h2>
+<p>The coordinate plane consists of two perpendicular axes, the x‑axis and y‑axis, intersecting at the origin.</p>
+<h3 id="worked-example_9">Worked Example<a class="headerlink" href="#worked-example_9" title="Permanent link">&para;</a></h3>
+<p>Plot the point (3, -2) on the coordinate plane.</p>
+<p><strong>Solution:</strong> Move 3 units right on the x‑axis, then 2 units down on the y‑axis.</p>
+<h4 id="diagram-coordinate-plane">Diagram: Coordinate Plane<a class="headerlink" href="#diagram-coordinate-plane" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Coordinate Plane Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> coordinate-plane-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply plotting techniques on the coordinate plane.</p>
+<p><strong>Prerequisites:</strong> Understanding of axes.</p>
+<p><strong>Evidence of Mastery:</strong> Correct point placement.</p>
+<p><strong>Misconceptions:</strong> Mixing up x and y.</p>
+<p><strong>Instructional Rationale:</strong> Interactive plotting reinforces spatial reasoning.</p>
+<p><strong>Content:</strong> Blank grid with interactive point placement.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Coordinate Plane.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Drag point to coordinates.</p>
+<p><strong>Feedback:</strong> Shows correct location.</p>
+<p><strong>Starting State:</strong> Empty grid.</p>
+<p><strong>Chapter Anchors:</strong> Coordinate Plane concept.</p>
+</details>
+<h2 id="cartesian-coordinates">Cartesian Coordinates<a class="headerlink" href="#cartesian-coordinates" title="Permanent link">&para;</a></h2>
+<p>Cartesian coordinates represent points as (x, y) pairs on the coordinate plane.</p>
+<h3 id="worked-example_10">Worked Example<a class="headerlink" href="#worked-example_10" title="Permanent link">&para;</a></h3>
+<p>What are the coordinates of the point two units left and three units up from the origin?</p>
+<p><strong>Solution:</strong> (-2, 3).</p>
+<h4 id="diagram-cartesian-coordinates">Diagram: Cartesian Coordinates<a class="headerlink" href="#diagram-cartesian-coordinates" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Cartesian Coordinates Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> cartesian-coordinates-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply Cartesian notation to describe points.</p>
+<p><strong>Prerequisites:</strong> Understanding of coordinate plane.</p>
+<p><strong>Evidence of Mastery:</strong> Correct notation.</p>
+<p><strong>Misconceptions:</strong> Reversing signs.</p>
+<p><strong>Instructional Rationale:</strong> Diagram links visual point to notation.</p>
+<p><strong>Content:</strong> Grid with point highlighted.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Cartesian Coordinates.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Identify coordinates.</p>
+<p><strong>Feedback:</strong> Immediate confirmation.</p>
+<p><strong>Starting State:</strong> Highlighted point.</p>
+<p><strong>Chapter Anchors:</strong> Cartesian Coordinates concept.</p>
+</details>
+<h2 id="plotting-points">Plotting Points<a class="headerlink" href="#plotting-points" title="Permanent link">&para;</a></h2>
+<p>Plotting points involves marking locations on the coordinate plane using ordered pairs.</p>
+<h3 id="worked-example_11">Worked Example<a class="headerlink" href="#worked-example_11" title="Permanent link">&para;</a></h3>
+<p>Plot the points (1,2), (3,4), and (5,0) on a grid.</p>
+<p><strong>Solution:</strong> Place markers at the respective positions.</p>
+<h4 id="diagram-plotting-points">Diagram: Plotting Points<a class="headerlink" href="#diagram-plotting-points" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Plotting Points Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> plotting-points-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply plotting multiple points.</p>
+<p><strong>Prerequisites:</strong> Understanding of coordinates.</p>
+<p><strong>Evidence of Mastery:</strong> All points correctly placed.</p>
+<p><strong>Misconceptions:</strong> Misreading coordinates.</p>
+<p><strong>Instructional Rationale:</strong> Interactive grid reinforces multiple placements.</p>
+<p><strong>Content:</strong> Grid with three interactive points.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Plotting Points.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Drag points to correct spots.</p>
+<p><strong>Feedback:</strong> Checks each point.</p>
+<p><strong>Starting State:</strong> Empty grid.</p>
+<p><strong>Chapter Anchors:</strong> Plotting Points concept.</p>
+</details>
+<h2 id="ordered-pairs">Ordered Pairs<a class="headerlink" href="#ordered-pairs" title="Permanent link">&para;</a></h2>
+<p>An ordered pair (x, y) specifies a location on the coordinate plane.</p>
+<h3 id="worked-example_12">Worked Example<a class="headerlink" href="#worked-example_12" title="Permanent link">&para;</a></h3>
+<p>Identify the ordered pair for a point 4 units right and 1 unit down from the origin.</p>
+<p><strong>Solution:</strong> (4, -1).</p>
+<h4 id="diagram-ordered-pairs">Diagram: Ordered Pairs<a class="headerlink" href="#diagram-ordered-pairs" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Ordered Pairs Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> ordered-pairs-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply ordered pair notation.</p>
+<p><strong>Prerequisites:</strong> Understanding of axes.</p>
+<p><strong>Evidence of Mastery:</strong> Correct notation.</p>
+<p><strong>Misconceptions:</strong> Swapping coordinates.</p>
+<p><strong>Instructional Rationale:</strong> Diagram ties visual to notation.</p>
+<p><strong>Content:</strong> Grid with point and label.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Ordered Pairs.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Match point to label.</p>
+<p><strong>Feedback:</strong> Shows correct label.</p>
+<p><strong>Starting State:</strong> Point displayed.</p>
+<p><strong>Chapter Anchors:</strong> Ordered Pairs concept.</p>
+</details>
+<h2 id="function-transformations">Function Transformations<a class="headerlink" href="#function-transformations" title="Permanent link">&para;</a></h2>
+<p>Function transformations shift, stretch, or reflect graphs of functions.</p>
+<h3 id="worked-example_13">Worked Example<a class="headerlink" href="#worked-example_13" title="Permanent link">&para;</a></h3>
+<p>Shift the graph of y = x² up by 3 units.</p>
+<p><strong>Solution:</strong> New equation y = x² + 3.</p>
+<h4 id="diagram-function-transformations">Diagram: Function Transformations<a class="headerlink" href="#diagram-function-transformations" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Function Transformations Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> function-transformations-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply transformations to function graphs.</p>
+<p><strong>Prerequisites:</strong> Understanding of basic functions.</p>
+<p><strong>Evidence of Mastery:</strong> Correct transformed equation.</p>
+<p><strong>Misconceptions:</strong> Mixing up direction of shifts.</p>
+<p><strong>Instructional Rationale:</strong> Visual comparison of original and transformed graphs.</p>
+<p><strong>Content:</strong> Two side‑by‑side graphs.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Function Transformations.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Identify transformation.</p>
+<p><strong>Feedback:</strong> Shows correct transformation.</p>
+<p><strong>Starting State:</strong> Original graph displayed.</p>
+<p><strong>Chapter Anchors:</strong> Function Transformations concept.</p>
+</details>
+<h2 id="shifts">Shifts<a class="headerlink" href="#shifts" title="Permanent link">&para;</a></h2>
+<p>Shifts move a graph horizontally or vertically.</p>
+<h3 id="worked-example_14">Worked Example<a class="headerlink" href="#worked-example_14" title="Permanent link">&para;</a></h3>
+<p>Shift y = sin(x) left by π/2.</p>
+<p><strong>Solution:</strong> New equation y = sin(x + π/2).</p>
+<h4 id="diagram-shifts">Diagram: Shifts<a class="headerlink" href="#diagram-shifts" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Shifts Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> shifts-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply horizontal shifts to trigonometric graphs.</p>
+<p><strong>Prerequisites:</strong> Understanding of sine function.</p>
+<p><strong>Evidence of Mastery:</strong> Correct shifted equation.</p>
+<p><strong>Misconceptions:</strong> Incorrect sign for shift direction.</p>
+<p><strong>Instructional Rationale:</strong> Diagram shows phase shift.</p>
+<p><strong>Content:</strong> Original and shifted sine curves.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Shifts.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Compare curves.</p>
+<p><strong>Feedback:</strong> Highlights differences.</p>
+<p><strong>Starting State:</strong> Original curve.</p>
+<p><strong>Chapter Anchors:</strong> Shifts concept.</p>
+</details>
+<h2 id="stretches">Stretches<a class="headerlink" href="#stretches" title="Permanent link">&para;</a></h2>
+<p>Stretches scale a graph horizontally or vertically.</p>
+<h3 id="worked-example_15">Worked Example<a class="headerlink" href="#worked-example_15" title="Permanent link">&para;</a></h3>
+<p>Vertically stretch y = x³ by factor 2.</p>
+<p><strong>Solution:</strong> New equation y = 2x³.</p>
+<h4 id="diagram-stretches">Diagram: Stretches<a class="headerlink" href="#diagram-stretches" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Stretches Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> stretches-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply vertical stretches to cubic functions.</p>
+<p><strong>Prerequisites:</strong> Understanding of cubic graphs.</p>
+<p><strong>Evidence of Mastery:</strong> Correct stretched graph.</p>
+<p><strong>Misconceptions:</strong> Confusing stretch with shift.</p>
+<p><strong>Instructional Rationale:</strong> Visual comparison.</p>
+<p><strong>Content:</strong> Original and stretched curves.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Stretches.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Identify stretch factor.</p>
+<p><strong>Feedback:</strong> Confirms correct factor.</p>
+<p><strong>Starting State:</strong> Original curve.</p>
+<p><strong>Chapter Anchors:</strong> Stretches concept.</p>
+</details>
+<h2 id="reflections">Reflections<a class="headerlink" href="#reflections" title="Permanent link">&para;</a></h2>
+<p>Reflections mirror a graph across an axis.</p>
+<h3 id="worked-example_16">Worked Example<a class="headerlink" href="#worked-example_16" title="Permanent link">&para;</a></h3>
+<p>Reflect y = x³ across the x‑axis.</p>
+<p><strong>Solution:</strong> New equation y = -x³.</p>
+<h4 id="diagram-reflections">Diagram: Reflections<a class="headerlink" href="#diagram-reflections" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Reflections Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> reflections-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply reflections to cubic graphs.</p>
+<p><strong>Prerequisites:</strong> Understanding of symmetry.</p>
+<p><strong>Evidence of Mastery:</strong> Correct reflected graph.</p>
+<p><strong>Misconceptions:</strong> Reflecting across wrong axis.</p>
+<p><strong>Instructional Rationale:</strong> Diagram shows original and reflected curves.</p>
+<p><strong>Content:</strong> Side‑by‑side graphs.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Reflections.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Identify reflection.</p>
+<p><strong>Feedback:</strong> Indicates correct axis.</p>
+<p><strong>Starting State:</strong> Original curve.</p>
+<p><strong>Chapter Anchors:</strong> Reflections concept.</p>
+</details>
+<h2 id="symmetry">Symmetry<a class="headerlink" href="#symmetry" title="Permanent link">&para;</a></h2>
+<p>Symmetry involves invariance under certain transformations.</p>
+<h3 id="worked-example_17">Worked Example<a class="headerlink" href="#worked-example_17" title="Permanent link">&para;</a></h3>
+<p>Determine if y = x² is symmetric about the y‑axis.</p>
+<p><strong>Solution:</strong> Yes, because f(-x) = f(x).</p>
+<h4 id="diagram-symmetry">Diagram: Symmetry<a class="headerlink" href="#diagram-symmetry" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Symmetry Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> symmetry-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply symmetry concepts to quadratic functions.</p>
+<p><strong>Prerequisites:</strong> Understanding of even functions.</p>
+<p><strong>Evidence of Mastery:</strong> Correct symmetry identification.</p>
+<p><strong>Misconceptions:</strong> Assuming all parabolas are symmetric.</p>
+<p><strong>Instructional Rationale:</strong> Diagram shows mirrored halves.</p>
+<p><strong>Content:</strong> Parabola with axis highlighted.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Symmetry.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Examine symmetry.</p>
+<p><strong>Feedback:</strong> Confirms.</p>
+<p><strong>Starting State:</strong> Parabola displayed.</p>
+<p><strong>Chapter Anchors:</strong> Symmetry concept.</p>
+</details>
+<h2 id="number-line">Number Line<a class="headerlink" href="#number-line" title="Permanent link">&para;</a></h2>
+<p>A number line is a one‑dimensional representation of real numbers.</p>
+<h3 id="worked-example_18">Worked Example<a class="headerlink" href="#worked-example_18" title="Permanent link">&para;</a></h3>
+<p>Mark -3, 0, and 4 on the number line.</p>
+<p><strong>Solution:</strong> Place points at the appropriate positions.</p>
+<h4 id="diagram-number-line">Diagram: Number Line<a class="headerlink" href="#diagram-number-line" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Number Line Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> number-line-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply number line concepts to locate integers.</p>
+<p><strong>Prerequisites:</strong> Understanding of integers.</p>
+<p><strong>Evidence of Mastery:</strong> Correct placement.</p>
+<p><strong>Misconceptions:</strong> Misordering negatives.</p>
+<p><strong>Instructional Rationale:</strong> Interactive line reinforces position.</p>
+<p><strong>Content:</strong> Number line with draggable markers.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Number Line.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Drag markers.</p>
+<p><strong>Feedback:</strong> Shows correct positions.</p>
+<p><strong>Starting State:</strong> Empty line.</p>
+<p><strong>Chapter Anchors:</strong> Number Line concept.</p>
+</details>
+<h2 id="real-numbers">Real Numbers<a class="headerlink" href="#real-numbers" title="Permanent link">&para;</a></h2>
+<p>Real numbers include all rational and irrational numbers.</p>
+<h3 id="worked-example_19">Worked Example<a class="headerlink" href="#worked-example_19" title="Permanent link">&para;</a></h3>
+<p>Identify whether √2 is a real number.</p>
+<p><strong>Solution:</strong> Yes, √2 is irrational but real.</p>
+<h4 id="diagram-real-numbers">Diagram: Real Numbers<a class="headerlink" href="#diagram-real-numbers" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Real Numbers Diagram</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> real-numbers-diagram
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> apply
+<strong>Learning Objective:</strong> The learner will apply classification of numbers as real.</p>
+<p><strong>Prerequisites:</strong> Understanding of rational vs. irrational.</p>
+<p><strong>Evidence of Mastery:</strong> Correct classification.</p>
+<p><strong>Misconceptions:</strong> Thinking irrational numbers are not real.</p>
+<p><strong>Instructional Rationale:</strong> Diagram shows number line with highlighted region.</p>
+<p><strong>Content:</strong> Number line with √2 marked.</p>
+<p><strong>Provenance:</strong> Chapter 6, Section Real Numbers.</p>
+<p><strong>Rules:</strong> N/A</p>
+<p><strong>Learner Activity:</strong> Identify type.</p>
+<p><strong>Feedback:</strong> Confirms classification.</p>
+<p><strong>Starting State:</strong> Number line.</p>
+<p><strong>Chapter Anchors:</strong> Real Numbers concept.</p>
+</details>
+<hr />
+<p><em>End of Chapter 6 content.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../05-functions-foundations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5. Functions – Foundations">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                5. Functions – Foundations
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../07-data-analysis-core-concepts/" class="md-footer__link md-footer__link--next" aria-label="Next: 7. Data Analysis – Core Concepts">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                7. Data Analysis – Core Concepts
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

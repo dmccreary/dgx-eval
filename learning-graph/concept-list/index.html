@@ -1,0 +1,1900 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/learning-graph/concept-list/">
+      
+      
+        <link rel="prev" href="../course-description-assessment/">
+      
+      
+        <link rel="next" href="../concept-taxonomy/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Concept Enumeration - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#concept-list" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Concept Enumeration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Learning Graph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course-description-assessment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Assessment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Concept Enumeration
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Concept Enumeration
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisite-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisite Skills
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intelligent-textbooks-and-the-generation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intelligent Textbooks and the Generation Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-language-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small Language Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-slms-versus-cloud-llm-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local SLMs Versus Cloud LLM Services
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-price-and-quality-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost, Price, and Quality Tradeoffs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nvidia-dgx-hardware-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIDIA DGX Hardware Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secure-remote-access-with-tailscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Remote Access with Tailscale
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducible-python-environments-with-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproducible Python Environments with Conda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-hardware-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Hardware Probes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-sizing-and-model-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Sizing and Model Fit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-and-installing-an-open-weight-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting and Installing an Open-Weight Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#candidate-models-under-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Candidate Models Under Evaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference Servers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-agent-harnesses-and-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Agent Harnesses and Skills
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-architecture-and-containment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Architecture and Containment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-slm-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing SLM Performance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-evaluation-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective Evaluation Methodology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-textbook-benchmark-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the Textbook Benchmark and Reporting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sanitizing-evaluation-artifacts-before-publication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sanitizing Evaluation Artifacts Before Publication
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concept-taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concept Taxonomy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph Quality Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxonomy-distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Taxonomy Distribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisite-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisite Skills
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intelligent-textbooks-and-the-generation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intelligent Textbooks and the Generation Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-language-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small Language Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-slms-versus-cloud-llm-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local SLMs Versus Cloud LLM Services
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-price-and-quality-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost, Price, and Quality Tradeoffs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nvidia-dgx-hardware-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIDIA DGX Hardware Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secure-remote-access-with-tailscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Remote Access with Tailscale
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducible-python-environments-with-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproducible Python Environments with Conda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-hardware-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Hardware Probes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-sizing-and-model-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Sizing and Model Fit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-and-installing-an-open-weight-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting and Installing an Open-Weight Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#candidate-models-under-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Candidate Models Under Evaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference Servers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-agent-harnesses-and-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Agent Harnesses and Skills
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-architecture-and-containment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Architecture and Containment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-slm-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing SLM Performance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-evaluation-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective Evaluation Methodology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-textbook-benchmark-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the Textbook Benchmark and Reporting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sanitizing-evaluation-artifacts-before-publication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sanitizing Evaluation Artifacts Before Publication
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/learning-graph/concept-list.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="concept-list">Concept List<a class="headerlink" href="#concept-list" title="Permanent link">&para;</a></h1>
+<p>The numbered concepts below are the nodes of the learning graph for
+<em>DGX Evaluation for Textbook Generation</em>. Each number is the ConceptID used in
+<code>learning-graph.csv</code>. Most sections follow the 16 topics in the
+<a href="../../course-description/">course description</a>. Three sections hold concepts
+taken from the book's own pages: <em>Prerequisite Skills</em>, <em>Candidate Models Under
+Evaluation</em>, and <em>Testing Architecture and Containment</em>.</p>
+<p>The course is DGX-model-agnostic, so the hardware concepts list both branches of
+each variation (CPU architecture and memory layout) and not the specifications
+of any one DGX model.</p>
+<h2 id="prerequisite-skills">Prerequisite Skills<a class="headerlink" href="#prerequisite-skills" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Command Line Basics</li>
+<li>Python Scripting Basics</li>
+<li>Git Version Control</li>
+<li>GitHub Repository</li>
+<li>Generative AI Assistant Use</li>
+</ol>
+<h2 id="intelligent-textbooks-and-the-generation-pipeline">Intelligent Textbooks and the Generation Pipeline<a class="headerlink" href="#intelligent-textbooks-and-the-generation-pipeline" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Intelligent Textbook</li>
+<li>Levels of Intelligent Textbooks</li>
+<li>Course Description</li>
+<li>Learning Graph</li>
+<li>Concept Dependency</li>
+<li>Directed Acyclic Graph</li>
+<li>Concept Taxonomy</li>
+<li>Chapter Content</li>
+<li>MicroSim</li>
+<li>Glossary</li>
+<li>FAQ</li>
+<li>Quiz</li>
+<li>ibook-skills Skill Chain</li>
+<li>MkDocs Material</li>
+<li>Markdown Source Files</li>
+<li>Static Site Build</li>
+<li>Bloom's Taxonomy</li>
+<li>Learning Outcomes</li>
+<li>Course Description Quality Score</li>
+<li>Concept Impact Score</li>
+<li>Elaboration Budget</li>
+<li>Word-Count Targets</li>
+<li>Anti-Padding Rules</li>
+<li>Content Generation Guide</li>
+<li>AGENTS.md File</li>
+<li>Learning Graph Viewer</li>
+<li>Foundational Concepts</li>
+<li>MkDocs Navigation</li>
+<li>Lesson Plan</li>
+<li>MicroSim Status Levels</li>
+<li>p5.js</li>
+<li>vis-network</li>
+<li>Iframe Embedding</li>
+<li>Data-Driven MicroSim</li>
+</ol>
+<h2 id="small-language-models">Small Language Models<a class="headerlink" href="#small-language-models" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Generative AI Model</li>
+<li>Large Language Model</li>
+<li>Frontier Model</li>
+<li>Small Language Model</li>
+<li>Parameter Count</li>
+<li>Token</li>
+<li>Tokenizer</li>
+<li>Context Window</li>
+<li>Inference</li>
+<li>Open-Weight Model</li>
+<li>Open-Source License</li>
+<li>Model License Terms</li>
+<li>Model Family</li>
+<li>Llama Family</li>
+<li>Qwen Family</li>
+<li>Gemma Family</li>
+<li>Mistral Family</li>
+<li>Phi Family</li>
+<li>Model Card</li>
+<li>Long-Form Writing</li>
+<li>Structured Output</li>
+<li>Tool Calling</li>
+<li>Code Generation</li>
+<li>Instruction Following</li>
+<li>Multimodal Model</li>
+<li>Image Input</li>
+<li>Reasoning Mode</li>
+<li>Tokens per Word</li>
+</ol>
+<h2 id="local-slms-versus-cloud-llm-services">Local SLMs Versus Cloud LLM Services<a class="headerlink" href="#local-slms-versus-cloud-llm-services" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Local Model Deployment</li>
+<li>Cloud LLM Service</li>
+<li>Anthropic Claude</li>
+<li>OpenAI ChatGPT</li>
+<li>Google Antigravity</li>
+<li>Devin</li>
+<li>Agentic Framework</li>
+<li>Privacy</li>
+<li>Data Sovereignty</li>
+<li>Rate Limits</li>
+<li>Service Availability</li>
+<li>Vendor Lock-In</li>
+<li>Version Pinning</li>
+<li>Operational Burden</li>
+<li>Hybrid Workflow</li>
+<li>Cloud Baseline</li>
+<li>Frontier Model Capability Gap</li>
+<li>Model Deprecation</li>
+<li>Offline Operation</li>
+<li>Data Egress Trace</li>
+<li>Supervision Data Exposure</li>
+</ol>
+<h2 id="cost-price-and-quality-tradeoffs">Cost, Price, and Quality Tradeoffs<a class="headerlink" href="#cost-price-and-quality-tradeoffs" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Cost</li>
+<li>Price</li>
+<li>Quality</li>
+<li>Capital Cost</li>
+<li>Depreciation</li>
+<li>Electricity Cost</li>
+<li>Administration Time</li>
+<li>Per-Token Pricing</li>
+<li>Subscription Pricing</li>
+<li>Per-Seat Pricing</li>
+<li>Total Cost of Ownership</li>
+<li>Fixed Costs</li>
+<li>Variable Costs</li>
+<li>Cost per Chapter</li>
+<li>Break-Even Volume</li>
+<li>Quality-Adjusted Cost</li>
+<li>Cost Model</li>
+<li>Utilization Rate</li>
+<li>Hardware Lifespan</li>
+<li>Sensitivity Analysis</li>
+<li>Setup Labor</li>
+<li>Operations Labor</li>
+<li>Idle Power Draw</li>
+<li>Cost per Textbook</li>
+<li>Books per Year</li>
+<li>Profit Margin</li>
+<li>Margin Versus Markup</li>
+<li>Service Price Calculation</li>
+<li>Human Review Cost</li>
+<li>Whole-Book Time Estimate</li>
+</ol>
+<h2 id="nvidia-dgx-hardware-architecture">NVIDIA DGX Hardware Architecture<a class="headerlink" href="#nvidia-dgx-hardware-architecture" title="Permanent link">&para;</a></h2>
+<ol>
+<li>NVIDIA DGX</li>
+<li>DGX Product Family</li>
+<li>CPU Architecture</li>
+<li>x86_64 Architecture</li>
+<li>aarch64 Architecture</li>
+<li>CPU Core Count</li>
+<li>System RAM</li>
+<li>GPU</li>
+<li>GPU Configuration</li>
+<li>Multi-GPU System</li>
+<li>Dedicated GPU Memory</li>
+<li>Unified Memory</li>
+<li>Memory Bandwidth</li>
+<li>Storage Capacity</li>
+<li>Storage Read Speed</li>
+<li>NVMe Storage</li>
+<li>Power Draw</li>
+<li>Thermal Design Power</li>
+<li>Thermals</li>
+<li>DGX OS</li>
+<li>NVIDIA Driver</li>
+<li>CUDA</li>
+<li>Compute Capability</li>
+<li>Hardware Variation Branching</li>
+<li>DGX Spark</li>
+<li>NVIDIA GB10</li>
+<li>Blackwell Architecture</li>
+<li>CUDA Cores</li>
+</ol>
+<h2 id="secure-remote-access-with-tailscale">Secure Remote Access with Tailscale<a class="headerlink" href="#secure-remote-access-with-tailscale" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Remote Access</li>
+<li>Mesh VPN</li>
+<li>WireGuard</li>
+<li>Tailscale</li>
+<li>Tailnet</li>
+<li>Coordination Plane</li>
+<li>Data Plane</li>
+<li>Peer-to-Peer Connection</li>
+<li>DERP Relay</li>
+<li>Tailscale Installation</li>
+<li>Tailscale Authentication</li>
+<li>Tailscale Auth Key</li>
+<li>Device Key Expiry</li>
+<li>MagicDNS</li>
+<li>SSH</li>
+<li>SSH Key Pair</li>
+<li>Tailscale SSH</li>
+<li>Access Control List</li>
+<li>Tailscale Status Command</li>
+<li>Tailscale Ping</li>
+<li>Connectivity Test</li>
+<li>Tailscale Serve</li>
+<li>Endpoint Sharing</li>
+<li>Host Hygiene</li>
+<li>Tailscale Daemon</li>
+<li>Tailscale Up Command</li>
+<li>Tailnet Invitation</li>
+<li>Node Sharing</li>
+<li>Host Key Fingerprint</li>
+<li>Ed25519 Key</li>
+<li>Passphrase-Free Key</li>
+<li>ssh-copy-id</li>
+<li>Unattended SSH Login</li>
+<li>BatchMode</li>
+<li>SSH Port Forward</li>
+<li>NAT Traversal</li>
+<li>Home Router</li>
+<li>Administrator Privileges</li>
+<li>System Administrator</li>
+</ol>
+<h2 id="reproducible-python-environments-with-conda">Reproducible Python Environments with Conda<a class="headerlink" href="#reproducible-python-environments-with-conda" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Python Environment</li>
+<li>Environment Isolation</li>
+<li>Miniforge</li>
+<li>Conda</li>
+<li>pip</li>
+<li>Conda Create Command</li>
+<li>Conda Activate Command</li>
+<li>Conda List and Export</li>
+<li>Conda Remove Command</li>
+<li>Python Version Pinning</li>
+<li>Conda Versus pip</li>
+<li>environment.yml</li>
+<li>requirements.txt</li>
+<li>Package Channel</li>
+<li>Architecture-Specific Wheels</li>
+<li>PyTorch</li>
+<li>CUDA-Enabled PyTorch</li>
+<li>Environment Rebuild</li>
+<li>Reproducibility</li>
+<li>Install Script</li>
+<li>Dedicated Tool Environment</li>
+</ol>
+<h2 id="python-hardware-probes">Python Hardware Probes<a class="headerlink" href="#python-hardware-probes" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Hardware Probe</li>
+<li>Probe Script</li>
+<li>psutil</li>
+<li>nvidia-smi</li>
+<li>nvidia-smi Output</li>
+<li>NVML</li>
+<li>NVML Python Bindings</li>
+<li>CPU Probe</li>
+<li>RAM Probe</li>
+<li>Storage Probe</li>
+<li>Disk Read Benchmark</li>
+<li>GPU Probe</li>
+<li>GPU Memory Total and Free</li>
+<li>Driver Version Probe</li>
+<li>CUDA Version Probe</li>
+<li>GPU Temperature</li>
+<li>GPU Power Draw</li>
+<li>Machine-Readable Report</li>
+<li>JSON Report</li>
+<li>Probe Suite</li>
+<li>Redacted-by-Default Fields</li>
+<li>PyTorch CUDA Check</li>
+<li>Probe Verification Test</li>
+<li>Unified Memory Probe</li>
+<li>Read-Only Inventory</li>
+<li>Linux Inventory Commands</li>
+<li>Standard-Library-Only Python</li>
+<li>Piping Scripts Over SSH</li>
+<li>Vitals Logging</li>
+</ol>
+<h2 id="model-sizing-and-model-fit">Model Sizing and Model Fit<a class="headerlink" href="#model-sizing-and-model-fit" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Model Weights</li>
+<li>Dense Model</li>
+<li>Mixture of Experts</li>
+<li>Active Parameters</li>
+<li>Numeric Precision</li>
+<li>Bytes per Weight</li>
+<li>FP16 and BF16</li>
+<li>Quantization</li>
+<li>Quantization Level</li>
+<li>8-Bit Quantization</li>
+<li>4-Bit Quantization</li>
+<li>GGUF Format</li>
+<li>Safetensors Format</li>
+<li>Size on Disk</li>
+<li>KV Cache</li>
+<li>Context Length Memory</li>
+<li>Runtime Overhead</li>
+<li>Safety Headroom</li>
+<li>Memory Estimation Formula</li>
+<li>Model-Fit Calculation</li>
+<li>Model-Fit Calculator</li>
+<li>Fit Verdict</li>
+<li>Unified Memory Fit</li>
+<li>Bits per Parameter</li>
+<li>Memory for Weights</li>
+<li>Quantized File Overhead</li>
+</ol>
+<h2 id="selecting-and-installing-an-open-weight-model">Selecting and Installing an Open-Weight Model<a class="headerlink" href="#selecting-and-installing-an-open-weight-model" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Model Selection Criteria</li>
+<li>Hugging Face Hub</li>
+<li>Model Repository</li>
+<li>License Review</li>
+<li>Model Download</li>
+<li>Checksum Verification</li>
+<li>Storage Management</li>
+<li>Model Shortlist</li>
+<li>Model Leaderboard</li>
+<li>Tool-Calling Reliability</li>
+<li>Writing Quality</li>
+<li>Model Comparison</li>
+<li>Gated Model Access</li>
+<li>Access Token Handling</li>
+<li>Model Cache Directory</li>
+<li>Ollama Model Library</li>
+<li>Apache 2.0 License</li>
+<li>Commercial Use Terms</li>
+<li>Publisher Provenance</li>
+<li>Public Benchmark Score</li>
+<li>Publisher Claims</li>
+<li>Exclusion Rationale</li>
+</ol>
+<h2 id="candidate-models-under-evaluation">Candidate Models Under Evaluation<a class="headerlink" href="#candidate-models-under-evaluation" title="Permanent link">&para;</a></h2>
+<ol>
+<li>qwen3.8:27b</li>
+<li>gemma4:31b</li>
+<li>muse-glimmer:30b</li>
+<li>qwen3.6:35b</li>
+<li>gemma4:26b</li>
+<li>nemotron-3.5-lightning:30b</li>
+<li>mistral-medium-3.5:128b</li>
+<li>gpt-oss:120b</li>
+<li>devstral-small-2:24b</li>
+<li>granite4.2:30b</li>
+<li>Nemotron Family</li>
+<li>gpt-oss Family</li>
+<li>Granite Family</li>
+</ol>
+<h2 id="inference-servers">Inference Servers<a class="headerlink" href="#inference-servers" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Inference Server</li>
+<li>Ollama</li>
+<li>llama.cpp</li>
+<li>vLLM</li>
+<li>Runtime Installation</li>
+<li>Runtime Configuration</li>
+<li>GPU Offload</li>
+<li>Model Loading</li>
+<li>Local API Endpoint</li>
+<li>OpenAI-Compatible API</li>
+<li>Chat Completions Endpoint</li>
+<li>localhost Binding</li>
+<li>curl Request</li>
+<li>Python Client</li>
+<li>First-Prompt Smoke Test</li>
+<li>Server Logs</li>
+<li>Background Service</li>
+<li>Model Keep-Alive</li>
+<li>User-Space Installation</li>
+<li>Release Archive</li>
+<li>tmux Session</li>
+<li>Anthropic-Compatible API</li>
+<li>Batched Serving</li>
+<li>Prompt Re-Reading</li>
+</ol>
+<h2 id="ai-agent-harnesses-and-skills">AI Agent Harnesses and Skills<a class="headerlink" href="#ai-agent-harnesses-and-skills" title="Permanent link">&para;</a></h2>
+<ol>
+<li>AI Agent Harness</li>
+<li>Agent Loop</li>
+<li>Tool Definition</li>
+<li>File Editing Tool</li>
+<li>Shell Execution Tool</li>
+<li>Permission Model</li>
+<li>Context Management</li>
+<li>Context Compaction</li>
+<li>System Prompt</li>
+<li>Subagent</li>
+<li>Agent Skill</li>
+<li>SKILL.md Format</li>
+<li>Skill Loading</li>
+<li>Skill Installation</li>
+<li>Claude Code</li>
+<li>OpenCode</li>
+<li>Codex CLI</li>
+<li>Goose</li>
+<li>Local Endpoint Connection</li>
+<li>Harness Configuration</li>
+<li>Skill Execution Verification</li>
+<li>Harness Compatibility Test</li>
+<li>Harness Prompt Overhead</li>
+<li>Skill Defect Correction</li>
+</ol>
+<h2 id="testing-architecture-and-containment">Testing Architecture and Containment<a class="headerlink" href="#testing-architecture-and-containment" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Orchestrator</li>
+<li>Role Separation</li>
+<li>Harness on Laptop</li>
+<li>Harness on DGX</li>
+<li>Docker</li>
+<li>Docker Group Membership</li>
+<li>NVIDIA Container Toolkit</li>
+<li>Harness Container</li>
+<li>Container Sandbox</li>
+<li>Non-Root Container User</li>
+<li>Read-Only Skill Mount</li>
+<li>Placeholder Credential</li>
+<li>Telemetry Disabled</li>
+<li>Host Network Mode</li>
+<li>Network Sandbox Gap</li>
+<li>Network Boundary</li>
+<li>Packet Capture Verification</li>
+<li>Memory Watchdog</li>
+<li>System Freeze</li>
+</ol>
+<h2 id="optimizing-slm-performance">Optimizing SLM Performance<a class="headerlink" href="#optimizing-slm-performance" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Performance Optimization</li>
+<li>Quantization Tradeoffs</li>
+<li>Context Length Setting</li>
+<li>Batch Size</li>
+<li>Concurrency</li>
+<li>Prompt Caching</li>
+<li>Sampling Parameters</li>
+<li>Temperature Setting</li>
+<li>Top-p and Top-k</li>
+<li>Tokens per Second</li>
+<li>Time to First Token</li>
+<li>Prompt Processing Speed</li>
+<li>Throughput</li>
+<li>Latency</li>
+<li>Model Load Time</li>
+<li>GPU Utilization</li>
+<li>GPU Monitoring</li>
+<li>Thermal Throttling</li>
+<li>Memory Pressure</li>
+<li>Out-of-Memory Error</li>
+<li>Turn Overhead</li>
+<li>Agent Turn</li>
+<li>Peak Context Size</li>
+<li>Context Truncation</li>
+</ol>
+<h2 id="objective-evaluation-methodology">Objective Evaluation Methodology<a class="headerlink" href="#objective-evaluation-methodology" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Evaluation Question</li>
+<li>Independent Variable</li>
+<li>Controlled Variables</li>
+<li>Uncontrolled Variable</li>
+<li>Fixed Inputs</li>
+<li>Repeated Runs</li>
+<li>Run Variance</li>
+<li>Sample Size</li>
+<li>Metric Selection</li>
+<li>Scoring Rubric</li>
+<li>Logging</li>
+<li>Bias in Evaluation</li>
+<li>LLM-as-Judge</li>
+<li>Blind Human Review</li>
+<li>Reproducible Experiment</li>
+<li>Baseline Comparison</li>
+<li>Fair Comparison</li>
+<li>Experimental Design Critique</li>
+<li>Limitations Statement</li>
+<li>Explicit Assumptions</li>
+<li>Measured Versus Assumed Values</li>
+<li>Provisional Results</li>
+<li>Design Decision Record</li>
+<li>Decision Attribution</li>
+<li>Negative Result Reporting</li>
+<li>Two-Layer Testing</li>
+<li>Model-Only Test</li>
+<li>Harness Smoke Test</li>
+<li>Control Run</li>
+<li>Scoring Check Calibration</li>
+<li>Structural Checks</li>
+<li>Automated Quality Score</li>
+<li>Human Quality Score</li>
+<li>Retest After Fix</li>
+<li>Evaluation Status Tracking</li>
+<li>Run Time Limit</li>
+<li>Long-Context Recall Test</li>
+<li>Schema-Constrained JSON</li>
+<li>Reading Level Measure</li>
+<li>Faithfulness to Description</li>
+<li>Dependency Reasoning</li>
+<li>Markdown Validity</li>
+<li>MicroSim Code Correctness</li>
+<li>Mathematical Notation</li>
+</ol>
+<h2 id="running-the-textbook-benchmark-and-reporting">Running the Textbook Benchmark and Reporting<a class="headerlink" href="#running-the-textbook-benchmark-and-reporting" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Textbook Benchmark</li>
+<li>Benchmark Runner</li>
+<li>Pipeline Stage</li>
+<li>Stage Sensitivity</li>
+<li>Per-Stage Metrics</li>
+<li>Skill Completion Rate</li>
+<li>Tool-Call Success Rate</li>
+<li>Build Success</li>
+<li>Structural Validity</li>
+<li>Wall-Clock Time</li>
+<li>Time Breakdown</li>
+<li>Energy per Textbook</li>
+<li>Failure Diagnosis</li>
+<li>Context Overflow</li>
+<li>Malformed Tool Call</li>
+<li>Harness Misconfiguration</li>
+<li>Baseline Textbook</li>
+<li>Textbook Preview</li>
+<li>DGX Sufficiency Judgment</li>
+<li>Evaluation Report</li>
+<li>Report Structure</li>
+<li>Recommendation</li>
+<li>Local Cloud or Hybrid Decision</li>
+<li>Capstone Evaluation</li>
+<li>Algebra I Benchmark</li>
+<li>Benchmark Workspace Template</li>
+<li>Stage Prompt</li>
+<li>Standing Approval Answer</li>
+<li>Stage Chaining</li>
+<li>Per-Chapter Generation Run</li>
+<li>Chapter Completion Criterion</li>
+<li>Chapter Dependency Check</li>
+<li>Reference Book for Scale</li>
+<li>Run Event Stream</li>
+<li>Run Report</li>
+<li>Tool Call Count</li>
+<li>Failed Tool Calls</li>
+<li>Duplicate Concept Labels</li>
+<li>Orphaned Concepts</li>
+<li>Dependency Cycle Check</li>
+<li>CSV-JSON Agreement</li>
+<li>Label Length Limit</li>
+<li>Required Output Files</li>
+<li>Navigation Entries</li>
+<li>Strict Site Build</li>
+<li>Run Output Retrieval</li>
+<li>Results Publishing</li>
+<li>Text-Emitted Tool Call</li>
+<li>Premature Turn Termination</li>
+<li>Task Loss</li>
+</ol>
+<h2 id="sanitizing-evaluation-artifacts-before-publication">Sanitizing Evaluation Artifacts Before Publication<a class="headerlink" href="#sanitizing-evaluation-artifacts-before-publication" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Sanitization</li>
+<li>Device-Identifying Details</li>
+<li>IP Address</li>
+<li>Hostname</li>
+<li>Tailnet Name</li>
+<li>Usernames and Passwords</li>
+<li>Keys and Tokens</li>
+<li>Hardware Identifiers</li>
+<li>Access Configuration</li>
+<li>Redaction</li>
+<li>Placeholder Conventions</li>
+<li>Documentation Address Ranges</li>
+<li>Secret Scanning</li>
+<li>gitleaks</li>
+<li>Pre-Commit Scan</li>
+<li>Git History Persistence</li>
+<li>Screenshot Redaction</li>
+<li>Publication Safety Review</li>
+<li>Sanitized Sample Output</li>
+<li>Raw Output Isolation</li>
+<li>Hosts via Environment Variable</li>
+<li>Public Repository Risk</li>
+<li>Gitignore Rules</li>
+<li>Identifiers in System Files</li>
+<li>Home Directory Paths</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../course-description-assessment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Course Description Assessment">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Course Description Assessment
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../concept-taxonomy/" class="md-footer__link md-footer__link--next" aria-label="Next: Concept Taxonomy">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Concept Taxonomy
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

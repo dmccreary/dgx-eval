@@ -1,0 +1,2527 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Key concepts for linear equations, building on foundational knowledge and preparing for more advanced topics.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/02-linear-equations/">
+      
+      
+        <link rel="prev" href="../01-foundations/">
+      
+      
+        <link rel="next" href="../03-functions-and-notation/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Linear Equations - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linear-equations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linear Equations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6" id="__nav_10_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6">
+            <span class="md-nav__icon md-icon"></span>
+            nemotron-3.5-lightning:30b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6_4" id="__nav_10_6_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2. Linear Equations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2. Linear Equations
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elaboration-budget-cis-driven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elaboration Budget (CIS-Driven)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-functions-and-notation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Functions and Notation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-graphing-and-coordinates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Graphing and Coordinates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-polynomials-and-factoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Polynomials and Factoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-exponents-and-radicals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Exponents and Radicals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-systems-of-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Systems of Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-statistics-and-data-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Statistics and Data Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-sequences-and-series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Sequences and Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-mathematical-modeling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Mathematical Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-advanced-topics-and-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Advanced Topics and Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elaboration-budget-cis-driven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elaboration Budget (CIS-Driven)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/nemotron-3.5-lightning-30b/chapters/02-linear-equations/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="linear-equations">Linear Equations<a class="headerlink" href="#linear-equations" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the key concepts for linear equations. Students will develop fluency in the core algebraic skills and topics presented in this chapter, building on foundational knowledge and preparing for more advanced topics.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Solve Linear Inequality</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Graph Linear Inequality</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Absolute Value Equation</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Absolute Value Inequality</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Function Concept</td>
+<td>189</td>
+</tr>
+<tr>
+<td>Function Notation</td>
+<td>188</td>
+</tr>
+<tr>
+<td>Domain of Function</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Range of Function</td>
+<td>36</td>
+</tr>
+<tr>
+<td>Interpret Function Graph</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Interpret Function Table</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Piecewise Function</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Step Function</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Slope Rate of Change</td>
+<td>381</td>
+</tr>
+<tr>
+<td>Slope-Intercept Form</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Point-Slope Form</td>
+<td>122</td>
+</tr>
+<tr>
+<td>Standard Form Equation</td>
+<td>125</td>
+</tr>
+<tr>
+<td>Graph Linear Equation</td>
+<td>118</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>[Prerequisites from prior chapters or course description]</p>
+<h2 id="elaboration-budget-cis-driven">Elaboration Budget (CIS-Driven)<a class="headerlink" href="#elaboration-budget-cis-driven" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>CIS</th>
+<th>E(c)</th>
+<th>Tier</th>
+<th>Target Words</th>
+<th>Required Elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slope Rate of Change</td>
+<td>381</td>
+<td>1.0000</td>
+<td>A (full treatment)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Function Concept</td>
+<td>189</td>
+<td>0.8825</td>
+<td>A (full treatment)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Function Notation</td>
+<td>188</td>
+<td>0.8816</td>
+<td>A (full treatment)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Standard Form Equation</td>
+<td>125</td>
+<td>0.8134</td>
+<td>A (full treatment)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Point-Slope Form</td>
+<td>122</td>
+<td>0.8094</td>
+<td>A (full treatment)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Graph Linear Equation</td>
+<td>118</td>
+<td>0.8038</td>
+<td>A (full treatment)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Domain of Function</td>
+<td>50</td>
+<td>0.6613</td>
+<td>A (full treatment)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Range of Function</td>
+<td>36</td>
+<td>0.6073</td>
+<td>A (full treatment)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Interpret Function Graph</td>
+<td>19</td>
+<td>0.5039</td>
+<td>A (full treatment)</td>
+<td>500-750</td>
+<td>worked example + diagram</td>
+</tr>
+<tr>
+<td>Step Function</td>
+<td>7</td>
+<td>0.3498</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Solve Linear Inequality</td>
+<td>5</td>
+<td>0.3014</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Absolute Value Equation</td>
+<td>4</td>
+<td>0.2707</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Piecewise Function</td>
+<td>4</td>
+<td>0.2707</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Slope-Intercept Form</td>
+<td>4</td>
+<td>0.2707</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Interpret Function Table</td>
+<td>3</td>
+<td>0.2332</td>
+<td>B (standard)</td>
+<td>250-400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>Absolute Value Inequality</td>
+<td>2</td>
+<td>0.1848</td>
+<td>C (brief)</td>
+<td>120-200</td>
+<td>clear definition</td>
+</tr>
+<tr>
+<td>Graph Linear Inequality</td>
+<td>1</td>
+<td>0.1166</td>
+<td>C (brief)</td>
+<td>120-200</td>
+<td>clear definition</td>
+</tr>
+<tr>
+<td>---</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="linear-equations-in-one-variable">Linear Equations in One Variable<a class="headerlink" href="#linear-equations-in-one-variable" title="Permanent link">&para;</a></h1>
+<p>In this chapter, you will learn how to solve linear equations and inequalities in one variable, graph relationships, and understand functions—the machinery that describes how one quantity depends on another. Algebra I is your bridge from arithmetic, where you compute with specific numbers, to algebra, where you work with variables that can represent any number in a given set. By the end of this chapter, you will be able to model real-world situations such as calculating phone bills, determining break-even points for business ventures, and analyzing motion at constant speed.</p>
+<h2 id="from-arithmetic-to-algebra">From Arithmetic to Algebra<a class="headerlink" href="#from-arithmetic-to-algebra" title="Permanent link">&para;</a></h2>
+<p>Before diving into equations, recall how arithmetic works: you are given two numbers and an operation, and you produce a result. In algebra, some of the numbers are replaced by letters—variables—that stand for unknown values. The goal is the same: find the value that makes the statement true. The difference is that now we must reason about what the value must be, rather than just computing it directly.</p>
+<h2 id="1-understanding-functions">1. Understanding Functions<a class="headerlink" href="#1-understanding-functions" title="Permanent link">&para;</a></h2>
+<p><strong>Function Concept</strong> (Tier A: 500–750 words, worked example + diagram)</p>
+<p>A function is a rule that assigns to each input exactly one output. We write this as $f(x)$, read as "f of x," where $x$ is the input and $f(x)$ is the output. The set of all possible inputs is the <strong>domain</strong>, and the set of all possible outputs is the <strong>range</strong>.</p>
+<blockquote>
+<p><strong>Key terms defined before the diagram:</strong><br />
+- <strong>Input:</strong> A value you put into a function.<br />
+- <strong>Output:</strong> The result you get after applying the function rule.<br />
+- <strong>Domain:</strong> The set of all acceptable input values.<br />
+- <strong>Range:</strong> The set of all resulting output values.</p>
+</blockquote>
+<p>Before we examine the diagram below, let's define two key terms. The <strong>independent variable</strong> is the input—you can choose any value from the domain. The <strong>dependent variable</strong> is the output—its value depends on which input you select. For example, in the function $f(x) = 2x + 3$, $x$ is the independent variable and $f(x)$ is the dependent variable.</p>
+<details>
+<summary>Function Concept</summary>
+<p>Type: microsim
+Library: p5.js
+Bloom Level: Understand
+Bloom Verb: Explain
+Learning Objective: The learner will explain the relationship between the domain, the function rule, and the range given a specific function.</p>
+<p>Prerequisites: Input, Output, Domain, Range
+Evidence of Mastery: The learner can identify the domain and range of a function from its graph or equation, and explain how the function rule maps each domain element to exactly one range element.
+Misconceptions: The mistaken belief that a graph passing the vertical line test is sufficient to confirm a function, without checking that each input maps to exactly one output.
+Instructional Rationale: Working with interactive function diagrams helps learners build an intuition for how changing inputs produces predictable outputs, reinforcing the "exactly one output" requirement through direct manipulation.
+Content: The learner sees a coordinate plane with a draggable point representing the input $x$. As the point moves along the $x$-axis, the corresponding output $f(x)$ moves along the $y$-axis. The learner can toggle between three function rules: $f(x) = 2x + 1$, $f(x) = x^2$, and $f(x) = |x|$. For each rule, the learner must determine the domain (e.g., "all real numbers" or "$x \geq 0$") and the range (e.g., "all real numbers greater than or equal to 1").
+Provenance: Synthetic with seed 2026-AlgebraI-001
+Rules: The domain is set to all real numbers unless the function contains a square root or denominator that restricts values. The range depends on the function rule: for $f(x) = 2x + 1$, the range is all real numbers; for $f(x) = x^2$, the range is $y \geq 0$; for $f(x) = |x|$, the range is $y \geq 0$.
+Learner Activity: [1] Drag the input point along the $x$-axis and observe how the output point moves. [2] For each of the three function rules, type the domain and range in the provided text fields. [3] Click "Check" to see if your answers are correct. [4] Click "Explain" to see a written explanation of the domain and range.
+Feedback: [Correct] "Your domain and range are correct. The function rule maps each input to exactly one output." [Incorrect] "Check: for $f(x) = x^2$, the domain is all real numbers, but the range is $y \geq 0$. Remember that squaring any real number results in a non-negative output." [Attempt 3 incorrect] "Review the definitions of domain and range, and try again."
+Starting State: The input point is at $x = 0$, and the output is at $f(0) = 1$ for the first function rule.
+Chapter Anchors: The learner will be able to state the domain and range of a function given its equation or graph. The function $f(x) = 2x + 1$ has domain "all real numbers" and range "all real numbers."</p>
+</details>
+<details>
+<summary>Function Notation</summary>
+<p>Type: microsim
+Library: p5.js
+Bloom Level: Understand
+Bloom Verb: Explain
+Learning Objective: The learner will interpret function notation $f(x)$ and evaluate functions for specific input values.</p>
+<p>Prerequisites: Function Concept
+Evidence of Mastery: The learner can substitute a given value for $x$ and compute $f(x)$, and can write the output using correct function notation.
+Misconceptions: The mistaken belief that $f(x)$ means "f times x," rather than "the value of f at x."
+Instructional Rationale: Practicing evaluation of function notation builds fluency in reading and writing function-based relationships, which is essential for later work with graphs and equations.
+Content: The learner sees a function machine display with a function rule $f(x) = 3x - 2$ and an input field labeled "Enter x." Below, three pairs of (input, output) are shown with the outputs blanked out. The learner must enter the missing output values.
+Provenance: Synthetic with seed 2026-AlgebraI-002
+Rules: The input $x$ is an integer from the set ${-2, -1, 0, 1, 2}$. The output is computed as $3x - 2$. Default input values are used for the first pair.
+Learner Activity: [1] Look at the function rule $f(x) = 3x - 2$. [2] Compute $f(-2)$, $f(0)$, and $f(2)$ by substituting each value for $x$. [3] Enter your answers in the three output fields. [4] Click "Check" to verify.
+Feedback: [Correct] "Great work! $f(-2) = -8$, $f(0) = -2$, and $f(2) = 4$." [Incorrect] "For $f(x) = 3x - 2$: substitute $-2$ for $x$ to get $3(-2) - 2 = -8$. Similarly, $f(0) = -2$ and $f(2) = 4$. Try again."
+Starting State: The function rule $f(x) = 3x - 2$ is displayed, and the first input pair is $(-2, \text{blank})$.
+Chapter Anchors: The learner will be able to evaluate a function notation expression for a given domain value. For $f(x) = 3x - 2$, $f(2) = 4$.</p>
+</details>
+<details>
+<summary>Domain of Function</summary>
+<p>Type: microsim
+Library: p5.js
+Bloom Level: Apply
+Bloom Verb: Apply
+Learning Objective: The learner will determine the domain of a function from its equation, identifying values that make the expression undefined.</p>
+<p>Prerequisites: Function Concept, Function Notation
+Evidence of Mastery: The learner can look at a function equation and state the domain using correct interval or set-builder notation, excluding values that cause division by zero or take square roots of negative numbers.
+Misconceptions: The belief that the domain is always "all real numbers" regardless of the function expression.
+Instructional Rationale: Determining domains is a foundational skill for working with rational and radical functions; errors here propagate into incorrect graphing and equation solving.
+Content: The learner sees four function equations one at a time: $f(x) = \frac{1}{x}$, $f(x) = \sqrt{x}$, $f(x) = \frac{1}{x-2}$, and $f(x) = \sqrt{x-3}$. For each, the learner must type the domain in a text field. Correct answers use interval notation $(a, b)$ or set-builder notation ${x \mid \text{condition}}$.
+Provenance: Synthetic with seed 2026-AlgebraI-003
+Rules: Denominator zero is excluded; square root of negative number is excluded. If both restrictions apply, both must be listed.
+Learner Activity: [1] Look at each function equation. [2] Identify any restricted $x$-values. [3] Type the domain in the provided text field using interval or set-builder notation. [4] Click "Check" to verify all four answers.
+Feedback: [Correct] "All domains are correct. You correctly excluded values that make the expression undefined." [Incorrect] "For $f(x) = \frac{1}{x-2}$, the value $x = 2$ makes the denominator zero, so it must be excluded from the domain. The domain is $x \neq 2$ or $(-\infty, 2) \cup (2, \infty)$. Try again." [Attempt 3 incorrect] "Review: identify values of $x$ that cause division by zero or take square roots of negative numbers. Then express the domain using interval or set-builder notation."
+Starting State: The first function $f(x) = \frac{1}{x}$ is displayed.
+Chapter Anchors: The learner will be able to determine the domain of a function from its equation. For $f(x) = \frac{1}{x-2}$, the domain is $x \neq 2$.</p>
+</details>
+<details>
+<summary>Range of Function</summary>
+<p>Type: microsim
+Library: p5.js
+Bloom Level: Apply
+Bloom Verb: Apply
+Learning Objective: The learner will determine the range of a function from its equation, using graphical and algebraic reasoning.</p>
+<p>Prerequisites: Function Concept, Function Notation, Domain of Function
+Evidence of Mastery: The learner can look at a function equation and state the range using correct interval or set-builder notation, considering the function's shape and any restrictions on output values.
+Misconceptions: The belief that the range is always "all real numbers" regardless of the function expression.
+Instructional Rationale: Just as with domains, determining ranges requires analyzing the function's expression and graph; this skill is essential for later work with quadratic and rational functions.
+Content: The learner sees four function equations one at a time: $f(x) = x^2$, $f(x) = -x^2 + 3$, $f(x) = |x|$, and $f(x) = \frac{1}{x}$. For each, the learner must type the range in a text field. Correct answers use interval or set-builder notation.
+Provenance: Synthetic with seed 2026-AlgebraI-004
+Rules: For $f(x) = x^2$, the range is $y \geq 0$. For $f(x) = -x^2 + 3$, the range is $y \leq 3$. For $f(x) = |x|$, the range is $y \geq 0$. For $f(x) = \frac{1}{x}$, the range is $y \neq 0$.
+Learner Activity: [1] Look at each function equation. [2] Determine the possible output values (y-values). [3] Type the range in the provided text field using interval or set-builder notation. [4] Click "Check" to verify all four answers.
+Feedback: [Correct] "All ranges are correct. You analyzed each function's shape to determine the output values." [Incorrect] "For $f(x) = \frac{1}{x}$, the output can be any real number except 0, because the numerator is 1 and the denominator can be any non-zero real number. Try again." [Attempt 3 incorrect] "Review: consider the function's shape and any asymptotes. For reciprocals, the output never equals 0. Try again."
+Starting State: The first function $f(x) = x^2$ is displayed.
+Chapter Anchors: The learner will be able to determine the range of a function from its equation. For $f(x) = \frac{1}{x}$, the range is $y \neq 0$.</p>
+</details>
+<h2 id="2-linear-equations">2. Linear Equations<a class="headerlink" href="#2-linear-equations" title="Permanent link">&para;</a></h2>
+<p><strong>Slope Rate of Change</strong> (Tier A: 500–750 words, worked example + diagram)</p>
+<p>The concept of slope connects directly to what you already know about rate of change. In everyday life, we encounter rates such as 60 miles per hour, 3.5 grams per deciliter, or 2 liters per minute. In each case, a quantity changes at a constant rate with respect to another quantity. In algebra, when two quantities change at a constant rate with respect to each other, we say the relationship has a constant rate of change, or <strong>slope</strong>.</p>
+<p>Suppose a car travels at a constant speed of 60 miles per hour. After 1 hour, it has traveled 60 miles; after 2 hours, 120 miles; after 3 hours, 180 miles. The ratio of the change in distance to the change in time is always 60 miles per 1 hour. This constant ratio is the slope of the line describing the car's distance over time.</p>
+<p><formula>
+$m = \frac{y_2 - y_1}{x_2 - x_1}$
+</formula></p>
+<p>where $(x_1, y_1)$ and $(x_2, y_2)$ are two distinct points on the line, and $m$ is the slope. The numerator $y_2 - y_1$ is the <strong>vertical change</strong> (rise), and the denominator $x_2 - x_1$ is the <strong>horizontal change</strong> (run). The slope tells us both the direction and the steepness of the line.</p>
+<blockquote>
+<p>A line with a positive slope rises from left to right. A line with a negative slope falls from left to right. A horizontal line has slope 0, and a vertical line has undefined slope.</p>
+</blockquote>
+<details>
+<summary>Slope Rate of Change</summary>
+<p>Type: diagram
+Library: vis-network
+Bloom Level: Understand
+Bloom Verb: Explain
+Learning Objective: The learner will explain the concept of slope as rate of change, using the rise-over-run formula and interpreting the sign and magnitude of the slope.</p>
+<p>Prerequisites: From Arithmetic to Algebra
+Evidence of Mastery: The learner can compute the slope of a line given two points, and describe what the sign (positive, negative, zero, undefined) and magnitude of the slope indicate about the line's direction and steepness.
+Misconceptions: The belief that a larger absolute value of slope always means a "steeper" line regardless of context, or that slope can be computed for vertical lines.
+Instructional Rationale: Visualizing slope as rise over run on a coordinate plane helps learners connect the formula to a geometric interpretation, reinforcing the meaning of positive, negative, zero, and undefined slopes.
+Content: A coordinate plane displays three lines: Line A passes through $(-2, 1)$ and $(2, 5)$ with slope $m = \frac{5-1}{2-(-2)} = \frac{4}{4} = 1$ (positive, rising). Line B passes through $(-3, 4)$ and $(1, -2)$ with slope $m = \frac{-2-4}{1-(-3)} = \frac{-6}{4} = -\frac{3}{2}$ (negative, steeper than 45°). Line C is horizontal through $y = 3$, with slope $m = 0$. The learner can drag points to change the slope and see the line update in real time.
+Provenance: Synthetic with seed 2026-AlgebraI-010
+Rules: The slope formula $m = \frac{y_2 - y_1}{x_2 - x_1}$ is applied correctly. The sign of the slope matches the line's direction (positive = rising, negative = falling). A vertical line is noted as having undefined slope because division by zero is undefined.
+Learner Activity: [1] Observe the three lines and their slopes on the coordinate plane. [2] Drag the endpoints of each line to create new points and observe how the slope changes. [3] For each line, state whether the slope is positive, negative, zero, or undefined, and describe what it means about the line's direction.
+Feedback: [Correct] "Excellent! You correctly identified the slope signs and meanings." [Incorrect] "Review: slope $m = \frac{\text{rise}}{\text{run}} = \frac{y_2 - y_1}{x_2 - x_1}$. A positive slope means the line rises from left to right; a negative slope means it falls; a slope of 0 means the line is horizontal; an undefined slope means the line is vertical."
+Starting State: Line A through $(-2, 1)$ and $(2, 5)$ is displayed with $m = 1$.
+Chapter Anchors: The learner will be able to compute the slope of a line given two points and interpret the sign and magnitude of the slope.</p>
+</details>
+<p><strong>Slope-Intercept Form</strong> (Tier B: 250–400 words, worked example)</p>
+<p>The most useful form for graphing a linear equation is the <strong>slope-intercept form</strong>:</p>
+<p><formula>
+$y = mx + b$
+</formula></p>
+<p>In this form, $m$ is the slope and $b$ is the $y$-intercept—the point where the line crosses the $y$-axis $(0, b)$. This form makes it easy to graph a line: first plot the $y$-intercept, then use the slope to find another point.</p>
+<p>Let's work through an example.</p>
+<blockquote>
+<p><strong>Example:</strong> Graph the equation $y = 2x + 3$.</p>
+</blockquote>
+<p><strong>Solution:</strong> Here, $m = 2$ and $b = 3$. First, plot the $y$-intercept $(0, 3)$. Then, from $(0, 3)$, move up 2 units (the rise) and right 1 unit (the run) to reach $(1, 5)$. Draw a line through these two points.</p>
+<details>
+<summary>Slope-Intercept Form</summary>
+<p>Type: diagram
+Library: vis-network
+Bloom Level: Understand
+Bloom Verb: Explain
+Learning Objective: The learner will identify the slope and $y$-intercept from a linear equation in slope-intercept form, and graph the line using these values.</p>
+<p>Prerequisites: Slope Rate of Change
+Evidence of Mastery: The learner can given a linear equation in the form $y = mx + b$, state the values of $m$ and $b$, and graph the line by plotting the $y$-intercept and using the slope to find a second point.
+Misconceptions: The belief that $b$ is the $x$-intercept, or that the slope $m$ is the line's $y$-value at $x = 1$.
+Instructional Rationale: Recognizing slope-intercept form enables rapid graphing without needing to compute two points via the slope formula, building confidence and fluency in line graphing.
+Content: The learner sees a linear equation $y = 2x + 3$ and three input fields: one for $m$ (slope), one for $b$ (y-intercept), and one for the next point's $x$-coordinate. The learner must correctly fill in $m = 2$, $b = 3$, and then compute the next point using the slope.
+Provenance: Adapted from common Algebra I curriculum materials
+Rules: The slope $m$ is the coefficient of $x$. The $y$-intercept $b$ is the constant term. The next point is found by moving $m$ units vertically and 1 unit horizontally from the $y$-intercept.
+Learner Activity: [1] Look at the equation $y = 2x + 3$. [2] Enter the values of $m$ and $b$ in the provided fields. [3] Click "Find next point" to see how the slope moves from the y-intercept. [4] Plot the line through the y-intercept and the new point.
+Feedback: [Correct] "Perfect! You identified $m = 2$ and $b = 3$, and correctly used the slope to find the next point." [Incorrect] "Remember: in $y = mx + b$, $m$ is the slope and $b$ is the y-intercept. For $y = 2x + 3$, $m = 2$ and $b = 3$. Try again."
+Starting State: The equation $y = 2x + 3$ is displayed with empty input fields.
+Chapter Anchors: The learner will be able to identify the slope and y-intercept from a linear equation in slope-intercept form, and graph the line using these values.</p>
+</details>
+<p><strong>Point-Slope Form</strong> (Tier A: 500–750 words, worked example + diagram)</p>
+<p>Sometimes you know a line's slope and one point on the line, but not the $y$-intercept. In that case, the <strong>point-slope form</strong> is most convenient:</p>
+<p><formula>
+$y - y_1 = m(x - x_1)$
+</formula></p>
+<p>where $m$ is the slope and $(x_1, y_1)$ is a point on the line. This form lets you write the equation of a line directly from its slope and a point.</p>
+<blockquote>
+<p><strong>Example:</strong> Write the equation of the line with slope $3$ that passes through the point $(2, 5)$.</p>
+</blockquote>
+<p><strong>Solution:</strong> Substitute $m = 3$, $x_1 = 2$, and $y_1 = 5$ into the point-slope form:
+$y - 5 = 3(x - 2)$
+This can be simplified to slope-intercept form: $y = 3x - 1$.</p>
+<details>
+<summary>Point-Slope Form</summary>
+<p>Type: diagram
+Library: vis-network
+Bloom Level: Apply
+Bloom Verb: Apply
+Learning Objective: The learner will write the equation of a line in point-slope form given the slope and a point on the line, and convert between point-slope and slope-intercept forms.</p>
+<p>Prerequisites: Slope Rate of Change, Slope-Intercept Form
+Evidence of Mastery: The learner can given the slope $m$ and a point $(x_1, y_1)$, write the equation $y - y_1 = m(x - x_1)$, and rearrange it into the form $y = mx + b$.
+Misconceptions: The belief that the point-slope form can only be used when the $y$-intercept is unknown, or that the point $(x_1, y_1)$ must be the $y$-intercept.
+Instructional Rationale: Point-slope form is the most flexible way to write a line's equation when you have a point and a slope, and mastering the conversion to slope-intercept form builds algebraic flexibility.
+Content: The learner sees a dynamic coordinate plane with a draggable point $P = (x_1, y_1)$ and a slope slider $m$. As the point and slope change, the line and its equation in point-slope form update automatically. The learner must type the equivalent slope-intercept form $y = mx + b$.
+Provenance: Adapted from common Algebra I curriculum materials
+Rules: The slope $m$ and point $(x_1, y_1)$ must match the displayed values. The conversion to slope-intercept form is done by expanding and simplifying $y - y_1 = m(x - x_1)$ to $y = mx + (y_1 - mx_1)$, where $b = y_1 - mx_1$.
+Learner Activity: [1] Drag point $P$ to $(2, 5)$ and set the slope slider to $m = 3$. [2] Type the equivalent slope-intercept form $y = 3x - 1$. [3] Click "Check" to verify.
+Feedback: [Correct] "Excellent! You correctly converted from point-slope to slope-intercept form." [Incorrect] "Review: starting from $y - y_1 = m(x - x_1)$, expand to $y - y_1 = mx - mx_1$, then add $y_1$ to both sides to get $y = mx + (y_1 - mx_1)$. For $y - 5 = 3(x - 2)$, this gives $y = 3x + (5 - 3\cdot2) = 3x - 1$. Try again."
+Starting State: Point $P$ is at $(2, 5)$ and the slope slider is set to $m = 3$.
+Chapter Anchors: The learner will be able to write the equation of a line in point-slope form given the slope and a point, and convert to slope-intercept form.</p>
+</details>
+<p><strong>Standard Form Equation</strong> (Tier A: 500–750 words, worked example + diagram)</p>
+<p>Another common way to write a linear equation is the <strong>standard form</strong>:</p>
+<p><formula>
+$Ax + By = C$
+</formula></p>
+<p>where $A$, $B$, and $C$ are integers, and $A \geq 0$. This form is useful for quickly finding intercepts: set $x = 0$ to find the $y$-intercept, and set $y = 0$ to find the $x$-intercept.</p>
+<blockquote>
+<p><strong>Example:</strong> Convert $y = 2x + 3$ to standard form.</p>
+</blockquote>
+<p><strong>Solution:</strong> Subtract $2x$ from both sides: $-2x + y = 3$. Multiply by $-1$ to make the $x$-coefficient positive: $2x - y = -3$. This is the standard form, where $A = 2$, $B = -1$, and $C = -3$.</p>
+<details>
+<summary>Standard Form Equation</summary>
+<p>Type: diagram
+Library: vis-network
+Bloom Level: Apply
+Bloom Verb: Apply
+Learning Objective: The learner will convert a linear equation from slope-intercept form to standard form $Ax + By = C$, and find the $x$- and $y$-intercepts from standard form.</p>
+<p>Prerequisites: Slope-Intercept Form, Point-Slope Form
+Evidence of Mastery: The learner can given a linear equation in slope-intercept or point-slope form, rearrange it into standard form $Ax + By = C$ with integer coefficients and $A \geq 0$, and find both intercepts from the standard form.
+Misconceptions: The belief that standard form requires $A$, $B$, and $C$ to be positive, or that the $x$-intercept is found by setting $y = C$ rather than $y = 0$.
+Instructional Rationale: Standard form is essential for systems of equations and for applications where intercepts have direct real-world meaning; fluency in converting between forms builds algebraic versatility.
+Content: The learner sees a linear equation in slope-intercept form and three input fields: one for $A$, one for $B$, and one for $C$. The learner must correctly enter the standard form coefficients and then click buttons to find the $x$- and $y$-intercepts by setting $y = 0$ and $x = 0$, respectively.
+Provenance: Adapted from common Algebra I curriculum materials
+Rules: $A$, $B$, $C$ are integers. $A \geq 0$. To find the $x$-intercept, set $y = 0$ and solve $Ax = C$. To find the $y$-intercept, set $x = 0$ and solve $By = C$.
+Learner Activity: [1] Look at the equation $y = 2x + 3$. [2] Convert to standard form and enter the values of $A$, $B$, and $C$. [3] Click "Find x-intercept" and "Find y-intercept" to see the results. [4] Verify that the intercepts match the graph.
+Feedback: [Correct] "Great work! You converted $y = 2x + 3$ to $2x - y = -3$ and found the intercepts correctly." [Incorrect] "Remember: to convert $y = 2x + 3$ to standard form, subtract $2x$ from both sides to get $-2x + y = 3$, then multiply by $-1$ to get $2x - y = -3$. To find the $x$-intercept, set $y = 0$ and solve $2x = -3$. To find the $y$-intercept, set $x = 0$ and solve $-y = 3$. Try again."
+Starting State: The equation $y = 2x + 3$ is displayed with empty input fields.
+Chapter Anchors: The learner will be able to convert a linear equation to standard form and find both intercepts from the standard form.</p>
+</details>
+<p><strong>Graph Linear Equation</strong> (Tier A: 500–750 words, worked example + diagram)</p>
+<p>Now let's put together all the forms you've learned to graph a linear equation from scratch.</p>
+<blockquote>
+<p><strong>Example:</strong> Graph the equation $3x - 2y = 6$ by finding the intercepts.</p>
+</blockquote>
+<p><strong>Solution:</strong> In standard form, to find the $x$-intercept, set $y = 0$ and solve for $x$: $3x - 2(0) = 6$, so $x = 2$. The $x$-intercept is $(2, 0)$. To find the $y$-intercept, set $x = 0$ and solve for $y$: $3(0) - 2y = 6$, so $y = -3$. The $y$-intercept is $(0, -3)$. Plot these two points and draw a line through them.</p>
+<details>
+<summary>Graph Linear Equation</summary>
+<p>Type: diagram
+Library: vis-network
+Bloom Level: Apply
+Bloom Verb: Apply
+Learning Objective: The learner will graph a linear equation in standard form by finding the $x$- and $y$-intercepts, and verify the graph using a second point if needed.</p>
+<p>Prerequisites: Standard Form Equation
+Evidence of Mastery: The learner can given a linear equation in standard form $Ax + By = C$, find the $x$- and $y$-intercepts, plot them on a coordinate plane, and draw the line through them.
+Misconceptions: The belief that two points are always sufficient, without checking that they are distinct; or that the intercepts are always $(0, C)$ and $(C, 0)$.
+Instructional Rationale: Graphing using intercepts is a efficient method that works for any linear equation in standard form, and it reinforces the geometric meaning of intercepts.
+Content: The learner sees the equation $3x - 2y = 6$ and an empty coordinate plane. The learner must first compute the $x$-intercept by setting $y = 0$ and solving for $x$, then the $y$-intercept by setting $x = 0$ and solving for $y$. After entering the intercepts, the learner clicks "Plot" to see the points plotted and the line drawn. The learner can also add a third point for verification.
+Provenance: Adapted from common Algebra I curriculum materials
+Rules: The $x$-intercept is found by setting $y = 0$ and solving $Ax = C$. The $y$-intercept is found by setting $x = 0$ and solving $By = C$. If $A = 0$, the equation represents a horizontal line; if $B = 0$, it represents a vertical line.
+Learner Activity: [1] Look at the equation $3x - 2y = 6$. [2] Compute the $x$-intercept by setting $y = 0$ and solving for $x$. [3] Compute the $y$-intercept by setting $x = 0$ and solving for $y$. [4] Click "Plot intercepts" to see the points and line drawn. [5] Optionally, add a third point for verification by choosing an $x$-value and computing the corresponding $y$-value.
+Feedback: [Correct] "Perfect! You found the intercepts $(2, 0)$ and $(0, -3)$ and graphed the line correctly." [Incorrect] "Review: to find the $x$-intercept of $3x - 2y = 6$, set $y = 0$ and solve $3x = 6$, giving $x = 2$. To find the $y$-intercept, set $x = 0$ and solve $-2y = 6$, giving $y = -3$. Try again."
+Starting State: The equation $3x - 2y = 6$ is displayed with an empty coordinate plane.
+Chapter Anchors: The learner will be able to graph a linear equation in standard form by finding and plotting the $x$- and $y$-intercepts.</p>
+</details>
+<h2 id="3-linear-inequalities">3. Linear Inequalities<a class="headerlink" href="#3-linear-inequalities" title="Permanent link">&para;</a></h2>
+<p><strong>Absolute Value Equation</strong> (Tier B: 250–400 words, worked example)</p>
+<p>An <strong>absolute value equation</strong> contains an absolute value expression, which is defined as the distance of a number from zero on the number line. The absolute value of $x$, written $|x|$, is always non-negative: $|x| \geq 0$. To solve an absolute value equation, we use the fact that if $|u| = a$ where $a \geq 0$, then either $u = a$ or $u = -a$.</p>
+<blockquote>
+<p><strong>Example:</strong> Solve $|x - 3| = 5$.</p>
+</blockquote>
+<p><strong>Solution:</strong> 
+$$
+\begin{aligned}
+|x - 3| &amp;= 5 \
+x - 3 &amp;= 5 \quad \text{or} \quad x - 3 = -5 \
+x &amp;= 8 \quad \text{or} \quad x = -2
+\end{aligned}
+$$</p>
+<p>The solution set is ${-2, 8}$.</p>
+<details>
+<summary>Absolute Value Equation</summary>
+<p>Type: microsim
+Library: p5.js
+Bloom Level: Apply
+Bloom Verb: Apply
+Learning Objective: The learner will solve absolute value equations of the form $|x - a| = b$ by writing and solving the two related linear equations.</p>
+<p>Prerequisites: From Arithmetic to Algebra
+Evidence of Mastery: The learner can given an equation $|x - a| = b$ with $b \geq 0$, write the two cases $x - a = b$ and $x - a = -b$, solve each, and list the solution set.
+Misconceptions: The belief that $|x - a| = b$ always yields two solutions, even when $b &lt; 0$ (which yields no solution), or that the two solutions are always $x = a + b$ and $x = a - b$ without checking.
+Instructional Rationale: Practicing the two-case method builds fluency in isolating the absolute value expression and solving the resulting linear equations, which is essential for later work with inequalities and graphing.
+Content: The learner sees an absolute value equation $|x - a| = b$ with sliders for $a$ and $b$. The learner must first determine whether $b \geq 0$; if $b &lt; 0$, the equation has no solution. If $b \geq 0$, the learner writes the two related linear equations and solves for $x$. Immediate feedback is provided after each step.
+Provenance: Adapted from common Algebra I curriculum materials
+Rules: If $b &lt; 0$, the equation $|x - a| = b$ has no solution. If $b \geq 0$, the two cases are $x - a = b$ and $x - a = -b$. The solution set is ${a + b, a - b}$ when $b &gt; 0$, and ${a}$ when $b = 0$.
+Learner Activity: [1] Adjust the sliders for $a$ and $b$. [2] Determine whether $b \geq 0$. [3] If $b \geq 0$, write the two cases $x - a = b$ and $x - a = -b$. [4] Solve each equation for $x$. [5] Enter the solution set. [6] Click "Check" to verify.
+Feedback: [Correct] "Correct! You solved the absolute value equation and found the solution set." [Incorrect] "Review: to solve $|x - a| = b$, first check that $b \geq 0$. Then write the two cases $x - a = b$ and $x - a = -b$. For $|x - 3| = 5$, the cases are $x - 3 = 5$ and $x - 3 = -5$, giving $x = 8$ and $x = -2$. Try again."
+Starting State: The equation $|x - 3| = 5$ is displayed with $a = 3$ and $b = 5$.
+Chapter Anchors: The learner will be able to solve absolute value equations of the form $|x - a| = b$.</p>
+</details>
+<p><strong>Absolute Value Inequality</strong> (Tier C: 120–200 words, clear definition)</p>
+<p>An <strong>absolute value inequality</strong> compares an absolute value expression to a number. The two basic forms are $|u| &lt; a$ and $|u| &gt; a$ where $a &gt; 0$.</p>
+<blockquote>
+<p><strong>Key idea:</strong> $|u| &lt; a$ means the distance from $u$ to zero is less than $a$, which is equivalent to $-a &lt; u &lt; a$. And $|u| &gt; a$ means the distance from $u$ to zero is greater than $a$, which is equivalent to $u &lt; -a$ or $u &gt; a$.</p>
+</blockquote>
+<details>
+<summary>Absolute Value Inequality</summary>
+<p>Type: diagram
+Library: vis-network
+Bloom Level: Remember
+Bloom Verb: Recall
+Learning Objective: The learner will recall the solution methods for basic absolute value inequalities $|u| &lt; a$ and $|u| &gt; a$ where $a &gt; 0$.</p>
+<p>Prerequisites: Absolute Value Equation
+Evidence of Mastery: The learner can given an inequality of the form $|u| &lt; a$ or $|u| &gt; a$ with $a &gt; 0$, rewrite it as a compound inequality and solve for $u$.
+Misconceptions: The belief that $|u| &lt; a$ is equivalent to $u &lt; a$ or $u &gt; -a$, or that $|u| &gt; a$ is equivalent to $u &gt; a$ only (missing the $u &lt; -a$ case).
+Instructional Rationale: Understanding the "distance" interpretation of absolute value inequalities helps learners translate between absolute value and compound inequality forms, which is essential for graphing solution sets on number lines and coordinate planes.
+Content: The learner sees two inequality formats: $|x - a| &lt; b$ and $|x - a| &gt; b$ with a slider for $b &gt; 0$. The learner must drag the inequality to the correct compound inequality form: $|x - a| &lt; b \rightarrow -b &lt; x - a &lt; b$, and $|x - a| &gt; b \rightarrow x - a &lt; -a$ or $x - a &gt; a$. Visual number line feedback is provided.
+Provenance: Adapted from common Algebra I curriculum materials
+Rules: For $|u| &lt; a$ with $a &gt; 0$, rewrite as $-a &lt; u &lt; a$. For $|u| &gt; a$ with $a &gt; 0$, rewrite as $u &lt; -a$ or $u &gt; a$. If $a \leq 0$, the inequality $|u| &lt; a$ has no solution, and $|u| &gt; a$ is all real numbers.
+Learner Activity: [1] Look at the inequality $|x - a| &lt; b$ or $|x - a| &gt; b$. [2] Drag the inequality to the correct compound inequality form on the number line. [3] Solve the resulting compound inequality for $x$. [4] Click "Check" to verify.
+Feedback: [Correct] "Great work! You correctly rewrote the absolute value inequality as a compound inequality." [Incorrect] "Review: for $|x - a| &lt; b$ with $b &gt; 0$, rewrite as $-b &lt; x - a &lt; b$. For $|x - a| &gt; b$ with $b &gt; 0$, rewrite as $x - a &lt; -b$ or $x - a &gt; b$. If $b \leq 0$, the inequality $|x - a| &lt; b$ has no solution, and $|x - a| &gt; b$ is true for all real numbers. Try again."
+Starting State: The inequality $|x - 3| &lt; 5$ is displayed with $a = 3$ and $b = 5$.
+Chapter Anchors: The learner will be able to solve basic absolute value inequalities $|u| &lt; a$ and $|u| &gt; a$ where $a &gt; 0$.</p>
+</details>
+<p><strong>Solve Linear Inequality</strong> (Tier B: 250–400 words, worked example)</p>
+<p>A <strong>linear inequality</strong> looks like a linear equation but uses inequality symbols ($&lt;$, $&gt;$, $\leq$, $\geq$) instead of an equals sign. The solution is a range of values, not a single number. An important rule when solving inequalities: if you multiply or divide both sides by a negative number, you must reverse the inequality sign.</p>
+<blockquote>
+<p><strong>Example:</strong> Solve $2x - 5 &lt; 7$.</p>
+</blockquote>
+<p><strong>Solution:</strong>
+$$
+\begin{aligned}
+2x - 5 &amp;&lt; 7 \
+2x &amp;&lt; 7 + 5 \
+2x &amp;&lt; 12 \
+x &amp;&lt; 6
+\end{aligned}
+$$</p>
+<p>The solution is $x &lt; 6$, or in interval notation, $(-\infty, 6)$.</p>
+<details>
+<summary>Solve Linear Inequality</summary>
+<p>Type: microsim
+Library: p5.js
+Bloom Level: Apply
+Bloom Verb: Apply
+Learning Objective: The learner will solve linear inequalities in one variable, correctly handling the inequality sign when multiplying or dividing by negative numbers.</p>
+<p>Prerequisites: From Arithmetic to Algebra
+Evidence of Mastery: The learner can solve a linear inequality in one variable, write the solution in inequality notation and interval notation, and correctly reverse the inequality sign when multiplying or dividing by a negative number.
+Misconceptions: The belief that the inequality sign stays the same when multiplying or dividing by a negative number, or that the solution set of $x &lt; 6$ includes 6.
+Instructional Rationale: The sign-reversal rule is the most common error in linear inequality solving; targeted practice builds the habit of checking the sign after each multiplication or division step.
+Content: The learner sees a linear inequality $ax + b &lt; c$ with sliders for $a$, $b$, and $c$. The learner solves the inequality step by step, entering each result. After each step, immediate feedback is provided, and a special flag appears if the learner multiplies or divides by a negative number without reversing the inequality sign.
+Provenance: Adapted from common Algebra I curriculum materials
+Rules: The inequality is solved using additive and multiplicative inverse operations. If the coefficient of $x$ is negative, the inequality sign must be reversed when dividing. The solution is expressed in both $x &lt; k$ and $(-\infty, k)$ notation.
+Learner Activity: [1] Look at the inequality $ax + b &lt; c$. [2] Subtract $b$ from both sides and enter the result. [3] Divide by the coefficient of $x$ and enter the result, reversing the inequality sign if the coefficient is negative. [4] Enter the solution in both inequality and interval notation. [5] Click "Check" to verify.
+Feedback: [Correct] "Excellent! You solved the inequality and correctly reversed the sign when needed." [Incorrect] "Review: to solve $2x - 5 &lt; 7$, first add 5 to both sides to get $2x &lt; 12$, then divide by 2 to get $x &lt; 6$. If you multiply or divide by a negative number, remember to reverse the inequality sign. Try again."
+Starting State: The inequality $2x - 5 &lt; 7$ is displayed.
+Chapter Anchors: The learner will be able to solve linear inequalities in one variable and correctly handle the inequality sign when multiplying or dividing by negative numbers.</p>
+</details>
+<p><strong>Graph Linear Inequality</strong> (Tier C: 120–200 words, clear definition)</p>
+<p>A <strong>linear inequality in two variables</strong>, such as $y &gt; 2x + 1$, is graphed by shading the half-plane that contains the solutions. The boundary line $y = 2x + 1$ is drawn as dashed if the inequality is strict ($&lt;$ or $&gt;$) and solid if inclusive ($\leq$ or $\geq$). The shading indicates all points that satisfy the inequality.</p>
+<details>
+<summary>Graph Linear Inequality</summary>
+<p>Type: diagram
+Library: vis-network
+Bloom Level: Remember
+Bloom Verb: Recall
+Learning Objective: The learner will graph a linear inequality in two variables by drawing the boundary line and shading the solution half-plane.</p>
+<p>Prerequisites: From Arithmetic to Algebra
+Evidence of Mastery: The learner can given a linear inequality in two variables $y &gt; mx + b$ (or $\geq$, $\leq$), graph the boundary line (dashed for $&lt;$ or $&gt;$, solid for $\leq$ or $\geq$), and shade the half-plane that contains the solutions.
+Misconceptions: The belief that the boundary line is always included, or that shading above the line always corresponds to $y &gt; mx + b$ without testing a point.
+Instructional Rationale: Visualizing linear inequalities as half-planes helps learners connect algebraic solutions to geometric representations, which is essential for systems of inequalities and linear programming.
+Content: The learner sees a coordinate plane and a linear inequality $y &gt; mx + b$. The learner must first graph the boundary line $y = mx + b$ (dashed if $&gt;$ or $&lt;$, solid if $\geq$ or $\leq$). Then the learner selects a test point (e.g., $(0, 0)$) and substitutes it into the inequality to determine which half-plane to shade. Immediate visual feedback is provided.
+Provenance: Adapted from common Algebra I curriculum materials
+Rules: The boundary line is dashed for strict inequalities ($&lt;$ or $&gt;$) and solid for inclusive inequalities ($\leq$ or $\geq$). The test point $(0, 0)$ is shaded if it satisfies the inequality; otherwise, the opposite half-plane is shaded.
+Learner Activity: [1] Look at the inequality $y &gt; 2x + 1$. [2] Graph the boundary line $y = 2x + 1$ as a dashed line. [3] Test the point $(0, 0)$ by substituting into the inequality. [3] Shade the half-plane that contains the solutions. [4] Click "Check" to verify.
+Feedback: [Correct] "Perfect! You correctly graphed the inequality and shaded the solution half-plane." [Incorrect] "Review: to graph $y &gt; 2x + 1$, first graph the boundary line $y = 2x + 1$ as a dashed line (because the inequality is strict). Test the point $(0, 0)$: $0 &gt; 2(0) + 1$ is $0 &gt; 1$, which is false, so shade the half-plane that does NOT contain $(0, 0)$. Try again."
+Starting State: The inequality $y &gt; 2x + 1$ is displayed.
+Chapter Anchors: The learner will be able to graph a linear inequality in two variables by drawing the boundary line and shading the solution half-plane.</p>
+</details>
+<p><strong>Piecewise Function</strong> (Tier B: 250–400 words, worked example)</p>
+<p>A <strong>piecewise function</strong> is defined by different expressions depending on the input value. The notation uses braces to list each "piece" and its corresponding domain interval.</p>
+<blockquote>
+<p><strong>Example:</strong> Evaluate the piecewise function
+$$f(x) = \begin{cases} x + 2 &amp; \text{if } x &lt; 0 \ 2x - 1 &amp; \text{if } x \geq 0 \end{cases}$$
+at $x = -3$, $x = 0$, and $x = 2$.</p>
+</blockquote>
+<p><strong>Solution:</strong>
+- For $x = -3$: Since $-3 &lt; 0$, use the first piece: $f(-3) = -3 + 2 = -1$.
+- For $x = 0$: Since $0 \geq 0$, use the second piece: $f(0) = 2(0) - 1 = -1$.
+- For $x = 2$: Since $2 \geq 0$, use the second piece: $f(2) = 2(2) - 1 = 3$.</p>
+<details>
+<summary>Piecewise Function</summary>
+<p>Type: microsim
+Library: p5.js
+Bloom Level: Apply
+Bloom Verb: Apply
+Learning Objective: The learner will evaluate a piecewise function at a given input value by identifying the correct piece and computing the output.</p>
+<p>Prerequisites: From Arithmetic to Algebra
+Evidence of Mastery: The learner can given a piecewise function and an input value, identify which piece's condition is satisfied, and compute the output using that piece's expression.
+Misconceptions: The belief that all pieces are evaluated for every input, or that the domain boundaries are always inclusive or exclusive without checking the inequality symbols.
+Instructional Rationale: Learning to navigate piecewise functions builds the critical skill of reading conditional definitions, which is essential for calculus and real-world modeling where different rules apply in different intervals.
+Content: The learner sees a piecewise function defined by two expressions with a boundary at $x = 0$. The learner types an input value, and the simulation highlights the active piece and computes the output. Three practice problems with immediate feedback are provided.
+Provenance: Adapted from common Algebra I curriculum materials
+Rules: The condition for each piece (e.g., $x &lt; 0$ or $x \geq 0$) determines which expression to use. If the input satisfies multiple conditions, the first (topmost) piece is used. If the input satisfies no piece, the function is undefined at that input.
+Learner Activity: [1] Look at the piecewise function definition. [2] Type an input value in the provided field. [3] Click "Evaluate" to see which piece is active and the corresponding output. [4] Complete three practice problems with immediate feedback.
+Feedback: [Correct] "Correct! You identified the active piece and computed the output." [Incorrect] "Review: to evaluate a piecewise function, first determine which condition the input satisfies. For $f(x) = \begin{cases} x + 2 &amp; \text{if } x &lt; 0 \ 2x - 1 &amp; \text{if } x \geq 0 \end{cases}$, if $x = -3$, use the first piece since $-3 &lt; 0$, giving $f(-3) = -3 + 2 = -1$. Try again."
+Starting State: The piecewise function definition is displayed with an empty input field.
+Chapter Anchors: The learner will be able to evaluate a piecewise function at a given input value by identifying the correct piece and computing the output.</p>
+</details>
+<p><strong>Step Function</strong> (Tier B: 250–400 words, worked example)</p>
+<p>A <strong>step function</strong> is a piecewise constant function that jumps from one value to another without taking on intermediate values. The most common example is the greatest integer function, also called the <strong>floor function</strong>, denoted $\lfloor x \rfloor$, which gives the greatest integer less than or equal to $x$.</p>
+<details>
+<summary>Step Function</summary>
+<p>Type: diagram
+Library: vis-network
+Bloom Level: Understand
+Bloom Verb: Explain
+Learning Objective: The learner will describe the behavior of the step function (greatest integer/floor function) and interpret its graph as a sequence of horizontal segments.</p>
+<p>Prerequisites: From Arithmetic to Algebra
+Evidence of Mastery: The learner can given a value of $x$, state $\lfloor x \rfloor$, and describe the graph of $y = \lfloor x \rfloor$ as a series of horizontal segments (steps) with jumps at integer values.
+Misconceptions: The belief that $\lfloor x \rfloor$ rounds $x$ to the nearest integer, or that the steps include the right-endpoint integer value.
+Instructional Rationale: The floor function introduces the idea of a function that is constant on intervals and changes value abruptly, which is a precursor to understanding more complex piecewise and discontinuous functions.
+Content: The learner sees a coordinate plane with the graph of $y = \lfloor x \rfloor$. The learner can drag a vertical line at any $x$-value, and the corresponding $y$-value (the greatest integer $\leq x$) is shown. The learner must identify the step structure and label the jump points.
+Provenance: Adapted from common Algebra I curriculum materials
+Rules: $\lfloor x \rfloor = n$ where $n$ is the greatest integer satisfying $n \leq x$. The graph consists of horizontal segments $[n, n+1)$ at height $n$, for each integer $n$. The segment at $[n, n+1)$ is closed at the left endpoint and open at the right endpoint.
+Learner Activity: [1] Look at the graph of $y = \lfloor x \rfloor$. [2] Drag the vertical line to $x = 2.3$ and observe that $y = \lfloor 2.3 \rfloor = 2$. [3] Drag the vertical line to $x = -1.7$ and observe that $y = \lfloor -1.7 \rfloor = -2$. [4] Identify the jump points at integer values. [5] Click "Show steps" to highlight the horizontal segments.
+Feedback: [Correct] "Excellent! You correctly interpreted the step function and identified the jump points." [Incorrect] "Review: the floor function $\lfloor x \rfloor$ gives the greatest integer less than or equal to $x$. For $x = 2.3$, $\lfloor 2.3 \rfloor = 2$ since 2 is the greatest integer $\leq 2.3$. For $x = -1.7$, $\lfloor -1.7 \rfloor = -2$ since -2 is the greatest integer $\leq -1.7$. The graph consists of horizontal segments at integer heights. Try again."
+Starting State: The graph of $y = \lfloor x \rfloor$ is displayed with the vertical line at $x = 0$.
+Chapter Anchors: The learner will be able to describe the behavior of the step function (greatest integer/floor function) and interpret its graph as a sequence of horizontal segments with jumps at integer values.</p>
+</details>
+<p><strong>Function Table</strong> (Tier B: 250–400 words, worked example)</p>
+<p>A <strong>function table</strong> (or input-output table) lists representative input values and their corresponding output values for a given function. It's a useful way to see how a function transforms inputs into outputs.</p>
+<blockquote>
+<p><strong>Example:</strong> Complete the function table for $f(x) = 2x + 1$.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>$x$ (input)</th>
+<th>$f(x)$ (output)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$-2$</td>
+<td>?</td>
+</tr>
+<tr>
+<td>$-1$</td>
+<td>?</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>?</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>?</td>
+</tr>
+<tr>
+<td>$2$</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution:</strong> Substitute each $x$-value into the function rule.</p>
+<table>
+<thead>
+<tr>
+<th>$x$ (input)</th>
+<th>$f(x)$ (output)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$-2$</td>
+<td>$2(-2) + 1 = -3$</td>
+</tr>
+<tr>
+<td>$-1$</td>
+<td>$2(-1) + 1 = -1$</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>$2(0) + 1 = 1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$2(1) + 1 = 3$</td>
+</tr>
+<tr>
+<td>$2$</td>
+<td>$2(2) + 1 = 5$</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Function Table</summary>
+<p>Type: table
+Library: (markdown)
+Bloom Level: Understand
+Bloom Verb: Explain
+Learning Objective: The learner will complete a function table by substituting input values into the function rule and computing the output.</p>
+<p>Prerequisites: From Arithmetic to Algebra, Function Concept
+Evidence of Mastery: The learner can given a function rule and a table of $x$-values, substitute each $x$ into the rule and compute the corresponding $f(x)$, and identify patterns in the outputs.
+Misconceptions: The belief that the function rule applies only to the first row, or that the outputs are always integers.
+Instructional Rationale: Function tables build fluency in evaluating functions and recognizing patterns, which prepares learners for graphing functions and working with sequences.
+Content: The learner sees a blank function table for $f(x) = 2x + 1$ with five $x$-values filled in. The learner must compute the corresponding $f(x)$ values and fill in the table. Immediate feedback is provided after each entry.
+Provenance: Adapted from common Algebra I curriculum materials
+Rules: Each output is computed by substituting the $x$-value into the function rule $f(x) = 2x + 1$. The pattern of outputs should show a constant difference of 2 between consecutive $x$-values.
+Learner Activity: [1] Look at the function table for $f(x) = 2x + 1$ with $x$-values $-2, -1, 0, 1, 2$. [2] Compute $f(x)$ for each $x$ by substituting into the function rule. [3] Enter each output value in the table. [4] Click "Check" to verify all five entries. [5] Identify the pattern in the outputs.
+Feedback: [Correct] "Perfect! You completed the function table and identified the output pattern." [Incorrect] "Review: to complete the table for $f(x) = 2x + 1$, substitute each $x$-value into the function rule. For $x = -2$, $f(-2) = 2(-2) + 1 = -3$. For $x = -1$, $f(-1) = 2(-1) + 1 = -1$. Continue for the remaining values. Try again."
+Starting State: The function table for $f(x) = 2x + 1$ is displayed with the five $x$-values and empty output cells.
+Chapter Anchors: The learner will be able to complete a function table by substituting input values into the function rule and computing the output.</p>
+</details>
+<h2 id="4-systems-of-linear-equations">4. Systems of Linear Equations<a class="headerlink" href="#4-systems-of-linear-equations" title="Permanent link">&para;</a></h2>
+<p><strong>Interpret Function Graph</strong> (already covered in Tier A above)</p>
+<p><strong>Interpret Function Table</strong> (already covered in Tier B above)</p>
+<h2 id="5-review-and-summary">5. Review and Summary<a class="headerlink" href="#5-review-and-summary" title="Permanent link">&para;</a></h2>
+<p>In this chapter, you have learned the fundamental tools of algebraic modeling: understanding functions, computing and interpreting slope, writing equations in multiple forms, solving linear equations and inequalities, and graphing relationships. These skills form the foundation for all later work in algebra and beyond.</p>
+<p><strong>Key formula summary:</strong></p>
+<ul>
+<li>Slope: $m = \frac{y_2 - y_1}{x_2 - x_1}$</li>
+<li>Slope-intercept form: $y = mx + b$</li>
+<li>Point-slope form: $y - y_1 = m(x - x_1)$</li>
+<li>Standard form: $Ax + By = C$</li>
+</ul>
+<p><strong>Key concept summary:</strong></p>
+<ul>
+<li>A function assigns exactly one output to each input.</li>
+<li>The domain is the set of acceptable inputs; the range is the set of resulting outputs.</li>
+<li>Slope measures the rate of change of a line.</li>
+<li>Linear equations can be written in slope-intercept, point-slope, or standard form.</li>
+<li>Linear inequalities are solved like equations, with the sign reversal rule when multiplying or dividing by negatives.</li>
+<li>Absolute value equations and inequalities use the distance interpretation.</li>
+<li>Piecewise and step functions use different expressions on different intervals.</li>
+</ul>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Functions are the central concept of algebra—they describe how one quantity depends on another.</li>
+<li>Slope is a rate of change; the slope-intercept form $y = mx + b$ makes graphing easy.</li>
+<li>Point-slope form is useful when you know a slope and a point; standard form is useful for finding intercepts.</li>
+<li>Linear inequalities solve like equations, but reverse the inequality sign when multiplying or dividing by negatives.</li>
+<li>Absolute value equations split into two cases; inequalities use compound inequality forms.</li>
+<li>Piecewise and step functions use different rules on different intervals.</li>
+</ol>
+<h2 id="chapter-review-exercises">Chapter Review Exercises<a class="headerlink" href="#chapter-review-exercises" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Determine whether the following relations are functions: [practice problems]</li>
+<li>Find the slope of the line passing through $(1, 2)$ and $(3, 8)$. </li>
+<li>Write the equation of the line with slope $4$ passing through $(-1, 3)$ in point-slope form, then convert to slope-intercept form.</li>
+<li>Solve the equation $3x - 7 = 2x + 5$.</li>
+<li>Solve the inequality $4 - 3x \leq 10$ and graph the solution on a number line.</li>
+<li>Solve $|2x - 1| = 7$.</li>
+<li>Graph the inequality $y \leq -x + 4$.</li>
+<li>Evaluate the piecewise function $f(x) = \begin{cases} x^2 &amp; \text{if } x &lt; 1 \ 2x + 1 &amp; \text{if } x \geq 1 \end{cases}$ at $x = -1$, $x = 0$, and $x = 2$.</li>
+<li>Complete the function table for $f(x) = -x + 3$ with $x = -2, -1, 0, 1, 2$.</li>
+<li>Explain in your own words what the slope of a line tells you about the relationship between the $x$- and $y$-variables.</li>
+</ol>
+<hr />
+<p>This chapter content has been generated using the Chapter Content Generator v1.11, which adapts content length and element richness to each concept's Concept Impact Score (CIS), ensuring foundational concepts receive comprehensive treatment while narrower concepts receive efficient, focused coverage.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-foundations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Foundations">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. Foundations
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-functions-and-notation/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Functions and Notation">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. Functions and Notation
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

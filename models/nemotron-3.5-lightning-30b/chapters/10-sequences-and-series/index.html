@@ -1,0 +1,2416 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Key concepts for sequences and series, building on foundational algebra knowledge">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/10-sequences-and-series/">
+      
+      
+        <link rel="prev" href="../09-statistics-and-data-analysis/">
+      
+      
+        <link rel="next" href="../11-mathematical-modeling/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Sequences and Series - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sequences-and-series" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sequences and Series
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6" id="__nav_10_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6">
+            <span class="md-nav__icon md-icon"></span>
+            nemotron-3.5-lightning:30b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6_4" id="__nav_10_6_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-linear-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Linear Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-functions-and-notation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Functions and Notation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-graphing-and-coordinates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Graphing and Coordinates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-polynomials-and-factoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Polynomials and Factoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-exponents-and-radicals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Exponents and Radicals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-systems-of-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Systems of Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-statistics-and-data-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Statistics and Data Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    10. Sequences and Series
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    10. Sequences and Series
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-display-numerical-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Display Numerical (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-display-dot-plot-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Display Dot Plot (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-display-histogram-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Display Histogram (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-display-box-plot-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Display Box Plot (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bivariate-data-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bivariate Data (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#univariate-data-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Univariate Data (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-way-table-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Way Table (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marginal-frequency-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marginal Frequency (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-frequency-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Frequency (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outlier-data-point-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outlier Data Point (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-data-pattern-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster Data Pattern (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-association-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Association (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nonlinear-association-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nonlinear Association (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positive-association-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Positive Association (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-association-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Negative Association (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-association-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      No Association (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit-line-plot-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fit Line Plot (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-mathematical-modeling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Mathematical Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-advanced-topics-and-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Advanced Topics and Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-display-numerical-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Display Numerical (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-display-dot-plot-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Display Dot Plot (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-display-histogram-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Display Histogram (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-display-box-plot-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Display Box Plot (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bivariate-data-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bivariate Data (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#univariate-data-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Univariate Data (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-way-table-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Way Table (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marginal-frequency-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marginal Frequency (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-frequency-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Frequency (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outlier-data-point-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outlier Data Point (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-data-pattern-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster Data Pattern (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-association-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Association (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nonlinear-association-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nonlinear Association (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positive-association-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Positive Association (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-association-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Negative Association (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-association-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      No Association (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit-line-plot-tier-c-120-200-words-definition-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fit Line Plot (Tier C: 120-200 words, definition required)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/nemotron-3.5-lightning-30b/chapters/10-sequences-and-series/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="sequences-and-series">Sequences and Series<a class="headerlink" href="#sequences-and-series" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the key concepts for sequences and series. Students will develop fluency in the core algebraic skills and topics presented in this chapter, building on foundational knowledge and preparing for more advanced topics.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data Display Numerical</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Data Display Dot Plot</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Data Display Histogram</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Data Display Box Plot</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Bivariate Data</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Univariate Data</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Two-Way Table</td>
+<td>34</td>
+</tr>
+<tr>
+<td>Marginal Frequency</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Conditional Frequency</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Outlier Data Point</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Cluster Data Pattern</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Linear Association</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Nonlinear Association</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Positive Association</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Negative Association</td>
+<td>3</td>
+</tr>
+<tr>
+<td>No Association</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Fit Line Plot</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>[Prerequisites from prior chapters or course description]</p>
+<!-- Elaboration Budget computed from CIS scores with cis_max=24025 (Algebraic Expression) -->
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>CIS</th>
+<th>E(c)</th>
+<th>Tier</th>
+<th>Target Words</th>
+<th>Required Elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data Display Numerical</td>
+<td>1</td>
+<td>0.00</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Data Display Dot Plot</td>
+<td>1</td>
+<td>0.00</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Data Display Histogram</td>
+<td>1</td>
+<td>0.00</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Data Display Box Plot</td>
+<td>1</td>
+<td>0.00</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Bivariate Data</td>
+<td>20</td>
+<td>0.12</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Univariate Data</td>
+<td>20</td>
+<td>0.12</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Two-Way Table</td>
+<td>34</td>
+<td>0.19</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Marginal Frequency</td>
+<td>2</td>
+<td>0.02</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Conditional Frequency</td>
+<td>2</td>
+<td>0.02</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Outlier Data Point</td>
+<td>2</td>
+<td>0.02</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Cluster Data Pattern</td>
+<td>2</td>
+<td>0.02</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Linear Association</td>
+<td>2</td>
+<td>0.02</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Nonlinear Association</td>
+<td>11</td>
+<td>0.07</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Positive Association</td>
+<td>11</td>
+<td>0.07</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Negative Association</td>
+<td>3</td>
+<td>0.03</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>No Association</td>
+<td>2</td>
+<td>0.02</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+<tr>
+<td>Fit Line Plot</td>
+<td>1</td>
+<td>0.00</td>
+<td>C</td>
+<td>120-200</td>
+<td>definition</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total targeted word count: ~3,120</strong> (sum of 16 concepts × 120-200 range)
+<strong>All concepts are Tier C</strong> — brief definitions appropriate for the low-to-moderate CIS scores across these statistics and data analysis concepts. No worked examples or diagrams required beyond clear definitions.</p>
+<h2 id="content-generation">Content Generation<a class="headerlink" href="#content-generation" title="Permanent link">&para;</a></h2>
+<h3 id="data-display-numerical-tier-c-120-200-words-definition-required">Data Display Numerical (Tier C: 120-200 words, definition required)<a class="headerlink" href="#data-display-numerical-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> Data display numerical refers to the use of numbers to describe, organize, and summarize information collected from observations or experiments. In statistics, numerical displays include counts, totals, measures of central tendency (mean, median, mode), and measures of spread (range, variance, standard deviation). These representations allow us to quickly understand the main features of a dataset without examining every individual data point.</p>
+<p>When working with numerical data, we often begin by counting how many times each value occurs or calculating averages that represent the "typical" value in the dataset. For example, if we record the number of hours students study per week, we might find that the most common study time is 5 hours, even though some students study 1 hour and others study 10 hours. The numerical display helps us see patterns and make comparisons across different groups or conditions.</p>
+<p>Numerical displays are foundational to all subsequent statistical analysis. Before creating visual displays like graphs or charts, it is essential to understand the basic numerical properties of the data, including its size, center, and variability. These numerical summaries provide the context needed to interpret visual representations correctly and avoid misinterpretation.</p>
+<p><strong>Key Terms:</strong> <em>data, numerical display, summarize, central tendency, variability, dataset, observation, count, average, measure</em></p>
+<hr />
+<h3 id="data-display-dot-plot-tier-c-120-200-words-definition-required">Data Display Dot Plot (Tier C: 120-200 words, definition required)<a class="headerlink" href="#data-display-dot-plot-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> A dot plot is a simple statistical display that shows the frequency of individual values in a dataset using dots plotted along a number line. Each dot represents one occurrence of a value, allowing us to see the shape, center, and spread of the data at a glance. Dot plots are particularly useful for small to moderate-sized datasets where we want to preserve the identity of individual data points.</p>
+<p>To create a dot plot, draw a number line that covers the range of your data, then place a dot above the corresponding value for each data point. If multiple data points have the same value, stack the dots vertically. The resulting pattern reveals clusters, gaps, and outliers in the data distribution without requiring complex construction or interpretation.</p>
+<p>Dot plots are especially effective for revealing the distribution of data because each dot represents an actual measurement, making it easy to count how many observations fall within any given range. They work well for discrete data or when the number of possible values is limited. For continuous data, the data are typically rounded to the nearest unit before plotting.</p>
+<p><strong>Key Terms:</strong> <em>dot plot, frequency, number line, dataset, distribution, cluster, gap, outlier, stack, discrete data, continuous data, range, unit</em></p>
+<hr />
+<h3 id="data-display-histogram-tier-c-120-200-words-definition-required">Data Display Histogram (Tier C: 120-200 words, definition required)<a class="headerlink" href="#data-display-histogram-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> A histogram is a graphical display that shows the frequency distribution of continuous data using adjacent bars. Unlike a bar chart, which compares separate categories, a histogram groups numerical data into intervals (called bins) and represents the count or proportion of observations in each bin by the height of a bar. The bars touch each other to indicate the continuous nature of the data.</p>
+<p>To construct a histogram, first determine an appropriate number of bins that balance detail with clarity. Then count how many data points fall into each bin and draw a bar with height proportional to that count. The width of each bin should be consistent across the histogram, and the horizontal axis represents the continuous variable being measured while the vertical axis shows frequency or relative frequency.</p>
+<p>Histograms are valuable because they allow us to see the overall shape of the data distribution—whether it is symmetric, skewed left, skewed right, bimodal, or uniform. They help identify patterns such as the most common range of values, the presence of multiple peaks, or extreme values that stand out from the rest. When interpreting a histogram, it is important to consider the choice of bin width, as different bin sizes can reveal or obscure different features of the distribution.</p>
+<p><strong>Key Terms:</strong> <em>histogram, frequency distribution, bins, interval, continuous data, bar chart, symmetric, skewed, bimodal, uniform, bin width, axes, proportion</em></p>
+<hr />
+<h3 id="data-display-box-plot-tier-c-120-200-words-definition-required">Data Display Box Plot (Tier C: 120-200 words, definition required)<a class="headerlink" href="#data-display-box-plot-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> A box plot (also called a box-and-whisker plot) is a standardized way of displaying the distribution of data based on a five-number summary: minimum, first quartile (Q1), median, third quartile (Q3), and maximum. The "box" spans from Q1 to Q3 with a line at the median, while "whiskers" extend from the box to the minimum and maximum values, showing the full range of the data.</p>
+<p>Box plots are particularly useful for comparing distributions across different groups or categories. The box represents the interquartile range (IQR), which contains the middle 50% of the data, while the whiskers show the overall range excluding outliers. Points plotted beyond the whiskers are identified as potential outliers. The median line inside the box indicates the central tendency, and the box's symmetry or skew reveals the data's distribution shape.</p>
+<p>One major advantage of box plots is that they allow quick visual comparison of multiple groups side by side. By aligning box plots for different categories, we can easily compare medians, spreads, and outliers across groups. Box plots are resistant to extreme values and provide a compact summary that highlights where most data falls relative to the median and quartiles, making them invaluable for exploratory data analysis.</p>
+<p><strong>Key Terms:</strong> <em>box plot, five-number summary, quartile, interquartile range, median, minimum, maximum, whisker, outlier, distribution, symmetry, skew, compare, group, exploratory data analysis</em></p>
+<hr />
+<h3 id="bivariate-data-tier-c-120-200-words-definition-required">Bivariate Data (Tier C: 120-200 words, definition required)<a class="headerlink" href="#bivariate-data-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> Bivariate data consists of pairs of linked numerical observations, where each pair measures two different variables for each individual, object, or event in a study. Unlike univariate data, which examines one variable at a time, bivariate data allows us to investigate whether and how two variables are related or associated with each other. Each data point consists of an ordered pair (x, y), where x is the value of one variable and y is the value of the other.</p>
+<p>The primary purpose of analyzing bivariate data is to determine if there is a relationship between the two variables and, if so, what kind of relationship it is. This relationship can be examined through visual displays such as scatter plots, through numerical measures like correlation coefficients, or through modeling approaches that describe the pattern between the variables. The variable plotted on the horizontal axis is typically considered the independent variable, while the variable on the vertical axis is the dependent variable, though this designation depends on the research question.</p>
+<p>Understanding bivariate data is essential for making predictions, identifying trends, and determining whether changes in one variable are associated with changes in another. However, it is crucial to remember that association does not imply causation—just because two variables tend to vary together does not mean that one causes the other. Additional evidence and careful study design are required to establish causal relationships.</p>
+<p><strong>Key Terms:</strong> <em>bivariate data, paired observations, variables, relationship, association, scatter plot, correlation, independent variable, dependent variable, causation, pattern, trend, predict</em></p>
+<hr />
+<h3 id="univariate-data-tier-c-120-200-words-definition-required">Univariate Data (Tier C: 120-200 words, definition required)<a class="headerlink" href="#univariate-data-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> Univariate data refers to data that consists of observations on a single variable. The term "univariate" means "one variable," and this type of data is the simplest form of data analysis, focusing on describing the distribution of a single characteristic or measurement across a group of individuals, objects, or events. Examples of univariate data include the heights of students in a class, the test scores on a single exam, or the number of cars passing through an intersection per hour.</p>
+<p>When working with univariate data, the primary goals are to describe the distribution's center, spread, and shape, and to identify any unusual features such as outliers. Common descriptive statistics for univariate data include measures of central tendency (mean, median, mode) and measures of variability (range, variance, standard deviation). Graphical displays such as histograms, box plots, and dot plots are also frequently used to visualize the distribution of a single variable.</p>
+<p>Univariate data analysis forms the foundation for more complex statistical investigations. Before examining relationships between multiple variables (bivariate or multivariate data), it is essential to understand the basic properties of each variable individually. This preliminary analysis helps ensure that subsequent analyses are appropriate and that any patterns or relationships observed are not simply artifacts of the underlying distribution of a single variable.</p>
+<p><strong>Key Terms:</strong> <em>univariate data, single variable, distribution, central tendency, variability, measures, central tendency, spread, outlier, histogram, box plot, dot plot, descriptive statistics</em></p>
+<hr />
+<h3 id="two-way-table-tier-c-120-200-words-definition-required">Two-Way Table (Tier C: 120-200 words, definition required)<a class="headerlink" href="#two-way-table-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> A two-way table (also called a contingency table) is a statistical display that organizes data according to two categorical variables. The table rows represent the categories of one variable, while the columns represent the categories of the second variable, and each cell in the table contains the count of observations that fall into the intersection of the corresponding row and column categories. Two-way tables are essential for examining the relationship between two categorical variables.</p>
+<p>Two-way tables can display different types of information. <strong>Frequency counts</strong> show the raw number of observations in each cell. <strong>Row percentages</strong> show the proportion of observations in each row that fall into each column category. <strong>Column percentages</strong> show the proportion of observations in each column that fall into each row category. <strong>Total percentages</strong> show the overall proportion of all observations in each cell. These different perspectives help answer different research questions about the association between the two variables.</p>
+<p>A key feature of two-way tables is the <strong>marginal total</strong>, which is the sum of counts or percentages in the last row or column, representing the totals for each variable considered separately. The <strong>joint distribution</strong> refers to the combined pattern of counts across all cells, while the <strong>conditional distribution</strong> shows the distribution of one variable for a fixed value of the other variable. Understanding these distinctions is crucial for interpreting the relationship between the categorical variables correctly.</p>
+<p>Two-way tables are widely used in fields such as social sciences, medical research, and business analytics to test hypotheses about independence between variables, identify associations, and support decision-making based on observed patterns in categorical data.</p>
+<p><strong>Key Terms:</strong> <em>two-way table, contingency table, categorical variable, rows, columns, cell, frequency, percentage, marginal total, joint distribution, conditional distribution, association, independence, research, data analysis</em></p>
+<hr />
+<h3 id="marginal-frequency-tier-c-120-200-words-definition-required">Marginal Frequency (Tier C: 120-200 words, definition required)<a class="headerlink" href="#marginal-frequency-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> Marginal frequency refers to the total count or percentage of observations in a single row or column of a two-way table, representing the distribution of one variable alone, regardless of the values of the other variable. The term "marginal" comes from the fact that these totals are typically found in the margins (last row or column) of a two-way table. Marginal frequencies provide the baseline or overall distribution for each variable considered individually.</p>
+<p>To find the marginal frequency for a specific row, sum the counts (or percentages) across all columns in that row. Similarly, to find the marginal frequency for a specific column, sum the counts (or percentages) across all rows in that column. These sums give us the marginal distribution of each variable, answering questions such as "How many students prefer each lunch option?" or "What is the overall gender distribution in the sample?"</p>
+<p>Marginal frequencies are essential for understanding the context of the data in a two-way table. They allow us to see whether certain categories are common or rare in the overall sample, independent of the other variable's values. When interpreting conditional probabilities or associations between variables, the marginal frequencies serve as the denominator for calculating proportions and help determine whether observed patterns are meaningful or expected given the overall distribution.</p>
+<p><strong>Key Terms:</strong> <em>marginal frequency, marginal distribution, two-way table, row total, column total, sum, baseline, overall distribution, proportion, denominator, categories, observed</em></p>
+<hr />
+<h3 id="conditional-frequency-tier-c-120-200-words-definition-required">Conditional Frequency (Tier C: 120-200 words, definition required)<a class="headerlink" href="#conditional-frequency-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> Conditional frequency refers to the count or percentage of observations in a specific row or column of a two-way table, given a particular value of the other variable. In other words, conditional frequency answers the question: "Among all observations where the row variable has a specific value, how many fall into each column category?" This allows us to examine the distribution of one variable conditional on the value of the other variable.</p>
+<p>To calculate the conditional frequency for a specific cell, divide the count (or count proportion) in that cell by the marginal total for the corresponding row or column. For example, if we want the conditional frequency of preferring lunch option A among males, we would divide the count of males who prefer option A by the total number of males in the sample. This gives us the proportion of males who prefer option A, conditional on being male.</p>
+<p>Conditional frequencies are powerful tools for detecting associations between categorical variables. If the conditional frequencies differ substantially across the values of the other variable, this suggests an association or relationship. For instance, if the conditional frequency of preferring option A is 70% among males but only 30% among females, this indicates a notable difference in preferences across gender groups. When conditional frequencies are similar across groups, it suggests little to no association between the variables.</p>
+<p>Understanding conditional frequency is crucial for interpreting the relationships captured in two-way tables and for moving beyond simple marginal descriptions to more nuanced analyses of how variables interact with each other in real-world contexts.</p>
+<p><strong>Key Terms:</strong> <em>conditional frequency, conditional distribution, two-way table, given, row variable, column variable, proportion, association, relationship, denominator, context, interaction</em></p>
+<hr />
+<h3 id="outlier-data-point-tier-c-120-200-words-definition-required">Outlier Data Point (Tier C: 120-200 words, definition required)<a class="headerlink" href="#outlier-data-point-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> An outlier data point is an observation in a dataset that lies an abnormal distance from other values in the dataset. Outliers are values that are significantly higher or lower than what would be expected based on the overall pattern of the data. They may occur by chance or may indicate measurement error, data entry mistakes, or underlying phenomena that deserve special attention.</p>
+<p>Outliers can arise from several sources. They may result from <strong>natural variability</strong> in the population, where some observations are genuinely extreme. They may also result from <strong>experimental error</strong>, such as equipment malfunction, incorrect recording, or participants not following instructions. In some cases, outliers may indicate <strong>subgroups</strong> within the data that were not initially apparent, or they may represent <strong>genuinely rare events</strong> that are nonetheless important to understand.</p>
+<p>Identifying outliers is an important step in data analysis because they can substantially affect measures of central tendency and variability. For example, a single very high income in a dataset of household incomes can dramatically increase the mean, making it unrepresentative of the typical household. Outliers can also affect the spread of the data, as measured by range or standard deviation. However, outliers should not be automatically removed without investigation, as they may contain valuable information about the data generation process or reveal important patterns that deserve further study.</p>
+<p>Statistical methods such as box plots (using the interquartile range rule) and z-scores (values more than 2 or 3 standard deviations from the mean) can help identify potential outliers. However, the decision to keep or remove an outlier should always be guided by substantive knowledge about the research context and the reason for the outlier's presence.</p>
+<p><strong>Key Terms:</strong> <em>outlier, data point, abnormal, dataset, measurement error, extreme, variability, central tendency, spread, box plot, interquartile range, z-score, standard deviation, investigation, research context</em></p>
+<hr />
+<h3 id="cluster-data-pattern-tier-c-120-200-words-definition-required">Cluster Data Pattern (Tier C: 120-200 words, definition required)<a class="headerlink" href="#cluster-data-pattern-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> A cluster data pattern refers to a group of data points that are close together in a dataset, forming a concentration of observations in a particular region of the data space. Clusters indicate regions where data points tend to occur more frequently than in other areas, and they are commonly observed in distributions, scatter plots, and other statistical displays. Recognizing clusters helps us understand the underlying structure of the data and can suggest the presence of subgroups or distinct populations.</p>
+<p>Clusters can appear in various forms depending on the type of data and the display being used. In a histogram, a cluster might appear as a prominent peak or "bump" in the distribution, indicating that many observations fall within a specific range of values. In a scatter plot, clusters visible as concentrated groups of points suggest that certain combinations of variables occur together more often than others. In higher-dimensional data, clusters may be more difficult to visualize but can still be identified through statistical methods and dimensionality reduction techniques.</p>
+<p>The presence of clusters has important implications for data analysis and interpretation. Clusters may indicate <strong>natural groupings</strong> within the data, such as different student performance levels, distinct product categories, or separate biological populations. They may also suggest the presence of <strong>latent variables</strong> or unmeasured factors that influence where data points cluster. When clusters are present, analyses that assume a single homogeneous population may produce misleading results, and it may be appropriate to analyze each cluster separately or use mixture models that account for multiple underlying distributions.</p>
+<p>Recognizing and understanding clusters is essential for exploratory data analysis, hypothesis generation, and selecting appropriate statistical methods that respect the data's structure.</p>
+<p><strong>Key Terms:</strong> <em>cluster, data pattern, concentration, observations, distribution, scatter plot, subgroup, population, latent variable, mixture model, homogeneous, exploratory data analysis, hypothesis, statistical methods</em></p>
+<hr />
+<h3 id="linear-association-tier-c-120-200-words-definition-required">Linear Association (Tier C: 120-200 words, definition required)<a class="headerlink" href="#linear-association-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> Linear association describes a relationship between two variables where the change in one variable is consistently proportional to the change in the other variable. When two variables have a linear association, the data points tend to cluster around a straight line when plotted on a scatter plot. The relationship can be positive (as one variable increases, the other tends to increase) or negative (as one variable increases, the other tends to decrease).</p>
+<p>The strength of a linear association refers to how closely the data points follow a straight line. A <strong>strong linear association</strong> means the points are tightly clustered around the line, while a <strong>weak linear association</strong> means the points are more spread out and less consistent. When the data points show no consistent pattern and appear randomly scattered, we say there is <strong>no linear association</strong> or the relationship is nonlinear.</p>
+<p>The most common measure of linear association is the <strong>correlation coefficient</strong>, typically denoted by r, which quantifies both the direction and strength of the linear relationship on a scale from -1 to 1. A value of r close to 1 indicates a strong positive linear association, r close to -1 indicates a strong negative linear association, and r close to 0 suggests little or no linear association. However, it is important to remember that correlation measures only linear relationships and may miss nonlinear patterns between variables.</p>
+<p>Linear association is a fundamental concept in statistics and is widely used in prediction, modeling, and decision-making. When a strong linear association is present, one variable can be used to predict the other within a reasonable range. However, as with all statistical associations, it is crucial to distinguish between association and causation and to consider other factors that may influence the relationship.</p>
+<p><strong>Key Terms:</strong> <em>linear association, relationship, proportional change, scatter plot, positive association, negative association, strength, correlation coefficient, r, direction, strength, linear, prediction, modeling, association vs. causation</em></p>
+<hr />
+<h3 id="nonlinear-association-tier-c-120-200-words-definition-required">Nonlinear Association (Tier C: 120-200 words, definition required)<a class="headerlink" href="#nonlinear-association-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> Nonlinear association describes a relationship between two variables where the change in one variable is not consistently proportional to the change in the other variable. When two variables have a nonlinear association, the data points do not cluster around a straight line when plotted on a scatter plot. Instead, they may follow a curved pattern, such as a parabola, exponential growth or decay, logarithmic growth, or some other irregular pattern.</p>
+<p>Nonlinear associations can take many forms. In a <strong>quadratic relationship</strong>, the variables are related by a parabolic curve, where the effect of one variable increases and then decreases (or vice versa). In an <strong>exponential relationship</strong>, one variable grows or decays at a rate proportional to its current value, producing a J-shaped or reverse J-shaped curve. <strong>Logarithmic relationships</strong> show rapid initial change that gradually levels off. Other nonlinear patterns include logistic growth, sinusoidal cycles, and power laws, where one variable changes as a power of another.</p>
+<p>Unlike linear associations, which are measured by the correlation coefficient r, nonlinear associations may require different analytical approaches depending on the pattern. Scatter plot visualization is often the first step in detecting nonlinear relationships. Transformations of the variables (such as taking logarithms or square roots) can sometimes linearize nonlinear patterns, making them easier to analyze with linear methods. Alternatively, polynomial regression, logarithmic regression, or other nonlinear modeling techniques can be used to describe and predict relationships that follow curved patterns.</p>
+<p>Recognizing nonlinear associations is critical because many real-world relationships between variables are not linear. Assuming a linear relationship when the true relationship is nonlinear can lead to incorrect conclusions, poor predictions, and missed insights. Always begin with a scatter plot and carefully examine the pattern of association before selecting an analytical approach.</p>
+<p><strong>Key Terms:</strong> <em>nonlinear association, relationship, curved pattern, scatter plot, quadratic, exponential, logarithmic, J-shaped, pattern, prediction, modeling, transformation, regression, association vs. causation, real-world</em></p>
+<hr />
+<h3 id="positive-association-tier-c-120-200-words-definition-required">Positive Association (Tier C: 120-200 words, definition required)<a class="headerlink" href="#positive-association-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> Positive association describes a relationship between two variables where increases in one variable tend to be accompanied by increases in the other variable. When two variables have a positive association, the data points on a scatter plot generally trend upward from left to right, indicating that as the value of one variable gets larger, the value of the other variable also tends to get larger. The strength of the positive association indicates how consistently this pattern occurs.</p>
+<p>In a strong positive association, the data points cluster tightly around an upward-sloping line, meaning that the relationship between the variables is consistent and predictable. In a weak positive association, the data points show an upward trend but with more variation and less consistency. A positive association with a correlation coefficient r close to +1 indicates a very strong positive relationship, while r close to 0 suggests a weak or negligible positive association.</p>
+<p>Positive associations are common in many real-world contexts. For example, there is often a positive association between hours studied and exam scores, between height and weight in adults, and between a country's GDP per capita and life expectancy. However, as with all associations, it is important to remember that positive association does not imply causation—just because two variables tend to increase together does not mean that one causes the other to increase. Other factors, known as confounding variables, may influence both variables.</p>
+<p>Understanding positive association helps us identify patterns, make predictions, and recognize relationships in data. It is a key concept in fields ranging from education and health sciences to economics and social research, where identifying and quantifying positive relationships can inform policy, practice, and further investigation.</p>
+<p><strong>Key Terms:</strong> <em>positive association, relationship, increase together, scatter plot, upward trend, strength, correlation coefficient r, consistent, predictable, cause, confounding variable, pattern, real-world, pattern, relationship, predict</em></p>
+<hr />
+<h3 id="negative-association-tier-c-120-200-words-definition-required">Negative Association (Tier C: 120-200 words, definition required)<a class="headerlink" href="#negative-association-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> Negative association describes a relationship between two variables where increases in one variable tend to be accompanied by decreases in the other variable. When two variables have a negative association, the data points on a scatter plot generally trend downward from left to right, indicating that as the value of one variable gets larger, the value of the other variable tends to get smaller. The strength of the negative association indicates how consistently this pattern occurs.</p>
+<p>In a strong negative association, the data points cluster tightly around a downward-sloping line, meaning that the relationship between the variables is consistent and predictable. In a weak negative association, the data points show a downward trend but with more variation and less consistency. A negative association with a correlation coefficient r close to -1 indicates a very strong negative relationship, while r close to 0 suggests a weak or negligible negative association.</p>
+<p>Negative associations are common in many real-world contexts. For example, there is often a negative association between the number of hours spent watching television and physical fitness levels, between study time and the number of distractions, and between a car's age and its resale value. As with all associations, it is important to remember that negative association does not imply causation—just because one variable tends to decrease as another increases does not mean that one causes the other to decrease. Confounding variables may influence both variables, creating the appearance of an association that is not causal in nature.</p>
+<p>Understanding negative association helps us identify inverse patterns, make predictions, and recognize relationships in data. It is essential for critical thinking and for designing studies that can distinguish between true causal relationships and mere associations, particularly in fields such as health sciences, economics, and social research where inverse relationships frequently arise.</p>
+<p><strong>Key Terms:</strong> <em>negative association, relationship, increase/decrease trade-off, scatter plot, downward trend, strength, correlation coefficient r, consistent, predictable, cause, confounding variable, pattern, real-world, inverse, relationship</em></p>
+<hr />
+<h3 id="no-association-tier-c-120-200-words-definition-required">No Association (Tier C: 120-200 words, definition required)<a class="headerlink" href="#no-association-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> No association (also called zero association or no relationship) describes a situation where there is no consistent pattern or relationship between two variables. When two variables have no association, the data points on a scatter plot appear randomly scattered without any clear upward or downward trend. Knowing the value of one variable provides no useful information for predicting the value of the other variable.</p>
+<p>No association does not necessarily mean that the two variables are completely unrelated in all contexts. It simply means that there is no <strong>linear</strong> or consistent monotonic relationship between them. It is possible that variables are related in a nonlinear way that is not captured by simple association measures, or that any relationship is masked by other sources of variation in the data. Additionally, no association does not rule out the possibility that both variables are related to a third variable (a confounding factor).</p>
+<p>The correlation coefficient r for variables with no association will be close to 0, but as always, correlation does not capture all types of relationships. A scatter plot is the most effective way to determine whether an association exists, as it reveals the actual pattern of data points and helps identify nonlinear relationships that summary statistics might miss. Even when no overall association is present, subgroups or subsets of the data may show patterns that are not apparent in the full dataset.</p>
+<p>Understanding no association is crucial for correctly interpreting data and avoiding incorrect conclusions. It helps researchers determine whether investing time in modeling the relationship between two variables is warranted, and it guards against claiming relationships that are not supported by the data. In fields such as medicine, psychology, and economics, demonstrating "no effect" or "no association" can be just as important as finding a significant relationship, as it helps refine theories, redirect research, and inform evidence-based decision-making.</p>
+<p><strong>Key Terms:</strong> <em>no association, zero relationship, no relationship, random scatter, scatter plot, correlation coefficient r, linear, nonlinear, confounding factor, subgroup, pattern, interpretation, evidence, decision-making, research, theory refinement</em></p>
+<hr />
+<h3 id="fit-line-plot-tier-c-120-200-words-definition-required">Fit Line Plot (Tier C: 120-200 words, definition required)<a class="headerlink" href="#fit-line-plot-tier-c-120-200-words-definition-required" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> A fit line plot displays a scatter plot of bivariate data with a straight line fitted through the data points to summarize the overall trend or pattern. This fitted line, often called a <strong>regression line</strong>, <strong>line of best fit</strong>, or <strong>trend line</strong>, represents the best linear approximation of the relationship between the two variables. The line is calculated using a method such as least squares, which minimizes the sum of the squared vertical distances between the data points and the line.</p>
+<p>The fit line serves several important purposes. It provides a visual summary of the direction (positive or negative) and strength of the association between the variables. The slope of the line indicates the rate of change: for each one-unit increase in the independent variable, the dependent variable changes by the slope amount, on average. The intercept indicates the predicted value of the dependent variable when the independent variable is zero. The fit line also allows us to make predictions about the dependent variable for given values of the independent variable, though predictions outside the range of the observed data (extrapolation) should be interpreted with caution.</p>
+<p>It is important to understand that the fit line does not pass through all the data points unless there is a perfect linear relationship. Instead, it balances the distances of all points from the line, with some points above the line and some below. The vertical distance between each data point and the fit line is called the <strong>residual</strong>, and examining residuals helps assess whether a linear model is appropriate or whether a nonlinear pattern might better describe the data.</p>
+<p>Fit line plots are widely used in statistics, science, business, and social sciences to summarize trends, make predictions, and communicate findings. However, as with all association measures, it is crucial to remember that a fitted line summarizes a pattern in the data and does not prove causation. The presence of a linear fit line does not imply that one variable causes changes in the other, and the model's limitations should always be considered when interpreting results.</p>
+<p><strong>Key Terms:</strong> <em>fit line, regression line, line of best fit, trend line, scatter plot, slope, intercept, least squares, residuals, vertical distance, predicted value, independent variable, dependent variable, prediction, extrapolation, model, linear, association vs. causation, summarize, pattern</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../09-statistics-and-data-analysis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9. Statistics and Data Analysis">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                9. Statistics and Data Analysis
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../11-mathematical-modeling/" class="md-footer__link md-footer__link--next" aria-label="Next: 11. Mathematical Modeling">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                11. Mathematical Modeling
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

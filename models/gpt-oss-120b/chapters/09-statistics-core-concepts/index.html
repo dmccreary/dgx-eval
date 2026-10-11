@@ -1,0 +1,3719 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Core statistical concepts, probability, and hypothesis testing.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/09-statistics-core-concepts/">
+      
+      
+        <link rel="prev" href="../08-data-analysis-and-statistics-part-i/">
+      
+      
+        <link rel="next" href="../10-miscellaneous-topics/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Statistics – Core Concepts - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#statistics-core-concepts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Statistics – Core Concepts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_7" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_7" id="__nav_10_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_7">
+            <span class="md-nav__icon md-icon"></span>
+            gpt-oss:120b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_7_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_7_4" id="__nav_10_7_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_7_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations-of-algebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations of Algebra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-algebraic-operations-part-i/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Algebraic Operations – Part I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-algebraic-operations-part-ii/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Algebraic Operations – Part II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-algebraic-operations-part-iii/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Algebraic Operations – Part III
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-functions-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Functions – Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-functions-advanced-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Functions – Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-data-analysis-core-concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Data Analysis – Core Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-data-analysis-and-statistics-part-i/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Data Analysis and Statistics – Part I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    9. Statistics – Core Concepts
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    9. Statistics – Core Concepts
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeling-population-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling Population Growth
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modeling Population Growth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-modeling-population-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Modeling Population Growth
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compound-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compound Interest
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compound Interest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-compound-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Compound Interest
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depreciation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Depreciation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depreciation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-depreciation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Depreciation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#newtons-method-intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Newton’s Method (Intro)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Newton’s Method (Intro)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-newtons-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Newton’s Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-finding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Finding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Root Finding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-bisection-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bisection Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterative-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterative Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterative Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-babylonian-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Babylonian Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-proofs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Proofs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mathematical Proofs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-proof-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Proof Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inductive-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inductive Reasoning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inductive Reasoning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-induction-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Induction Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deductive-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deductive Reasoning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deductive Reasoning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-deductive-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Deductive Reasoning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Statements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logical Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-truth-table-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Truth Table Builder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Statements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditional Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-conditional-truth-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Conditional Truth Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifthen-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      If‑Then Statements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="If‑Then Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-ifthen-visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: If‑Then Visual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biconditional-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Biconditional Statements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Biconditional Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-biconditional-venn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Biconditional Venn
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#negation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Negation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Negation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-negation-toggle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Negation Toggle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantifiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantifiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-quantifier-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Quantifier Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Vocabulary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mathematical Vocabulary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vocabulary-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vocabulary Card
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbols-and-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symbols and Notation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Symbols and Notation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-symbol-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Symbol Gallery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#units-of-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Units of Measurement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Units of Measurement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-unit-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Unit Conversion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimensional-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dimensional Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dimensional Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dimensional-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Dimensional Balance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-error-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Error Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-miscellaneous-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Miscellaneous Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeling-population-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling Population Growth
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modeling Population Growth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-modeling-population-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Modeling Population Growth
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compound-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compound Interest
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compound Interest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-compound-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Compound Interest
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depreciation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Depreciation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depreciation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-depreciation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Depreciation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#newtons-method-intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Newton’s Method (Intro)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Newton’s Method (Intro)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-newtons-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Newton’s Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-finding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Finding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Root Finding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-bisection-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bisection Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterative-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterative Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterative Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-babylonian-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Babylonian Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-proofs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Proofs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mathematical Proofs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-proof-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Proof Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inductive-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inductive Reasoning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inductive Reasoning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-induction-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Induction Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deductive-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deductive Reasoning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deductive Reasoning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-deductive-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Deductive Reasoning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Statements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logical Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-truth-table-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Truth Table Builder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Statements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditional Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-conditional-truth-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Conditional Truth Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifthen-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      If‑Then Statements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="If‑Then Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-ifthen-visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: If‑Then Visual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biconditional-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Biconditional Statements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Biconditional Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-biconditional-venn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Biconditional Venn
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#negation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Negation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Negation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-negation-toggle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Negation Toggle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantifiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantifiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-quantifier-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Quantifier Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Vocabulary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mathematical Vocabulary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vocabulary-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vocabulary Card
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbols-and-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symbols and Notation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Symbols and Notation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-symbol-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Symbol Gallery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#units-of-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Units of Measurement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Units of Measurement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-unit-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Unit Conversion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimensional-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dimensional Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dimensional Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dimensional-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Dimensional Balance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-error-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Error Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/gpt-oss-120b/chapters/09-statistics-core-concepts/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="statistics-core-concepts">Statistics – Core Concepts<a class="headerlink" href="#statistics-core-concepts" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter introduces essential statistical ideas that help students understand how data is described, how populations change over time, and how to draw conclusions from evidence. Readers will learn to model population growth, calculate interest, interpret depreciation, and use basic proof techniques. Each concept includes a worked example and an interactive diagram that lets learners explore the ideas hands‑on.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modeling Population Growth</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Compound Interest</td>
+<td>39</td>
+</tr>
+<tr>
+<td>Depreciation</td>
+<td>38</td>
+</tr>
+<tr>
+<td>Newton’s Method (Intro)</td>
+<td>37</td>
+</tr>
+<tr>
+<td>Root Finding</td>
+<td>36</td>
+</tr>
+<tr>
+<td>Iterative Methods</td>
+<td>35</td>
+</tr>
+<tr>
+<td>Mathematical Proofs</td>
+<td>34</td>
+</tr>
+<tr>
+<td>Inductive Reasoning</td>
+<td>33</td>
+</tr>
+<tr>
+<td>Deductive Reasoning</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Logical Statements</td>
+<td>31</td>
+</tr>
+<tr>
+<td>Conditional Statements</td>
+<td>30</td>
+</tr>
+<tr>
+<td>If‑Then Statements</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Biconditional Statements</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Negation</td>
+<td>27</td>
+</tr>
+<tr>
+<td>Quantifiers</td>
+<td>26</td>
+</tr>
+<tr>
+<td>Mathematical Vocabulary</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Symbols and Notation</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Units of Measurement</td>
+<td>23</td>
+</tr>
+<tr>
+<td>Dimensional Analysis</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Error Analysis</td>
+<td>21</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:
+- <a href="../08-data-analysis-and-statistics-part-i/">8 Chapter 8: Data Analysis and Statistics – Part I</a></p>
+<hr />
+<h2 id="modeling-population-growth">Modeling Population Growth<a class="headerlink" href="#modeling-population-growth" title="Permanent link">&para;</a></h2>
+<p>Population growth describes how a group of organisms or people increases over time, usually assuming a constant percentage increase each period. The basic model uses the formula <span class="arithmatex">\(P_t = P_0 (1 + r)^t\)</span> where <span class="arithmatex">\(P_0\)</span> is the starting population, <span class="arithmatex">\(r\)</span> is the growth rate expressed as a decimal, and <span class="arithmatex">\(t\)</span> is the number of periods.</p>
+<h3 id="worked-example">Worked Example<a class="headerlink" href="#worked-example" title="Permanent link">&para;</a></h3>
+<p>Suppose a town has 1,000 residents and grows at 5 % each year. After 3 years the population is:</p>
+<div class="arithmatex">\[P_3 = 1000 \times (1 + 0.05)^3 = 1000 \times 1.157625 \approx 1158\]</div>
+<p>So the town will have about 1,158 people after three years.</p>
+<h3 id="diagram-modeling-population-growth">Diagram: Modeling Population Growth<a class="headerlink" href="#diagram-modeling-population-growth" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Modeling Population Growth Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> modeling-population-growth<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret a population‑growth diagram to predict future population size.<br/>
+<strong>Prerequisites:</strong> Exponential growth, basic algebra<br/>
+<strong>Evidence of Mastery:</strong> The learner correctly reads the diagram and calculates the population after a given number of years.<br/>
+<strong>Misconceptions:</strong> Believing linear growth applies to populations; confusing growth rate with absolute increase.<br/>
+<strong>Instructional Rationale:</strong> Visualizing growth helps students see the impact of compounding rates.<br/>
+<strong>Content:</strong> A flowchart showing P₀ → multiply by (1 + r) each year → P_t.<br/>
+<strong>Provenance:</strong> Chapter 9, Section "Modeling Population Growth".<br/>
+<strong>Rules:</strong> Growth factor = 1 + r; r expressed as a decimal.<br/>
+<strong>Learner Activity:</strong> 1. Observe the diagram. 2. Identify the growth factor. 3. Apply it for t years.<br/>
+<strong>Feedback:</strong> Correct: "Great! You computed the correct population." Incorrect: "Check your growth factor; remember it includes the original population.".<br/>
+<strong>Starting State:</strong> Diagram displayed with initial population 1 000 and growth rate 5 %.
+<strong>Chapter Anchors:</strong> Modeling Population Growth<br/></p>
+</details>
+<hr />
+<h2 id="compound-interest">Compound Interest<a class="headerlink" href="#compound-interest" title="Permanent link">&para;</a></h2>
+<p>Compound interest shows how money grows when interest is added to the principal each period, so future interest is earned on a larger amount. The formula is <span class="arithmatex">\(A = P (1 + r/n)^{nt}\)</span> where <span class="arithmatex">\(P\)</span> is the principal, <span class="arithmatex">\(r\)</span> the annual rate, <span class="arithmatex">\(n\)</span> the number of compounding periods per year, and <span class="arithmatex">\(t\)</span> the number of years.</p>
+<h3 id="worked-example_1">Worked Example<a class="headerlink" href="#worked-example_1" title="Permanent link">&para;</a></h3>
+<p>If you invest $1,000 at 6 % annual interest compounded quarterly for 2 years, the amount is:</p>
+<div class="arithmatex">\[A = 1000 \times (1 + 0.06/4)^{4\times2} = 1000 \times (1.015)^{8} \approx 1129.86\]</div>
+<p>You would have about $1,129.86 after two years.</p>
+<h3 id="diagram-compound-interest">Diagram: Compound Interest<a class="headerlink" href="#diagram-compound-interest" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Compound Interest Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> compound-interest<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate the future value of an investment using the compound‑interest formula.<br/>
+<strong>Prerequisites:</strong> Exponents, basic algebra<br/>
+<strong>Evidence of Mastery:</strong> Correctly computes the final amount for given <span class="arithmatex">\(P, r, n, t\)</span>.<br/>
+<strong>Misconceptions:</strong> Treating the rate as a percentage rather than a decimal; forgetting to divide by <span class="arithmatex">\(n\)</span>.
+<strong>Instructional Rationale:</strong> Seeing the repeated multiplication clarifies why interest grows faster.
+<strong>Content:</strong> Diagram of a money bag growing each quarter with the factor <span class="arithmatex">\((1+r/n)\)</span>.
+<strong>Provenance:</strong> Chapter 9, Section "Compound Interest".
+<strong>Rules:</strong> Use <span class="arithmatex">\(r\)</span> as decimal; <span class="arithmatex">\(n\)</span> must be integer.
+<strong>Learner Activity:</strong> 1. Identify <span class="arithmatex">\(P, r, n, t\)</span>. 2. Apply the formula.
+<strong>Feedback:</strong> Correct: "Exactly, the investment grows to that amount." Incorrect: "Remember to convert the percent to a decimal and divide by the number of periods.".
+<strong>Starting State:</strong> Diagram shows initial $1,000 and a 6 % rate, quarterly.
+<strong>Chapter Anchors:</strong> Compound Interest<br/></p>
+</details>
+<hr />
+<h2 id="depreciation">Depreciation<a class="headerlink" href="#depreciation" title="Permanent link">&para;</a></h2>
+<p>Depreciation measures how the value of an asset declines over time. The straight‑line method spreads the loss evenly: <span class="arithmatex">\(D = \frac{C - S}{L}\)</span> where <span class="arithmatex">\(C\)</span> is the cost, <span class="arithmatex">\(S\)</span> the salvage value, and <span class="arithmatex">\(L\)</span> the useful life in years.</p>
+<h3 id="worked-example_2">Worked Example<a class="headerlink" href="#worked-example_2" title="Permanent link">&para;</a></h3>
+<p>A machine costs $5,000, has a salvage value of $500, and a useful life of 5 years. Annual depreciation is:</p>
+<div class="arithmatex">\[D = \frac{5000 - 500}{5} = \frac{4500}{5} = 900\]</div>
+<p>Each year the machine loses $900 in value.</p>
+<h3 id="diagram-depreciation">Diagram: Depreciation<a class="headerlink" href="#diagram-depreciation" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Depreciation Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> depreciation-straight-line<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret a straight‑line depreciation chart to determine annual loss.
+<strong>Prerequisites:</strong> Subtraction, division
+<strong>Evidence of Mastery:</strong> Student reads the chart and states the yearly depreciation amount.
+<strong>Misconceptions:</strong> Mixing up total loss with yearly loss.
+<strong>Instructional Rationale:</strong> A visual bar chart makes the constant decline obvious.
+<strong>Content:</strong> Bar chart showing value $5,000 dropping $900 each year to $500.
+<strong>Provenance:</strong> Chapter 9, Section "Depreciation".
+<strong>Rules:</strong> Value cannot drop below salvage.
+<strong>Learner Activity:</strong> 1. Observe the bars. 2. Identify the yearly drop.
+<strong>Feedback:</strong> Correct: "Great, you identified the $900 drop." Incorrect: "Check the total loss versus yearly loss.".
+<strong>Starting State:</strong> Chart displayed with initial cost and yearly bars.
+<strong>Chapter Anchors:</strong> Depreciation<br/></p>
+</details>
+<hr />
+<h2 id="newtons-method-intro">Newton’s Method (Intro)<a class="headerlink" href="#newtons-method-intro" title="Permanent link">&para;</a></h2>
+<p>Newton’s method finds roots of equations by iteratively improving a guess. Starting from <span class="arithmatex">\(x_0\)</span>, the update rule is <span class="arithmatex">\(x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span>.</p>
+<h3 id="worked-example_3">Worked Example<a class="headerlink" href="#worked-example_3" title="Permanent link">&para;</a></h3>
+<p>Find a root of <span class="arithmatex">\(f(x)=x^2-2\)</span> (i.e., <span class="arithmatex">\(\sqrt{2}\)</span>). Start with <span class="arithmatex">\(x_0=1\)</span>.</p>
+<ol>
+<li><span class="arithmatex">\(f(1) = -1\)</span>, <span class="arithmatex">\(f'(1)=2\)</span> → <span class="arithmatex">\(x_1 = 1 - (-1)/2 = 1.5\)</span></li>
+<li><span class="arithmatex">\(f(1.5)=0.25\)</span>, <span class="arithmatex">\(f'(1.5)=3\)</span> → <span class="arithmatex">\(x_2 = 1.5 - 0.25/3 \approx 1.4167\)</span></li>
+<li><span class="arithmatex">\(f(1.4167)\approx 0.0069\)</span> → <span class="arithmatex">\(x_3 \approx 1.4142\)</span></li>
+</ol>
+<p>After three iterations we are close to <span class="arithmatex">\(\sqrt{2}\approx1.4142\)</span>.</p>
+<h3 id="diagram-newtons-method">Diagram: Newton’s Method<a class="headerlink" href="#diagram-newtons-method" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Newton’s Method Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> newtons-method<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate successive approximations using Newton’s update rule.
+<strong>Prerequisites:</strong> Derivatives, basic algebra
+<strong>Evidence of Mastery:</strong> Correctly computes <span class="arithmatex">\(x_{n+1}\)</span> for a given function.
+<strong>Misconceptions:</strong> Forgetting the minus sign; using the function instead of its derivative.
+<strong>Instructional Rationale:</strong> Visualizing the tangent line clarifies why the method converges.
+<strong>Content:</strong> Sketch of a curve <span class="arithmatex">\(f(x)\)</span> with tangent at <span class="arithmatex">\(x_n\)</span> intersecting the x‑axis at <span class="arithmatex">\(x_{n+1}\)</span>.
+<strong>Provenance:</strong> Chapter 9, Section "Newton’s Method (Intro)".
+<strong>Rules:</strong> Function must be differentiable near the root.
+<strong>Learner Activity:</strong> 1. Identify <span class="arithmatex">\(f(x)\)</span> and <span class="arithmatex">\(f'(x)\)</span>. 2. Apply the formula.
+<strong>Feedback:</strong> Correct: "Excellent, you obtained the next approximation." Incorrect: "Check the sign and use the derivative correctly.".
+<strong>Starting State:</strong> Diagram shows <span class="arithmatex">\(f(x)=x^2-2\)</span> and an initial guess.
+<strong>Chapter Anchors:</strong> Newton’s Method (Intro)<br/></p>
+</details>
+<hr />
+<h2 id="root-finding">Root Finding<a class="headerlink" href="#root-finding" title="Permanent link">&para;</a></h2>
+<p>Root finding seeks values where a function equals zero. Besides Newton’s method, the bisection method brackets a root and repeatedly halves the interval.</p>
+<h3 id="worked-example_4">Worked Example<a class="headerlink" href="#worked-example_4" title="Permanent link">&para;</a></h3>
+<p>Use bisection to find a root of <span class="arithmatex">\(f(x)=x^3- x -2\)</span> between <span class="arithmatex">\(x=1\)</span> (<span class="arithmatex">\(f(1)=-2\)</span>) and <span class="arithmatex">\(x=2\)</span> (<span class="arithmatex">\(f(2)=4\)</span>).</p>
+<ol>
+<li>Midpoint <span class="arithmatex">\(1.5\)</span>: <span class="arithmatex">\(f(1.5)= -0.125\)</span> → root lies between 1.5 and 2.</li>
+<li>Midpoint <span class="arithmatex">\(1.75\)</span>: <span class="arithmatex">\(f(1.75)=1.36\)</span> → root lies between 1.5 and 1.75.</li>
+<li>Midpoint <span class="arithmatex">\(1.625\)</span>: <span class="arithmatex">\(f(1.625)=0.666\)</span> → root between 1.5 and 1.625.</li>
+</ol>
+<p>After three steps the root is between 1.5 and 1.625.</p>
+<h3 id="diagram-bisection-method">Diagram: Bisection Method<a class="headerlink" href="#diagram-bisection-method" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Bisection Method Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> bisection-method<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> illustrate<br/>
+<strong>Learning Objective:</strong> The learner will illustrate how the interval halves in the bisection method.
+<strong>Prerequisites:</strong> Function evaluation, inequality reasoning
+<strong>Evidence of Mastery:</strong> Student shows the interval after each iteration.
+<strong>Misconceptions:</strong> Assuming the midpoint is always the root.
+<strong>Instructional Rationale:</strong> Visual halving makes convergence clear.
+<strong>Content:</strong> Number line showing current interval and midpoint.
+<strong>Provenance:</strong> Chapter 9, Section "Root Finding".
+<strong>Rules:</strong> Endpoints must have opposite signs.
+<strong>Learner Activity:</strong> 1. Identify interval. 2. Compute midpoint. 3. Choose sub‑interval.
+<strong>Feedback:</strong> Correct: "You chose the correct sub‑interval." Incorrect: "Remember the signs must differ at the endpoints.".
+<strong>Starting State:</strong> Interval [1,2] displayed.
+<strong>Chapter Anchors:</strong> Root Finding<br/></p>
+</details>
+<hr />
+<h2 id="iterative-methods">Iterative Methods<a class="headerlink" href="#iterative-methods" title="Permanent link">&para;</a></h2>
+<p>Iterative methods repeatedly apply a formula to approach a solution. They are useful when a direct formula is unavailable.</p>
+<h3 id="worked-example_5">Worked Example<a class="headerlink" href="#worked-example_5" title="Permanent link">&para;</a></h3>
+<p>Estimate <span class="arithmatex">\(\sqrt{10}\)</span> using the iteration <span class="arithmatex">\(x_{n+1}=\frac{1}{2}\left(x_n + \frac{10}{x_n}\right)\)</span> (the Babylonian method).</p>
+<p>Start with <span class="arithmatex">\(x_0=3\)</span>:</p>
+<ul>
+<li><span class="arithmatex">\(x_1 = 0.5(3 + 10/3) = 0.5(3 + 3.333) = 3.1667\)</span></li>
+<li><span class="arithmatex">\(x_2 = 0.5(3.1667 + 10/3.1667) \approx 3.1623\)</span></li>
+</ul>
+<p>After two iterations we have <span class="arithmatex">\(3.1623\)</span>, close to the true value <span class="arithmatex">\(\sqrt{10}\approx3.1623\)</span>.</p>
+<h3 id="diagram-babylonian-method">Diagram: Babylonian Method<a class="headerlink" href="#diagram-babylonian-method" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Babylonian Method Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> babylonian-method<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate successive approximations of a square root using the Babylonian iteration.
+<strong>Prerequisites:</strong> Fractions, basic algebra
+<strong>Evidence of Mastery:</strong> Correctly computes <span class="arithmatex">\(x_{n+1}\)</span> for a given <span class="arithmatex">\(x_n\)</span>.
+<strong>Misconceptions:</strong> Forgetting to divide by the current estimate.
+<strong>Instructional Rationale:</strong> The iteration shows how averaging improves the guess.
+<strong>Content:</strong> Flowchart: start with guess → compute new guess → repeat.
+<strong>Provenance:</strong> Chapter 9, Section "Iterative Methods".
+<strong>Rules:</strong> Use positive initial guess.
+<strong>Learner Activity:</strong> 1. Input guess. 2. Apply formula. 3. Observe improvement.
+<strong>Feedback:</strong> Correct: "Your new estimate is closer to the true value." Incorrect: "Check the division step.".
+<strong>Starting State:</strong> Prompt shows initial guess 3.
+<strong>Chapter Anchors:</strong> Iterative Methods<br/></p>
+</details>
+<hr />
+<h2 id="mathematical-proofs">Mathematical Proofs<a class="headerlink" href="#mathematical-proofs" title="Permanent link">&para;</a></h2>
+<p>A proof demonstrates that a statement follows logically from axioms and previously proven results. Proofs can be direct, by contradiction, or by induction.</p>
+<h3 id="worked-example_6">Worked Example<a class="headerlink" href="#worked-example_6" title="Permanent link">&para;</a></h3>
+<p>Prove that the sum of the first <span class="arithmatex">\(n\)</span> positive integers is <span class="arithmatex">\(\frac{n(n+1)}{2}\)</span>.</p>
+<p><strong>Proof (direct):</strong> Pair the first and last numbers: <span class="arithmatex">\(1+n\)</span>, <span class="arithmatex">\(2+(n-1)\)</span>, … each pair sums to <span class="arithmatex">\(n+1\)</span>. There are <span class="arithmatex">\(n/2\)</span> pairs if <span class="arithmatex">\(n\)</span> is even, or <span class="arithmatex">\((n-1)/2\)</span> pairs plus the middle term <span class="arithmatex">\((n+1)/2\)</span> if <span class="arithmatex">\(n\)</span> is odd. In both cases the total is <span class="arithmatex">\(\frac{n(n+1)}{2}\)</span>.</p>
+<h3 id="diagram-proof-structure">Diagram: Proof Structure<a class="headerlink" href="#diagram-proof-structure" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Proof Structure Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> proof-structure<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> construct<br/>
+<strong>Learning Objective:</strong> The learner will construct a proof outline for a given statement.
+<strong>Prerequisites:</strong> Logical reasoning, understanding of implication
+<strong>Evidence of Mastery:</strong> Student creates a correct sequence of logical steps.
+<strong>Misconceptions:</strong> Treating examples as proofs.
+<strong>Instructional Rationale:</strong> Visualizing the flow of reasoning clarifies structure.
+<strong>Content:</strong> Flowchart showing "Assume statement → derive consequences → reach known result → conclude".
+<strong>Provenance:</strong> Chapter 9, Section "Mathematical Proofs".
+<strong>Rules:</strong> Each arrow represents a logical implication.
+<strong>Learner Activity:</strong> 1. Identify premise. 2. Fill in each box with a step.
+<strong>Feedback:</strong> Correct: "Your proof follows a valid logical chain." Incorrect: "Make sure each step follows from the previous one.".
+<strong>Starting State:</strong> Empty flowchart with labeled boxes.
+<strong>Chapter Anchors:</strong> Mathematical Proofs<br/></p>
+</details>
+<hr />
+<h2 id="inductive-reasoning">Inductive Reasoning<a class="headerlink" href="#inductive-reasoning" title="Permanent link">&para;</a></h2>
+<p>Induction proves statements for all natural numbers by showing a base case and an inductive step.</p>
+<h3 id="worked-example_7">Worked Example<a class="headerlink" href="#worked-example_7" title="Permanent link">&para;</a></h3>
+<p>Prove that <span class="arithmatex">\(1+2+\dots+ n = \frac{n(n+1)}{2}\)</span> for all <span class="arithmatex">\(n\ge1\)</span>.</p>
+<ol>
+<li><strong>Base case:</strong> <span class="arithmatex">\(n=1\)</span> → left side <span class="arithmatex">\(1\)</span>, right side <span class="arithmatex">\(\frac{1\times2}{2}=1\)</span>. True.</li>
+<li><strong>Inductive step:</strong> Assume true for <span class="arithmatex">\(k\)</span>: <span class="arithmatex">\(1+\dots+k = \frac{k(k+1)}{2}\)</span>.
+   Then for <span class="arithmatex">\(k+1\)</span>:
+   <span class="arithmatex">\(1+\dots+k+(k+1) = \frac{k(k+1)}{2} + (k+1) = \frac{k(k+1)+2(k+1)}{2} = \frac{(k+1)(k+2)}{2}\)</span>.
+   Thus true for <span class="arithmatex">\(k+1\)</span>.</li>
+</ol>
+<p>By induction the formula holds for all <span class="arithmatex">\(n\)</span>.</p>
+<h3 id="diagram-induction-steps">Diagram: Induction Steps<a class="headerlink" href="#diagram-induction-steps" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Induction Steps Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> induction-steps<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> illustrate<br/>
+<strong>Learning Objective:</strong> The learner will illustrate the base case and inductive step of a proof by induction.
+<strong>Prerequisites:</strong> Equality, algebra
+<strong>Evidence of Mastery:</strong> Student correctly identifies base case and writes the inductive hypothesis.
+<strong>Misconceptions:</strong> Forgetting to prove the base case.
+<strong>Instructional Rationale:</strong> Visual scaffolding reinforces the two‑part structure.
+<strong>Content:</strong> Two boxes labeled "Base case" and "Inductive step" with arrows.
+<strong>Provenance:</strong> Chapter 9, Section "Inductive Reasoning".
+<strong>Rules:</strong> None beyond logical flow.
+<strong>Learner Activity:</strong> 1. Fill in the base case. 2. Write the hypothesis. 3. Derive the step.
+<strong>Feedback:</strong> Correct: "Your induction is complete." Incorrect: "Make sure you state the hypothesis clearly.".
+<strong>Starting State:</strong> Empty diagram with two labeled boxes.
+<strong>Chapter Anchors:</strong> Inductive Reasoning<br/></p>
+</details>
+<hr />
+<h2 id="deductive-reasoning">Deductive Reasoning<a class="headerlink" href="#deductive-reasoning" title="Permanent link">&para;</a></h2>
+<p>Deductive reasoning draws specific conclusions from general premises using logical rules.</p>
+<h3 id="worked-example_8">Worked Example<a class="headerlink" href="#worked-example_8" title="Permanent link">&para;</a></h3>
+<p>Premise 1: All mammals are warm‑blooded.
+Premise 2: A whale is a mammal.
+Conclusion: A whale is warm‑blooded.</p>
+<h3 id="diagram-deductive-reasoning">Diagram: Deductive Reasoning<a class="headerlink" href="#diagram-deductive-reasoning" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Deductive Reasoning Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> deductive-reasoning<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> apply<br/>
+<strong>Learning Objective:</strong> The learner will apply a syllogism to reach a logical conclusion.
+<strong>Prerequisites:</strong> Understanding of "all" and "some" statements.
+<strong>Evidence of Mastery:</strong> Student writes a valid conclusion.
+<strong>Misconceptions:</strong> Confusing the order of premises.
+<strong>Instructional Rationale:</strong> Mapping premises helps avoid logical errors.
+<strong>Content:</strong> Venn diagram showing set of mammals inside warm‑blooded set, and whale inside mammals.
+<strong>Provenance:</strong> Chapter 9, Section "Deductive Reasoning".
+<strong>Rules:</strong> Premises must be true.
+<strong>Learner Activity:</strong> 1. Place sets. 2. Locate specific item. 3. State conclusion.
+<strong>Feedback:</strong> Correct: "Your conclusion follows logically." Incorrect: "Check that the specific item lies within the general set.".
+<strong>Starting State:</strong> Empty Venn diagram.
+<strong>Chapter Anchors:</strong> Deductive Reasoning<br/></p>
+</details>
+<hr />
+<h2 id="logical-statements">Logical Statements<a class="headerlink" href="#logical-statements" title="Permanent link">&para;</a></h2>
+<p>Logical statements combine propositions with connectors like AND, OR, NOT. Truth tables enumerate all possible truth values.</p>
+<h3 id="worked-example_9">Worked Example<a class="headerlink" href="#worked-example_9" title="Permanent link">&para;</a></h3>
+<p>Evaluate <span class="arithmatex">\((P \land Q) \lor \neg P\)</span> for all combinations of <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(Q\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th>P</th>
+<th>Q</th>
+<th><span class="arithmatex">\(P \land Q\)</span></th>
+<th><span class="arithmatex">\(\neg P\)</span></th>
+<th><span class="arithmatex">\((P \land Q) \lor \neg P\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagram-truth-table-builder">Diagram: Truth Table Builder<a class="headerlink" href="#diagram-truth-table-builder" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Truth Table Builder Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> truth-table-builder<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> construct<br/>
+<strong>Learning Objective:</strong> The learner will construct truth tables for compound logical statements.
+<strong>Prerequisites:</strong> Understanding of true/false, basic logical operators.
+<strong>Evidence of Mastery:</strong> Student produces a correct table.
+<strong>Misconceptions:</strong> Treating "or" as exclusive.
+<strong>Instructional Rationale:</strong> Building the table makes the logic explicit.
+<strong>Content:</strong> Interactive grid where students select truth values for P and Q and see the resulting column.
+<strong>Provenance:</strong> Chapter 9, Section "Logical Statements".
+<strong>Rules:</strong> Only two variables allowed.
+<strong>Learner Activity:</strong> 1. Choose values for P and Q. 2. Observe computed columns.
+<strong>Feedback:</strong> Correct: "Your table matches the logical definition." Incorrect: "Check the definition of the OR operator.".
+<strong>Starting State:</strong> Empty table with headers.
+<strong>Chapter Anchors:</strong> Logical Statements<br/></p>
+</details>
+<hr />
+<h2 id="conditional-statements">Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permanent link">&para;</a></h2>
+<p>A conditional "if‑then" asserts that if antecedent <span class="arithmatex">\(A\)</span> is true, then consequent <span class="arithmatex">\(B\)</span> must also be true. It is false only when <span class="arithmatex">\(A\)</span> is true and <span class="arithmatex">\(B\)</span> is false.</p>
+<h3 id="worked-example_10">Worked Example<a class="headerlink" href="#worked-example_10" title="Permanent link">&para;</a></h3>
+<p>If it rains (A), the ground gets wet (B). The statement is false only when it rains and the ground stays dry.</p>
+<h3 id="diagram-conditional-truth-table">Diagram: Conditional Truth Table<a class="headerlink" href="#diagram-conditional-truth-table" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Conditional Truth Table Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> conditional-truth-table<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret the truth table for a conditional statement.
+<strong>Prerequisites:</strong> Logical statements
+<strong>Evidence of Mastery:</strong> Student correctly identifies the only false case.
+<strong>Misconceptions:</strong> Assuming "if" implies causation.
+<strong>Instructional Rationale:</strong> Table makes the exception clear.
+<strong>Content:</strong> Table with columns A, B, A→B.
+<strong>Provenance:</strong> Chapter 9, Section "Conditional Statements".
+<strong>Rules:</strong> None.
+<strong>Learner Activity:</strong> 1. Fill in A and B values. 2. Observe A→B.
+<strong>Feedback:</strong> Correct: "You identified the false case correctly." Incorrect: "Remember the conditional is true when the antecedent is false.".
+<strong>Starting State:</strong> Empty truth table.
+<strong>Chapter Anchors:</strong> Conditional Statements<br/></p>
+</details>
+<hr />
+<h2 id="ifthen-statements">If‑Then Statements<a class="headerlink" href="#ifthen-statements" title="Permanent link">&para;</a></h2>
+<p>An "if‑then" statement is a specific kind of conditional often written as "If A, then B". The logical form is the same as a conditional.</p>
+<h3 id="worked-example_11">Worked Example<a class="headerlink" href="#worked-example_11" title="Permanent link">&para;</a></h3>
+<p>If a number is even (A), then it is divisible by 2 (B). The statement holds for all even numbers.</p>
+<h3 id="diagram-ifthen-visual">Diagram: If‑Then Visual<a class="headerlink" href="#diagram-ifthen-visual" title="Permanent link">&para;</a></h3>
+<details>
+<summary>If‑Then Visual Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> if-then-visual<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> illustrate<br/>
+<strong>Learning Objective:</strong> The learner will illustrate an if‑then relationship using a flowchart.
+<strong>Prerequisites:</strong> Conditional statements
+<strong>Evidence of Mastery:</strong> Student creates a flowchart that correctly maps antecedent to consequent.
+<strong>Misconceptions:</strong> Thinking the converse is automatically true.
+<strong>Instructional Rationale:</strong> Visual flow clarifies direction of implication.
+<strong>Content:</strong> Flowchart: "Even? → Yes → Divisible by 2".
+<strong>Provenance:</strong> Chapter 9, Section "If‑Then Statements".
+<strong>Rules:</strong> None.
+<strong>Learner Activity:</strong> 1. Identify antecedent. 2. Draw arrow to consequent.
+<strong>Feedback:</strong> Correct: "Your flowchart correctly shows the implication." Incorrect: "Remember the arrow goes from condition to result.".
+<strong>Starting State:</strong> Blank canvas with two labeled boxes.
+<strong>Chapter Anchors:</strong> If‑Then Statements<br/></p>
+</details>
+<hr />
+<h2 id="biconditional-statements">Biconditional Statements<a class="headerlink" href="#biconditional-statements" title="Permanent link">&para;</a></h2>
+<p>A biconditional "A if and only if B" asserts that <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are true together and false together.</p>
+<h3 id="worked-example_12">Worked Example<a class="headerlink" href="#worked-example_12" title="Permanent link">&para;</a></h3>
+<p>A number is divisible by 4 if and only if it is even and divisible by 2.</p>
+<h3 id="diagram-biconditional-venn">Diagram: Biconditional Venn<a class="headerlink" href="#diagram-biconditional-venn" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Biconditional Venn Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> biconditional-venn<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> compare<br/>
+<strong>Learning Objective:</strong> The learner will compare two sets to verify a biconditional relationship.
+<strong>Prerequisites:</strong> Sets, logical equivalence
+<strong>Evidence of Mastery:</strong> Student shows that the two sets are identical.
+<strong>Misconceptions:</strong> Assuming one‑way implication is enough.
+<strong>Instructional Rationale:</strong> Overlapping circles highlight equality.
+<strong>Content:</strong> Venn diagram with two circles that perfectly overlap.
+<strong>Provenance:</strong> Chapter 9, Section "Biconditional Statements".
+<strong>Rules:</strong> Circles must be congruent.
+<strong>Learner Activity:</strong> 1. Draw circles. 2. Shade overlapping region.
+<strong>Feedback:</strong> Correct: "Both directions hold, the sets match." Incorrect: "Check that the converse also holds.".
+<strong>Starting State:</strong> Two separate circles.
+<strong>Chapter Anchors:</strong> Biconditional Statements<br/></p>
+</details>
+<hr />
+<h2 id="negation">Negation<a class="headerlink" href="#negation" title="Permanent link">&para;</a></h2>
+<p>Negation flips the truth value of a proposition: <span class="arithmatex">\(\neg P\)</span> is true when <span class="arithmatex">\(P\)</span> is false.</p>
+<h3 id="worked-example_13">Worked Example<a class="headerlink" href="#worked-example_13" title="Permanent link">&para;</a></h3>
+<p>If <span class="arithmatex">\(P\)</span>: "It is sunny", then <span class="arithmatex">\(\neg P\)</span>: "It is not sunny".</p>
+<h3 id="diagram-negation-toggle">Diagram: Negation Toggle<a class="headerlink" href="#diagram-negation-toggle" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Negation Toggle Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> negation-toggle<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> toggle<br/>
+<strong>Learning Objective:</strong> The learner will toggle a statement to its negation.
+<strong>Prerequisites:</strong> Simple statements
+<strong>Evidence of Mastery:</strong> Student correctly switches true/false.
+<strong>Misconceptions:</strong> Thinking negation changes the content, not just truth value.
+<strong>Instructional Rationale:</strong> Interactive switch makes the operation concrete.
+<strong>Content:</strong> Button that flips "True"/"False" for a given proposition.
+<strong>Provenance:</strong> Chapter 9, Section "Negation".
+<strong>Rules:</strong> None.
+<strong>Learner Activity:</strong> 1. Read statement. 2. Click toggle.
+<strong>Feedback:</strong> Correct: "Negation applied correctly." Incorrect: "Remember only the truth value changes.".
+<strong>Starting State:</strong> Statement displayed with current truth value.
+<strong>Chapter Anchors:</strong> Negation<br/></p>
+</details>
+<hr />
+<h2 id="quantifiers">Quantifiers<a class="headerlink" href="#quantifiers" title="Permanent link">&para;</a></h2>
+<p>Quantifiers express how many elements satisfy a property: universal (<span class="arithmatex">\(\forall\)</span>) and existential (<span class="arithmatex">\(\exists\)</span>).</p>
+<h3 id="worked-example_14">Worked Example<a class="headerlink" href="#worked-example_14" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(\forall x\in\mathbb{R}, x^2\ge0\)</span> – true for all real numbers.
+<span class="arithmatex">\(\exists x\in\mathbb{R}, x^2 = 4\)</span> – true because <span class="arithmatex">\(x=2\)</span> works.</p>
+<h3 id="diagram-quantifier-explorer">Diagram: Quantifier Explorer<a class="headerlink" href="#diagram-quantifier-explorer" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Quantifier Explorer Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> quantifier-explorer<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> identify<br/>
+<strong>Learning Objective:</strong> The learner will identify whether a statement uses a universal or existential quantifier.
+<strong>Prerequisites:</strong> Logical statements
+<strong>Evidence of Mastery:</strong> Student labels quantifier type correctly.
+<strong>Misconceptions:</strong> Mixing up the symbols.
+<strong>Instructional Rationale:</strong> Visual symbols reinforce meaning.
+<strong>Content:</strong> Icons for <span class="arithmatex">\(\forall\)</span> and <span class="arithmatex">\(\exists\)</span> with example sentences.
+<strong>Provenance:</strong> Chapter 9, Section "Quantifiers".
+<strong>Rules:</strong> None.
+<strong>Learner Activity:</strong> 1. Read sentence. 2. Click appropriate quantifier icon.
+<strong>Feedback:</strong> Correct: "You chose the right quantifier." Incorrect: "Remember <span class="arithmatex">\(\forall\)</span> means "for all" and <span class="arithmatex">\(\exists\)</span> means "there exists".".
+<strong>Starting State:</strong> List of sentences without highlighted quantifier.
+<strong>Chapter Anchors:</strong> Quantifiers<br/></p>
+</details>
+<hr />
+<h2 id="mathematical-vocabulary">Mathematical Vocabulary<a class="headerlink" href="#mathematical-vocabulary" title="Permanent link">&para;</a></h2>
+<p>Precise terminology is essential for clear communication in mathematics.</p>
+<h3 id="worked-example_15">Worked Example<a class="headerlink" href="#worked-example_15" title="Permanent link">&para;</a></h3>
+<p>Define "function": a rule that assigns each element of a domain exactly one element of a codomain.</p>
+<h3 id="diagram-vocabulary-card">Diagram: Vocabulary Card<a class="headerlink" href="#diagram-vocabulary-card" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Vocabulary Card Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> vocabulary-card<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Remember<br/>
+<strong>Bloom Verb:</strong> define<br/>
+<strong>Learning Objective:</strong> The learner will define a mathematical term.
+<strong>Prerequisites:</strong> None
+<strong>Evidence of Mastery:</strong> Student writes the definition.
+<strong>Misconceptions:</strong> Confusing related terms.
+<strong>Instructional Rationale:</strong> Flash‑card style aids memorization.
+<strong>Content:</strong> Front of card shows term, back shows definition.
+<strong>Provenance:</strong> Chapter 9, Section "Mathematical Vocabulary".
+<strong>Rules:</strong> None.
+<strong>Learner Activity:</strong> 1. Click card to flip. 2. Read definition.
+<strong>Feedback:</strong> Correct: "Definition matches the term.".
+<strong>Starting State:</strong> Card face‑up with term.
+<strong>Chapter Anchors:</strong> Mathematical Vocabulary<br/></p>
+</details>
+<hr />
+<h2 id="symbols-and-notation">Symbols and Notation<a class="headerlink" href="#symbols-and-notation" title="Permanent link">&para;</a></h2>
+<p>Symbols like <span class="arithmatex">\(\sum\)</span>, <span class="arithmatex">\(\int\)</span>, and <span class="arithmatex">\(\forall\)</span> convey complex ideas succinctly.</p>
+<h3 id="worked-example_16">Worked Example<a class="headerlink" href="#worked-example_16" title="Permanent link">&para;</a></h3>
+<p>The summation <span class="arithmatex">\(\sum_{i=1}^{n} i = \frac{n(n+1)}{2}\)</span>.</p>
+<h3 id="diagram-symbol-gallery">Diagram: Symbol Gallery<a class="headerlink" href="#diagram-symbol-gallery" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Symbol Gallery Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> symbol-gallery<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Remember<br/>
+<strong>Bloom Verb:</strong> recognize<br/>
+<strong>Learning Objective:</strong> The learner will recognize common mathematical symbols.
+<strong>Prerequisites:</strong> None
+<strong>Evidence of Mastery:</strong> Student matches symbol to description.
+<strong>Misconceptions:</strong> Assuming similar shapes have same meaning.
+<strong>Instructional Rationale:</strong> Visual gallery supports pattern recognition.
+<strong>Content:</strong> Grid of symbols with hover tooltips giving names.
+<strong>Provenance:</strong> Chapter 9, Section "Symbols and Notation".
+<strong>Rules:</strong> None.
+<strong>Learner Activity:</strong> 1. Hover over each symbol. 2. Read name.
+<strong>Feedback:</strong> Correct: "You identified the symbol correctly.".
+<strong>Starting State:</strong> Gallery displayed.
+<strong>Chapter Anchors:</strong> Symbols and Notation<br/></p>
+</details>
+<hr />
+<h2 id="units-of-measurement">Units of Measurement<a class="headerlink" href="#units-of-measurement" title="Permanent link">&para;</a></h2>
+<p>Units give scale to numbers; consistency is crucial.</p>
+<h3 id="worked-example_17">Worked Example<a class="headerlink" href="#worked-example_17" title="Permanent link">&para;</a></h3>
+<p>Speed = distance / time. If a car travels 150 km in 3 h, speed = 150 km ÷ 3 h = 50 km/h.</p>
+<h3 id="diagram-unit-conversion">Diagram: Unit Conversion<a class="headerlink" href="#diagram-unit-conversion" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Unit Conversion Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> unit-conversion<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> convert<br/>
+<strong>Learning Objective:</strong> The learner will convert between units using a factor.
+<strong>Prerequisites:</strong> Multiplication, division
+<strong>Evidence of Mastery:</strong> Student computes correct conversion.
+<strong>Misconceptions:</strong> Ignoring unit consistency.
+<strong>Instructional Rationale:</strong> Interactive conversion reinforces dimensional analysis.
+<strong>Content:</strong> Slider to select conversion factor (e.g., miles ↔ km).
+<strong>Provenance:</strong> Chapter 9, Section "Units of Measurement".
+<strong>Rules:</strong> Conversion factor must be accurate.
+<strong>Learner Activity:</strong> 1. Enter value in source unit. 2. Choose target unit. 3. See result.
+<strong>Feedback:</strong> Correct: "Conversion is accurate." Incorrect: "Check the factor you used.".
+<strong>Starting State:</strong> Empty fields for value and unit.
+<strong>Chapter Anchors:</strong> Units of Measurement<br/></p>
+</details>
+<hr />
+<h2 id="dimensional-analysis">Dimensional Analysis<a class="headerlink" href="#dimensional-analysis" title="Permanent link">&para;</a></h2>
+<p>Dimensional analysis checks that equations are consistent by comparing units.</p>
+<h3 id="worked-example_18">Worked Example<a class="headerlink" href="#worked-example_18" title="Permanent link">&para;</a></h3>
+<p>Force = mass × acceleration. If mass = 5 kg and acceleration = 2 m/s², force = 10 N (since 1 N = 1 kg·m/s²).</p>
+<h3 id="diagram-dimensional-balance">Diagram: Dimensional Balance<a class="headerlink" href="#diagram-dimensional-balance" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Dimensional Balance Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> dimensional-balance<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> balance<br/>
+<strong>Learning Objective:</strong> The learner will balance units on both sides of an equation.
+<strong>Prerequisites:</strong> Units of measurement
+<strong>Evidence of Mastery:</strong> Student shows matching units.
+<strong>Misconceptions:</strong> Dropping units during calculation.
+<strong>Instructional Rationale:</strong> Visual balance highlights mismatches.
+<strong>Content:</strong> Two scales showing unit expressions; learner drags units to balance.
+<strong>Provenance:</strong> Chapter 9, Section "Dimensional Analysis".
+<strong>Rules:</strong> Units must match exactly.
+<strong>Learner Activity:</strong> 1. Write equation. 2. Place units on each side.
+<strong>Feedback:</strong> Correct: "Units are balanced." Incorrect: "Adjust the units to match.".
+<strong>Starting State:</strong> Empty equation box.
+<strong>Chapter Anchors:</strong> Dimensional Analysis<br/></p>
+</details>
+<hr />
+<h2 id="error-analysis">Error Analysis<a class="headerlink" href="#error-analysis" title="Permanent link">&para;</a></h2>
+<p>Error analysis quantifies the difference between measured and true values.</p>
+<h3 id="worked-example_19">Worked Example<a class="headerlink" href="#worked-example_19" title="Permanent link">&para;</a></h3>
+<p>A ruler measures a length of 10.2 cm, but the true length is 10.0 cm. Absolute error = |10.2 – 10.0| = 0.2 cm. Relative error = 0.2/10.0 = 0.02 (2 %).</p>
+<h3 id="diagram-error-calculator">Diagram: Error Calculator<a class="headerlink" href="#diagram-error-calculator" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Error Calculator Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> error-calculator<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> compute<br/>
+<strong>Learning Objective:</strong> The learner will compute absolute and relative error from given measurements.
+<strong>Prerequisites:</strong> Subtraction, division
+<strong>Evidence of Mastery:</strong> Student enters correct error values.
+<strong>Misconceptions:</strong> Confusing absolute with relative error.
+<strong>Instructional Rationale:</strong> Immediate feedback reinforces formulas.
+<strong>Content:</strong> Input fields for measured and true value; outputs error.
+<strong>Provenance:</strong> Chapter 9, Section "Error Analysis".
+<strong>Rules:</strong> True value must be non‑zero for relative error.
+<strong>Learner Activity:</strong> 1. Enter values. 2. Click compute.
+<strong>Feedback:</strong> Correct: "Your error calculations are correct." Incorrect: "Check the formula for relative error.".
+<strong>Starting State:</strong> Blank inputs.
+<strong>Chapter Anchors:</strong> Error Analysis<br/></p>
+</details>
+<hr />
+<p><em>All concepts listed in the "Concepts Covered" table have been addressed with explanations, worked examples, and interactive diagrams.</em></p>
+<hr />
+<p><em>Generated by Claude skill chapter-content-generator on 2026-10-10.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../08-data-analysis-and-statistics-part-i/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 8. Data Analysis and Statistics – Part I">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                8. Data Analysis and Statistics – Part I
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../10-miscellaneous-topics/" class="md-footer__link md-footer__link--next" aria-label="Next: 10. Miscellaneous Topics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                10. Miscellaneous Topics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -10,6 +10,13 @@
     "license": "CC BY-NC-SA 4.0 DEED"
   },
   "groups": {
+    "FOUND": {
+      "classifierName": "Foundation Concepts",
+      "color": "Crimson",
+      "font": {
+        "color": "white"
+      }
+    },
     "FUNC": {
       "classifierName": "Functions & Notation",
       "color": "SteelBlue",
@@ -78,13 +85,6 @@
       "color": "LightSkyBlue",
       "font": {
         "color": "black"
-      }
-    },
-    "FOUND": {
-      "classifierName": "Foundation Concepts",
-      "color": "Crimson",
-      "font": {
-        "color": "white"
       }
     }
   },

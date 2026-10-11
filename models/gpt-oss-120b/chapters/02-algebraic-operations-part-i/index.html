@@ -1,0 +1,3290 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Covers basic algebraic manipulations, expressions, and early factoring techniques.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/02-algebraic-operations-part-i/">
+      
+      
+        <link rel="prev" href="../01-foundations-of-algebra/">
+      
+      
+        <link rel="next" href="../03-algebraic-operations-part-ii/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Algebraic Operations – Part I - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#algebraic-operations-part-i" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Algebraic Operations – Part I
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_7" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_7" id="__nav_10_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_7">
+            <span class="md-nav__icon md-icon"></span>
+            gpt-oss:120b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_7_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_7_4" id="__nav_10_7_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_7_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations-of-algebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations of Algebra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2. Algebraic Operations – Part I
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2. Algebraic Operations – Part I
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#completing-the-square" class="md-nav__link">
+    <span class="md-ellipsis">
+      Completing the Square
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Completing the Square">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-completing-the-square" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Completing the Square
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-solving-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Solving Linear Equations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onestep-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      One‑Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="One‑Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-onestep-equation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: One‑Step Equation Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twostep-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two‑Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Two‑Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-twostep-equation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Two‑Step Equation Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multistep-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi‑Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi‑Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-multistep-equation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Multi‑Step Equation Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literal-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literal Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literal Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-literal-equation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Literal Equation Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solving-for-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving for Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solving for Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-solving-for-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Solving for Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-inequality-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Inequality Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-linear-inequality-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Linear Inequality Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#absolute-value-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Absolute Value Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Absolute Value Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-absolute-value-equation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Absolute Value Equation Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#absolute-value-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Absolute Value Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Absolute Value Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-absolute-value-inequality-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Absolute Value Inequality Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphing-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphing Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphing Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-graphing-lines-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Graphing Lines Interactive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slope
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-slope-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Slope Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yintercept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Y‑Intercept
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Y‑Intercept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-yintercept-illustration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Y‑Intercept Illustration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xintercept" class="md-nav__link">
+    <span class="md-ellipsis">
+      X‑Intercept
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="X‑Intercept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-xintercept-illustration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: X‑Intercept Illustration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slopeintercept-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slope‑Intercept Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slope‑Intercept Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-slopeintercept-form-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Slope‑Intercept Form Conversion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointslope-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point‑Slope Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point‑Slope Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-pointslope-form-illustration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Point‑Slope Form Illustration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-form-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Form (Lines)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Form (Lines)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-standard-form-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Standard Form Conversion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parallel Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-parallel-lines-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Parallel Lines Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perpendicular-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perpendicular Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perpendicular Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-perpendicular-lines-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Perpendicular Lines Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-algebraic-operations-part-ii/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Algebraic Operations – Part II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-algebraic-operations-part-iii/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Algebraic Operations – Part III
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-functions-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Functions – Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-functions-advanced-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Functions – Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-data-analysis-core-concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Data Analysis – Core Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-data-analysis-and-statistics-part-i/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Data Analysis and Statistics – Part I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-statistics-core-concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Statistics – Core Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-miscellaneous-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Miscellaneous Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#completing-the-square" class="md-nav__link">
+    <span class="md-ellipsis">
+      Completing the Square
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Completing the Square">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-completing-the-square" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Completing the Square
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-solving-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Solving Linear Equations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onestep-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      One‑Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="One‑Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-onestep-equation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: One‑Step Equation Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twostep-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two‑Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Two‑Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-twostep-equation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Two‑Step Equation Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multistep-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi‑Step Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi‑Step Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-multistep-equation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Multi‑Step Equation Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literal-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literal Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literal Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-literal-equation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Literal Equation Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solving-for-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving for Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solving for Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-solving-for-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Solving for Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-inequality-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Inequality Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-linear-inequality-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Linear Inequality Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#absolute-value-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Absolute Value Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Absolute Value Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-absolute-value-equation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Absolute Value Equation Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#absolute-value-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Absolute Value Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Absolute Value Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-absolute-value-inequality-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Absolute Value Inequality Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphing-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphing Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphing Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-graphing-lines-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Graphing Lines Interactive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slope
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-slope-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Slope Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yintercept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Y‑Intercept
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Y‑Intercept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-yintercept-illustration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Y‑Intercept Illustration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xintercept" class="md-nav__link">
+    <span class="md-ellipsis">
+      X‑Intercept
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="X‑Intercept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-xintercept-illustration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: X‑Intercept Illustration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slopeintercept-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slope‑Intercept Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slope‑Intercept Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-slopeintercept-form-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Slope‑Intercept Form Conversion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointslope-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point‑Slope Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point‑Slope Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-pointslope-form-illustration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Point‑Slope Form Illustration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-form-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Form (Lines)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Form (Lines)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-standard-form-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Standard Form Conversion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parallel Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-parallel-lines-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Parallel Lines Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perpendicular-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perpendicular Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perpendicular Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-perpendicular-lines-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Perpendicular Lines Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/gpt-oss-120b/chapters/02-algebraic-operations-part-i/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="algebraic-operations-part-i">Algebraic Operations – Part I<a class="headerlink" href="#algebraic-operations-part-i" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Covers basic algebraic manipulations, expressions, and early factoring techniques.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 20 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Completing the Square</td>
+<td>180</td>
+</tr>
+<tr>
+<td>Linear Equations</td>
+<td>179</td>
+</tr>
+<tr>
+<td>One‑Step Equations</td>
+<td>178</td>
+</tr>
+<tr>
+<td>Two‑Step Equations</td>
+<td>177</td>
+</tr>
+<tr>
+<td>Multi‑Step Equations</td>
+<td>176</td>
+</tr>
+<tr>
+<td>Literal Equations</td>
+<td>175</td>
+</tr>
+<tr>
+<td>Solving for Variables</td>
+<td>174</td>
+</tr>
+<tr>
+<td>Inequalities</td>
+<td>173</td>
+</tr>
+<tr>
+<td>Linear Inequalities</td>
+<td>172</td>
+</tr>
+<tr>
+<td>Absolute Value Equations</td>
+<td>171</td>
+</tr>
+<tr>
+<td>Absolute Value Inequalities</td>
+<td>170</td>
+</tr>
+<tr>
+<td>Graphing Lines</td>
+<td>169</td>
+</tr>
+<tr>
+<td>Slope</td>
+<td>168</td>
+</tr>
+<tr>
+<td>Y‑Intercept</td>
+<td>167</td>
+</tr>
+<tr>
+<td>X‑Intercept</td>
+<td>166</td>
+</tr>
+<tr>
+<td>Slope‑Intercept Form</td>
+<td>165</td>
+</tr>
+<tr>
+<td>Point‑Slope Form</td>
+<td>164</td>
+</tr>
+<tr>
+<td>Standard Form (Lines)</td>
+<td>163</td>
+</tr>
+<tr>
+<td>Parallel Lines</td>
+<td>162</td>
+</tr>
+<tr>
+<td>Perpendicular Lines</td>
+<td>161</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:
+- <a href="../01-foundations-of-algebra/">1 Chapter 1: Foundations of Algebra</a></p>
+<hr />
+<h3 id="completing-the-square">Completing the Square<a class="headerlink" href="#completing-the-square" title="Permanent link">&para;</a></h3>
+<p>Completing the square rewrites a quadratic expression in the form <span class="arithmatex">\((x - h)^2 + k\)</span>, useful for solving equations and graphing parabolas. It builds on knowledge of exponents and algebraic manipulation.</p>
+<p><strong>Worked Example:</strong> Solve <span class="arithmatex">\(x^2 + 6x + 5 = 0\)</span>.
+1. Move the constant: <span class="arithmatex">\(x^2 + 6x = -5\)</span>.
+2. Add <span class="arithmatex">\((6/2)^2 = 9\)</span>: <span class="arithmatex">\(x^2 + 6x + 9 = 4\)</span>.
+3. Factor: <span class="arithmatex">\((x + 3)^2 = 4\)</span>.
+4. Square‑root: <span class="arithmatex">\(x + 3 = \pm 2\)</span>.
+5. Solutions: <span class="arithmatex">\(x = -1\)</span> or <span class="arithmatex">\(x = -5\)</span>.</p>
+<h4 id="diagram-completing-the-square">Diagram: Completing the Square<a class="headerlink" href="#diagram-completing-the-square" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Completing the Square Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> completing-the-square<br/>
+<strong>Library:</strong> mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> solve<br/>
+<strong>Learning Objective:</strong> The learner will solve quadratic equations by completing the square.</p>
+<p><strong>Prerequisites:</strong> Algebraic Variables, Exponents<br/>
+<strong>Evidence of Mastery:</strong> Correctly transform a quadratic into vertex form and solve for roots.<br/>
+<strong>Misconceptions:</strong> Forgetting to add the same value to both sides.<br/>
+<strong>Instructional Rationale:</strong> Visualizing the square aids understanding of the transformation.<br/>
+<strong>Content:</strong> Step‑by‑step visual of the algebraic manipulation.<br/>
+<strong>Provenance:</strong> Chapter 2, Completing the Square section.<br/>
+<strong>Rules:</strong> Show each algebraic step with arrows.<br/>
+<strong>Learner Activity:</strong> Follow arrows to rewrite the equation.<br/>
+<strong>Feedback:</strong> Checkmarks appear for each correct step.<br/>
+<strong>Starting State:</strong> Original quadratic expression.<br/>
+<strong>Chapter Anchors:</strong> "Completing the Square" appears in the concept list.<br/></p>
+</details>
+<h3 id="linear-equations">Linear Equations<a class="headerlink" href="#linear-equations" title="Permanent link">&para;</a></h3>
+<p>Linear equations relate two variables with a constant slope. Mastery of solving one‑step to multi‑step linear equations is foundational for algebra.</p>
+<p><strong>Worked Example:</strong> Solve <span class="arithmatex">\(3x + 7 = 22\)</span>.
+1. Subtract 7: <span class="arithmatex">\(3x = 15\)</span>.
+2. Divide by 3: <span class="arithmatex">\(x = 5\)</span>.</p>
+<h4 id="diagram-solving-linear-equations">Diagram: Solving Linear Equations<a class="headerlink" href="#diagram-solving-linear-equations" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Linear Equations Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> linear-equations<br/>
+<strong>Library:</strong> mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> solve<br/>
+<strong>Learning Objective:</strong> The learner will solve linear equations using inverse operations.</p>
+<p><strong>Prerequisites:</strong> Algebraic Variables, Properties of Operations<br/>
+<strong>Evidence of Mastery:</strong> Correct solution for a given linear equation.<br/>
+<strong>Misconceptions:</strong> Mixing up addition/subtraction order.<br/>
+<strong>Instructional Rationale:</strong> Diagram reinforces the stepwise inverse process.<br/>
+<strong>Content:</strong> Visual flow of isolating the variable.<br/>
+<strong>Provenance:</strong> Chapter 2, Linear Equations section.<br/>
+<strong>Rules:</strong> Each step shown with a labeled arrow.
+<strong>Learner Activity:</strong> Follow the arrow sequence to isolate <span class="arithmatex">\(x\)</span>.
+<strong>Feedback:</strong> Immediate correctness indicator.
+<strong>Starting State:</strong> Equation <span class="arithmatex">\(3x + 7 = 22\)</span>.
+<strong>Chapter Anchors:</strong> "Linear Equations" in concept list.</p>
+</details>
+<h3 id="onestep-equations">One‑Step Equations<a class="headerlink" href="#onestep-equations" title="Permanent link">&para;</a></h3>
+<p>One‑step equations involve a single operation to isolate the variable. They reinforce understanding of inverse operations.</p>
+<p><strong>Worked Example:</strong> Solve <span class="arithmatex">\(x - 4 = 9\)</span>.
+1. Add 4 to both sides: <span class="arithmatex">\(x = 13\)</span>.</p>
+<h4 id="diagram-onestep-equation-solver">Diagram: One‑Step Equation Solver<a class="headerlink" href="#diagram-onestep-equation-solver" title="Permanent link">&para;</a></h4>
+<details>
+<summary>One‑Step Equation Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> one-step-equation<br/>
+<strong>Library:</strong> mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> solve<br/>
+<strong>Learning Objective:</strong> The learner will solve one‑step equations by applying the inverse operation.</p>
+<p><strong>Prerequisites:</strong> Algebraic Variables, Properties of Operations<br/>
+<strong>Evidence of Mastery:</strong> Correct solution to a one‑step equation.
+<strong>Misconceptions:</strong> Forgetting to apply the inverse to both sides.
+<strong>Instructional Rationale:</strong> Diagram highlights the single inverse step.
+<strong>Content:</strong> Visual of the equation before and after applying the inverse.
+<strong>Provenance:</strong> Chapter 2, One‑Step Equations.
+<strong>Rules:</strong> Show before/after states with arrows.
+<strong>Learner Activity:</strong> Identify and apply the inverse operation.
+<strong>Feedback:</strong> Confirmation of correct result.
+<strong>Starting State:</strong> Equation <span class="arithmatex">\(x - 4 = 9\)</span>.
+<strong>Chapter Anchors:</strong> "One‑Step Equations".</p>
+</details>
+<h3 id="twostep-equations">Two‑Step Equations<a class="headerlink" href="#twostep-equations" title="Permanent link">&para;</a></h3>
+<p>Two‑step equations require two inverse operations, typically a combination of addition/subtraction and multiplication/division.</p>
+<p><strong>Worked Example:</strong> Solve <span class="arithmatex">\(5x - 3 = 22\)</span>.
+1. Add 3: <span class="arithmatex">\(5x = 25\)</span>.
+2. Divide by 5: <span class="arithmatex">\(x = 5\)</span>.</p>
+<h4 id="diagram-twostep-equation-solver">Diagram: Two‑Step Equation Solver<a class="headerlink" href="#diagram-twostep-equation-solver" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Two‑Step Equation Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> two-step-equation<br/>
+<strong>Library:</strong> mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> solve<br/>
+<strong>Learning Objective:</strong> The learner will solve two‑step equations by applying successive inverse operations.</p>
+<p><strong>Prerequisites:</strong> Algebraic Variables, Properties of Operations<br/>
+<strong>Evidence of Mastery:</strong> Correct solution after two steps.
+<strong>Misconceptions:</strong> Incorrect order of operations.
+<strong>Instructional Rationale:</strong> Visual sequence clarifies order.
+<strong>Content:</strong> Stepwise diagram.
+<strong>Provenance:</strong> Chapter 2, Two‑Step Equations.
+<strong>Rules:</strong> Show each operation with labeled arrows.
+<strong>Learner Activity:</strong> Follow arrows to isolate <span class="arithmatex">\(x\)</span>.
+<strong>Feedback:</strong> Immediate check.
+<strong>Starting State:</strong> Equation <span class="arithmatex">\(5x - 3 = 22\)</span>.
+<strong>Chapter Anchors:</strong> "Two‑Step Equations".</p>
+</details>
+<h3 id="multistep-equations">Multi‑Step Equations<a class="headerlink" href="#multistep-equations" title="Permanent link">&para;</a></h3>
+<p>Multi‑step equations involve three or more operations, combining distributive property, combining like terms, and inverse operations.</p>
+<p><strong>Worked Example:</strong> Solve <span class="arithmatex">\(2(x + 4) = 18\)</span>.
+1. Distribute: <span class="arithmatex">\(2x + 8 = 18\)</span>.
+2. Subtract 8: <span class="arithmatex">\(2x = 10\)</span>.
+3. Divide by 2: <span class="arithmatex">\(x = 5\)</span>.</p>
+<h4 id="diagram-multistep-equation-solver">Diagram: Multi‑Step Equation Solver<a class="headerlink" href="#diagram-multistep-equation-solver" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Multi‑Step Equation Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> multi-step-equation<br/>
+<strong>Library:</strong> mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> solve<br/>
+<strong>Learning Objective:</strong> The learner will solve multi‑step equations by applying a sequence of algebraic techniques.</p>
+<p><strong>Prerequisites:</strong> Algebraic Variables, Distributive Property, Properties of Operations<br/>
+<strong>Evidence of Mastery:</strong> Correct final solution.
+<strong>Misconceptions:</strong> Skipping distribution or combining steps incorrectly.
+<strong>Instructional Rationale:</strong> Diagram shows each transformation.
+<strong>Content:</strong> Visual chain of algebraic steps.
+<strong>Provenance:</strong> Chapter 2, Multi‑Step Equations.
+<strong>Rules:</strong> Each transformation labeled.
+<strong>Learner Activity:</strong> Trace the steps.
+<strong>Feedback:</strong> Confirmation after each step.
+<strong>Starting State:</strong> Equation <span class="arithmatex">\(2(x + 4) = 18\)</span>.
+<strong>Chapter Anchors:</strong> "Multi‑Step Equations".</p>
+</details>
+<h3 id="literal-equations">Literal Equations<a class="headerlink" href="#literal-equations" title="Permanent link">&para;</a></h3>
+<p>Literal equations solve for a variable expressed in terms of other variables. They reinforce algebraic rearrangement skills.</p>
+<p><strong>Worked Example:</strong> Solve for <span class="arithmatex">\(a\)</span> in <span class="arithmatex">\(2a + 3b = 12\)</span>.
+1. Subtract <span class="arithmatex">\(3b\)</span>: <span class="arithmatex">\(2a = 12 - 3b\)</span>.
+2. Divide by 2: <span class="arithmatex">\(a = 6 - \frac{3b}{2}\)</span>.</p>
+<h4 id="diagram-literal-equation-solver">Diagram: Literal Equation Solver<a class="headerlink" href="#diagram-literal-equation-solver" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Literal Equation Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> literal-equation<br/>
+<strong>Library:</strong> mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> solve<br/>
+<strong>Learning Objective:</strong> The learner will isolate a chosen variable in a literal equation.</p>
+<p><strong>Prerequisites:</strong> Algebraic Variables, Properties of Operations<br/>
+<strong>Evidence of Mastery:</strong> Correct expression for the target variable.
+<strong>Misconceptions:</strong> Forgetting to isolate the correct term.
+<strong>Instructional Rationale:</strong> Visual isolation of the target variable.
+<strong>Content:</strong> Stepwise rearrangement diagram.
+<strong>Provenance:</strong> Chapter 2, Literal Equations.
+<strong>Rules:</strong> Show subtraction and division steps.
+<strong>Learner Activity:</strong> Follow arrows to isolate <span class="arithmatex">\(a\)</span>.
+<strong>Feedback:</strong> Correctness check.
+<strong>Starting State:</strong> Equation <span class="arithmatex">\(2a + 3b = 12\)</span>.
+<strong>Chapter Anchors:</strong> "Literal Equations".</p>
+</details>
+<h3 id="solving-for-variables">Solving for Variables<a class="headerlink" href="#solving-for-variables" title="Permanent link">&para;</a></h3>
+<p>Solving for variables often involves rearranging formulas to express one variable in terms of others, a skill critical for physics and chemistry contexts.</p>
+<p><strong>Worked Example:</strong> Rearrange <span class="arithmatex">\(F = ma\)</span> to solve for <span class="arithmatex">\(m\)</span>.
+1. Divide both sides by <span class="arithmatex">\(a\)</span>: <span class="arithmatex">\(m = \frac{F}{a}\)</span>.</p>
+<h4 id="diagram-solving-for-variables">Diagram: Solving for Variables<a class="headerlink" href="#diagram-solving-for-variables" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Solving for Variables Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> solve-for-variable<br/>
+<strong>Library:</strong> mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> solve<br/>
+<strong>Learning Objective:</strong> The learner will isolate a variable within a formula.</p>
+<p><strong>Prerequisites:</strong> Algebraic Variables, Division<br/>
+<strong>Evidence of Mastery:</strong> Correct isolated expression.
+<strong>Misconceptions:</strong> Dividing by zero or incorrect algebraic steps.
+<strong>Instructional Rationale:</strong> Diagram emphasizes algebraic isolation.
+<strong>Content:</strong> Visual of original formula and transformed formula.
+<strong>Provenance:</strong> Chapter 2, Solving for Variables.
+<strong>Rules:</strong> Show division operation.
+<strong>Learner Activity:</strong> Identify the target variable and apply inverse operation.
+<strong>Feedback:</strong> Immediate correctness feedback.
+<strong>Starting State:</strong> Formula <span class="arithmatex">\(F = ma\)</span>.
+<strong>Chapter Anchors:</strong> "Solving for Variables".</p>
+</details>
+<h3 id="inequalities">Inequalities<a class="headerlink" href="#inequalities" title="Permanent link">&para;</a></h3>
+<p>Inequalities compare expressions using symbols like <span class="arithmatex">\(&lt;, &gt;, \le, \ge\)</span>. Solving them follows similar steps to equations but with attention to direction when multiplying or dividing by negative numbers.</p>
+<p><strong>Worked Example:</strong> Solve <span class="arithmatex">\(3x - 5 &gt; 7\)</span>.
+1. Add 5: <span class="arithmatex">\(3x &gt; 12\)</span>.
+2. Divide by 3: <span class="arithmatex">\(x &gt; 4\)</span>.</p>
+<h4 id="diagram-inequality-solver">Diagram: Inequality Solver<a class="headerlink" href="#diagram-inequality-solver" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Inequality Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> inequality-solver<br/>
+<strong>Library:</strong> mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> solve<br/>
+<strong>Learning Objective:</strong> The learner will solve linear inequalities and interpret the solution set.</p>
+<p><strong>Prerequisites:</strong> Algebraic Variables, Properties of Operations<br/>
+<strong>Evidence of Mastery:</strong> Correct inequality solution.
+<strong>Misconceptions:</strong> Ignoring direction reversal when multiplying by negatives.
+<strong>Instructional Rationale:</strong> Visual cues for direction changes.
+<strong>Content:</strong> Stepwise diagram showing inequality transformation.
+<strong>Provenance:</strong> Chapter 2, Inequalities.
+<strong>Rules:</strong> Indicate direction arrows and reversal notes.
+<strong>Learner Activity:</strong> Apply inverse operations while tracking direction.
+<strong>Feedback:</strong> Highlight correct solution region on a number line.
+<strong>Starting State:</strong> Inequality <span class="arithmatex">\(3x - 5 &gt; 7\)</span>.
+<strong>Chapter Anchors:</strong> "Inequalities".</p>
+</details>
+<h3 id="linear-inequalities">Linear Inequalities<a class="headerlink" href="#linear-inequalities" title="Permanent link">&para;</a></h3>
+<p>Linear inequalities are similar to linear equations but represent ranges of solutions.</p>
+<p><strong>Worked Example:</strong> Solve <span class="arithmatex">\(2x + 3 \le 11\)</span>.
+1. Subtract 3: <span class="arithmatex">\(2x \le 8\)</span>.
+2. Divide by 2: <span class="arithmatex">\(x \le 4\)</span>.</p>
+<h4 id="diagram-linear-inequality-solver">Diagram: Linear Inequality Solver<a class="headerlink" href="#diagram-linear-inequality-solver" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Linear Inequality Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> linear-inequality
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> solve
+<strong>Learning Objective:</strong> The learner will solve linear inequalities and represent the solution on a number line.</p>
+<p><strong>Prerequisites:</strong> Inequalities, Division
+<strong>Evidence of Mastery:</strong> Correct solution interval.
+<strong>Misconceptions:</strong> Forgetting to reverse inequality when dividing by a negative.
+<strong>Instructional Rationale:</strong> Diagram includes number line visualization.
+<strong>Content:</strong> Visual steps and final number line.
+<strong>Provenance:</strong> Chapter 2, Linear Inequalities.
+<strong>Rules:</strong> Show shading on number line for <span class="arithmatex">\(\le\)</span> case.
+<strong>Learner Activity:</strong> Trace steps and shade solution region.
+<strong>Feedback:</strong> Immediate visual confirmation.
+<strong>Starting State:</strong> Inequality <span class="arithmatex">\(2x + 3 \le 11\)</span>.
+<strong>Chapter Anchors:</strong> "Linear Inequalities".</p>
+</details>
+<h3 id="absolute-value-equations">Absolute Value Equations<a class="headerlink" href="#absolute-value-equations" title="Permanent link">&para;</a></h3>
+<p>Absolute value equations involve expressions within <span class="arithmatex">\(|\cdot|\)</span> and require splitting into two cases.</p>
+<p><strong>Worked Example:</strong> Solve <span class="arithmatex">\(|x - 2| = 5\)</span>.
+1. Case 1: <span class="arithmatex">\(x - 2 = 5 \Rightarrow x = 7\)</span>.
+2. Case 2: <span class="arithmatex">\(x - 2 = -5 \Rightarrow x = -3\)</span>.</p>
+<h4 id="diagram-absolute-value-equation-solver">Diagram: Absolute Value Equation Solver<a class="headerlink" href="#diagram-absolute-value-equation-solver" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Absolute Value Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> absolute-value-equation
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> solve
+<strong>Learning Objective:</strong> The learner will solve absolute value equations by considering both positive and negative cases.</p>
+<p><strong>Prerequisites:</strong> Algebraic Variables, Equations
+<strong>Evidence of Mastery:</strong> Two correct solutions.
+<strong>Misconceptions:</strong> Ignoring the negative case.
+<strong>Instructional Rationale:</strong> Diagram splits into two branches.
+<strong>Content:</strong> Visual case analysis.
+<strong>Provenance:</strong> Chapter 2, Absolute Value Equations.
+<strong>Rules:</strong> Show both branches with arrows.
+<strong>Learner Activity:</strong> Follow each branch to find solutions.
+<strong>Feedback:</strong> Confirmation of both solutions.
+<strong>Starting State:</strong> Equation <span class="arithmatex">\(|x - 2| = 5\)</span>.
+<strong>Chapter Anchors:</strong> "Absolute Value Equations".</p>
+</details>
+<h3 id="absolute-value-inequalities">Absolute Value Inequalities<a class="headerlink" href="#absolute-value-inequalities" title="Permanent link">&para;</a></h3>
+<p>Absolute value inequalities describe ranges of values around a central point.</p>
+<p><strong>Worked Example:</strong> Solve <span class="arithmatex">\(|x + 1| &lt; 4\)</span>.
+1. Remove absolute value: <span class="arithmatex">\(-4 &lt; x + 1 &lt; 4\)</span>.
+2. Subtract 1: <span class="arithmatex">\(-5 &lt; x &lt; 3\)</span>.</p>
+<h4 id="diagram-absolute-value-inequality-solver">Diagram: Absolute Value Inequality Solver<a class="headerlink" href="#diagram-absolute-value-inequality-solver" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Absolute Value Inequality Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> absolute-value-inequality
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> solve
+<strong>Learning Objective:</strong> The learner will solve absolute value inequalities and express the solution interval.</p>
+<p><strong>Prerequisites:</strong> Absolute Value Equations, Inequalities
+<strong>Evidence of Mastery:</strong> Correct interval.
+<strong>Misconceptions:</strong> Reversing inequality direction.
+<strong>Instructional Rationale:</strong> Diagram shows interval on number line.
+<strong>Content:</strong> Visual transformation steps.
+<strong>Provenance:</strong> Chapter 2, Absolute Value Inequalities.
+<strong>Rules:</strong> Show combined inequalities.
+<strong>Learner Activity:</strong> Derive interval.
+<strong>Feedback:</strong> Highlight interval.
+<strong>Starting State:</strong> Inequality <span class="arithmatex">\(|x + 1| &lt; 4\)</span>.
+<strong>Chapter Anchors:</strong> "Absolute Value Inequalities".</p>
+</details>
+<h3 id="graphing-lines">Graphing Lines<a class="headerlink" href="#graphing-lines" title="Permanent link">&para;</a></h3>
+<p>Graphing linear equations involves plotting the set of points that satisfy the equation. The slope‑intercept form <span class="arithmatex">\(y = mx + b\)</span> is particularly useful.</p>
+<p><strong>Worked Example:</strong> Graph <span class="arithmatex">\(y = 2x - 3\)</span>.
+1. Identify slope <span class="arithmatex">\(m = 2\)</span> and intercept <span class="arithmatex">\(b = -3\)</span>.
+2. Plot the y‑intercept at <span class="arithmatex">\((0, -3)\)</span>.
+3. From that point, rise 2 and run 1 to find another point <span class="arithmatex">\((1, -1)\)</span>.
+4. Draw the line through the points.</p>
+<h4 id="diagram-graphing-lines-interactive">Diagram: Graphing Lines Interactive<a class="headerlink" href="#diagram-graphing-lines-interactive" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Graphing Lines Diagram</summary>
+<p>Type: infographic<br/>
+<strong>sim-id:</strong> graphing-lines
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> graph
+<strong>Learning Objective:</strong> The learner will graph linear equations using slope‑intercept form.</p>
+<p><strong>Prerequisites:</strong> Linear Equations, Slope, Intercepts
+<strong>Evidence of Mastery:</strong> Correctly plotted line matching the equation.
+<strong>Misconceptions:</strong> Miscalculating slope or intercept.
+<strong>Instructional Rationale:</strong> Interactive plot lets students see the effect of slope and intercept.
+<strong>Content:</strong> Slider for slope and intercept, dynamic graph updates.
+<strong>Provenance:</strong> Chapter 2, Graphing Lines.
+<strong>Rules:</strong> Sliders range <span class="arithmatex">\(-5\)</span> to <span class="arithmatex">\(5\)</span>.
+<strong>Learner Activity:</strong> Adjust sliders and observe line.
+<strong>Feedback:</strong> Real‑time coordinate check.
+<strong>Starting State:</strong> Default line <span class="arithmatex">\(y = x\)</span>.
+<strong>Chapter Anchors:</strong> "Graphing Lines".</p>
+</details>
+<h3 id="slope">Slope<a class="headerlink" href="#slope" title="Permanent link">&para;</a></h3>
+<p>Slope measures the steepness of a line and is defined as <span class="arithmatex">\(\frac{rise}{run}\)</span>. It indicates how much <span class="arithmatex">\(y\)</span> changes for a unit change in <span class="arithmatex">\(x\)</span>.</p>
+<p><strong>Worked Example:</strong> Find the slope of the line passing through <span class="arithmatex">\((2,3)\)</span> and <span class="arithmatex">\((5,11)\)</span>.
+[m = \frac{11 - 3}{5 - 2} = \frac{8}{3}]</p>
+<h4 id="diagram-slope-visualization">Diagram: Slope Visualization<a class="headerlink" href="#diagram-slope-visualization" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Slope Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> slope-visualization
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Understand
+<strong>Bloom Verb:</strong> interpret
+<strong>Learning Objective:</strong> The learner will interpret the slope of a line as a rate of change.</p>
+<p><strong>Prerequisites:</strong> Coordinates, Linear Equations
+<strong>Evidence of Mastery:</strong> Correct calculation and interpretation of slope.
+<strong>Misconceptions:</strong> Confusing rise/run order.
+<strong>Instructional Rationale:</strong> Visual arrow shows rise and run.
+<strong>Content:</strong> Diagram with two points and slope arrow.
+<strong>Provenance:</strong> Chapter 2, Slope.
+<strong>Rules:</strong> Arrow labeled with fraction.
+<strong>Learner Activity:</strong> Identify rise and run.
+<strong>Feedback:</strong> Confirmation of correct direction.
+<strong>Starting State:</strong> Points <span class="arithmatex">\((2,3)\)</span> and <span class="arithmatex">\((5,11)\)</span>.
+<strong>Chapter Anchors:</strong> "Slope".</p>
+</details>
+<h3 id="yintercept">Y‑Intercept<a class="headerlink" href="#yintercept" title="Permanent link">&para;</a></h3>
+<p>The y‑intercept is the point where a line crosses the y‑axis (<span class="arithmatex">\(x = 0\)</span>). It is the constant term <span class="arithmatex">\(b\)</span> in <span class="arithmatex">\(y = mx + b\)</span>.</p>
+<p><strong>Worked Example:</strong> Find the y‑intercept of <span class="arithmatex">\(y = -4x + 7\)</span>. Set <span class="arithmatex">\(x = 0\)</span>: <span class="arithmatex">\(y = 7\)</span>.</p>
+<h4 id="diagram-yintercept-illustration">Diagram: Y‑Intercept Illustration<a class="headerlink" href="#diagram-yintercept-illustration" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Y‑Intercept Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> y-intercept
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Understand
+<strong>Bloom Verb:</strong> identify
+<strong>Learning Objective:</strong> The learner will identify the y‑intercept of a linear equation.</p>
+<p><strong>Prerequisites:</strong> Linear Equations, Graphing Lines
+<strong>Evidence of Mastery:</strong> Correct identification of intercept point.
+<strong>Misconceptions:</strong> Mixing up x‑ and y‑intercepts.
+<strong>Instructional Rationale:</strong> Visual focus on y‑axis crossing.
+<strong>Content:</strong> Graph with highlighted intercept.
+<strong>Provenance:</strong> Chapter 2, Y‑Intercept.
+<strong>Rules:</strong> Highlight point at <span class="arithmatex">\((0, b)\)</span>.
+<strong>Learner Activity:</strong> Locate intercept on graph.
+<strong>Feedback:</strong> Visual cue confirms correct point.
+<strong>Starting State:</strong> Equation <span class="arithmatex">\(y = -4x + 7\)</span>.
+<strong>Chapter Anchors:</strong> "Y‑Intercept".</p>
+</details>
+<h3 id="xintercept">X‑Intercept<a class="headerlink" href="#xintercept" title="Permanent link">&para;</a></h3>
+<p>The x‑intercept is where a line crosses the x‑axis (<span class="arithmatex">\(y = 0\)</span>). It is found by setting <span class="arithmatex">\(y = 0\)</span> and solving for <span class="arithmatex">\(x\)</span>.</p>
+<p><strong>Worked Example:</strong> Find the x‑intercept of <span class="arithmatex">\(y = 3x - 9\)</span>. Set <span class="arithmatex">\(0 = 3x - 9\)</span> ⇒ <span class="arithmatex">\(x = 3\)</span>.</p>
+<h4 id="diagram-xintercept-illustration">Diagram: X‑Intercept Illustration<a class="headerlink" href="#diagram-xintercept-illustration" title="Permanent link">&para;</a></h4>
+<details>
+<summary>X‑Intercept Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> x-intercept
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Understand
+<strong>Bloom Verb:</strong> identify
+<strong>Learning Objective:</strong> The learner will identify the x‑intercept of a linear equation.</p>
+<p><strong>Prerequisites:</strong> Linear Equations, Graphing Lines
+<strong>Evidence of Mastery:</strong> Correct identification of intercept point.
+<strong>Misconceptions:</strong> Forgetting to set <span class="arithmatex">\(y = 0\)</span>.
+<strong>Instructional Rationale:</strong> Visual focus on x‑axis crossing.
+<strong>Content:</strong> Graph with highlighted intercept.
+<strong>Provenance:</strong> Chapter 2, X‑Intercept.
+<strong>Rules:</strong> Highlight point at <span class="arithmatex">\((x, 0)\)</span>.
+<strong>Learner Activity:</strong> Locate intercept on graph.
+<strong>Feedback:</strong> Visual cue confirms correct point.
+<strong>Starting State:</strong> Equation <span class="arithmatex">\(y = 3x - 9\)</span>.
+<strong>Chapter Anchors:</strong> "X‑Intercept".</p>
+</details>
+<h3 id="slopeintercept-form">Slope‑Intercept Form<a class="headerlink" href="#slopeintercept-form" title="Permanent link">&para;</a></h3>
+<p>The slope‑intercept form <span class="arithmatex">\(y = mx + b\)</span> expresses a line using its slope <span class="arithmatex">\(m\)</span> and y‑intercept <span class="arithmatex">\(b\)</span>. It is convenient for graphing.</p>
+<p><strong>Worked Example:</strong> Convert <span class="arithmatex">\(2x - y = 4\)</span> to slope‑intercept form.
+1. Solve for <span class="arithmatex">\(y\)</span>: <span class="arithmatex">\(-y = -2x + 4\)</span>.
+2. Multiply by <span class="arithmatex">\(-1\)</span>: <span class="arithmatex">\(y = 2x - 4\)</span>.</p>
+<h4 id="diagram-slopeintercept-form-conversion">Diagram: Slope‑Intercept Form Conversion<a class="headerlink" href="#diagram-slopeintercept-form-conversion" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Slope‑Intercept Form Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> slope-intercept-conversion
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> convert
+<strong>Learning Objective:</strong> The learner will convert a linear equation to slope‑intercept form.</p>
+<p><strong>Prerequisites:</strong> Linear Equations, Algebraic Manipulation
+<strong>Evidence of Mastery:</strong> Correctly rewritten equation.
+<strong>Misconceptions:</strong> Sign errors during rearrangement.
+<strong>Instructional Rationale:</strong> Visual stepwise algebra.
+<strong>Content:</strong> Transformation steps.
+<strong>Provenance:</strong> Chapter 2, Slope‑Intercept Form.
+<strong>Rules:</strong> Show each algebraic operation.
+<strong>Learner Activity:</strong> Follow steps to isolate <span class="arithmatex">\(y\)</span>.
+<strong>Feedback:</strong> Confirmation after each step.
+<strong>Starting State:</strong> Equation <span class="arithmatex">\(2x - y = 4\)</span>.
+<strong>Chapter Anchors:</strong> "Slope‑Intercept Form".</p>
+</details>
+<h3 id="pointslope-form">Point‑Slope Form<a class="headerlink" href="#pointslope-form" title="Permanent link">&para;</a></h3>
+<p>Point‑slope form <span class="arithmatex">\(y - y_1 = m(x - x_1)\)</span> defines a line using a point <span class="arithmatex">\((x_1, y_1)\)</span> and slope <span class="arithmatex">\(m\)</span>.</p>
+<p><strong>Worked Example:</strong> Write the equation of the line with slope <span class="arithmatex">\(3\)</span> passing through <span class="arithmatex">\((2,5)\)</span>.
+[y - 5 = 3(x - 2)]
+Simplify if desired: <span class="arithmatex">\(y = 3x - 1\)</span>.</p>
+<h4 id="diagram-pointslope-form-illustration">Diagram: Point‑Slope Form Illustration<a class="headerlink" href="#diagram-pointslope-form-illustration" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Point‑Slope Form Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> point-slope-form
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> construct
+<strong>Learning Objective:</strong> The learner will construct a linear equation in point‑slope form.</p>
+<p><strong>Prerequisites:</strong> Slope, Coordinates
+<strong>Evidence of Mastery:</strong> Correct equation using given point and slope.
+<strong>Misconceptions:</strong> Mixing up <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> terms.
+<strong>Instructional Rationale:</strong> Diagram shows point and slope arrow.
+<strong>Content:</strong> Visual representation of point and slope.
+<strong>Provenance:</strong> Chapter 2, Point‑Slope Form.
+<strong>Rules:</strong> Display formula with highlighted terms.
+<strong>Learner Activity:</strong> Plug values into formula.
+<strong>Feedback:</strong> Verify resulting equation.
+<strong>Starting State:</strong> Slope <span class="arithmatex">\(3\)</span> and point <span class="arithmatex">\((2,5)\)</span>.
+<strong>Chapter Anchors:</strong> "Point‑Slope Form".</p>
+</details>
+<h3 id="standard-form-lines">Standard Form (Lines)<a class="headerlink" href="#standard-form-lines" title="Permanent link">&para;</a></h3>
+<p>Standard form <span class="arithmatex">\(Ax + By = C\)</span> expresses a line with integer coefficients. It is useful for certain algebraic methods.</p>
+<p><strong>Worked Example:</strong> Convert <span class="arithmatex">\(y = -\frac{2}{3}x + 4\)</span> to standard form.
+1. Multiply by 3: <span class="arithmatex">\(3y = -2x + 12\)</span>.
+2. Rearrange: <span class="arithmatex">\(2x + 3y = 12\)</span>.</p>
+<h4 id="diagram-standard-form-conversion">Diagram: Standard Form Conversion<a class="headerlink" href="#diagram-standard-form-conversion" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Standard Form Diagram</summary>
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> standard-form-conversion
+<strong>Library:</strong> mermaid
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Apply
+<strong>Bloom Verb:</strong> convert
+<strong>Learning Objective:</strong> The learner will convert a linear equation to standard form.</p>
+<p><strong>Prerequisites:</strong> Linear Equations, Fraction Elimination
+<strong>Evidence of Mastery:</strong> Correct integer coefficients.
+<strong>Misconceptions:</strong> Incorrectly handling fractions.
+<strong>Instructional Rationale:</strong> Stepwise algebraic conversion.
+<strong>Content:</strong> Transformation steps.
+<strong>Provenance:</strong> Chapter 2, Standard Form.
+<strong>Rules:</strong> Show multiplication and rearrangement.
+<strong>Learner Activity:</strong> Follow algebraic steps.
+<strong>Feedback:</strong> Confirmation after each operation.
+<strong>Starting State:</strong> Equation <span class="arithmatex">\(y = -\frac{2}{3}x + 4\)</span>.
+<strong>Chapter Anchors:</strong> "Standard Form (Lines)".</p>
+</details>
+<h3 id="parallel-lines">Parallel Lines<a class="headerlink" href="#parallel-lines" title="Permanent link">&para;</a></h3>
+<p>Parallel lines have equal slopes and never intersect. Their equations share the same <span class="arithmatex">\(m\)</span> value.</p>
+<p><strong>Worked Example:</strong> Determine if <span class="arithmatex">\(y = 2x + 1\)</span> and <span class="arithmatex">\(3y = 6x - 9\)</span> are parallel.
+1. Rewrite second equation: <span class="arithmatex">\(y = 2x - 3\)</span>.
+2. Both have slope <span class="arithmatex">\(2\)</span> ⇒ parallel.</p>
+<h4 id="diagram-parallel-lines-visualization">Diagram: Parallel Lines Visualization<a class="headerlink" href="#diagram-parallel-lines-visualization" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Parallel Lines Diagram</summary>
+<p>Type: infographic<br/>
+<strong>sim-id:</strong> parallel-lines
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Analyze
+<strong>Bloom Verb:</strong> compare
+<strong>Learning Objective:</strong> The learner will determine whether two lines are parallel by comparing slopes.</p>
+<p><strong>Prerequisites:</strong> Slope, Linear Equations
+<strong>Evidence of Mastery:</strong> Correct identification of parallelism.
+<strong>Misconceptions:</strong> Confusing intercepts with slope.
+<strong>Instructional Rationale:</strong> Interactive graph shows both lines.
+<strong>Content:</strong> Sliders for line equations, dynamic plot.
+<strong>Provenance:</strong> Chapter 2, Parallel Lines.
+<strong>Rules:</strong> Sliders range <span class="arithmatex">\(-5\)</span> to <span class="arithmatex">\(5\)</span>.
+<strong>Learner Activity:</strong> Adjust equations and observe relation.
+<strong>Feedback:</strong> Indicator shows "parallel" or "not parallel".
+<strong>Starting State:</strong> Default lines with different slopes.
+<strong>Chapter Anchors:</strong> "Parallel Lines".</p>
+</details>
+<h3 id="perpendicular-lines">Perpendicular Lines<a class="headerlink" href="#perpendicular-lines" title="Permanent link">&para;</a></h3>
+<p>Perpendicular lines intersect at a right angle; their slopes are negative reciprocals (<span class="arithmatex">\(m_1 \cdot m_2 = -1\)</span>).</p>
+<p><strong>Worked Example:</strong> Find the slope of a line perpendicular to <span class="arithmatex">\(y = -\frac{1}{2}x + 3\)</span>.
+The perpendicular slope is <span class="arithmatex">\(2\)</span> (negative reciprocal).</p>
+<h4 id="diagram-perpendicular-lines-visualization">Diagram: Perpendicular Lines Visualization<a class="headerlink" href="#diagram-perpendicular-lines-visualization" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Perpendicular Lines Diagram</summary>
+<p>Type: infographic<br/>
+<strong>sim-id:</strong> perpendicular-lines
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified
+<strong>Bloom Level:</strong> Analyze
+<strong>Bloom Verb:</strong> determine
+<strong>Learning Objective:</strong> The learner will determine the slope of a line perpendicular to a given line.</p>
+<p><strong>Prerequisites:</strong> Slope, Negative Reciprocals
+<strong>Evidence of Mastery:</strong> Correct perpendicular slope.
+<strong>Misconceptions:</strong> Forgetting to take negative reciprocal.
+<strong>Instructional Rationale:</strong> Interactive graph shows both lines.
+<strong>Content:</strong> Sliders for original line, auto‑compute perpendicular.
+<strong>Provenance:</strong> Chapter 2, Perpendicular Lines.
+<strong>Rules:</strong> Display slope values.
+<strong>Learner Activity:</strong> Observe perpendicular line.
+<strong>Feedback:</strong> Correctness check.
+<strong>Starting State:</strong> Default line <span class="arithmatex">\(y = -\frac{1}{2}x + 3\)</span>.
+<strong>Chapter Anchors:</strong> "Perpendicular Lines".</p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-foundations-of-algebra/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Foundations of Algebra">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. Foundations of Algebra
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-algebraic-operations-part-ii/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Algebraic Operations – Part II">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. Algebraic Operations – Part II
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

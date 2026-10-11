@@ -2,274 +2,470 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/about/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/contact/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/cost-analysis/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/course-description/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/design-choices/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/evaluation-status/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/getting-started/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/license/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/model-candidates/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/testing-architecture/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/chapters/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/learning-graph/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/learning-graph/concept-list/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/learning-graph/concept-taxonomy/</loc>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/learning-graph/course-description-assessment/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/learning-graph/quality-metrics/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/learning-graph/taxonomy-distribution/</loc>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapter-metrics/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/course-description/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/learning-graph-quality/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/learning-graph-viewer/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/01-algebra-foundations-and-basic-operations/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/02-algebraic-expressions-and-functions/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/03-advanced-algebra-and-relations/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/04-exponents-and-mathematical-constants/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/05-laws-of-exponents-and-modeling/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/06-radicals-and-algebraic-properties/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/07-rational-exponents-and-logic/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/08-equations-and-inequalities-fundamentals/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/09-polynomial-operations-and-factoring/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/10-functions-modeling-and-logic/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/11-linear-and-exponential-properties/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/12-advanced-polynomials-and-function-behavior/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/13-linear-relationships-and-systems/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-26b/chapters/14-advanced-modeling-and-statistics/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-31b/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-31b/learning-graph-quality/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gemma4-31b/learning-graph-viewer/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapter-metrics/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/course-description/</loc>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/learning-graph-quality/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/learning-graph-viewer/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/01-foundations-of-algebra/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/02-algebraic-operations-part-i/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/03-algebraic-operations-part-ii/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/04-algebraic-operations-part-iii/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/05-functions-foundations/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/06-functions-advanced-topics/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/07-data-analysis-core-concepts/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/08-data-analysis-and-statistics-part-i/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/09-statistics-core-concepts/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/gpt-oss-120b/chapters/10-miscellaneous-topics/</loc>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapter-metrics/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/course-description/</loc>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/learning-graph-quality/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/learning-graph-viewer/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/01-foundations/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/02-linear-equations/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/03-functions-and-notation/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/04-graphing-and-coordinates/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/05-polynomials-and-factoring/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/06-quadratic-functions/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/07-exponents-and-radicals/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/08-systems-of-equations/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/09-statistics-and-data-analysis/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/10-sequences-and-series/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/11-mathematical-modeling/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/12-advanced-topics-and-review/</loc>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapter-metrics/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/course-description/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/learning-graph-quality/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/learning-graph-viewer/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/01-foundational-concepts-and-properties/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/02-variables-expressions-polynomial-foundations/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/03-factoring-techniques-polynomial-division/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/04-linear-equations-inequalities/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/05-linear-relationships-coordinate-graphing/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/06-quadratic-functions/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/07-functions-relations/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/08-exponential-functions-sequences/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/09-sequences-and-statistics/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/10-mathematical-modeling-applications/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.6-35b/chapters/11-radicals-and-equations/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapter-metrics/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/course-description/</loc>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/learning-graph-quality/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/learning-graph-viewer/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/01-number-system-foundations/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/02-algebraic-expressions/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/03-exponents-radicals/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/04-linear-equations-inequalities/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/05-functions-relations/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/06-linear-relationships-slope/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/07-systems-linear-equations/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/08-polynomials-operations/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/09-factoring-polynomials/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/10-quadratic-functions-equations/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/11-exponential-functions-models/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/12-sequences-patterns/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/13-statistics-data-analysis/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/models/qwen3.8-27b/chapters/14-applied-modeling-capstone/</loc>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/sims/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/sims/graph-viewer/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/sims/model-fit-by-memory/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/sims/testing-architecture/</loc>
-         <lastmod>2026-10-10</lastmod>
+         <lastmod>2026-10-11</lastmod>
     </url>
 </urlset>

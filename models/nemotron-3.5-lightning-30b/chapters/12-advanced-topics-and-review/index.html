@@ -1,0 +1,4370 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Advanced topics and review for Algebra I - key concepts for concluding the course">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/12-advanced-topics-and-review/">
+      
+      
+        <link rel="prev" href="../11-mathematical-modeling/">
+      
+      
+        <link rel="next" href="../../chapter-metrics/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Advanced Topics and Review - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#advanced-topics-and-review" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Advanced Topics and Review
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6" id="__nav_10_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6">
+            <span class="md-nav__icon md-icon"></span>
+            nemotron-3.5-lightning:30b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6_4" id="__nav_10_6_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-linear-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Linear Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-functions-and-notation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Functions and Notation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-graphing-and-coordinates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Graphing and Coordinates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-polynomials-and-factoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Polynomials and Factoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-exponents-and-radicals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Exponents and Radicals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-systems-of-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Systems of Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-statistics-and-data-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Statistics and Data Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-sequences-and-series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Sequences and Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-mathematical-modeling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Mathematical Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    12. Advanced Topics and Review
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    12. Advanced Topics and Review
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-constant-rate-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Constant Rate Change
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Constant Rate Change">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-1-finding-the-rate-of-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 1: Finding the Rate of Change
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-rate-of-change-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Rate of Change Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-constant-percent-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Constant Percent Change
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Constant Percent Change">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-2-finding-the-percent-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 2: Finding the Percent Change
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-3-exponential-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 3: Exponential Decay
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-percent-change-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Percent Change Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-arithmetic-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Arithmetic Difference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Arithmetic Difference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-4-finding-the-arithmetic-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4: Finding the Arithmetic Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-arithmetic-sequence-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Arithmetic Sequence Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-geometric-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Geometric Ratio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Geometric Ratio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-5-finding-the-geometric-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 5: Finding the Geometric Ratio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-geometric-sequence-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Geometric Sequence Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sequence-term-nth" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Sequence Term nth
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Sequence Term nth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic-sequence-nth-term-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmetic Sequence nth Term Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-sequence-nth-term-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geometric Sequence nth Term Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-6-finding-the-nth-term-of-an-arithmetic-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 6: Finding the nth Term of an Arithmetic Sequence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-7-finding-the-nth-term-of-a-geometric-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 7: Finding the nth Term of a Geometric Sequence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-sequence-term-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Sequence Term Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-sequence-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Sequence Position
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Sequence Position">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-8-using-sequence-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 8: Using Sequence Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-sequence-position-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Sequence Position Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-sequence-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Sequence Value
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Sequence Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-9-listing-sequence-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 9: Listing Sequence Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-10-listing-sequence-values-geometric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 10: Listing Sequence Values (Geometric)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-sequence-value-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Sequence Value Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-mathematical-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Mathematical Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Mathematical Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-mathematical-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Mathematical Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-11-creating-a-mathematical-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 11: Creating a Mathematical Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-12-exponential-model-for-population-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 12: Exponential Model for Population Growth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-mathematical-model-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Mathematical Model Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-data-display-scatterplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Data Display Scatterplot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Data Display Scatterplot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-scatterplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Scatterplot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-a-scatterplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting a Scatterplot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-13-interpreting-a-scatterplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 13: Interpreting a Scatterplot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-scatterplot-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Scatterplot Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-data-display-line-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Data Display Line Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Data Display Line Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-line-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Line Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-a-line-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting a Line Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-14-interpreting-a-line-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 14: Interpreting a Line Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-line-graph-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Line Graph Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-data-display-bar-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Data Display Bar Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Data Display Bar Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-bar-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Bar Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-a-bar-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting a Bar Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-15-interpreting-a-bar-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 15: Interpreting a Bar Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-bar-graph-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bar Graph Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-data-display-circle-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Data Display Circle Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Data Display Circle Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-circle-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Circle Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-a-circle-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting a Circle Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-16-creating-a-circle-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 16: Creating a Circle Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-circle-graph-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Circle Graph Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-statistical-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Statistical Question
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Statistical Question">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#characteristics-of-statistical-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Characteristics of Statistical Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-examples-not-statistical-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Examples (Not Statistical Questions)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-statistical-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples (Statistical Questions)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-17-identifying-statistical-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 17: Identifying Statistical Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-statistical-question-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Statistical Question Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-review-and-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Review and Key Takeaways
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter Review and Key Takeaways">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-formulas-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Formulas Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-practice-and-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Practice and Exercises
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter Practice and Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-1-constant-rate-of-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 1: Constant Rate of Change
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-2-constant-percent-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 2: Constant Percent Change
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-3-arithmetic-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 3: Arithmetic Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-4-geometric-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 4: Geometric Ratio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-5-nth-term-of-arithmetic-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 5: nth Term of Arithmetic Sequences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-6-nth-term-of-geometric-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 6: nth Term of Geometric Sequences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-7-sequence-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 7: Sequence Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-8-sequence-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 8: Sequence Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-9-mathematical-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 9: Mathematical Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-10-data-displays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 10: Data Displays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-11-statistical-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 11: Statistical Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-12-review-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 12: Review Problems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-constant-rate-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Constant Rate Change
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Constant Rate Change">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-1-finding-the-rate-of-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 1: Finding the Rate of Change
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-rate-of-change-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Rate of Change Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-constant-percent-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Constant Percent Change
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Constant Percent Change">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-2-finding-the-percent-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 2: Finding the Percent Change
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-3-exponential-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 3: Exponential Decay
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-percent-change-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Percent Change Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-arithmetic-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Arithmetic Difference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Arithmetic Difference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-4-finding-the-arithmetic-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 4: Finding the Arithmetic Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-arithmetic-sequence-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Arithmetic Sequence Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-geometric-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Geometric Ratio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Geometric Ratio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-5-finding-the-geometric-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 5: Finding the Geometric Ratio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-geometric-sequence-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Geometric Sequence Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sequence-term-nth" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Sequence Term nth
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Sequence Term nth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic-sequence-nth-term-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmetic Sequence nth Term Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-sequence-nth-term-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geometric Sequence nth Term Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-6-finding-the-nth-term-of-an-arithmetic-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 6: Finding the nth Term of an Arithmetic Sequence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-7-finding-the-nth-term-of-a-geometric-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 7: Finding the nth Term of a Geometric Sequence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-sequence-term-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Sequence Term Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-sequence-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Sequence Position
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Sequence Position">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-8-using-sequence-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 8: Using Sequence Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-sequence-position-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Sequence Position Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-sequence-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Sequence Value
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Sequence Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-9-listing-sequence-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 9: Listing Sequence Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-10-listing-sequence-values-geometric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 10: Listing Sequence Values (Geometric)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-sequence-value-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Sequence Value Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-mathematical-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Mathematical Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Mathematical Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-mathematical-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Mathematical Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-11-creating-a-mathematical-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 11: Creating a Mathematical Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-12-exponential-model-for-population-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 12: Exponential Model for Population Growth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-mathematical-model-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Mathematical Model Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-data-display-scatterplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Data Display Scatterplot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Data Display Scatterplot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-scatterplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Scatterplot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-a-scatterplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting a Scatterplot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-13-interpreting-a-scatterplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 13: Interpreting a Scatterplot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-scatterplot-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Scatterplot Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-data-display-line-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Data Display Line Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Data Display Line Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-line-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Line Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-a-line-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting a Line Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-14-interpreting-a-line-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 14: Interpreting a Line Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-line-graph-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Line Graph Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-data-display-bar-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Data Display Bar Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Data Display Bar Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-bar-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Bar Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-a-bar-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting a Bar Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-15-interpreting-a-bar-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 15: Interpreting a Bar Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-bar-graph-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bar Graph Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-data-display-circle-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Data Display Circle Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Data Display Circle Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-circle-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Circle Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-a-circle-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting a Circle Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-16-creating-a-circle-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 16: Creating a Circle Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-circle-graph-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Circle Graph Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-statistical-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Statistical Question
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Statistical Question">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#characteristics-of-statistical-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Characteristics of Statistical Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-examples-not-statistical-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Examples (Not Statistical Questions)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-statistical-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples (Statistical Questions)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-17-identifying-statistical-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example 17: Identifying Statistical Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-statistical-question-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Statistical Question Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-review-and-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Review and Key Takeaways
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter Review and Key Takeaways">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-formulas-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Formulas Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-practice-and-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Practice and Exercises
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter Practice and Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-1-constant-rate-of-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 1: Constant Rate of Change
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-2-constant-percent-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 2: Constant Percent Change
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-3-arithmetic-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 3: Arithmetic Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-4-geometric-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 4: Geometric Ratio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-5-nth-term-of-arithmetic-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 5: nth Term of Arithmetic Sequences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-6-nth-term-of-geometric-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 6: nth Term of Geometric Sequences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-7-sequence-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 7: Sequence Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-8-sequence-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 8: Sequence Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-9-mathematical-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 9: Mathematical Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-10-data-displays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 10: Data Displays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-11-statistical-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 11: Statistical Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-set-12-review-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise Set 12: Review Problems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/nemotron-3.5-lightning-30b/chapters/12-advanced-topics-and-review/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="advanced-topics-and-review">Advanced Topics and Review<a class="headerlink" href="#advanced-topics-and-review" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the key advanced concepts and review topics for Algebra I. Students will consolidate their understanding of functions, sequences, and data analysis, building on foundational knowledge and preparing for more advanced mathematics courses. The chapter emphasizes connecting previously learned concepts and applying them to solve multi-step problems and model real-world situations.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constant Rate Change</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Constant Percent Change</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Arithmetic Difference</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Geometric Ratio</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Sequence Term nth</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Sequence Position</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Sequence Value</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Mathematical Model</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Data Display Scatterplot</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Data Display Line Graph</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Data Display Bar Graph</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Data Display Circle Graph</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Statistical Question</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-constant-rate-change">1. Constant Rate Change<a class="headerlink" href="#1-constant-rate-change" title="Permanent link">&para;</a></h2>
+<p>A <strong>constant rate of change</strong> means that a quantity changes by the same amount in each time period or between each pair of consecutive x-values. When a relationship has a constant rate of change, it can be represented by a linear function.</p>
+<p>The rate of change is calculated as the ratio of the change in the dependent variable to the change in the independent variable:</p>
+<div class="arithmatex">\[m = \frac{y_2 - y_1}{x_2 - x_1}\]</div>
+<p>This is the same as the <strong>slope</strong> of the line that passes through the two points $(x_1, y_1)$ and $(x_2, y_2)$.</p>
+<h3 id="worked-example-1-finding-the-rate-of-change">Worked Example 1: Finding the Rate of Change<a class="headerlink" href="#worked-example-1-finding-the-rate-of-change" title="Permanent link">&para;</a></h3>
+<p>Find the rate of change for the points $(2, 3)$ and $(5, 12)$.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Identify the coordinates: $(x_1, y_1) = (2, 3)$ and $(x_2, y_2) = (5, 12)$</li>
+<li>Apply the rate of change formula:
+   $$m = \frac{12 - 3}{5 - 2} = \frac{9}{3} = 3$$</li>
+<li>The rate of change is $3$, meaning the y-value increases by 3 for every increase of 1 in the x-value.</li>
+</ol>
+<p><strong>Answer:</strong> The rate of change is $3$.</p>
+<h3 id="key-takeaway">Key Takeaway<a class="headerlink" href="#key-takeaway" title="Permanent link">&para;</a></h3>
+<p>When the rate of change is constant, the relationship is linear and can be modeled with a linear equation. The rate of change tells us how steep the line is and in which direction it goes.</p>
+<details>
+<h4 id="diagram-rate-of-change-explorer">Diagram: Rate of Change Explorer<a class="headerlink" href="#diagram-rate-of-change-explorer" title="Permanent link">&para;</a></h4>
+<summary>Rate of Change Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Understand<br/>
+Bloom Verb: identify<br/>
+Learning Objective: The learner will identify the rate of change (slope) between two points on a line and explain its meaning in context.</p>
+<p>Prerequisites: Slope Rate of Change, Graph Linear Equation, Coordinate Plane</p>
+<p>Evidence of Mastery: The learner correctly calculates the rate of change between two points and explains whether the relationship is increasing, decreasing, or constant.</p>
+<p>Misconceptions: The learner may confuse rate of change with percent change, or believe that a larger slope always means a "steeper" line regardless of direction.</p>
+<p>Instructional Rationale: Understanding rate of change as slope is fundamental to linear functions. Learners must distinguish between the mathematical computation and its real-world interpretation.</p>
+<p>Content: The sim presents 5 line segments with different slopes. The learner calculates the rate of change for each and matches it to a description: positive, negative, zero, or undefined. Defaults: slopes of -2, -1, 0, 1, 2 with integer coordinate points.</p>
+<p>Learner Activity: The learner is given 5 line segments and must calculate the rate of change for each. Feedback is provided after each response.</p>
+<p>Feedback: Correct responses receive positive feedback with a brief explanation. Incorrect responses receive corrective feedback that identifies the error and shows the correct calculation step-by-step.</p>
+<p>Starting State: The learner sees the title "Rate of Change Explorer" and a prompt to begin calculating slopes.</p>
+<p>Chapter Anchors: The chapter prose states that "Rate of change is calculated as the ratio of the change in the dependent variable to the change in the independent variable, $m = \frac{y_2 - y_1}{x_2 - x_1}$. A positive rate indicates an increasing relationship, a negative rate indicates a decreasing relationship, and zero rate indicates a constant relationship."</p>
+</details>
+<h2 id="2-constant-percent-change">2. Constant Percent Change<a class="headerlink" href="#2-constant-percent-change" title="Permanent link">&para;</a></h2>
+<p>A <strong>constant percent change</strong> means that a quantity changes by the same percentage in each time period or between each pair of consecutive x-values. When a relationship has a constant percent change, it can be represented by an exponential function.</p>
+<p>The percent change is calculated as:</p>
+<div class="arithmatex">\[\text{Percent Change} = \frac{\text{New Value} - \text{Old Value}}{\text{Old Value}} \times 100\%\]</div>
+<p>If the percent change is constant and positive, the function represents <strong>exponential growth</strong>. If the percent change is constant and negative, the function represents <strong>exponential decay</strong>.</p>
+<h3 id="worked-example-2-finding-the-percent-change">Worked Example 2: Finding the Percent Change<a class="headerlink" href="#worked-example-2-finding-the-percent-change" title="Permanent link">&para;</a></h3>
+<p>Find the percent change from 80 to 100.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Identify the old value and new value: Old = 80, New = 100</li>
+<li>Apply the percent change formula:
+   $$\text{Percent Change} = \frac{100 - 80}{80} \times 100\% = \frac{20}{80} \times 100\% = 0.25 \times 100\% = 25\%$$</li>
+<li>The percent change is $25\%$, which represents exponential growth.</li>
+</ol>
+<p><strong>Answer:</strong> The percent change is $25\%$.</p>
+<h3 id="worked-example-3-exponential-decay">Worked Example 3: Exponential Decay<a class="headerlink" href="#worked-example-3-exponential-decay" title="Permanent link">&para;</a></h3>
+<p>A population of 500 bacteria decreases by 10% each hour. What is the population after 1 hour? After 2 hours?</p>
+<p><strong>Solution:</strong></p>
+<p>After 1 hour:
+$$\text{Population} = 500 \times (1 - 0.10) = 500 \times 0.90 = 450$$</p>
+<p>After 2 hours:
+$$\text{Population} = 450 \times 0.90 = 500 \times 0.90 \times 0.90 = 500 \times 0.90^2 = 405$$</p>
+<p><strong>Answer:</strong> After 1 hour: 450 bacteria. After 2 hours: 405 bacteria.</p>
+<h3 id="key-takeaway_1">Key Takeaway<a class="headerlink" href="#key-takeaway_1" title="Permanent link">&para;</a></h3>
+<p>Constant percent change leads to exponential functions, which model growth and decay situations. The base of the exponential function is $1 + r$ for growth or $1 - r$ for decay, where $r$ is the decimal form of the percent rate.</p>
+<details>
+<h4 id="diagram-percent-change-explorer">Diagram: Percent Change Explorer<a class="headerlink" href="#diagram-percent-change-explorer" title="Permanent link">&para;</a></h4>
+<summary>Percent Change Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Understand<br/>
+Bloom Verb: calculate<br/>
+Learning Objective: The learner will calculate percent change and determine whether a situation represents exponential growth or decay.</p>
+<p>Prerequisites: Exponential Growth, Exponential Decay, Mathematical Model</p>
+<p>Evidence of Mastery: The learner correctly computes percent change and classifies the function as growth or decay based on the sign of the rate.</p>
+<p>Misconceptions: The learner may forget to divide by the old value, or confuse growth and decay based on the direction of change rather than the sign.</p>
+<p>Instructional Rationale: Percent change is the bridge between arithmetic operations and exponential functions. Learners must understand the formula structure before applying it to real-world contexts.</p>
+<p>Content: The sim presents 5 real-world scenarios (population growth, depreciation, interest accrual). The learner computes percent change and identifies growth vs. decay. Defaults: 5 scenarios with integer percentages between 5% and 25%.</p>
+<p>Learner Activity: The learner is given 5 scenarios and must compute percent change and identify growth vs. decay. Feedback provided after each response.</p>
+<p>Feedback: Correct responses receive positive feedback with the correct classification. Incorrect responses show the correct calculation and classification.</p>
+<p>Starting State: The learner sees the title "Percent Change Explorer" and a prompt to begin computing.</p>
+<p>Chapter Anchors: The chapter prose states that "Percent change is calculated as $\frac{\text{New} - \text{Old}}{\text{Old}} \times 100\%$. A positive percent change indicates exponential growth; a negative percent change indicates exponential decay. The base of the exponential function is $1 + r$ for growth or $1 - r$ for decay."</p>
+</details>
+<h2 id="3-arithmetic-difference">3. Arithmetic Difference<a class="headerlink" href="#3-arithmetic-difference" title="Permanent link">&para;</a></h2>
+<p>An <strong>arithmetic difference</strong> is the constant amount added to each term to get the next term in an arithmetic sequence. If a sequence has a constant arithmetic difference, then the difference between any two consecutive terms is always the same.</p>
+<p>The arithmetic difference is denoted by $d$ and is calculated as:</p>
+<div class="arithmatex">\[d = a_{n} - a_{n-1}\]</div>
+<p>where $a_n$ is the nth term and $a_{n-1}$ is the previous term.</p>
+<h3 id="worked-example-4-finding-the-arithmetic-difference">Worked Example 4: Finding the Arithmetic Difference<a class="headerlink" href="#worked-example-4-finding-the-arithmetic-difference" title="Permanent link">&para;</a></h3>
+<p>Find the arithmetic difference in the sequence $4, 9, 14, 19, 24, \ldots$</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Calculate the difference between consecutive terms:
+   $$d = 9 - 4 = 5$$
+   $$d = 14 - 9 = 5$$
+   $$d = 19 - 14 = 5$$
+   $$d = 24 - 19 = 5$$</li>
+<li>The arithmetic difference is consistently $5$.</li>
+</ol>
+<p><strong>Answer:</strong> The arithmetic difference is $d = 5$.</p>
+<h3 id="key-takeaway_2">Key Takeaway<a class="headerlink" href="#key-takeaway_2" title="Permanent link">&para;</a></h3>
+<p>In an arithmetic sequence, the arithmetic difference $d$ is the constant value added to each term to produce the next term. If the difference varies, the sequence is not arithmetic.</p>
+<details>
+<h4 id="diagram-arithmetic-sequence-explorer">Diagram: Arithmetic Sequence Explorer<a class="headerlink" href="#diagram-arithmetic-sequence-explorer" title="Permanent link">&para;</a></h4>
+<summary>Arithmetic Sequence Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Understand<br/>
+Bloom Verb: determine<br/>
+Learning Objective: The learner will determine the arithmetic difference in a given sequence and use it to find the next term.</p>
+<p>Prerequisites: Sequence Position, Sequence Term nth, Sequence Value</p>
+<p>Evidence of Mastery: The learner correctly identifies the arithmetic difference and uses it to extend the sequence or find a specific term.</p>
+<p>Misconceptions: The learner may confuse arithmetic difference with geometric ratio, or add instead of subtract when finding the difference.</p>
+<p>Instructional Rationale: Distinguishing additive (arithmetic) from multiplicative (geometric) patterns is essential for sequence fluency. Learners must recognize the structural difference between the two sequence types.</p>
+<p>Content: The sim presents 10 sequences, some arithmetic and some geometric. The learner identifies the arithmetic difference for each arithmetic sequence. Defaults: arithmetic sequences use a common difference of 2 or 3 with positive integer terms.</p>
+<p>Learner Activity: The learner is given 10 sequences and must state the arithmetic difference for those that are arithmetic. Feedback indicates whether each classification is correct.</p>
+<p>Feedback: Correct responses receive positive feedback with the correct difference. Incorrect responses show the step-by-step determination of the difference.</p>
+<p>Starting State: The learner sees the title "Arithmetic Sequence Explorer" and a prompt to begin identifying differences.</p>
+<p>Chapter Anchors: The chapter prose states that "An arithmetic sequence adds a constant value (arithmetic difference) to each term. The nth term formula is $a_n = a_1 + (n-1)d$ for arithmetic sequences."</p>
+</details>
+<h2 id="4-geometric-ratio">4. Geometric Ratio<a class="headerlink" href="#4-geometric-ratio" title="Permanent link">&para;</a></h2>
+<p>A <strong>geometric ratio</strong> (also called the common ratio) is the constant factor multiplied by each term to get the next term in a geometric sequence. If a sequence has a constant geometric ratio, then the ratio of any term to the previous term is always the same.</p>
+<p>The geometric ratio is denoted by $r$ and is calculated as:</p>
+<div class="arithmatex">\[r = \frac{a_{n}}{a_{n-1}}\]</div>
+<p>where $a_n$ is the nth term and $a_{n-1}$ is the previous term.</p>
+<h3 id="worked-example-5-finding-the-geometric-ratio">Worked Example 5: Finding the Geometric Ratio<a class="headerlink" href="#worked-example-5-finding-the-geometric-ratio" title="Permanent link">&para;</a></h3>
+<p>Find the geometric ratio in the sequence $2, 6, 18, 54, 162, \ldots$</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Calculate the ratio of consecutive terms:
+   $$r = \frac{6}{2} = 3$$
+   $$r = \frac{18}{6} = 3$$
+   $$r = \frac{54}{18} = 3$$
+   $$r = \frac{162}{54} = 3$$</li>
+<li>The geometric ratio is consistently $3$.</li>
+</ol>
+<p><strong>Answer:</strong> The geometric ratio is $r = 3$.</p>
+<h3 id="key-takeaway_3">Key Takeaway<a class="headerlink" href="#key-takeaway_3" title="Permanent link">&para;</a></h3>
+<p>In a geometric sequence, the geometric ratio $r$ is the constant factor multiplied by each term to produce the next term. If the ratio varies, the sequence is not geometric.</p>
+<details>
+<h4 id="diagram-geometric-sequence-explorer">Diagram: Geometric Sequence Explorer<a class="headerlink" href="#diagram-geometric-sequence-explorer" title="Permanent link">&para;</a></h4>
+<summary>Geometric Sequence Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Understand<br/>
+Bloom Verb: compute<br/>
+Learning Objective: The learner will compute the geometric ratio in a given sequence and use it to find the next term.</p>
+<p>Prerequisites: Sequence Position, Sequence Term nth, Sequence Value</p>
+<p>Evidence of Mastery: The learner correctly identifies the geometric ratio and uses it to extend the sequence or find a specific term.</p>
+<p>Misconceptions: The learner may confuse geometric ratio with arithmetic difference, or multiply instead of divide when finding the ratio.</p>
+<p>Instructional Rationale: Distinguishing additive (arithmetic) from multiplicative (geometric) patterns is essential for sequence fluency. Learners must recognize the structural difference between the two sequence types.</p>
+<p>Content: The sim presents 10 sequences, some arithmetic and some geometric. The learner identifies the geometric ratio for each geometric sequence. Defaults: geometric sequences use a common ratio of 2 or 3 with positive integer terms.</p>
+<p>Learner Activity: The learner is given 10 sequences and must state the geometric ratio for those that are geometric. Feedback indicates whether each classification is correct.</p>
+<p>Feedback: Correct responses receive positive feedback with the correct ratio. Incorrect responses show the step-by-step determination of the ratio.</p>
+<p>Starting State: The learner sees the title "Geometric Sequence Explorer" and a prompt to begin identifying ratios.</p>
+<p>Chapter Anchors: The chapter prose states that "A geometric sequence multiplies by a constant factor (geometric ratio). The nth term formula is $a_n = a_1 \cdot r^{(n-1)}$ for geometric sequences."</p>
+</details>
+<h2 id="5-sequence-term-nth">5. Sequence Term nth<a class="headerlink" href="#5-sequence-term-nth" title="Permanent link">&para;</a></h2>
+<p>The <strong>nth term</strong> of a sequence is the value at position $n$ in the sequence. For arithmetic and geometric sequences, there are explicit formulas to find the nth term without computing all the previous terms.</p>
+<h3 id="arithmetic-sequence-nth-term-formula">Arithmetic Sequence nth Term Formula<a class="headerlink" href="#arithmetic-sequence-nth-term-formula" title="Permanent link">&para;</a></h3>
+<p>The nth term of an arithmetic sequence is given by:</p>
+<div class="arithmatex">\[a_n = a_1 + (n - 1)d\]</div>
+<p>where $a_1$ is the first term, $n$ is the term position, and $d$ is the arithmetic difference.</p>
+<h3 id="geometric-sequence-nth-term-formula">Geometric Sequence nth Term Formula<a class="headerlink" href="#geometric-sequence-nth-term-formula" title="Permanent link">&para;</a></h3>
+<p>The nth term of a geometric sequence is given by:</p>
+<div class="arithmatex">\[a_n = a_1 \cdot r^{(n - 1)}\]</div>
+<p>where $a_1$ is the first term, $n$ is the term position, and $r$ is the geometric ratio.</p>
+<h3 id="worked-example-6-finding-the-nth-term-of-an-arithmetic-sequence">Worked Example 6: Finding the nth Term of an Arithmetic Sequence<a class="headerlink" href="#worked-example-6-finding-the-nth-term-of-an-arithmetic-sequence" title="Permanent link">&para;</a></h3>
+<p>Find the 10th term of the arithmetic sequence $3, 7, 11, 15, \ldots$</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Identify the first term and arithmetic difference:
+   $$a_1 = 3$$
+   $$d = 7 - 3 = 4$$</li>
+<li>Apply the nth term formula with $n = 10$:
+   $$a_{10} = 3 + (10 - 1) \cdot 4 = 3 + 9 \cdot 4 = 3 + 36 = 39$$</li>
+<li>The 10th term is 39.</li>
+</ol>
+<p><strong>Answer:</strong> The 10th term is $a_{10} = 39$.</p>
+<h3 id="worked-example-7-finding-the-nth-term-of-a-geometric-sequence">Worked Example 7: Finding the nth Term of a Geometric Sequence<a class="headerlink" href="#worked-example-7-finding-the-nth-term-of-a-geometric-sequence" title="Permanent link">&para;</a></h3>
+<p>Find the 6th term of the geometric sequence $3, 6, 12, 24, \ldots$</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Identify the first term and geometric ratio:
+   $$a_1 = 3$$
+   $$r = \frac{6}{3} = 2$$</li>
+<li>Apply the nth term formula with $n = 6$:
+   $$a_6 = 3 \cdot 2^{(6 - 1)} = 3 \cdot 2^5 = 3 \cdot 32 = 96$$</li>
+<li>The 6th term is 96.</li>
+</ol>
+<p><strong>Answer:</strong> The 6th term is $a_6 = 96$.</p>
+<h3 id="key-takeaway_4">Key Takeaway<a class="headerlink" href="#key-takeaway_4" title="Permanent link">&para;</a></h3>
+<p>The explicit formulas for the nth term allow us to find any term in an arithmetic or geometric sequence directly, without computing all the previous terms. This is especially useful for finding terms far into the sequence.</p>
+<details>
+<h4 id="diagram-sequence-term-explorer">Diagram: Sequence Term Explorer<a class="headerlink" href="#diagram-sequence-term-explorer" title="Permanent link">&para;</a></h4>
+<summary>Sequence Term Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Apply<br/>
+Bloom Verb: calculate<br/>
+Learning Objective: The learner will calculate the nth term of an arithmetic or geometric sequence given the first term and common difference/ratio.</p>
+<p>Prerequisites: Sequence Position, Arithmetic Difference, Geometric Ratio</p>
+<p>Evidence of Mastery: The learner correctly applies the nth term formula to find a specific term far into the sequence without computing all intermediate terms.</p>
+<p>Misconceptions: The learner may use $n$ instead of $n-1$ in the formula, or forget to multiply by the first term.</p>
+<p>Instructional Rationale: The explicit formula is a powerful tool that saves computation time. Learners must understand the structure of the formula and the meaning of each component before applying it.</p>
+<p>Content: The sim presents 5 sequences (arithmetic and geometric) and asks the learner to find the 8th, 10th, or 12th term. Defaults: sequences with integer first terms and differences/ratios of 1-3.</p>
+<p>Learner Activity: The learner is given 5 sequences and must state the indicated term. Feedback shows the correct answer with step-by-step derivation.</p>
+<p>Feedback: Correct responses receive positive feedback with the correct term. Incorrect responses show the partial calculation and identify the error.</p>
+<p>Starting State: The learner sees the title "Sequence Term Explorer" and a prompt to begin computing terms.</p>
+<p>Chapter Anchors: The chapter prose states that "The nth term formulas are $a_n = a_1 + (n-1)d$ for arithmetic and $a_n = a_1 \cdot r^{(n-1)}$ for geometric sequences. These formulas allow us to find any term directly."</p>
+</details>
+<h2 id="6-sequence-position">6. Sequence Position<a class="headerlink" href="#6-sequence-position" title="Permanent link">&para;</a></h2>
+<p>The <strong>sequence position</strong> refers to the index or rank of a term within a sequence. In most sequences, the position $n$ starts at $n = 1$ for the first term, $n = 2$ for the second term, and so on. The position $n$ is used in the explicit formulas for the nth term.</p>
+<h3 id="worked-example-8-using-sequence-position">Worked Example 8: Using Sequence Position<a class="headerlink" href="#worked-example-8-using-sequence-position" title="Permanent link">&para;</a></h3>
+<p>Given the arithmetic sequence $5, 9, 13, 17, \ldots$, find the term at position $n = 7$.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Identify the first term and arithmetic difference:
+   $$a_1 = 5$$
+   $$d = 9 - 5 = 4$$</li>
+<li>Apply the nth term formula with $n = 7$:
+   $$a_7 = 5 + (7 - 1) \cdot 4 = 5 + 6 \cdot 4 = 5 + 24 = 29$$</li>
+<li>The term at position 7 is 29.</li>
+</ol>
+<p><strong>Answer:</strong> The term at position $n = 7$ is $a_7 = 29$.</p>
+<h3 id="key-takeaway_5">Key Takeaway<a class="headerlink" href="#key-takeaway_5" title="Permanent link">&para;</a></h3>
+<p>The sequence position $n$ is the index of the term we want to find, and it is a crucial variable in the nth term formulas for both arithmetic and geometric sequences.</p>
+<details>
+<h4 id="diagram-sequence-position-explorer">Diagram: Sequence Position Explorer<a class="headerlink" href="#diagram-sequence-position-explorer" title="Permanent link">&para;</a></h4>
+<summary>Sequence Position Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Understand<br/>
+Bloom Verb: identify<br/>
+Learning Objective: The learner will identify the position $n$ of a given term in a sequence and use position in the nth term formula.</p>
+<p>Prerequisites: Sequence Term nth, Sequence Value</p>
+<p>Evidence of Mastery: The learner correctly maps a term's position to its index and applies the nth term formula with the correct value of $n$.</p>
+<p>Misconceptions: The learner may start counting from $n = 0$ instead of $n = 1$, or use $n$ directly without subtracting 1 in the formula.</p>
+<p>Instructional Rationale: Sequence position is the bridge between the intuitive notion of "which term" and the formal nth term formula. Learners must master this connection before using the formula independently.</p>
+<p>Content: The sim presents 5 sequences and asks the learner to state the position $n$ of a given term, or the term at a given position $n$. Defaults: simple arithmetic sequences with $a_1 = 1-5$ and $d = 1-3$.</p>
+<p>Learner Activity: The learner is given 5 sequences and must state the position of a specified term, or the term at a specified position. Feedback confirms the correct position or term.</p>
+<p>Feedback: Correct responses receive positive feedback. Incorrect responses show the correct position with explanatory notes.</p>
+<p>Starting State: The learner sees the title "Sequence Position Explorer" and a prompt to begin working with positions.</p>
+<p>Chapter Anchors: The chapter prose states that "Sequence position ($n$) is the index used in nth term formulas. For arithmetic sequences, $a_n = a_1 + (n-1)d$, and for geometric sequences, $a_n = a_1 \cdot r^{(n-1)}$."</p>
+</details>
+<h2 id="7-sequence-value">7. Sequence Value<a class="headerlink" href="#7-sequence-value" title="Permanent link">&para;</a></h2>
+<p>The <strong>sequence value</strong> is the actual numerical amount at a given position in a sequence. Each sequence has its own set of values determined by its starting term and the rule that generates the sequence (arithmetic difference or geometric ratio).</p>
+<h3 id="worked-example-9-listing-sequence-values">Worked Example 9: Listing Sequence Values<a class="headerlink" href="#worked-example-9-listing-sequence-values" title="Permanent link">&para;</a></h3>
+<p>List the first 5 values of the arithmetic sequence with $a_1 = 2$ and $d = 3$.</p>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Position 1 ($n = 1$): $a_1 = 2$</li>
+<li>Position 2 ($n = 2$): $a_2 = 2 + 3 = 5$</li>
+<li>Position 3 ($n = 3$): $a_3 = 2 + 2 \cdot 3 = 8$</li>
+<li>Position 4 ($n = 4$): $a_4 = 2 + 3 \cdot 3 = 11$</li>
+<li>Position 5 ($n = 5$): $a_5 = 2 + 4 \cdot 3 = 14$</li>
+</ul>
+<p><strong>Answer:</strong> The first 5 values are: 2, 5, 8, 11, 14.</p>
+<h3 id="worked-example-10-listing-sequence-values-geometric">Worked Example 10: Listing Sequence Values (Geometric)<a class="headerlink" href="#worked-example-10-listing-sequence-values-geometric" title="Permanent link">&para;</a></h3>
+<p>List the first 5 values of the geometric sequence with $a_1 = 3$ and $r = 2$.</p>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Position 1 ($n = 1$): $a_1 = 3$</li>
+<li>Position 2 ($n = 2$): $a_2 = 3 \cdot 2 = 6$</li>
+<li>Position 3 ($n = 3$): $a_3 = 3 \cdot 2^2 = 12$</li>
+<li>Position 4 ($n = 4$): $a_4 = 3 \cdot 2^3 = 24$</li>
+<li>Position 5 ($n = 5$): $a_5 = 3 \cdot 2^4 = 48$</li>
+</ul>
+<p><strong>Answer:</strong> The first 5 values are: 3, 6, 12, 24, 48.</p>
+<h3 id="key-takeaway_6">Key Takeaway<a class="headerlink" href="#key-takeaway_6" title="Permanent link">&para;</a></h3>
+<p>The sequence values are determined by the starting term and the generating rule (arithmetic difference or geometric ratio). Understanding the values helps us recognize patterns and make predictions about the sequence.</p>
+<details>
+<h4 id="diagram-sequence-value-explorer">Diagram: Sequence Value Explorer<a class="headerlink" href="#diagram-sequence-value-explorer" title="Permanent link">&para;</a></h4>
+<summary>Sequence Value Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Remember<br/>
+Bloom Verb: list<br/>
+Learning Objective: The learner will list the first $n$ values of a sequence given the starting term and generating rule.</p>
+<p>Prerequisites: Sequence Position, Arithmetic Difference, Geometric Ratio</p>
+<p>Evidence of Mastery: The learner correctly computes the first $n$ values of a sequence using the generating rule, starting from the first term.</p>
+<p>Misconceptions: The learner may forget to start at the first term, or apply the difference/ratio the wrong number of times.</p>
+<p>Instructional Rationale: Listing sequence values builds fluency with the generating rule and prepares learners for using the explicit nth term formula. Learners must understand that values are generated iteratively.</p>
+<p>Content: The sim presents 5 sequences (arithmetic and geometric) and asks the learner to list the first 5 values. Defaults: sequences with $a_1 = 1-5$ and $d$ or $r = 1-3$.</p>
+<p>Learner Activity: The learner is given 5 sequences and must list the first 5 values. Feedback shows the correct list with any errors highlighted.</p>
+<p>Feedback: Correct responses receive positive feedback with the complete list. Incorrect responses show the partial list and identify which value(s) are wrong.</p>
+<p>Starting State: The learner sees the title "Sequence Value Explorer" and a prompt to begin listing values.</p>
+<p>Chapter Anchors: The chapter prose states that "Sequence values are determined by the starting term and the generating rule (arithmetic difference or geometric ratio). The first 5 values of an arithmetic sequence with $a_1 = 2$ and $d = 3$ are 2, 5, 8, 11, 14."</p>
+</details>
+<h2 id="8-mathematical-model">8. Mathematical Model<a class="headerlink" href="#8-mathematical-model" title="Permanent link">&para;</a></h2>
+<p>A <strong>mathematical model</strong> is a representation of a real-world situation using mathematical concepts and language. Mathematical models can be used to describe, explain, and predict phenomena in science, engineering, business, and many other fields.</p>
+<h3 id="types-of-mathematical-models">Types of Mathematical Models<a class="headerlink" href="#types-of-mathematical-models" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Linear models:</strong> Represent situations with a constant rate of change. Equation form: $y = mx + b$</li>
+<li><strong>Exponential models:</strong> Represent situations with a constant percent change. Equation form: $y = a \cdot b^x$</li>
+<li><strong>Quadratic models:</strong> Represent situations where the rate of change itself changes at a constant rate. Equation form: $y = ax^2 + bx + c$</li>
+<li><strong>Polynomial models:</strong> Represent more complex relationships with multiple turning points.</li>
+<li><strong>Logarithmic models:</strong> Represent situations where rapid initial change levels off over time.</li>
+</ul>
+<h3 id="worked-example-11-creating-a-mathematical-model">Worked Example 11: Creating a Mathematical Model<a class="headerlink" href="#worked-example-11-creating-a-mathematical-model" title="Permanent link">&para;</a></h3>
+<p>A taxi company charges a flat fee of $3 plus $2 per mile traveled. Write a mathematical model for the total cost $C$ in terms of miles $m$ driven.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Identify the fixed (starting) value and the rate of change:</li>
+<li>Flat fee (y-intercept): $b = 3$</li>
+<li>Rate per mile (slope): $m = 2$</li>
+<li>Write the linear equation using slope-intercept form:
+   $$C = 2m + 3$$</li>
+<li>The model predicts that for 0 miles, the cost is $3, and for each additional mile, the cost increases by $2$.</li>
+</ol>
+<p><strong>Answer:</strong> The mathematical model is $C = 2m + 3$.</p>
+<h3 id="worked-example-12-exponential-model-for-population-growth">Worked Example 12: Exponential Model for Population Growth<a class="headerlink" href="#worked-example-12-exponential-model-for-population-growth" title="Permanent link">&para;</a></h3>
+<p>A bacterial culture starts with 100 bacteria and doubles every hour. Write an exponential model for the population $P$ after $t$ hours.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Identify the initial value and growth factor:</li>
+<li>Initial population: $a = 100$</li>
+<li>Doubling means the growth factor is $b = 2$</li>
+<li>Write the exponential equation:
+   $$P = 100 \cdot 2^t$$</li>
+<li>The model predicts that after 3 hours, the population will be $P = 100 \cdot 2^3 = 800$ bacteria.</li>
+</ol>
+<p><strong>Answer:</strong> The exponential model is $P = 100 \cdot 2^t$.</p>
+<h3 id="key-takeaway_7">Key Takeaway<a class="headerlink" href="#key-takeaway_7" title="Permanent link">&para;</a></h3>
+<p>Mathematical models translate real-world situations into mathematical language, allowing us to analyze patterns, make predictions, and solve problems. The choice of model type (linear, exponential, quadratic) depends on the nature of the relationship between the variables.</p>
+<details>
+<h4 id="diagram-mathematical-model-explorer">Diagram: Mathematical Model Explorer<a class="headerlink" href="#diagram-mathematical-model-explorer" title="Permanent link">&para;</a></h4>
+<summary>Mathematical Model Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Apply<br/>
+Bloom Verb: construct<br/>
+Learning Objective: The learner will construct a mathematical model (linear or exponential) for a given real-world situation involving constant rate or percent change.</p>
+<p>Prerequisites: Constant Rate Change, Constant Percent Change, Linear Model, Exponential Model</p>
+<p>Evidence of Mastery: The learner correctly identifies the model type (linear vs. exponential) and writes the equation with the correct initial value and rate of change/percent change.</p>
+<p>Misconceptions: The learner may choose a linear model for a percent-change situation, or misidentify the initial value or growth factor.</p>
+<p>Instructional Rationale: Model selection is a critical skill that requires analyzing the type of change (constant amount vs. constant percent) in the situation. Learners must distinguish between additive and multiplicative relationships.</p>
+<p>Content: The sim presents 5 real-world scenarios. The learner selects the model type (linear/exponential) and writes the equation. Defaults: 3 linear scenarios with integer rate of change; 2 exponential scenarios with integer percent change and initial value.</p>
+<p>Learner Activity: The learner is given 5 scenarios and must select the model type and write the equation. Feedback shows the correct model or corrective guidance.</p>
+<p>Feedback: Correct responses receive positive feedback with the correct model. Incorrect responses show the common error and guide the learner to re-examine the change type.</p>
+<p>Starting State: The learner sees the title "Mathematical Model Explorer" and a prompt to begin modeling.</p>
+<p>Chapter Anchors: The chapter prose states that "Linear models have equation form $y = mx + b$; exponential models have equation form $y = a \cdot b^x$. The choice of model depends on whether the situation involves a constant rate or constant percent change."</p>
+</details>
+<h2 id="9-data-display-scatterplot">9. Data Display Scatterplot<a class="headerlink" href="#9-data-display-scatterplot" title="Permanent link">&para;</a></h2>
+<p>A <strong>scatterplot</strong> is a graph that plots pairs of data points on a coordinate plane to show the relationship between two variables. Each point $(x, y)$ represents one observation or data entry.</p>
+<h3 id="creating-a-scatterplot">Creating a Scatterplot<a class="headerlink" href="#creating-a-scatterplot" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Draw a coordinate plane with an x-axis (independent variable) and y-axis (dependent variable).</li>
+<li>Label each axis with the variable name and appropriate scale.</li>
+<li>For each data pair $(x, y)$, plot a point at the corresponding location on the graph.</li>
+</ol>
+<h3 id="interpreting-a-scatterplot">Interpreting a Scatterplot<a class="headerlink" href="#interpreting-a-scatterplot" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Positive association:</strong> As x increases, y tends to increase (points slope upward).</li>
+<li><strong>Negative association:</strong> As x increases, y tends to decrease (points slope downward).</li>
+<li><strong>No association:</strong> Points appear randomly scattered with no clear pattern.</li>
+<li><strong>Strength:</strong> How closely the points follow a clear form (strong, moderate, weak).</li>
+</ul>
+<h3 id="worked-example-13-interpreting-a-scatterplot">Worked Example 13: Interpreting a Scatterplot<a class="headerlink" href="#worked-example-13-interpreting-a-scatterplot" title="Permanent link">&para;</a></h3>
+<p>The scatterplot below shows the relationship between hours studied and exam score for 10 students. Describe the association.</p>
+<p><strong>Solution:</strong></p>
+<p>Looking at the plotted points, we can see that as the number of hours studied increases, the exam scores tend to increase as well. The points generally follow an upward trend, indicating a <strong>positive association</strong>. The relationship appears to be moderately strong, as most points are clustered near an imaginary line through the center of the points.</p>
+<p><strong>Answer:</strong> There is a positive, moderate association between hours studied and exam score.</p>
+<h3 id="key-takeaway_8">Key Takeaway<a class="headerlink" href="#key-takeaway_8" title="Permanent link">&para;</a></h3>
+<p>Scatterplots are a fundamental tool for bivariate data analysis. They reveal patterns, trends, and potential relationships between two quantitative variables that might not be apparent from looking at the data in a table.</p>
+<details>
+<h4 id="diagram-scatterplot-explorer">Diagram: Scatterplot Explorer<a class="headerlink" href="#diagram-scatterplot-explorer" title="Permanent link">&para;</a></h4>
+<summary>Scatterplot Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Understand<br/>
+Bloom Verb: interpret<br/>
+Learning Objective: The learner will interpret a scatterplot to determine the direction, form, and strength of the association between two quantitative variables.</p>
+<p>Prerequisites: Bivariate Data, Coordinate Plane, Plot Points</p>
+<p>Evidence of Mastery: The learner correctly identifies the direction (positive/negative), form (linear/nonlinear), and strength (strong/moderate/weak) of the association in a scatterplot.</p>
+<p>Misconceptions: The learner may confuse strength with the steepness of the trend, or interpret any upward trend as "strong" regardless of point clustering.</p>
+<p>Instructional Rationale: Scatterplot interpretation is a foundational skill for bivariate data analysis. Learners must develop the ability to look beyond individual points and discern the overall pattern.</p>
+<p>Content: The sim presents 5 scatterplots with different associations (positive, negative, none, varying strengths). The learner describes the association for each. Defaults: 2 positive, 2 negative, 1 no association, with point clusters that clearly show the difference between strong and moderate.</p>
+<p>Learner Activity: The learner is given 5 scatterplots and must describe the association (direction, form, strength). Feedback shows the correct description with explanation.</p>
+<p>Feedback: Correct responses receive positive feedback with the correct classification. Incorrect responses show the correct interpretation with explanation of why the original was wrong.</p>
+<p>Starting State: The learner sees the title "Scatterplot Explorer" and a prompt to begin interpreting.</p>
+<p>Chapter Anchors: The chapter prose states that "Scatterplots reveal patterns, trends, and potential relationships between two quantitative variables. Positive association means y increases with x; negative means y decreases with x. Strength reflects how closely points follow a clear form."</p>
+</details>
+<h2 id="10-data-display-line-graph">10. Data Display Line Graph<a class="headerlink" href="#10-data-display-line-graph" title="Permanent link">&para;</a></h2>
+<p>A <strong>line graph</strong> (or line chart) displays data points connected by straight line segments. It is particularly useful for showing trends over time or ordered categories.</p>
+<h3 id="creating-a-line-graph">Creating a Line Graph<a class="headerlink" href="#creating-a-line-graph" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Draw a coordinate plane with an x-axis (category or time period) and y-axis (value or frequency).</li>
+<li>Plot data points at the appropriate x- and y-coordinates.</li>
+<li>Connect the points in order with straight line segments.</li>
+<li>Title the graph and label both axes.</li>
+</ol>
+<h3 id="interpreting-a-line-graph">Interpreting a Line Graph<a class="headerlink" href="#interpreting-a-line-graph" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Trends:</strong> The direction of the line (upward = increase, downward = decrease, horizontal = no change).</li>
+<li><strong>Peaks and valleys:</strong> The highest and lowest points show maximum and minimum values.</li>
+<li><strong>Patterns:</strong> Repeated patterns may indicate cyclical or seasonal behavior.</li>
+</ul>
+<h3 id="worked-example-14-interpreting-a-line-graph">Worked Example 14: Interpreting a Line Graph<a class="headerlink" href="#worked-example-14-interpreting-a-line-graph" title="Permanent link">&para;</a></h3>
+<p>The line graph shows the average daily temperature over a 7-day week. Describe the temperature trend.</p>
+<p><strong>Solution:</strong></p>
+<p>The line starts low on Monday, rises through Wednesday to a peak on Thursday, then gradually declines through Friday and Saturday, reaching the lowest point on Sunday. This pattern suggests a typical weekly temperature cycle, warmest mid-week and coolest on the weekend.</p>
+<p><strong>Answer:</strong> The temperature peaks mid-week (Thursday) and is lowest on Sunday, showing a typical weekly pattern.</p>
+<h3 id="key-takeaway_9">Key Takeaway<a class="headerlink" href="#key-takeaway_9" title="Permanent link">&para;</a></h3>
+<p>Line graphs are ideal for displaying data collected over time or across ordered categories. They make it easy to see trends, fluctuations, and comparisons between different data series.</p>
+<details>
+<h4 id="diagram-line-graph-explorer">Diagram: Line Graph Explorer<a class="headerlink" href="#diagram-line-graph-explorer" title="Permanent link">&para;</a></h4>
+<summary>Line Graph Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Understand<br/>
+Bloom Verb: interpret<br/>
+Learning Objective: The learner will interpret a line graph to identify trends, peaks, valleys, and patterns in data collected over time or across ordered categories.</p>
+<p>Prerequisites: Coordinate Plane, Ordered Pairs, Axis Labels</p>
+<p>Evidence of Mastery: The learner correctly identifies the direction of trends (increasing/decreasing/horizontal), locates peaks and valleys, and recognizes repeated patterns in the graphed data.</p>
+<p>Misconceptions: The learner may confuse the overall trend with local fluctuations, or identify a peak that is not the global maximum.</p>
+<p>Instructional Rationale: Line graph interpretation helps learners extract meaningful patterns from time-ordered data. Understanding trends, peaks, and valleys is essential for data literacy.</p>
+<p>Content: The sim presents 5 line graphs showing weekly data (temperature, sales, etc.). The learner describes the trend, identifies peaks/valleys, and notes any patterns. Defaults: 5 different weekly scenarios with varied patterns (single peak, multiple peaks, cyclical, declining, flat).</p>
+<p>Learner Activity: The learner is given 5 line graphs and must describe the trend, identify peaks/valleys, and note patterns. Feedback confirms correct interpretations.</p>
+<p>Feedback: Correct responses receive positive feedback with the correct description. Incorrect responses show the correct interpretation with guidance.</p>
+<p>Starting State: The learner sees the title "Line Graph Explorer" and a prompt to begin interpreting.</p>
+<p>Chapter Anchors: The chapter prose states that "Line graphs display data over time or across ordered categories. The direction of the line shows increase, decrease, or no change. Peaks and valleys represent maximum and minimum values."</p>
+</details>
+<h2 id="11-data-display-bar-graph">11. Data Display Bar Graph<a class="headerlink" href="#11-data-display-bar-graph" title="Permanent link">&para;</a></h2>
+<p>A <strong>bar graph</strong> (or bar chart) uses rectangular bars to represent the frequency or value of categories. The length of each bar is proportional to the value it represents. Bar graphs are useful for comparing quantities across different categories.</p>
+<h3 id="creating-a-bar-graph">Creating a Bar Graph<a class="headerlink" href="#creating-a-bar-graph" title="Permanent link">&para;</a></h3>
+<ol>
+<li>List the categories along the x-axis (horizontal axis).</li>
+<li>Draw a y-axis (vertical axis) with a scale that covers the range of values.</li>
+<li>For each category, draw a bar whose height corresponds to the value or frequency.</li>
+<li>Label both axes and give the graph a title.</li>
+</ol>
+<h3 id="interpreting-a-bar-graph">Interpreting a Bar Graph<a class="headerlink" href="#interpreting-a-bar-graph" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Bar height:</strong> The taller the bar, the greater the value or frequency.</li>
+<li><strong>Category comparison:</strong> The relative heights of bars show how categories compare.</li>
+<li><strong>Grouped or stacked bars:</strong> Can show sub-categories within each main category.</li>
+</ul>
+<h3 id="worked-example-15-interpreting-a-bar-graph">Worked Example 15: Interpreting a Bar Graph<a class="headerlink" href="#worked-example-15-interpreting-a-bar-graph" title="Permanent link">&para;</a></h3>
+<p>The bar graph shows the number of students enrolled in each math course at a high school. Which course has the most enrollment?</p>
+<p><strong>Solution:</strong></p>
+<p>The bars have the following heights (enrollment counts):
+- Algebra I: 120 students
+- Geometry: 105 students
+- Algebra II: 85 students
+- Pre-Calculus: 60 students
+- AP Calculus: 25 students</p>
+<p>The tallest bar is for Algebra I with 120 students.</p>
+<p><strong>Answer:</strong> Algebra I has the most enrollment with 120 students.</p>
+<h3 id="key-takeaway_10">Key Takeaway<a class="headerlink" href="#key-takeaway_10" title="Permanent link">&para;</a></h3>
+<p>Bar graphs are excellent for comparing discrete categories. The visual length of the bars makes it easy to see which categories have the highest and lowest values at a glance.</p>
+<details>
+<h4 id="diagram-bar-graph-explorer">Diagram: Bar Graph Explorer<a class="headerlink" href="#diagram-bar-graph-explorer" title="Permanent link">&para;</a></h4>
+<summary>Bar Graph Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Understand<br/>
+Bloom Verb: compare<br/>
+Learning Objective: The learner will interpret a bar graph to compare quantities across discrete categories and identify the category with the greatest or least value.</p>
+<p>Prerequisites: Categorical Data, Bar Graph Construction, Axis Labels</p>
+<p>Evidence of Mastery: The learner correctly identifies the category with the greatest or least value based on bar height, and can order categories by frequency or value.</p>
+<p>Misconceptions: The learner may confuse bar height with bar width, or compare categories that are not adjacent on the x-axis.</p>
+<p>Instructional Rationale: Bar graphs are often the first introduction to comparative data visualization. Learners must understand that bar length (not position or color) encodes the value.</p>
+<p>Content: The sim presents 5 bar graphs comparing categories (students in courses, budget items, survey responses). The learner identifies the category with the highest or lowest value. Defaults: 5 scenarios with 4-6 categories and integer values.</p>
+<p>Learner Activity: The learner is given 5 bar graphs and must identify the category with the highest or lowest value, or rank categories by value. Feedback shows the correct identification with bar heights.</p>
+<p>Feedback: Correct responses receive positive feedback with the correct identification. Incorrect responses show the correct bar heights and identify the error.</p>
+<p>Starting State: The learner sees the title "Bar Graph Explorer" and a prompt to begin comparing.</p>
+<p>Chapter Anchors: The chapter prose states that "Bar graph bar height represents the value or frequency of each category. The tallest bar has the greatest value, the shortest has the least. Bars allow easy comparison across categories."</p>
+</details>
+<h2 id="12-data-display-circle-graph">12. Data Display Circle Graph<a class="headerlink" href="#12-data-display-circle-graph" title="Permanent link">&para;</a></h2>
+<p>A <strong>circle graph</strong> (also called a <strong>pie chart</strong>) is a circular statistical graphic divided into slices to illustrate numerical proportions. Each slice represents a category's contribution to the whole.</p>
+<h3 id="creating-a-circle-graph">Creating a Circle Graph<a class="headerlink" href="#creating-a-circle-graph" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Calculate the total of all values.</li>
+<li>For each category, compute the angle of its slice:
+   $$\text{Angle} = \frac{\text{Category Value}}{\text{Total}} \times 360^\circ$$</li>
+<li>Draw a circle and use a protractor to mark each slice's angle from the center.</li>
+<li>Label each slice with the category name and percentage or count.</li>
+</ol>
+<h3 id="interpreting-a-circle-graph">Interpreting a Circle Graph<a class="headerlink" href="#interpreting-a-circle-graph" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Slice size:</strong> Larger slices represent larger proportions of the whole.</li>
+<li><strong>Percentage:</strong> Each slice is typically labeled with the percent it represents.</li>
+<li><strong>Comparison:</strong> Slices can be compared to see which categories are larger or smaller.</li>
+</ul>
+<h3 id="worked-example-16-creating-a-circle-graph">Worked Example 16: Creating a Circle Graph<a class="headerlink" href="#worked-example-16-creating-a-circle-graph" title="Permanent link">&para;</a></h3>
+<p>The following data shows the favorite sports of 20 students: Soccer (8), Basketball (6), Baseball (4), Tennis (2). Create a circle graph.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Total students: $8 + 6 + 4 + 2 = 20$</li>
+<li>Compute each slice's angle:</li>
+<li>Soccer: $\frac{8}{20} \times 360^\circ = 0.4 \times 360^\circ = 144^\circ$</li>
+<li>Basketball: $\frac{6}{20} \times 360^\circ = 0.3 \times 360^\circ = 108^\circ$</li>
+<li>Baseball: $\frac{4}{20} \times 360^\circ = 0.2 \times 360^\circ = 72^\circ$</li>
+<li>Tennis: $\frac{2}{20} \times 360^\circ = 0.1 \times 360^\circ = 36^\circ$</li>
+<li>Draw the circle graph with these four slices.</li>
+</ol>
+<p><strong>Answer:</strong> The circle graph has slices of 144° (Soccer), 108° (Basketball), 72° (Baseball), and 36° (Tennis), totaling 360°.</p>
+<h3 id="key-takeaway_11">Key Takeaway<a class="headerlink" href="#key-takeaway_11" title="Permanent link">&para;</a></h3>
+<p>Circle graphs show how a whole is divided into parts. They are most effective when there are a few categories (5 or fewer) and when the goal is to show the relative size of each part compared to the whole.</p>
+<details>
+<h4 id="diagram-circle-graph-explorer">Diagram: Circle Graph Explorer<a class="headerlink" href="#diagram-circle-graph-explorer" title="Permanent link">&para;</a></h4>
+<summary>Circle Graph Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Apply<br/>
+Bloom Verb: calculate<br/>
+Learning Objective: The learner will calculate slice angles for a circle graph and interpret the relative sizes of slices to compare category proportions.</p>
+<p>Prerequisites: Fraction to Percentage, Percentages, Circle Graph Angles</p>
+<p>Evidence of Mastery: The learner correctly computes the angle for each slice using $\frac{\text{Category Value}}{\text{Total}} \times 360^\circ$ and can order slices by size to compare proportions.</p>
+<p>Misconceptions: The learner may forget to multiply by 360°, or compute the angle for one slice but not verify that all slices sum to 360°.</p>
+<p>Instructional Rationale: Circle graph construction reinforces fraction-to-percent conversion and the concept of parts of a whole. Learners must understand the proportional relationship between category value and slice angle.</p>
+<p>Content: The sim presents 5 circle graphs with different data sets (4-6 categories). The learner computes slice angles and identifies the largest/smallest slice. Defaults: 5 scenarios with 4 categories and integer values that sum to 20 or 30.</p>
+<p>Learner Activity: The learner is given 5 circle graph data sets and must compute each slice's angle. Feedback shows the correct angle with any calculation errors highlighted.</p>
+<p>Feedback: Correct responses receive positive feedback with the correct angle. Incorrect responses show the correct calculation and identify the error.</p>
+<p>Starting State: The learner sees the title "Circle Graph Explorer" and a prompt to begin computing angles.</p>
+<p>Chapter Anchors: The chapter prose states that "Circle graph slice angle is $\frac{\text{Category Value}}{\text{Total}} \times 360^\circ$. Larger slices represent larger proportions. All slices sum to 360°."</p>
+</details>
+<h2 id="13-statistical-question">13. Statistical Question<a class="headerlink" href="#13-statistical-question" title="Permanent link">&para;</a></h2>
+<p>A <strong>statistical question</strong> is a question that can be answered by collecting data, and where the answer involves variability. Unlike a deterministic question, a statistical question expects different answers each time it is asked because of natural variability in the data.</p>
+<h3 id="characteristics-of-statistical-questions">Characteristics of Statistical Questions<a class="headerlink" href="#characteristics-of-statistical-questions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Data-driven:</strong> The question expects an answer based on data collection.</li>
+<li><strong>Variability:</strong> The anticipated answers will vary because of differences in the population or measurements.</li>
+<li><strong>Anticipated:</strong> The variability is expected before data is collected.</li>
+</ul>
+<h3 id="non-examples-not-statistical-questions">Non-Examples (Not Statistical Questions)<a class="headerlink" href="#non-examples-not-statistical-questions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>"What is the capital of France?" $\rightarrow$ Has one factual answer, no variability.</li>
+<li>"How many days are in February 2024?" $\rightarrow$ Has one factual answer (29 days, leap year), no variability.</li>
+<li>"What is $5 + 3$?" $\rightarrow$ Has one exact answer (8), no variability.</li>
+</ul>
+<h3 id="examples-statistical-questions">Examples (Statistical Questions)<a class="headerlink" href="#examples-statistical-questions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>"What is the average height of students in this class?" $\rightarrow$ Expects variability in heights; answer involves collecting data.</li>
+<li>"What is the most common pet type among students in this school?" $\rightarrow$ Expects variability in pet preferences; answer involves collecting and analyzing data.</li>
+<li>"Do students who eat breakfast tend to have higher grades?" $\rightarrow$ Expects variability in both breakfast habits and grades; answer involves comparing two data sets.</li>
+</ul>
+<h3 id="worked-example-17-identifying-statistical-questions">Worked Example 17: Identifying Statistical Questions<a class="headerlink" href="#worked-example-17-identifying-statistical-questions" title="Permanent link">&para;</a></h3>
+<p>Which of the following are statistical questions?</p>
+<p>a) "What is the height of the tallest student in the class?"
+b) "What are the heights of all students in the class?"
+c) "How much do the heights of students in the class vary?"
+d) "Is the average height of students in this class greater than 5 feet?"</p>
+<p><strong>Solution:</strong></p>
+<p>a) This is a statistical question because it requires collecting height data from all students, and the answer involves identifying the maximum value, which will vary between classes.</p>
+<p>b) This is a statistical question because it involves collecting height data from all students, and the individual heights will vary.</p>
+<p>c) This is a statistical question because it requires collecting height data and analyzing the variability (spread) of the data.</p>
+<p>d) This is a statistical question because it requires collecting height data to compute an average, and the answer will depend on the specific class's students, which varies.</p>
+<p><strong>Answer:</strong> All of (a), (b), (c), and (d) are statistical questions.</p>
+<h3 id="key-takeaway_12">Key Takeaway<a class="headerlink" href="#key-takeaway_12" title="Permanent link">&para;</a></h3>
+<p>Statistical questions are the foundation of statistics. They differ from mathematical questions in that they expect variability in the data and require data collection to answer. Recognizing statistical questions is the first step in the statistical problem-solving process.</p>
+<details>
+<h4 id="diagram-statistical-question-explorer">Diagram: Statistical Question Explorer<a class="headerlink" href="#diagram-statistical-question-explorer" title="Permanent link">&para;</a></h4>
+<summary>Statistical Question Explorer</summary>
+<p>Type: microsim<br/>
+Library: p5.js<br/>
+Status: Specified<br/>
+Bloom Level: Remember<br/>
+Bloom Verb: identify<br/>
+Learning Objective: The learner will identify whether a given question is a statistical question based on whether it expects variability in data and requires data collection to answer.</p>
+<p>Prerequisites: Data Collection, Variability, Question Types</p>
+<p>Evidence of Mastery: The learner correctly classifies questions as statistical or non-statistical, explaining the reason based on variability and data collection requirements.</p>
+<p>Misconceptions: The learner may classify any question involving numbers as statistical, or fail to recognize that questions about specific individuals without variability are not statistical.</p>
+<p>Instructional Rationale: Distinguishing statistical from non-statistical questions is the first step in the statistical problem-solving process. Learners must understand the defining characteristic: anticipated variability requiring data collection.</p>
+<p>Content: The sim presents 10 questions of varying types. The learner identifies each as statistical or non-statistical and explains the reason. Defaults: 5 statistical questions and 5 non-statistical questions covering common question types (measurement, comparison, prediction, description).</p>
+<p>Learner Activity: The learner is given 10 questions and must classify each as statistical or non-statistical and explains the reason. Feedback confirms the correct classification with explanation.</p>
+<p>Feedback: Correct responses receive positive feedback with the correct classification and justification. Incorrect responses show the correct classification and explain why the original was classified incorrectly.</p>
+<p>Starting State: The learner sees the title "Statistical Question Explorer" and a prompt to begin classifying.</p>
+<p>Chapter Anchors: The chapter prose states that "A statistical question expects variability in the data and requires data collection to answer. Non-statistical questions have one factual answer without variability."</p>
+</details>
+<h2 id="chapter-review-and-key-takeaways">Chapter Review and Key Takeaways<a class="headerlink" href="#chapter-review-and-key-takeaways" title="Permanent link">&para;</a></h2>
+<p>In this chapter, we have covered the advanced concepts and review topics for Algebra I. The key ideas include:</p>
+<ol>
+<li><strong>Constant rate of change</strong> represents linear relationships with a constant slope.</li>
+<li><strong>Constant percent change</strong> represents exponential growth and decay situations.</li>
+<li><strong>Arithmetic difference</strong> is the constant value added to each term in an arithmetic sequence.</li>
+<li><strong>Geometric ratio</strong> is the constant factor multiplied by each term in a geometric sequence.</li>
+<li><strong>nth term formulas</strong> allow us to find any term in a sequence directly.</li>
+<li><strong>Sequence position</strong> ($n$) is the index used in nth term formulas.</li>
+<li><strong>Sequence values</strong> are determined by the starting term and generating rule.</li>
+<li><strong>Mathematical models</strong> translate real-world situations into mathematical language using linear, exponential, quadratic, and other function types.</li>
+<li><strong>Scatterplots</strong>, <strong>line graphs</strong>, <strong>bar graphs</strong>, and <strong>circle graphs</strong> are essential tools for displaying and interpreting data.</li>
+<li><strong>Statistical questions</strong> expect variability in data and require data collection to answer.</li>
+</ol>
+<h3 id="key-formulas-summary">Key Formulas Summary<a class="headerlink" href="#key-formulas-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Rate of change (slope): $m = \frac{y_2 - y_1}{x_2 - x_1}$</li>
+<li>Arithmetic sequence nth term: $a_n = a_1 + (n - 1)d$</li>
+<li>Geometric sequence nth term: $a_n = a_1 \cdot r^{(n - 1)}$</li>
+<li>Percent change: $\frac{\text{New} - \text{Old}}{\text{Old}} \times 100\%$</li>
+<li>Linear model: $y = mx + b$</li>
+<li>Exponential model: $y = a \cdot b^x$</li>
+</ul>
+<h2 id="chapter-practice-and-exercises">Chapter Practice and Exercises<a class="headerlink" href="#chapter-practice-and-exercises" title="Permanent link">&para;</a></h2>
+<h4 id="exercise-set-1-constant-rate-of-change">Exercise Set 1: Constant Rate of Change<a class="headerlink" href="#exercise-set-1-constant-rate-of-change" title="Permanent link">&para;</a></h4>
+<p>For each set of points, find the rate of change (slope):</p>
+<ol>
+<li>$(1, 2)$ and $(3, 8)$</li>
+<li>$(2, 5)$ and $(4, 11)$</li>
+<li>$(0, 3)$ and $(5, 15)$</li>
+<li>$(-1, 4)$ and $(2, 1)$</li>
+<li>$(3, 7)$ and $(3, 7)$ (vertical line, undefined slope)</li>
+</ol>
+<h4 id="exercise-set-2-constant-percent-change">Exercise Set 2: Constant Percent Change<a class="headerlink" href="#exercise-set-2-constant-percent-change" title="Permanent link">&para;</a></h4>
+<p>Identify whether each situation involves exponential growth or decay, and find the percent change:</p>
+<ol>
+<li>A population of 100 increases by 5% each year.</li>
+<li>A car's value decreases by 15% each year.</li>
+<li>A bacteria culture doubles every hour.</li>
+<li>A radioactive substance loses 10% of its mass every month.</li>
+</ol>
+<h4 id="exercise-set-3-arithmetic-difference">Exercise Set 3: Arithmetic Difference<a class="headerlink" href="#exercise-set-3-arithmetic-difference" title="Permanent link">&para;</a></h4>
+<p>Find the arithmetic difference $d$ in each sequence:</p>
+<ol>
+<li>$3, 7, 11, 15, 19, \ldots$</li>
+<li>$20, 15, 10, 5, 0, \ldots$</li>
+<li>$x, x+4, x+8, x+12, \ldots$ (in terms of $x$)</li>
+<li>$1, 4, 9, 16, 25, \ldots$ (note: this is NOT an arithmetic sequence)</li>
+</ol>
+<h4 id="exercise-set-4-geometric-ratio">Exercise Set 4: Geometric Ratio<a class="headerlink" href="#exercise-set-4-geometric-ratio" title="Permanent link">&para;</a></h4>
+<p>Find the geometric ratio $r$ in each sequence:</p>
+<ol>
+<li>$2, 6, 18, 54, 162, \ldots$</li>
+<li>$80, 40, 20, 10, 5, \ldots$</li>
+<li>$3, 6, 12, 24, 48, \ldots$</li>
+<li>$1, 1, 1, 1, 1, \ldots$ (ratio is 1)</li>
+</ol>
+<h4 id="exercise-set-5-nth-term-of-arithmetic-sequences">Exercise Set 5: nth Term of Arithmetic Sequences<a class="headerlink" href="#exercise-set-5-nth-term-of-arithmetic-sequences" title="Permanent link">&para;</a></h4>
+<p>Find the indicated term of each arithmetic sequence:</p>
+<ol>
+<li>10th term of $4, 9, 14, 19, \ldots$</li>
+<li>5th term of $10, 6, 2, -2, \ldots$</li>
+<li>15th term of the sequence with $a_1 = 7$ and $d = 3$</li>
+</ol>
+<h4 id="exercise-set-6-nth-term-of-geometric-sequences">Exercise Set 6: nth Term of Geometric Sequences<a class="headerlink" href="#exercise-set-6-nth-term-of-geometric-sequences" title="Permanent link">&para;</a></h4>
+<p>Find the indicated term of each geometric sequence:</p>
+<ol>
+<li>8th term of $3, 6, 12, 24, \ldots$</li>
+<li>6th term of $5, 10, 20, 40, \ldots$</li>
+<li>7th term of the sequence with $a_1 = 2$ and $r = 3$</li>
+</ol>
+<h4 id="exercise-set-7-sequence-position">Exercise Set 7: Sequence Position<a class="headerlink" href="#exercise-set-7-sequence-position" title="Permanent link">&para;</a></h4>
+<p>Given the arithmetic sequence $5, 9, 13, 17, \ldots$, find the term at each position:</p>
+<ol>
+<li>Position $n = 3$</li>
+<li>Position $n = 8$</li>
+<li>Position $n = 12$</li>
+</ol>
+<h4 id="exercise-set-8-sequence-values">Exercise Set 8: Sequence Values<a class="headerlink" href="#exercise-set-8-sequence-values" title="Permanent link">&para;</a></h4>
+<p>List the first 5 values of each sequence:</p>
+<ol>
+<li>Arithmetic sequence with $a_1 = 1$ and $d = 4$</li>
+<li>Geometric sequence with $a_1 = 2$ and $r = 3$</li>
+<li>Arithmetic sequence with $a_1 = 10$ and $d = -2$</li>
+</ol>
+<h4 id="exercise-set-9-mathematical-models">Exercise Set 9: Mathematical Models<a class="headerlink" href="#exercise-set-9-mathematical-models" title="Permanent link">&para;</a></h4>
+<p>Write a mathematical model (equation) for each situation:</p>
+<ol>
+<li>A phone plan costs $20 per month plus $0.05 per text message.</li>
+<li>A savings account starts with $500 and earns 2% interest per year, compounded annually.</li>
+<li>A ball is thrown upward, and its height $h$ in feet after $t$ seconds is modeled by $h = -16t^2 + 32t + 5$.</li>
+</ol>
+<h4 id="exercise-set-10-data-displays">Exercise Set 10: Data Displays<a class="headerlink" href="#exercise-set-10-data-displays" title="Permanent link">&para;</a></h4>
+<p>Choose the appropriate data display for each situation and explain why:</p>
+<ol>
+<li>Showing the favorite sports of students in a class (choose between scatterplot, line graph, bar graph, circle graph).</li>
+<li>Showing the change in temperature over a 24-hour period.</li>
+<li>Comparing the number of students in each grade level (9th, 10th, 11th, 12th).</li>
+<li>Showing the proportion of a budget spent on different categories (rent, food, entertainment, savings).</li>
+</ol>
+<h4 id="exercise-set-11-statistical-questions">Exercise Set 11: Statistical Questions<a class="headerlink" href="#exercise-set-11-statistical-questions" title="Permanent link">&para;</a></h4>
+<p>Determine whether each question is a statistical question. Explain your reasoning:</p>
+<ol>
+<li>"What is the median height of students in my grade?"</li>
+<li>"How many hours did I study yesterday?"</li>
+<li>"What is the most common eye color among students in my school?"</li>
+<li>"Did it rain more yesterday than the day before?"</li>
+</ol>
+<h4 id="exercise-set-12-review-problems">Exercise Set 12: Review Problems<a class="headerlink" href="#exercise-set-12-review-problems" title="Permanent link">&para;</a></h4>
+<p>Solve each problem:</p>
+<ol>
+<li>Find the rate of change between $(1, 3)$ and $(4, 12)$.</li>
+<li>Find the 6th term of the arithmetic sequence $2, 5, 8, 11, \ldots$</li>
+<li>Find the 5th term of the geometric sequence $3, 9, 27, 81, \ldots$</li>
+<li>Write a mathematical model for a taxi that charges $4$ initial fee plus $2$ per mile.</li>
+<li>Identify whether the question "What is the average score on the math test?" is a statistical question and explain why.</li>
+</ol>
+<h3 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h3>
+<p>In this chapter, we have reviewed and extended the advanced concepts of Algebra I that will support success in subsequent mathematics courses. Students should now be able:</p>
+<ul>
+<li>Identify and interpret constant rate of change and constant percent change relationships</li>
+<li>Distinguish between arithmetic and geometric sequences and use the appropriate formulas</li>
+<li>Find the nth term of arithmetic and geometric sequences given the first term and common difference/ratio</li>
+<li>Create and interpret mathematical models using linear, exponential, and quadratic functions</li>
+<li>Choose and create appropriate data displays (scatterplots, line graphs, bar graphs, circle graphs) to visualize data</li>
+<li>Formulate and recognize statistical questions that anticipate variability in data</li>
+</ul>
+<p>Students who master these concepts are prepared for success in subsequent courses covering functions, calculus, statistics, and discrete mathematics. Continued practice with sequence patterns, mathematical modeling, and data analysis will build fluency and confidence for applying these skills to complex, real-world problems.</p>
+<hr />
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../11-mathematical-modeling/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 11. Mathematical Modeling">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                11. Mathematical Modeling
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../chapter-metrics/" class="md-footer__link md-footer__link--next" aria-label="Next: View Chapter Content Metrics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                View Chapter Content Metrics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

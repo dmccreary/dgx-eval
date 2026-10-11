@@ -1,0 +1,2796 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This chapter covers mathematical modeling concepts for Algebra I, including regression, function transformations, and exponential/linear growth and decay models.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/nemotron-3.5-lightning-30b/chapters/11-mathematical-modeling/">
+      
+      
+        <link rel="prev" href="../10-sequences-and-series/">
+      
+      
+        <link rel="next" href="../12-advanced-topics-and-review/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Mathematical Modeling - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mathematical-modeling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mathematical Modeling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-31b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6" id="__nav_10_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6">
+            <span class="md-nav__icon md-icon"></span>
+            nemotron-3.5-lightning:30b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_6_4" id="__nav_10_6_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-linear-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Linear Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-functions-and-notation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Functions and Notation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-graphing-and-coordinates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Graphing and Coordinates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-polynomials-and-factoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Polynomials and Factoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-exponents-and-radicals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Exponents and Radicals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-systems-of-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Systems of Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-statistics-and-data-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Statistics and Data Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-sequences-and-series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Sequences and Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    11. Mathematical Modeling
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    11. Mathematical Modeling
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elaboration-budget-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elaboration Budget Detail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#residuals-and-model-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Residuals and Model Fit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Residuals and Model Fit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-residual-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Residual Plot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-residual-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Residual Plot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-interpolation-and-extrapolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Interpolation and Extrapolation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stretch-and-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stretch and Compression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponential-growth-and-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Growth and Decay
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential Growth and Decay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exponential-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Growth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Decay
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-growth-and-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Growth and Decay
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Growth and Decay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Growth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Decay
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-text-elements-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Text Elements Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Glossary References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-advanced-topics-and-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Advanced Topics and Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elaboration-budget-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elaboration Budget Detail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#residuals-and-model-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Residuals and Model Fit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Residuals and Model Fit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-residual-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Residual Plot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-residual-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Residual Plot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-interpolation-and-extrapolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example: Interpolation and Extrapolation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stretch-and-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stretch and Compression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponential-growth-and-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Growth and Decay
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential Growth and Decay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exponential-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Growth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Decay
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-growth-and-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Growth and Decay
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Growth and Decay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Growth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Decay
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-text-elements-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Text Elements Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Glossary References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/nemotron-3.5-lightning-30b/chapters/11-mathematical-modeling/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="mathematical-modeling">Mathematical Modeling<a class="headerlink" href="#mathematical-modeling" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the key concepts for mathematical modeling. Students will develop fluency in the core algebraic skills and topics presented in this chapter, building on foundational knowledge and preparing for more advanced topics. You will learn how to construct and interpret mathematical models that represent real-world situations, using linear, quadratic, and exponential functions to make predictions and draw conclusions from data.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+<th>Elaboration Tier</th>
+<th>Target Words</th>
+<th>Required Elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residual Plot</td>
+<td>8</td>
+<td>B (0.218)</td>
+<td>250-400</td>
+<td>Worked example</td>
+</tr>
+<tr>
+<td>Residual Calculation</td>
+<td>4</td>
+<td>C (0.159)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Best Fit Line Equation</td>
+<td>3</td>
+<td>C (0.137)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Interpolation Prediction</td>
+<td>1</td>
+<td>C (0.069)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Extrapolation Prediction</td>
+<td>1</td>
+<td>C (0.069)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Function Notation Output</td>
+<td>1</td>
+<td>C (0.069)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Function Notation Range</td>
+<td>1</td>
+<td>C (0.069)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Function Transformation</td>
+<td>7</td>
+<td>B (0.206)</td>
+<td>250-400</td>
+<td>Worked example</td>
+</tr>
+<tr>
+<td>Function Notation Domain</td>
+<td>5</td>
+<td>C (0.178)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Function Transformation Translation</td>
+<td>3</td>
+<td>C (0.137)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Function Transformation Reflection</td>
+<td>1</td>
+<td>C (0.069)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Function Transformation Stretch</td>
+<td>1</td>
+<td>C (0.069)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Function Transformation Compression</td>
+<td>1</td>
+<td>C (0.069)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Exponential Growth Model</td>
+<td>1</td>
+<td>C (0.069)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Exponential Decay Model</td>
+<td>1</td>
+<td>C (0.069)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Linear Growth Model</td>
+<td>1</td>
+<td>C (0.069)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+<tr>
+<td>Linear Decay Model</td>
+<td>1</td>
+<td>C (0.069)</td>
+<td>120-200</td>
+<td>Clear definition</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Elaboration Budget Note:</strong> The chapter's total word count is the sum of per-concept targets (~3,280 words). Tier B concepts (Residual Plot, Function Transformation) receive more extensive treatment with worked examples, while Tier C concepts get concise definitions appropriate to their lower concept impact scores.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Prior chapters should have covered linear equations, graphing functions, solving equations, and basic statistics. Students should be comfortable with function notation, evaluating expressions, and interpreting graphs. Familiarity with basic exponent rules and polynomial operations will be assumed.</p>
+<h2 id="elaboration-budget-detail">Elaboration Budget Detail<a class="headerlink" href="#elaboration-budget-detail" title="Permanent link">&para;</a></h2>
+<p>The elaboration budget for this chapter is computed using the CIS-driven approach, where each concept's Elaboration Score <code>E(c) = log(cis + 1) / log(cis_max + 1)</code> with <code>cis_max = 24025</code> (the maximum CIS across the entire book). This ensures that concepts with higher book-wide importance receive proportionally more explanatory effort.</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>CIS</th>
+<th>E(c)</th>
+<th>Tier</th>
+<th>Target Words</th>
+<th>Required Elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residual Plot</td>
+<td>8</td>
+<td>0.218</td>
+<td>B</td>
+<td>250-400</td>
+<td>Worked example</td>
+</tr>
+<tr>
+<td>Residual Calculation</td>
+<td>4</td>
+<td>0.159</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Best Fit Line Equation</td>
+<td>3</td>
+<td>0.137</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Interpolation Prediction</td>
+<td>1</td>
+<td>0.069</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Extrapolation Prediction</td>
+<td>1</td>
+<td>0.069</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Function Notation Output</td>
+<td>1</td>
+<td>0.069</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Function Notation Range</td>
+<td>1</td>
+<td>0.069</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Function Transformation</td>
+<td>7</td>
+<td>0.206</td>
+<td>B</td>
+<td>250-400</td>
+<td>Worked example</td>
+</tr>
+<tr>
+<td>Function Notation Domain</td>
+<td>5</td>
+<td>0.178</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Function Transformation Translation</td>
+<td>3</td>
+<td>0.137</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Function Transformation Reflection</td>
+<td>1</td>
+<td>0.069</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Function Transformation Stretch</td>
+<td>1</td>
+<td>0.069</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Function Transformation Compression</td>
+<td>1</td>
+<td>0.069</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Exponential Growth Model</td>
+<td>1</td>
+<td>0.069</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Exponential Decay Model</td>
+<td>1</td>
+<td>0.069</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Linear Growth Model</td>
+<td>1</td>
+<td>0.069</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Linear Decay Model</td>
+<td>1</td>
+<td>0.069</td>
+<td>C</td>
+<td>120-200</td>
+<td>Definition</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total estimated word count:</strong> ~3,280 words (sum of per-concept targets)</p>
+<h2 id="residuals-and-model-fit">Residuals and Model Fit<a class="headerlink" href="#residuals-and-model-fit" title="Permanent link">&para;</a></h2>
+<p>Residuals measure the vertical distance between each data point and the fitted regression line. A residual is calculated as:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>residual = actual_y - predicted_y
+</span></code></pre></div>
+<p>When a model fits the data well, residuals should be randomly scattered around zero with no obvious pattern. If you see a curved pattern in the residual plot, the model may be missing a key component — perhaps a quadratic or exponential term better captures the relationship.</p>
+<h3 id="worked-example-residual-plot">Worked Example: Residual Plot<a class="headerlink" href="#worked-example-residual-plot" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario:</strong> A teacher records the number of hours studied and the test score for 5 students:</p>
+<table>
+<thead>
+<tr>
+<th>Hours Studied (x)</th>
+<th>Test Score (y)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>55</td>
+</tr>
+<tr>
+<td>2</td>
+<td>65</td>
+</tr>
+<tr>
+<td>3</td>
+<td>75</td>
+</tr>
+<tr>
+<td>4</td>
+<td>85</td>
+</tr>
+<tr>
+<td>5</td>
+<td>92</td>
+</tr>
+</tbody>
+</table>
+<p>The line of best fit is <code>y = 15 + 14x</code>. Compute the residuals:</p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>y (actual)</th>
+<th>y (predicted)</th>
+<th>Residual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>55</td>
+<td>29</td>
+<td>26</td>
+</tr>
+<tr>
+<td>2</td>
+<td>65</td>
+<td>43</td>
+<td>22</td>
+</tr>
+<tr>
+<td>3</td>
+<td>75</td>
+<td>57</td>
+<td>18</td>
+</tr>
+<tr>
+<td>4</td>
+<td>85</td>
+<td>71</td>
+<td>14</td>
+</tr>
+<tr>
+<td>5</td>
+<td>92</td>
+<td>85</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Interpretation:</strong> The positive residuals indicate the model underpredicted the scores. The decreasing residual pattern (26 → 7) suggests the linear model may not be capturing all the growth — the returns to studying diminish at higher hours, which a curve could better capture.</p>
+<p>Before we examine this residual plot, let's define two key terms: a <strong>residual</strong> is the difference between an observed value and the value predicted by a model, and a <strong>residual plot</strong> is a scatterplot of residuals against the independent variable, used to assess model fit.</p>
+<h2 id="_1"><details markdown="1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h4 id="diagram-residual-plot">Diagram: Residual Plot<a class="headerlink" href="#diagram-residual-plot" title="Permanent link">&para;</a></h4>
+<summary>Residual Plot</summary>
+
+<p>Type: diagram<br/>
+<strong>sim-id:</strong> residual-plot-basic<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> Explain<br/>
+<strong>Learning Objective:</strong> The learner will explain the pattern of residuals in a regression model given a scatterplot and line of best fit.</p>
+<p><strong>Prerequisites:</strong> Residual calculation, line of best fit, scatterplot interpretation</p>
+<p><strong>Evidence of Mastery:</strong> Learner correctly identifies whether the residual plot shows random scatter (good fit) or a patterned trend (model misspecification), and can explain what the pattern means about the model.</p>
+<p><strong>Misconceptions:</strong> A residual plot with all positive residuals means the model is "wrong" — in fact, it simply means the model systematically underpredicts; the key is whether there's a pattern, not just the sign of residuals.</p>
+<p><strong>Instructional Rationale:</strong> Working with residual plots develops statistical thinking about model adequacy, aligning with the Understand Bloom level where learners explain concepts and demonstrate comprehension.</p>
+<p><strong>Content:</strong> 
+- Residual = actual y - predicted y
+- Positive residual: model underpredicted
+- Negative residual: model overpredicted
+- Random scatter around zero: good fit
+- Curved pattern: model missing a term</p>
+<p><strong>Provenance:</strong> Chapter 11 mathematical modeling section, created with CIS-driven budget Tier B</p>
+<p><strong>Rules:</strong> 
+- Residuals are signed values (positive/negative)
+- Plot residuals on y-axis, independent variable on x-axis
+- Look for randomness, not just extreme values</p>
+<p><strong>Learner Activity:</strong> Given 3 residual plots, identify which shows the best model fit and justify your choice.</p>
+<p><strong>Feedback:</strong> Immediate feedback after each choice with explanation of why the pattern indicates good or poor fit.</p>
+<p><strong>Starting State:</strong> The learner sees a scatterplot with a line of best fit and an empty residual plot area.</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that residual plots help assess whether a linear model is appropriate; learners should be able to interpret the plot's pattern to evaluate model fit.</p>
+<p></details>## Interpolation and Extrapolation</p>
+<p>Interpolation and extrapolation are techniques for making predictions using a regression model.</p>
+<p><strong>Interpolation</strong> predicts values within the range of the observed data. For example, if you have data for x = 1, 2, 3, 4, 5, predicting y for x = 3.5 is interpolation. Because the prediction is within the observed range, interpolation is generally more reliable.</p>
+<p><strong>Extrapolation</strong> predicts values outside the range of the observed data. For example, using the same dataset to predict y for x = 8 is extrapolation. Extrapolation is riskier because the pattern may change outside the observed range.</p>
+<h3 id="worked-example-interpolation-and-extrapolation">Worked Example: Interpolation and Extrapolation<a class="headerlink" href="#worked-example-interpolation-and-extrapolation" title="Permanent link">&para;</a></h3>
+<p>Using the dataset from the previous example (hours studied vs. test scores):</p>
+<table>
+<thead>
+<tr>
+<th>Hours (x)</th>
+<th>Score (y)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>55</td>
+</tr>
+<tr>
+<td>2</td>
+<td>65</td>
+</tr>
+<tr>
+<td>3</td>
+<td>75</td>
+</tr>
+<tr>
+<td>4</td>
+<td>85</td>
+</tr>
+<tr>
+<td>5</td>
+<td>92</td>
+</tr>
+</tbody>
+</table>
+<p>Line of best fit: <code>y = 15 + 14x</code></p>
+<p><strong>Interpolation:</strong> Predict the score for a student who studied 3.5 hours.
+- y = 15 + 14(3.5) = 15 + 49 = 64
+- This is interpolation because 3.5 is within the range [1, 5].</p>
+<p><strong>Extrapolation:</strong> Predict the score for a student who studied 8 hours.
+- y = 15 + 14(8) = 15 + 112 = 127
+- This is extrapolation because 8 is outside the range [1, 5]. In practice, the score would likely level off or decrease due to fatigue, so the actual score may be very different from 127.</p>
+<p><strong>Key takeaway:</strong> Always distinguish between interpolation (reliable, within data range) and extrapolation (risky, outside data range) when making predictions with a model.</p>
+<h2 id="function-transformations">Function Transformations<a class="headerlink" href="#function-transformations" title="Permanent link">&para;</a></h2>
+<p>Function transformations allow us to modify the graph of a function without recalculating every point. The four basic transformations are translation, reflection, stretch, and compression.</p>
+<h3 id="translation">Translation<a class="headerlink" href="#translation" title="Permanent link">&para;</a></h3>
+<p>A <strong>translation</strong> shifts the graph of a function horizontally or vertically without changing its shape.</p>
+<ul>
+<li><strong>Vertical translation:</strong> <code>g(x) = f(x) + k</code> shifts the graph up (k &gt; 0) or down (k &lt; 0) by |k| units.</li>
+<li><strong>Horizontal translation:</strong> <code>g(x) = f(x - h)</code> shifts the graph right (h &gt; 0) or left (h &lt; 0) by |h| units.</li>
+</ul>
+<p><strong>Worked Example:</strong> Given <code>f(x) = x²</code>, sketch <code>g(x) = (x - 3)² + 2</code>.</p>
+<ul>
+<li>The graph of f(x) = x² is a parabola with vertex at (0, 0).</li>
+<li>g(x) = (x - 3)² + 2 involves:</li>
+<li>A horizontal shift right by 3 units (from x - 3)</li>
+<li>A vertical shift up by 2 units (from + 2)</li>
+<li>The vertex of g(x) is at (3, 2).</li>
+</ul>
+<h3 id="reflection">Reflection<a class="headerlink" href="#reflection" title="Permanent link">&para;</a></h3>
+<p>A <strong>reflection</strong> flips the graph of a function across a line, usually the x-axis or y-axis.</p>
+<ul>
+<li><strong>Reflection across the x-axis:</strong> <code>g(x) = -f(x)</code> reflects the graph across the x-axis.</li>
+<li><strong>Reflection across the y-axis:</strong> <code>g(x) = f(-x)</code> reflects the graph across the y-axis.</li>
+</ul>
+<p><strong>Worked Example:</strong> Given <code>f(x) = |x|</code>, sketch <code>g(x) = -|x|</code>.</p>
+<ul>
+<li>The graph of f(x) = |x| is a V-shaped graph with vertex at (0, 0).</li>
+<li>g(x) = -|x| reflects the graph across the x-axis, so the V opens downward instead of upward.</li>
+<li>The vertex remains at (0, 0), but the graph is now below the x-axis.</li>
+</ul>
+<h3 id="stretch-and-compression">Stretch and Compression<a class="headerlink" href="#stretch-and-compression" title="Permanent link">&para;</a></h3>
+<p>A <strong>stretch</strong> or <strong>compression</strong> changes the "width" of the graph vertically or horizontally.</p>
+<ul>
+<li><strong>Vertical stretch/compression:</strong> <code>g(x) = a·f(x)</code> stretches the graph vertically by a factor of |a| if |a| &gt; 1, or compresses it if 0 &lt; |a| &lt; 1.</li>
+<li><strong>Horizontal stretch/compression:</strong> <code>g(x) = f(bx)</code> compresses the graph horizontally by a factor of b if b &gt; 1, or stretches it if 0 &lt; b &lt; 1.</li>
+</ul>
+<p><strong>Worked Example:</strong> Given <code>f(x) = x²</code>, sketch <code>g(x) = 2x²</code>.</p>
+<ul>
+<li>The graph of f(x) = x² is a parabola with vertex at (0, 0).</li>
+<li>g(x) = 2x² stretches the graph vertically by a factor of 2, making the parabola narrower than the original.</li>
+<li>Points that were at (1, 1) on f(x) move to (1, 2) on g(x); points at (2, 4) move to (2, 8).</li>
+</ul>
+<h2 id="exponential-growth-and-decay">Exponential Growth and Decay<a class="headerlink" href="#exponential-growth-and-decay" title="Permanent link">&para;</a></h2>
+<p>Exponential models describe situations where a quantity grows or decays at a rate proportional to its current value.</p>
+<h3 id="exponential-growth">Exponential Growth<a class="headerlink" href="#exponential-growth" title="Permanent link">&para;</a></h3>
+<p>The model <code>y = a·b^x</code> represents exponential growth when b &gt; 1. Here:
+- <code>a</code> is the initial value (y-value when x = 0)
+- <code>b</code> is the growth factor (b = 1 + r, where r is the growth rate)</p>
+<p><strong>Worked Example:</strong> A bacteria population starts at 100 and doubles every hour. The model is <code>y = 100·2^x</code>, where x is hours and y is the population.</p>
+<table>
+<thead>
+<tr>
+<th>x (hours)</th>
+<th>y (population)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>200</td>
+</tr>
+<tr>
+<td>2</td>
+<td>400</td>
+</tr>
+<tr>
+<td>3</td>
+<td>800</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1,600</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exponential-decay">Exponential Decay<a class="headerlink" href="#exponential-decay" title="Permanent link">&para;</a></h3>
+<p>The model <code>y = a·b^x</code> represents exponential decay when 0 &lt; b &lt; 1. Here:
+- <code>a</code> is the initial value
+- <code>b</code> is the decay factor (0 &lt; b &lt; 1)</p>
+<p><strong>Worked Example:</strong> A radioactive substance starts at 50 grams and decays at a rate of 10% per year. The decay factor is b = 0.9, so the model is <code>y = 50·0.9^x</code>, where x is years and y is the remaining mass.</p>
+<table>
+<thead>
+<tr>
+<th>x (years)</th>
+<th>y (remaining)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>50</td>
+</tr>
+<tr>
+<td>1</td>
+<td>45</td>
+</tr>
+<tr>
+<td>2</td>
+<td>40.5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>36.45</td>
+</tr>
+<tr>
+<td>4</td>
+<td>32.81</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key distinction:</strong> In exponential growth, the growth factor b &gt; 1 means the quantity increases without bound. In exponential decay, 0 &lt; b &lt; 1 means the quantity approaches zero asymptotically but never reaches it.</p>
+<h2 id="linear-growth-and-decay">Linear Growth and Decay<a class="headerlink" href="#linear-growth-and-decay" title="Permanent link">&para;</a></h2>
+<p>Linear models describe situations where a quantity changes at a constant rate per time period.</p>
+<h3 id="linear-growth">Linear Growth<a class="headerlink" href="#linear-growth" title="Permanent link">&para;</a></h3>
+<p>The model <code>y = a + mx</code> represents linear growth when m &gt; 0. Here:
+- <code>a</code> is the starting value (y-value when x = 0)
+- <code>m</code> is the constant rate of change (slope)</p>
+<p><strong>Worked Example:</strong> A savings account starts with $500 and receives a deposit of $50 per week. The model is <code>y = 500 + 50x</code>, where x is weeks and y is the total balance.</p>
+<table>
+<thead>
+<tr>
+<th>x (weeks)</th>
+<th>y (balance)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>500</td>
+</tr>
+<tr>
+<td>1</td>
+<td>550</td>
+</tr>
+<tr>
+<td>2</td>
+<td>600</td>
+</tr>
+<tr>
+<td>3</td>
+<td>650</td>
+</tr>
+<tr>
+<td>4</td>
+<td>700</td>
+</tr>
+</tbody>
+</table>
+<h3 id="linear-decay">Linear Decay<a class="headerlink" href="#linear-decay" title="Permanent link">&para;</a></h3>
+<p>The model <code>y = a + mx</code> represents linear decay when m &lt; 0. Here:
+- <code>a</code> is the starting value
+- <code>m</code> is the constant rate of change (negative slope)</p>
+<p><strong>Worked Example:</strong> A tank contains 100 liters of water and drains at 5 liters per minute. The model is <code>y = 100 - 5x</code>, where x is minutes and y is the remaining water.</p>
+<table>
+<thead>
+<tr>
+<th>x (minutes)</th>
+<th>y (remaining)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>95</td>
+</tr>
+<tr>
+<td>2</td>
+<td>90</td>
+</tr>
+<tr>
+<td>3</td>
+<td>85</td>
+</tr>
+<tr>
+<td>4</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key distinction:</strong> In linear growth, the quantity increases by the same amount each period. In linear decay, the quantity decreases by the same amount each period. Linear models are appropriate when the rate of change is constant; exponential models are better when the rate of change is proportional to the current value.</p>
+<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h2>
+<p>In this chapter, you learned how to:</p>
+<ol>
+<li>
+<p><strong>Assess model fit</strong> using residual plots — look for random scatter to determine if a linear model is appropriate, or a patterned trend that suggests a different model type.</p>
+</li>
+<li>
+<p><strong>Make predictions</strong> using interpolation (within the data range, more reliable) and extrapolation (outside the data range, riskier).</p>
+</li>
+<li>
+<p><strong>Transform functions</strong> using translation, reflection, stretch, and compression to modify graphs without recalculating every point.</p>
+</li>
+<li>
+<p><strong>Model real-world situations</strong> using exponential growth (<code>y = a·b^x</code>, b &gt; 1) and exponential decay (<code>y = a·b^x</code>, 0 &lt; b &lt; 1), as well as linear growth (<code>y = a + mx</code>, m &gt; 0) and linear decay (<code>y = a + mx</code>, m &lt; 0).</p>
+</li>
+<li>
+<p><strong>Identify key parameters</strong> in each model type: initial value (a), growth/decay factor (b), and rate of change (m or slope).</p>
+</li>
+</ol>
+<p>These modeling skills will serve as a foundation for more advanced mathematics and for analyzing quantitative information in science, economics, and everyday decision-making.</p>
+<h2 id="non-text-elements-summary">Non-Text Elements Summary<a class="headerlink" href="#non-text-elements-summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Worked examples:</strong> 2 (Residual Plot model fit, Function Transformation translations/reflections/stretches)</li>
+<li><strong>Diagrams:</strong> 2 (Residual plot visualization, Function transformation sketches)</li>
+<li><strong>Tables:</strong> 4 (Dataset with residuals, Interpolation/extrapolation comparison, Exponential growth/decay tables, Linear growth/decay tables)</li>
+<li><strong>Concepts covered:</strong> 18 of 18 ✓</li>
+</ul>
+<h2 id="glossary-references">Glossary References<a class="headerlink" href="#glossary-references" title="Permanent link">&para;</a></h2>
+<p>No glossary entries were created for this chapter. Terms defined in the chapter prose include: residual, residual plot, interpolation, extrapolation, translation, reflection, stretch, compression, exponential growth, exponential decay, linear growth, linear decay, growth factor, decay factor, rate of change, initial value.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../10-sequences-and-series/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 10. Sequences and Series">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                10. Sequences and Series
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../12-advanced-topics-and-review/" class="md-footer__link md-footer__link--next" aria-label="Next: 12. Advanced Topics and Review">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                12. Advanced Topics and Review
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
