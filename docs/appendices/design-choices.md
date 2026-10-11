@@ -30,7 +30,8 @@ collected in the last section.
 | Fix the skill's faulty example before the comparison runs | The Primary Author |
 | Run the harness in a Docker container on the DGX | The Primary Author, on Claude's recommendation |
 | Only a local model may generate benchmark content | The Primary Author |
-| Everything else on this page | Claude |
+| What a chapter quality score must reward: objective measures, the content guide and diagram rules, and consistency over peak quality | The Primary Author |
+| Everything else on this page, including how the chapter quality score is built | Claude |
 
 ## Remote Access: Tailscale
 
@@ -252,16 +253,47 @@ graph, the chapter structure, and the chapter content.
 
 ## Scoring
 
-**Decided by:** Claude.
+**Decided by:** The Primary Author set what a score must reward. Claude chose the
+methods and designed the score.
+
+Two kinds of score are in use. Structural checks ask whether the output exists
+and is well formed: a learning graph with 200 concepts and no cycles, or a
+chapter file that is no longer a placeholder. The chapter quality score asks how
+closely a written chapter follows the book's content rules.
+
+The Primary Author asked four things of the second kind:
+
+- Use objective measurements.
+- Include adherence to the content guide, including where diagrams are placed
+  and how precisely they are specified.
+- Report word count, diagram count, and reading level for each chapter.
+- Favor consistent quality across chapters over high quality in a few.
 
 | Option | Assessment |
 |---|---|
-| **Structural checks by script** | Chosen for now. A program can verify that a graph has 200 concepts and no cycles |
-| A language model as judge | It brings its own biases, and it would send the generated text to a cloud service |
+| **Structural checks by script** | Kept, for the learning graph and the chapter structure. A program can verify them exactly |
+| **A conformance score by script** | Chosen for chapter content. It counts what the written rules ask for, gives the same answer on every run, and runs on the DGX with only the Python standard library |
+| A language model as judge | Not chosen, again. It brings its own biases, it answers differently on each run, and it would send the generated text to a cloud service |
 | Human review against a rubric | The right test of quality. It has not been done yet |
 
-A structural pass does not mean the content is good. No quality judgment has
-been made.
+Claude made four choices inside the conformance score.
+
+| Choice | Alternative considered | Why |
+|---|---|---|
+| Measure each chapter against a budget derived from its own concepts | Raw counts of words and diagrams | A raw count rewards whoever writes the most, and a chapter on a foundational topic should be longer than one on a narrow topic |
+| Cap every sub-score at full credit | Reward more words, diagrams, or equations | Length is not quality, and the guide says a dense chapter beats a padded one |
+| The book's headline is its mean score times its consistency | The mean alone, or the best chapter | Consistent quality was the Primary Author's stated priority. Unwritten chapters lower the mean and are left out of the consistency, so one fact is not charged twice |
+| Follow the skill's own batch tool for what counts as a placed diagram | A stricter reading of the rules | A diagram that the tool will find and build is correctly placed |
+
+The cost is that the score measures conformance, not correctness. It cannot tell
+a chapter that follows every rule and teaches a wrong procedure from one that is
+right, and a specification with the right fields and nothing in them can satisfy
+it. The weights are Claude's judgment, and no person has yet compared the scores
+with their own reading of the chapters. Neither kind of score says that the
+mathematics is right or the explanation good.
+
+[Chapter Quality Score](chapter-quality-score.md) gives the algorithm, the
+reasoning behind each choice, and a link to the source code.
 
 ## Choices That Did Not Hold Up
 
@@ -276,3 +308,10 @@ been made.
   aside partly for broken navigation files. Those came from a faulty example
   in the skill, which has since been corrected. That model has not been
   retested.
+- **Trusting the first chapter scores.** The chapter quality score had three
+  bugs that its totals did not show. One rule was stricter than the skill's own
+  tool, one function treated a whole chapter as boilerplate, and one pattern
+  matched an HTML tag. One chapter was scored about 14 points too low, and
+  book headlines moved by about two points when the bugs were fixed. Reading
+  single chapters found two of them, and tabulating how often each check failed
+  found the third.

@@ -9,9 +9,9 @@ This page shows how the evaluation was wired: one laptop, two home networks,
 the internet between them, and two DGX systems. Step through the diagram to
 see which machine does each job.
 
-<iframe src="../sims/testing-architecture/main.html" height="714px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/testing-architecture/main.html" height="714px" width="100%" scrolling="no"></iframe>
 
-[Run the Testing Architecture MicroSim Fullscreen](sims/testing-architecture/main.html){ .md-button .md-button--primary }
+[Run the Testing Architecture MicroSim Fullscreen](../sims/testing-architecture/main.html){ .md-button .md-button--primary }
 
 !!! warning "Placeholders, not real values"
 

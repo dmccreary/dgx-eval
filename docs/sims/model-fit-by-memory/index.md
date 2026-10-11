@@ -24,7 +24,7 @@ A model's weights have to fit in memory before the model can run at full
 speed. This MicroSim turns an amount of memory into a parameter count.
 
 The chart itself never changes. The ten points are the
-[model candidates](../../model-candidates.md), one per row, placed by parameter
+[model candidates](../../appendices/model-candidates.md), one per row, placed by parameter
 count and ordered from the smallest to the largest. A solid point is a model
 tested in this evaluation, and a ring is one not yet tested. All ten have now
 been tested, so a ring appears only if you add a model of your own. A second scale

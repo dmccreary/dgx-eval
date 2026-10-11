@@ -36,13 +36,15 @@ nav:
   - About: about.md
   - Course Description: course-description.md
 
-  - Getting Started: getting-started.md
-  - Testing Architecture: testing-architecture.md
-  - Design Choices: design-choices.md
-  - Model Candidates: model-candidates.md
-  - Cost Analysis: cost-analysis.md
-
-  - Evaluation Status: evaluation-status.md
+  - Appendices:
+    - List of Appendices: appendices/index.md
+    - Getting Started: appendices/getting-started.md
+    - Testing Architecture: appendices/testing-architecture.md
+    - Design Choices: appendices/design-choices.md
+    - Model Candidates: appendices/model-candidates.md
+    - Cost Analysis: appendices/cost-analysis.md
+    - Evaluation Status: appendices/evaluation-status.md
+    - Chapter Quality Score: appendices/chapter-quality-score.md
   # BEGIN model-results (written by src/reporting/publish_results.py; do not edit by hand)
   - Model Results:
     - Overview: models/index.md
@@ -279,12 +281,16 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  # Currency-safe math: inline is \(...\) only, never single $. KaTeX renders
-  # it; see extra_javascript below. The generated Algebra I chapters under
-  # docs/models/ are the pages that use it.
+  # Math: inline is $...$ (as the generated Algebra I chapters under
+  # docs/models/ write it) or \(...\); display is $$...$$ or \[...\].
+  # smart_dollar keeps prices such as "$8,275 ... $1.89" as text: an opening $
+  # must touch non-space text, a closing $ must not follow a space or precede a
+  # digit. generic: true makes arithmatex rewrite every form to \(...\) / \[...\]
+  # at build time, and KaTeX renders those in the browser (extra_javascript below).
   - pymdownx.arithmatex:
       generic: true
-      inline_syntax: ['round']
+      smart_dollar: true
+      inline_syntax: ['dollar', 'round']
       block_syntax: ['dollar', 'square']
 
 # Custom CSS — file is created by init-textbook

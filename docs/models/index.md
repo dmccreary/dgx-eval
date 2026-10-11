@@ -7,7 +7,7 @@ description: 'The learning graph, quality report, chapters, and chapter metrics 
 
 Each model that produced a learning graph has its own section here, holding
 what it generated for the Algebra I benchmark and what a program measured
-about it. [Evaluation Status](../evaluation-status.md) shows how far each
+about it. [Evaluation Status](../appendices/evaluation-status.md) shows how far each
 model has got.
 
 | Model | Concepts | Chapters written | Words | Diagrams specified | Average reading grade |

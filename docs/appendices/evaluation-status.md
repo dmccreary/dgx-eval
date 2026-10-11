@@ -5,32 +5,33 @@ description: 'A status table for the ten candidate models: the parameter count a
 
 # Evaluation Status
 
-Last updated October 10, 2026, at 8:45 PM. Stages 2 and 3 are done for five
-models and running for the last one. [Model Results](models/index.md) holds what each model
+Last updated October 10, 2026, at 11:45 PM. Stages 2 and 3 are done for all
+six models that produced a learning graph. [Model Results](../models/index.md) holds what each model
 produced.
 
 <div class="eval-status" markdown>
 
 | Model Name | Params | Disk Space Used | Learning Graph | Book Structure | Chapters Generated | Automated Quality Score | Human Quality Score |
 |---|---:|---:|:---:|:---:|:---:|:---:|:---:|
-| [`qwen3.8:27b`](models/qwen3.8-27b/index.md) | 27 B | 17 GB | ✅ | ✅ | ❌ | — | — |
-| [`gemma4:31b`](models/gemma4-31b/index.md) | 30.7 B | 20 GB | ✅ | ✅ | Running | — | — |
+| [`qwen3.8:27b`](../models/qwen3.8-27b/index.md) | 27 B | 17 GB | ✅ | ✅ | ❌ | — | — |
+| [`gemma4:31b`](../models/gemma4-31b/index.md) | 30.7 B | 20 GB | ✅ | ✅ | 10 of 12 | — | — |
 | `muse-glimmer:30b` | 30 B | 18 GB | ❌ | — | — | — | — |
-| [`qwen3.6:35b`](models/qwen3.6-35b/index.md) | 35 B | 22 GB | ✅ | ✅ | ✅ | — | — |
-| [`gemma4:26b`](models/gemma4-26b/index.md) | 25.2 B | 18 GB | ✅ | ✅ | 10 of 14 | — | — |
-| [`nemotron-3.5-lightning:30b`](models/nemotron-3.5-lightning-30b/index.md) | 30 B | 25 GB | ✅ | ✅ | ✅ | — | — |
+| [`qwen3.6:35b`](../models/qwen3.6-35b/index.md) | 35 B | 22 GB | ✅ | ✅ | ✅ | — | — |
+| [`gemma4:26b`](../models/gemma4-26b/index.md) | 25.2 B | 18 GB | ✅ | ✅ | 10 of 14 | — | — |
+| [`nemotron-3.5-lightning:30b`](../models/nemotron-3.5-lightning-30b/index.md) | 30 B | 25 GB | ✅ | ✅ | ✅ | — | — |
 | `mistral-medium-3.5:128b` | 128 B | 160 GB | ❌ | — | — | — | — |
-| [`gpt-oss:120b`](models/gpt-oss-120b/index.md) | 117 B | 65 GB | ✅ | ✅ | 6 of 10 | — | — |
+| [`gpt-oss:120b`](../models/gpt-oss-120b/index.md) | 117 B | 65 GB | ✅ | ✅ | 6 of 10 | — | — |
 | `devstral-small-2:24b` | 24 B | 30 GB | ❌ | — | — | — | — |
 | `granite4.2:30b` | 30 B | 17 GB | ❌ | — | — | — | — |
 
 </div>
 
-Six of the ten models have produced a learning graph. Five of them have been
+Six of the ten models produced a learning graph, and all six have now been
 through all three stages. `nemotron-3.5-lightning:30b` wrote all twelve of
-its chapters and `qwen3.6:35b` wrote all eleven. `gemma4:26b` wrote ten of
-its fourteen, and `gpt-oss:120b` wrote six of its ten. `qwen3.8:27b` designed
-fourteen chapters and wrote none. No quality score exists yet.
+its chapters and `qwen3.6:35b` wrote all eleven. `gemma4:31b` wrote ten of
+its twelve, `gemma4:26b` ten of its fourteen, and `gpt-oss:120b` six of its
+ten. `qwen3.8:27b` designed fourteen chapters and wrote none. No quality
+score exists yet.
 
 ## How to Read the Table
 
@@ -38,7 +39,6 @@ fourteen chapters and wrote none. No quality score exists yet.
 - ❌ **Not done.** The stage was tried and failed, or could not be run.
 - **A count**, such as 10 of 14. The stage ended with only that many chapters
   written.
-- **Running.** The stage has started and has not finished.
 - — **Not started.**
 
 A green check records that a stage finished. It says nothing about how good
@@ -70,6 +70,11 @@ each used the full 90 minutes and had made about twenty tool calls without
 reaching the step that writes the file. The remaining twelve were not run.
 This is the model that produced the cleanest learning graph.
 
+`gemma4:31b` ran once for each of its twelve chapters and wrote ten. One run
+used the full 90 minutes without writing the chapter. Another ended after
+four turns when the model's reply was a stray control token instead of a
+tool call.
+
 ## What Each Column Means
 
 - **Params.** The total number of parameters, in billions, as the publisher
@@ -91,17 +96,13 @@ This is the model that produced the cleanest learning graph.
   as written when its placeholder is gone and it has at least 1,000 words.
 - **Automated Quality Score.** A score a program computes from the output. No
   score has been defined yet. Each model's section in
-  [Model Results](models/index.md) has a learning graph quality report and a
+  [Model Results](../models/index.md) has a learning graph quality report and a
   page of chapter metrics, but they have not been combined into one number.
 - **Human Quality Score.** A person's judgment of whether the content is
   correct and worth reading. Nobody has reviewed any output yet.
 
 ## What Is Left
 
-- **Stage 3 for `gemma4:31b`.** It designed twelve chapters and had written
-  four of them at the time of this update. Its first attempt was cut short
-  when the second DGX unit stopped responding a few minutes in, so it is
-  running last, on the other unit.
 - **Repeated runs.** Every test so far has been run once, so nobody knows
   whether a model gives a comparable result the second time.
 - **Scoring.** The automated score has to be defined, and a person has to

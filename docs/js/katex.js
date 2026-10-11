@@ -1,6 +1,9 @@
-// KaTeX auto-render configuration (currency-safe).
-// Single $ is NOT a math delimiter, so prices like $20 or $1.99 stay text.
-// Inline math: \( ... \)    Display math: $$ ... $$ or \[ ... \]
+// KaTeX auto-render configuration.
+// Authors may write $...$, \( ... \), $$...$$ or \[ ... \]. The pymdownx.arithmatex
+// extension (mkdocs.yml) recognizes the $ forms at build time, with smart_dollar
+// so prices like $20 or $1.99 stay text, and emits \( ... \) and \[ ... \].
+// This script renders those. A single $ is deliberately not listed below: it
+// would turn any stray price left in raw HTML into broken math.
 function renderBookMath() {
   renderMathInElement(document.body, {
     delimiters: [

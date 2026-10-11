@@ -71,10 +71,26 @@ model.
 | `score_learning_graph.py` | Structural checks on stage 1 output: file presence, concept count, valid dependencies, no cycles, and a JSON file that agrees with the CSV |
 | `score_analyzer_runs.py` | Checks on the analyzer smoke test: report written, score given, frontmatter and nav updated, strict site build |
 | `score_chapters.py` | Structural checks on stage 2 and stage 3 output: chapter files, concepts assigned to chapters, words per chapter, and how many chapters have been written |
+| `chapter_quality.py` | A 0-100 score for each written chapter, and a consistency score for the book: how closely it follows the content guide and the diagram-specification rules. Reports words, diagrams, reading grade, and the sub-scores behind each number |
 | `summarize_tests.py` | One block per model for everything `test_models.sh` has produced so far |
 
-These scripts check structure, which a program can verify. Whether the
-concepts or the prose are good is a separate judgment that they do not make.
+The first scripts check structure, which a program can verify.
+`chapter_quality.py` goes one step further and scores conformance to the
+written rules, using only counts a program can reproduce: the same files always
+give the same score. Neither judges whether the mathematics is correct or the
+explanation is good. That remains a human review.
+
+```bash
+python3 src/scoring/chapter_quality.py docs/models/<model> ~/dgx-eval-runs/unit-1/book-<model> --raw
+```
+
+Give it several books and it ends with a comparison table. The score is built
+so that every sub-score is measured against the chapter's own concept budget,
+and the headline number is the book's mean score multiplied by how little the
+chapters differ from one another. A book of uniformly decent chapters beats a
+book with a few excellent ones and several stubs. The weights and thresholds
+are constants at the top of the file. It uses `textstat` for reading level when
+it is installed and a built-in estimate otherwise, and records which.
 
 ## orchestration
 
