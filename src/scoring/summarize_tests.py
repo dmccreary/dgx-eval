@@ -4,8 +4,8 @@
     python3 src/scoring/summarize_tests.py benchmark/models.txt
 
 For each model in the list it reports the model-only smoke test, the context
-length chosen, the harness smoke test, and benchmark stage 1. A step that has
-not run yet is shown as "-". Standard library only.
+length chosen, the harness smoke test, and benchmark stages 1 to 3. A step
+that has not run yet is shown as "-". Standard library only.
 """
 import json
 import os
@@ -99,6 +99,27 @@ def graph(label):
             f"missing files: {s['files_missing'] or 'none'}")
 
 
+def chapters(label):
+    s = read_json(RUNS / f"{label}.score.json")
+    if not s or "chapter_count" not in s:
+        return "-"
+    return (f"{s['chapter_count']} chapters, {s['chapters_written']} written, {s['total_words']} words, "
+            f"{s['concepts_assigned']} of {s['concepts_in_graph']} concepts assigned, "
+            f"{s['chapters_in_nav']} chapters in the navigation")
+
+
+def chapter_runs(name):
+    """Stage 3 is one run per chapter: add up their status files."""
+    statuses = [read_text(f) for f in sorted(RUNS.glob(f"s3-{name}-ch*.status"))]
+    if not statuses:
+        return "-"
+    seconds = sum(int(m.group(1)) for m in (re.search(r"wall_s=(\d+)", s) for s in statuses) if m)
+    timed_out = sum(s.startswith("exit=124") for s in statuses)
+    ended = sum(s.startswith("exit=0") for s in statuses)
+    return (f"{len(statuses)} chapter runs, {ended} ended on their own, {timed_out} timed out, "
+            f"{seconds / 60:.0f} minutes in all")
+
+
 def main():
     models = [l.split()[0] for l in open(sys.argv[1]) if l.strip() and not l.lstrip().startswith("#")]
     for model in models:
@@ -109,6 +130,10 @@ def main():
         print(f"   harness smoke: {run('short-' + name)}")
         print(f"   stage 1:       {run('s1-' + name)}")
         print(f"   learning graph: {graph('s1-' + name)}")
+        print(f"   stage 2:       {run('s2-' + name)}")
+        print(f"   chapter plan:  {chapters('s2-' + name)}")
+        print(f"   stage 3:       {chapter_runs(name)}")
+        print(f"   book:          {chapters('book-' + name)}")
 
 
 if __name__ == "__main__":

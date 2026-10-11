@@ -1,0 +1,169 @@
+---
+title: 'Learning Graph Quality Report: gemma4:31b'
+description: 'Automated checks on the learning graph gemma4:31b generated for the Algebra I benchmark.'
+---
+
+# Learning Graph Quality Report: `gemma4:31b`
+
+A program wrote this report from the files `gemma4:31b` produced in stage 1. It
+checks structure. It does not judge whether these are the right concepts for
+Algebra I or whether the dependencies make sense.
+
+[View the learning graph](learning-graph-viewer.md){ .md-button }
+
+## Structural Checks
+
+From `src/scoring/score_learning_graph.py` in this repository.
+
+| Check | Result |
+|---|---|
+| Concepts | 200 of 200 asked for |
+| Dependencies | 348, an average of 1.74 per concept |
+| Concepts on a cycle | 0 |
+| Concepts with no prerequisite | 2 |
+| Concepts connected to nothing | 0 |
+| Duplicate concept labels | 0 |
+| Labels longer than 32 characters | 7 |
+| Concepts with a taxonomy category | 200 |
+| Errors in the CSV file | 0 |
+| JSON file agrees with the CSV file | Yes |
+| Taxonomy groups in the JSON file | 11 |
+| Expected files missing | `concept-taxonomy.md` |
+| Navigation mentions the learning graph | No |
+
+## Graph Analysis
+
+From `analyze-graph.py`, the analysis script of the `learning-graph-generator`
+skill, run on the model's CSV file when this page was built. It is not the
+report the model wrote about its own graph.
+
+### Overview
+
+- **Total Concepts**: 200
+- **Foundational Concepts** (no prerequisites, other concepts depend on them): 2
+- **Terminal Nodes** (nothing depends on them, but have prerequisites): 72
+- **Orphaned Nodes** (completely disconnected, no edges): 0
+- **Concepts with Dependencies**: 198
+- **Average Dependencies per Concept**: 1.76
+
+### Graph Structure Validation
+
+- **Valid DAG Structure**: ✅ Yes
+- **Self-Dependencies**: None detected ✅
+- **Cycles Detected**: 0
+
+### Foundational Concepts
+
+These concepts have no prerequisites:
+
+- **1**: Variable
+- **2**: Constant
+
+### Dependency Chain Analysis
+
+- **Maximum Dependency Chain Length**: 17
+
+#### Longest Learning Path:
+
+1. **Constant** (ID: 2)
+2. **Integer** (ID: 18)
+3. **Rational Number** (ID: 19)
+4. **Real Number System** (ID: 20)
+5. **Coordinate Plane** (ID: 84)
+6. **Ordered Pair** (ID: 85)
+7. **Table of Values** (ID: 87)
+8. **Graph of a Function** (ID: 88)
+9. **Linear Function** (ID: 94)
+10. **Rate of Change** (ID: 100)
+11. **Slope** (ID: 101)
+12. **Slope Formula** (ID: 102)
+13. **Slope-Intercept Form** (ID: 105)
+14. **System of Equations** (ID: 114)
+15. **Solution to a System** (ID: 115)
+16. **Consistent System** (ID: 119)
+17. **Dependent System** (ID: 121)
+
+### Terminal Nodes Analysis
+
+Terminal nodes are concepts that nothing else depends on but have prerequisites. They represent natural endpoints of learning paths — culminating or specialized concepts.
+
+- **Total Terminal Nodes**: 72 (36.0% of all concepts)
+- **Healthy Range**: 5-40% of total concepts
+
+Concepts at the end of learning paths:
+
+- **5**: Term
+- **11**: Inverse Property
+- **13**: Substitution
+- **22**: Verbal Expression
+- **23**: Numerical Expression
+- **24**: Order of Operations (PEMDAS)
+- **25**: Grouping Symbols
+- **30**: Expanded Form
+- **33**: Power of a Power Rule
+- **34**: Power of a Product Rule
+- **37**: Rational Exponent
+- **44**: Sum and Difference of Radicals
+- **45**: Rationalizing the Denominator
+- **46**: Perfect Square
+- **47**: Perfect Cube
+- **49**: Converting to Standard Form
+- **50**: Converting to Scientific Notation
+- **53**: Solution Set
+- **58**: No Solution
+- **59**: Infinite Solutions
+
+*...and 52 more*
+
+### Orphaned Nodes Analysis
+
+Orphaned nodes are completely disconnected concepts with no inbound AND no outbound edges. These indicate a quality problem — every concept should connect to the graph.
+
+- **Total Orphaned Nodes**: 0
+
+✅ No orphaned nodes detected. All concepts are connected to the graph.
+
+### Connected Components
+
+- **Number of Connected Components**: 1
+
+✅ All concepts are connected in a single graph.
+
+### Indegree Analysis
+
+Top 10 concepts that are prerequisites for the most other concepts:
+
+| Rank | Concept ID | Concept Label | Indegree |
+|------|-----------|---------------|----------|
+| 1 | 77 | Function | 14 |
+| 2 | 6 | Order of Operations | 12 |
+| 3 | 151 | Quadratic Function | 11 |
+| 4 | 51 | Equation | 9 |
+| 5 | 4 | Algebraic Expression | 8 |
+| 6 | 28 | Power | 8 |
+| 7 | 101 | Slope | 8 |
+| 8 | 166 | Exponential Function | 8 |
+| 9 | 54 | One-Step Equation | 7 |
+| 10 | 115 | Solution to a System | 7 |
+
+### Outdegree Distribution
+
+| Dependencies | Number of Concepts |
+|--------------|--------------------|
+| 0 | 2 |
+| 1 | 79 |
+| 2 | 94 |
+| 3 | 22 |
+| 4 | 1 |
+| 5 | 1 |
+| 6 | 1 |
+
+### Recommendations
+
+- ✅ **Terminal node percentage** (36.0%): Within healthy range (5-40%)
+- ✅ **DAG structure verified**: Graph supports valid learning progressions
+- ℹ️ **Long dependency chains** (17): Ensure students can follow extended learning paths
+
+---
+
+*Report generated by learning-graph-reports/analyze_graph.py*

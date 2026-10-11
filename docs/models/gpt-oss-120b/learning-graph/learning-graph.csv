@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,"Algebraic Variables",,FOUND
+2,"Constants",,FOUND
+3,"Coefficients",,FOUND
+4,"Exponents",,FOUND
+5,"Radicals",,FOUND
+6,"Square Roots",,FOUND
+7,"Rational Exponents",,FOUND
+8,"Properties of Operations",,FOUND
+9,"Commutative Property",,FOUND
+10,"Associative Property",,FOUND
+11,"Distributive Property",,FOUND
+12,"Order of Operations",,FOUND
+13,"Simplifying Expressions",,FOUND
+14,"Evaluating Expressions",,FOUND
+15,"Expanding Expressions",,FOUND
+16,"Factoring Expressions",,FOUND
+17,"Greatest Common Factor",,FOUND
+18,"Factoring Trinomials",,FOUND
+19,"Difference of Squares",,FOUND
+20,"Quadratic Formula",,FOUND
+21,"Completing the Square",20,ALGOP
+22,"Linear Equations",21,ALGOP
+23,"One‑Step Equations",22,ALGOP
+24,"Two‑Step Equations",23,ALGOP
+25,"Multi‑Step Equations",24,ALGOP
+26,"Literal Equations",25,ALGOP
+27,"Solving for Variables",26,ALGOP
+28,"Inequalities",27,ALGOP
+29,"Linear Inequalities",28,ALGOP
+30,"Absolute Value Equations",29,ALGOP
+31,"Absolute Value Inequalities",30,ALGOP
+32,"Graphing Lines",31,ALGOP
+33,"Slope",32,ALGOP
+34,"Y‑Intercept",33,ALGOP
+35,"X‑Intercept",34,ALGOP
+36,"Slope‑Intercept Form",35,ALGOP
+37,"Point‑Slope Form",36,ALGOP
+38,"Standard Form (Lines)",37,ALGOP
+39,"Parallel Lines",38,ALGOP
+40,"Perpendicular Lines",39,ALGOP
+41,"Systems of Linear Equations",40,ALGOP
+42,"Substitution Method",41,ALGOP
+43,"Elimination Method",42,ALGOP
+44,"Graphical Solutions of Systems",43,ALGOP
+45,"Functions",44,ALGOP
+46,"Function Notation",45,ALGOP
+47,"Domain",46,ALGOP
+48,"Range",47,ALGOP
+49,"Evaluating Functions",48,ALGOP
+50,"Linear Functions",49,ALGOP
+51,"Quadratic Functions",50,ALGOP
+52,"Vertex",51,ALGOP
+53,"Axis of Symmetry",52,ALGOP
+54,"Parabola",53,ALGOP
+55,"Factoring Quadratics",54,ALGOP
+56,"Graphing Quadratics",55,ALGOP
+57,"Exponential Functions",56,ALGOP
+58,"Growth and Decay",57,ALGOP
+59,"Logarithms",58,ALGOP
+60,"Sequences",59,ALGOP
+61,"Arithmetic Sequence",60,ALGOP
+62,"Geometric Sequence",61,ALGOP
+63,"Recursive Definition",62,ALGOP
+64,"Explicit Formula",63,ALGOP
+65,"Data Analysis",64,ALGOP
+66,"Scatterplots",65,ALGOP
+67,"Correlation",66,ALGOP
+68,"Line of Best Fit",67,ALGOP
+69,"Regression",68,ALGOP
+70,"Mean",69,ALGOP
+71,"Median",70,ALGOP
+72,"Mode",71,ALGOP
+73,"Standard Deviation",72,ALGOP
+74,"Probability",73,ALGOP
+75,"Data Displays",74,ALGOP
+76,"Bar Graphs",75,ALGOP
+77,"Histograms",76,ALGOP
+78,"Box Plots",77,ALGOP
+79,"Outliers",78,ALGOP
+80,"Modeling Real‑World Problems",79,ALGOP
+81,"Word Problems",80,FUNCT
+82,"Translating Situations to Equations",81,FUNCT
+83,"Verifying Solutions",82,FUNCT
+84,"Proof Techniques",83,FUNCT
+85,"Mathematical Reasoning",84,FUNCT
+86,"Critical Thinking",85,FUNCT
+87,"Problem Solving Strategies",86,FUNCT
+88,"Technology in Algebra",87,FUNCT
+89,"Graphing Calculator",88,FUNCT
+90,"Algebraic Software",89,FUNCT
+91,"Common Core Standards",90,FUNCT
+92,"NCTM Recommendations",91,FUNCT
+93,"Algebraic Thinking",92,FUNCT
+94,"Mathematical Communication",93,FUNCT
+95,"Mathematical Modeling",94,FUNCT
+96,"Linear Models",95,FUNCT
+97,"Quadratic Models",96,FUNCT
+98,"Exponential Models",97,FUNCT
+99,"Systems Modeling",98,FUNCT
+100,"Proportional Reasoning",99,FUNCT
+101,"Ratios",100,FUNCT
+102,"Proportions",101,FUNCT
+103,"Percentages",102,FUNCT
+104,"Scientific Notation",103,FUNCT
+105,"Variable Substitution",104,FUNCT
+106,"Pattern Recognition",105,FUNCT
+107,"Recursive Patterns",106,FUNCT
+108,"Direct Variation",107,FUNCT
+109,"Inverse Variation",108,FUNCT
+110,"Coordinate Plane",109,FUNCT
+111,"Cartesian Coordinates",110,FUNCT
+112,"Plotting Points",111,FUNCT
+113,"Ordered Pairs",112,FUNCT
+114,"Function Transformations",113,FUNCT
+115,"Shifts",114,FUNCT
+116,"Stretches",115,FUNCT
+117,"Reflections",116,FUNCT
+118,"Symmetry",117,FUNCT
+119,"Number Line",118,FUNCT
+120,"Real Numbers",119,FUNCT
+121,"Integers",120,DATA
+122,"Rational Numbers",121,DATA
+123,"Irrational Numbers",122,DATA
+124,"Complex Numbers (Intro)",123,DATA
+125,"Polynomials",124,DATA
+126,"Degree of Polynomial",125,DATA
+127,"Leading Coefficient",126,DATA
+128,"End Behavior",127,DATA
+129,"Rational Expressions",128,DATA
+130,"Simplifying Rational Expressions",129,DATA
+131,"Multiplying Rational Expressions",130,DATA
+132,"Dividing Rational Expressions",131,DATA
+133,"Adding Rational Expressions",132,DATA
+134,"Subtracting Rational Expressions",133,DATA
+135,"Common Denominator",134,DATA
+136,"Function Composition",135,DATA
+137,"Inverse Functions",136,DATA
+138,"Graphing Rational Functions",137,DATA
+139,"Asymptotes",138,DATA
+140,"Vertical Asymptote",139,DATA
+141,"Horizontal Asymptote",140,DATA
+142,"Oblique Asymptote",141,DATA
+143,"Systems with Three Variables",142,DATA
+144,"Matrices (Intro)",143,DATA
+145,"Determinants",144,DATA
+146,"Solving Linear Systems with Matrices",145,DATA
+147,"Applications of Linear Systems",146,DATA
+148,"Optimization Problems",147,DATA
+149,"Linear Programming (Intro)",148,DATA
+150,"Quadratic Inequalities",149,DATA
+151,"Graphing Quadratic Inequalities",150,STAT
+152,"Sign Diagrams",151,STAT
+153,"Number Line Diagrams",152,STAT
+154,"Absolute Value Graphs",153,STAT
+155,"Piecewise Functions",154,STAT
+156,"Step Functions",155,STAT
+157,"Floor Function",156,STAT
+158,"Ceiling Function",157,STAT
+159,"Graphing Piecewise Functions",158,STAT
+160,"Function Domain Restrictions",159,STAT
+161,"Modeling Population Growth",160,STAT
+162,"Compound Interest",161,STAT
+163,"Depreciation",162,STAT
+164,"Newton’s Method (Intro)",163,STAT
+165,"Root Finding",164,STAT
+166,"Iterative Methods",165,STAT
+167,"Mathematical Proofs",166,STAT
+168,"Inductive Reasoning",167,STAT
+169,"Deductive Reasoning",168,STAT
+170,"Logical Statements",169,STAT
+171,"Conditional Statements",170,STAT
+172,"If‑Then Statements",171,STAT
+173,"Biconditional Statements",172,STAT
+174,"Negation",173,STAT
+175,"Quantifiers",174,STAT
+176,"Mathematical Vocabulary",175,STAT
+177,"Symbols and Notation",176,STAT
+178,"Units of Measurement",177,STAT
+179,"Dimensional Analysis",178,STAT
+180,"Error Analysis",179,STAT
+181,"Estimation",180,MISC
+182,"Rounding",181,MISC
+183,"Significant Figures",182,MISC
+184,"Data Collection Methods",183,MISC
+185,"Survey Design",184,MISC
+186,"Sampling Techniques",185,MISC
+187,"Probability Distributions",186,MISC
+188,"Discrete Probability",187,MISC
+189,"Continuous Probability",188,MISC
+190,"Expected Value",189,MISC
+191,"Variance",190,MISC
+192,"Normal Distribution (Intro)",191,MISC
+193,"Z‑Scores",192,MISC
+194,"Confidence Intervals",193,MISC
+195,"Hypothesis Testing (Intro)",194,MISC
+196,"Linear Regression (Intro)",195,MISC
+197,"Correlation Coefficient",196,MISC
+198,"Data Interpretation",197,MISC
+199,"Algorithmic Thinking",198,MISC
+200,"Pseudo‑Code",199,MISC

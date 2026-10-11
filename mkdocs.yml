@@ -34,12 +34,124 @@ copyright: 'Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/
 nav:
   - Home: index.md
   - About: about.md
+  - Course Description: course-description.md
+
   - Getting Started: getting-started.md
   - Testing Architecture: testing-architecture.md
   - Design Choices: design-choices.md
   - Model Candidates: model-candidates.md
   - Cost Analysis: cost-analysis.md
-  - Course Description: course-description.md
+
+  - Evaluation Status: evaluation-status.md
+  # BEGIN model-results (written by src/reporting/publish_results.py; do not edit by hand)
+  - Model Results:
+    - Overview: models/index.md
+    - 'gemma4:26b':
+      - Summary: models/gemma4-26b/index.md
+      - View Learning Graph: models/gemma4-26b/learning-graph-viewer.md
+      - View Learning Graph Quality Report: models/gemma4-26b/learning-graph-quality.md
+      - View Chapter Content:
+        - List of Chapters: models/gemma4-26b/chapters/index.md
+        - '1. Algebra Foundations and Basic Operations': models/gemma4-26b/chapters/01-algebra-foundations-and-basic-operations/index.md
+        - '2. Algebraic Expressions and Functions': models/gemma4-26b/chapters/02-algebraic-expressions-and-functions/index.md
+        - '3. Advanced Algebra and Relations': models/gemma4-26b/chapters/03-advanced-algebra-and-relations/index.md
+        - '4. Exponents and Mathematical Constants': models/gemma4-26b/chapters/04-exponents-and-mathematical-constants/index.md
+        - '5. Laws of Exponents and Modeling': models/gemma4-26b/chapters/05-laws-of-exponents-and-modeling/index.md
+        - '6. Radicals and Algebraic Properties': models/gemma4-26b/chapters/06-radicals-and-algebraic-properties/index.md
+        - '7. Rational Exponents and Logic': models/gemma4-26b/chapters/07-rational-exponents-and-logic/index.md
+        - '8. Equations and Inequalities Fundamentals': models/gemma4-26b/chapters/08-equations-and-inequalities-fundamentals/index.md
+        - '9. Polynomial Operations and Factoring': models/gemma4-26b/chapters/09-polynomial-operations-and-factoring/index.md
+        - '10. Functions, Modeling, and Logic': models/gemma4-26b/chapters/10-functions-modeling-and-logic/index.md
+        - '11. Linear and Exponential Properties': models/gemma4-26b/chapters/11-linear-and-exponential-properties/index.md
+        - '12. Advanced Polynomials and Function Behavior': models/gemma4-26b/chapters/12-advanced-polynomials-and-function-behavior/index.md
+        - '13. Linear Relationships and Systems': models/gemma4-26b/chapters/13-linear-relationships-and-systems/index.md
+        - '14. Advanced Modeling and Statistics': models/gemma4-26b/chapters/14-advanced-modeling-and-statistics/index.md
+      - View Chapter Content Metrics: models/gemma4-26b/chapter-metrics.md
+      - Course Description Given to the Model: models/gemma4-26b/course-description.md
+    - 'qwen3.8:27b':
+      - Summary: models/qwen3.8-27b/index.md
+      - View Learning Graph: models/qwen3.8-27b/learning-graph-viewer.md
+      - View Learning Graph Quality Report: models/qwen3.8-27b/learning-graph-quality.md
+      - View Chapter Content:
+        - List of Chapters: models/qwen3.8-27b/chapters/index.md
+        - '1. Number System Foundations': models/qwen3.8-27b/chapters/01-number-system-foundations/index.md
+        - '2. Algebraic Expressions and Variables': models/qwen3.8-27b/chapters/02-algebraic-expressions/index.md
+        - '3. Exponents and Radicals': models/qwen3.8-27b/chapters/03-exponents-radicals/index.md
+        - '4. Linear Equations and Inequalities': models/qwen3.8-27b/chapters/04-linear-equations-inequalities/index.md
+        - '5. Functions and Relations': models/qwen3.8-27b/chapters/05-functions-relations/index.md
+        - '6. Linear Relationships and Slope': models/qwen3.8-27b/chapters/06-linear-relationships-slope/index.md
+        - '7. Systems of Linear Equations': models/qwen3.8-27b/chapters/07-systems-linear-equations/index.md
+        - '8. Polynomials and Polynomial Operations': models/qwen3.8-27b/chapters/08-polynomials-operations/index.md
+        - '9. Factoring Polynomials': models/qwen3.8-27b/chapters/09-factoring-polynomials/index.md
+        - '10. Quadratic Functions and Equations': models/qwen3.8-27b/chapters/10-quadratic-functions-equations/index.md
+        - '11. Exponential Functions and Models': models/qwen3.8-27b/chapters/11-exponential-functions-models/index.md
+        - '12. Sequences and Patterns': models/qwen3.8-27b/chapters/12-sequences-patterns/index.md
+        - '13. Statistics and Data Analysis': models/qwen3.8-27b/chapters/13-statistics-data-analysis/index.md
+        - '14. Applied Modeling and Capstone': models/qwen3.8-27b/chapters/14-applied-modeling-capstone/index.md
+      - View Chapter Content Metrics: models/qwen3.8-27b/chapter-metrics.md
+      - Course Description Given to the Model: models/qwen3.8-27b/course-description.md
+    - 'gemma4:31b':
+      - Summary: models/gemma4-31b/index.md
+      - View Learning Graph: models/gemma4-31b/learning-graph-viewer.md
+      - View Learning Graph Quality Report: models/gemma4-31b/learning-graph-quality.md
+    - 'qwen3.6:35b':
+      - Summary: models/qwen3.6-35b/index.md
+      - View Learning Graph: models/qwen3.6-35b/learning-graph-viewer.md
+      - View Learning Graph Quality Report: models/qwen3.6-35b/learning-graph-quality.md
+      - View Chapter Content:
+        - List of Chapters: models/qwen3.6-35b/chapters/index.md
+        - '1. Foundational Number Concepts and Properties': models/qwen3.6-35b/chapters/01-foundational-concepts-and-properties/index.md
+        - '2. Variables, Expressions, and Polynomial Foundations': models/qwen3.6-35b/chapters/02-variables-expressions-polynomial-foundations/index.md
+        - '3. Factoring Techniques and Polynomial Division': models/qwen3.6-35b/chapters/03-factoring-techniques-polynomial-division/index.md
+        - '4. Linear Equations and Inequalities': models/qwen3.6-35b/chapters/04-linear-equations-inequalities/index.md
+        - '5. Linear Relationships and Coordinate Graphing': models/qwen3.6-35b/chapters/05-linear-relationships-coordinate-graphing/index.md
+        - '6. Quadratic Functions': models/qwen3.6-35b/chapters/06-quadratic-functions/index.md
+        - '7. Functions and Relations': models/qwen3.6-35b/chapters/07-functions-relations/index.md
+        - '8. Exponential Functions and Sequences': models/qwen3.6-35b/chapters/08-exponential-functions-sequences/index.md
+        - '9. Sequences and Statistics': models/qwen3.6-35b/chapters/09-sequences-and-statistics/index.md
+        - '10. Mathematical Modeling and Applications': models/qwen3.6-35b/chapters/10-mathematical-modeling-applications/index.md
+        - '11. Radicals and Radical Equations': models/qwen3.6-35b/chapters/11-radicals-and-equations/index.md
+      - View Chapter Content Metrics: models/qwen3.6-35b/chapter-metrics.md
+      - Course Description Given to the Model: models/qwen3.6-35b/course-description.md
+    - 'nemotron-3.5-lightning:30b':
+      - Summary: models/nemotron-3.5-lightning-30b/index.md
+      - View Learning Graph: models/nemotron-3.5-lightning-30b/learning-graph-viewer.md
+      - View Learning Graph Quality Report: models/nemotron-3.5-lightning-30b/learning-graph-quality.md
+      - View Chapter Content:
+        - List of Chapters: models/nemotron-3.5-lightning-30b/chapters/index.md
+        - '1. Foundations': models/nemotron-3.5-lightning-30b/chapters/01-foundations/index.md
+        - '2. Linear Equations': models/nemotron-3.5-lightning-30b/chapters/02-linear-equations/index.md
+        - '3. Functions and Notation': models/nemotron-3.5-lightning-30b/chapters/03-functions-and-notation/index.md
+        - '4. Graphing and Coordinates': models/nemotron-3.5-lightning-30b/chapters/04-graphing-and-coordinates/index.md
+        - '5. Polynomials and Factoring': models/nemotron-3.5-lightning-30b/chapters/05-polynomials-and-factoring/index.md
+        - '6. Quadratic Functions': models/nemotron-3.5-lightning-30b/chapters/06-quadratic-functions/index.md
+        - '7. Exponents and Radicals': models/nemotron-3.5-lightning-30b/chapters/07-exponents-and-radicals/index.md
+        - '8. Systems of Equations': models/nemotron-3.5-lightning-30b/chapters/08-systems-of-equations/index.md
+        - '9. Statistics and Data Analysis': models/nemotron-3.5-lightning-30b/chapters/09-statistics-and-data-analysis/index.md
+        - '10. Sequences and Series': models/nemotron-3.5-lightning-30b/chapters/10-sequences-and-series/index.md
+        - '11. Mathematical Modeling': models/nemotron-3.5-lightning-30b/chapters/11-mathematical-modeling/index.md
+        - '12. Advanced Topics and Review': models/nemotron-3.5-lightning-30b/chapters/12-advanced-topics-and-review/index.md
+      - View Chapter Content Metrics: models/nemotron-3.5-lightning-30b/chapter-metrics.md
+      - Course Description Given to the Model: models/nemotron-3.5-lightning-30b/course-description.md
+    - 'gpt-oss:120b':
+      - Summary: models/gpt-oss-120b/index.md
+      - View Learning Graph: models/gpt-oss-120b/learning-graph-viewer.md
+      - View Learning Graph Quality Report: models/gpt-oss-120b/learning-graph-quality.md
+      - View Chapter Content:
+        - List of Chapters: models/gpt-oss-120b/chapters/index.md
+        - '1. Foundations of Algebra': models/gpt-oss-120b/chapters/01-foundations-of-algebra/index.md
+        - '2. Algebraic Operations – Part I': models/gpt-oss-120b/chapters/02-algebraic-operations-part-i/index.md
+        - '3. Algebraic Operations – Part II': models/gpt-oss-120b/chapters/03-algebraic-operations-part-ii/index.md
+        - '4. Algebraic Operations – Part III': models/gpt-oss-120b/chapters/04-algebraic-operations-part-iii/index.md
+        - '5. Functions – Foundations': models/gpt-oss-120b/chapters/05-functions-foundations/index.md
+        - '6. Functions – Advanced Topics': models/gpt-oss-120b/chapters/06-functions-advanced-topics/index.md
+        - '7. Data Analysis – Core Concepts': models/gpt-oss-120b/chapters/07-data-analysis-core-concepts/index.md
+        - '8. Data Analysis and Statistics – Part I': models/gpt-oss-120b/chapters/08-data-analysis-and-statistics-part-i/index.md
+        - '9. Statistics – Core Concepts': models/gpt-oss-120b/chapters/09-statistics-core-concepts/index.md
+        - '10. Miscellaneous Topics': models/gpt-oss-120b/chapters/10-miscellaneous-topics/index.md
+      - View Chapter Content Metrics: models/gpt-oss-120b/chapter-metrics.md
+      - Course Description Given to the Model: models/gpt-oss-120b/course-description.md
+  # END model-results
 
   - Chapters:
       - List of Chapters: chapters/index.md
@@ -50,13 +162,14 @@ nav:
       - Introduction: learning-graph/index.md
       - Course Description Assessment: learning-graph/course-description-assessment.md
       # Generated by learning-graph-generator skill:
-      # - Concept Enumeration: learning-graph/concept-list.md
-      # - Concept Taxonomy: learning-graph/concept-taxonomy.md
-      # - Graph Quality Analysis: learning-graph/quality-metrics.md
-      # - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
+      - Concept Enumeration: learning-graph/concept-list.md
+      - Concept Taxonomy: learning-graph/concept-taxonomy.md
+      - Graph Quality Analysis: learning-graph/quality-metrics.md
+      - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
 
   - MicroSims:
     - List of MicroSims: sims/index.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
     - Parameters That Fit in Memory: sims/model-fit-by-memory/index.md
     - Testing Architecture: sims/testing-architecture/index.md
 
@@ -128,8 +241,9 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  # Currency-safe math: inline is \(...\) only, never single $. Run
-  # book-installer feature 5 (KaTeX) to add the renderer.
+  # Currency-safe math: inline is \(...\) only, never single $. KaTeX renders
+  # it; see extra_javascript below. The generated Algebra I chapters under
+  # docs/models/ are the pages that use it.
   - pymdownx.arithmatex:
       generic: true
       inline_syntax: ['round']
@@ -138,10 +252,13 @@ markdown_extensions:
 # Custom CSS — file is created by init-textbook
 extra_css:
   - css/extra.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
 
-# Custom JavaScript — uncomment once a corresponding file exists
-# extra_javascript:
-#   - js/extra.js
+# Custom JavaScript. KaTeX renders the equations in the generated chapters.
+extra_javascript:
+  - js/katex.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
 
 # Exclude prompt scratch files and TODOs from build/search/sitemap
 exclude_docs: |

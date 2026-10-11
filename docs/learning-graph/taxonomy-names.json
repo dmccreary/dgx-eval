@@ -1,0 +1,16 @@
+{
+  "FOUND": "Foundations and Intelligent Textbooks",
+  "SLM": "Small Language Models",
+  "LVC": "Local Versus Cloud Services",
+  "COST": "Cost, Price, and Quality",
+  "HW": "DGX Hardware Architecture",
+  "NET": "Secure Remote Access",
+  "ENV": "Environments and Hardware Probes",
+  "FIT": "Model Sizing and Fit",
+  "MSEL": "Model Selection and Candidates",
+  "INFER": "Inference Servers and Performance",
+  "AGENT": "Agent Harnesses and Containment",
+  "EVAL": "Evaluation Methodology",
+  "BENCH": "Benchmark and Reporting",
+  "SAN": "Sanitization and Publication Safety"
+}

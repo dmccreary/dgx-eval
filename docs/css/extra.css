@@ -116,3 +116,18 @@
 .md-status--approved:hover:after { background-color: #1b5e20; }
 .md-status--implemented:hover:after  { background-color: #1565c0; }
 .md-status--instrumented:hover:after { background-color: #00695c; }
+
+/* Evaluation status table (docs/evaluation-status.md). Material gives every
+   header cell a 5rem minimum width and wide padding, which pushes an
+   eight-column table past the content width. Tighten both, and keep each
+   model name on one line. */
+.md-typeset .eval-status table:not([class]) th {
+  min-width: 0;
+}
+.md-typeset .eval-status table:not([class]) th,
+.md-typeset .eval-status table:not([class]) td {
+  padding: 0.7em 0.6em;
+}
+.md-typeset .eval-status td:first-child code {
+  white-space: nowrap;
+}

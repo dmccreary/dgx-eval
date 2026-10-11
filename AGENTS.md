@@ -82,6 +82,9 @@ plugins/social_override.py  og:/twitter: meta-tag hook
 docs/chapters/              chapter content, one directory per chapter
 docs/learning-graph/        concept list, taxonomy, dependency graph, metrics
 docs/sims/                  MicroSims, one directory per sim
+docs/models/                generated: what each model produced, one directory per
+                            model. Rebuilt by src/reporting/publish_results.py;
+                            never edit it by hand
 docs/css/extra.css          custom CSS (status indicators, iframe styles)
 docs/img/                   cover image, license badge, mascot poses
 src/                        test and benchmark code — see src/README.md

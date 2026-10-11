@@ -1,0 +1,3235 @@
+{
+  "metadata": {
+    "title": "Algebra I",
+    "description": "Algebra I is a foundational mathematics course designed to transition students from arithmetic reasoning to abstract algebraic thinking. This course introduces variables, functions, and relationships among quantities, emphasizing the ability to represent real-world situations using mathematical models.",
+    "creator": "Claude",
+    "date": "2026-10-10",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "CC BY-NC-SA 4.0 DEED"
+  },
+  "groups": {
+    "ALG": {
+      "classifierName": "Algebra Foundations",
+      "color": "SteelBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "EXP": {
+      "classifierName": "Exponents and Radicals",
+      "color": "DarkGreen",
+      "font": {
+        "color": "white"
+      }
+    },
+    "EQI": {
+      "classifierName": "Equations and Inequalities",
+      "color": "Crimson",
+      "font": {
+        "color": "white"
+      }
+    },
+    "FUN": {
+      "classifierName": "Functions and Relations",
+      "color": "MediumPurple",
+      "font": {
+        "color": "white"
+      }
+    },
+    "LIN": {
+      "classifierName": "Linear Relationships",
+      "color": "DodgerBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "POL": {
+      "classifierName": "Polynomials and Factoring",
+      "color": "LimeGreen",
+      "font": {
+        "color": "black"
+      }
+    },
+    "QUA": {
+      "classifierName": "Quadratic Functions",
+      "color": "DarkRed",
+      "font": {
+        "color": "white"
+      }
+    },
+    "EXN": {
+      "classifierName": "Exponential Functions",
+      "color": "Orange",
+      "font": {
+        "color": "black"
+      }
+    },
+    "STA": {
+      "classifierName": "Statistics and Data Analysis",
+      "color": "Gold",
+      "font": {
+        "color": "black"
+      }
+    },
+    "SEQ": {
+      "classifierName": "Sequences",
+      "color": "DarkSlateBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "MOD": {
+      "classifierName": "Mathematical Modeling",
+      "color": "Peru",
+      "font": {
+        "color": "black"
+      }
+    },
+    "MIS": {
+      "classifierName": "Miscellaneous",
+      "color": "DimGray",
+      "font": {
+        "color": "white"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Algebra Foundations",
+      "group": "ALG",
+      "shape": "box",
+      "cis": 3897
+    },
+    {
+      "id": 2,
+      "label": "Order of Operations",
+      "group": "ALG",
+      "cis": 17
+    },
+    {
+      "id": 3,
+      "label": "Algebraic Expressions",
+      "group": "ALG",
+      "cis": 16
+    },
+    {
+      "id": 4,
+      "label": "Variables",
+      "group": "ALG",
+      "cis": 15
+    },
+    {
+      "id": 5,
+      "label": "Constants",
+      "group": "ALG",
+      "cis": 14
+    },
+    {
+      "id": 6,
+      "label": "Coefficients",
+      "group": "ALG",
+      "cis": 13
+    },
+    {
+      "id": 7,
+      "label": "Terms in an Expression",
+      "group": "ALG",
+      "cis": 12
+    },
+    {
+      "id": 8,
+      "label": "Like Terms",
+      "group": "ALG",
+      "cis": 11
+    },
+    {
+      "id": 9,
+      "label": "Evaluating Expressions",
+      "group": "ALG",
+      "cis": 10
+    },
+    {
+      "id": 10,
+      "label": "Exponents",
+      "group": "EXP",
+      "cis": 1112
+    },
+    {
+      "id": 11,
+      "label": "Base of an Exponent",
+      "group": "EXP",
+      "cis": 13
+    },
+    {
+      "id": 12,
+      "label": "Power of an Exponent",
+      "group": "EXP",
+      "cis": 12
+    },
+    {
+      "id": 13,
+      "label": "Integer Exponents",
+      "group": "EXP",
+      "cis": 11
+    },
+    {
+      "id": 14,
+      "label": "Rational Exponents",
+      "group": "EXP",
+      "cis": 10
+    },
+    {
+      "id": 15,
+      "label": "Product Rule of Exponents",
+      "group": "EXP",
+      "cis": 9
+    },
+    {
+      "id": 16,
+      "label": "Quotient Rule of Exponents",
+      "group": "EXP",
+      "cis": 8
+    },
+    {
+      "id": 17,
+      "label": "Power of a Power Rule",
+      "group": "EXP",
+      "cis": 7
+    },
+    {
+      "id": 18,
+      "label": "Power of a Product Rule",
+      "group": "EXP",
+      "cis": 6
+    },
+    {
+      "id": 19,
+      "label": "Power of a Quotient Rule",
+      "group": "EXP",
+      "cis": 5
+    },
+    {
+      "id": 20,
+      "label": "Zero Exponent Rule",
+      "group": "EXP",
+      "cis": 4
+    },
+    {
+      "id": 21,
+      "label": "Negative Exponent Rule",
+      "group": "EXP",
+      "cis": 3
+    },
+    {
+      "id": 22,
+      "label": "Scientific Notation",
+      "group": "EXP",
+      "cis": 2
+    },
+    {
+      "id": 23,
+      "label": "Square Roots",
+      "group": "MIS",
+      "cis": 7
+    },
+    {
+      "id": 24,
+      "label": "Cube Roots",
+      "group": "MIS",
+      "cis": 6
+    },
+    {
+      "id": 25,
+      "label": "nth Roots",
+      "group": "MIS",
+      "cis": 5
+    },
+    {
+      "id": 26,
+      "label": "Simplifying Radicals",
+      "group": "MIS",
+      "cis": 4
+    },
+    {
+      "id": 27,
+      "label": "Rationalizing Denominators",
+      "group": "MIS",
+      "cis": 3
+    },
+    {
+      "id": 28,
+      "label": "Radical Expressions",
+      "group": "MIS",
+      "cis": 2
+    },
+    {
+      "id": 29,
+      "label": "One-Step Equations",
+      "group": "EQI",
+      "cis": 282
+    },
+    {
+      "id": 30,
+      "label": "Two-Step Equations",
+      "group": "EQI",
+      "cis": 281
+    },
+    {
+      "id": 31,
+      "label": "Multi-Step Equations",
+      "group": "EQI",
+      "cis": 280
+    },
+    {
+      "id": 32,
+      "label": "Combining Like Terms",
+      "group": "EQI",
+      "cis": 10
+    },
+    {
+      "id": 33,
+      "label": "Distributive Property",
+      "group": "EQI",
+      "cis": 9
+    },
+    {
+      "id": 34,
+      "label": "Variables on Both Sides",
+      "group": "EQI",
+      "cis": 8
+    },
+    {
+      "id": 35,
+      "label": "Literal Equations",
+      "group": "EQI",
+      "cis": 7
+    },
+    {
+      "id": 36,
+      "label": "Solving Formulas",
+      "group": "EQI",
+      "cis": 6
+    },
+    {
+      "id": 37,
+      "label": "Linear Inequalities",
+      "group": "EQI",
+      "cis": 6
+    },
+    {
+      "id": 38,
+      "label": "One-Step Inequalities",
+      "group": "EQI",
+      "cis": 5
+    },
+    {
+      "id": 39,
+      "label": "Multi-Step Inequalities",
+      "group": "EQI",
+      "cis": 4
+    },
+    {
+      "id": 40,
+      "label": "Graphing Inequalities",
+      "group": "EQI",
+      "cis": 3
+    },
+    {
+      "id": 41,
+      "label": "Absolute Value Equations",
+      "group": "EQI",
+      "cis": 3
+    },
+    {
+      "id": 42,
+      "label": "Absolute Value Inequalities",
+      "group": "EQI",
+      "cis": 2
+    },
+    {
+      "id": 43,
+      "label": "Function Concept",
+      "group": "FUN",
+      "cis": 345
+    },
+    {
+      "id": 44,
+      "label": "Function Notation",
+      "group": "FUN",
+      "cis": 13
+    },
+    {
+      "id": 45,
+      "label": "Domain of a Function",
+      "group": "FUN",
+      "cis": 12
+    },
+    {
+      "id": 46,
+      "label": "Range of a Function",
+      "group": "FUN",
+      "cis": 11
+    },
+    {
+      "id": 47,
+      "label": "Input and Output",
+      "group": "FUN",
+      "cis": 10
+    },
+    {
+      "id": 48,
+      "label": "Independent Variable",
+      "group": "FUN",
+      "cis": 9
+    },
+    {
+      "id": 49,
+      "label": "Dependent Variable",
+      "group": "FUN",
+      "cis": 8
+    },
+    {
+      "id": 50,
+      "label": "Function Tables",
+      "group": "FUN",
+      "cis": 7
+    },
+    {
+      "id": 51,
+      "label": "Function Graphs",
+      "group": "FUN",
+      "cis": 6
+    },
+    {
+      "id": 52,
+      "label": "Relation vs Function",
+      "group": "FUN",
+      "cis": 5
+    },
+    {
+      "id": 53,
+      "label": "Vertical Line Test",
+      "group": "FUN",
+      "cis": 4
+    },
+    {
+      "id": 54,
+      "label": "Piecewise Functions",
+      "group": "FUN",
+      "cis": 4
+    },
+    {
+      "id": 55,
+      "label": "Step Functions",
+      "group": "FUN",
+      "cis": 3
+    },
+    {
+      "id": 56,
+      "label": "Slope",
+      "group": "LIN",
+      "cis": 142
+    },
+    {
+      "id": 57,
+      "label": "Rate of Change",
+      "group": "LIN",
+      "cis": 21
+    },
+    {
+      "id": 58,
+      "label": "Slope-Intercept Form",
+      "group": "LIN",
+      "cis": 20
+    },
+    {
+      "id": 59,
+      "label": "Point-Slope Form",
+      "group": "LIN",
+      "cis": 19
+    },
+    {
+      "id": 60,
+      "label": "Standard Form of Linear Eq",
+      "group": "LIN",
+      "cis": 18
+    },
+    {
+      "id": 61,
+      "label": "Graphing Linear Equations",
+      "group": "LIN",
+      "cis": 17
+    },
+    {
+      "id": 62,
+      "label": "X-Intercept",
+      "group": "LIN",
+      "cis": 16
+    },
+    {
+      "id": 63,
+      "label": "Y-Intercept",
+      "group": "LIN",
+      "cis": 15
+    },
+    {
+      "id": 64,
+      "label": "Linear Modeling",
+      "group": "MOD",
+      "cis": 14
+    },
+    {
+      "id": 65,
+      "label": "Systems of Linear Equations",
+      "group": "LIN",
+      "cis": 8
+    },
+    {
+      "id": 66,
+      "label": "Substitution Method",
+      "group": "LIN",
+      "cis": 7
+    },
+    {
+      "id": 67,
+      "label": "Elimination Method",
+      "group": "LIN",
+      "cis": 6
+    },
+    {
+      "id": 68,
+      "label": "Graphing Systems",
+      "group": "LIN",
+      "cis": 5
+    },
+    {
+      "id": 69,
+      "label": "Linear Inequalities Systems",
+      "group": "LIN",
+      "cis": 2
+    },
+    {
+      "id": 70,
+      "label": "Polynomials",
+      "group": "POL",
+      "cis": 178
+    },
+    {
+      "id": 71,
+      "label": "Monomials",
+      "group": "POL",
+      "cis": 13
+    },
+    {
+      "id": 72,
+      "label": "Binomials",
+      "group": "POL",
+      "cis": 12
+    },
+    {
+      "id": 73,
+      "label": "Trinomials",
+      "group": "POL",
+      "cis": 11
+    },
+    {
+      "id": 74,
+      "label": "Degree of a Polynomial",
+      "group": "POL",
+      "cis": 10
+    },
+    {
+      "id": 75,
+      "label": "Leading Coefficient",
+      "group": "POL",
+      "cis": 9
+    },
+    {
+      "id": 76,
+      "label": "Adding Polynomials",
+      "group": "POL",
+      "cis": 8
+    },
+    {
+      "id": 77,
+      "label": "Subtracting Polynomials",
+      "group": "POL",
+      "cis": 7
+    },
+    {
+      "id": 78,
+      "label": "Multiplying Polynomials",
+      "group": "POL",
+      "cis": 6
+    },
+    {
+      "id": 79,
+      "label": "FOIL Method",
+      "group": "POL",
+      "cis": 5
+    },
+    {
+      "id": 80,
+      "label": "Greatest Common Factor",
+      "group": "POL",
+      "cis": 4
+    },
+    {
+      "id": 81,
+      "label": "Factoring by GCF",
+      "group": "POL",
+      "cis": 143
+    },
+    {
+      "id": 82,
+      "label": "Factoring Trinomials",
+      "group": "POL",
+      "cis": 6
+    },
+    {
+      "id": 83,
+      "label": "Difference of Squares",
+      "group": "POL",
+      "cis": 5
+    },
+    {
+      "id": 84,
+      "label": "Perfect Square Trinomials",
+      "group": "POL",
+      "cis": 4
+    },
+    {
+      "id": 85,
+      "label": "Factoring Quadratic Equations",
+      "group": "MIS",
+      "cis": 1
+    },
+    {
+      "id": 86,
+      "label": "Quadratic Functions",
+      "group": "QUA",
+      "cis": 16
+    },
+    {
+      "id": 87,
+      "label": "Vertex of a Parabola",
+      "group": "QUA",
+      "cis": 15
+    },
+    {
+      "id": 88,
+      "label": "Axis of Symmetry",
+      "group": "QUA",
+      "cis": 14
+    },
+    {
+      "id": 89,
+      "label": "Graphing Quadratics",
+      "group": "QUA",
+      "cis": 13
+    },
+    {
+      "id": 90,
+      "label": "Standard Form of Quadratics",
+      "group": "QUA",
+      "cis": 12
+    },
+    {
+      "id": 91,
+      "label": "Vertex Form of Quadratics",
+      "group": "QUA",
+      "cis": 11
+    },
+    {
+      "id": 92,
+      "label": "Completing the Square",
+      "group": "QUA",
+      "cis": 10
+    },
+    {
+      "id": 93,
+      "label": "Quadratic Formula",
+      "group": "QUA",
+      "cis": 9
+    },
+    {
+      "id": 94,
+      "label": "Solving by Square Roots",
+      "group": "MIS",
+      "cis": 1
+    },
+    {
+      "id": 95,
+      "label": "Quadratic Modeling",
+      "group": "MOD",
+      "cis": 7
+    },
+    {
+      "id": 96,
+      "label": "Exponential Functions",
+      "group": "EXN",
+      "cis": 8
+    },
+    {
+      "id": 97,
+      "label": "Exponential Growth",
+      "group": "EXN",
+      "cis": 7
+    },
+    {
+      "id": 98,
+      "label": "Exponential Decay",
+      "group": "EXN",
+      "cis": 6
+    },
+    {
+      "id": 99,
+      "label": "Exponential Base",
+      "group": "EXN",
+      "cis": 5
+    },
+    {
+      "id": 100,
+      "label": "Graphing Exponential Functions",
+      "group": "EXN",
+      "cis": 4
+    },
+    {
+      "id": 101,
+      "label": "Comparing Function Models",
+      "group": "MIS",
+      "cis": 1
+    },
+    {
+      "id": 102,
+      "label": "Scatterplots",
+      "group": "STA",
+      "cis": 12
+    },
+    {
+      "id": 103,
+      "label": "Data Displays",
+      "group": "STA",
+      "cis": 11
+    },
+    {
+      "id": 104,
+      "label": "Correlation",
+      "group": "STA",
+      "cis": 10
+    },
+    {
+      "id": 105,
+      "label": "Positive Correlation",
+      "group": "STA",
+      "cis": 9
+    },
+    {
+      "id": 106,
+      "label": "Negative Correlation",
+      "group": "STA",
+      "cis": 8
+    },
+    {
+      "id": 107,
+      "label": "No Correlation",
+      "group": "STA",
+      "cis": 7
+    },
+    {
+      "id": 108,
+      "label": "Line of Best Fit",
+      "group": "STA",
+      "cis": 6
+    },
+    {
+      "id": 109,
+      "label": "Linear Regression",
+      "group": "STA",
+      "cis": 5
+    },
+    {
+      "id": 110,
+      "label": "Arithmetic Sequences",
+      "group": "SEQ",
+      "cis": 6
+    },
+    {
+      "id": 111,
+      "label": "Common Difference",
+      "group": "SEQ",
+      "cis": 5
+    },
+    {
+      "id": 112,
+      "label": "Geometric Sequences",
+      "group": "SEQ",
+      "cis": 4
+    },
+    {
+      "id": 113,
+      "label": "Common Ratio",
+      "group": "SEQ",
+      "cis": 3
+    },
+    {
+      "id": 114,
+      "label": "Arithmetic Means",
+      "group": "MIS",
+      "cis": 4
+    },
+    {
+      "id": 115,
+      "label": "Geometric Means",
+      "group": "MIS",
+      "cis": 3
+    },
+    {
+      "id": 116,
+      "label": "Properties of Operations",
+      "group": "ALG",
+      "cis": 9
+    },
+    {
+      "id": 117,
+      "label": "Commutative Property",
+      "group": "ALG",
+      "cis": 8
+    },
+    {
+      "id": 118,
+      "label": "Associative Property",
+      "group": "ALG",
+      "cis": 7
+    },
+    {
+      "id": 119,
+      "label": "Distributive Property",
+      "group": "ALG",
+      "cis": 6
+    },
+    {
+      "id": 120,
+      "label": "Identity Property",
+      "group": "ALG",
+      "cis": 5
+    },
+    {
+      "id": 121,
+      "label": "Inverse Property",
+      "group": "ALG",
+      "cis": 4
+    },
+    {
+      "id": 122,
+      "label": "Combining Like Terms",
+      "group": "ALG",
+      "cis": 3
+    },
+    {
+      "id": 123,
+      "label": "Expanding Expressions",
+      "group": "ALG",
+      "cis": 2
+    },
+    {
+      "id": 124,
+      "label": "Factoring Expressions",
+      "group": "ALG",
+      "cis": 1
+    },
+    {
+      "id": 125,
+      "label": "Rational Exponents",
+      "group": "EXP",
+      "cis": 1
+    },
+    {
+      "id": 126,
+      "label": "Laws of Radicals",
+      "group": "MIS",
+      "cis": 1
+    },
+    {
+      "id": 127,
+      "label": "Solving One-Step Equations",
+      "group": "EQI",
+      "cis": 5
+    },
+    {
+      "id": 128,
+      "label": "Solving Two-Step Equations",
+      "group": "EQI",
+      "cis": 4
+    },
+    {
+      "id": 129,
+      "label": "Solving Multi-Step Equations",
+      "group": "EQI",
+      "cis": 3
+    },
+    {
+      "id": 130,
+      "label": "Literal Equations",
+      "group": "EQI",
+      "cis": 2
+    },
+    {
+      "id": 131,
+      "label": "Solving for a Variable",
+      "group": "EQI",
+      "cis": 1
+    },
+    {
+      "id": 132,
+      "label": "Linear Inequalities",
+      "group": "EQI",
+      "cis": 2
+    },
+    {
+      "id": 133,
+      "label": "Graphing Inequalities",
+      "group": "EQI",
+      "cis": 1
+    },
+    {
+      "id": 134,
+      "label": "Absolute Value Equations",
+      "group": "EQI",
+      "cis": 1
+    },
+    {
+      "id": 135,
+      "label": "Function Domain",
+      "group": "FUN",
+      "cis": 3
+    },
+    {
+      "id": 136,
+      "label": "Function Range",
+      "group": "FUN",
+      "cis": 2
+    },
+    {
+      "id": 137,
+      "label": "Function Notation",
+      "group": "FUN",
+      "cis": 1
+    },
+    {
+      "id": 138,
+      "label": "Piecewise Functions",
+      "group": "FUN",
+      "cis": 2
+    },
+    {
+      "id": 139,
+      "label": "Step Functions",
+      "group": "FUN",
+      "cis": 1
+    },
+    {
+      "id": 140,
+      "label": "Slope Formula",
+      "group": "LIN",
+      "cis": 6
+    },
+    {
+      "id": 141,
+      "label": "Rate of Change",
+      "group": "LIN",
+      "cis": 5
+    },
+    {
+      "id": 142,
+      "label": "Slope-Intercept Form",
+      "group": "LIN",
+      "cis": 4
+    },
+    {
+      "id": 143,
+      "label": "Point-Slope Form",
+      "group": "LIN",
+      "cis": 3
+    },
+    {
+      "id": 144,
+      "label": "Standard Form",
+      "group": "LIN",
+      "cis": 2
+    },
+    {
+      "id": 145,
+      "label": "Graphing Linear Equations",
+      "group": "LIN",
+      "cis": 1
+    },
+    {
+      "id": 146,
+      "label": "Systems of Equations",
+      "group": "LIN",
+      "cis": 4
+    },
+    {
+      "id": 147,
+      "label": "Substitution Method",
+      "group": "LIN",
+      "cis": 3
+    },
+    {
+      "id": 148,
+      "label": "Elimination Method",
+      "group": "LIN",
+      "cis": 2
+    },
+    {
+      "id": 149,
+      "label": "Graphing Systems",
+      "group": "LIN",
+      "cis": 1
+    },
+    {
+      "id": 150,
+      "label": "Linear Inequalities Systems",
+      "group": "LIN",
+      "cis": 1
+    },
+    {
+      "id": 151,
+      "label": "Adding Polynomials",
+      "group": "POL",
+      "cis": 3
+    },
+    {
+      "id": 152,
+      "label": "Subtracting Polynomials",
+      "group": "POL",
+      "cis": 2
+    },
+    {
+      "id": 153,
+      "label": "Multiplying Polynomials",
+      "group": "POL",
+      "cis": 1
+    },
+    {
+      "id": 154,
+      "label": "Factoring by GCF",
+      "group": "POL",
+      "cis": 3
+    },
+    {
+      "id": 155,
+      "label": "Factoring Trinomials",
+      "group": "POL",
+      "cis": 2
+    },
+    {
+      "id": 156,
+      "label": "Difference of Squares",
+      "group": "POL",
+      "cis": 1
+    },
+    {
+      "id": 157,
+      "label": "Quadratic Equations",
+      "group": "QUA",
+      "cis": 8
+    },
+    {
+      "id": 158,
+      "label": "Solving by Factoring",
+      "group": "QUA",
+      "cis": 7
+    },
+    {
+      "id": 159,
+      "label": "Completing the Square",
+      "group": "QUA",
+      "cis": 6
+    },
+    {
+      "id": 160,
+      "label": "Quadratic Formula",
+      "group": "QUA",
+      "cis": 5
+    },
+    {
+      "id": 161,
+      "label": "Quadratic Functions",
+      "group": "QUA",
+      "cis": 4
+    },
+    {
+      "id": 162,
+      "label": "Vertex of a Parabola",
+      "group": "QUA",
+      "cis": 3
+    },
+    {
+      "id": 163,
+      "label": "Axis of Symmetry",
+      "group": "QUA",
+      "cis": 2
+    },
+    {
+      "id": 164,
+      "label": "Graphing Quadratics",
+      "group": "QUA",
+      "cis": 1
+    },
+    {
+      "id": 165,
+      "label": "Exponential Functions",
+      "group": "EXN",
+      "cis": 3
+    },
+    {
+      "id": 166,
+      "label": "Exponential Growth",
+      "group": "EXN",
+      "cis": 2
+    },
+    {
+      "id": 167,
+      "label": "Exponential Decay",
+      "group": "EXN",
+      "cis": 1
+    },
+    {
+      "id": 168,
+      "label": "Data Displays",
+      "group": "STA",
+      "cis": 4
+    },
+    {
+      "id": 169,
+      "label": "Scatterplots",
+      "group": "STA",
+      "cis": 3
+    },
+    {
+      "id": 170,
+      "label": "Correlation",
+      "group": "STA",
+      "cis": 2
+    },
+    {
+      "id": 171,
+      "label": "Line of Best Fit",
+      "group": "STA",
+      "cis": 1
+    },
+    {
+      "id": 172,
+      "label": "Arithmetic Sequences",
+      "group": "SEQ",
+      "cis": 2
+    },
+    {
+      "id": 173,
+      "label": "Geometric Sequences",
+      "group": "SEQ",
+      "cis": 1
+    },
+    {
+      "id": 174,
+      "label": "Mathematical Modeling",
+      "group": "MOD",
+      "cis": 6
+    },
+    {
+      "id": 175,
+      "label": "Real-World Applications",
+      "group": "MOD",
+      "cis": 5
+    },
+    {
+      "id": 176,
+      "label": "Algebraic Reasoning",
+      "group": "MIS",
+      "cis": 19
+    },
+    {
+      "id": 177,
+      "label": "Abstract Thinking",
+      "group": "MIS",
+      "cis": 18
+    },
+    {
+      "id": 178,
+      "label": "Symbolic Representation",
+      "group": "MIS",
+      "cis": 17
+    },
+    {
+      "id": 179,
+      "label": "Graphical Representation",
+      "group": "MIS",
+      "cis": 16
+    },
+    {
+      "id": 180,
+      "label": "Tabular Representation",
+      "group": "MIS",
+      "cis": 15
+    },
+    {
+      "id": 181,
+      "label": "Mathematical Communication",
+      "group": "MIS",
+      "cis": 14
+    },
+    {
+      "id": 182,
+      "label": "Critical Thinking",
+      "group": "MIS",
+      "cis": 13
+    },
+    {
+      "id": 183,
+      "label": "Problem Solving",
+      "group": "MIS",
+      "cis": 12
+    },
+    {
+      "id": 184,
+      "label": "Quantitative Reasoning",
+      "group": "MIS",
+      "cis": 11
+    },
+    {
+      "id": 185,
+      "label": "STEM Disciplines",
+      "group": "MIS",
+      "cis": 10
+    },
+    {
+      "id": 186,
+      "label": "Linear Models",
+      "group": "MOD",
+      "cis": 4
+    },
+    {
+      "id": 187,
+      "label": "Quadratic Models",
+      "group": "MOD",
+      "cis": 3
+    },
+    {
+      "id": 188,
+      "label": "Exponential Models",
+      "group": "MOD",
+      "cis": 2
+    },
+    {
+      "id": 189,
+      "label": "Linear Regression",
+      "group": "MOD",
+      "cis": 1
+    },
+    {
+      "id": 190,
+      "label": "Geometric Mean",
+      "group": "MIS",
+      "cis": 2
+    },
+    {
+      "id": 191,
+      "label": "Arithmetic Mean",
+      "group": "MIS",
+      "cis": 1
+    },
+    {
+      "id": 192,
+      "label": "Rational Numbers",
+      "group": "MIS",
+      "cis": 9
+    },
+    {
+      "id": 193,
+      "label": "Integers",
+      "group": "MIS",
+      "cis": 8
+    },
+    {
+      "id": 194,
+      "label": "Decimals",
+      "group": "MIS",
+      "cis": 7
+    },
+    {
+      "id": 195,
+      "label": "Fractions",
+      "group": "MIS",
+      "cis": 6
+    },
+    {
+      "id": 196,
+      "label": "Ratios",
+      "group": "MIS",
+      "cis": 5
+    },
+    {
+      "id": 197,
+      "label": "Proportions",
+      "group": "MIS",
+      "cis": 4
+    },
+    {
+      "id": 198,
+      "label": "Percentages",
+      "group": "MIS",
+      "cis": 3
+    },
+    {
+      "id": 199,
+      "label": "Basic Geometry",
+      "group": "MIS",
+      "cis": 2
+    },
+    {
+      "id": 200,
+      "label": "Mathematical Logic",
+      "group": "MIS",
+      "cis": 1
+    }
+  ],
+  "edges": [
+    {
+      "from": 2,
+      "to": 1
+    },
+    {
+      "from": 3,
+      "to": 2
+    },
+    {
+      "from": 4,
+      "to": 3
+    },
+    {
+      "from": 5,
+      "to": 4
+    },
+    {
+      "from": 6,
+      "to": 5
+    },
+    {
+      "from": 7,
+      "to": 6
+    },
+    {
+      "from": 8,
+      "to": 7
+    },
+    {
+      "from": 9,
+      "to": 8
+    },
+    {
+      "from": 10,
+      "to": 1
+    },
+    {
+      "from": 11,
+      "to": 1
+    },
+    {
+      "from": 11,
+      "to": 10
+    },
+    {
+      "from": 12,
+      "to": 1
+    },
+    {
+      "from": 12,
+      "to": 11
+    },
+    {
+      "from": 13,
+      "to": 1
+    },
+    {
+      "from": 13,
+      "to": 12
+    },
+    {
+      "from": 14,
+      "to": 1
+    },
+    {
+      "from": 14,
+      "to": 13
+    },
+    {
+      "from": 15,
+      "to": 1
+    },
+    {
+      "from": 15,
+      "to": 14
+    },
+    {
+      "from": 16,
+      "to": 1
+    },
+    {
+      "from": 16,
+      "to": 15
+    },
+    {
+      "from": 17,
+      "to": 1
+    },
+    {
+      "from": 17,
+      "to": 16
+    },
+    {
+      "from": 18,
+      "to": 1
+    },
+    {
+      "from": 18,
+      "to": 17
+    },
+    {
+      "from": 19,
+      "to": 1
+    },
+    {
+      "from": 19,
+      "to": 18
+    },
+    {
+      "from": 20,
+      "to": 1
+    },
+    {
+      "from": 20,
+      "to": 19
+    },
+    {
+      "from": 21,
+      "to": 1
+    },
+    {
+      "from": 21,
+      "to": 20
+    },
+    {
+      "from": 22,
+      "to": 1
+    },
+    {
+      "from": 22,
+      "to": 21
+    },
+    {
+      "from": 23,
+      "to": 1
+    },
+    {
+      "from": 23,
+      "to": 10
+    },
+    {
+      "from": 24,
+      "to": 1
+    },
+    {
+      "from": 24,
+      "to": 10
+    },
+    {
+      "from": 24,
+      "to": 23
+    },
+    {
+      "from": 25,
+      "to": 1
+    },
+    {
+      "from": 25,
+      "to": 10
+    },
+    {
+      "from": 25,
+      "to": 24
+    },
+    {
+      "from": 26,
+      "to": 1
+    },
+    {
+      "from": 26,
+      "to": 10
+    },
+    {
+      "from": 26,
+      "to": 25
+    },
+    {
+      "from": 27,
+      "to": 1
+    },
+    {
+      "from": 27,
+      "to": 10
+    },
+    {
+      "from": 27,
+      "to": 26
+    },
+    {
+      "from": 28,
+      "to": 1
+    },
+    {
+      "from": 28,
+      "to": 10
+    },
+    {
+      "from": 28,
+      "to": 27
+    },
+    {
+      "from": 29,
+      "to": 1
+    },
+    {
+      "from": 29,
+      "to": 10
+    },
+    {
+      "from": 30,
+      "to": 1
+    },
+    {
+      "from": 30,
+      "to": 10
+    },
+    {
+      "from": 30,
+      "to": 29
+    },
+    {
+      "from": 31,
+      "to": 1
+    },
+    {
+      "from": 31,
+      "to": 10
+    },
+    {
+      "from": 31,
+      "to": 30
+    },
+    {
+      "from": 32,
+      "to": 1
+    },
+    {
+      "from": 32,
+      "to": 10
+    },
+    {
+      "from": 32,
+      "to": 31
+    },
+    {
+      "from": 33,
+      "to": 1
+    },
+    {
+      "from": 33,
+      "to": 10
+    },
+    {
+      "from": 33,
+      "to": 32
+    },
+    {
+      "from": 34,
+      "to": 1
+    },
+    {
+      "from": 34,
+      "to": 10
+    },
+    {
+      "from": 34,
+      "to": 33
+    },
+    {
+      "from": 35,
+      "to": 1
+    },
+    {
+      "from": 35,
+      "to": 10
+    },
+    {
+      "from": 35,
+      "to": 34
+    },
+    {
+      "from": 36,
+      "to": 1
+    },
+    {
+      "from": 36,
+      "to": 10
+    },
+    {
+      "from": 36,
+      "to": 35
+    },
+    {
+      "from": 37,
+      "to": 1
+    },
+    {
+      "from": 38,
+      "to": 1
+    },
+    {
+      "from": 38,
+      "to": 37
+    },
+    {
+      "from": 39,
+      "to": 1
+    },
+    {
+      "from": 39,
+      "to": 38
+    },
+    {
+      "from": 40,
+      "to": 1
+    },
+    {
+      "from": 40,
+      "to": 39
+    },
+    {
+      "from": 41,
+      "to": 1
+    },
+    {
+      "from": 42,
+      "to": 1
+    },
+    {
+      "from": 42,
+      "to": 41
+    },
+    {
+      "from": 43,
+      "to": 1
+    },
+    {
+      "from": 44,
+      "to": 1
+    },
+    {
+      "from": 44,
+      "to": 43
+    },
+    {
+      "from": 45,
+      "to": 1
+    },
+    {
+      "from": 45,
+      "to": 44
+    },
+    {
+      "from": 46,
+      "to": 1
+    },
+    {
+      "from": 46,
+      "to": 45
+    },
+    {
+      "from": 47,
+      "to": 1
+    },
+    {
+      "from": 47,
+      "to": 46
+    },
+    {
+      "from": 48,
+      "to": 1
+    },
+    {
+      "from": 48,
+      "to": 47
+    },
+    {
+      "from": 49,
+      "to": 1
+    },
+    {
+      "from": 49,
+      "to": 48
+    },
+    {
+      "from": 50,
+      "to": 1
+    },
+    {
+      "from": 50,
+      "to": 49
+    },
+    {
+      "from": 51,
+      "to": 1
+    },
+    {
+      "from": 51,
+      "to": 50
+    },
+    {
+      "from": 52,
+      "to": 1
+    },
+    {
+      "from": 52,
+      "to": 51
+    },
+    {
+      "from": 53,
+      "to": 1
+    },
+    {
+      "from": 53,
+      "to": 52
+    },
+    {
+      "from": 54,
+      "to": 1
+    },
+    {
+      "from": 55,
+      "to": 1
+    },
+    {
+      "from": 55,
+      "to": 54
+    },
+    {
+      "from": 56,
+      "to": 1
+    },
+    {
+      "from": 56,
+      "to": 43
+    },
+    {
+      "from": 57,
+      "to": 1
+    },
+    {
+      "from": 57,
+      "to": 43
+    },
+    {
+      "from": 57,
+      "to": 56
+    },
+    {
+      "from": 58,
+      "to": 1
+    },
+    {
+      "from": 58,
+      "to": 43
+    },
+    {
+      "from": 58,
+      "to": 57
+    },
+    {
+      "from": 59,
+      "to": 1
+    },
+    {
+      "from": 59,
+      "to": 43
+    },
+    {
+      "from": 59,
+      "to": 58
+    },
+    {
+      "from": 60,
+      "to": 1
+    },
+    {
+      "from": 60,
+      "to": 43
+    },
+    {
+      "from": 60,
+      "to": 59
+    },
+    {
+      "from": 61,
+      "to": 1
+    },
+    {
+      "from": 61,
+      "to": 43
+    },
+    {
+      "from": 61,
+      "to": 60
+    },
+    {
+      "from": 62,
+      "to": 1
+    },
+    {
+      "from": 62,
+      "to": 43
+    },
+    {
+      "from": 62,
+      "to": 61
+    },
+    {
+      "from": 63,
+      "to": 1
+    },
+    {
+      "from": 63,
+      "to": 43
+    },
+    {
+      "from": 63,
+      "to": 62
+    },
+    {
+      "from": 64,
+      "to": 1
+    },
+    {
+      "from": 64,
+      "to": 43
+    },
+    {
+      "from": 64,
+      "to": 56
+    },
+    {
+      "from": 64,
+      "to": 63
+    },
+    {
+      "from": 65,
+      "to": 1
+    },
+    {
+      "from": 66,
+      "to": 1
+    },
+    {
+      "from": 66,
+      "to": 65
+    },
+    {
+      "from": 67,
+      "to": 1
+    },
+    {
+      "from": 67,
+      "to": 66
+    },
+    {
+      "from": 68,
+      "to": 1
+    },
+    {
+      "from": 68,
+      "to": 67
+    },
+    {
+      "from": 69,
+      "to": 1
+    },
+    {
+      "from": 70,
+      "to": 1
+    },
+    {
+      "from": 70,
+      "to": 31
+    },
+    {
+      "from": 71,
+      "to": 1
+    },
+    {
+      "from": 71,
+      "to": 31
+    },
+    {
+      "from": 71,
+      "to": 70
+    },
+    {
+      "from": 72,
+      "to": 1
+    },
+    {
+      "from": 72,
+      "to": 31
+    },
+    {
+      "from": 72,
+      "to": 71
+    },
+    {
+      "from": 73,
+      "to": 1
+    },
+    {
+      "from": 73,
+      "to": 31
+    },
+    {
+      "from": 73,
+      "to": 72
+    },
+    {
+      "from": 74,
+      "to": 1
+    },
+    {
+      "from": 74,
+      "to": 31
+    },
+    {
+      "from": 74,
+      "to": 73
+    },
+    {
+      "from": 75,
+      "to": 1
+    },
+    {
+      "from": 75,
+      "to": 31
+    },
+    {
+      "from": 75,
+      "to": 74
+    },
+    {
+      "from": 76,
+      "to": 1
+    },
+    {
+      "from": 76,
+      "to": 31
+    },
+    {
+      "from": 76,
+      "to": 75
+    },
+    {
+      "from": 77,
+      "to": 1
+    },
+    {
+      "from": 77,
+      "to": 31
+    },
+    {
+      "from": 77,
+      "to": 76
+    },
+    {
+      "from": 78,
+      "to": 1
+    },
+    {
+      "from": 78,
+      "to": 31
+    },
+    {
+      "from": 78,
+      "to": 77
+    },
+    {
+      "from": 79,
+      "to": 1
+    },
+    {
+      "from": 79,
+      "to": 31
+    },
+    {
+      "from": 79,
+      "to": 78
+    },
+    {
+      "from": 80,
+      "to": 1
+    },
+    {
+      "from": 80,
+      "to": 31
+    },
+    {
+      "from": 80,
+      "to": 79
+    },
+    {
+      "from": 81,
+      "to": 1
+    },
+    {
+      "from": 81,
+      "to": 70
+    },
+    {
+      "from": 82,
+      "to": 1
+    },
+    {
+      "from": 82,
+      "to": 70
+    },
+    {
+      "from": 82,
+      "to": 81
+    },
+    {
+      "from": 83,
+      "to": 1
+    },
+    {
+      "from": 83,
+      "to": 70
+    },
+    {
+      "from": 83,
+      "to": 82
+    },
+    {
+      "from": 84,
+      "to": 1
+    },
+    {
+      "from": 84,
+      "to": 70
+    },
+    {
+      "from": 84,
+      "to": 83
+    },
+    {
+      "from": 85,
+      "to": 1
+    },
+    {
+      "from": 86,
+      "to": 1
+    },
+    {
+      "from": 86,
+      "to": 10
+    },
+    {
+      "from": 86,
+      "to": 81
+    },
+    {
+      "from": 87,
+      "to": 1
+    },
+    {
+      "from": 87,
+      "to": 10
+    },
+    {
+      "from": 87,
+      "to": 81
+    },
+    {
+      "from": 87,
+      "to": 86
+    },
+    {
+      "from": 88,
+      "to": 1
+    },
+    {
+      "from": 88,
+      "to": 10
+    },
+    {
+      "from": 88,
+      "to": 81
+    },
+    {
+      "from": 88,
+      "to": 87
+    },
+    {
+      "from": 89,
+      "to": 1
+    },
+    {
+      "from": 89,
+      "to": 10
+    },
+    {
+      "from": 89,
+      "to": 81
+    },
+    {
+      "from": 89,
+      "to": 88
+    },
+    {
+      "from": 90,
+      "to": 1
+    },
+    {
+      "from": 90,
+      "to": 10
+    },
+    {
+      "from": 90,
+      "to": 81
+    },
+    {
+      "from": 90,
+      "to": 89
+    },
+    {
+      "from": 91,
+      "to": 1
+    },
+    {
+      "from": 91,
+      "to": 10
+    },
+    {
+      "from": 91,
+      "to": 81
+    },
+    {
+      "from": 91,
+      "to": 90
+    },
+    {
+      "from": 92,
+      "to": 1
+    },
+    {
+      "from": 92,
+      "to": 10
+    },
+    {
+      "from": 92,
+      "to": 81
+    },
+    {
+      "from": 92,
+      "to": 91
+    },
+    {
+      "from": 93,
+      "to": 1
+    },
+    {
+      "from": 93,
+      "to": 10
+    },
+    {
+      "from": 93,
+      "to": 81
+    },
+    {
+      "from": 93,
+      "to": 92
+    },
+    {
+      "from": 94,
+      "to": 1
+    },
+    {
+      "from": 95,
+      "to": 1
+    },
+    {
+      "from": 95,
+      "to": 43
+    },
+    {
+      "from": 95,
+      "to": 56
+    },
+    {
+      "from": 95,
+      "to": 64
+    },
+    {
+      "from": 96,
+      "to": 1
+    },
+    {
+      "from": 96,
+      "to": 10
+    },
+    {
+      "from": 97,
+      "to": 1
+    },
+    {
+      "from": 97,
+      "to": 10
+    },
+    {
+      "from": 97,
+      "to": 96
+    },
+    {
+      "from": 98,
+      "to": 1
+    },
+    {
+      "from": 98,
+      "to": 10
+    },
+    {
+      "from": 98,
+      "to": 97
+    },
+    {
+      "from": 99,
+      "to": 1
+    },
+    {
+      "from": 99,
+      "to": 10
+    },
+    {
+      "from": 99,
+      "to": 98
+    },
+    {
+      "from": 100,
+      "to": 1
+    },
+    {
+      "from": 100,
+      "to": 10
+    },
+    {
+      "from": 100,
+      "to": 99
+    },
+    {
+      "from": 101,
+      "to": 1
+    },
+    {
+      "from": 102,
+      "to": 1
+    },
+    {
+      "from": 102,
+      "to": 56
+    },
+    {
+      "from": 103,
+      "to": 1
+    },
+    {
+      "from": 103,
+      "to": 56
+    },
+    {
+      "from": 103,
+      "to": 102
+    },
+    {
+      "from": 104,
+      "to": 1
+    },
+    {
+      "from": 104,
+      "to": 56
+    },
+    {
+      "from": 104,
+      "to": 103
+    },
+    {
+      "from": 105,
+      "to": 1
+    },
+    {
+      "from": 105,
+      "to": 56
+    },
+    {
+      "from": 105,
+      "to": 104
+    },
+    {
+      "from": 106,
+      "to": 1
+    },
+    {
+      "from": 106,
+      "to": 56
+    },
+    {
+      "from": 106,
+      "to": 105
+    },
+    {
+      "from": 107,
+      "to": 1
+    },
+    {
+      "from": 107,
+      "to": 56
+    },
+    {
+      "from": 107,
+      "to": 106
+    },
+    {
+      "from": 108,
+      "to": 1
+    },
+    {
+      "from": 108,
+      "to": 56
+    },
+    {
+      "from": 108,
+      "to": 107
+    },
+    {
+      "from": 109,
+      "to": 1
+    },
+    {
+      "from": 109,
+      "to": 56
+    },
+    {
+      "from": 109,
+      "to": 108
+    },
+    {
+      "from": 110,
+      "to": 1
+    },
+    {
+      "from": 111,
+      "to": 1
+    },
+    {
+      "from": 111,
+      "to": 110
+    },
+    {
+      "from": 112,
+      "to": 1
+    },
+    {
+      "from": 112,
+      "to": 111
+    },
+    {
+      "from": 113,
+      "to": 1
+    },
+    {
+      "from": 113,
+      "to": 112
+    },
+    {
+      "from": 114,
+      "to": 1
+    },
+    {
+      "from": 115,
+      "to": 1
+    },
+    {
+      "from": 115,
+      "to": 114
+    },
+    {
+      "from": 116,
+      "to": 9
+    },
+    {
+      "from": 117,
+      "to": 116
+    },
+    {
+      "from": 118,
+      "to": 117
+    },
+    {
+      "from": 119,
+      "to": 118
+    },
+    {
+      "from": 120,
+      "to": 119
+    },
+    {
+      "from": 121,
+      "to": 120
+    },
+    {
+      "from": 122,
+      "to": 121
+    },
+    {
+      "from": 123,
+      "to": 122
+    },
+    {
+      "from": 124,
+      "to": 123
+    },
+    {
+      "from": 125,
+      "to": 1
+    },
+    {
+      "from": 125,
+      "to": 22
+    },
+    {
+      "from": 126,
+      "to": 1
+    },
+    {
+      "from": 126,
+      "to": 10
+    },
+    {
+      "from": 126,
+      "to": 28
+    },
+    {
+      "from": 127,
+      "to": 1
+    },
+    {
+      "from": 127,
+      "to": 10
+    },
+    {
+      "from": 127,
+      "to": 36
+    },
+    {
+      "from": 128,
+      "to": 1
+    },
+    {
+      "from": 128,
+      "to": 10
+    },
+    {
+      "from": 128,
+      "to": 127
+    },
+    {
+      "from": 129,
+      "to": 1
+    },
+    {
+      "from": 129,
+      "to": 10
+    },
+    {
+      "from": 129,
+      "to": 128
+    },
+    {
+      "from": 130,
+      "to": 1
+    },
+    {
+      "from": 130,
+      "to": 10
+    },
+    {
+      "from": 130,
+      "to": 129
+    },
+    {
+      "from": 131,
+      "to": 1
+    },
+    {
+      "from": 131,
+      "to": 10
+    },
+    {
+      "from": 131,
+      "to": 130
+    },
+    {
+      "from": 132,
+      "to": 1
+    },
+    {
+      "from": 132,
+      "to": 40
+    },
+    {
+      "from": 133,
+      "to": 1
+    },
+    {
+      "from": 133,
+      "to": 132
+    },
+    {
+      "from": 134,
+      "to": 1
+    },
+    {
+      "from": 134,
+      "to": 42
+    },
+    {
+      "from": 135,
+      "to": 1
+    },
+    {
+      "from": 135,
+      "to": 53
+    },
+    {
+      "from": 136,
+      "to": 1
+    },
+    {
+      "from": 136,
+      "to": 135
+    },
+    {
+      "from": 137,
+      "to": 1
+    },
+    {
+      "from": 137,
+      "to": 136
+    },
+    {
+      "from": 138,
+      "to": 1
+    },
+    {
+      "from": 138,
+      "to": 55
+    },
+    {
+      "from": 139,
+      "to": 1
+    },
+    {
+      "from": 139,
+      "to": 138
+    },
+    {
+      "from": 140,
+      "to": 1
+    },
+    {
+      "from": 140,
+      "to": 43
+    },
+    {
+      "from": 140,
+      "to": 64
+    },
+    {
+      "from": 141,
+      "to": 1
+    },
+    {
+      "from": 141,
+      "to": 43
+    },
+    {
+      "from": 141,
+      "to": 140
+    },
+    {
+      "from": 142,
+      "to": 1
+    },
+    {
+      "from": 142,
+      "to": 43
+    },
+    {
+      "from": 142,
+      "to": 141
+    },
+    {
+      "from": 143,
+      "to": 1
+    },
+    {
+      "from": 143,
+      "to": 43
+    },
+    {
+      "from": 143,
+      "to": 142
+    },
+    {
+      "from": 144,
+      "to": 1
+    },
+    {
+      "from": 144,
+      "to": 43
+    },
+    {
+      "from": 144,
+      "to": 143
+    },
+    {
+      "from": 145,
+      "to": 1
+    },
+    {
+      "from": 145,
+      "to": 43
+    },
+    {
+      "from": 145,
+      "to": 144
+    },
+    {
+      "from": 146,
+      "to": 1
+    },
+    {
+      "from": 146,
+      "to": 68
+    },
+    {
+      "from": 147,
+      "to": 1
+    },
+    {
+      "from": 147,
+      "to": 146
+    },
+    {
+      "from": 148,
+      "to": 1
+    },
+    {
+      "from": 148,
+      "to": 147
+    },
+    {
+      "from": 149,
+      "to": 1
+    },
+    {
+      "from": 149,
+      "to": 148
+    },
+    {
+      "from": 150,
+      "to": 1
+    },
+    {
+      "from": 150,
+      "to": 69
+    },
+    {
+      "from": 151,
+      "to": 1
+    },
+    {
+      "from": 151,
+      "to": 31
+    },
+    {
+      "from": 151,
+      "to": 80
+    },
+    {
+      "from": 152,
+      "to": 1
+    },
+    {
+      "from": 152,
+      "to": 31
+    },
+    {
+      "from": 152,
+      "to": 151
+    },
+    {
+      "from": 153,
+      "to": 1
+    },
+    {
+      "from": 153,
+      "to": 31
+    },
+    {
+      "from": 153,
+      "to": 152
+    },
+    {
+      "from": 154,
+      "to": 1
+    },
+    {
+      "from": 154,
+      "to": 70
+    },
+    {
+      "from": 154,
+      "to": 84
+    },
+    {
+      "from": 155,
+      "to": 1
+    },
+    {
+      "from": 155,
+      "to": 70
+    },
+    {
+      "from": 155,
+      "to": 154
+    },
+    {
+      "from": 156,
+      "to": 1
+    },
+    {
+      "from": 156,
+      "to": 70
+    },
+    {
+      "from": 156,
+      "to": 155
+    },
+    {
+      "from": 157,
+      "to": 1
+    },
+    {
+      "from": 157,
+      "to": 10
+    },
+    {
+      "from": 157,
+      "to": 81
+    },
+    {
+      "from": 157,
+      "to": 93
+    },
+    {
+      "from": 158,
+      "to": 1
+    },
+    {
+      "from": 158,
+      "to": 10
+    },
+    {
+      "from": 158,
+      "to": 81
+    },
+    {
+      "from": 158,
+      "to": 157
+    },
+    {
+      "from": 159,
+      "to": 1
+    },
+    {
+      "from": 159,
+      "to": 10
+    },
+    {
+      "from": 159,
+      "to": 81
+    },
+    {
+      "from": 159,
+      "to": 158
+    },
+    {
+      "from": 160,
+      "to": 1
+    },
+    {
+      "from": 160,
+      "to": 10
+    },
+    {
+      "from": 160,
+      "to": 81
+    },
+    {
+      "from": 160,
+      "to": 159
+    },
+    {
+      "from": 161,
+      "to": 1
+    },
+    {
+      "from": 161,
+      "to": 10
+    },
+    {
+      "from": 161,
+      "to": 81
+    },
+    {
+      "from": 161,
+      "to": 160
+    },
+    {
+      "from": 162,
+      "to": 1
+    },
+    {
+      "from": 162,
+      "to": 10
+    },
+    {
+      "from": 162,
+      "to": 81
+    },
+    {
+      "from": 162,
+      "to": 161
+    },
+    {
+      "from": 163,
+      "to": 1
+    },
+    {
+      "from": 163,
+      "to": 10
+    },
+    {
+      "from": 163,
+      "to": 81
+    },
+    {
+      "from": 163,
+      "to": 162
+    },
+    {
+      "from": 164,
+      "to": 1
+    },
+    {
+      "from": 164,
+      "to": 10
+    },
+    {
+      "from": 164,
+      "to": 81
+    },
+    {
+      "from": 164,
+      "to": 163
+    },
+    {
+      "from": 165,
+      "to": 1
+    },
+    {
+      "from": 165,
+      "to": 10
+    },
+    {
+      "from": 165,
+      "to": 100
+    },
+    {
+      "from": 166,
+      "to": 1
+    },
+    {
+      "from": 166,
+      "to": 10
+    },
+    {
+      "from": 166,
+      "to": 165
+    },
+    {
+      "from": 167,
+      "to": 1
+    },
+    {
+      "from": 167,
+      "to": 10
+    },
+    {
+      "from": 167,
+      "to": 166
+    },
+    {
+      "from": 168,
+      "to": 1
+    },
+    {
+      "from": 168,
+      "to": 56
+    },
+    {
+      "from": 168,
+      "to": 109
+    },
+    {
+      "from": 169,
+      "to": 1
+    },
+    {
+      "from": 169,
+      "to": 56
+    },
+    {
+      "from": 169,
+      "to": 168
+    },
+    {
+      "from": 170,
+      "to": 1
+    },
+    {
+      "from": 170,
+      "to": 56
+    },
+    {
+      "from": 170,
+      "to": 169
+    },
+    {
+      "from": 171,
+      "to": 1
+    },
+    {
+      "from": 171,
+      "to": 56
+    },
+    {
+      "from": 171,
+      "to": 170
+    },
+    {
+      "from": 172,
+      "to": 1
+    },
+    {
+      "from": 172,
+      "to": 113
+    },
+    {
+      "from": 173,
+      "to": 1
+    },
+    {
+      "from": 173,
+      "to": 172
+    },
+    {
+      "from": 174,
+      "to": 1
+    },
+    {
+      "from": 174,
+      "to": 43
+    },
+    {
+      "from": 174,
+      "to": 56
+    },
+    {
+      "from": 174,
+      "to": 95
+    },
+    {
+      "from": 175,
+      "to": 1
+    },
+    {
+      "from": 175,
+      "to": 43
+    },
+    {
+      "from": 175,
+      "to": 56
+    },
+    {
+      "from": 175,
+      "to": 174
+    },
+    {
+      "from": 176,
+      "to": 1
+    },
+    {
+      "from": 177,
+      "to": 1
+    },
+    {
+      "from": 177,
+      "to": 176
+    },
+    {
+      "from": 178,
+      "to": 1
+    },
+    {
+      "from": 178,
+      "to": 177
+    },
+    {
+      "from": 179,
+      "to": 1
+    },
+    {
+      "from": 179,
+      "to": 178
+    },
+    {
+      "from": 180,
+      "to": 1
+    },
+    {
+      "from": 180,
+      "to": 179
+    },
+    {
+      "from": 181,
+      "to": 1
+    },
+    {
+      "from": 181,
+      "to": 180
+    },
+    {
+      "from": 182,
+      "to": 1
+    },
+    {
+      "from": 182,
+      "to": 181
+    },
+    {
+      "from": 183,
+      "to": 1
+    },
+    {
+      "from": 183,
+      "to": 182
+    },
+    {
+      "from": 184,
+      "to": 1
+    },
+    {
+      "from": 184,
+      "to": 183
+    },
+    {
+      "from": 185,
+      "to": 1
+    },
+    {
+      "from": 185,
+      "to": 184
+    },
+    {
+      "from": 186,
+      "to": 1
+    },
+    {
+      "from": 186,
+      "to": 43
+    },
+    {
+      "from": 186,
+      "to": 56
+    },
+    {
+      "from": 186,
+      "to": 175
+    },
+    {
+      "from": 187,
+      "to": 1
+    },
+    {
+      "from": 187,
+      "to": 43
+    },
+    {
+      "from": 187,
+      "to": 56
+    },
+    {
+      "from": 187,
+      "to": 186
+    },
+    {
+      "from": 188,
+      "to": 1
+    },
+    {
+      "from": 188,
+      "to": 43
+    },
+    {
+      "from": 188,
+      "to": 56
+    },
+    {
+      "from": 188,
+      "to": 187
+    },
+    {
+      "from": 189,
+      "to": 1
+    },
+    {
+      "from": 189,
+      "to": 43
+    },
+    {
+      "from": 189,
+      "to": 56
+    },
+    {
+      "from": 189,
+      "to": 188
+    },
+    {
+      "from": 190,
+      "to": 1
+    },
+    {
+      "from": 190,
+      "to": 115
+    },
+    {
+      "from": 191,
+      "to": 1
+    },
+    {
+      "from": 191,
+      "to": 190
+    },
+    {
+      "from": 192,
+      "to": 1
+    },
+    {
+      "from": 192,
+      "to": 185
+    },
+    {
+      "from": 193,
+      "to": 1
+    },
+    {
+      "from": 193,
+      "to": 192
+    },
+    {
+      "from": 194,
+      "to": 1
+    },
+    {
+      "from": 194,
+      "to": 193
+    },
+    {
+      "from": 195,
+      "to": 1
+    },
+    {
+      "from": 195,
+      "to": 194
+    },
+    {
+      "from": 196,
+      "to": 1
+    },
+    {
+      "from": 196,
+      "to": 195
+    },
+    {
+      "from": 197,
+      "to": 1
+    },
+    {
+      "from": 197,
+      "to": 196
+    },
+    {
+      "from": 198,
+      "to": 1
+    },
+    {
+      "from": 198,
+      "to": 197
+    },
+    {
+      "from": 199,
+      "to": 1
+    },
+    {
+      "from": 199,
+      "to": 198
+    },
+    {
+      "from": 200,
+      "to": 1
+    },
+    {
+      "from": 200,
+      "to": 199
+    }
+  ]
+}

@@ -26,7 +26,7 @@ $216.
 
 ## Assumptions
 
-Dan, the author, set two of these assumptions: the three benchmark stages are
+The Primary Author set two of these assumptions: the three benchmark stages are
 10% of the cost of a whole book, and the service keeps a 20% profit margin.
 Claude, the AI assistant that wrote this page, chose the others.
 
@@ -61,8 +61,8 @@ Claude, the AI assistant that wrote this page, chose the others.
 | Turns in the three stages | 280 | 55 measured in stage 1, 30 assumed for stage 2, and 15 assumed for each of 13 chapters in stage 3 |
 | Overhead per turn | 15 seconds | Assumed, for reading the new part of the prompt and running the tool. `gemma4:26b` read 3,000 prompt tokens a second |
 | Overhead per turn, `qwen3.8:27b` | 90 seconds | Measured: the server re-read the conversation on every turn, which added one to two minutes |
-| Share of the book in the three stages | 10% | Dan's assumption. The learning graph, chapter design, and chapter content are one tenth of the cost. MicroSims, the glossary, the FAQ, quizzes, and references are the rest |
-| Profit margin | 20% of the price | Dan's assumption |
+| Share of the book in the three stages | 10% | The Primary Author's assumption. The learning graph, chapter design, and chapter content are one tenth of the cost. MicroSims, the glossary, the FAQ, quizzes, and references are the rest |
+| Profit margin | 20% of the price | The Primary Author's assumption |
 
 ## Purchase, Setup, and Running Costs
 

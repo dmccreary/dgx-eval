@@ -8,9 +8,9 @@ description: 'The design decisions behind the DGX testing configuration: what wa
 This page records the design decisions behind the testing configuration. For
 each one it gives the choice, the options weighed against it, and the reason.
 
-Three parties made these decisions: Dan, the author; the Administrator, who
+Three parties made these decisions: the Primary Author; the Administrator, who
 runs the DGX systems; and Claude, the AI assistant that built and ran the tests
-under Dan's direction. The page says who decided each one, because a choice made by
+under the Primary Author's direction. The page says who decided each one, because a choice made by
 a person with a goal and a choice made by an assistant filling a gap deserve
 different scrutiny.
 
@@ -22,14 +22,14 @@ collected in the last section.
 | Decision | Decided by |
 |---|---|
 | Tailscale for remote access | The Administrator, who delegated the choice to their own Claude assistant |
-| Python and Unix shell scripts for automation | Dan |
-| A dedicated `dgx` conda environment on the laptop | Dan |
-| Start testing before Docker access existed | Dan |
-| Algebra I as the benchmark course | Dan |
-| Three pipeline stages in the benchmark, and no more | Dan |
-| Fix the skill's faulty example before the comparison runs | Dan |
-| Run the harness in a Docker container on the DGX | Dan, on Claude's recommendation |
-| Only a local model may generate benchmark content | Dan |
+| Python and Unix shell scripts for automation | The Primary Author |
+| A dedicated `dgx` conda environment on the laptop | The Primary Author |
+| Start testing before Docker access existed | The Primary Author |
+| Algebra I as the benchmark course | The Primary Author |
+| Three pipeline stages in the benchmark, and no more | The Primary Author |
+| Fix the skill's faulty example before the comparison runs | The Primary Author |
+| Run the harness in a Docker container on the DGX | The Primary Author, on Claude's recommendation |
+| Only a local model may generate benchmark content | The Primary Author |
 | Everything else on this page | Claude |
 
 ## Remote Access: Tailscale
@@ -45,8 +45,8 @@ The choices Claude made inside that decision were about the laptop.
 
 | Option | Assessment |
 |---|---|
-| **conda-forge `tailscale` and `tailscaled` packages** | Chosen. Dan asked for the tools in a conda environment, and these are the open-source client and daemon |
-| The Tailscale macOS application | Simpler to run, but it lives outside the conda environment Dan asked for |
+| **conda-forge `tailscale` and `tailscaled` packages** | Chosen. The Primary Author asked for the tools in a conda environment, and these are the open-source client and daemon |
+| The Tailscale macOS application | Simpler to run, but it lives outside the conda environment the Primary Author asked for |
 | Homebrew | Same software, but again outside the conda environment |
 
 The cost is that the daemon must be started by hand, with `sudo`, in every
@@ -54,7 +54,7 @@ session.
 
 ## Automation: Python and Unix Shell
 
-**Decided by:** Dan.
+**Decided by:** The Primary Author.
 
 Every test, probe, and runner is a Python or shell script. Claude made three
 choices inside that decision.
@@ -67,7 +67,7 @@ choices inside that decision.
 
 ## Login: SSH Keys
 
-**Decided by:** Claude proposed it, and Dan created and installed the key.
+**Decided by:** Claude proposed it, and the Primary Author created and installed the key.
 
 | Option | Assessment |
 |---|---|
@@ -96,7 +96,7 @@ per turn. The cause was not identified.
 
 ## Installing Without Administrator Rights
 
-**Decided by:** Dan directed that testing start before Docker access existed.
+**Decided by:** The Primary Author directed that testing start before Docker access existed.
 Claude chose the method.
 
 | Option | Assessment |
@@ -187,7 +187,7 @@ Each was fixed and the saved output was scored again.
 
 ## Harness: Claude Code
 
-**Decided by:** Claude chose it over the alternatives. Dan then confirmed it,
+**Decided by:** Claude chose it over the alternatives. The Primary Author then confirmed it,
 with the condition that only a local model generates.
 
 | Option | Assessment |
@@ -195,7 +195,7 @@ with the condition that only a local model generates.
 | **Claude Code** | Chosen. The published books were generated with it and the skills were written for it, so the model becomes the only thing that changes |
 | OpenCode | Open source with a lighter prompt. A good second harness for telling a model failure from a harness mismatch |
 | Codex CLI, Goose | Both implement Agent Skills. Neither matched the way the comparison books were made |
-| A cloud model plans and the local model writes | Offered to Dan as a hybrid. He chose the local harness, because the benchmark tests whether a local harness can execute the skills |
+| A cloud model plans and the local model writes | Offered to the Primary Author as a hybrid. He chose the local harness, because the benchmark tests whether a local harness can execute the skills |
 
 The cost is that Claude Code's own instructions and tool definitions run to
 about 19,000 tokens and were written for Claude models. A local model that
@@ -203,7 +203,7 @@ struggles may be struggling with the harness.
 
 ## Where the Harness Runs
 
-**Decided by:** Dan chose the container, on Claude's recommendation.
+**Decided by:** The Primary Author chose the container, on Claude's recommendation.
 
 | Option | Assessment |
 |---|---|
@@ -237,9 +237,9 @@ leading suspect and was not confirmed.
 
 ## Benchmark Definition
 
-**Decided by:** Dan chose the course and the scope. Claude chose the mechanics.
+**Decided by:** The Primary Author chose the course and the scope. Claude chose the mechanics.
 
-Dan set the benchmark as Algebra I, limited to three skills: the learning
+The Primary Author set the benchmark as Algebra I, limited to three skills: the learning
 graph, the chapter structure, and the chapter content.
 
 | Choice | Alternative considered | Why |

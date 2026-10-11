@@ -1,0 +1,26 @@
+[
+  {
+    "id": "gemma4-26b",
+    "name": "gemma4:26b"
+  },
+  {
+    "id": "qwen3.8-27b",
+    "name": "qwen3.8:27b"
+  },
+  {
+    "id": "gemma4-31b",
+    "name": "gemma4:31b"
+  },
+  {
+    "id": "qwen3.6-35b",
+    "name": "qwen3.6:35b"
+  },
+  {
+    "id": "nemotron-3.5-lightning-30b",
+    "name": "nemotron-3.5-lightning:30b"
+  },
+  {
+    "id": "gpt-oss-120b",
+    "name": "gpt-oss:120b"
+  }
+]

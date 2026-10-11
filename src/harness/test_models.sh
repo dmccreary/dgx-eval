@@ -3,6 +3,7 @@
 #
 #   src/harness/test_models.sh short  benchmark/models.txt
 #   src/harness/test_models.sh stage1 benchmark/models.txt
+#   src/harness/test_models.sh books  benchmark/models.txt
 #
 # short   For each model: download it if needed, run the model-only smoke
 #         test, choose a context length that leaves memory free, and run the
@@ -10,6 +11,19 @@
 # stage1  For each model that got a context length: run benchmark stage 1, the
 #         learning graph, with a time limit. Then score it and try a strict
 #         site build. A model whose stage 1 already has a status file is skipped.
+# stage2  For each model with a learning graph: run benchmark stage 2, the
+#         chapter structure, starting from that model's own stage 1 output.
+# stage3  For each model with a chapter structure: run benchmark stage 3 once
+#         per chapter. Each chapter starts from the run before it, so the book
+#         builds up. After every chapter the book so far is copied to
+#         book-<model>, which is the directory to read or fetch. A model that
+#         hits the time limit on two chapters in a row is stopped there.
+# books   Stage 2 and then stage 3 for each model in turn, so the first
+#         finished book arrives as early as possible.
+#
+# Any run that already has a status file is skipped, so a stopped queue can be
+# started again. To make a running queue pass over a model, create an empty
+# file named skip-<model> in RUNS_DIR, with ":" in the model name written as "-".
 #
 # Each line of the model list is "<model> <reasoning>". Lines that start with
 # "#" are skipped.
@@ -33,6 +47,8 @@ ollama=$HOME/opt/ollama/bin/ollama
 api=http://127.0.0.1:11434
 short_limit=${SHORT_SECONDS:-1800}     # analyzer smoke test, per model
 stage1_limit=${STAGE1_SECONDS:-9000}   # learning graph, per model
+stage2_limit=${STAGE2_SECONDS:-7200}   # chapter structure, per model
+chapter_limit=${CHAPTER_SECONDS:-5400} # chapter content, per chapter
 mkdir -p "$runs" "$bench"
 
 log() { echo "[$(date '+%F %T')] $*"; }
@@ -126,12 +142,78 @@ stage1_phase() {  # stage1_phase <model>
   python3 "$repo/src/scoring/score_learning_graph.py" "$runs/s1-$name" > "$runs/s1-$name.score.json" 2>&1
 }
 
+# the chapter numbers a stage 2 run created, in order
+chapter_numbers() {  # chapter_numbers <run-dir>
+  local d
+  for d in "$1"/docs/chapters/[0-9]*/; do
+    [ -f "$d/index.md" ] && basename "$d" | grep -oE '^[0-9]+' | sed 's/^0*//'
+  done | sort -n | uniq
+}
+
+stage2_phase() {  # stage2_phase <model>
+  local model=$1 name; name=$(slug "$1")
+  local context; context=$(cat "$runs/context-$name" 2>/dev/null || echo 0)
+  local graph=$runs/s1-$name/docs/learning-graph
+  if [ -f "$runs/skip-$name" ]; then log "=== stage 2: $model has a skip file, skipped"; return; fi
+  if [ -f "$runs/s2-$name.status" ]; then log "=== stage 2: $model already has a result, skipped"; return; fi
+  if [ ! -f "$graph/learning-graph.csv" ] || [ ! -f "$graph/learning-graph.json" ] || [ "${context:-0}" -eq 0 ]; then
+    log "=== stage 2: $model has no learning graph, skipped"; return
+  fi
+  log "=== stage 2: $model at a context of $context tokens, limit $stage2_limit s"
+  "$repo/src/dgx-setup/start_ollama.sh" "$context" > /dev/null
+  MAX_SECONDS=$stage2_limit "$repo/src/harness/run_skill.sh" "$model" "s2-$name" \
+    "$repo/benchmark/algebra-1/prompts/02-book-chapter-generator.txt" \
+    "$runs/s1-$name"
+  after_run "s2-$name"
+  python3 "$repo/src/scoring/score_chapters.py" "$runs/s2-$name" > "$runs/s2-$name.score.json" 2>&1
+}
+
+stage3_phase() {  # stage3_phase <model>
+  local model=$1 name; name=$(slug "$1")
+  local context; context=$(cat "$runs/context-$name" 2>/dev/null || echo 0)
+  if [ -f "$runs/skip-$name" ]; then log "=== stage 3: $model has a skip file, skipped"; return; fi
+  local chapters; chapters=$(chapter_numbers "$runs/s2-$name")
+  if [ -z "$chapters" ] || [ "${context:-0}" -eq 0 ]; then
+    log "=== stage 3: $model has no chapter structure, skipped"; return
+  fi
+  log "=== stage 3: $model, $(echo $chapters | wc -w) chapters at a context of $context tokens, limit $chapter_limit s each"
+  local previous=$runs/s2-$name timeouts=0 n label
+  for n in $chapters; do
+    label=s3-$name-ch$(printf '%02d' "$n")
+    if [ -f "$runs/$label.status" ]; then
+      log "chapter $n already has a result, skipped"
+      [ -d "$runs/$label" ] && previous=$runs/$label
+      continue
+    fi
+    if [ "$timeouts" -ge 2 ]; then log "chapter $n not run: two chapters in a row hit the time limit"; continue; fi
+    log "chapter $n"
+    sed "s/{chapter}/$n/g" "$repo/benchmark/algebra-1/prompts/03-chapter-content-generator.txt" \
+      > "$runs/$label.prompt.txt"
+    # a fresh server for every chapter, so each one starts with empty memory and its own log
+    "$repo/src/dgx-setup/start_ollama.sh" "$context" > /dev/null
+    MAX_SECONDS=$chapter_limit "$repo/src/harness/run_skill.sh" "$model" "$label" \
+      "$runs/$label.prompt.txt" "$previous"
+    after_run "$label"
+    if grep -q '^exit=124' "$runs/$label.status"; then timeouts=$((timeouts + 1)); else timeouts=0; fi
+    previous=$runs/$label
+    # the book so far, at a path that does not change from chapter to chapter
+    rm -rf "$runs/book-$name"
+    cp -R "$previous" "$runs/book-$name"
+    python3 "$repo/src/scoring/score_chapters.py" "$runs/book-$name" --outline "$runs/s2-$name" \
+      > "$runs/book-$name.score.json" 2>&1
+  done
+  log "book finished: $model"
+}
+
 log "phase $phase started with $list"
 grep -vE '^\s*(#|$)' "$list" | while read -r model think; do
   case $phase in
     # stdin is the model list, so keep the tests from reading it
     short)  short_phase "$model" "${think:-off}" < /dev/null ;;
     stage1) stage1_phase "$model" < /dev/null ;;
+    stage2) stage2_phase "$model" < /dev/null ;;
+    stage3) stage3_phase "$model" < /dev/null ;;
+    books)  stage2_phase "$model" < /dev/null; stage3_phase "$model" < /dev/null ;;
     *)      log "unknown phase: $phase"; exit 2 ;;
   esac
 done
