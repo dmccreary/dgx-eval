@@ -54,6 +54,8 @@
     
       <link rel="stylesheet" href="../../css/extra.css">
     
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -611,6 +613,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -684,6 +692,142 @@
   
   <span class="md-ellipsis">
     View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
   </span>
   
 
@@ -884,6 +1028,98 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -1152,26 +1388,34 @@ with a context of 163,840 tokens. The model has 30.7 billion parameters.</p>
 </tr>
 <tr>
 <td>2. Book structure</td>
-<td>Not run yet</td>
-<td>—</td>
-<td>—</td>
+<td>12 chapters, 200 of 200 concepts assigned</td>
+<td>10 min</td>
+<td><a href="chapters/">Chapter list</a></td>
 </tr>
 <tr>
 <td>3. Chapter content</td>
-<td>Not run yet</td>
-<td>—</td>
-<td>—</td>
+<td>4 of 12 chapters written, 11,742 words</td>
+<td>60 min in 4 runs</td>
+<td><a href="chapters/">Chapters</a>, <a href="chapter-metrics/">metrics</a></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Still running</p>
+<p><code>gemma4:31b</code> had not finished stage 3 when this page was built. Chapters it
+has not reached yet are counted as not written.</p>
+</div>
 <h2 id="what-to-look-at">What to Look At<a class="headerlink" href="#what-to-look-at" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="learning-graph-viewer/">View Learning Graph</a>: the graph the model wrote,
   in the interactive viewer.</li>
 <li><a href="learning-graph-quality/">View Learning Graph Quality Report</a>: what a
   program found when it checked the graph's structure.</li>
+<li><a href="chapters/">View Chapter Content</a>: the chapters, as the model wrote
+  them.</li>
+<li><a href="chapter-metrics/">View Chapter Content Metrics</a>: words, diagrams
+  specified, and reading level for each chapter.</li>
 </ul>
-<p>The chapter pages appear here once this model has run stages 2 and 3.</p>
 <p>The learning graph and the chapters are the model's own work, shown as it
 wrote them. Two things were changed. Links to pages that do not exist were
 removed so that this site builds, and the metrics page counts them. If the

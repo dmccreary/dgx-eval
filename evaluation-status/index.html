@@ -54,6 +54,8 @@
     
       <link rel="stylesheet" href="../css/extra.css">
     
+      <link rel="stylesheet" href="../css/mascot.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -550,6 +552,98 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -811,7 +905,7 @@
 
 
 <h1 id="evaluation-status">Evaluation Status<a class="headerlink" href="#evaluation-status" title="Permanent link">&para;</a></h1>
-<p>Last updated October 10, 2026, at 7:15 PM. Stages 2 and 3 are done for five
+<p>Last updated October 10, 2026, at 8:45 PM. Stages 2 and 3 are done for five
 models and running for the last one. <a href="../models/">Model Results</a> holds what each model
 produced.</p>
 <div class="eval-status">
@@ -844,8 +938,8 @@ produced.</p>
 <td style="text-align: right;">30.7 B</td>
 <td style="text-align: right;">20 GB</td>
 <td style="text-align: center;">✅</td>
-<td style="text-align: center;">—</td>
-<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Running</td>
 <td style="text-align: center;">—</td>
 <td style="text-align: center;">—</td>
 </tr>
@@ -943,6 +1037,7 @@ fourteen chapters and wrote none. No quality score exists yet.</p>
 <li>❌ <strong>Not done.</strong> The stage was tried and failed, or could not be run.</li>
 <li><strong>A count</strong>, such as 10 of 14. The stage ended with only that many chapters
   written.</li>
+<li><strong>Running.</strong> The stage has started and has not finished.</li>
 <li>— <strong>Not started.</strong></li>
 </ul>
 <p>A green check records that a stage finished. It says nothing about how good
@@ -998,9 +1093,10 @@ This is the model that produced the cleanest learning graph.</p>
 </ul>
 <h2 id="what-is-left">What Is Left<a class="headerlink" href="#what-is-left" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Stages 2 and 3.</strong> One model, <code>gemma4:31b</code>, still has to finish them. Its
-  first attempt was cut short when the second DGX unit stopped responding a
-  few minutes in, so it is running last, on the other unit.</li>
+<li><strong>Stage 3 for <code>gemma4:31b</code>.</strong> It designed twelve chapters and had written
+  four of them at the time of this update. Its first attempt was cut short
+  when the second DGX unit stopped responding a few minutes in, so it is
+  running last, on the other unit.</li>
 <li><strong>Repeated runs.</strong> Every test so far has been run once, so nobody knows
   whether a model gives a comparable result the second time.</li>
 <li><strong>Scoring.</strong> The automated score has to be defined, and a person has to

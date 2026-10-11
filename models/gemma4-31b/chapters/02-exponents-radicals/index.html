@@ -1,0 +1,2566 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An exploration of exponential notation, the laws of exponents, and the properties of radicals.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/models/gemma4-31b/chapters/02-exponents-radicals/">
+      
+      
+        <link rel="prev" href="../01-algebra-foundations/">
+      
+      
+        <link rel="next" href="../03-linear-equations/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Exponents and Radicals - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exponents-and-radicals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exponents and Radicals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../testing-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model-candidates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Model Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gemma4-26b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gemma4:26b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.8-27b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.8:27b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    gemma4:31b
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_4">
+            <span class="md-nav__icon md-icon"></span>
+            gemma4:31b
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph-quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Learning Graph Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View Chapter Content
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_4_4" id="__nav_10_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            View Chapter Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-algebra-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Algebra Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2. Exponents and Radicals
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2. Exponents and Radicals
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-power-of-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Power of Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-anatomy-of-a-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Anatomy of a Power
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Anatomy of a Power">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-anatomy-of-a-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Anatomy of a Power
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forms-of-exponential-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forms of Exponential Expressions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-laws-of-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Laws of Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Laws of Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-product-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Product Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-quotient-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Quotient Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-exponents-zero-and-negative" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Exponents: Zero and Negative
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radicals-and-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radicals and Roots
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radicals and Roots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-radical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of a Radical
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anatomy of a Radical">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-anatomy-of-a-radical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Anatomy of a Radical
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#square-roots-and-cube-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Square Roots and Cube Roots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-radical-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Radical Manipulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-numbers-and-scientific-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Numbers and Scientific Notation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Numbers and Scientific Notation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perfect-squares-and-cubes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perfect Squares and Cubes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientific-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scientific Notation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-linear-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Linear Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-linear-inequalities-abs-value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Linear Inequalities and Absolute Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-intro-to-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Introduction to Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-linear-functions-slope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Linear Functions and Slope
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-systems-linear-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Systems of Linear Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-polynomials-factoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Polynomials and Factoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-quadratic-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Quadratic Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-exponential-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Exponential Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-data-analysis-stats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Data Analysis and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-sequences-series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sequences and Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Chapter Content Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Given to the Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../qwen3.6-35b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    qwen3.6:35b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../nemotron-3.5-lightning-30b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    nemotron-3.5-lightning:30b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gpt-oss-120b/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    gpt-oss:120b
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-power-of-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Power of Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-anatomy-of-a-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Anatomy of a Power
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Anatomy of a Power">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-anatomy-of-a-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Anatomy of a Power
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forms-of-exponential-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forms of Exponential Expressions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-laws-of-exponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Laws of Exponents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Laws of Exponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-product-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Product Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-quotient-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Quotient Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-exponents-zero-and-negative" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Exponents: Zero and Negative
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radicals-and-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radicals and Roots
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radicals and Roots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-radical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of a Radical
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anatomy of a Radical">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-anatomy-of-a-radical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Anatomy of a Radical
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#square-roots-and-cube-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Square Roots and Cube Roots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-radical-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Radical Manipulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-numbers-and-scientific-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Numbers and Scientific Notation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Numbers and Scientific Notation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perfect-squares-and-cubes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perfect Squares and Cubes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientific-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scientific Notation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/models/gemma4-31b/chapters/02-exponents-radicals/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="exponents-and-radicals">Exponents and Radicals<a class="headerlink" href="#exponents-and-radicals" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the laws of exponents and the properties of radicals. Students will learn to simplify complex exponential expressions and rationalize denominators, preparing them for higher-level algebraic manipulation.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 25 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base</td>
+<td>318</td>
+</tr>
+<tr>
+<td>Exponent</td>
+<td>168</td>
+</tr>
+<tr>
+<td>Power</td>
+<td>140</td>
+</tr>
+<tr>
+<td>Exponential Form</td>
+<td>47</td>
+</tr>
+<tr>
+<td>Expanded Form</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Product Rule for Exponents</td>
+<td>42</td>
+</tr>
+<tr>
+<td>Quotient Rule for Exponents</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Power of a Power Rule</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Power of a Product Rule</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Zero Exponent Rule</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Negative Exponent Rule</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Rational Exponent</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Radical Sign</td>
+<td>33</td>
+</tr>
+<tr>
+<td>Radicand</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Index</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Square Root</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Cube Root</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Simplifying Radicals</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Sum and Difference of Radicals</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Rationalizing the Denominator</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Perfect Square</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Perfect Cube</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Scientific Notation</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Converting to Standard Form</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Converting to Scientific Notation</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:
+- <a href="../01-algebra-foundations/">Chapter 1: Algebra Foundations</a></p>
+<hr />
+<h2 id="the-power-of-exponents">The Power of Exponents<a class="headerlink" href="#the-power-of-exponents" title="Permanent link">&para;</a></h2>
+<p>In the previous chapter, we worked with addition and subtraction. However, when we need to multiply the same number by itself many times, writing it out becomes tedious. For example, writing <span class="arithmatex">\( 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \)</span> is inefficient. To solve this, we use <strong>exponents</strong>, a mathematical shorthand for repeated multiplication.</p>
+<h3 id="the-anatomy-of-a-power">The Anatomy of a Power<a class="headerlink" href="#the-anatomy-of-a-power" title="Permanent link">&para;</a></h3>
+<p>At its simplest, an expression like <span class="arithmatex">\( 2^5 \)</span> is called a <strong>Power</strong>. A power consists of two primary parts: the base and the exponent.</p>
+<p>The <strong>Base</strong> is the number that is being multiplied. In the expression <span class="arithmatex">\( 2^5 \)</span>, the base is <span class="arithmatex">\( 2 \)</span>. The base tells us <em>what</em> number we are repeating.</p>
+<p>The <strong>Exponent</strong> is the small number written to the upper right of the base. In <span class="arithmatex">\( 2^5 \)</span>, the exponent is <span class="arithmatex">\( 5 \)</span>. The exponent tells us <em>how many times</em> to use the base as a factor.</p>
+<p>Before we look at how these interact, let's use an interactive tool to visualize the relationship.</p>
+<h4 id="diagram-anatomy-of-a-power">Diagram: Anatomy of a Power<a class="headerlink" href="#diagram-anatomy-of-a-power" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Anatomy of a Power</summary>
+<p>Type: infographic
+<strong>sim-id:</strong> power-anatomy<br/>
+<strong>Library:</strong> html<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Remember<br/>
+<strong>Bloom Verb:</strong> Identify<br/>
+<strong>Learning Objective:</strong> The learner will identify the base and exponent in various power expressions.</p>
+<p><strong>Prerequisites:</strong> Base, Exponent, Power</p>
+<p><strong>Evidence of Mastery:</strong> The learner clicks on the base and exponent of a given expression and correctly labels them.</p>
+<p><strong>Misconceptions:</strong> Thinking the exponent is a multiplier (e.g., thinking <span class="arithmatex">\( 2^3 \)</span> is <span class="arithmatex">\( 2 \times 3 \)</span>).</p>
+<p><strong>Instructional Rationale:</strong> Explicitly labeling the parts of a power prevents the common "multiplication error" by grounding the learner in the definition.</p>
+<p><strong>Content:</strong>
+- Expressions to identify:
+  - <span class="arithmatex">\( 5^3 \)</span>: 5 (Base), 3 (Exponent)
+  - <span class="arithmatex">\( 10^7 \)</span>: 10 (Base), 7 (Exponent)
+  - <span class="arithmatex">\( x^n \)</span>: x (Base), n (Exponent)
+  - <span class="arithmatex">\( (-4)^2 \)</span>: -4 (Base), 2 (Exponent)</p>
+<p><strong>Provenance:</strong> illustrative</p>
+<p><strong>Rules:</strong> 
+- Correct if the user selects the correct part of the expression and assigns the correct label.</p>
+<p><strong>Learner Activity:</strong>
+1. View an exponential expression.
+2. Click on the larger number (base).
+3. Click on the smaller superscript number (exponent).
+4. Verify correctness.</p>
+<p><strong>Feedback:</strong>
+- Correct: "Correct! The base is the number being multiplied, and the exponent is the count."
+- Incorrect: "Not quite. The base is the large number, and the exponent is the small one at the top."</p>
+<p><strong>Starting State:</strong> Expression <span class="arithmatex">\( 5^3 \)</span> is displayed.</p>
+<p><strong>Chapter Anchors:</strong> none</p>
+</details>
+<p><strong>Worked Example: Identifying Base and Exponent</strong>
+Consider the expression <span class="arithmatex">\( 7^4 \)</span>.
+1. The number being repeated is <span class="arithmatex">\( 7 \)</span>, so the <strong>base</strong> is <span class="arithmatex">\( 7 \)</span>.
+2. The number of times it is repeated is <span class="arithmatex">\( 4 \)</span>, so the <strong>exponent</strong> is <span class="arithmatex">\( 4 \)</span>.
+3. The entire expression <span class="arithmatex">\( 7^4 \)</span> is the <strong>power</strong>.</p>
+<p>To find the value of this power, we perform the repeated multiplication:
+[ 7^4 = 7 \times 7 \times 7 \times 7 = 2,401 ]</p>
+<h3 id="forms-of-exponential-expressions">Forms of Exponential Expressions<a class="headerlink" href="#forms-of-exponential-expressions" title="Permanent link">&para;</a></h3>
+<p>When we write a number using a base and an exponent, we are using <strong>Exponential Form</strong>. For example, <span class="arithmatex">\( 2^5 \)</span> is in exponential form.</p>
+<p>Conversely, when we write the repeated multiplication out in full, we are using <strong>Expanded Form</strong>. For example, <span class="arithmatex">\( 2 \times 2 \times 2 \times 2 \times 2 \)</span> is the expanded form of <span class="arithmatex">\( 2^5 \)</span>.</p>
+<p><strong>Worked Example: Switching Forms</strong>
+- <strong>Exponential Form:</strong> <span class="arithmatex">\( 3^4 \)</span>
+- <strong>Expanded Form:</strong> <span class="arithmatex">\( 3 \times 3 \times 3 \times 3 \)</span>
+- <strong>Value:</strong> <span class="arithmatex">\( 81 \)</span></p>
+<p><strong>Definition: Expanded Form</strong>
+Expanded form is the representation of a power as a repeated product of the base. It is the "long way" of writing an exponent.</p>
+<hr />
+<h2 id="the-laws-of-exponents">The Laws of Exponents<a class="headerlink" href="#the-laws-of-exponents" title="Permanent link">&para;</a></h2>
+<p>As we move into more complex algebra, we often encounter expressions with multiple powers. Rather than expanding everything into long strings of numbers, we use a set of rules called the <strong>Laws of Exponents</strong> to simplify expressions efficiently.</p>
+<h3 id="the-product-rule">The Product Rule<a class="headerlink" href="#the-product-rule" title="Permanent link">&para;</a></h3>
+<p>The <strong>Product Rule for Exponents</strong> describes what happens when we multiply two powers that have the same base. The rule states that you keep the base and <em>add</em> the exponents.
+Formula: <span class="arithmatex">\( a^m \times a^n = a^{m+n} \)</span></p>
+<p><strong>Worked Example: Using the Product Rule</strong>
+Simplify <span class="arithmatex">\( x^3 \times x^5 \)</span>.
+1. Check the bases: Both are <span class="arithmatex">\( x \)</span>. (The rule applies!)
+2. Add the exponents: <span class="arithmatex">\( 3 + 5 = 8 \)</span>.
+3. Result: <span class="arithmatex">\( x^8 \)</span>.</p>
+<p><strong>Why this works:</strong>
+<span class="arithmatex">\( x^3 \)</span> is <span class="arithmatex">\( (x \cdot x \cdot x) \)</span> and <span class="arithmatex">\( x^5 \)</span> is <span class="arithmatex">\( (x \cdot x \cdot x \cdot x \cdot x) \)</span>.
+Multiplying them gives <span class="arithmatex">\( (x \cdot x \cdot x) \cdot (x \cdot x \cdot x \cdot x \cdot x) \)</span>, which is <span class="arithmatex">\( x^8 \)</span>.</p>
+<h3 id="the-quotient-rule">The Quotient Rule<a class="headerlink" href="#the-quotient-rule" title="Permanent link">&para;</a></h3>
+<p>The <strong>Quotient Rule for Exponents</strong> is used when dividing powers with the same base. In this case, you keep the base and <em>subtract</em> the exponent of the denominator from the exponent of the numerator.
+Formula: <span class="arithmatex">\( \frac{a^m}{a^n} = a^{m-n} \)</span></p>
+<p><strong>Definition: Quotient Rule</strong>
+The Quotient Rule states that the division of two powers with the same base is equal to a power with the same base and an exponent equal to the difference of the original exponents.</p>
+<h3 id="power-rules">Power Rules<a class="headerlink" href="#power-rules" title="Permanent link">&para;</a></h3>
+<p>Sometimes we have a power raised to another power.</p>
+<p><strong>Power of a Power Rule:</strong>
+When raising a power to another power, you multiply the exponents.
+Formula: <span class="arithmatex">\( (a^m)^n = a^{m \cdot n} \)</span>
+<em>Example:</em> <span class="arithmatex">\( (x^2)^3 = x^{2 \cdot 3} = x^6 \)</span>.</p>
+<p><strong>Power of a Product Rule:</strong>
+When a product is raised to a power, every factor inside the parentheses is raised to that power.
+Formula: <span class="arithmatex">\( (ab)^n = a^n b^n \)</span>
+<em>Example:</em> <span class="arithmatex">\( (2x)^3 = 2^3 \cdot x^3 = 8x^3 \)</span>.</p>
+<h3 id="special-exponents-zero-and-negative">Special Exponents: Zero and Negative<a class="headerlink" href="#special-exponents-zero-and-negative" title="Permanent link">&para;</a></h3>
+<p>Two special cases often confuse students: exponents of zero and negative exponents.</p>
+<p><strong>The Zero Exponent Rule:</strong>
+Any non-zero number raised to the power of zero is always equal to 1.
+Formula: <span class="arithmatex">\( a^0 = 1 \)</span> (where <span class="arithmatex">\( a \neq 0 \)</span>)
+<em>Example:</em> <span class="arithmatex">\( 15^0 = 1 \)</span>.</p>
+<p><strong>Negative Exponent Rule:</strong>
+A negative exponent indicates the <em>reciprocal</em> of the base raised to the positive version of that exponent. It essentially tells you to "flip" the base to the other side of the fraction bar.
+Formula: <span class="arithmatex">\( a^{-n} = \frac{1}{a^n} \)</span></p>
+<p><strong>Worked Example: Negative Exponents</strong>
+Simplify <span class="arithmatex">\( 5^{-2} \)</span>.
+1. The negative sign means we take the reciprocal.
+2. <span class="arithmatex">\( 5^{-2} = \frac{1}{5^2} \)</span>.
+3. Evaluate the power: <span class="arithmatex">\( \frac{1}{25} \)</span>.</p>
+<p><strong>Definition: Rational Exponent</strong>
+A rational exponent is an exponent expressed as a fraction. The denominator of the fraction indicates the root, and the numerator indicates the power. 
+Formula: <span class="arithmatex">\( a^{m/n} = \sqrt[n]{a^m} \)</span>
+<em>Example:</em> <span class="arithmatex">\( 8^{2/3} = \sqrt[3]{8^2} = \sqrt[3]{64} = 4 \)</span>.</p>
+<hr />
+<h2 id="radicals-and-roots">Radicals and Roots<a class="headerlink" href="#radicals-and-roots" title="Permanent link">&para;</a></h2>
+<p>While exponents involve repeated multiplication, <strong>radicals</strong> (roots) are the inverse operation. Finding a root is like asking: "What number, multiplied by itself X times, gives me this result?"</p>
+<h3 id="anatomy-of-a-radical">Anatomy of a Radical<a class="headerlink" href="#anatomy-of-a-radical" title="Permanent link">&para;</a></h3>
+<p>A radical expression is written using the <strong>Radical Sign</strong> (<span class="arithmatex">\( \sqrt{} \)</span>).</p>
+<p>The number inside the radical sign is called the <strong>Radicand</strong>. In the expression <span class="arithmatex">\( \sqrt[3]{27} \)</span>, the radicand is <span class="arithmatex">\( 27 \)</span>.</p>
+<p>The small number tucked into the "V" of the radical sign is the <strong>Index</strong>. The index tells us which root we are taking (square root, cube root, etc.). In <span class="arithmatex">\( \sqrt[3]{27} \)</span>, the index is <span class="arithmatex">\( 3 \)</span>. If no index is written, it is assumed to be <span class="arithmatex">\( 2 \)</span> (the square root).</p>
+<h4 id="diagram-anatomy-of-a-radical">Diagram: Anatomy of a Radical<a class="headerlink" href="#diagram-anatomy-of-a-radical" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Anatomy of a Radical</summary>
+<p>Type: infographic
+<strong>sim-id:</strong> radical-anatomy<br/>
+<strong>Library:</strong> html<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Remember<br/>
+<strong>Bloom Verb:</strong> Identify<br/>
+<strong>Learning Objective:</strong> The learner will identify the radical sign, index, and radicand in a radical expression.</p>
+<p><strong>Prerequisites:</strong> Radical Sign, Radicand, Index</p>
+<p><strong>Evidence of Mastery:</strong> The learner clicks on the different parts of a radical expression and correctly labels them.</p>
+<p><strong>Misconceptions:</strong> Confusing the index with a coefficient multiplying the radical.</p>
+<p><strong>Instructional Rationale:</strong> Visual identification of the index is crucial, as it fundamentally changes the operation being performed.</p>
+<p><strong>Content:</strong>
+- Expressions to identify:
+  - <span class="arithmatex">\( \sqrt[4]{16} \)</span>: index=4, radicand=16
+  - <span class="arithmatex">\( \sqrt{49} \)</span>: index=2 (implied), radicand=49
+  - <span class="arithmatex">\( \sqrt[3]{-8} \)</span>: index=3, radicand=-8</p>
+<p><strong>Provenance:</strong> illustrative</p>
+<p><strong>Rules:</strong> 
+- Correct if the user correctly labels the index and radicand.</p>
+<p><strong>Learner Activity:</strong>
+1. View a radical expression.
+2. Click on the index.
+3. Click on the radicand.
+4. Verify correctness.</p>
+<p><strong>Feedback:</strong>
+- Correct: "Correct! The index is the root number, and the radicand is the value inside."
+- Incorrect: "Not quite. The index is the small number in the corner; the radicand is the value under the bar."</p>
+<p><strong>Starting State:</strong> Expression <span class="arithmatex">\( \sqrt[3]{27} \)</span> is displayed.</p>
+<p><strong>Chapter Anchors:</strong> none</p>
+</details>
+<p><strong>Worked Example: Identifying Radical Parts</strong>
+Consider <span class="arithmatex">\( \sqrt[5]{32} \)</span>.
+- The symbol <span class="arithmatex">\( \sqrt{} \)</span> is the <strong>radical sign</strong>.
+- The number <span class="arithmatex">\( 5 \)</span> is the <strong>index</strong>.
+- The number <span class="arithmatex">\( 32 \)</span> is the <strong>radicand</strong>.</p>
+<h3 id="square-roots-and-cube-roots">Square Roots and Cube Roots<a class="headerlink" href="#square-roots-and-cube-roots" title="Permanent link">&para;</a></h3>
+<p>The most common radicals are the square root and the cube root.</p>
+<p><strong>Square Root (<span class="arithmatex">\( \sqrt{} \)</span>):</strong>
+The square root of a number is a value that, when squared, equals the original number.
+Example: <span class="arithmatex">\( \sqrt{25} = 5 \)</span> because <span class="arithmatex">\( 5^2 = 25 \)</span>.</p>
+<p><strong>Worked Example: Finding Square Roots</strong>
+Find <span class="arithmatex">\( \sqrt{64} \)</span>.
+1. Ask: "What number multiplied by itself is 64?"
+2. Since <span class="arithmatex">\( 8 \times 8 = 64 \)</span>, the answer is <span class="arithmatex">\( 8 \)</span>.</p>
+<p><strong>Cube Root (<span class="arithmatex">\( \sqrt[3]{} \)</span>):</strong>
+The cube root of a number is a value that, when cubed, equals the original number.
+Example: <span class="arithmatex">\( \sqrt[3]{27} = 3 \)</span> because <span class="arithmatex">\( 3^3 = 27 \)</span>.</p>
+<p><strong>Worked Example: Finding Cube Roots</strong>
+Find <span class="arithmatex">\( \sqrt[3]{125} \)</span>.
+1. Ask: "What number multiplied by itself three times is 125?"
+2. Since <span class="arithmatex">\( 5 \times 5 \times 5 = 125 \)</span>, the answer is <span class="arithmatex">\( 5 \)</span>.</p>
+<hr />
+<h2 id="advanced-radical-manipulation">Advanced Radical Manipulation<a class="headerlink" href="#advanced-radical-manipulation" title="Permanent link">&para;</a></h2>
+<p>In many cases, roots are not "perfect" (meaning they result in decimals). In these instances, we simplify the radical rather than calculating the decimal.</p>
+<p><strong>Simplifying Radicals:</strong>
+Simplifying involves finding the largest perfect square factor of the radicand and moving it outside the radical.
+Example: <span class="arithmatex">\( \sqrt{50} = \sqrt{25 \times 2} = 5\sqrt{2} \)</span>.</p>
+<p><strong>Definition: Simplifying Radicals</strong>
+Simplifying a radical is the process of rewriting it so that the radicand contains no perfect square (or cube, etc.) factors other than 1.</p>
+<p><strong>Sum and Difference of Radicals:</strong>
+You can only add or subtract radicals if they are "like radicals"—meaning they have the same index and the same radicand.
+Example: <span class="arithmatex">\( 3\sqrt{2} + 5\sqrt{2} = 8\sqrt{2} \)</span>.
+<em>Non-example:</em> <span class="arithmatex">\( \sqrt{2} + \sqrt{3} \)</span> cannot be simplified further.</p>
+<p><strong>Definition: Sum and Difference of Radicals</strong>
+The addition or subtraction of radicals is only possible between like radicals, where coefficients are added or subtracted while the radical part remains unchanged.</p>
+<p><strong>Rationalizing the Denominator:</strong>
+In mathematics, it is considered "unsimplified" to leave a radical in the denominator of a fraction. Rationalizing is the process of removing the radical from the bottom.
+Example: <span class="arithmatex">\( \frac{1}{\sqrt{2}} = \frac{1 \times \sqrt{2}}{\sqrt{2} \times \sqrt{2}} = \frac{\sqrt{2}}{2} \)</span>.</p>
+<p><strong>Definition: Rationalizing the Denominator</strong>
+Rationalizing the denominator is the process of multiplying the numerator and denominator by a suitable radical to eliminate any radicals from the denominator.</p>
+<hr />
+<h2 id="special-numbers-and-scientific-notation">Special Numbers and Scientific Notation<a class="headerlink" href="#special-numbers-and-scientific-notation" title="Permanent link">&para;</a></h2>
+<h3 id="perfect-squares-and-cubes">Perfect Squares and Cubes<a class="headerlink" href="#perfect-squares-and-cubes" title="Permanent link">&para;</a></h3>
+<p>Some numbers are "perfect" because their roots are whole numbers.</p>
+<p><strong>Definition: Perfect Square</strong>
+A perfect square is an integer that is the square of an integer. Examples include <span class="arithmatex">\( 1, 4, 9, 16, 25, 36, \dots \)</span></p>
+<p><strong>Definition: Perfect Cube</strong>
+A perfect cube is an integer that is the cube of an integer. Examples include <span class="arithmatex">\( 1, 8, 27, 64, 125, \dots \)</span></p>
+<h3 id="scientific-notation">Scientific Notation<a class="headerlink" href="#scientific-notation" title="Permanent link">&para;</a></h3>
+<p>When dealing with extremely large (like the distance to a star) or extremely small (like the size of an atom) numbers, we use <strong>Scientific Notation</strong>.</p>
+<p>A number in scientific notation is written as a product of a number between 1 and 10 and a power of 10.
+Format: <span class="arithmatex">\( a \times 10^n \)</span> (where <span class="arithmatex">\( 1 \le |a| &lt; 10 \)</span>)</p>
+<p><strong>Definition: Scientific Notation</strong>
+Scientific notation is a way of expressing numbers that are too large or too small to be conveniently written in decimal form.</p>
+<p><strong>Worked Example: Scientific Notation</strong>
+The distance from Earth to the Sun is approximately 150,000,000 km.
+In scientific notation, this is <span class="arithmatex">\( 1.5 \times 10^8 \text{ km} \)</span>.</p>
+<p><strong>Converting to Standard Form:</strong>
+To convert <span class="arithmatex">\( 1.5 \times 10^8 \)</span> back to standard form, move the decimal point 8 places to the right: <span class="arithmatex">\( 150,000,000 \)</span>.</p>
+<p><strong>Definition: Converting to Standard Form</strong>
+Converting to standard form is the process of expanding a number from scientific notation back into its full decimal representation.</p>
+<p><strong>Converting to Scientific Notation:</strong>
+To convert a number like <span class="arithmatex">\( 0.00045 \)</span> to scientific notation:
+1. Move the decimal to get a number between 1 and 10: <span class="arithmatex">\( 4.5 \)</span>.
+2. Count the moves: 4 places to the right.
+3. Since we moved right (making a small number larger), the exponent is negative: <span class="arithmatex">\( 4.5 \times 10^{-4} \)</span>.</p>
+<p><strong>Definition: Converting to Scientific Notation</strong>
+Converting to scientific notation is the process of rewriting a number in the form <span class="arithmatex">\( a \times 10^n \)</span>, where the coefficient is between 1 and 10.</p>
+<hr />
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>In this chapter, we explored the efficiency of exponents and the inverse nature of radicals. Key takeaways include:
+- <strong>Exponents</strong> allow us to represent repeated multiplication.
+- The <strong>Laws of Exponents</strong> (Product, Quotient, Power, Zero, and Negative rules) provide a shortcut for simplifying expressions.
+- <strong>Radicals</strong> are the opposite of exponents; the index tells us which root we are finding.
+- <strong>Simplifying Radicals</strong> and <strong>Rationalizing Denominators</strong> are essential for keeping algebraic expressions in their cleanest form.
+- <strong>Scientific Notation</strong> provides a standardized way to manage the vast scale of the universe.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-algebra-foundations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Algebra Foundations">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. Algebra Foundations
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-linear-equations/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Linear Equations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. Linear Equations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
