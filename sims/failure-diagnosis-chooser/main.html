@@ -3,137 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Failure Diagnosis Chooser</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Failure Diagnosis Chooser using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="failure-diagnosis-chooser.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Failure Diagnosis Chooser</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> failure-diagnosis-chooser</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Analyze</p>
-            <p><strong>Learning Objective:</strong> The learner will attribute each of 8 failed-run symptoms to its most likely cause from a list of 8, with at least 7 of 8 correct.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** failure-diagnosis-chooser<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified<br/>
-    **Bloom Level:** Analyze<br/>
-    **Bloom Verb:** attribute<br/>
-    **Learning Objective:** The learner will attribute each of 8 failed-run symptoms to its most likely cause from a list of 8, with at least 7 of 8 correct.
-    
-    **Prerequisites:** malformed tool call, text-emitted tool call, premature turn termination, task loss, context overflow, harness misconfiguration, prompt re-reading, chapter dependency check (all defined in this chapter and in Chapters 15, 16, and 21).
-    
-    **Evidence of Mastery:** For each of the 8 symptoms the learner commits one cause from the eight listed before the sim reveals the answer. A choice is correct when it equals the Correct cause column. Mastery is 7 of 8 correct on the first attempt. Reading the symptoms is exploration, not evidence.
-    
-    **Misconceptions:** (1) A failure that ends a run is always a model failure. (2) A tool error means the run cannot recover. (3) A slow run is a failed run. (4) A model that says it is doing the work has done it.
-    
-    **Instructional Rationale:** Attributing a symptom to a cause needs the learner to use the discriminating detail in each case, so each symptom has exactly one cause and the eight causes are different enough to confuse only if the detail is missed.
-    
-    **Content:**
-    
-    The eight causes the learner chooses from: "Text-emitted tool call", "Malformed tool call", "Task loss", "Context overflow", "Harness misconfiguration", "Premature turn termination", "Slow turns from prompt re-reading", and "Upstream stage fault".
-    
-    | # | Symptom shown to the learner | Correct cause | Why (shown as feedback) |
-    |---|---|---|---|
-    | 1 | The run ended after one turn. Its last message contains text shaped like a tool call, written as ordinary prose. | Text-emitted tool call | The harness saw no real tool call, so it treated the reply as the final answer. |
-    | 2 | The harness reported invalid arguments for a file write. On the next turn the model sent a correct call and the run went on. | Malformed tool call | The call was ill-formed and the model recovered after the error. |
-    | 3 | After about eight turns the model answers "Hello, how can I help?" and ignores the skill. | Task loss | The model has dropped the task, which is usually a sign of a context that was too large for it. |
-    | 4 | The conversation reached 127,000 tokens in a 128,000-token window, and the model began to contradict its own earlier instructions. | Context overflow | The window was close to full, so earlier content was lost. |
-    | 5 | Every request returns "model not found" at turn one, for every model tried. | Harness misconfiguration | The same failure at the first turn for every model points at the setup, not a model. |
-    | 6 | The final message says "I will now run the chapter skill", with no tool call made and no file written. | Premature turn termination | The model described the work and ended its turn without doing it. |
-    | 7 | Four of 14 chapters were not written. The skill's own dependency check reported that each chapter needed concepts placed in later chapters, and stopped. | Upstream stage fault | The chapter structure from stage 2 was the cause, so the stage 3 failure is a symptom of it. |
-    | 8 | The stage hit its 90-minute limit after about twenty tool calls. Each turn took close to two minutes, and the server log shows most of that reading the prompt. | Slow turns from prompt re-reading | The time went to the server recomputing the conversation, not to the model's generating. |
-    
-    **Provenance:** The symptoms are synthetic but follow failures observed in this evaluation, and the sim labels them "synthetic example". The causes come from this chapter and Chapters 15, 16, and 21.
-    
-    **Rules:** Symptoms are shown in the fixed order 1 to 8. Each allows one final choice, and exactly one cause is correct for each. A cause is the correct answer for exactly one symptom.
-    
-    **Learner Activity:**
-    
-    1. The learner reads symptom 1.
-    2. The learner chooses one of the eight causes and confirms.
-    3. The sim shows the correct cause and the Why text, and marks the symptom correct or incorrect.
-    4. The learner repeats for symptoms 2 to 8. After symptom 8 the sim shows the score and the misconception behind each miss.
-    
-    **Feedback:** Eight symptoms, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct cause and the Why text. The final score reads "n of 8 correct".
-    
-    **Starting State:** Symptom 1 is shown with no cause chosen, and the question on screen is "What most likely caused this?"
-    
-    **Chapter Anchors:** The chapter states that a text-emitted tool call ends a run after one turn, that a malformed call is recoverable, that a failure identical for every model at turn one is a configuration fault, and that a dependency-check stop in stage 3 traces back to stage 2.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

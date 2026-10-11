@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description.md" class="md-nav__link">
+      <a href="../../course-description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -529,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing-architecture.md" class="md-nav__link">
+      <a href="../testing-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../model-candidates.md" class="md-nav__link">
+      <a href="../model-candidates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1655,8 +1655,8 @@
 0 to 100, and gives each book a score for how consistent its chapters are. The
 program is one Python file,
 <a href="https://github.com/dmccreary/dgx-eval/blob/main/src/scoring/chapter_quality.py"><code>chapter_quality.py</code></a>,
-and it fills the Automated Quality Score column of
-<a href="../evaluation-status/">Evaluation Status</a>.</p>
+and it is meant to fill the Automated Quality Score column of
+<a href="../evaluation-status/">Evaluation Status</a>, which is empty so far.</p>
 <div class="admonition warning">
 <p class="admonition-title">A conformance score, not a quality verdict</p>
 <p>The score measures how closely a chapter follows the book's written content
@@ -1672,7 +1672,7 @@ well the models teach.</p>
 <li>Use objective measurements.</li>
 <li>Include adherence to the rules in <code>CONTENT-GENERATION-GUIDE.md</code>, and include
   the precise placement of diagrams and the quality of their specifications.</li>
-<li>Make it analyze word count, diagram count, and reading level.</li>
+<li>Report word count, diagram count, and reading level for each chapter.</li>
 <li>Favor consistent quality over high absolute quality.</li>
 </ul>
 <p>Three more constraints follow from how the benchmark runs. The same files must
@@ -1746,7 +1746,7 @@ Frontmatter is split off first and read for <code>title</code> and <code>descrip
 <li>A <code>#### Diagram:</code> heading owns it.</li>
 <li>It has at least three of the eighteen specification field labels.</li>
 <li>Its summary starts with the word Diagram.</li>
-<li>It is a reused MicroSim, meaning it contains an <code>&lt;iframe&gt;</code>.</li>
+<li>It is a reused MicroSim: its summary says so, or it contains an <code>&lt;iframe&gt;</code>.</li>
 </ul>
 <p>Other <code>&lt;details&gt;</code> blocks, such as a hidden answer, are ignored. The third test
 exists because one model wrote <code>&lt;summary&gt;#### Diagram: Title&lt;/summary&gt;</code> with a
@@ -2140,7 +2140,7 @@ editing one constant.</p>
 <div class="arithmatex">\[ Q = 100 \times \frac{\sum_d w_d \, s_d}{\sum_d w_d} \]</div>
 <p>with the weights in the first table of this page.</p>
 <h2 id="step-5-the-book-score">Step 5: The Book Score<a class="headerlink" href="#step-5-the-book-score" title="Permanent link">&para;</a></h2>
-<p>Three numbers describe a book, and the headline combines two of them.</p>
+<p>A book gets a level, a consistency, and a headline that combines the two.</p>
 <div class="arithmatex">\[ \mathrm{level} = \frac{1}{N} \sum_{i=1}^{N} Q_i \qquad
 \mathrm{consistency} = 100 \left(1 - \frac{\sigma_W}{\mu_W}\right) \qquad
 \mathrm{headline} = \frac{\mathrm{level} \times \mathrm{consistency}}{100} \]</div>
@@ -2152,8 +2152,8 @@ and so is the headline.</p>
 z-score for each written chapter: its distance from the median divided by 1.4826
 times the median absolute deviation, with the divisor never below 2 points. With
 at least four written chapters, a z-score of 2 or more in either direction is
-flagged <code>OUTLIER_LOW</code> or <code>OUTLIER_HIGH</code>. Finally it reports each dimension's mean and
-coefficient of variation, which show which kind of failure a book is
+flagged <code>OUTLIER_LOW</code> or <code>OUTLIER_HIGH</code>. Finally it reports each dimension's
+mean and coefficient of variation, which show which kind of failure a book is
 inconsistent about.</p>
 <h2 id="a-worked-example">A Worked Example<a class="headerlink" href="#a-worked-example" title="Permanent link">&para;</a></h2>
 <p>Chapter 3, Linear Equations, from <code>gemma4:31b</code>. It has 16 concepts: none in Tier
@@ -2220,8 +2220,8 @@ fields and nothing in them. Section "What It Cannot Tell You" returns to this.</
 <p>A raw count rewards whoever writes the most. A chapter on a foundational topic
 should be long and full of diagrams, and a chapter on a narrow topic should not.
 So every sub-score compares the chapter to a number derived from its own concept
-table, and every sub-score saturates. Adding a tenth diagram, or a tenth
-thousand words, earns nothing once the chapter is on the plateau.</p>
+table, and every sub-score saturates. Adding another diagram, or another thousand words, earns nothing once the
+chapter is on the plateau.</p>
 <p>The check that this worked: across the 49 written chapters, the Spearman
 correlation of the score with body words is −0.10, with diagram count 0.13, and
 with equation count 0.15. The score does not track size.</p>
@@ -2273,8 +2273,8 @@ book twice for one fact.</p>
 <p>The cost is that consistency rewards a book that wrote fewer chapters
 uniformly. <code>gpt-oss:120b</code> has the highest consistency of any book, 95.3, because
 it wrote only 6 of 10 chapters and those six resemble one another. The level
-holds it back, and that is why the table below shows both and why the written
-count is always printed beside them.</p>
+holds it back. That is why the results table below shows both numbers, and why
+the written count is always printed beside them.</p>
 <h3 id="follow-the-skills-own-parser">Follow the skill's own parser<a class="headerlink" href="#follow-the-skills-own-parser" title="Permanent link">&para;</a></h3>
 <p>The first version required a diagram's header to sit directly above its
 <code>&lt;details&gt;</code> block. The skill's own batch tool accepts prose between them, and
@@ -2301,7 +2301,7 @@ documents the one place where it is stricter.</p>
 <td>Weights set by hand: 20, 20, 20, 15, 10, 15</td>
 <td>Fit to human ratings</td>
 <td>No human ratings exist yet</td>
-<td>The weights are opinions. A ±40% change in every weight flips the order of two pairs, listed below</td>
+<td>The weights are opinions. A ±40% change in every weight flips the order of two pairs, named under How It Was Checked</td>
 </tr>
 <tr>
 <td>Padding weight lowered from 15 to 10</td>
@@ -2353,15 +2353,17 @@ documents the one place where it is stricter.</p>
   procedure. Nothing here evaluates the mathematics.</li>
 <li><strong>Gaming.</strong> A model could fill every specification field with plausible
   keywords and score well. The checks for templated specs, repeated sentences,
-  and thin fields narrow the gap, and nothing closes it.</li>
+  and thin fields narrow the gap, and nothing closes it. In one gpt-oss chapter
+  the Misconceptions field of all twenty specifications reads "(common
+  misconceptions)". The duplicate check caught that. No check reads the words.</li>
 <li><strong>Absence of a human baseline.</strong> The score is built on the written rules, not
   on what a teacher would call good. Until someone rates a sample of chapters
   and the two are compared, the weights are untested opinions.</li>
 <li><strong>Drift in the rules.</strong> The specification checks encode version 1.11 of the
   skill. A new version of the skill can make a check wrong without any change in
   the chapters.</li>
-<li><strong>A thin sample.</strong> Six models, 72 chapters, and one course. The thresholds
-  were not tested on anything else.</li>
+<li><strong>A thin sample.</strong> Six models, 49 written chapters, and one course. The
+  thresholds were not tested on anything else.</li>
 </ul>
 <h2 id="how-it-was-checked">How It Was Checked<a class="headerlink" href="#how-it-was-checked" title="Permanent link">&para;</a></h2>
 <table>
@@ -2412,7 +2414,7 @@ rate of every check was tabulated. That is the argument for the comparison with
 human judgment that is still owed.</p>
 <h2 id="first-results">First Results<a class="headerlink" href="#first-results" title="Permanent link">&para;</a></h2>
 <p>These are the six books of the Algebra I benchmark as scored on October 11,
-2026, with the final version of the program.</p>
+2026, by the version of the program in the repository that day.</p>
 <table>
 <thead>
 <tr>
@@ -2482,8 +2484,9 @@ reading the chapter:</p>
 <li>The model's own working, such as <code>(Tier C: 120-200 words)</code>, printed in
   headings.</li>
 <li>Concepts Covered tables that were dropped from several chapters.</li>
-<li>A <code>&lt;iframe&gt;</code> pointing at <code>microsims.example.com</code>, an invented host.</li>
-<li>Twenty near-identical specifications in a single gpt-oss chapter.</li>
+<li>An <code>&lt;iframe&gt;</code> pointing at <code>microsims.example.com</code>, an invented host.</li>
+<li>Twenty specifications in a single gpt-oss chapter that share identical text in
+  six fields.</li>
 </ul>
 <h2 id="running-it-and-changing-it">Running It and Changing It<a class="headerlink" href="#running-it-and-changing-it" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3<span class="w"> </span>src/scoring/chapter_quality.py<span class="w"> </span>docs/models/&lt;model&gt;<span class="w"> </span>--raw

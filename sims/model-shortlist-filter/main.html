@@ -3,140 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Model Shortlist Filter</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Model Shortlist Filter using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="model-shortlist-filter.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Model Shortlist Filter</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> model-shortlist-filter</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply</p>
-            <p><strong>Learning Objective:</strong> The learner will apply four selection criteria to 8 candidate models for a 128 GB unified-memory machine, deciding shortlist or exclude and naming the first failed criterion, with at least 7 of 8 correct.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** model-shortlist-filter<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified<br/>
-    **Template:** https://github.com/dmccreary/dgx-eval/tree/main/docs/sims/model-fit-by-memory<br/>
-    **Bloom Level:** Apply<br/>
-    **Bloom Verb:** apply<br/>
-    **Learning Objective:** The learner will apply four selection criteria to 8 candidate models for a 128 GB unified-memory machine, deciding shortlist or exclude and naming the first failed criterion, with at least 7 of 8 correct.
-    
-    **Prerequisites:** model selection criteria, tool-calling reliability, context window, safety headroom, publisher provenance, license review, exclusion rationale (all defined in the sections above this block and in Chapter 11).
-    
-    **Evidence of Mastery:** For each of the 8 candidates the learner commits "Shortlist" or "Exclude" and, for "Exclude", the first failed criterion from the four listed, before the sim reveals the answer. A candidate is correct when the decision equals the Correct decision column and, for an exclusion, the criterion equals the Correct failed criterion column. Mastery is 7 of 8 correct on the first attempt. Reading the candidate cards is exploration, not evidence.
-    
-    **Misconceptions:** (1) A model that fits in raw memory is acceptable. (2) A large context window makes up for a missing tool-calling feature. (3) A missing license statement is as good as a permissive one. (4) A popular name is proof of provenance.
-    
-    **Instructional Rationale:** Apply-level work needs the learner to use criteria on new cases, so each candidate fails at most one criterion, and the check order is fixed so that exactly one answer is correct. Mixed shortlist and exclude cases prevent a habit of excluding everything.
-    
-    **Content:**
-    
-    The machine has 128 GB of unified memory, with a 20% headroom, so the usable memory is 102.4 GB. The memory figure on each card is the estimate at a 32,768-token context.
-    
-    The four criteria, checked in this order: "Tool calling", "Context window", "Fit with headroom", "Publisher and terms". A model passes "Tool calling" when it supports tool calling, passes "Context window" when its window is at least 64,000 tokens, passes "Fit with headroom" when its memory is at most 102.4 GB, and passes "Publisher and terms" when its publisher is identified and its license can be read.
-    
-    | # | Card shown to the learner | Correct decision | Correct failed criterion | Why (shown as feedback) |
-    |---|---|---|---|---|
-    | 1 | Model A: tool calling yes; window 256,000; memory 29 GB; Apache 2.0; publisher identified | Shortlist | None | It passes all four criteria. |
-    | 2 | Model B: tool calling no; window 128,000; memory 20 GB; Apache 2.0; publisher identified | Exclude | Tool calling | A harness acts through tool calls, so a model without them cannot run a skill. |
-    | 3 | Model C: tool calling yes; window 32,000; memory 18 GB; Apache 2.0; publisher identified | Exclude | Context window | 32,000 tokens is below the 64,000 minimum, and the harness prompt alone takes about 19,000. |
-    | 4 | Model D: tool calling yes; window 128,000; memory 118 GB; Apache 2.0; publisher identified | Exclude | Fit with headroom | 118 GB is above the usable 102.4 GB, so it would run with no margin on a unified-memory machine. |
-    | 5 | Model E: tool calling yes; window 256,000; memory 40 GB; license not stated; publisher identified | Exclude | Publisher and terms | Without a license the terms cannot be checked, so a result could not be recommended. |
-    | 6 | Model F: tool calling yes; window 128,000; memory 69 GB; Apache 2.0; publisher identified | Shortlist | None | It passes all four criteria, and 69 GB is under 102.4 GB. |
-    | 7 | Model G: tool calling yes; window 256,000; memory 24 GB; Apache 2.0; publisher an unknown repackager | Exclude | Publisher and terms | The weights cannot be traced to the original publisher, so the measurement would be of an unknown file. |
-    | 8 | Model H: tool calling yes; window 1,000,000; memory 25 GB; custom license published in the repository's license file; publisher identified | Shortlist | None | The terms are readable, so they can be checked, and every other criterion passes. |
-    
-    **Provenance:** The candidates are synthetic, written for this exercise, and the sim labels them "synthetic example". The criteria come from the "Model Selection Criteria" section of this chapter and the headroom from Chapter 11.
-    
-    **Rules:** Candidates are shown in the fixed order 1 to 8. A candidate is excluded for the first criterion it fails in the listed order. A "Shortlist" decision is correct only when it passes all four. Each decision is final once confirmed.
-    
-    **Learner Activity:**
-    
-    1. The learner reads card 1.
-    2. The learner chooses "Shortlist" or "Exclude", and for "Exclude" the first failed criterion, then confirms.
-    3. The sim shows the correct decision and criterion with the Why text, and marks the card correct or incorrect.
-    4. The learner repeats for cards 2 to 8. After card 8 the sim shows the score and the misconception behind each miss.
-    
-    **Feedback:** Eight cards, fixed order, one confirmed decision each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct decision, the failed criterion, and the Why text. The final score reads "n of 8 correct".
-    
-    **Starting State:** Card 1 is shown with no decision made, and the question on screen is "Does this model go on the shortlist, and if not, which criterion fails first?"
-    
-    **Chapter Anchors:** The chapter states that tool calling, a window of at least 64,000 tokens, a fit with headroom, and an identifiable publisher with readable terms are the four criteria, and that the usable memory of a 128 GB machine at 20% headroom is 102.4 GB.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

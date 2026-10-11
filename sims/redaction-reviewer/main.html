@@ -3,139 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Redaction Reviewer</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Redaction Reviewer using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="redaction-reviewer.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Redaction Reviewer</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> redaction-reviewer</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Evaluate</p>
-            <p><strong>Learning Objective:</strong> The learner will judge each of 10 lines of captured output as safe to publish or in need of redaction, and name the category of any detail to redact, with at least 9 of 10 correct.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** redaction-reviewer<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified<br/>
-    **Bloom Level:** Evaluate<br/>
-    **Bloom Verb:** judge<br/>
-    **Learning Objective:** The learner will judge each of 10 lines of captured output as safe to publish or in need of redaction, and name the category of any detail to redact, with at least 9 of 10 correct.
-    
-    **Prerequisites:** device-identifying details, IP address, hostname, tailnet name, hardware identifiers, keys and tokens, home directory path, placeholder conventions, documentation address ranges (all defined in the sections above this block).
-    
-    **Evidence of Mastery:** For each of the 10 lines the learner commits "Safe to publish" or "Redact" and, for "Redact", one category from the five listed, before the sim reveals the answer. A line is correct when the decision equals the Correct decision column and, for "Redact", the category equals the Correct category column. Mastery is 9 of 10 correct on the first attempt. Reading the lines is exploration, not evidence.
-    
-    **Misconceptions:** (1) A private address is not identifying. (2) A serial number or unique identifier is harmless because it grants no access. (3) A line already shown in a tutorial is safe. (4) Placeholders and documentation ranges still need redacting.
-    
-    **Instructional Rationale:** Evaluate-level judging needs the learner to apply the catalog of details to each line and to leave alone what is safe, so the lines mix four kinds of identifier with six safe lines, and include a line that is already a placeholder.
-    
-    **Content:**
-    
-    The five categories the learner chooses from: "Network address", "Name or tailnet", "Hardware identifier", "Account or home path", and "Key or token".
-    
-    | # | Line shown to the learner | Correct decision | Correct category | Why (shown as feedback) |
-    |---|---|---|---|---|
-    | 1 | `Architecture:        aarch64` | Safe to publish | None | It describes the processor type and identifies no unit. |
-    | 2 | `inet 198.51.100.24/24 brd 198.51.100.255 scope global eth0` | Redact | Network address | An interface address places the machine on a network. |
-    | 3 | `Hostname: example-host-01.example-tailnet.ts.net` | Redact | Name or tailnet | The full name carries both the machine's and the tailnet's name. |
-    | 4 | `SERIAL=EXAMPLE-0000-0000` | Redact | Hardware identifier | A serial number ties the output to one physical unit. |
-    | 5 | `GPU 0: NVIDIA GB10 (UUID: GPU-00000000-0000-0000-0000-000000000000)` | Redact | Hardware identifier | The unique identifier of a GPU identifies that unit. |
-    | 6 | `Driver Version: 580.xx.xx    CUDA Version: 13.0` | Safe to publish | None | Version numbers describe the software, not a specific machine. |
-    | 7 | `/home/exampleuser/dgx-eval-runs/s1-model/run.jsonl` | Redact | Account or home path | The path contains an account name. |
-    | 8 | `export HF_TOKEN=hf_xxxxxxxxxxxxxxxx` | Redact | Key or token | A model-hub token authorizes access to an account. |
-    | 9 | `MemAvailable:   104857600 kB` | Safe to publish | None | It is a memory figure and identifies no unit. |
-    | 10 | `100.x.y.z   <dgx-host>   <admin>@   linux   active; direct` | Safe to publish | None | Every identifying value is already a placeholder. |
-    
-    **Provenance:** The lines are synthetic, written for this exercise, with addresses from the documentation ranges and obviously inert names, and the sim labels them "synthetic example". The categories come from this chapter's catalog.
-    
-    **Rules:** Lines are shown in the fixed order 1 to 10. A line is "Redact" if it contains any value from the five categories that is not already a placeholder or a documentation-range address presented as an example. Each line has exactly one category or none.
-    
-    **Learner Activity:**
-    
-    1. The learner reads line 1.
-    2. The learner chooses "Safe to publish" or "Redact", and for "Redact" one of the five categories, then confirms.
-    3. The sim shows the correct decision and category with the Why text, and marks the line correct or incorrect.
-    4. The learner repeats for lines 2 to 10. After line 10 the sim shows the score and the misconception behind each miss.
-    
-    **Feedback:** Ten lines, fixed order, one confirmed decision each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct decision, category, and the Why text. The final score reads "n of 10 correct".
-    
-    **Starting State:** Line 1 is shown with no decision made, and the question on screen is "Is this line safe to publish?"
-    
-    **Chapter Anchors:** The chapter states the seven categories of detail that must not be published, that a serial number and a GPU identifier are hardware identifiers, that a home path carries an account name, and that a value already replaced by a placeholder is safe.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

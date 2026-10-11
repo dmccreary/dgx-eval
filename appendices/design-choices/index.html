@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/appendices/design-choices/">
       
       
-        <link rel="prev" href="../getting-started/">
+        <link rel="prev" href="../testing-architecture/">
       
       
-        <link rel="next" href="../cost-analysis/">
+        <link rel="next" href="../model-candidates/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description.md" class="md-nav__link">
+      <a href="../../course-description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -529,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing-architecture.md" class="md-nav__link">
+      <a href="../testing-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -770,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../model-candidates.md" class="md-nav__link">
+      <a href="../model-candidates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1453,7 +1453,11 @@ collected in the last section.</p>
 <td>The Primary Author</td>
 </tr>
 <tr>
-<td>Everything else on this page</td>
+<td>What a chapter quality score must reward: objective measures, the content guide and diagram rules, and consistency over peak quality</td>
+<td>The Primary Author</td>
+</tr>
+<tr>
+<td>Everything else on this page, including how the chapter quality score is built</td>
 <td>Claude</td>
 </tr>
 </tbody>
@@ -1855,7 +1859,20 @@ graph, the chapter structure, and the chapter content.</p>
 </tbody>
 </table>
 <h2 id="scoring">Scoring<a class="headerlink" href="#scoring" title="Permanent link">&para;</a></h2>
-<p><strong>Decided by:</strong> Claude.</p>
+<p><strong>Decided by:</strong> The Primary Author set what a score must reward. Claude chose the
+methods and designed the score.</p>
+<p>Two kinds of score are in use. Structural checks ask whether the output exists
+and is well formed: a learning graph with 200 concepts and no cycles, or a
+chapter file that is no longer a placeholder. The chapter quality score asks how
+closely a written chapter follows the book's content rules.</p>
+<p>The Primary Author asked four things of the second kind:</p>
+<ul>
+<li>Use objective measurements.</li>
+<li>Include adherence to the content guide, including where diagrams are placed
+  and how precisely they are specified.</li>
+<li>Report word count, diagram count, and reading level for each chapter.</li>
+<li>Favor consistent quality across chapters over high quality in a few.</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1866,11 +1883,15 @@ graph, the chapter structure, and the chapter content.</p>
 <tbody>
 <tr>
 <td><strong>Structural checks by script</strong></td>
-<td>Chosen for now. A program can verify that a graph has 200 concepts and no cycles</td>
+<td>Kept, for the learning graph and the chapter structure. A program can verify them exactly</td>
+</tr>
+<tr>
+<td><strong>A conformance score by script</strong></td>
+<td>Chosen for chapter content. It counts what the written rules ask for, gives the same answer on every run, and runs on the DGX with only the Python standard library</td>
 </tr>
 <tr>
 <td>A language model as judge</td>
-<td>It brings its own biases, and it would send the generated text to a cloud service</td>
+<td>Not chosen, again. It brings its own biases, it answers differently on each run, and it would send the generated text to a cloud service</td>
 </tr>
 <tr>
 <td>Human review against a rubric</td>
@@ -1878,8 +1899,46 @@ graph, the chapter structure, and the chapter content.</p>
 </tr>
 </tbody>
 </table>
-<p>A structural pass does not mean the content is good. No quality judgment has
-been made.</p>
+<p>Claude made four choices inside the conformance score.</p>
+<table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>Alternative considered</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Measure each chapter against a budget derived from its own concepts</td>
+<td>Raw counts of words and diagrams</td>
+<td>A raw count rewards whoever writes the most, and a chapter on a foundational topic should be longer than one on a narrow topic</td>
+</tr>
+<tr>
+<td>Cap every sub-score at full credit</td>
+<td>Reward more words, diagrams, or equations</td>
+<td>Length is not quality, and the guide says a dense chapter beats a padded one</td>
+</tr>
+<tr>
+<td>The book's headline is its mean score times its consistency</td>
+<td>The mean alone, or the best chapter</td>
+<td>Consistent quality was the Primary Author's stated priority. Unwritten chapters lower the mean and are left out of the consistency, so one fact is not charged twice</td>
+</tr>
+<tr>
+<td>Follow the skill's own batch tool for what counts as a placed diagram</td>
+<td>A stricter reading of the rules</td>
+<td>A diagram that the tool will find and build is correctly placed</td>
+</tr>
+</tbody>
+</table>
+<p>The cost is that the score measures conformance, not correctness. It cannot tell
+a chapter that follows every rule and teaches a wrong procedure from one that is
+right, and a specification with the right fields and nothing in them can satisfy
+it. The weights are Claude's judgment, and no person has yet compared the scores
+with their own reading of the chapters. Neither kind of score says that the
+mathematics is right or the explanation good.</p>
+<p><a href="../chapter-quality-score/">Chapter Quality Score</a> gives the algorithm, the
+reasoning behind each choice, and a link to the source code.</p>
 <h2 id="choices-that-did-not-hold-up">Choices That Did Not Hold Up<a class="headerlink" href="#choices-that-did-not-hold-up" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>The 256,000-token context.</strong> It is the suspected cause of a machine
@@ -1893,6 +1952,13 @@ been made.</p>
   aside partly for broken navigation files. Those came from a faulty example
   in the skill, which has since been corrected. That model has not been
   retested.</li>
+<li><strong>Trusting the first chapter scores.</strong> The chapter quality score had three
+  bugs that its totals did not show. One rule was stricter than the skill's own
+  tool, one function treated a whole chapter as boilerplate, and one pattern
+  matched an HTML tag. One chapter was scored about 14 points too low, and
+  book headlines moved by about two points when the bugs were fixed. Reading
+  single chapters found two of them, and tabulating how often each check failed
+  found the third.</li>
 </ul>
 
 
@@ -1932,7 +1998,7 @@ been made.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../getting-started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started">
+          <a href="../testing-architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Testing Architecture">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1942,20 +2008,20 @@ been made.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Getting Started
+                Testing Architecture
               </div>
             </div>
           </a>
         
         
           
-          <a href="../cost-analysis/" class="md-footer__link md-footer__link--next" aria-label="Next: Cost Analysis">
+          <a href="../model-candidates/" class="md-footer__link md-footer__link--next" aria-label="Next: Model Candidates">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Cost Analysis
+                Model Candidates
               </div>
             </div>
             <div class="md-footer__button md-icon">

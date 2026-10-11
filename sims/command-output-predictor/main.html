@@ -3,144 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Command Output Predictor</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Command Output Predictor using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="command-output-predictor.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Command Output Predictor</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> command-output-predictor</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply</p>
-            <p><strong>Learning Objective:</strong> The learner will execute five shell commands against a given directory tree by predicting the output and the resulting working directory after each, with at least 4 of 5 correct.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** command-output-predictor<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified<br/>
-    **Template:** https://github.com/dmccreary/learning-linux/tree/main/docs/sims/command-syntax<br/>
-    **Bloom Level:** Apply<br/>
-    **Bloom Verb:** execute<br/>
-    **Learning Objective:** The learner will execute five shell commands against a given directory tree by predicting the output and the resulting working directory after each, with at least 4 of 5 correct.
-    
-    **Prerequisites:** terminal, shell, working directory, path, absolute path, relative path, command, argument (all defined in the section "Command Line Basics" above this block).
-    
-    **Evidence of Mastery:** The learner selects one predicted output per command before the sim shows the real output. A selection is correct when it equals the option marked correct in Content. Mastery is 4 of 5 correct. Reading the directory tree and reading the feedback are exploration, not evidence.
-    
-    **Misconceptions:** (1) `ls` lists everything below the working directory, including the contents of subfolders. (2) `cd` prints the new path. (3) `..` names the current folder rather than the parent folder. (4) Each command starts fresh instead of continuing from the working directory the previous command left.
-    
-    **Instructional Rationale:** Apply-level execution needs the learner to carry state from one command to the next, so the five commands run in a fixed order and each prediction depends on the working directory the earlier commands produced. Committing to an answer before it is revealed turns watching a terminal into producing a result.
-    
-    **Content:**
-    
-    The sim shows this practice directory, labeled "synthetic example". The shell starts in `/home/student/lab`.
-    
-    | Path | Kind | Contents |
-    |---|---|---|
-    | `/home/student/lab/notes.txt` | file | Three lines: `model: unset`, `context: 4096`, `status: draft` |
-    | `/home/student/lab/readme.md` | file | One line: `Probe results go in results.` |
-    | `/home/student/lab/probes` | folder | Contains `cpu.py` and `gpu.py` |
-    | `/home/student/lab/results` | folder | Empty |
-    
-    The five commands, in this order, each with exactly four options shown in the order listed:
-    
-    | # | Command typed | Option A | Option B | Option C | Option D | Correct | Why (shown as feedback) |
-    |---|---|---|---|---|---|---|---|
-    | 1 | `pwd` | `/home/student` | `/home/student/lab` | `lab` | `notes.txt  probes  readme.md  results` | B | `pwd` prints the full absolute path of the working directory, not just its last folder name. |
-    | 2 | `ls` | `probes  results` | `notes.txt  readme.md` | `notes.txt  probes  readme.md  results` | `cpu.py  gpu.py` | C | `ls` lists both files and folders in the working directory, and does not list what is inside the folders. |
-    | 3 | `cd probes` | Prints `cpu.py  gpu.py` | Prints `/home/student/lab/probes` | Prints nothing; the working directory becomes `/home/student/lab/probes` | Prints `probes: Is a directory` | C | `cd` changes state silently. Its only evidence is the working directory that later commands see. |
-    | 4 | `ls` | `notes.txt  probes  readme.md  results` | `cpu.py  gpu.py` | `cpu.py  gpu.py  notes.txt` | Prints nothing | B | After `cd probes` the working directory is `probes`, so `ls` lists that folder's two files. |
-    | 5 | `cat ../notes.txt` | `cat: ../notes.txt: No such file or directory` | `notes.txt` | `cpu.py  gpu.py` | The three lines `model: unset`, `context: 4096`, `status: draft` | D | `..` names the parent folder, so the path reaches `/home/student/lab/notes.txt`, and `cat` prints the file's contents. |
-    
-    **Provenance:** The directory and its file contents are synthetic and invented for this exercise; the sim labels them "synthetic example". The behavior of `pwd`, `ls`, `cd`, `cat` and `..` is the behavior stated in the chapter section "Command Line Basics".
-    
-    **Rules:** The commands run in the fixed order 1 to 5 and state carries over: the working directory after command 3 is `/home/student/lab/probes` and stays so through commands 4 and 5. Option order is fixed as listed. There is no randomness and no numeric tolerance. Each command allows exactly one selection, and it is final.
-    
-    **Learner Activity:**
-    
-    1. The learner sees the directory table and the first command, `pwd`, with its four options.
-    2. The learner selects one option. The sim immediately shows the real output, marks the selection correct or incorrect, shows the correct option, and shows the Why text.
-    3. The learner moves to the next command. The sim shows the working directory that the earlier commands left, so the learner can see the state change after command 3.
-    4. After command 5 the sim shows the score and lists the Misconceptions that correspond to any commands answered incorrectly.
-    
-    **Feedback:** Five commands, fixed order, one selection each, and the selection is final. The real output, the correct option, and the Why text are shown immediately after the selection. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the Why text. The final score reads "n of 5 correct".
-    
-    **Starting State:** Command 1 is shown with no option selected, the working directory is `/home/student/lab`, and the question on screen is "What does the shell print?"
-    
-    **Chapter Anchors:** The chapter states that `pwd` prints the absolute path, `ls` lists files and folders without descending into folders, `cd` prints nothing on success, `cat` prints a file's contents, and `..` names the parent folder.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

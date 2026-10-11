@@ -3,137 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>DAG Cycle Spotter</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>DAG Cycle Spotter using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="dag-cycle-spotter.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>DAG Cycle Spotter</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> dag-cycle-spotter</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Analyze</p>
-            <p><strong>Learning Objective:</strong> The learner will distinguish prerequisite graphs that contain a cycle from graphs that do not, in 6 small graphs, with at least 5 of 6 classified correctly.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** dag-cycle-spotter<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified<br/>
-    **Template:** https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/dag-viewer<br/>
-    **Bloom Level:** Analyze<br/>
-    **Bloom Verb:** distinguish<br/>
-    **Learning Objective:** The learner will distinguish prerequisite graphs that contain a cycle from graphs that do not, in 6 small graphs, with at least 5 of 6 classified correctly.
-    
-    **Prerequisites:** concept dependency, edge direction, directed acyclic graph, cycle, topological order (all defined in the sections "Concept Dependency" and "Directed Acyclic Graph" above this block).
-    
-    **Evidence of Mastery:** For each graph the learner commits to one label, "Valid (no cycle)" or "Has a cycle", before the sim reveals the answer. For a graph labeled "Has a cycle", the learner also selects the concepts that lie on the cycle. A graph is correct when the label matches the answer column and, for cycle graphs, the selected set equals the cycle set exactly. Mastery is 5 of 6 correct. Looking at the graph is exploration, not evidence.
-    
-    **Misconceptions:** (1) Two concepts that share a prerequisite form a cycle. (2) A graph with two disconnected parts is invalid. (3) A concept that depends on itself is not a cycle. (4) A longer chain of dependencies is more likely to contain a cycle.
-    
-    **Instructional Rationale:** Analyze-level distinguishing needs the learner to inspect structure and decide, so each graph is small enough to trace by eye but constructed so that surface features (a shared prerequisite, a long chain, two components) do not predict the answer. Committing a label before reveal turns tracing into evidence.
-    
-    **Content:**
-    
-    Each graph is a list of dependencies in the form "dependent needs prerequisite". Concepts are Fractions, Decimals, Percent, Ratios, Proportions, and Equations. The sim labels all graphs "synthetic example".
-    
-    | # | Dependencies | Answer | Cycle set | Why (shown as feedback) |
-    |---|---|---|---|---|
-    | 1 | Percent needs Decimals; Decimals needs Fractions; Ratios needs Fractions; Proportions needs Ratios | Valid (no cycle) | none | Every path ends at Fractions, which needs nothing, so a teaching order exists. |
-    | 2 | Percent needs Decimals; Decimals needs Fractions; Fractions needs Percent | Has a cycle | Percent, Decimals, Fractions | Starting at Percent and following needs returns to Percent, so none of the three can be learned first. |
-    | 3 | Equations needs Proportions; Equations needs Percent; Proportions needs Fractions; Percent needs Fractions | Valid (no cycle) | none | Two concepts sharing one prerequisite is normal; there is no path that returns to its start. |
-    | 4 | Equations needs Proportions; Proportions needs Ratios; Ratios needs Equations; Ratios needs Fractions | Has a cycle | Equations, Proportions, Ratios | Equations, Proportions, and Ratios each need the next; the dependency on Fractions is fine but does not break the cycle. |
-    | 5 | Decimals needs Fractions; Percent needs Ratios | Valid (no cycle) | none | Two separate chains are allowed; a graph does not have to be connected. |
-    | 6 | Percent needs Percent; Percent needs Fractions | Has a cycle | Percent | A concept that needs itself is a cycle of length one, so it can never be learned first. |
-    
-    **Provenance:** The graphs are synthetic, constructed for this exercise, and the sim labels them "synthetic example". The definition of a cycle and a valid graph is the one stated in the chapter section "Directed Acyclic Graph".
-    
-    **Rules:** Graphs are shown in the fixed order 1 to 6, and each is a list of edges plus the set of concept names. A graph is "Has a cycle" if and only if some concept can reach itself by following needs, including by a single edge to itself. Disconnected graphs are valid. Each graph allows exactly one label commitment, and for cycle graphs one selection of cycle members, and both are final.
-    
-    **Learner Activity:**
-    
-    1. The learner sees graph 1 as a list of dependencies and its concept names.
-    2. The learner chooses "Valid (no cycle)" or "Has a cycle".
-    3. If the learner chose "Has a cycle", the sim asks them to select the concepts on the cycle, then the learner confirms.
-    4. The sim shows the correct label, the cycle set if there is one, and the Why text, and marks the graph correct or incorrect.
-    5. The learner repeats for graphs 2 to 6. The sim then shows the score and the misconception behind each missed graph.
-    
-    **Feedback:** Six graphs, fixed order, one committed answer each, and the answer is final. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct label, the cycle set, and the Why text. The correct answer is revealed immediately after the learner confirms. The final score reads "n of 6 correct".
-    
-    **Starting State:** Graph 1 is shown with no label chosen, and the question on screen is "Can these concepts be taught in some order?"
-    
-    **Chapter Anchors:** The chapter states that a learning graph must be a DAG, that a cycle makes teaching order impossible, that having several valid orders is normal, and that a graph may have shared prerequisites and disconnected parts.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

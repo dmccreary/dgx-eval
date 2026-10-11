@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The reference pages behind the evaluation: the course description, the setup steps, the design choices, the cost analysis, the status of each model, and the algorithm that scores generated chapters.">
+        <meta name="description" content="The reference pages behind the evaluation: the setup steps, the testing architecture, the design choices, the model candidates, the cost analysis, the status of each model, and the algorithm that scores generated chapters.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../course-description.md" class="md-nav__link">
+      <a href="../course-description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -529,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="testing-architecture.md" class="md-nav__link">
+      <a href="testing-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="model-candidates.md" class="md-nav__link">
+      <a href="model-candidates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1050,25 +1050,31 @@
 
 <h1 id="appendices">Appendices<a class="headerlink" href="#appendices" title="Permanent link">&para;</a></h1>
 <p>The chapters teach how to run the evaluation. These pages hold the record of
-the evaluation itself: what the course covers, what was done to the DGX, why the
-tests were built as they were, what a generated textbook costs, how far each
-model has got, and how the generated chapters are scored.</p>
+the evaluation itself: what was done to the DGX and how it was wired, which
+models were chosen, why the tests were built as they were, what a generated
+textbook costs, how far each model has got, and how the generated chapters are
+scored.</p>
 <p>Several of these pages describe one specific run and will go out of date as more
 models finish. Where a page rests on a single measurement or an estimate, it
 says so at the top.</p>
 <h2 id="list-of-appendices">List of Appendices<a class="headerlink" href="#list-of-appendices" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="course-description/">Course Description</a>.</strong> Who the course is for, what it
-  assumes, the topics it covers and the ones it leaves out, and its learning
-  outcomes written against the 2001 Bloom taxonomy. It is the course the book was
-  built from.</li>
 <li><strong><a href="getting-started/">Getting Started</a>.</strong> The setup steps this evaluation
   performed, in the order they were done: a conda environment for the tools,
   joining the private network, key-based SSH, and a read-only hardware inventory.
   Every step ends with a test, and every address is a placeholder.</li>
+<li><strong><a href="testing-architecture/">Testing Architecture</a>.</strong> An interactive diagram of
+  how the evaluation was wired: one laptop, two home networks, and two DGX
+  systems. It separates the orchestrator, the harness, and the model, shows what
+  runs inside each DGX, and shows what data crosses each boundary. It leaves out
+  every address and login.</li>
 <li><strong><a href="design-choices/">Design Choices</a>.</strong> Each decision behind the testing
   configuration: the choice, the options weighed against it, the reason, and who
   decided. It ends with the choices that did not hold up.</li>
+<li><strong><a href="model-candidates/">Model Candidates</a>.</strong> The ten open-weight models chosen
+  for testing on one DGX with 128 GB of unified memory: the parameter count and
+  main strength of each, why it was chosen, the first-round results, and the
+  models left off the list.</li>
 <li><strong><a href="cost-analysis/">Cost Analysis</a>.</strong> An estimate of what it costs to buy, set
   up, and run one DGX, what one textbook costs with each candidate model, and the
   price a generation service would need for a 20% margin. Every assumption is
