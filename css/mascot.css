@@ -8,7 +8,7 @@
   --mascot-secondary: #f57c00;   /* orange, matches the book accent    */
   --mascot-bg:        #e8eaf6;   /* light indigo                       */
   --mascot-border:    #5c6bc0;   /* medium indigo                      */
-  --mascot-size: 90px;
+  --mascot-size: 90px;           /* admonition image HEIGHT; width is automatic */
 }
 
 /* ---- Shared base for all mascot admonitions ---- */
@@ -131,11 +131,12 @@
 }
 
 /* ---- Mascot image floated LEFT of admonition body text ---- */
-/* The .md-typeset prefix outranks Material's `.md-typeset img { height: auto }`,
-   which otherwise stretches tall poses well past --mascot-size. */
+/* Tera's poses are tall portraits, so --mascot-size fixes the HEIGHT only and the
+   width follows the aspect ratio. A fixed square box left blank space on both sides.
+   The .md-typeset prefix outranks Material's `.md-typeset img { height: auto }`. */
 .md-typeset img.mascot-admonition-img {
   float: left;
-  width: var(--mascot-size);
+  width: auto;
   height: var(--mascot-size);
   /* margin: top right bottom left */
   margin: 0 .5em 0 0;
