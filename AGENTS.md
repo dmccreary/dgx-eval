@@ -26,6 +26,10 @@ writing-style rules, the MicroSim expectations, and the Markdown formatting
 rules for this book. Content that ignores it produces broken layouts and an
 inconsistent student experience.
 
+The guide also defines the book's learning mascot, Tera the Robot, and the rules
+for when Tera may appear. Instructor-facing content (teacher guides, instructor
+guides, answer keys) does not use the mascot.
+
 ## Security: never expose the device under test
 
 This repository and its published site are **public**. The DGX being evaluated

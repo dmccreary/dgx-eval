@@ -271,7 +271,8 @@ function buildLegend() {
     const legendContainer = document.getElementById('legend');
     legendContainer.innerHTML = '';
 
-    Object.entries(groups).forEach(([groupId, groupInfo]) => {
+    // FOUND (Foundation Concepts) always lists first; the sort is stable, so the rest keep file order.
+    Object.entries(groups).sort(([a], [b]) => (b.toUpperCase() === 'FOUND') - (a.toUpperCase() === 'FOUND')).forEach(([groupId, groupInfo]) => {
         const count = groupCounts[groupId] || 0;
 
         const item = document.createElement('div');
