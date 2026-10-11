@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="Predicting whether a model fits before downloading it: parameters, numeric precision, quantization, KV cache, runtime overhead, and safety headroom, combined into a model-fit calculation with a verdict for unified memory.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>11. Model Sizing and Fit - DGX Evaluation for Textbook Generation</title>
+        <title>Model Sizing and Fit - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              11. Model Sizing and Fit
+              Model Sizing and Fit
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -903,6 +726,231 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Weights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Weights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Weights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Weights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-parameters-that-fit-in-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Parameters That Fit in Memory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dense-model-mixture-of-experts-and-active-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dense Model, Mixture of Experts, and Active Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeric-precision-and-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numeric Precision and Quantization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numeric Precision and Quantization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeric-precision-bits-per-parameter-and-bytes-per-weight" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numeric Precision, Bits per Parameter, and Bytes per Weight
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fp16-and-bf16" class="md-nav__link">
+    <span class="md-ellipsis">
+      FP16 and BF16
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantization-quantization-level-8-bit-and-4-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization, Quantization Level, 8-Bit and 4-Bit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantized-file-overhead-size-on-disk-and-memory-for-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantized File Overhead, Size on Disk, and Memory for Weights
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-overhead-and-headroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context, Overhead, and Headroom
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context, Overhead, and Headroom">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kv-cache-and-context-length-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      KV Cache and Context Length Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime Overhead
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safety-headroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety Headroom
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fit-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Fit Calculation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Fit Calculation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-estimation-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Estimation Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-fit-calculation-and-fit-verdict" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model-Fit Calculation and Fit Verdict
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unified-memory-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unified Memory Fit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-fit-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model-Fit Calculator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model-Fit Calculator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-model-fit-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Model-Fit Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1201,6 +1249,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1264,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1365,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1507,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1666,231 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Weights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Weights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Weights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Weights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-parameters-that-fit-in-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Parameters That Fit in Memory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dense-model-mixture-of-experts-and-active-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dense Model, Mixture of Experts, and Active Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeric-precision-and-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numeric Precision and Quantization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numeric Precision and Quantization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeric-precision-bits-per-parameter-and-bytes-per-weight" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numeric Precision, Bits per Parameter, and Bytes per Weight
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fp16-and-bf16" class="md-nav__link">
+    <span class="md-ellipsis">
+      FP16 and BF16
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantization-quantization-level-8-bit-and-4-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization, Quantization Level, 8-Bit and 4-Bit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantized-file-overhead-size-on-disk-and-memory-for-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantized File Overhead, Size on Disk, and Memory for Weights
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-overhead-and-headroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context, Overhead, and Headroom
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context, Overhead, and Headroom">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kv-cache-and-context-length-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      KV Cache and Context Length Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime Overhead
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safety-headroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety Headroom
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fit-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Fit Calculation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Fit Calculation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-estimation-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Estimation Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-fit-calculation-and-fit-verdict" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model-Fit Calculation and Fit Verdict
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unified-memory-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unified Memory Fit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-fit-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model-Fit Calculator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model-Fit Calculator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-model-fit-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Model-Fit Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1525,13 +2038,473 @@
 <li><a href="../05-dgx-hardware-architecture/">Chapter 5: NVIDIA DGX Hardware Architecture</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Do the Arithmetic Before the Download</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+A model that does not fit costs you a long download and a confusing failure, and a model that barely fits can freeze the whole machine. By the end of this chapter you will predict, to within a few gigabytes, whether a model will fit before you pull a single file. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Chapter 5 established that on a unified-memory machine everything shares one pool, and Chapter 10 built the probe that reports how much of it is free. This chapter supplies the other side of the comparison: how much memory a given model needs. With both numbers in hand, a fit decision becomes subtraction.</p>
+<p>The estimate has three parts that behave differently. The <strong>weights</strong> are fixed by the model and its precision. The <strong>KV cache</strong> grows with the context you ask for. The <strong>runtime overhead</strong> is a small amount that the server adds on its own. The chapter builds each one, adds a safety margin, and ends with a calculator that returns a verdict. Measurements from this evaluation's own units appear alongside each formula, so you can see how close the estimate comes.</p>
+<h2 id="the-weights">The Weights<a class="headerlink" href="#the-weights" title="Permanent link">&para;</a></h2>
+<h3 id="model-weights">Model Weights<a class="headerlink" href="#model-weights" title="Permanent link">&para;</a></h3>
+<p><strong>Model weights</strong> are the learned numbers that make up a model. A language model is, concretely, a very large collection of them, and loading a model means placing every one of them in memory where the processor can read it. The count of weights is the model's <strong>parameter count</strong>, written in billions: a "27B" model has about 27 billion.</p>
+<p>Weights dominate the memory budget, because every one must be resident for the model to run at full speed. The memory they take is the parameter count times the size of one number:</p>
+<div class="arithmatex">\[ \text{memory for weights} = \text{parameters} \times \text{bytes per weight} \]</div>
+<p>A worked example makes the scale concrete. A 27-billion-parameter model stored at three precisions, which the next sections define, needs:</p>
+<table>
+<thead>
+<tr>
+<th>Precision</th>
+<th>Bytes per weight</th>
+<th>Memory for weights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16-bit</td>
+<td>2</td>
+<td>54 GB</td>
+</tr>
+<tr>
+<td>8-bit</td>
+<td>1</td>
+<td>27 GB</td>
+</tr>
+<tr>
+<td>4-bit</td>
+<td>0.5</td>
+<td>13.5 GB</td>
+</tr>
+</tbody>
+</table>
+<p>The same model is a 54 GB problem or a 13.5 GB one, and which it is depends on a choice made when the file was produced. This is why the precision is part of a model's name in a library and why two files with the same parameter count can differ by a factor of four.</p>
+<h4 id="diagram-parameters-that-fit-in-memory">Diagram: Parameters That Fit in Memory<a class="headerlink" href="#diagram-parameters-that-fit-in-memory" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/model-fit-by-memory/main.html" width="100%" height="682px" scrolling="no"></iframe>
+
+<p><a class="md-button" href="../../sims/model-fit-by-memory/main.html">Run the Parameters That Fit in Memory MicroSim fullscreen</a></p>
+<details>
+<summary>Parameters That Fit in Memory (reused MicroSim)</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> model-fit-by-memory<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Reused<br/>
+<strong>Source:</strong> sims/model-fit-by-memory/index.md in this book<br/>
+<strong>Source Repo:</strong> https://github.com/dmccreary/dgx-eval/tree/main/docs/sims/model-fit-by-memory<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate the largest model, by parameter count, whose weights fit in a given amount of memory at 4-bit precision.</p>
+<p>Reused from this book's own MicroSims, which already exists locally, so no new specification is needed.</p>
+</details>
+<p>The sim shows only the weights, at one precision, with a fixed 20% kept free. The rest of this chapter adds the pieces it leaves out.</p>
+<h3 id="dense-model-mixture-of-experts-and-active-parameters">Dense Model, Mixture of Experts, and Active Parameters<a class="headerlink" href="#dense-model-mixture-of-experts-and-active-parameters" title="Permanent link">&para;</a></h3>
+<p>A <strong>dense model</strong> uses all of its parameters to produce every token. A <strong>mixture-of-experts</strong> model splits much of its parameters into many groups called experts, and for each token a routing step selects a small number of them. The parameters actually used for a token are its <strong>active parameters</strong>.</p>
+<p>The distinction changes two things in opposite directions, and confusing them is a common mistake.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Dense model</th>
+<th>Mixture-of-experts model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Memory needed</td>
+<td>All parameters</td>
+<td>All parameters, since any expert may be chosen</td>
+</tr>
+<tr>
+<td>Work per token</td>
+<td>All parameters</td>
+<td>Only the active parameters</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Falls as the model grows</td>
+<td>Close to a much smaller dense model</td>
+</tr>
+<tr>
+<td>Example from this evaluation</td>
+<td><code>gemma4:31b</code>, 30.7 billion</td>
+<td><code>gemma4:26b</code>, 25.2 billion total, 3.8 billion active</td>
+</tr>
+</tbody>
+</table>
+<p>The two Gemma models are a clean comparison: similar total size, similar memory, and a threefold difference in speed. A mixture-of-experts model does not save memory. It saves time per token.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Memory Pays for the Whole Model, Speed Pays for the Active Part</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+A 26-billion-parameter mixture-of-experts model still needs room for all 26 billion, because the router might pick any expert on the next token. What it saves is the work of reading them. Keep the two questions apart: does it fit, and how fast will it run.</p>
+</div>
+<h2 id="numeric-precision-and-quantization">Numeric Precision and Quantization<a class="headerlink" href="#numeric-precision-and-quantization" title="Permanent link">&para;</a></h2>
+<h3 id="numeric-precision-bits-per-parameter-and-bytes-per-weight">Numeric Precision, Bits per Parameter, and Bytes per Weight<a class="headerlink" href="#numeric-precision-bits-per-parameter-and-bytes-per-weight" title="Permanent link">&para;</a></h3>
+<p><strong>Numeric precision</strong> is how many bits are used to store each number. More bits represent a number more finely and take more memory. <strong>Bits per parameter</strong> counts them, and <strong>bytes per weight</strong> is the same figure divided by 8, which is the one that multiplies the parameter count.</p>
+<p>The common formats are few, and the table gives each a name and a size.</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Bits</th>
+<th>Bytes per weight</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FP32</td>
+<td>32</td>
+<td>4</td>
+<td>Training and some calculations</td>
+</tr>
+<tr>
+<td>FP16, BF16</td>
+<td>16</td>
+<td>2</td>
+<td>The usual full-precision release of a model</td>
+</tr>
+<tr>
+<td>8-bit</td>
+<td>8</td>
+<td>1</td>
+<td>A quantized file that keeps most quality</td>
+</tr>
+<tr>
+<td>4-bit</td>
+<td>4</td>
+<td>0.5</td>
+<td>The common local-inference choice</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fp16-and-bf16">FP16 and BF16<a class="headerlink" href="#fp16-and-bf16" title="Permanent link">&para;</a></h3>
+<p><strong>FP16</strong> and <strong>BF16</strong> are the two 16-bit floating-point formats. Both take two bytes, so they cost the same memory. They differ in how they spend their 16 bits. FP16 keeps more digits of precision and a narrower range of values. BF16 keeps the wide range of the 32-bit format and fewer digits, which makes it more forgiving in training. A model released in BF16 is the reference that quantized versions are made from.</p>
+<h3 id="quantization-quantization-level-8-bit-and-4-bit">Quantization, Quantization Level, 8-Bit and 4-Bit<a class="headerlink" href="#quantization-quantization-level-8-bit-and-4-bit" title="Permanent link">&para;</a></h3>
+<p><strong>Quantization</strong> is storing a model's weights with fewer bits than the original, trading a small loss of accuracy for a large saving in memory and a gain in speed. A <strong>quantization level</strong> names how aggressively: 8-bit keeps nearly all of the original's quality at half the 16-bit size, and 4-bit cuts it to a quarter with a loss that is small for most tasks and larger for hard reasoning.</p>
+<p>File names for the common format carry the level in a code such as <code>Q4_K_M</code> or <code>Q8_0</code>, and the model library's default tag for a model is usually 4-bit. This evaluation's design choices page records the decision: every candidate ran at its default 4-bit, with an 8-bit retest left for the winner, since memory is not the constraint on this machine.</p>
+<p>The effect on quality is not uniform, and it is an evaluation question, not a calculation. Chapter 15 returns to it with measurements.</p>
+<h3 id="quantized-file-overhead-size-on-disk-and-memory-for-weights">Quantized File Overhead, Size on Disk, and Memory for Weights<a class="headerlink" href="#quantized-file-overhead-size-on-disk-and-memory-for-weights" title="Permanent link">&para;</a></h3>
+<p>A "4-bit" file is not exactly 4 bits per parameter. A quantized file stores the scaling factors that let the small numbers be turned back into real ones, and it keeps some layers, often the ones most sensitive to precision, at a higher precision. <strong>Quantized file overhead</strong> is the extra that results. <strong>Size on disk</strong> is the file's actual size, and <strong>memory for weights</strong> is what that file takes once loaded, which is close to the same number.</p>
+<p>This evaluation measured the overhead, and the measurements are the reason the calculator below does not use 4.0.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters</th>
+<th>Formula at 4-bit</th>
+<th>Actual download</th>
+<th>Effective bits per parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gemma4:26b</code></td>
+<td>25.2 billion</td>
+<td>13 GB</td>
+<td>18 GB</td>
+<td>5.7</td>
+</tr>
+<tr>
+<td><code>qwen3.8:27b</code></td>
+<td>27 billion</td>
+<td>14 GB</td>
+<td>17 GB</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td><code>gemma4:31b</code></td>
+<td>30.7 billion</td>
+<td>15 GB</td>
+<td>20 GB</td>
+<td>5.2</td>
+</tr>
+<tr>
+<td><code>gpt-oss:120b</code></td>
+<td>117 billion</td>
+<td>59 GB</td>
+<td>65 GB</td>
+<td>4.4</td>
+</tr>
+</tbody>
+</table>
+<p>The last column is the download size times 8 divided by the parameter count. The four "4-bit" files work out to between 4.4 and 5.7 bits per parameter. A planner who used 4.0 would have underestimated the weights by 10 to 30 percent, in the direction that makes a machine look roomier than it is.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Use the File Size When You Can, 5 Bits When You Cannot</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+The download size on the library page is the best predictor of memory for weights, since it is what will load. When you only have a parameter count, multiply by about 5 bits and not 4, and your estimate will err on the safe side.</p>
+</div>
+<h2 id="context-overhead-and-headroom">Context, Overhead, and Headroom<a class="headerlink" href="#context-overhead-and-headroom" title="Permanent link">&para;</a></h2>
+<h3 id="kv-cache-and-context-length-memory">KV Cache and Context Length Memory<a class="headerlink" href="#kv-cache-and-context-length-memory" title="Permanent link">&para;</a></h3>
+<p>The <strong>KV cache</strong> is the memory a model uses to remember the conversation so far. For every token already in the context, the model keeps two vectors at every layer, called the key and the value, so that it does not recompute them for each new token. The cache grows by a fixed amount per token, and <strong>context length memory</strong> is that amount times the number of tokens you allow.</p>
+<p>The per-token amount comes from the model's shape. Each token stores a key and a value (2 vectors), at every layer, for each of the model's key-value heads, each of a fixed dimension, at the cache's precision:</p>
+<div class="arithmatex">\[ \text{KV bytes per token} = 2 \times \text{layers} \times \text{KV heads} \times \text{head dimension} \times \text{bytes per value} \]</div>
+<p>A worked example uses an illustrative shape, not the published architecture of any candidate: 48 layers, 8 key-value heads, a head dimension of 128, and 2 bytes per value. That gives 2 × 48 × 8 × 128 × 2 = 196,608 bytes, or 192 KiB, for each token.</p>
+<table>
+<thead>
+<tr>
+<th>Context length</th>
+<th>KV cache</th>
+<th>Calculation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32,768 tokens</td>
+<td>6.4 GB</td>
+<td>32,768 × 196,608 bytes</td>
+</tr>
+<tr>
+<td>131,072 tokens</td>
+<td>25.8 GB</td>
+<td>131,072 × 196,608 bytes</td>
+</tr>
+<tr>
+<td>262,144 tokens</td>
+<td>51.5 GB</td>
+<td>262,144 × 196,608 bytes</td>
+</tr>
+</tbody>
+</table>
+<p>The cache is allocated for the context length the server is configured with. It is not something you can ignore until the conversation gets long. This evaluation measured it: with a 20 GB model loaded and idle, one unit showed 66 to 71 GB in use at a 256,000-token setting, where the same model at 32,000 tokens took 29 GB. The difference is mostly the cache, and it is about twice the size of the model.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A Context Setting Is a Memory Reservation</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Raising the context length does not make a model slower to load a little. It reserves tens of gigabytes before the first prompt, on the same pool the operating system lives in. Choose the smallest context the job needs, and raise it deliberately while watching available memory.</p>
+</div>
+<h3 id="runtime-overhead">Runtime Overhead<a class="headerlink" href="#runtime-overhead" title="Permanent link">&para;</a></h3>
+<p><strong>Runtime overhead</strong> is the memory the inference server and the GPU stack use beyond the weights and the cache: the compute buffers, the CUDA context, and bookkeeping. It is small compared with the other two, and it is not zero. From the four measurements at a 32,000-token context, the weights plus the cache plus the overhead came to 24 to 69 GB where the weights alone were 17 to 65 GB, so the cache and overhead together were 4 to 9 GB. The calculator uses 3 GB for the overhead alone, which with a 6.4 GB cache gives 9.4 GB, at the top of that range and so on the cautious side.</p>
+<h3 id="safety-headroom">Safety Headroom<a class="headerlink" href="#safety-headroom" title="Permanent link">&para;</a></h3>
+<p><strong>Safety headroom</strong> is memory deliberately left unused, as a margin against the things an estimate misses: the operating system, other processes, a cache that grows during a run, and an estimate that is simply low. It is expressed as a share of the memory, and this course uses 20% as the default.</p>
+<p>On a unified-memory machine the headroom is not a nicety. Exhausting a pool that the operating system also runs on can freeze the whole machine instead of stopping one program, as Chapter 5 described. The memory watchdog of Chapter 18 enforces a floor in gigabytes for the same reason, and headroom is the planning-time version of that floor.</p>
+<h2 id="the-fit-calculation">The Fit Calculation<a class="headerlink" href="#the-fit-calculation" title="Permanent link">&para;</a></h2>
+<h3 id="memory-estimation-formula">Memory Estimation Formula<a class="headerlink" href="#memory-estimation-formula" title="Permanent link">&para;</a></h3>
+<p>The <strong>memory estimation formula</strong> adds the three parts defined above. Weights depend on the model and its precision, the cache depends on the context you configure, and the overhead is a small constant:</p>
+<div class="arithmatex">\[ \text{memory needed} = \underbrace{\text{parameters} \times \tfrac{\text{bits}}{8}}_{\text{weights}} + \underbrace{\text{context} \times \text{KV bytes per token}}_{\text{KV cache}} + \text{overhead} \]</div>
+<p>Each symbol has a unit. Parameters are in billions, so weights come out in gigabytes. Bits is the effective bits per parameter, 5.0 for a file labeled 4-bit, from the measurements above. Context is in tokens. KV bytes per token comes from the model's shape, or from the 192 KiB of the worked example if you do not know it. Overhead is in gigabytes.</p>
+<h3 id="model-fit-calculation-and-fit-verdict">Model-Fit Calculation and Fit Verdict<a class="headerlink" href="#model-fit-calculation-and-fit-verdict" title="Permanent link">&para;</a></h3>
+<p>A <strong>model-fit calculation</strong> compares the memory needed with the memory available, after setting aside the safety headroom. The comparison produces a <strong>fit verdict</strong>, and three verdicts are enough because each one calls for a different action.</p>
+<table>
+<thead>
+<tr>
+<th>Verdict</th>
+<th>Condition</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fits</td>
+<td>Needed ≤ memory × (1 − headroom)</td>
+<td>Proceed</td>
+</tr>
+<tr>
+<td>Fits without headroom</td>
+<td>memory × (1 − headroom) &lt; needed ≤ memory</td>
+<td>Reduce context or choose a smaller file; do not run unattended</td>
+</tr>
+<tr>
+<td>Does not fit</td>
+<td>Needed &gt; memory</td>
+<td>Choose a smaller model or lower precision</td>
+</tr>
+</tbody>
+</table>
+<p>The middle verdict is the one that earns its place. A model in that zone loads, and then runs until something else asks for memory, which on a unified-memory machine can be the operating system itself. A calculation that returned only "fits" or "does not fit" would call it a success.</p>
+<h3 id="unified-memory-fit">Unified Memory Fit<a class="headerlink" href="#unified-memory-fit" title="Permanent link">&para;</a></h3>
+<p><strong>Unified memory fit</strong> is the same calculation with the right number for memory. On a machine with dedicated GPU memory, the available memory is the GPU's free memory, per GPU. On a unified-memory machine it is the system's available memory from the RAM probe of Chapter 10, since that pool is the only one, minus the headroom.</p>
+<p>This is why the report's <code>unified_memory</code> field mattered: it decides which number goes into the comparison. The same model can fit on a 128 GB unified-memory machine and not fit on a 24 GB discrete GPU with 512 GB of system RAM beside it.</p>
+<h3 id="model-fit-calculator">Model-Fit Calculator<a class="headerlink" href="#model-fit-calculator" title="Permanent link">&para;</a></h3>
+<p>A <strong>model-fit calculator</strong> is the formula and the verdict as a program. The function below takes the model and the machine and returns the memory needed, the usable limit, and the verdict. Its parameters, in order, are the parameter count in billions, the effective bits per parameter, the context in tokens, the KV cache bytes per token in KiB, the runtime overhead in gigabytes, the memory in gigabytes, and the headroom as a fraction.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">fit_verdict</span><span class="p">(</span><span class="n">params_b</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">kv_kib_per_token</span><span class="p">,</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                <span class="n">overhead_gb</span><span class="p">,</span> <span class="n">memory_gb</span><span class="p">,</span> <span class="n">headroom</span><span class="o">=</span><span class="mf">0.20</span><span class="p">):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">weights</span> <span class="o">=</span> <span class="n">params_b</span> <span class="o">*</span> <span class="n">bits</span> <span class="o">/</span> <span class="mi">8</span>                        <span class="c1"># GB</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">kv</span> <span class="o">=</span> <span class="n">context</span> <span class="o">*</span> <span class="n">kv_kib_per_token</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mf">1e9</span>         <span class="c1"># GB</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">total</span> <span class="o">=</span> <span class="n">weights</span> <span class="o">+</span> <span class="n">kv</span> <span class="o">+</span> <span class="n">overhead_gb</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">limit</span> <span class="o">=</span> <span class="n">memory_gb</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">headroom</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">if</span> <span class="n">total</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">:</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="n">verdict</span> <span class="o">=</span> <span class="s2">"Fits"</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">elif</span> <span class="n">total</span> <span class="o">&lt;=</span> <span class="n">memory_gb</span><span class="p">:</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="n">verdict</span> <span class="o">=</span> <span class="s2">"Fits without headroom"</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="n">verdict</span> <span class="o">=</span> <span class="s2">"Does not fit"</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">limit</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">verdict</span>
+</span></code></pre></div>
+<p>Two runs on this evaluation's machine, a 128 GB unified-memory unit, show it against the measurements. The model is <code>gemma4:31b</code>, with 30.7 billion parameters at 5.0 effective bits.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">fit_verdict</span><span class="p">(</span><span class="mf">30.7</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mi">32768</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>    <span class="c1"># (28.6, 102.4, 'Fits')</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">fit_verdict</span><span class="p">(</span><span class="mf">30.7</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mi">262144</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>   <span class="c1"># (73.7, 102.4, 'Fits')</span>
+</span></code></pre></div>
+<p>The first estimate, 28.6 GB, compares with the 29 GB measured at that context. The second, 73.7 GB, compares with the 71 GB measured with the model idle at 256,000 tokens. The estimates are within a few percent of the measurements, and both say "Fits".</p>
+<p>The second result deserves a second look, because that configuration is the one where a unit stopped responding a few minutes into a long run. An estimate of the idle footprint is a floor, not a peak: the server's per-conversation state grows as a run proceeds, and the cause of the freeze was not confirmed. A "Fits" verdict at 73.7 GB with 102 GB of limit means the idle state fits, and it does not mean a long run is safe. This is why Chapter 18 adds a watchdog on top of the calculation.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">The Formula Is Simple and the Judgment Is Not</p>
+<p><img alt="Tera encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+If you got the arithmetic right and the machine still struggled, you have not made a mistake. An estimate predicts the starting footprint, and a long run adds to it. Treat the verdict as a gate on what to try, then measure what actually happens with the vitals log.</p>
+</div>
+<h4 id="diagram-model-fit-calculator">Diagram: Model-Fit Calculator<a class="headerlink" href="#diagram-model-fit-calculator" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Model-Fit Calculator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> model-fit-calculator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/dgx-eval/tree/main/docs/sims/model-fit-by-memory<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate the memory a model needs from its parameter count, precision, and context length, to within 1 GB, and state the fit verdict, for 3 challenges.</p>
+<p><strong>Prerequisites:</strong> model weights, numeric precision, quantization, KV cache, runtime overhead, safety headroom, fit verdict, unified memory fit (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 3 challenges the learner types the memory needed in gigabytes and chooses one of the three verdicts before the sim reveals the answer. A challenge is correct when the typed value is within 1 GB of the model value and the verdict matches. Mastery is 3 of 3. Changing the inputs in exploration is not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A 4-bit file uses exactly 4 bits per parameter. (2) The context length does not change memory until the conversation is long. (3) A model that loads has therefore fit. (4) A larger memory always means a bigger model can be run.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level calculation needs the learner to combine three terms, so each challenge changes one input that moves a different term: context for the cache, memory for the verdict, and precision for the weights. The middle verdict is included so that the learner meets the zone where a model loads and is still unsafe.</p>
+<p><strong>Content:</strong></p>
+<p>The learner can change seven quantities:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Min</th>
+<th>Max</th>
+<th>Step</th>
+<th>Default</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parameters</td>
+<td>1</td>
+<td>200</td>
+<td>0.1</td>
+<td>30.5</td>
+<td>billions</td>
+</tr>
+<tr>
+<td>Precision</td>
+<td>16, 8, or 4-bit file</td>
+<td></td>
+<td></td>
+<td>4-bit</td>
+<td></td>
+</tr>
+<tr>
+<td>Context length</td>
+<td>4,096</td>
+<td>262,144</td>
+<td>4,096</td>
+<td>32,768</td>
+<td>tokens</td>
+</tr>
+<tr>
+<td>KV cache per token</td>
+<td>32</td>
+<td>512</td>
+<td>32</td>
+<td>192</td>
+<td>KiB</td>
+</tr>
+<tr>
+<td>Runtime overhead</td>
+<td>0</td>
+<td>10</td>
+<td>0.5</td>
+<td>3</td>
+<td>GB</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>16</td>
+<td>512</td>
+<td>16</td>
+<td>128</td>
+<td>GB</td>
+</tr>
+<tr>
+<td>Headroom</td>
+<td>0.05</td>
+<td>0.40</td>
+<td>0.05</td>
+<td>0.20</td>
+<td>share of memory</td>
+</tr>
+</tbody>
+</table>
+<p>The effective bits per parameter for each precision are 16 for the 16-bit file, 8.5 for the 8-bit file, and 5.0 for the 4-bit file.</p>
+<p>The three challenges, in this order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Parameters</th>
+<th>Precision</th>
+<th>Context</th>
+<th>Memory</th>
+<th>Model memory needed</th>
+<th>Verdict</th>
+<th>Feedback when wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>30.7</td>
+<td>4-bit</td>
+<td>32,768</td>
+<td>128</td>
+<td>28.6 GB</td>
+<td>Fits</td>
+<td>Weights 30.7 × 5.0 ÷ 8 = 19.2 GB, cache 32,768 × 192 KiB = 6.4 GB, overhead 3 GB, total 28.6 GB, which is under the usable 102.4 GB.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>30.7</td>
+<td>4-bit</td>
+<td>262,144</td>
+<td>64</td>
+<td>73.7 GB</td>
+<td>Does not fit</td>
+<td>Weights 19.2 GB, cache 262,144 × 192 KiB = 51.5 GB, overhead 3 GB, total 73.7 GB, which is above all 64 GB of memory.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>110</td>
+<td>8-bit</td>
+<td>32,768</td>
+<td>128</td>
+<td>126.3 GB</td>
+<td>Fits without headroom</td>
+<td>Weights 110 × 8.5 ÷ 8 = 116.9 GB, cache 6.4 GB, overhead 3 GB, total 126.3 GB, which is under 128 GB and above the usable 102.4 GB.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The effective bits for the 4-bit file are rounded from the measured range of 4.4 to 5.7 in this chapter's table. The 8-bit value of 8.5 and the cache shape of 192 KiB per token are illustrative, and the sim labels them "illustrative, not a published figure". Challenge 1 compares with the measured 29 GB in this chapter.</p>
+<p><strong>Rules:</strong> Weights in GB = parameters × effective bits ÷ 8. Cache in GB = context × KV per token in KiB × 1,024 ÷ 10^9. Needed = weights + cache + overhead. Usable = memory × (1 − headroom). Verdict "Fits" when needed &lt;= usable, "Fits without headroom" when usable &lt; needed &lt;= memory, and "Does not fit" when needed &gt; memory. Values are shown to one decimal.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads challenge 1, whose inputs are shown, and types the memory needed in GB.</li>
+<li>The learner chooses a verdict and presses Check.</li>
+<li>The sim reveals the model value, the verdict, and the Feedback text, and marks the challenge correct or missed.</li>
+<li>After all three challenges the exploration mode unlocks and the learner changes any of the seven quantities, watching a bar split into weights, cache, and overhead, with the usable limit and the memory marked.</li>
+<li>In exploration the learner should notice that raising the context moves the cache term far more than changing the precision of a small model.</li>
+</ol>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: <model value> GB, <verdict>." Incorrect: the "Feedback when wrong" text for that challenge. After the second wrong attempt the model value and the worked calculation are shown, and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Starting State:</strong> Challenge 1 is shown with an empty answer box and its inputs displayed. The question on screen is "How much memory does this model need, and does it fit?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states 5.0 effective bits for a 4-bit file, 192 KiB of cache per token in the worked example, 3 GB of runtime overhead, a 20% headroom default, and the three verdicts; its worked results are 28.6 GB and 73.7 GB for the 30.7-billion-parameter model.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>A model's memory is its weights plus its KV cache plus a small runtime overhead. The weights are the parameter count times the bytes per weight, and a "4-bit" file measures nearer 5 bits per parameter once its scaling factors and higher-precision layers are counted. The cache grows with the context you configure, and it is reserved at the full setting. A mixture-of-experts model needs memory for all of its parameters while doing the work of only its active ones. A safety headroom turns the comparison into three verdicts, and on unified memory the memory to compare against is the system's available memory. The result is a prediction of the starting footprint, which a long run can exceed.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Predict a Fit Before You Download</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now estimate a model's weights, cache, and overhead, apply a headroom, and reach one of three verdicts that matches what this evaluation measured to within a few percent. Chapter 12 uses the calculation to choose which models are worth downloading at all.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

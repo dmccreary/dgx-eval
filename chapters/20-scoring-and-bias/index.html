@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="How generated output is scored and how scores mislead: rubrics, structural checks on learning graphs, calibration, bias such as LLM-as-judge, blind human review, and reporting provisional and negative results honestly.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>20. Scoring, Bias, and Structural Checks - DGX Evaluation for Textbook Generation</title>
+        <title>Scoring, Bias, and Structural Checks - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              20. Scoring, Bias, and Structural Checks
+              Scoring, Bias, and Structural Checks
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1097,6 +920,219 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubrics-and-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubrics and Checks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rubrics and Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scoring-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoring Rubric
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structural Checks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-labels-orphans-and-label-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicate Labels, Orphans, and Label Length
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-cycle-check-and-csv-json-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependency Cycle Check and CSV-JSON Agreement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-check-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoring Check Calibration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#judging-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Judging Quality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Judging Quality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-level-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading Level Measure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faithfulness-to-description-mathematical-notation-and-microsim-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faithfulness to Description, Mathematical Notation, and MicroSim Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bias-in-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bias in Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-as-judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLM-as-Judge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blind-human-review-and-the-human-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blind Human Review and the Human Quality Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Quality Score
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-honestly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reporting Honestly
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reporting Honestly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provisional-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provisional Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-result-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Negative Result Reporting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations Statement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-design-critique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experimental Design Critique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experimental Design Critique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-learning-graph-defect-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Learning Graph Defect Finder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1201,6 +1237,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1252,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1353,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1495,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1654,219 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubrics-and-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubrics and Checks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rubrics and Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scoring-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoring Rubric
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structural Checks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-labels-orphans-and-label-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicate Labels, Orphans, and Label Length
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-cycle-check-and-csv-json-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependency Cycle Check and CSV-JSON Agreement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-check-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoring Check Calibration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#judging-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Judging Quality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Judging Quality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-level-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading Level Measure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faithfulness-to-description-mathematical-notation-and-microsim-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faithfulness to Description, Mathematical Notation, and MicroSim Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bias-in-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bias in Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-as-judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLM-as-Judge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blind-human-review-and-the-human-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blind Human Review and the Human Quality Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Quality Score
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-honestly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reporting Honestly
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reporting Honestly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provisional-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provisional Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-result-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Negative Result Reporting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations Statement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-design-critique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experimental Design Critique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experimental Design Critique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-learning-graph-defect-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Learning Graph Defect Finder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1527,13 +2016,408 @@
 <li><a href="../19-fair-evaluation-design/">Chapter 19: Designing a Fair Evaluation</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">A Score Is a Claim About Quality</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+A program can tell you quickly whether a learning graph has a cycle, and it cannot tell you whether the concepts are the right ones. By the end of this chapter you will know which questions a script can answer, which need a person, and how to report a result without claiming more than it shows. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Chapter 19 listed quality as one of three groups of metrics and called it the hardest. This chapter takes it on. It starts with the scoring rubric, the written definition of what good means. It then covers structural checks, the part of quality a program can verify, with the learning graph as the worked example. It moves on to the harder part, which is the judgment of whether prose is good, and the ways that judgment is biased. It ends with how to report a result that is provisional, or negative, or limited.</p>
+<p>One distinction runs through all of it. A <strong>check</strong> answers a question that has a right answer, such as whether two concepts have the same label. A <strong>judgment</strong> answers a question that does not, such as whether an explanation is clear. A pipeline of checks can be automated and is fast. A judgment needs a person, or a model whose own bias you have accounted for.</p>
+<h2 id="rubrics-and-checks">Rubrics and Checks<a class="headerlink" href="#rubrics-and-checks" title="Permanent link">&para;</a></h2>
+<h3 id="scoring-rubric">Scoring Rubric<a class="headerlink" href="#scoring-rubric" title="Permanent link">&para;</a></h3>
+<p>A <strong>scoring rubric</strong> is a written description of what a result must have to earn each score. It makes a judgment repeatable: two reviewers using the same rubric on the same chapter should give scores that are close. Without one, "good" means whatever the reviewer felt that day.</p>
+<p>A rubric needs dimensions, a scale, and a description of each level. The table gives the dimensions this evaluation cares about for a generated chapter, with the way each is measured. They come from the qualities that matter for a textbook, as this book's <a href="../../model-candidates/">model candidates</a> page lists them.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>What it asks</th>
+<th>Measured by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Faithfulness to the description</td>
+<td>Does it cover what the course says, and stay within its limits?</td>
+<td>Human review</td>
+</tr>
+<tr>
+<td>Dependency reasoning</td>
+<td>Does each concept come after the ones it depends on?</td>
+<td>Structural check, then human</td>
+</tr>
+<tr>
+<td>Writing quality</td>
+<td>Is the prose clear, accurate, and at the stated reading level?</td>
+<td>Reading-level measure, then human</td>
+</tr>
+<tr>
+<td>Schema-constrained output</td>
+<td>Are CSV, JSON, and YAML valid and consistent?</td>
+<td>Structural check</td>
+</tr>
+<tr>
+<td>Markdown validity</td>
+<td>Does the file render and the site build?</td>
+<td>Build and a script</td>
+</tr>
+<tr>
+<td>Mathematical notation</td>
+<td>Are formulas correct in the notation the site renders?</td>
+<td>Script for form, human for correctness</td>
+</tr>
+<tr>
+<td>MicroSim code correctness</td>
+<td>Does the code run in the browser?</td>
+<td>Run it</td>
+</tr>
+</tbody>
+</table>
+<p>A worked use shows the mechanics. Suppose each dimension is scored 0, 1, or 2, where 0 means absent or broken, 1 means present with problems, and 2 means correct. A chapter that builds, has valid files, and covers its concepts, but whose notation has two errors and whose prose runs two grade levels above the target, might score 2, 2, 2, 1, 1 on five of the dimensions. The total of 8 out of 10 is less useful than the profile, which says where to fix it.</p>
+<h3 id="structural-checks">Structural Checks<a class="headerlink" href="#structural-checks" title="Permanent link">&para;</a></h3>
+<p><strong>Structural checks</strong> are the checks a program can run on the form of the output, without judging its meaning. They answer questions with right answers: does the file exist, does it parse, does it agree with its twin. They are cheap, repeatable, and fast, and they find the failures that would otherwise waste a reviewer's time.</p>
+<p>They are also limited in a way that is easy to forget. A structural pass does not mean the content is good. A learning graph can have no cycles and no duplicates and still be a graph of the wrong concepts. The checks are a gate, and the grade is a separate matter.</p>
+<p>The learning-graph checks this project applies show what a structural check looks like. Each is a short test of one property.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>What it tests</th>
+<th>A failure looks like</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concept count</td>
+<td>The number of concepts equals the target</td>
+<td>199 concepts when 200 were asked for</td>
+</tr>
+<tr>
+<td>Duplicate concept labels</td>
+<td>No two concepts share a label, ignoring case</td>
+<td>40 of 200 labels duplicated</td>
+</tr>
+<tr>
+<td>Orphaned concepts</td>
+<td>Every concept has a prerequisite or a dependent</td>
+<td>19 concepts connected to nothing</td>
+</tr>
+<tr>
+<td>Dependency cycle check</td>
+<td>No chain of dependencies loops back</td>
+<td>Three concepts each depending on the next</td>
+</tr>
+<tr>
+<td>CSV-JSON agreement</td>
+<td>The two files describe the same graph</td>
+<td>A concept in one and not the other</td>
+</tr>
+<tr>
+<td>Label length limit</td>
+<td>Labels are at most 32 characters</td>
+<td>A 64-character label that breaks the viewer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="duplicate-labels-orphans-and-label-length">Duplicate Labels, Orphans, and Label Length<a class="headerlink" href="#duplicate-labels-orphans-and-label-length" title="Permanent link">&para;</a></h3>
+<p><strong>Duplicate concept labels</strong> are concepts that share a label, compared without regard to case. They matter because the label is how a reader and a downstream tool refer to the concept, and two nodes with one name cannot be told apart. <strong>Orphaned concepts</strong> are concepts with no prerequisite and no dependent, so they are connected to nothing and cannot be reached from the rest of the graph. They are different from foundational concepts, which have no prerequisites and do have dependents.</p>
+<p>The <strong>label length limit</strong> is the cap on label size, 32 characters in this project, which exists because longer labels do not fit in the graph viewer. It is a pragmatic limit and not a deep one, and it is a good example of a check whose threshold is a decision.</p>
+<h3 id="dependency-cycle-check-and-csv-json-agreement">Dependency Cycle Check and CSV-JSON Agreement<a class="headerlink" href="#dependency-cycle-check-and-csv-json-agreement" title="Permanent link">&para;</a></h3>
+<p>The <strong>dependency cycle check</strong> confirms that the graph is acyclic. A cycle means concept A depends on B, B on C, and C on A, so no order of study satisfies all three. The check repeatedly removes the concepts that have no remaining prerequisites. If everything can be removed, the graph is acyclic. Whatever is left sits on a cycle.</p>
+<p>The excerpt from this project's scorer does exactly that. <code>remaining</code> maps each concept to the set of prerequisites not yet satisfied. Each pass takes the concepts whose set is empty, removes them, and deletes them from every other concept's set.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">remaining</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">deps</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">remaining</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">ds</span><span class="p">]</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ready</span><span class="p">:</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="k">break</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">ready</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="k">del</span> <span class="n">remaining</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">remaining</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="n">ds</span><span class="o">.</span><span class="n">difference_update</span><span class="p">(</span><span class="n">ready</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">is_dag</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">remaining</span>        <span class="c1"># anything left is on a cycle</span>
+</span></code></pre></div>
+<p><strong>CSV-JSON agreement</strong> checks that the two files a skill writes, one for people and tools and one for the viewer, describe the same graph. Disagreement is a symptom of a model that updated one file and not the other, and it silently breaks whichever tool reads the stale one.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">A Check Tests a Property, Not a Value</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+"No cycles" is a property of a whole graph, and it holds or it does not. A graph can satisfy every property you check and still be the wrong graph. Read a column of green checks as "nothing obviously broken", which is worth knowing and is not the same as "good".</p>
+</div>
+<h3 id="scoring-check-calibration">Scoring Check Calibration<a class="headerlink" href="#scoring-check-calibration" title="Permanent link">&para;</a></h3>
+<p><strong>Scoring check calibration</strong> is testing the checks themselves, on inputs whose answers you know, before you trust them on real output. A check can be wrong in two directions: it can pass a bad result, or it can fail a good one. Both are expensive, and the second is easy to miss because it looks like a model failure.</p>
+<p>This evaluation met the second kind. The first versions of three model-only checks were too strict and failed output that was correct. Each was fixed, and the saved output was scored again. Without that step, a model would have been marked down for a defect in the test. Chapter 19's retest after fix is the same idea at the level of the experiment.</p>
+<p>The calibration for a check is a small set: a known-good input that must pass, a known-bad input that must fail for the reason it should, and an edge case at the threshold, such as a label of exactly 32 characters and one of 33.</p>
+<h2 id="judging-quality">Judging Quality<a class="headerlink" href="#judging-quality" title="Permanent link">&para;</a></h2>
+<h3 id="reading-level-measure">Reading Level Measure<a class="headerlink" href="#reading-level-measure" title="Permanent link">&para;</a></h3>
+<p>A <strong>reading level measure</strong> is a formula that estimates the school grade needed to read a text, from the lengths of its sentences and words. The common one, the Flesch-Kincaid grade, is computed by a script, so it is cheap and repeatable. This project's chapter-metrics pages report it for every generated chapter, using a shared function from the book-installer skill.</p>
+<p>It is a measure of form and nothing more. A passage can score at grade 10 and be nonsense, and a clear explanation can score high because it uses necessary technical terms. Its right use is as a flag: a chapter written for adults that scores at grade 4 is probably padded with short sentences, and one that scores at grade 20 is probably unreadable.</p>
+<h3 id="faithfulness-to-description-mathematical-notation-and-microsim-code">Faithfulness to Description, Mathematical Notation, and MicroSim Code<a class="headerlink" href="#faithfulness-to-description-mathematical-notation-and-microsim-code" title="Permanent link">&para;</a></h3>
+<p>Three rubric dimensions cannot be fully automated, and each has a partial script and a human remainder.</p>
+<p><strong>Faithfulness to the description</strong> is whether the output covers what the course description lists and respects what it excludes. A script can check that each listed topic is mentioned. Whether the treatment matches the description's intent needs a reader. <strong>Mathematical notation</strong> is whether formulas are written in the notation the site renders, with the right delimiters, and are correct. A script can find malformed delimiters, and only a person can say whether the formula is right. <strong>MicroSim code correctness</strong> is whether the JavaScript runs in a browser without errors. It can be tested by loading the page, and it is the dimension where code that looks right and fails when run is worse than no simulation at all.</p>
+<h3 id="bias-in-evaluation">Bias in Evaluation<a class="headerlink" href="#bias-in-evaluation" title="Permanent link">&para;</a></h3>
+<p><strong>Bias in evaluation</strong> is a systematic tilt in the scoring that favors some results over others for reasons unrelated to quality. It is distinct from noise. Noise averages out over many runs and bias does not, and it points the same way every time.</p>
+<p>Four sources are worth naming. <strong>The scorer's own preferences</strong>: whoever scores brings habits, and a reviewer who expects a certain structure will prefer it. <strong>Order and position</strong>: the first of two answers read tends to be preferred. <strong>Length</strong>: longer answers look more thorough. <strong>Knowing the source</strong>: a reviewer who knows which model wrote a text, or that it came from a cloud service, is influenced by the name.</p>
+<h3 id="llm-as-judge">LLM-as-Judge<a class="headerlink" href="#llm-as-judge" title="Permanent link">&para;</a></h3>
+<p><strong>LLM-as-judge</strong> is using a language model to score another model's output. It is attractive because it is fast, cheap, and scales to thousands of outputs. It is also the largest source of bias in this kind of evaluation. A model tends to prefer text that resembles its own, it favors longer answers, it is sensitive to the order in which candidates are shown, and it can be impressed by confident prose that is wrong.</p>
+<p>There is also a cost that has nothing to do with accuracy. Sending a local model's output to a cloud model to be scored sends the text to the cloud, which undoes the reason for generating it locally. The design choices page records this as the reason this evaluation did not use it as its scoring method.</p>
+<table>
+<thead>
+<tr>
+<th>Weakness</th>
+<th>What it does to a score</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Self-preference</td>
+<td>Rates output like its own higher</td>
+<td>Use a different model family as judge</td>
+</tr>
+<tr>
+<td>Verbosity</td>
+<td>Rewards length</td>
+<td>Control for length, or score against a rubric</td>
+</tr>
+<tr>
+<td>Position</td>
+<td>Prefers the first candidate</td>
+<td>Randomize order and score twice</td>
+</tr>
+<tr>
+<td>Confidence</td>
+<td>Rewards fluent errors</td>
+<td>Require evidence for each rubric score</td>
+</tr>
+<tr>
+<td>Data exposure</td>
+<td>Sends generated text to a service</td>
+<td>Use a local judge, or do not use one</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A Judge Model Is Another Model Under Test</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Treat an LLM judge as an instrument that has to be calibrated against human scores on a sample before you trust it on the rest. If its scores disagree with the people's on the cases you checked, it has told you something about itself, and not about the outputs.</p>
+</div>
+<h3 id="blind-human-review-and-the-human-quality-score">Blind Human Review and the Human Quality Score<a class="headerlink" href="#blind-human-review-and-the-human-quality-score" title="Permanent link">&para;</a></h3>
+<p><strong>Blind human review</strong> is a person scoring output against the rubric without knowing which model produced it, with the order randomized. It is the right test of quality, and it is slow and costs money: the cost analysis prices ten hours of subject-expert review at $900, seventeen times the cost of generating the book.</p>
+<p>The <strong>human quality score</strong> is the result: a set of rubric scores for each output from each reviewer. Two reviewers on a sample, with their disagreement recorded, is better than one reviewer on everything, because the disagreement is itself a measurement of how much the rubric leaves to taste.</p>
+<p>At the time of writing, this evaluation had no completed human review. The Primary Author reads the generated chapters on their own machine, and the status page says "not yet" where a human score belongs.</p>
+<h3 id="automated-quality-score">Automated Quality Score<a class="headerlink" href="#automated-quality-score" title="Permanent link">&para;</a></h3>
+<p>An <strong>automated quality score</strong> is a single number a program computes from the checks, so that outputs can be ranked at a glance. It is tempting and dangerous for the reasons above: one number hides the profile, and a weighting that favors the checks that are easy to run will quietly define quality as whatever is easy to measure.</p>
+<p>This evaluation has not defined one. Each model has a learning-graph quality report and a page of chapter metrics, and they have not been combined into a number. When one is defined, it should be a documented formula over the rubric dimensions, published with its weights, and reported beside the profile, not instead of it.</p>
+<h2 id="reporting-honestly">Reporting Honestly<a class="headerlink" href="#reporting-honestly" title="Permanent link">&para;</a></h2>
+<h3 id="provisional-results">Provisional Results<a class="headerlink" href="#provisional-results" title="Permanent link">&para;</a></h3>
+<p><strong>Provisional results</strong> are results that are real observations and not yet established, because they rest on too few runs, an unvalidated check, or an incomplete review. The honest label is the one in this book's candidate page: a first round is one run of each test, so every result is provisional. A provisional result is useful for deciding what to test next, and not for writing a recommendation.</p>
+<h3 id="negative-result-reporting">Negative Result Reporting<a class="headerlink" href="#negative-result-reporting" title="Permanent link">&para;</a></h3>
+<p><strong>Negative result reporting</strong> is stating what did not work, and why, with the same care as what did. A failure is data. A model that lost the task after a few steps, another that wrote its first tool call as plain text so the run ended after one turn, and a third that could not fit a usable context are all findings, and a reader choosing a model for their own machine needs them more than they need the successes.</p>
+<p>Omitting negative results makes a field look easier than it is, and it makes the next person repeat them. The guide is to report the failure, the evidence, and your best account of the cause, with its confidence stated, since several causes in this evaluation were never identified.</p>
+<h3 id="limitations-statement">Limitations Statement<a class="headerlink" href="#limitations-statement" title="Permanent link">&para;</a></h3>
+<p>A <strong>limitations statement</strong> says what the result does not show. It is the section that tells a reader how far to trust the rest. The one this evaluation needs to carry is concrete.</p>
+<ul>
+<li><strong>Each model was run once.</strong> Run variance is unknown, so rankings are not supported.</li>
+<li><strong>One course, one machine type, one harness, one skills version.</strong> Nothing generalizes beyond them without more runs.</li>
+<li><strong>Structural checks only.</strong> No quality judgment from a person has been completed.</li>
+<li><strong>No cloud baseline.</strong> The published book is a reference for scale, not a controlled comparison.</li>
+<li><strong>Six of ten speeds in the cost analysis are assumed.</strong></li>
+<li><strong>Reasoning mode was not held constant</strong> between the model-only tests and the harness runs.</li>
+</ul>
+<h3 id="experimental-design-critique">Experimental Design Critique<a class="headerlink" href="#experimental-design-critique" title="Permanent link">&para;</a></h3>
+<p>An <strong>experimental design critique</strong> is applying the standards of Chapter 19 to your own evaluation, in writing, before someone else does. The useful form pairs each flaw with its effect and its repair.</p>
+<table>
+<thead>
+<tr>
+<th>Flaw</th>
+<th>Effect on the results</th>
+<th>What would repair it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One run per model</td>
+<td>Rankings could be noise</td>
+<td>Three to five runs each</td>
+</tr>
+<tr>
+<td>Reasoning mode differed between layers</td>
+<td>Model-only speeds did not predict harness speeds</td>
+<td>Fix the mode, or test with each model's default in both</td>
+</tr>
+<tr>
+<td>Context length chosen per model</td>
+<td>Models were not compared at one setting</td>
+<td>Add a run at a common context</td>
+</tr>
+<tr>
+<td>A cloud model supervised the runs</td>
+<td>Generated text reached a cloud service</td>
+<td>Use a local or scripted supervisor</td>
+</tr>
+<tr>
+<td>A model set aside for a skill defect</td>
+<td>Its result may have been wrong</td>
+<td>Retest it, which was done for one model</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-learning-graph-defect-finder">Diagram: Learning Graph Defect Finder<a class="headerlink" href="#diagram-learning-graph-defect-finder" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Learning Graph Defect Finder</summary>
+<p>Type: graph-model
+<strong>sim-id:</strong> learning-graph-defect-finder<br/>
+<strong>Library:</strong> vis-network<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/microsims/tree/main/docs/sims/graph-viewer<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> examine<br/>
+<strong>Learning Objective:</strong> The learner will examine a 16-concept dependency graph and mark the concepts that have one of four structural defects, finding all 4 defects with no more than 1 false flag.</p>
+<p><strong>Prerequisites:</strong> duplicate concept labels, orphaned concepts, dependency cycle check, label length limit, structural checks (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner flags concepts and assigns each flag a defect type from "Duplicate label", "Orphan", "Cycle", and "Label too long", then submits. A defect is found when every concept in the answer key for that defect is flagged with that type. Mastery is all 4 defects found, with no more than 1 flag on a concept that is not in the answer key. Exploring the graph, without flagging, is not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A concept with no prerequisites is always a defect. (2) A label at the limit is over it. (3) Two concepts whose labels differ only in case are different. (4) A cycle is visible only as one edge.</p>
+<p><strong>Instructional Rationale:</strong> Examining a structure for faults needs the learner to apply each check to the whole graph, so each of the four defects is seeded once and two legitimate look-alikes are included to prevent flagging everything unusual.</p>
+<p><strong>Content:</strong></p>
+<p>The graph has 16 concepts. Each row lists its identifier, its label, and the identifiers of the concepts it depends on. The Note column is the answer key and is never shown to the learner. Label lengths are in characters.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+<th>Depends on</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Numbers</td>
+<td>none</td>
+<td>A foundational concept with dependents. Not a defect.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Variables</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Expressions</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Equations</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Linear Equations</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Slope</td>
+<td>5</td>
+<td>Duplicate label with concept 7, ignoring case.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>slope</td>
+<td>5</td>
+<td>Duplicate label with concept 6, ignoring case.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Graphing Lines</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Systems of Equations</td>
+<td>5, 8</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Inequalities</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Factoring</td>
+<td>13</td>
+<td>On the cycle 11, 12, 13.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Quadratic Expressions</td>
+<td>11</td>
+<td>On the cycle 11, 12, 13.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Polynomials</td>
+<td>12</td>
+<td>On the cycle 11, 12, 13.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Scientific Notation</td>
+<td>none</td>
+<td>Orphan: nothing depends on it and it depends on nothing.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Representing Linear Relationships in Tables Graphs and Equations</td>
+<td>5</td>
+<td>64 characters, over the 32-character limit.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Absolute Value Function Examples</td>
+<td>4</td>
+<td>Exactly 32 characters. Not a defect.</td>
+</tr>
+</tbody>
+</table>
+<p>The answer key: "Duplicate label" is concepts 6 and 7; "Cycle" is concepts 11, 12, and 13; "Orphan" is concept 14; and "Label too long" is concept 15. Concepts 1 and 16 are legitimate look-alikes.</p>
+<p><strong>Provenance:</strong> The graph is synthetic, written for this exercise, and the sim labels it "synthetic example". The defect definitions and the 32-character limit come from this chapter.</p>
+<p><strong>Rules:</strong> A duplicate is two labels equal when compared without regard to case. An orphan has no prerequisites and no dependents. A cycle is a set of concepts that cannot be ordered so that every concept follows its prerequisites. A label is too long when it has more than 32 characters. A flag has one concept and one type, and a concept in a cycle or duplicate pair is flagged individually.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner views the graph, with each concept's label and its edges shown, and may click a concept to read its label length and its prerequisites and dependents.</li>
+<li>The learner selects a concept and chooses a defect type, which places a flag. The learner may remove a flag.</li>
+<li>When satisfied, the learner submits.</li>
+<li>The sim marks each defect found or missed, lists any false flags, and shows the one-sentence reason for each defect.</li>
+</ol>
+<p><strong>Feedback:</strong> One submission, with unlimited flag changes before it. After submission: for each of the four defects, "Found" or "Missed" with its reason; for each false flag, the reason that concept is not a defect (concept 1 is foundational and has dependents, concept 16 is exactly at the limit, and so on). The score reads "n of 4 defects found, m false flags".</p>
+<p><strong>Starting State:</strong> The graph is shown with no flags and the instruction "Find the four structural defects in this learning graph".</p>
+<p><strong>Chapter Anchors:</strong> The chapter states a 32-character label limit, that duplicates are compared without regard to case, that an orphan is connected to nothing while a foundational concept has dependents, and that a cycle makes no study order possible.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>A rubric defines quality dimension by dimension, and structural checks cover the part a program can verify: the count, duplicate labels, orphans, cycles, file agreement, and label length. They calibrate on known inputs, because a check can fail a good result as easily as pass a bad one. The rest of quality needs judgment, which has biases: a model judging its own family, preferring length, favoring the first answer, and sending the text to a cloud service. Blind human review is the right test and the expensive one, and an automated quality score hides the profile behind one number. Results are labeled provisional until repeated, negative results are reported with the same care, and a limitations statement and a design critique tell the reader how far to trust the rest.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Say What a Score Does and Does Not Show</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now separate checks from judgments, calibrate a check before trusting it, name the biases in a judge, and write a limitations statement. Chapter 21 uses all of it to run the benchmark.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

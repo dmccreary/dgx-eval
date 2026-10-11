@@ -1,0 +1,23 @@
+{
+  "title": "Tailscale Status Reader",
+  "description": "The learner will interpret 6 sanitized lines of Tailscale output by choosing the meaning of each, with at least 5 of 6 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "tailscale-status-reader",
+  "library": "p5.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "interpret",
+  "completion_status": "scaffold",
+  "chapter_number": 9,
+  "chapter_title": "Installing Tailscale and Taking a Read-Only Inventory",
+  "chapter_dir": "09-tailscale-and-inventory",
+  "chapter_rel_dir": "chapters/09-tailscale-and-inventory"
+}

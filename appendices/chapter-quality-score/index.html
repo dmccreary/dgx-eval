@@ -1,0 +1,2688 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The algorithm that scores each generated chapter from 0 to 100 against the book's content rules, and each book for how consistent its chapters are: what it measures, why each choice was made, what each choice costs, and where the source code is.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/appendices/chapter-quality-score/">
+      
+      
+        <link rel="prev" href="../evaluation-status/">
+      
+      
+        <link rel="next" href="../../models/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Chapter Quality Score: How the Automated Score Works - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-quality-score" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter Quality Score: How the Automated Score Works
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Textbook Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Appendices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-architecture.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design-choices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Choices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-candidates.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Candidates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cost-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../evaluation-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapter Quality Score
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chapter Quality Score
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-score-has-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      What the Score Has to Do
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-algorithm-in-one-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Algorithm in One Page
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-reading-a-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Reading a Chapter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Reading a Chapter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-diagram-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding the diagram specifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting words
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-stub-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      The stub gate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-the-word-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: The Word Budget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: The Word Budget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-plateau-not-a-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      A plateau, not a target
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-the-six-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: The Six Dimensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: The Six Dimensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#budget-weight-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budget (weight 20)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-placement-weight-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram placement (weight 20)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-specification-weight-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram specification (weight 20)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-weight-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format (weight 15)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding-weight-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Padding (weight 10)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reader-fit-weight-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reader fit (weight 15)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-from-sub-scores-to-one-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: From Sub-Scores to One Number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-the-book-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: The Book Score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Worked Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-is-built-this-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why It Is Built This Way
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why It Is Built This Way">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#counts-not-a-language-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counts, not a language model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure-against-the-chapters-own-expectation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measure against the chapter's own expectation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiply-level-by-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiply level by consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#follow-the-skills-own-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Follow the skill's own parser
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other decisions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-cannot-tell-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      What It Cannot Tell You
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-was-checked" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Was Checked
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-it-and-changing-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running It and Changing It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source Code
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-score-has-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      What the Score Has to Do
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-algorithm-in-one-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Algorithm in One Page
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-reading-a-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Reading a Chapter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Reading a Chapter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-diagram-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding the diagram specifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting words
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-stub-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      The stub gate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-the-word-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: The Word Budget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: The Word Budget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-plateau-not-a-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      A plateau, not a target
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-the-six-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: The Six Dimensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: The Six Dimensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#budget-weight-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budget (weight 20)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-placement-weight-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram placement (weight 20)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-specification-weight-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram specification (weight 20)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-weight-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format (weight 15)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding-weight-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Padding (weight 10)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reader-fit-weight-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reader fit (weight 15)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-from-sub-scores-to-one-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: From Sub-Scores to One Number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-the-book-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: The Book Score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Worked Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-is-built-this-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why It Is Built This Way
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why It Is Built This Way">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#counts-not-a-language-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counts, not a language model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure-against-the-chapters-own-expectation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measure against the chapter's own expectation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiply-level-by-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiply level by consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#follow-the-skills-own-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Follow the skill's own parser
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other decisions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-cannot-tell-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      What It Cannot Tell You
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-was-checked" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Was Checked
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-it-and-changing-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running It and Changing It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source Code
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/appendices/chapter-quality-score.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-quality-score">Chapter Quality Score<a class="headerlink" href="#chapter-quality-score" title="Permanent link">&para;</a></h1>
+<p>Last updated October 11, 2026.</p>
+<p>This page describes the program that gives each generated chapter a score from
+0 to 100, and gives each book a score for how consistent its chapters are. The
+program is one Python file,
+<a href="https://github.com/dmccreary/dgx-eval/blob/main/src/scoring/chapter_quality.py"><code>chapter_quality.py</code></a>,
+and it fills the Automated Quality Score column of
+<a href="../evaluation-status/">Evaluation Status</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">A conformance score, not a quality verdict</p>
+<p>The score measures how closely a chapter follows the book's written content
+rules, using counts a program can reproduce. It does not check that the
+mathematics is correct or that the explanation is any good. No person has
+yet compared its output with their own judgment of the chapters, so read it
+as a screen that points to chapters worth reading, not as a ranking of how
+well the models teach.</p>
+</div>
+<h2 id="what-the-score-has-to-do">What the Score Has to Do<a class="headerlink" href="#what-the-score-has-to-do" title="Permanent link">&para;</a></h2>
+<p>The Primary Author set four requirements:</p>
+<ul>
+<li>Use objective measurements.</li>
+<li>Include adherence to the rules in <code>CONTENT-GENERATION-GUIDE.md</code>, and include
+  the precise placement of diagrams and the quality of their specifications.</li>
+<li>Make it analyze word count, diagram count, and reading level.</li>
+<li>Favor consistent quality over high absolute quality.</li>
+</ul>
+<p>Three more constraints follow from how the benchmark runs. The same files must
+always give the same score, so a change in the score means a change in the
+chapter. The program must run on a DGX with nothing installed beyond the Python
+standard library. And every number must be explainable: a chapter that scores
+badly has to show which rule it broke.</p>
+<h2 id="the-algorithm-in-one-page">The Algorithm in One Page<a class="headerlink" href="#the-algorithm-in-one-page" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Read the chapter.</strong> Split it into blocks: headings, paragraphs, lists,
+   tables, code, admonitions, and <code>&lt;details&gt;</code> diagram specifications.</li>
+<li><strong>Decide whether it is written.</strong> A chapter that still holds the placeholder
+   text, or has fewer than 1,000 words, is a stub and scores 0.</li>
+<li><strong>Compute its word budget</strong> from the Concept Impact Scores in its own
+   Concepts Covered table.</li>
+<li><strong>Score six dimensions</strong>, each from 0 to 1, each built from a handful of
+   sub-scores.</li>
+<li><strong>Combine them</strong> with fixed weights into the chapter score.</li>
+<li><strong>Score the book.</strong> Multiply the book's mean chapter score by how little its
+   written chapters differ from one another.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th style="text-align: right;">Weight</th>
+<th>The question it asks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Budget</td>
+<td style="text-align: right;">20</td>
+<td>Does the chapter hold the words, worked examples, and non-text elements that its own concepts call for?</td>
+</tr>
+<tr>
+<td>Diagram placement</td>
+<td style="text-align: right;">20</td>
+<td>Is each diagram introduced, defined before it appears, near the text it illustrates, and spread through the chapter?</td>
+</tr>
+<tr>
+<td>Diagram specification</td>
+<td style="text-align: right;">20</td>
+<td>Does each specification carry the fields, and the precision, that the specification rules ask for?</td>
+</tr>
+<tr>
+<td>Format</td>
+<td style="text-align: right;">15</td>
+<td>Does the Markdown render, and are the headings, admonitions, and mascot used as the guide says?</td>
+</tr>
+<tr>
+<td>Padding</td>
+<td style="text-align: right;">10</td>
+<td>Does the chapter repeat itself or pad with filler?</td>
+</tr>
+<tr>
+<td>Reader fit</td>
+<td style="text-align: right;">15</td>
+<td>Is the reading level right for the audience, with equations and worked examples present?</td>
+</tr>
+</tbody>
+</table>
+<h2 id="step-1-reading-a-chapter">Step 1: Reading a Chapter<a class="headerlink" href="#step-1-reading-a-chapter" title="Permanent link">&para;</a></h2>
+<p>The program does not render Markdown. It walks the file line by line and cuts
+it into top-level blocks: headings, paragraphs, lists, tables, fenced code,
+display math, HTML comments, raw HTML, admonitions, and <code>&lt;details&gt;</code> blocks.
+Frontmatter is split off first and read for <code>title</code> and <code>description</code>.</p>
+<h3 id="finding-the-diagram-specifications">Finding the diagram specifications<a class="headerlink" href="#finding-the-diagram-specifications" title="Permanent link">&para;</a></h3>
+<p>A <code>&lt;details&gt;</code> block is a diagram specification when any one of these holds:</p>
+<ul>
+<li>A <code>#### Diagram:</code> heading owns it.</li>
+<li>It has at least three of the eighteen specification field labels.</li>
+<li>Its summary starts with the word Diagram.</li>
+<li>It is a reused MicroSim, meaning it contains an <code>&lt;iframe&gt;</code>.</li>
+</ul>
+<p>Other <code>&lt;details&gt;</code> blocks, such as a hidden answer, are ignored. The third test
+exists because one model wrote <code>&lt;summary&gt;#### Diagram: Title&lt;/summary&gt;</code> with a
+prose paragraph and no fields inside. That is a diagram in name only, and it
+should score as a bad specification, not disappear.</p>
+<p>A heading owns a block by the same rule the skill's own batch tool uses.
+<code>create-microsim-todo-json-files.py</code> splits a chapter on <code>#### Diagram:</code>
+headers and takes the first <code>&lt;details&gt;</code> block after each. Prose, an iframe, or a
+fullscreen button may sit between the two. The score follows that rule and adds
+one limit: the search for a header stops at another <code>&lt;details&gt;</code> block or at a
+heading of level 1, 2, or 3, because a diagram under a new section is not placed
+by the previous section's header.</p>
+<h3 id="counting-words">Counting words<a class="headerlink" href="#counting-words" title="Permanent link">&para;</a></h3>
+<p>Two word counts are kept, both split on whitespace as the guide counts them.</p>
+<ul>
+<li><strong>Total words</strong> is the whole file after the frontmatter. It matches the
+  Words column of the chapter metrics pages.</li>
+<li><strong>Body words</strong> is what a student reads: everything except the specification
+  blocks, fenced code, and the Concepts Covered table. The budget uses this one.</li>
+</ul>
+<h3 id="the-stub-gate">The stub gate<a class="headerlink" href="#the-stub-gate" title="Permanent link">&para;</a></h3>
+<p>A chapter is a stub when the placeholder text <code>TODO: Generate Chapter Content</code>
+is present or the file has fewer than 1,000 words. The rule is imported from
+<code>score_chapters.py</code>, so there is one definition of "written" in the project. A
+stub scores 0 and none of the other checks run. Its raw counts are still
+recorded.</p>
+<h2 id="step-2-the-word-budget">Step 2: The Word Budget<a class="headerlink" href="#step-2-the-word-budget" title="Permanent link">&para;</a></h2>
+<p>The guide sizes a chapter from its concepts, not from a flat number. Each
+concept has a Concept Impact Score (CIS): one plus the sum of the CIS of every
+concept that depends on it. A concept many others build on needs more careful
+explanation, so its importance is normalized against the book's largest CIS:</p>
+<div class="arithmatex">\[ E(c) = \frac{\ln(\mathrm{CIS}(c) + 1)}{\ln(\mathrm{CIS}_{\max} + 1)} \]</div>
+<p>The program reads <code>CIS_max</code> from the book's <code>learning-graph.json</code>. If that file
+is missing it falls back to the largest CIS in the chapters' own tables and says
+so in its output. <code>E(c)</code> then sets a tier:</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th><code>E(c)</code></th>
+<th style="text-align: right;">Target words</th>
+<th>Required elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>0.5 or more</td>
+<td style="text-align: right;">500–750</td>
+<td>worked example, plus a diagram, chart, table, or MicroSim</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.2 to 0.5</td>
+<td style="text-align: right;">250–400</td>
+<td>worked example</td>
+</tr>
+<tr>
+<td>C</td>
+<td>under 0.2</td>
+<td style="text-align: right;">120–200</td>
+<td>a clear definition</td>
+</tr>
+</tbody>
+</table>
+<p>A chapter's budget is the sum of its concepts' targets, not a number of its
+own. A chapter of mostly Tier A concepts is expected to run several times longer
+than one of mostly Tier C. That variation is intended and the score does not
+normalize it away.</p>
+<h3 id="a-plateau-not-a-target">A plateau, not a target<a class="headerlink" href="#a-plateau-not-a-target" title="Permanent link">&para;</a></h3>
+<p>The guide calls the budget "guidelines, not requirements" and says a dense
+chapter beats a padded one at the target length. So the word-fit score does not
+peak at the target. Full credit is a wide plateau:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>score
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1.0 |         ______________________
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    |        /                      \
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    |       /                        \
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>0.0 |______/                          \_________
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>         0.2L   0.6L          1.25H   2.5H      body words
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>         L = sum of the low targets, H = sum of the high targets
+</span></code></pre></div>
+<p>A chapter below 20% of the low target scores 0. It reaches full credit at 60%
+of the low target, keeps it up to 125% of the high target, and falls to 0 at
+250% of the high target. A chapter is never rewarded for exceeding its budget.</p>
+<p>If a chapter has no Concepts Covered table, its budget cannot be computed. The
+whole dimension scores 0 and the chapter is flagged <code>NO_CONCEPT_TABLE</code>.</p>
+<h2 id="step-3-the-six-dimensions">Step 3: The Six Dimensions<a class="headerlink" href="#step-3-the-six-dimensions" title="Permanent link">&para;</a></h2>
+<p>Each dimension is a weighted mean of sub-scores between 0 and 1. A sub-score
+that does not apply to a chapter is left out and the remaining weights are
+rescaled, so a chapter with no admonitions is not penalized for their absence.</p>
+<h3 id="budget-weight-20">Budget (weight 20)<a class="headerlink" href="#budget-weight-20" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sub-score</th>
+<th style="text-align: right;">Weight</th>
+<th>How it is measured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Words fit</td>
+<td style="text-align: right;">0.35</td>
+<td>Body words against the plateau above</td>
+</tr>
+<tr>
+<td>Worked examples</td>
+<td style="text-align: right;">0.20</td>
+<td>Lines that start with Worked Example or Example, against 60% of the Tier A plus Tier B concept count</td>
+</tr>
+<tr>
+<td>Non-text elements</td>
+<td style="text-align: right;">0.15</td>
+<td>Diagram specs, embedded sims, and tables, against 60% of the Tier A concept count. Skipped when there are no Tier A concepts</td>
+</tr>
+<tr>
+<td>Concept coverage</td>
+<td style="text-align: right;">0.20</td>
+<td>The share of listed concepts whose label appears in the prose, after lower-casing and light stemming</td>
+</tr>
+<tr>
+<td>Title alignment</td>
+<td style="text-align: right;">0.10</td>
+<td>1 if any non-generic word of the title appears in the concept labels or headings</td>
+</tr>
+</tbody>
+</table>
+<p>The last two checks catch a failure that word counts cannot. One model's
+chapter titled Exponents and Radicals held a concept list about function
+notation. Words such as foundations, introduction, and advanced are ignored in
+titles, because they match nothing.</p>
+<h3 id="diagram-placement-weight-20">Diagram placement (weight 20)<a class="headerlink" href="#diagram-placement-weight-20" title="Permanent link">&para;</a></h3>
+<p>Four of these are scored per diagram and averaged over the chapter. The other
+three describe the chapter as a whole. A chapter with no diagram specification
+scores 0 on all seven and is flagged <code>NO_DIAGRAMS</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-score</th>
+<th style="text-align: right;">Weight</th>
+<th>How it is measured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td style="text-align: right;">0.25</td>
+<td>1 for an exact <code>#### Diagram: Title</code> heading, 0.5 for a Diagram heading at another level or format, 0 for none</td>
+</tr>
+<tr>
+<td>Bridge</td>
+<td style="text-align: right;">0.15</td>
+<td>A paragraph of 8 or more words right before the header, or between header and block. 1 if its last two sentences signpost the diagram, 0.5 if not</td>
+</tr>
+<tr>
+<td>Terms defined</td>
+<td style="text-align: right;">0.20</td>
+<td>Each term in the block's Prerequisites field is found in the teaching text above the block. 1 for the whole phrase, 0.5 if every word appears, 0 otherwise</td>
+</tr>
+<tr>
+<td>Relevance</td>
+<td style="text-align: right;">0.15</td>
+<td>The content words of the title and Learning Objective appear in the 300 words before the block. Full credit at 50%</td>
+</tr>
+<tr>
+<td>Spacing</td>
+<td style="text-align: right;">0.10</td>
+<td>Paragraphs beyond four in a row with no non-text element between them, as a share of all paragraphs. Full credit at none, zero at half</td>
+</tr>
+<tr>
+<td>Evenness</td>
+<td style="text-align: right;">0.10</td>
+<td>The ideal gap, one over the number of diagrams plus one, divided by the largest gap between diagrams, measured in body words</td>
+</tr>
+<tr>
+<td>Density</td>
+<td style="text-align: right;">0.05</td>
+<td>Diagrams per 1,000 body words: full credit from 0.8 to 4.0, zero at 0 and at 8</td>
+</tr>
+</tbody>
+</table>
+<p>Terms defined and Relevance are the two checks that test whether a diagram sits
+in the right place. Both read the teaching text only. The Summary, Concepts
+Covered, and Prerequisites sections are excluded, because the concept table
+would otherwise "define" every term in the chapter.</p>
+<h3 id="diagram-specification-weight-20">Diagram specification (weight 20)<a class="headerlink" href="#diagram-specification-weight-20" title="Permanent link">&para;</a></h3>
+<p>Each specification block is scored on 22 checks drawn from the rules R1 to R14
+in the skill's
+<a href="https://github.com/dmccreary/ibook-skills/blob/main/skills/chapter-content-generator/references/microsim-specification-rules.md">microsim-specification-rules.md</a>.
+The chapter's score is the mean over its blocks. A reused MicroSim, which has
+no fields of its own, receives full marks.</p>
+<table>
+<thead>
+<tr>
+<th>Checks</th>
+<th style="text-align: right;">Weight</th>
+<th>What they test</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fields present, content specific</td>
+<td style="text-align: right;">3 each</td>
+<td>All 18 fields exist. The Content field has no "for example", "such as", or "etc." and holds a table, a list, or at least 40 words</td>
+<td>R4</td>
+</tr>
+<tr>
+<td>Bloom, evidence rule, rules model, feedback</td>
+<td style="text-align: right;">2 each</td>
+<td>Level is one of the six names and the verb is in that level's list. Evidence names a criterion. Rules hold a formula, comparator, or number. Feedback covers correct, incorrect, and attempts</td>
+<td>R1, R2, R6, R8</td>
+</tr>
+<tr>
+<td>Enums, activity steps, interactive, no build details</td>
+<td style="text-align: right;">1.5 each</td>
+<td>Type and Library come from the permitted lists. Activity is a numbered list. It contains an interaction verb. No pixel sizes, colors, canvas, or library calls</td>
+<td>R7, R12, R14</td>
+</tr>
+<tr>
+<td>Label format, type and library pair, objective form, provenance, starting state, anchors, no placeholder, sim-id, depth</td>
+<td style="text-align: right;">1 each</td>
+<td>Bold labels and <code>&lt;br/&gt;</code> endings. Library suits Type. Objective begins "The learner will" with no banned verb. Provenance states a source. Anchors' numbers appear in the chapter. No TODO or unfilled template. sim-id is kebab-case and unique. Spec length is 150 to 1,200 words</td>
+<td>R1, R5, R10, R14</td>
+</tr>
+<tr>
+<td>Impossible features, summary matches, status</td>
+<td style="text-align: right;">0.5 each</td>
+<td>No mouse-wheel zoom or clickable Mermaid edges. The summary matches the heading. Status is Specified or Reused</td>
+<td>R13</td>
+</tr>
+</tbody>
+</table>
+<p>The Type and Library checks compare exactly against the lists in rule R14, so
+<code>mermaid</code> fails where <code>Mermaid</code> passes. R14 says a value outside the list
+"silently falls back to p5.js". Whether the downstream generator also ignores
+case has not been tested. If it does, this check is stricter than it needs to
+be.</p>
+<h3 id="format-weight-15">Format (weight 15)<a class="headerlink" href="#format-weight-15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sub-score</th>
+<th style="text-align: right;">Weight</th>
+<th>How it is measured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lists render</td>
+<td style="text-align: right;">0.25</td>
+<td>One minus the share of lists with no blank line before them, which the site shows as a run-on paragraph</td>
+</tr>
+<tr>
+<td>No leaked scaffolding</td>
+<td style="text-align: right;">0.15</td>
+<td>Text the model wrote for itself, such as <code>(Tier C: 120-200 words)</code> or an Elaboration Budget table. Full credit at none, zero at three</td>
+</tr>
+<tr>
+<td>Headings</td>
+<td style="text-align: right;">0.15</td>
+<td>One H1, no skipped levels, and the Summary, Concepts Covered, and Prerequisites sections present</td>
+</tr>
+<tr>
+<td>Admonition bodies</td>
+<td style="text-align: right;">0.10</td>
+<td>Indented four spaces</td>
+</tr>
+<tr>
+<td>Images and embeds</td>
+<td style="text-align: right;">0.10</td>
+<td>Markdown image targets exist. An iframe pointing at a placeholder host, such as <code>example.com</code>, fails</td>
+</tr>
+<tr>
+<td>Details blocks</td>
+<td style="text-align: right;">0.10</td>
+<td>Each carries <code>markdown="1"</code>, without which its contents are not rendered</td>
+</tr>
+<tr>
+<td>Well formed</td>
+<td style="text-align: right;">0.10</td>
+<td>Fences and <code>&lt;details&gt;</code> tags are balanced and the file does not end mid-sentence</td>
+</tr>
+<tr>
+<td>Frontmatter</td>
+<td style="text-align: right;">0.05</td>
+<td><code>title</code> and <code>description</code> are present</td>
+</tr>
+<tr>
+<td>Mascot</td>
+<td style="text-align: right;">0.20</td>
+<td>The placement rules in the guide, checked only where the book defines a mascot</td>
+</tr>
+</tbody>
+</table>
+<p>The mascot check covers the guide's pose counts, no two admonitions
+back-to-back, the image in every admonition body, 1 to 3 sentences of text,
+opening with a welcome, and closing with a celebration. A book defines a mascot
+when <code>docs/img/mascot/</code> exists. In a book that defines none, a chapter that
+uses a <code>mascot-</code> admonition anyway scores 0 on this sub-score and is flagged.</p>
+<p>Math delimiters are not scored. <code>$…$</code>, <code>\(…\)</code>, <code>$$…$$</code>, and <code>\[…\]</code> are all
+accepted, because <code>mkdocs.yml</code> renders each of them.</p>
+<h3 id="padding-weight-10">Padding (weight 10)<a class="headerlink" href="#padding-weight-10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sub-score</th>
+<th style="text-align: right;">Weight</th>
+<th>How it is measured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Duplicate sentences</td>
+<td style="text-align: right;">0.25</td>
+<td>Sentences of six or more words that repeat another. Full credit at 2% or less, zero at 15%</td>
+</tr>
+<tr>
+<td>Near-duplicate paragraphs</td>
+<td style="text-align: right;">0.15</td>
+<td>Paragraphs sharing 70% of their four-word phrases with another. Full credit at none, zero at 25%</td>
+</tr>
+<tr>
+<td>Compression</td>
+<td style="text-align: right;">0.20</td>
+<td>zlib ratio averaged over 600-word windows. Full credit at 0.30 or more, zero at 0.18</td>
+</tr>
+<tr>
+<td>Filler phrases</td>
+<td style="text-align: right;">0.20</td>
+<td>A list of stock phrases such as "it is important to note" and "delve", per 1,000 words. Full credit at 1, zero at 6</td>
+</tr>
+<tr>
+<td>Templated specs</td>
+<td style="text-align: right;">0.20</td>
+<td>The share of specs that are not copies of a sibling: two or more identical fields, or the same title</td>
+</tr>
+</tbody>
+</table>
+<p>The compression ratio is taken over fixed windows because a whole-chapter ratio
+falls as a chapter grows. An 8,000-word chapter compresses to about 0.27 and a
+1,000-word one to about 0.38, so a whole-chapter ratio would punish length
+itself.</p>
+<h3 id="reader-fit-weight-15">Reader fit (weight 15)<a class="headerlink" href="#reader-fit-weight-15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sub-score</th>
+<th style="text-align: right;">Weight</th>
+<th>How it is measured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reading grade</td>
+<td style="text-align: right;">0.40</td>
+<td>Flesch-Kincaid grade of the prose with math, code, tables, and specs removed. Full credit from two grades below the target to one and a half above, zero five away. The target is 9.0 for Algebra I</td>
+</tr>
+<tr>
+<td>Sentence length</td>
+<td style="text-align: right;">0.15</td>
+<td>Full credit from 10 to 20 words per sentence, zero at 6 and at 32</td>
+</tr>
+<tr>
+<td>Math present</td>
+<td style="text-align: right;">0.20</td>
+<td>Equations per 1,000 words: full credit from 3 to 80, zero at 0 and at 250</td>
+</tr>
+<tr>
+<td>Worked-example density</td>
+<td style="text-align: right;">0.15</td>
+<td>Worked examples per 1,000 words, full credit at 1</td>
+</tr>
+<tr>
+<td>Variety</td>
+<td style="text-align: right;">0.10</td>
+<td>Distinct kinds of element used: list, table, diagram, admonition, code, display math, image. Full credit at four</td>
+</tr>
+</tbody>
+</table>
+<p>The reading grade uses the <code>textstat</code> package when it is installed and a
+built-in syllable estimate when it is not, and the output says which. On the 49
+written chapters the two differ by 0.47 grade levels on average, which moves the
+chapter score by 0.22 points on average and by 2.5 points at most.</p>
+<h2 id="step-4-from-sub-scores-to-one-number">Step 4: From Sub-Scores to One Number<a class="headerlink" href="#step-4-from-sub-scores-to-one-number" title="Permanent link">&para;</a></h2>
+<p>Every sub-score is one of three shapes: a plateau with sloping sides, a
+threshold that rises to full credit, or a threshold that falls from it. All are
+linear and clamped between 0 and 1, so they can be read by eye and changed by
+editing one constant.</p>
+<p>The chapter score is the weighted mean of its six dimension scores:</p>
+<div class="arithmatex">\[ Q = 100 \times \frac{\sum_d w_d \, s_d}{\sum_d w_d} \]</div>
+<p>with the weights in the first table of this page.</p>
+<h2 id="step-5-the-book-score">Step 5: The Book Score<a class="headerlink" href="#step-5-the-book-score" title="Permanent link">&para;</a></h2>
+<p>Three numbers describe a book, and the headline combines two of them.</p>
+<div class="arithmatex">\[ \mathrm{level} = \frac{1}{N} \sum_{i=1}^{N} Q_i \qquad
+\mathrm{consistency} = 100 \left(1 - \frac{\sigma_W}{\mu_W}\right) \qquad
+\mathrm{headline} = \frac{\mathrm{level} \times \mathrm{consistency}}{100} \]</div>
+<p>Here <code>N</code> is every chapter in the book, with stubs counted as 0, and <code>μ_W</code> and
+<code>σ_W</code> are the mean and population standard deviation of the written chapters
+only. Consistency needs at least two written chapters; with one it is undefined
+and so is the headline.</p>
+<p>The program also reports the floor, the lowest written chapter, and a robust
+z-score for each written chapter: its distance from the median divided by 1.4826
+times the median absolute deviation, with the divisor never below 2 points. With
+at least four written chapters, a z-score of 2 or more in either direction is
+flagged <code>OUTLIER_LOW</code> or <code>OUTLIER_HIGH</code>. Finally it reports each dimension's mean and
+coefficient of variation, which show which kind of failure a book is
+inconsistent about.</p>
+<h2 id="a-worked-example">A Worked Example<a class="headerlink" href="#a-worked-example" title="Permanent link">&para;</a></h2>
+<p>Chapter 3, Linear Equations, from <code>gemma4:31b</code>. It has 16 concepts: none in Tier
+A, 5 in Tier B, 11 in Tier C. So its budget is 5 × 250 + 11 × 120 = 2,570 words
+at the low end and 5 × 400 + 11 × 200 = 4,200 at the high end.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>How the number arises</th>
+<th style="text-align: right;">Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Budget</td>
+<td>1,296 body words. Full credit starts at 0.6 × 2,570 = 1,542 and zero is at 514, so words fit is (1,296 − 514) ÷ (1,542 − 514) = 0.76. Worked examples, concept coverage, and title all score 1. Non-text is skipped because there is no Tier A concept</td>
+<td style="text-align: right;">90.1</td>
+</tr>
+<tr>
+<td>Placement</td>
+<td>Header 1.0, bridge 0.3, terms 0.95, relevance 1.0, spacing 1.0, evenness 0.56, density 1.0. Weighted: 0.84</td>
+<td style="text-align: right;">84.1</td>
+</tr>
+<tr>
+<td>Specification</td>
+<td>Five blocks, mean 0.909. Each loses a little on a few checks, such as no stated rule in the evidence of mastery</td>
+<td style="text-align: right;">90.9</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>21 of 35 lists lack a blank line, so lists score 0.4. Admonitions and images do not apply and are skipped</td>
+<td style="text-align: right;">81.2</td>
+</tr>
+<tr>
+<td>Padding</td>
+<td>No repetition, compression 0.41, no filler</td>
+<td style="text-align: right;">100.0</td>
+</tr>
+<tr>
+<td>Reader fit</td>
+<td>Grade 9.5, 12.4 words per sentence, 69 equations per 1,000 words. Variety 0.67</td>
+<td style="text-align: right;">96.7</td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[ Q = \frac{20(90.1) + 20(84.1) + 20(90.9) + 15(81.2) + 10(100) + 15(96.7)}{100} = 89.7 \]</div>
+<p>For the book, <code>gemma4:31b</code> has 12 chapters. Ten are written, with scores from
+68.7 to 90.8 and a mean of 83.8, and two are stubs. Level is the sum of those ten
+scores over all twelve, 69.8. The coefficient of variation of the written
+chapters is 0.09, so consistency is 91.1 and the headline is 69.8 × 0.911 =
+63.6.</p>
+<h2 id="why-it-is-built-this-way">Why It Is Built This Way<a class="headerlink" href="#why-it-is-built-this-way" title="Permanent link">&para;</a></h2>
+<h3 id="counts-not-a-language-model">Counts, not a language model<a class="headerlink" href="#counts-not-a-language-model" title="Permanent link">&para;</a></h3>
+<p>A model asked to rate a chapter would be quicker to build and would notice
+things a regular expression cannot, such as an explanation that is wrong. It
+would also give a different answer on each run, bring its own biases toward text
+that sounds like itself, and, if it ran in the cloud, send the generated books
+to a third party. The rules to be checked are written, specific, and mostly
+countable. A program can check those, repeat itself exactly, and run on the DGX.</p>
+<p>The cost is real. A counting score can be satisfied by text that has the right
+fields and nothing in them. Section "What It Cannot Tell You" returns to this.</p>
+<h3 id="measure-against-the-chapters-own-expectation">Measure against the chapter's own expectation<a class="headerlink" href="#measure-against-the-chapters-own-expectation" title="Permanent link">&para;</a></h3>
+<p>A raw count rewards whoever writes the most. A chapter on a foundational topic
+should be long and full of diagrams, and a chapter on a narrow topic should not.
+So every sub-score compares the chapter to a number derived from its own concept
+table, and every sub-score saturates. Adding a tenth diagram, or a tenth
+thousand words, earns nothing once the chapter is on the plateau.</p>
+<p>The check that this worked: across the 49 written chapters, the Spearman
+correlation of the score with body words is −0.10, with diagram count 0.13, and
+with equation count 0.15. The score does not track size.</p>
+<p>The cost is that the plateau's edges are judgments. The 60% and 125% limits
+come from the guide's own wording, not from data, and a different reading of
+"guidelines, not requirements" would move them.</p>
+<h3 id="multiply-level-by-consistency">Multiply level by consistency<a class="headerlink" href="#multiply-level-by-consistency" title="Permanent link">&para;</a></h3>
+<p>The Primary Author asked to favor consistency over absolute quality. Several
+ways of doing that were weighed.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Why it was not chosen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mean chapter score</td>
+<td>Ignores spread</td>
+<td>A book of 10 excellent chapters and 10 stubs ties a book of 20 middling ones</td>
+</tr>
+<tr>
+<td>Mean plus a variance penalty</td>
+<td>Subtracts a term for spread</td>
+<td>The penalty trades points for spread at an invented exchange rate, in the same units as the score</td>
+</tr>
+<tr>
+<td>Lowest chapter only</td>
+<td>Very strict</td>
+<td>One bad chapter in twenty decides the whole book</td>
+</tr>
+<tr>
+<td>Geometric mean of level and consistency</td>
+<td>Rewards both</td>
+<td>Too generous to a uniformly poor book: level 20 with consistency 95 scores 44, where level × consistency gives 19</td>
+</tr>
+<tr>
+<td><strong>Level × consistency</strong></td>
+<td>Chosen</td>
+<td>A uniformly poor book stays poor, and a lopsided book is cut by its spread</td>
+</tr>
+</tbody>
+</table>
+<p>Stubs enter the level as 0 but are left out of the consistency. A stub is
+already punished by the level, and counting it again as variance would charge a
+book twice for one fact.</p>
+<p>The cost is that consistency rewards a book that wrote fewer chapters
+uniformly. <code>gpt-oss:120b</code> has the highest consistency of any book, 95.3, because
+it wrote only 6 of 10 chapters and those six resemble one another. The level
+holds it back, and that is why the table below shows both and why the written
+count is always printed beside them.</p>
+<h3 id="follow-the-skills-own-parser">Follow the skill's own parser<a class="headerlink" href="#follow-the-skills-own-parser" title="Permanent link">&para;</a></h3>
+<p>The first version required a diagram's header to sit directly above its
+<code>&lt;details&gt;</code> block. The skill's own batch tool accepts prose between them, and
+<code>gemma4:31b</code> used that layout throughout chapter 3. Together with the
+second bug described below, the stricter rule gave the chapter 15 out of 100 on
+placement against over 80 for its neighbors, and cost it 14 points overall: 75
+against 89.</p>
+<p>A score should agree with the toolchain that consumes the output, not with a
+stricter idea of what the toolchain ought to accept. A diagram that the batch
+tool will find and build is correctly placed. The score now mirrors the tool and
+documents the one place where it is stricter.</p>
+<h3 id="other-decisions">Other decisions<a class="headerlink" href="#other-decisions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Alternatives</th>
+<th>Reason</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weights set by hand: 20, 20, 20, 15, 10, 15</td>
+<td>Fit to human ratings</td>
+<td>No human ratings exist yet</td>
+<td>The weights are opinions. A ±40% change in every weight flips the order of two pairs, listed below</td>
+</tr>
+<tr>
+<td>Padding weight lowered from 15 to 10</td>
+<td>Keep 15</td>
+<td>Every book averages above 90 on it, so it adds points without separating anyone</td>
+<td>It would catch a model that did start to pad, but it is now worth less</td>
+</tr>
+<tr>
+<td>Thresholds read off the six existing books</td>
+<td>Derive from theory</td>
+<td>Compression, density, and sentence length have no authoritative limit</td>
+<td>The limits fit this corpus. Revisit them when new models or a second course are added</td>
+</tr>
+<tr>
+<td>Plain regular expressions and stemming</td>
+<td>An NLP library</td>
+<td>Every rule can be read and audited in a few lines, and the file has no dependencies</td>
+<td>It misses paraphrase. "Linear function" and "a function that is linear" do not match</td>
+</tr>
+<tr>
+<td>One file, standard library only</td>
+<td>Several modules, packages</td>
+<td>It copies to a fresh DGX and runs</td>
+<td>It is long, about 1,300 lines, and regex-heavy</td>
+</tr>
+<tr>
+<td>A sub-score that does not apply is dropped</td>
+<td>Score it 0 or 1</td>
+<td>A chapter with no images should not gain or lose points for them</td>
+<td>A chapter can avoid a check by not having the thing</td>
+</tr>
+<tr>
+<td>Mascot rules only where a mascot is defined</td>
+<td>Always score them</td>
+<td>The Algebra I books have no mascot, and no chapter could pass</td>
+<td>The rule is silent in a book that forgot its mascot</td>
+</tr>
+<tr>
+<td>Math delimiters unscored</td>
+<td>Penalize <code>$…$</code></td>
+<td>The Primary Author chose <code>$…$</code> for the algebra books and the site renders it</td>
+<td>A model that writes <code>\(…\)</code> is not distinguished from one that writes <code>$…$</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-it-cannot-tell-you">What It Cannot Tell You<a class="headerlink" href="#what-it-cannot-tell-you" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Correctness.</strong> A chapter can follow every rule and teach a wrong
+  procedure. Nothing here evaluates the mathematics.</li>
+<li><strong>Gaming.</strong> A model could fill every specification field with plausible
+  keywords and score well. The checks for templated specs, repeated sentences,
+  and thin fields narrow the gap, and nothing closes it.</li>
+<li><strong>Absence of a human baseline.</strong> The score is built on the written rules, not
+  on what a teacher would call good. Until someone rates a sample of chapters
+  and the two are compared, the weights are untested opinions.</li>
+<li><strong>Drift in the rules.</strong> The specification checks encode version 1.11 of the
+  skill. A new version of the skill can make a check wrong without any change in
+  the chapters.</li>
+<li><strong>A thin sample.</strong> Six models, 72 chapters, and one course. The thresholds
+  were not tested on anything else.</li>
+</ul>
+<h2 id="how-it-was-checked">How It Was Checked<a class="headerlink" href="#how-it-was-checked" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The same input scored twice</td>
+<td>Identical output</td>
+</tr>
+<tr>
+<td><code>textstat</code> against the built-in reading estimate</td>
+<td>0.22 points of chapter score on average, 2.5 at most</td>
+</tr>
+<tr>
+<td>Correlation of score with size</td>
+<td>−0.10 with words, 0.13 with diagrams, 0.15 with equations</td>
+</tr>
+<tr>
+<td>Every weight multiplied by a random 0.6 to 1.4, 500 times</td>
+<td>Same order in 59% of trials. 3.3% of model pairs flip</td>
+</tr>
+</tbody>
+</table>
+<p>The flips come from two pairs: <code>qwen3.6:35b</code> against <code>gemma4:31b</code>, in 41% of the
+trials, and <code>gemma4:26b</code> against <code>gpt-oss:120b</code>, in 8%. The first pair is within a
+point of each other on the headline and should be treated as a tie.</p>
+<p>Three bugs got past all four checks.</p>
+<ul>
+<li><strong>The header rule</strong>, described above, was stricter than the toolchain.</li>
+<li><strong>The teaching-text boundary.</strong> In a chapter that puts its prose straight
+  after the Prerequisites list, with no new <code>##</code> heading, the function that finds
+  where the teaching text begins decided the whole chapter was Prerequisites.
+  Three placement sub-scores then came out as exactly 0 for that chapter.</li>
+<li><strong>The unfilled-slot pattern.</strong> The check for template slots such as
+  <code>&lt;Title Case Name&gt;</code> ran case-insensitively and so matched the HTML tag
+  <code>&lt;summary&gt;</code>. It failed 278 of 282 specification blocks, and took about three
+  points off every specification score.</li>
+</ul>
+<p>None of these showed in the totals. The first two were found by reading one
+chapter whose sub-scores looked wrong. The third was found because a check that
+fails 99% of the time is a defect, which became visible only when the failure
+rate of every check was tabulated. That is the argument for the comparison with
+human judgment that is still owed.</p>
+<h2 id="first-results">First Results<a class="headerlink" href="#first-results" title="Permanent link">&para;</a></h2>
+<p>These are the six books of the Algebra I benchmark as scored on October 11,
+2026, with the final version of the program.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Written</th>
+<th style="text-align: right;">Level</th>
+<th style="text-align: right;">Consistency</th>
+<th style="text-align: right;">Floor</th>
+<th style="text-align: right;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>qwen3.6:35b</td>
+<td>11 of 11</td>
+<td style="text-align: right;">76.4</td>
+<td style="text-align: right;">84.1</td>
+<td style="text-align: right;">55.9</td>
+<td style="text-align: right;"><strong>64.3</strong></td>
+</tr>
+<tr>
+<td>gemma4:31b</td>
+<td>10 of 12</td>
+<td style="text-align: right;">69.8</td>
+<td style="text-align: right;">91.1</td>
+<td style="text-align: right;">68.7</td>
+<td style="text-align: right;"><strong>63.6</strong></td>
+</tr>
+<tr>
+<td>nemotron-3.5-lightning:30b</td>
+<td>12 of 12</td>
+<td style="text-align: right;">66.1</td>
+<td style="text-align: right;">79.3</td>
+<td style="text-align: right;">35.2</td>
+<td style="text-align: right;"><strong>52.5</strong></td>
+</tr>
+<tr>
+<td>gemma4:26b</td>
+<td>10 of 14</td>
+<td style="text-align: right;">53.4</td>
+<td style="text-align: right;">79.1</td>
+<td style="text-align: right;">54.5</td>
+<td style="text-align: right;"><strong>42.3</strong></td>
+</tr>
+<tr>
+<td>gpt-oss:120b</td>
+<td>6 of 10</td>
+<td style="text-align: right;">40.9</td>
+<td style="text-align: right;">95.3</td>
+<td style="text-align: right;">63.5</td>
+<td style="text-align: right;"><strong>39.0</strong></td>
+</tr>
+<tr>
+<td>qwen3.8:27b</td>
+<td>0 of 14</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<p>Beyond the totals, the program found defects that were each confirmed by
+reading the chapter:</p>
+<ul>
+<li>Chapter titles that do not match their concept lists, in nemotron.</li>
+<li>The model's own working, such as <code>(Tier C: 120-200 words)</code>, printed in
+  headings.</li>
+<li>Concepts Covered tables that were dropped from several chapters.</li>
+<li>A <code>&lt;iframe&gt;</code> pointing at <code>microsims.example.com</code>, an invented host.</li>
+<li>Twenty near-identical specifications in a single gpt-oss chapter.</li>
+</ul>
+<h2 id="running-it-and-changing-it">Running It and Changing It<a class="headerlink" href="#running-it-and-changing-it" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3<span class="w"> </span>src/scoring/chapter_quality.py<span class="w"> </span>docs/models/&lt;model&gt;<span class="w"> </span>--raw
+</span></code></pre></div>
+<p>Give it several books and it ends with a comparison table. <code>--json</code> writes
+every raw count and sub-score, <code>--csv</code> writes one row per chapter, and
+<code>--target-grade</code> sets the reading grade for a course other than Algebra I. The
+weights, tier table, and every threshold are constants at the top of the file.</p>
+<p>Each chapter's flags say which rule it broke:</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>STUB</code></td>
+<td>Placeholder text, or under 1,000 words. The chapter scores 0</td>
+</tr>
+<tr>
+<td><code>UNDER_BUDGET</code>, <code>OVER_BUDGET</code></td>
+<td>Body words below half the low target, or above twice the high target</td>
+</tr>
+<tr>
+<td><code>NO_CONCEPT_TABLE</code></td>
+<td>No Concepts Covered table, so no budget can be computed</td>
+</tr>
+<tr>
+<td><code>TITLE_MISMATCH</code></td>
+<td>No word of the title appears in the concepts or headings</td>
+</tr>
+<tr>
+<td><code>NO_DIAGRAMS</code></td>
+<td>No diagram specification in the chapter</td>
+</tr>
+<tr>
+<td><code>NO_HEADER:n</code></td>
+<td><code>n</code> specifications with no <code>#### Diagram:</code> header</td>
+</tr>
+<tr>
+<td><code>BARE_DIAGRAM_HEADER:n</code></td>
+<td><code>n</code> Diagram headers with no specification below them</td>
+</tr>
+<tr>
+<td><code>THIN_SPEC</code></td>
+<td>The mean specification score is under 0.5</td>
+</tr>
+<tr>
+<td><code>TEMPLATED:n</code></td>
+<td><code>n</code> specifications that copy a sibling</td>
+</tr>
+<tr>
+<td><code>SCAFFOLD_LEAK:n</code></td>
+<td><code>n</code> pieces of the model's working left in the text</td>
+</tr>
+<tr>
+<td><code>LISTS:n</code></td>
+<td><code>n</code> lists with no blank line before them</td>
+</tr>
+<tr>
+<td><code>IMG_BROKEN:n</code></td>
+<td><code>n</code> image targets that do not exist</td>
+</tr>
+<tr>
+<td><code>IFRAME_FAKE_HOST:n</code></td>
+<td><code>n</code> embeds pointing at a placeholder host</td>
+</tr>
+<tr>
+<td><code>TRUNCATED</code></td>
+<td>The file ends mid-sentence</td>
+</tr>
+<tr>
+<td><code>MASCOT_UNDEFINED</code></td>
+<td>A mascot admonition in a book that defines no mascot</td>
+</tr>
+<tr>
+<td><code>OUTLIER_LOW</code>, <code>OUTLIER_HIGH</code></td>
+<td>The score is two or more robust deviations from the book's median</td>
+</tr>
+</tbody>
+</table>
+<h2 id="source-code">Source Code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/dmccreary/dgx-eval/blob/main/src/scoring/chapter_quality.py"><code>src/scoring/chapter_quality.py</code></a>
+  is the scorer.</li>
+<li><a href="https://github.com/dmccreary/dgx-eval/blob/main/src/README.md"><code>src/README.md</code></a>
+  describes it with the other scoring scripts.</li>
+<li><a href="https://github.com/dmccreary/dgx-eval/blob/main/CONTENT-GENERATION-GUIDE.md"><code>CONTENT-GENERATION-GUIDE.md</code></a>
+  holds the budget, anti-padding, and mascot rules it checks.</li>
+<li><a href="https://github.com/dmccreary/ibook-skills/blob/main/skills/chapter-content-generator/references/microsim-specification-rules.md"><code>microsim-specification-rules.md</code></a>
+  holds the specification rules R1 to R14.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../evaluation-status/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Evaluation Status">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Evaluation Status
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../models/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

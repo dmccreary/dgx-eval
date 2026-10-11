@@ -1,0 +1,23 @@
+{
+  "title": "Inference Request Path",
+  "description": "The learner will explain what each of 6 stages of a chat completion request does by opening each stage and then locating the stage responsible for each of 4 described events, with at least 3 of 4 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "inference-request-path",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "scaffold",
+  "chapter_number": 13,
+  "chapter_title": "Inference Servers and Local API Endpoints",
+  "chapter_dir": "13-inference-servers",
+  "chapter_rel_dir": "chapters/13-inference-servers"
+}

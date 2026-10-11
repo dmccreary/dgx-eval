@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="The working skills this course assumes, the intelligent-textbook model, the MkDocs toolchain, and the documents that describe a course, ending with what the benchmark workload produces and why it is hard for a small model.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>1. Prerequisites and the Intelligent Textbook - DGX Evaluation for Textbook Generation</title>
+        <title>Prerequisites and the Intelligent Textbook - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Prerequisites and the Intelligent Textbook
+              Prerequisites and the Intelligent Textbook
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -693,6 +516,318 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-sets-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Sets Up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-working-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      Five Working Skills
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Five Working Skills">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-ai-assistant-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative AI Assistant Use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-line-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Line Basics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Line Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-command-output-predictor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Command Output Predictor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-scripting-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Scripting Basics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Version Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown-source-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markdown Source Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Intelligent Textbook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Intelligent Textbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-textbook-intelligent" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes a Textbook Intelligent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levels-of-intelligent-textbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Levels of Intelligent Textbooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Levels of Intelligent Textbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-book-levels-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Book Levels MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iframe-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embedding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-build-toolchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Build Toolchain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Build Toolchain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      MkDocs Material
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      MkDocs Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-site-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static Site Build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strict-site-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strict Site Build
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#describing-what-a-course-must-teach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Describing What a Course Must Teach
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Describing What a Course Must Teach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Outcomes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#course-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Course Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-textbook-generation-pipeline-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Textbook Generation Pipeline Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#course-description-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Description Quality Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-benchmark-workload-produces" class="md-nav__link">
+    <span class="md-ellipsis">
+      What the Benchmark Workload Produces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-is-a-demanding-test-for-a-local-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why It Is a Demanding Test for a Local Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1201,6 +1336,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1351,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1452,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1594,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1753,318 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-sets-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Sets Up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-working-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      Five Working Skills
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Five Working Skills">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-ai-assistant-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative AI Assistant Use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-line-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Line Basics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Line Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-command-output-predictor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Command Output Predictor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-scripting-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Scripting Basics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Version Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown-source-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markdown Source Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Intelligent Textbook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Intelligent Textbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-textbook-intelligent" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes a Textbook Intelligent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levels-of-intelligent-textbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Levels of Intelligent Textbooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Levels of Intelligent Textbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-book-levels-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Book Levels MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iframe-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embedding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-build-toolchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Build Toolchain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Build Toolchain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      MkDocs Material
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      MkDocs Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-site-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static Site Build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strict-site-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strict Site Build
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#describing-what-a-course-must-teach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Describing What a Course Must Teach
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Describing What a Course Must Teach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Outcomes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#course-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Course Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-textbook-generation-pipeline-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Textbook Generation Pipeline Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#course-description-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Description Quality Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-benchmark-workload-produces" class="md-nav__link">
+    <span class="md-ellipsis">
+      What the Benchmark Workload Produces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-is-a-demanding-test-for-a-local-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why It Is a Demanding Test for a Local Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1498,15 +2185,921 @@
 </tbody>
 </table>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
+<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description.md">course description</a>.</p>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Meet Tera, Your Guide Through the Measurements</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Hello, I'm Tera, a robot with a tool belt full of benchmarking instruments, and I would rather measure something than argue about it. By the end of this chapter you will be able to explain what the benchmark workload produces and why it is a hard test for a small model. You will see me in six roles across this book:</p>
+<ol>
+<li><strong>Welcome:</strong> I open each chapter and tell you what you will be able to do by the end.</li>
+<li><strong>Think:</strong> I flag a mental model worth slowing down for.</li>
+<li><strong>Tip:</strong> I hand you a shortcut you can use immediately.</li>
+<li><strong>Warn:</strong> I mark a known trap and show you how to avoid it.</li>
+<li><strong>Encourage:</strong> I show up where the material is notoriously hard.</li>
+<li><strong>Celebrate:</strong> I close a chapter by naming what you just accomplished.</li>
+</ol>
+<p>If I'm not doing one of those six things, I'm not in the chapter. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-sets-up">What This Chapter Sets Up<a class="headerlink" href="#what-this-chapter-sets-up" title="Permanent link">&para;</a></h2>
+<p>This course asks an empirical question: can a single NVIDIA DGX system running an open-weight small language model generate an entire intelligent textbook without sending a token to the cloud? Answering it requires two kinds of groundwork. The first is a handful of working skills, because every later chapter asks you to type commands, read scripts, and commit files. The second is a shared vocabulary for the thing being generated, because you cannot judge a textbook until you know what makes one intelligent.</p>
+<p>The chapter therefore moves through four groups of ideas. It starts with the five skills the course assumes, then defines the intelligent textbook and its interactive parts. It continues with the toolchain that turns Markdown files into a website, and it closes with the documents that describe what a course must teach. A final section connects those ideas to the benchmark workload that the rest of the book measures.</p>
+<h2 id="five-working-skills">Five Working Skills<a class="headerlink" href="#five-working-skills" title="Permanent link">&para;</a></h2>
+<p>You do not need prior GPU or model-serving experience, but you do need these five skills. Each one is used in a specific later chapter, and the closing table of this section lists where.</p>
+<h3 id="generative-ai-assistant-use">Generative AI Assistant Use<a class="headerlink" href="#generative-ai-assistant-use" title="Permanent link">&para;</a></h3>
+<p>A <strong>generative AI assistant</strong> is a program that produces text, code, or commands in response to a natural-language request. Chat assistants and coding assistants are the common forms. Using one well means more than typing a question: you supply enough context for a useful answer, you ask for the reasoning, and you check the result before you rely on it.</p>
+<p>This skill matters more here than in most courses. The entire benchmark is one long exercise in generation, so you need a calibrated sense of how an assistant fails. The typical failure is not nonsense. It is an answer that is plausible, fluent, and slightly wrong, which makes it easy to accept without checking.</p>
+<p>Consider a worked example. You are in a directory holding about forty files and you want the five largest. A prompt that states the situation and asks for an explanation produces an answer you can evaluate:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Prompt:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  I am in a directory that holds about forty files. Write one shell command
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  that lists the five largest files, largest first, and explain each part.
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Assistant reply (illustrative):
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  ls -lS | head -6
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  "ls -lS" lists entries with their sizes, largest first. "head -6" keeps the
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  first six lines: one summary line that starts with "total", then five entries.
+</span></code></pre></div>
+<p>The command is a good answer, and it still deserves a check. <code>ls</code> does not distinguish files from directories, so a large subdirectory would appear in the list and take one of the five slots. Running the command in a scratch directory whose contents you know exposes this in seconds. Whether the behavior matters depends on your question, but you only get to decide if you looked.</p>
+<p>The habits that separate productive assistant use from lucky guessing are small and concrete. The table summarizes the three that this course relies on.</p>
+<table>
+<thead>
+<tr>
+<th>Habit</th>
+<th>Weak version</th>
+<th>Strong version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>State the context</td>
+<td>"List big files."</td>
+<td>"I am in a directory with about forty files. List the five largest."</td>
+</tr>
+<tr>
+<td>Ask for the reason</td>
+<td>"Fix this."</td>
+<td>"Explain what each part of the command does."</td>
+</tr>
+<tr>
+<td>Verify before trusting</td>
+<td>Run it on real data</td>
+<td>Run it on a scratch copy where you know the right answer</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Tera's Tip</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Before you run a command an assistant gives you, ask it to explain every flag, then run the command in an empty scratch directory first. A wrong answer there costs nothing, and the same habit will keep a local model's mistakes cheap later in the book.</p>
+</div>
+<p>In Chapter 16 the assistant stops being something you talk to and becomes an agent that runs tools on its own. The verification habit transfers directly, because an agent's output is also plausible and sometimes wrong.</p>
+<h3 id="command-line-basics">Command Line Basics<a class="headerlink" href="#command-line-basics" title="Permanent link">&para;</a></h3>
+<p>The <strong>command line</strong> is a text interface to a computer. You type a command, press Return, and read the output. A <strong>shell</strong> is the program that interprets what you type, and a <strong>terminal</strong> is the window that hosts it. Every machine in this course, including the DGX itself, is reached and administered this way.</p>
+<p>Three ideas carry most of the weight. The <strong>working directory</strong> is the folder the shell currently treats as "here". A <strong>path</strong> is a location written as folder names separated by slashes; an absolute path starts at the root of the filesystem, and a relative path starts at the working directory. A <strong>command</strong> takes arguments that say what to act on, so <code>ls docs</code> lists the folder named <code>docs</code>.</p>
+<p>The following session shows five commands against a small practice project. Read it line by line; the lines that start with <code>$</code> are what you type, and the lines below each are what the shell prints.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ pwd
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/home/&lt;user&gt;/books/practice-book
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>$ ls
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>docs  mkdocs.yml
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>$ cd docs
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>$ ls
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>chapters  index.md
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>$ cat index.md
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a># Practice Book
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Welcome to the practice book.
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>$ grep -n "Welcome" index.md
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>3:Welcome to the practice book.
+</span></code></pre></div>
+<p>Notice what the session does not print. The <code>cd docs</code> command succeeded and produced no output at all; the only evidence is that the next <code>ls</code> lists a different folder. Silence from a shell command usually means success. Notice also that <code>&lt;user&gt;</code> is a placeholder. Throughout this book, any account name, machine name, or address in an example is replaced with a placeholder like this one, for reasons Chapter 23 explains in full.</p>
+<p>The commands you need for the next few chapters are few. This table organizes the ones from the session, plus the one that opens a shell on another machine.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pwd</code></td>
+<td>Prints the absolute path of the working directory</td>
+<td><code>pwd</code></td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td>Lists the files and folders in the working directory</td>
+<td><code>ls docs</code></td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>Changes the working directory; prints nothing on success</td>
+<td><code>cd docs</code></td>
+</tr>
+<tr>
+<td><code>cat</code></td>
+<td>Prints the contents of a file</td>
+<td><code>cat index.md</code></td>
+</tr>
+<tr>
+<td><code>grep</code></td>
+<td>Prints the lines of a file that match a pattern</td>
+<td><code>grep -n "Welcome" index.md</code></td>
+</tr>
+<tr>
+<td><code>ssh</code></td>
+<td>Opens a shell on another machine (Chapter 7)</td>
+<td><code>ssh &lt;user&gt;@&lt;dgx-host&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Reading about commands is not the same as predicting what they do. The interactive exercise below makes you commit to an output before the answer appears, which is the quickest way to find out which of these ideas you only half hold.</p>
+<h4 id="diagram-command-output-predictor">Diagram: Command Output Predictor<a class="headerlink" href="#diagram-command-output-predictor" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Command Output Predictor</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> command-output-predictor<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/learning-linux/tree/main/docs/sims/command-syntax<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> execute<br/>
+<strong>Learning Objective:</strong> The learner will execute five shell commands against a given directory tree by predicting the output and the resulting working directory after each, with at least 4 of 5 correct.</p>
+<p><strong>Prerequisites:</strong> terminal, shell, working directory, path, absolute path, relative path, command, argument (all defined in the section "Command Line Basics" above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner selects one predicted output per command before the sim shows the real output. A selection is correct when it equals the option marked correct in Content. Mastery is 4 of 5 correct. Reading the directory tree and reading the feedback are exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) <code>ls</code> lists everything below the working directory, including the contents of subfolders. (2) <code>cd</code> prints the new path. (3) <code>..</code> names the current folder rather than the parent folder. (4) Each command starts fresh instead of continuing from the working directory the previous command left.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level execution needs the learner to carry state from one command to the next, so the five commands run in a fixed order and each prediction depends on the working directory the earlier commands produced. Committing to an answer before it is revealed turns watching a terminal into producing a result.</p>
+<p><strong>Content:</strong></p>
+<p>The sim shows this practice directory, labeled "synthetic example". The shell starts in <code>/home/student/lab</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Kind</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/home/student/lab/notes.txt</code></td>
+<td>file</td>
+<td>Three lines: <code>model: unset</code>, <code>context: 4096</code>, <code>status: draft</code></td>
+</tr>
+<tr>
+<td><code>/home/student/lab/readme.md</code></td>
+<td>file</td>
+<td>One line: <code>Probe results go in results.</code></td>
+</tr>
+<tr>
+<td><code>/home/student/lab/probes</code></td>
+<td>folder</td>
+<td>Contains <code>cpu.py</code> and <code>gpu.py</code></td>
+</tr>
+<tr>
+<td><code>/home/student/lab/results</code></td>
+<td>folder</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table>
+<p>The five commands, in this order, each with exactly four options shown in the order listed:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Command typed</th>
+<th>Option A</th>
+<th>Option B</th>
+<th>Option C</th>
+<th>Option D</th>
+<th>Correct</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>pwd</code></td>
+<td><code>/home/student</code></td>
+<td><code>/home/student/lab</code></td>
+<td><code>lab</code></td>
+<td><code>notes.txt  probes  readme.md  results</code></td>
+<td>B</td>
+<td><code>pwd</code> prints the full absolute path of the working directory, not just its last folder name.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>ls</code></td>
+<td><code>probes  results</code></td>
+<td><code>notes.txt  readme.md</code></td>
+<td><code>notes.txt  probes  readme.md  results</code></td>
+<td><code>cpu.py  gpu.py</code></td>
+<td>C</td>
+<td><code>ls</code> lists both files and folders in the working directory, and does not list what is inside the folders.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>cd probes</code></td>
+<td>Prints <code>cpu.py  gpu.py</code></td>
+<td>Prints <code>/home/student/lab/probes</code></td>
+<td>Prints nothing; the working directory becomes <code>/home/student/lab/probes</code></td>
+<td>Prints <code>probes: Is a directory</code></td>
+<td>C</td>
+<td><code>cd</code> changes state silently. Its only evidence is the working directory that later commands see.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>ls</code></td>
+<td><code>notes.txt  probes  readme.md  results</code></td>
+<td><code>cpu.py  gpu.py</code></td>
+<td><code>cpu.py  gpu.py  notes.txt</code></td>
+<td>Prints nothing</td>
+<td>B</td>
+<td>After <code>cd probes</code> the working directory is <code>probes</code>, so <code>ls</code> lists that folder's two files.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>cat ../notes.txt</code></td>
+<td><code>cat: ../notes.txt: No such file or directory</code></td>
+<td><code>notes.txt</code></td>
+<td><code>cpu.py  gpu.py</code></td>
+<td>The three lines <code>model: unset</code>, <code>context: 4096</code>, <code>status: draft</code></td>
+<td>D</td>
+<td><code>..</code> names the parent folder, so the path reaches <code>/home/student/lab/notes.txt</code>, and <code>cat</code> prints the file's contents.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The directory and its file contents are synthetic and invented for this exercise; the sim labels them "synthetic example". The behavior of <code>pwd</code>, <code>ls</code>, <code>cd</code>, <code>cat</code> and <code>..</code> is the behavior stated in the chapter section "Command Line Basics".</p>
+<p><strong>Rules:</strong> The commands run in the fixed order 1 to 5 and state carries over: the working directory after command 3 is <code>/home/student/lab/probes</code> and stays so through commands 4 and 5. Option order is fixed as listed. There is no randomness and no numeric tolerance. Each command allows exactly one selection, and it is final.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees the directory table and the first command, <code>pwd</code>, with its four options.</li>
+<li>The learner selects one option. The sim immediately shows the real output, marks the selection correct or incorrect, shows the correct option, and shows the Why text.</li>
+<li>The learner moves to the next command. The sim shows the working directory that the earlier commands left, so the learner can see the state change after command 3.</li>
+<li>After command 5 the sim shows the score and lists the Misconceptions that correspond to any commands answered incorrectly.</li>
+</ol>
+<p><strong>Feedback:</strong> Five commands, fixed order, one selection each, and the selection is final. The real output, the correct option, and the Why text are shown immediately after the selection. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the Why text. The final score reads "n of 5 correct".</p>
+<p><strong>Starting State:</strong> Command 1 is shown with no option selected, the working directory is <code>/home/student/lab</code>, and the question on screen is "What does the shell print?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that <code>pwd</code> prints the absolute path, <code>ls</code> lists files and folders without descending into folders, <code>cd</code> prints nothing on success, <code>cat</code> prints a file's contents, and <code>..</code> names the parent folder.</p>
+</details>
+<h3 id="python-scripting-basics">Python Scripting Basics<a class="headerlink" href="#python-scripting-basics" title="Permanent link">&para;</a></h3>
+<p>A <strong>Python script</strong> is a text file of Python statements that the Python interpreter runs from top to bottom. Python is the language of the hardware probes, the model-fit calculator, and the benchmark runner in this course, so you will read far more scripts than you write. The <strong>standard library</strong> is the set of modules that ship with Python itself. A script that uses only the standard library runs on any machine with Python and needs nothing installed.</p>
+<p>Before the example, here is what its parts do. The <code>import</code> statement makes a module available. The <code>platform</code> module reports facts about the machine and the interpreter, and the <code>os</code> module reports facts about the operating system, including the number of CPU cores. The <code>print</code> function writes a line to the terminal.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"system:"</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">())</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"machine:"</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">machine</span><span class="p">())</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"python:"</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">python_version</span><span class="p">())</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"cpu cores:"</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">())</span>
+</span></code></pre></div>
+<p>Saved as <code>machine_report.py</code> and run with <code>python3 machine_report.py</code>, the script prints four lines. The values below are illustrative; yours depend on the machine.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>system: Linux
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>machine: aarch64
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>python: 3.11.9
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>cpu cores: 20
+</span></code></pre></div>
+<p>The <code>machine</code> line is the one to watch in this course. DGX systems are built on either x86_64 or aarch64 processors, and that difference decides which software packages install. This six-line script is the seed of the hardware probes in Chapter 10, which grow it into a full report.</p>
+<p>A second script shows the other half of the skill, which is reading data. The <code>json</code> module turns a JSON file into Python lists and dictionaries, <code>open</code> gives access to the file, and <code>len</code> counts the items in a list. The script below counts the concepts and dependencies in this book's own learning graph.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"docs/learning-graph/learning-graph.json"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">graph</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"concepts:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="s2">"nodes"</span><span class="p">]))</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"dependencies:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="s2">"edges"</span><span class="p">]))</span>
+</span></code></pre></div>
+<p>Run from the root of this book's repository, it prints <code>concepts: 506</code> and <code>dependencies: 824</code>. Reading structured data and checking it with a few lines of Python is exactly what the benchmark's structural checks do, so this is the pattern to recognize.</p>
+<table>
+<thead>
+<tr>
+<th>To do this</th>
+<th>Run this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Run a script</td>
+<td><code>python3 machine_report.py</code></td>
+</tr>
+<tr>
+<td>Check the interpreter version</td>
+<td><code>python3 --version</code></td>
+</tr>
+<tr>
+<td>Run one statement without a file</td>
+<td><code>python3 -c "print(2 + 2)"</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="git-version-control">Git Version Control<a class="headerlink" href="#git-version-control" title="Permanent link">&para;</a></h3>
+<p><strong>Git</strong> is a version control system: it records the history of a folder of files as a series of snapshots called <strong>commits</strong>, each with a message that says why the files changed. You can compare any two snapshots, return to an earlier one, and see who changed what. For a project made of text files, which includes every textbook in this course, Git is how work stays recoverable.</p>
+<p>The daily cycle has three steps. You inspect what changed, you stage the files you want recorded, and you commit them with a message. A fourth step, <code>git push</code>, sends the commits to a remote copy.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ git status
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>On branch main
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Changes not staged for commit:
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        modified:   docs/index.md
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>$ git add docs/index.md
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>$ git commit -m "Reword the home page summary"
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>$ git push
+</span></code></pre></div>
+<p>The <code>git add</code> step exists because a commit is a deliberate selection. You may have edited five files and want only one recorded, and <code>git add</code> is how you say which. Writing the message in terms of why the change was made, not what file it touched, pays off months later when you read the history.</p>
+<h3 id="github-repository">GitHub Repository<a class="headerlink" href="#github-repository" title="Permanent link">&para;</a></h3>
+<p>A <strong>GitHub repository</strong> is a remote, hosted copy of a Git project, along with the pages and tools GitHub builds around it. Pushing to it gives you a backup, a shared copy collaborators can pull, and, for this book, a place that can publish the finished site. This book's source lives in a repository, and its site is served from the same one.</p>
+<p>Two properties of a repository matter for this course. A repository can be public or private, and a public one can be read by anyone on the internet. Git also keeps the complete history, so a file that was committed once remains reachable in older commits even after a later commit deletes it.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A Public Repository Remembers Everything</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+This book's repository is public, and Git history is permanent, so a login, address, or token committed even once is exposed for good. Look at <code>git diff</code> before every commit, never commit raw command output, and if something sensitive does get committed, stop and fix it using the history steps in Chapter 23 instead of simply deleting it in the next commit.</p>
+</div>
+<h3 id="markdown-source-files">Markdown Source Files<a class="headerlink" href="#markdown-source-files" title="Permanent link">&para;</a></h3>
+<p><strong>Markdown</strong> is a plain-text format in which a few punctuation conventions mark structure: a leading <code>#</code> makes a heading, a leading <code>-</code> makes a list item, and pipes make a table. A <strong>Markdown source file</strong> is a text file in that format, usually with the extension <code>.md</code>. Because it is plain text, Git can diff it, a model can generate it, and a build tool can turn it into a web page.</p>
+<p>Many Markdown files in this course also begin with a short block of settings between two <code>---</code> lines. That block is called <strong>frontmatter</strong>, and it carries metadata such as the page title. The file below shows the whole set of pieces you will meet most often.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>---
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>title: "Practice Chapter"
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>---
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a># Practice Chapter
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>A paragraph of ordinary prose.
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>- first list item
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>- second list item
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>| Term | Meaning |
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>|---|---|
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>| shell | The program that interprets typed commands |
+</span></code></pre></div>
+<p>The table shows what each piece becomes on the rendered page.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Rendered result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code># Practice Chapter</code></td>
+<td>A top-level page heading</td>
+</tr>
+<tr>
+<td>A line of plain text</td>
+<td>A paragraph</td>
+</tr>
+<tr>
+<td>Lines starting with <code>-</code></td>
+<td>A bulleted list</td>
+</tr>
+<tr>
+<td>Rows of text between pipes</td>
+<td>A table</td>
+</tr>
+<tr>
+<td>Text between two <code>---</code> lines at the top</td>
+<td>Page metadata; not displayed as text</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Blank Line Before Every List</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+MkDocs does not start a list unless a blank line comes before it, so a list typed straight after a sentence collapses into one run-on paragraph. The page still builds with no error, which is why it goes unnoticed. Always leave one empty line before the first bullet or number, and the same goes for tables.</p>
+</div>
+<h2 id="the-intelligent-textbook">The Intelligent Textbook<a class="headerlink" href="#the-intelligent-textbook" title="Permanent link">&para;</a></h2>
+<h3 id="what-makes-a-textbook-intelligent">What Makes a Textbook Intelligent<a class="headerlink" href="#what-makes-a-textbook-intelligent" title="Permanent link">&para;</a></h3>
+<p>An <strong>intelligent textbook</strong> is a textbook whose content is structured so that software can read it, check it, and respond to the reader. Two properties define it. The first is explicit structure: the concepts, their dependencies, and the learning outcomes are stored as data, not only implied by the prose. The second is interactivity: the book contains elements the reader operates and that report back what the reader did.</p>
+<p>Explicit structure is easier to grasp from a small example. The fragment below stores two concepts and one dependency between them, in the JSON format this book's learning graph uses. The edge points from the dependent concept to the concept it depends on, so it reads "a MicroSim depends on the intelligent-textbook idea".</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">"nodes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="p">{</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Intelligent Textbook"</span><span class="p">},</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="p">{</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MicroSim"</span><span class="p">}</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="p">],</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="nt">"edges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="p">{</span><span class="nt">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="nt">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">}</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>A worked comparison shows the difference. Suppose the concept is "quantization", which a later chapter covers. In a static textbook the treatment is a paragraph and a table of numbers. In an intelligent textbook the same concept has a stated place in a dependency graph, so the book knows which concepts must come first. It also carries an interactive simulation in which the reader moves a precision control and watches the memory estimate change, and a short quiz that records which options the reader chose.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Static textbook</th>
+<th>Intelligent textbook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concept order</td>
+<td>Implied by chapter order</td>
+<td>Stored as dependencies between concepts</td>
+</tr>
+<tr>
+<td>Explanation</td>
+<td>Prose and fixed figures</td>
+<td>Prose plus interactive elements</td>
+</tr>
+<tr>
+<td>Reader feedback</td>
+<td>None</td>
+<td>Quizzes and simulations that respond</td>
+</tr>
+<tr>
+<td>Revision</td>
+<td>Edit the page by hand</td>
+<td>Regenerate or revise from the same structured sources</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Why This Book Can Be Generated</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+An intelligent textbook is a set of plain text files plus a build, so a model can write it and a program can check it. That is the property that makes textbook generation a benchmark you can measure at all: the output is machine-readable, so "did it work?" has an answer other than a reader's opinion.</p>
+</div>
+<h3 id="levels-of-intelligent-textbooks">Levels of Intelligent Textbooks<a class="headerlink" href="#levels-of-intelligent-textbooks" title="Permanent link">&para;</a></h3>
+<p>The <strong>levels of intelligent textbooks</strong> are a five-step scale for how much intelligence a book has. Each level adds a capability the previous one lacks, and the higher levels are progressively more aspirational.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>What the reader gets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Static content</td>
+<td>Fixed text and images; no navigation aids or interactivity</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Interactive content</td>
+<td>Hyperlinks, quizzes, MicroSims, and a searchable glossary</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Adaptive content</td>
+<td>Material that changes with the reader's demonstrated progress</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Chatbot integration</td>
+<td>A conversational tutor that answers the reader's questions in real time</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Autonomous AI</td>
+<td>Fully customized lessons generated in real time for each reader</td>
+</tr>
+</tbody>
+</table>
+<p>This book targets Level 2 and above, so it contains MicroSims and quizzes. The books the benchmark generates are Level 2 books as well: Markdown prose, interactive elements, quizzes, and a glossary. The Book Levels MicroSim below lets you compare the five levels directly.</p>
+<h4 id="diagram-book-levels-microsim">Diagram: Book Levels MicroSim<a class="headerlink" href="#diagram-book-levels-microsim" title="Permanent link">&para;</a></h4>
+<iframe src="https://dmccreary.github.io/ibook-skills/sims/book-levels/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<p><a class="md-button" href="https://dmccreary.github.io/ibook-skills/sims/book-levels/main.html">Run the Book Levels MicroSim fullscreen</a></p>
+<details>
+<summary>Book Levels MicroSim (reused MicroSim)</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> book-levels<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Reused<br/>
+<strong>Source:</strong> https://dmccreary.github.io/ibook-skills/sims/book-levels/<br/>
+<strong>Source Repo:</strong> https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/book-levels<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> compare<br/>
+<strong>Learning Objective:</strong> The learner will compare the five levels of intelligent textbooks by the capability each level adds over the one below it.</p>
+<p>Reused from the MicroSim catalog (WHAT match score 0.7579).</p>
+</details>
+<h3 id="microsim">MicroSim<a class="headerlink" href="#microsim" title="Permanent link">&para;</a></h3>
+<p>A <strong>MicroSim</strong> is a small, self-contained interactive simulation, embedded in a textbook page, that demonstrates exactly one idea. The scope is the point: a MicroSim has one learning objective, a few controls, and a result the reader can see change. A slider that redraws a chart as the reader changes a value is the typical shape.</p>
+<p>Each MicroSim in this book lives in its own folder under <code>docs/sims/</code>, named by a short lowercase identifier. The folder holds a <code>main.html</code> page that runs the simulation and an <code>index.md</code> lesson page that describes it. That layout lets the same simulation be embedded in a chapter, opened fullscreen, or reused in another book.</p>
+<p>Two examples already exist in this repository. The Parameters That Fit in Memory MicroSim lets you move a memory slider and see the largest model whose weights fit, and the Testing Architecture MicroSim lets you step through how the evaluation machines connect. Both follow the folder layout above.</p>
+<p>Because a MicroSim is a small program, it has a build status as it moves from a plan to a finished sim. This book marks each MicroSim as <code>scaffold</code> (a specification exists, but no implementation), <code>built</code> (implemented and awaiting the Primary Author's review), or <code>approved</code> (tested and cleared for learners).</p>
+<h3 id="iframe-embedding">Iframe Embedding<a class="headerlink" href="#iframe-embedding" title="Permanent link">&para;</a></h3>
+<p><strong>Iframe embedding</strong> places one web page inside another by using the HTML <code>iframe</code> element. It is how a MicroSim's <code>main.html</code> appears inside a chapter page without being copied into it. The <code>iframe</code> element takes the address of the page to show, plus a height and width.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"../../sims/example-sim/main.html"</span> <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span> <span class="na">height</span><span class="o">=</span><span class="s">"500px"</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The address in <code>src</code> is relative to the page that contains the iframe. A chapter's <code>index.md</code> renders two folders deep, so it reaches the <code>sims</code> folder with <code>../../</code>. A wrong relative path produces a blank box, with no build error to point at it.</p>
+<h2 id="the-build-toolchain">The Build Toolchain<a class="headerlink" href="#the-build-toolchain" title="Permanent link">&para;</a></h2>
+<h3 id="mkdocs-material">MkDocs Material<a class="headerlink" href="#mkdocs-material" title="Permanent link">&para;</a></h3>
+<p><strong>MkDocs</strong> is a static site generator: it reads a folder of Markdown files and a configuration file and produces a website. <strong>MkDocs Material</strong> is a widely used theme for it that adds search, navigation, callout boxes called admonitions, code highlighting, and a responsive layout. This book is built with it, and so are the books the benchmark generates.</p>
+<p>The configuration file is <code>mkdocs.yml</code>. It names the site, selects the theme, and lists the pages. A minimal one is only a few lines.</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Practice Book</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Chapters</span><span class="p">:</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Introduction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapters/01-introduction/index.md</span>
+</span></code></pre></div>
+<p>Each page you write is a Markdown file under the <code>docs</code> folder. The configuration decides which of them appears on the site and in what order.</p>
+<p>One extension you will see in every chapter is the <strong>admonition</strong>, a callout box that sets a note apart from the body text. It is written as <code>!!!</code>, a type, an optional title in quotes, and a body indented by four spaces. The mascot's messages in this book are admonitions with a custom type.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>!!! note "A Short Title"
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    The body of the callout is indented four spaces.
+</span></code></pre></div>
+<h3 id="mkdocs-navigation">MkDocs Navigation<a class="headerlink" href="#mkdocs-navigation" title="Permanent link">&para;</a></h3>
+<p><strong>MkDocs navigation</strong> is the sidebar tree, and it is defined by the <code>nav:</code> block in <code>mkdocs.yml</code>. Each entry is a label followed by the path of a Markdown file relative to <code>docs</code>. Entries can nest, which is how a chapter's sub-pages sit under the chapter.</p>
+<p>A page that exists on disk but is missing from <code>nav:</code> is built, yet no reader can find it from the sidebar. Adding a page is therefore always two steps: create the file, then list it. In the example above, adding <code>chapters/02-setup/index.md</code> means adding one line under <code>Chapters:</code>, at the same indentation as the entry above it.</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Chapters</span><span class="p">:</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Introduction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapters/01-introduction/index.md</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Setup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapters/02-setup/index.md</span>
+</span></code></pre></div>
+<h3 id="static-site-build">Static Site Build<a class="headerlink" href="#static-site-build" title="Permanent link">&para;</a></h3>
+<p>A <strong>static site build</strong> is the step that converts the Markdown files and configuration into finished web files. Running <code>mkdocs build</code> writes a <code>site</code> folder of plain HTML, CSS, and JavaScript. Nothing in that folder needs a database or a server-side program, so any file host can serve it, and GitHub Pages is the usual choice here.</p>
+<p>For the practice project above, the <code>site</code> folder holds one HTML file per page, plus shared assets.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>site/
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  index.html
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  chapters/01-introduction/index.html
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  assets/
+</span></code></pre></div>
+<p>Static output has a useful consequence for this course. A built site can be inspected and checked as a set of files, with no running service to configure. It also means a local model never has to operate a server to produce a textbook; it only has to write files that build.</p>
+<h3 id="strict-site-build">Strict Site Build<a class="headerlink" href="#strict-site-build" title="Permanent link">&para;</a></h3>
+<p>A <strong>strict site build</strong> is a build that treats every warning as an error. You run it with <code>mkdocs build --strict</code>. An ordinary build prints a warning about a broken link and then finishes anyway; a strict build stops.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$ mkdocs build --strict
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>WARNING -  Doc file 'index.md' contains a link 'chapters/02-setup/index.md',
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>           but the target is not found among documentation files.
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Aborted with 1 warnings in strict mode!
+</span></code></pre></div>
+<p>The wording above is abbreviated and illustrative. The behavior is the point: a defect that would have shipped as a dead link becomes a failed build you must fix.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Run Strict Before You Commit</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Run <code>mkdocs build --strict</code> before every commit. It catches broken links and unlisted files while the change is still small, and later in the book the same check becomes one of the objective measurements of whether a model's output is any good.</p>
+</div>
+<h2 id="describing-what-a-course-must-teach">Describing What a Course Must Teach<a class="headerlink" href="#describing-what-a-course-must-teach" title="Permanent link">&para;</a></h2>
+<h3 id="blooms-taxonomy">Bloom's Taxonomy<a class="headerlink" href="#blooms-taxonomy" title="Permanent link">&para;</a></h3>
+<p><strong>Bloom's Taxonomy</strong> is a classification of learning objectives by the kind of thinking they require. The 2001 revision names six levels, from simplest to most demanding: remember, understand, apply, analyze, evaluate, and create. Each level has characteristic verbs, and the verb in an objective tells you what the learner must do to show it.</p>
+<p>The value for this course is that the verb makes an objective checkable. "Understand Tailscale" cannot be tested, because there is no action to observe. "Describe how Tailscale builds an encrypted mesh between devices" can be tested, since you can read the description and judge it. The table shows each level with a real outcome from this course's description.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Typical verbs</th>
+<th>Outcome from this course</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Remember</td>
+<td>list, define, recall</td>
+<td>List common quantization levels and model file formats</td>
+</tr>
+<tr>
+<td>Understand</td>
+<td>explain, summarize, interpret</td>
+<td>Explain why an isolated conda environment makes an evaluation reproducible</td>
+</tr>
+<tr>
+<td>Apply</td>
+<td>use, execute, calculate</td>
+<td>Create a conda environment with a pinned Python version</td>
+</tr>
+<tr>
+<td>Analyze</td>
+<td>compare, distinguish, deconstruct</td>
+<td>Compare candidate open-weight models by license, size, and context window</td>
+</tr>
+<tr>
+<td>Evaluate</td>
+<td>judge, critique, justify</td>
+<td>Judge whether a DGX configuration is sufficient for end-to-end generation</td>
+</tr>
+<tr>
+<td>Create</td>
+<td>design, construct, compose</td>
+<td>Build a model-fit calculator that returns a fit verdict with headroom</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">A Verb Is a Measurement</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Swapping a vague word like "understand" for an observable verb turns a hope into something you can measure. The evaluation in this book runs on the same instinct: a claim about a model counts only when it comes with a number you can check.</p>
+</div>
+<h3 id="learning-outcomes">Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permanent link">&para;</a></h3>
+<p><strong>Learning outcomes</strong> are statements of what a learner will be able to do after finishing a course, written as observable actions. Each begins with a verb from the Bloom's Taxonomy list, so each can be checked by watching the learner do it. A good set of outcomes does double duty: it tells the learner what to aim for and tells the author what to teach and what to test.</p>
+<h3 id="course-description">Course Description<a class="headerlink" href="#course-description" title="Permanent link">&para;</a></h3>
+<p>A <strong>course description</strong> is a structured document that states what a course covers, who it is for, what it excludes, and what learners can do afterward. In this workflow it is the seed document. Every later artifact inherits its scope from it, so a gap or a vague statement in the course description becomes a gap or an invented topic everywhere downstream.</p>
+<p>This book's own course description, <a href="../../course-description.md">the one you can read in full</a>, is a good worked example. The table shows each part, what it tells a generator, and what this book put there.</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>What it tells the generators</th>
+<th>In this book</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target audience</td>
+<td>The reading level and tone</td>
+<td>Professional development and adult continuing education: AI engineers, instructional technologists, technical authors, IT leads</td>
+</tr>
+<tr>
+<td>Prerequisites</td>
+<td>What may be assumed, and so not explained</td>
+<td>Command line, basic Python, Git and GitHub, and experience with an AI assistant</td>
+</tr>
+<tr>
+<td>Course overview</td>
+<td>The question the course answers</td>
+<td>Can one DGX running a small model generate a textbook with no cloud tokens?</td>
+</tr>
+<tr>
+<td>Main topics covered</td>
+<td>The concepts to enumerate</td>
+<td>Sixteen numbered topics, from intelligent textbooks to sanitizing artifacts</td>
+</tr>
+<tr>
+<td>Topics not covered</td>
+<td>The boundary that stops invented content</td>
+<td>Ten exclusions, such as training, fine-tuning, and cluster-scale infrastructure</td>
+</tr>
+<tr>
+<td>Learning outcomes</td>
+<td>What each concept must support</td>
+<td>Outcomes at all six Bloom levels, ending in a capstone evaluation</td>
+</tr>
+</tbody>
+</table>
+<p>Specificity in the topics section also drives how many concepts a generator can extract. The pair below describes the same topic at two levels of detail.</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Statement</th>
+<th>What a generator can do with it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vague</td>
+<td>"Covers AI hardware."</td>
+<td>Invent a generic list of components</td>
+</tr>
+<tr>
+<td>Specific</td>
+<td>"CPU architecture (x86_64 and aarch64), system RAM, GPU configuration, dedicated versus unified memory, storage, power, and thermals."</td>
+<td>Enumerate each named concept and relate them</td>
+</tr>
+</tbody>
+</table>
+<p>The "Topics not covered" section deserves attention because it is the one authors skip. A model asked to write about a DGX will happily write about training and fine-tuning unless the course description rules it out. An explicit exclusion costs one line and prevents a chapter nobody wanted.</p>
+<p>The course description is also the first of a chain of artifacts. Before looking at the chain, four terms need a definition. A <strong>learning graph</strong> is a graph of the course's concepts in which each connection records that one concept depends on another; Chapter 2 builds one. A <strong>skill</strong> is a packaged set of instructions that an AI agent follows to do one job, covered in Chapter 17. A <strong>glossary</strong> defines each concept in a sentence, and an <strong>FAQ</strong> answers questions a reader is likely to ask. A <strong>quiz</strong> is a set of questions that test a chapter's content.</p>
+<p>With those terms in hand, the pipeline has eight artifacts: the course description and seven that the skills generate from it. The diagram below lets you explore what each one contains and then test whether you can say what each one is built from.</p>
+<h4 id="diagram-textbook-generation-pipeline-explorer">Diagram: Textbook Generation Pipeline Explorer<a class="headerlink" href="#diagram-textbook-generation-pipeline-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Textbook Generation Pipeline Explorer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> textbook-pipeline-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/signal-processing/tree/main/docs/sims/book-gen-workflow<br/>
+<strong>Bloom Level:</strong> Remember<br/>
+<strong>Bloom Verb:</strong> identify<br/>
+<strong>Learning Objective:</strong> The learner will identify, for each of the seven generated artifacts of the textbook pipeline, which of the other seven artifacts it is built from, with at least 6 of 7 exactly correct.</p>
+<p><strong>Prerequisites:</strong> course description, learning graph, skill, glossary, FAQ, quiz, MicroSim (all defined in the sections "Course Description" and "MicroSim" above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each generated artifact, the learner checks every other artifact it is built from, then submits. A submission is correct only when the checked set equals the set in the "Built from" column of Content exactly. Mastery is 6 of 7 correct. Reading the "Contains" and "Location" text is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) The chapters are written directly from the course description without a learning graph. (2) The glossary is written from the chapters rather than from the concept list. (3) A MicroSim is built from the course description rather than from a specification inside a chapter.</p>
+<p><strong>Instructional Rationale:</strong> Remember-level mastery of a chain is the ability to say what comes from what, so the check asks for the set of inputs of each artifact. Letting the learner read each artifact's contents first makes the dependencies something they have seen before they are asked to recall them.</p>
+<p><strong>Content:</strong></p>
+<p>Eight artifacts. The learner can open any of them and read its row. The sim labels the "Built from" column as the answer key and hides it until the learner has submitted.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Artifact</th>
+<th>Built from</th>
+<th>Contains</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Course Description</td>
+<td>none (written by the author)</td>
+<td>audience, prerequisites, overview, topics, exclusions, outcomes</td>
+<td><code>docs/course-description.md</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Learning Graph</td>
+<td>Course Description</td>
+<td>concepts and dependency edges, as a CSV file and a JSON file</td>
+<td><code>docs/learning-graph/learning-graph.json</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Chapter Structure</td>
+<td>Course Description, Learning Graph</td>
+<td>chapter folders with titles, summaries, and assigned concept lists</td>
+<td><code>docs/chapters/NN-slug/index.md</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Chapter Content</td>
+<td>Course Description, Learning Graph, Chapter Structure</td>
+<td>prose, tables, and specifications for interactive elements</td>
+<td><code>docs/chapters/NN-slug/index.md</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>MicroSims</td>
+<td>Chapter Content</td>
+<td>one <code>main.html</code> and one <code>index.md</code> per simulation</td>
+<td><code>docs/sims/&lt;sim-id&gt;/</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Glossary</td>
+<td>Learning Graph</td>
+<td>one definition for each concept in the concept list</td>
+<td><code>docs/glossary.md</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>FAQ</td>
+<td>Chapter Content, Learning Graph, Glossary</td>
+<td>questions and answers drawn from the book</td>
+<td><code>docs/faq.md</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Quizzes</td>
+<td>Chapter Content, Learning Graph</td>
+<td>questions for each chapter</td>
+<td><code>docs/chapters/NN-slug/quiz.md</code></td>
+</tr>
+</tbody>
+</table>
+<p>Why each answer is correct, shown as feedback after the learner submits:</p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Learning Graph</td>
+<td>The concepts are enumerated from the topics and outcomes the course description states.</td>
+</tr>
+<tr>
+<td>Chapter Structure</td>
+<td>Chapters group the graph's concepts under the course description's scope, with prerequisites in the same or an earlier chapter.</td>
+</tr>
+<tr>
+<td>Chapter Content</td>
+<td>Each chapter is written from its outline and concept list, within the course description's audience and scope, and the graph's impact scores set how much space each concept gets.</td>
+</tr>
+<tr>
+<td>MicroSims</td>
+<td>A MicroSim is built from the specification block written inside a chapter.</td>
+</tr>
+<tr>
+<td>Glossary</td>
+<td>One definition is written for each concept in the graph's concept list.</td>
+</tr>
+<tr>
+<td>FAQ</td>
+<td>Questions come from what the chapters teach, the concepts in the graph, and the terms the glossary defines.</td>
+</tr>
+<tr>
+<td>Quizzes</td>
+<td>Questions test what a chapter teaches and are aligned to the graph's concepts.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The artifact names, inputs, and locations come from this chapter's section "Course Description" and from the skill descriptions in the ibook-skills library (learning-graph-generator, book-chapter-generator, chapter-content-generator, glossary-generator, faq-generator, quiz-generator, microsim-generator). No value is synthetic.</p>
+<p><strong>Rules:</strong> The seven check items run in the fixed order 2 to 8. Each item offers all seven other artifacts as checkboxes, including artifacts that come later in the pipeline. An item is correct only when the checked set equals the "Built from" set exactly: a missing artifact and an extra artifact are both incorrect. The Course Description has no inputs, so it is never a check item.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner opens each of the eight artifacts in any order and reads its Contains and Location text. The learner should notice that Chapter Structure and Chapter Content share a file.</li>
+<li>The learner starts the check. The sim shows artifact 2, Learning Graph, with seven checkboxes for the other artifacts.</li>
+<li>The learner checks every artifact they think it is built from and submits. The sim shows the correct set, marks the item correct or incorrect, and shows the Why text.</li>
+<li>The learner repeats for artifacts 3 to 8 in order. The sim then shows the first-attempt score and, for each missed item, the misconception it corresponds to.</li>
+</ol>
+<p><strong>Feedback:</strong> Seven items, fixed order, one submission per item, and the submission is final. Correct: "Correct" followed by the Why text. Incorrect: "Not quite. It is built from: <correct set>" followed by the Why text. The correct set is revealed immediately after each submission. The final score reads "n of 7 correct".</p>
+<p><strong>Starting State:</strong> All eight artifacts are shown in pipeline order with the course description first, nothing selected, and the question on screen is "What is each artifact built from?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that the pipeline has eight artifacts: the course description and seven generated ones. It states that the course description is the seed document and that the learning graph is generated from it.</p>
+</details>
+<h3 id="course-description-quality-score">Course Description Quality Score<a class="headerlink" href="#course-description-quality-score" title="Permanent link">&para;</a></h3>
+<p>The <strong>course description quality score</strong> is a number, from 0 to 100, that rates how completely a course description supplies the elements the generators need: a title, an audience, prerequisites, topics, and learning outcomes written at the Bloom levels. A low score points at a specific missing element. This book's course description carries a score of 100 in its frontmatter, which is why the rest of the pipeline could start from it without guesswork.</p>
+<h3 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h3>
+<p>A <strong>lesson plan</strong> is a structured teaching outline for one session. It lists the objectives, the activities, and the time each takes. A chapter plus its MicroSims is the raw material, and a lesson plan arranges it into an hour a group of learners can follow. The sketch below is illustrative, for a 60-minute session on this chapter.</p>
+<table>
+<thead>
+<tr>
+<th>Minutes</th>
+<th>Activity</th>
+<th>Material</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>Predict command output, then compare answers</td>
+<td>Command Output Predictor</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Check an assistant's command in a scratch directory</td>
+<td>The ls and head example</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Break a link, then run a strict build</td>
+<td>The strict build example</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Read this book's course description and find the exclusions</td>
+<td>Course Description table</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Discuss: which pipeline step is hardest for a small model?</td>
+<td>Pipeline Explorer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-the-benchmark-workload-produces">What the Benchmark Workload Produces<a class="headerlink" href="#what-the-benchmark-workload-produces" title="Permanent link">&para;</a></h2>
+<p>Everything above exists to make the benchmark workload legible, so it is time to state it. The workload is the <code>ibook-skills</code> skill chain, run by a local model on the DGX against the course description for Algebra I. This evaluation deliberately runs three of the pipeline's stages and no more.</p>
+<ol>
+<li><strong>Learning graph.</strong> The model runs the learning-graph skill on the Algebra I course description. The stage is done when the run ends on its own and leaves the graph as both a CSV file and a JSON file.</li>
+<li><strong>Book structure.</strong> The model runs the chapter-design skill to organize its own learning graph into chapters.</li>
+<li><strong>Chapters generated.</strong> The model runs the chapter-content skill once per chapter. A chapter counts as written when its placeholder is gone and it has at least 1,000 words.</li>
+</ol>
+<p>The scale comes from a reference book. The published Algebra I book, made with cloud models, has 200 concepts, 13 chapters, and about 55,000 words of chapter text. A local model that finishes the three stages has therefore produced a structured data file with hundreds of connections, a chapter outline, and tens of thousands of words of Markdown.</p>
+<h2 id="why-it-is-a-demanding-test-for-a-local-model">Why It Is a Demanding Test for a Local Model<a class="headerlink" href="#why-it-is-a-demanding-test-for-a-local-model" title="Permanent link">&para;</a></h2>
+<p>The workload is hard in a specific way: it is not one hard task but a sequence of different ones, and a failure in any link breaks the next. Each demand below uses something this chapter introduced.</p>
+<table>
+<thead>
+<tr>
+<th>Demand</th>
+<th>What the model must do</th>
+<th>Concept from this chapter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structured output</td>
+<td>Write a learning graph as CSV and JSON that agree, with no cycles and no duplicate labels</td>
+<td>Course Description, Markdown Source Files</td>
+</tr>
+<tr>
+<td>Long-form writing</td>
+<td>Produce about 55,000 words of chapter prose that stays on topic and at the right level</td>
+<td>Learning Outcomes, Bloom's Taxonomy</td>
+</tr>
+<tr>
+<td>Command-line tool use</td>
+<td>Run shell commands, edit files, and run scripts through an agent harness</td>
+<td>Command Line Basics, Python Scripting Basics</td>
+</tr>
+<tr>
+<td>Format precision</td>
+<td>Follow Markdown rules such as the blank line before a list, and keep navigation entries valid</td>
+<td>Markdown Source Files, MkDocs Navigation</td>
+</tr>
+<tr>
+<td>A build that must pass</td>
+<td>Leave a site that survives a strict build</td>
+<td>Strict Site Build, Static Site Build</td>
+</tr>
+<tr>
+<td>Many turns of focus</td>
+<td>Stay on task across roughly 280 model turns, by this book's cost model</td>
+<td>Generative AI Assistant Use</td>
+</tr>
+</tbody>
+</table>
+<p>A model that writes beautiful prose but breaks the JSON fails the first stage. A model that writes valid files but loses the thread after the fortieth tool call fails the third. That is why this benchmark reports per-stage results instead of one score, and why the course spends its early chapters on measuring the machine before it measures the model.</p>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>You started from a list of skills and ended with a description of a benchmark. The skills were a way of working with a generative AI assistant, the command line, Python scripts, Git and GitHub, and Markdown. The vocabulary was the intelligent textbook, its five levels, and the MicroSims inside it. The toolchain was MkDocs Material with its navigation and its static and strict builds, and the planning documents were Bloom's Taxonomy, learning outcomes, the course description and its quality score, and the lesson plan.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Groundwork Laid</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now predict what a shell command will print, read a Python script, trace a change through Git and GitHub, read an <code>mkdocs.yml</code>, and say what the benchmark produces and why it is hard for a small model. That is the whole prerequisite stack, and Chapter 2 builds the learning graph on top of it.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

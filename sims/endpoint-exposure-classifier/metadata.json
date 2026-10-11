@@ -1,0 +1,23 @@
+{
+  "title": "Endpoint Exposure Classifier",
+  "description": "The learner will distinguish, for 6 configurations of a local endpoint, whether a stated party can reach it, with at least 5 of 6 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "endpoint-exposure-classifier",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "distinguish",
+  "completion_status": "scaffold",
+  "chapter_number": 13,
+  "chapter_title": "Inference Servers and Local API Endpoints",
+  "chapter_dir": "13-inference-servers",
+  "chapter_rel_dir": "chapters/13-inference-servers"
+}

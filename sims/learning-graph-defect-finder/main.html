@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Learning Graph Defect Finder</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Learning Graph Defect Finder</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> learning-graph-defect-finder</p>
+            <p><strong>Library:</strong> vis-network</p>
+            <p><strong>Bloom Level:</strong> Analyze</p>
+            <p><strong>Learning Objective:</strong> The learner will examine a 16-concept dependency graph and mark the concepts that have one of four structural defects, finding all 4 defects with no more than 1 false flag.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: graph-model
+    **sim-id:** learning-graph-defect-finder<br/>
+    **Library:** vis-network<br/>
+    **Status:** Specified<br/>
+    **Template:** https://github.com/dmccreary/microsims/tree/main/docs/sims/graph-viewer<br/>
+    **Bloom Level:** Analyze<br/>
+    **Bloom Verb:** examine<br/>
+    **Learning Objective:** The learner will examine a 16-concept dependency graph and mark the concepts that have one of four structural defects, finding all 4 defects with no more than 1 false flag.
+    
+    **Prerequisites:** duplicate concept labels, orphaned concepts, dependency cycle check, label length limit, structural checks (all defined in the sections above this block).
+    
+    **Evidence of Mastery:** The learner flags concepts and assigns each flag a defect type from "Duplicate label", "Orphan", "Cycle", and "Label too long", then submits. A defect is found when every concept in the answer key for that defect is flagged with that type. Mastery is all 4 defects found, with no more than 1 flag on a concept that is not in the answer key. Exploring the graph, without flagging, is not evidence.
+    
+    **Misconceptions:** (1) A concept with no prerequisites is always a defect. (2) A label at the limit is over it. (3) Two concepts whose labels differ only in case are different. (4) A cycle is visible only as one edge.
+    
+    **Instructional Rationale:** Examining a structure for faults needs the learner to apply each check to the whole graph, so each of the four defects is seeded once and two legitimate look-alikes are included to prevent flagging everything unusual.
+    
+    **Content:**
+    
+    The graph has 16 concepts. Each row lists its identifier, its label, and the identifiers of the concepts it depends on. The Note column is the answer key and is never shown to the learner. Label lengths are in characters.
+    
+    | ID | Label | Depends on | Note |
+    |---|---|---|---|
+    | 1 | Numbers | none | A foundational concept with dependents. Not a defect. |
+    | 2 | Variables | 1 | |
+    | 3 | Expressions | 2 | |
+    | 4 | Equations | 3 | |
+    | 5 | Linear Equations | 4 | |
+    | 6 | Slope | 5 | Duplicate label with concept 7, ignoring case. |
+    | 7 | slope | 5 | Duplicate label with concept 6, ignoring case. |
+    | 8 | Graphing Lines | 6 | |
+    | 9 | Systems of Equations | 5, 8 | |
+    | 10 | Inequalities | 4 | |
+    | 11 | Factoring | 13 | On the cycle 11, 12, 13. |
+    | 12 | Quadratic Expressions | 11 | On the cycle 11, 12, 13. |
+    | 13 | Polynomials | 12 | On the cycle 11, 12, 13. |
+    | 14 | Scientific Notation | none | Orphan: nothing depends on it and it depends on nothing. |
+    | 15 | Representing Linear Relationships in Tables Graphs and Equations | 5 | 64 characters, over the 32-character limit. |
+    | 16 | Absolute Value Function Examples | 4 | Exactly 32 characters. Not a defect. |
+    
+    The answer key: "Duplicate label" is concepts 6 and 7; "Cycle" is concepts 11, 12, and 13; "Orphan" is concept 14; and "Label too long" is concept 15. Concepts 1 and 16 are legitimate look-alikes.
+    
+    **Provenance:** The graph is synthetic, written for this exercise, and the sim labels it "synthetic example". The defect definitions and the 32-character limit come from this chapter.
+    
+    **Rules:** A duplicate is two labels equal when compared without regard to case. An orphan has no prerequisites and no dependents. A cycle is a set of concepts that cannot be ordered so that every concept follows its prerequisites. A label is too long when it has more than 32 characters. A flag has one concept and one type, and a concept in a cycle or duplicate pair is flagged individually.
+    
+    **Learner Activity:**
+    
+    1. The learner views the graph, with each concept's label and its edges shown, and may click a concept to read its label length and its prerequisites and dependents.
+    2. The learner selects a concept and chooses a defect type, which places a flag. The learner may remove a flag.
+    3. When satisfied, the learner submits.
+    4. The sim marks each defect found or missed, lists any false flags, and shows the one-sentence reason for each defect.
+    
+    **Feedback:** One submission, with unlimited flag changes before it. After submission: for each of the four defects, "Found" or "Missed" with its reason; for each false flag, the reason that concept is not a defect (concept 1 is foundational and has dependents, concept 16 is exactly at the limit, and so on). The score reads "n of 4 defects found, m false flags".
+    
+    **Starting State:** The graph is shown with no flags and the instruction "Find the four structural defects in this learning graph".
+    
+    **Chapter Anchors:** The chapter states a 32-character label limit, that duplicates are compared without regard to case, that an orphan is connected to nothing while a foundational concept has dependents, and that a cycle makes no study order possible.
+    -->
+</body>
+</html>

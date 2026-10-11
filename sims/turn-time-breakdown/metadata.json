@@ -1,0 +1,23 @@
+{
+  "title": "Agent Turn Time Breakdown",
+  "description": "The learner will calculate the time of an agent turn from its prompt tokens, reply tokens, speeds, and tool time to within 1 second, and name the component that dominates it, for 3 challenges.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "turn-time-breakdown",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "calculate",
+  "completion_status": "scaffold",
+  "chapter_number": 15,
+  "chapter_title": "Optimizing Small Language Model Performance",
+  "chapter_dir": "15-optimizing-performance",
+  "chapter_rel_dir": "chapters/15-optimizing-performance"
+}

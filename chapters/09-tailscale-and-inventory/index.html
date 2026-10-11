@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="Installing the Tailscale client and daemon in a dedicated environment, authenticating, testing the connection, and taking a first read-only inventory of the DGX over SSH.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>9. Installing Tailscale and Taking a Read-Only Inventory - DGX Evaluation for Textbook Generation</title>
+        <title>Installing Tailscale and Taking a Read-Only Inventory - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              9. Installing Tailscale and Taking a Read-Only Inventory
+              Installing Tailscale and Taking a Read-Only Inventory
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -861,6 +684,258 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-tailscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Tailscale
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Tailscale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Daemon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-up-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Up Command
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signing-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signing In
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signing In">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailnet-invitation-and-node-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailnet Invitation and Node Sharing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-auth-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Auth Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-key-expiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Key Expiry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#names-and-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Names and Rules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Names and Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#magicdns" class="md-nav__link">
+    <span class="md-ellipsis">
+      MagicDNS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Control List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale SSH
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proving-the-connection-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proving the Connection Works
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proving the Connection Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-status-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Status Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-ping-and-the-connectivity-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Ping and the Connectivity Test
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tailscale Ping and the Connectivity Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-tailscale-status-reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Tailscale Status Reader
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-read-only-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Read-Only Inventory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Read-Only Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-only-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read-Only Inventory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-inventory-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux Inventory Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#piping-scripts-over-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Piping Scripts Over SSH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-library-only-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard-Library-Only Python
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1201,6 +1276,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1291,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1392,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1534,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1693,258 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-tailscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Tailscale
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Tailscale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Daemon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-up-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Up Command
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signing-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signing In
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signing In">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailnet-invitation-and-node-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailnet Invitation and Node Sharing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-auth-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Auth Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-key-expiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Key Expiry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#names-and-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Names and Rules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Names and Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#magicdns" class="md-nav__link">
+    <span class="md-ellipsis">
+      MagicDNS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Control List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale SSH
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proving-the-connection-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proving the Connection Works
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proving the Connection Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-status-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Status Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-ping-and-the-connectivity-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale Ping and the Connectivity Test
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tailscale Ping and the Connectivity Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-tailscale-status-reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Tailscale Status Reader
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-read-only-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Read-Only Inventory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Read-Only Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-only-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read-Only Inventory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-inventory-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux Inventory Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#piping-scripts-over-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Piping Scripts Over SSH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-library-only-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard-Library-Only Python
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1502,13 +2069,315 @@
 <li><a href="../08-conda-environments/">Chapter 8: Reproducible Python Environments with Conda</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">From Concept to a Working Connection</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Chapter 7 explained the path, and now you build it, one step at a time with a test after each. By the end you will have a verified, encrypted route to the DGX and a first look at what is inside it, without having changed anything on the machine. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>This is the first hands-on chapter. It follows the order the evaluation itself used, and each step ends with a test, so that a failure appears at the step that caused it instead of three layers later. A step that "seems to work" without a test is the most common source of confusion later in a setup.</p>
+<p>The chapter has two halves. The first half installs Tailscale in the <code>dgx</code> conda environment from Chapter 8, signs in, and proves the connection with three increasingly strong tests. The second half uses that connection to take a read-only inventory, which answers the hardware questions of Chapter 5 for the real machine without installing or changing anything on it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Placeholders, not real values</p>
+<p>This site is public, so every address, hostname, and login in this chapter is a placeholder: <code>100.x.y.z</code>, <code>&lt;dgx-host&gt;</code>, <code>&lt;user&gt;</code>, and <code>&lt;tailnet-name&gt;</code>. Substitute the values your administrator gives you, and never copy your real ones into a file you plan to publish.</p>
+</div>
+<h2 id="installing-tailscale">Installing Tailscale<a class="headerlink" href="#installing-tailscale" title="Permanent link">&para;</a></h2>
+<h3 id="tailscale-installation">Tailscale Installation<a class="headerlink" href="#tailscale-installation" title="Permanent link">&para;</a></h3>
+<p><strong>Tailscale installation</strong> here means installing the open-source command-line client and its daemon into a dedicated conda environment, so that the tooling for reaching the DGX is isolated and removable. The alternative is the graphical application for your operating system, which is simpler to run and sits outside the environment. This course uses the environment because Chapter 8's discipline of one environment per tool applies to the tool that every other step depends on.</p>
+<p>The two conda-forge packages are named <code>tailscale</code>, the client, and <code>tailscaled</code>, the daemon. The client does nothing without the daemon, so install both, at the same version.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>dgx<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>tailscale<span class="w"> </span>tailscaled
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>dgx
+</span></code></pre></div>
+<p>The test is that both commands print the same version number.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tailscale<span class="w"> </span>version
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>tailscaled<span class="w"> </span>--version
+</span></code></pre></div>
+<h3 id="tailscale-daemon">Tailscale Daemon<a class="headerlink" href="#tailscale-daemon" title="Permanent link">&para;</a></h3>
+<p>The <strong>Tailscale daemon</strong>, <code>tailscaled</code>, is the background process that creates the network interface, holds the encryption keys, and maintains the connections. The client program you type commands into only talks to the daemon.</p>
+<p>Creating a network interface requires administrator rights on the laptop, so the daemon is started with <code>sudo</code>. A detail catches people here: <code>sudo</code> discards the conda <code>PATH</code>, so give it the full path to the binary. Run it in its own terminal tab and leave it running.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span><span class="s2">"</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/bin/tailscaled"</span>
+</span></code></pre></div>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A Daemon That Is Not Running Looks Like a Broken Network</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+If <code>tailscale status</code> says it cannot connect to the daemon, the cause is almost always that <code>tailscaled</code> is not running, for example because it does not survive a reboot or a closed tab. Restart it in its own tab before suspecting the DGX, the router, or your account.</p>
+</div>
+<h3 id="tailscale-up-command">Tailscale Up Command<a class="headerlink" href="#tailscale-up-command" title="Permanent link">&para;</a></h3>
+<p>The <strong><code>tailscale up</code> command</strong> brings the device onto the tailnet. Run in a second tab, with <code>dgx</code> activated, it asks the daemon to connect and sign in.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tailscale<span class="w"> </span>up
+</span></code></pre></div>
+<p>On the first run the command prints a sign-in address. It is the next concept.</p>
+<h2 id="signing-in">Signing In<a class="headerlink" href="#signing-in" title="Permanent link">&para;</a></h2>
+<h3 id="tailscale-authentication">Tailscale Authentication<a class="headerlink" href="#tailscale-authentication" title="Permanent link">&para;</a></h3>
+<p><strong>Tailscale authentication</strong> is proving who you are to the coordination service, so that your device is added to the right tailnet. The usual way is to open the sign-in address that <code>tailscale up</code> printed and log in with an identity account, in a browser. The device is then bound to that identity.</p>
+<p>A mistake costs time and is easy to make. Signing in with a different account than the one the administrator invited creates or joins a different tailnet, and the DGX will not appear in your device list. If the listing shows only your own laptop, compare the account on the sign-in page with the one the invitation was sent to.</p>
+<h3 id="tailnet-invitation-and-node-sharing">Tailnet Invitation and Node Sharing<a class="headerlink" href="#tailnet-invitation-and-node-sharing" title="Permanent link">&para;</a></h3>
+<p>There are two ways to get a DGX that belongs to someone else onto your device list, and they are different arrangements.</p>
+<p>A <strong>tailnet invitation</strong> adds you to the administrator's tailnet as a member. You then see every device the access rules allow, and you are subject to that tailnet's policy. This is how the evaluation was set up: the Administrator invited the Primary Author, and both units were already members.</p>
+<p><strong>Node sharing</strong> shares one specific device into your own tailnet, without making you a member of theirs. You see only the shared machine, and the owner keeps control of it. It suits a case where you have your own tailnet and need access to one machine for a limited time.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Tailnet invitation</th>
+<th>Node sharing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>You become</td>
+<td>A member of their tailnet</td>
+<td>A guest with access to one device</td>
+</tr>
+<tr>
+<td>You can see</td>
+<td>Whatever the access rules allow</td>
+<td>Only the shared device</td>
+</tr>
+<tr>
+<td>Whose policy applies</td>
+<td>Theirs</td>
+<td>Theirs, for that device</td>
+</tr>
+<tr>
+<td>Good for</td>
+<td>A team working on shared machines</td>
+<td>Giving one outsider temporary access</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tailscale-auth-key">Tailscale Auth Key<a class="headerlink" href="#tailscale-auth-key" title="Permanent link">&para;</a></h3>
+<p>A <strong>Tailscale auth key</strong> is a pre-generated credential that lets a device join a tailnet without a person signing in through a browser. It exists for machines that nobody sits at, such as a server brought up by a script. Keys can be limited to one use, can expire, and can mark the device as temporary.</p>
+<p>An auth key is equivalent to a password for joining the network. Treat it exactly that way: never put one in a repository, a chat, a screenshot, or a log, and prefer a key that expires soon and works once. The key is created by the tailnet's administrator, and an evaluator who is a guest of that tailnet usually does not need one.</p>
+<h3 id="device-key-expiry">Device Key Expiry<a class="headerlink" href="#device-key-expiry" title="Permanent link">&para;</a></h3>
+<p><strong>Device key expiry</strong> is the limit on how long a device's credentials stay valid before it must sign in again. It is 180 days by default, and the tailnet's administrator can change it. A machine that is not used for months can have silently dropped off the network when its key expired, and the first sign is a device that shows as offline with no other explanation.</p>
+<p>The fix is to sign in again from the device. For a machine you do not sit at, it is a reason to put a note on the calendar and a reason to tell the administrator who needs to know.</p>
+<h2 id="names-and-rules">Names and Rules<a class="headerlink" href="#names-and-rules" title="Permanent link">&para;</a></h2>
+<h3 id="magicdns">MagicDNS<a class="headerlink" href="#magicdns" title="Permanent link">&para;</a></h3>
+<p><strong>MagicDNS</strong> is Tailscale's feature that gives every device in a tailnet a name that resolves to its private address, so you type <code>&lt;dgx-host&gt;</code> and not <code>100.x.y.z</code>. Names are stable even if the address changes, and a script written against the name keeps working.</p>
+<p>A short name resolves from inside the tailnet, and the full name carries the tailnet's own name, in the form <code>&lt;dgx-host&gt;.&lt;tailnet-name&gt;.ts.net</code>. Both are identifying details, and in anything you publish, they are placeholders.</p>
+<h3 id="access-control-list">Access Control List<a class="headerlink" href="#access-control-list" title="Permanent link">&para;</a></h3>
+<p>An <strong>access control list</strong>, or ACL, is the tailnet's policy for who may reach what. It is a document kept by the tailnet's administrator, and it lists which users and devices may open connections to which machines and on which ports. A device that is in the tailnet but not permitted by the list simply cannot connect, and it shows no error beyond a timeout.</p>
+<p>A minimal rule has three parts. Its <code>action</code> is <code>accept</code>. Its <code>src</code> lists who may connect, and its <code>dst</code> lists what they may reach, with a port after the colon.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">"acls"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accept"</span><span class="p">,</span><span class="w"> </span><span class="nt">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"&lt;tailnet-user&gt;"</span><span class="p">],</span><span class="w"> </span><span class="nt">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"&lt;dgx-host&gt;:22"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>That rule lets one user reach one machine on the SSH port and nothing else. A real policy file reveals which machines exist and which ports are open, so it is on the list of things that are never published.</p>
+<h3 id="tailscale-ssh">Tailscale SSH<a class="headerlink" href="#tailscale-ssh" title="Permanent link">&para;</a></h3>
+<p><strong>Tailscale SSH</strong> is a feature in which Tailscale itself handles SSH authentication, using the tailnet identity in place of keys. It runs on the machine you are logging in to, and it needs to be turned on there with <code>tailscale set --ssh</code>. That change belongs to the administrator of the DGX.</p>
+<p>This evaluation did not use it. The DGX accepted ordinary OpenSSH logins over the tailnet, so the key-based login of Chapter 7 was enough, and nothing had to change on the machine. Tailscale SSH is worth knowing about because it removes the private key as an asset to protect.</p>
+<h2 id="proving-the-connection-works">Proving the Connection Works<a class="headerlink" href="#proving-the-connection-works" title="Permanent link">&para;</a></h2>
+<h3 id="tailscale-status-command">Tailscale Status Command<a class="headerlink" href="#tailscale-status-command" title="Permanent link">&para;</a></h3>
+<p>The <strong><code>tailscale status</code> command</strong> lists every device in your tailnet that you can see, with its private address, name, owner, operating system, and connection state. It is the first test after sign-in, and its output is the evidence that the DGX is reachable at all.</p>
+<p>A sanitized listing looks like this. Each row has the address, the device name, the owner, the operating system, and the state.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>100.x.y.z   &lt;laptop-name&gt;   &lt;you&gt;@    macOS   -
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>100.x.y.z   &lt;dgx-host-a&gt;    &lt;admin&gt;@  linux   active; direct 198.51.100.7:41641
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>100.x.y.z   &lt;dgx-host-b&gt;    &lt;admin&gt;@  linux   idle
+</span></code></pre></div>
+<p>The last column is the one to learn to read. A dash marks this device. <code>active; direct</code> means the two devices are exchanging data over a direct path, and an address after it shows where. <code>active; relay</code> means the traffic is going through a relay. <code>idle</code> means connected with nothing in flight, and <code>offline</code> with a time means the device has not been reachable.</p>
+<h3 id="tailscale-ping-and-the-connectivity-test">Tailscale Ping and the Connectivity Test<a class="headerlink" href="#tailscale-ping-and-the-connectivity-test" title="Permanent link">&para;</a></h3>
+<p><strong>Tailscale ping</strong> tests the connection at the tailnet layer, below SSH. It sends a probe to the device and reports the path it used and the time it took. It is stronger than status, because status says a device is listed and ping shows that packets actually reach it.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pong from &lt;dgx-host&gt; (100.x.y.z) via DERP(&lt;region&gt;) in 38ms
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>pong from &lt;dgx-host&gt; (100.x.y.z) via 198.51.100.7:41641 in 12ms
+</span></code></pre></div>
+<p>The pair above shows a common sequence. The first reply went through a relay. A moment later the devices found a direct path and the following replies took it, which is NAT traversal from Chapter 7 happening in front of you.</p>
+<p>A <strong>connectivity test</strong> is the complete check, and it has three steps in order, each one proving something the previous did not.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Command</th>
+<th>What it proves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>tailscale status</code></td>
+<td>The device is listed and its state is not offline</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>tailscale ping &lt;dgx-host&gt;</code></td>
+<td>Packets reach the device, and which path they take</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>ssh -o BatchMode=yes &lt;user&gt;@&lt;dgx-host&gt; hostname</code></td>
+<td>The login works with a key, with no prompt</td>
+</tr>
+</tbody>
+</table>
+<p>A failure at a step tells you which layer to look at. Step 1 failing points to your daemon or your account, step 2 to the network path or the access rules, and step 3 to the SSH server or your key.</p>
+<h4 id="diagram-tailscale-status-reader">Diagram: Tailscale Status Reader<a class="headerlink" href="#diagram-tailscale-status-reader" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Tailscale Status Reader</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> tailscale-status-reader<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret 6 sanitized lines of Tailscale output by choosing the meaning of each, with at least 5 of 6 correct.</p>
+<p><strong>Prerequisites:</strong> tailscale status command, tailscale ping, device key expiry, DERP relay, peer-to-peer connection (all defined in the sections above this block and in Chapter 7).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 6 lines the learner commits one meaning from the six listed in Content before the sim reveals the answer. A choice is correct when it equals the Correct meaning column. Mastery is 5 of 6 correct on the first attempt. Reading the line is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) <code>idle</code> means the device is down. (2) A relay connection is a failure. (3) A listed device is reachable. (4) A dash in the last column means something is wrong.</p>
+<p><strong>Instructional Rationale:</strong> Interpreting needs the learner to turn a terse string into a statement about the system, so each line is a realistic fragment with exactly one correct reading. Committing before the reveal separates reading from guessing.</p>
+<p><strong>Content:</strong></p>
+<p>The six meanings the learner chooses from: "This device", "Connected directly", "Connected through a relay", "Connected but idle", "Offline, not reachable", and "This device has not signed in".</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Line shown to the learner</th>
+<th>Correct meaning</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>100.x.y.z   &lt;laptop-name&gt;   &lt;you&gt;@   macOS   -</code></td>
+<td>This device</td>
+<td>A dash in the state column marks the device running the command.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>100.x.y.z   &lt;dgx-host&gt;   &lt;admin&gt;@   linux   active; direct 198.51.100.7:41641</code></td>
+<td>Connected directly</td>
+<td><code>direct</code> followed by an address means a peer-to-peer path is in use.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>100.x.y.z   &lt;dgx-host&gt;   &lt;admin&gt;@   linux   active; relay "&lt;region&gt;"</code></td>
+<td>Connected through a relay</td>
+<td><code>relay</code> means the encrypted traffic goes through a relay server.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>100.x.y.z   &lt;dgx-host&gt;   &lt;admin&gt;@   linux   idle</code></td>
+<td>Connected but idle</td>
+<td><code>idle</code> means connected with no traffic in flight at the moment.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>100.x.y.z   &lt;dgx-host&gt;   &lt;admin&gt;@   linux   offline, last seen 13h ago</code></td>
+<td>Offline, not reachable</td>
+<td><code>offline</code> with a time means the device has not been reachable for that long.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>Logged out.</code></td>
+<td>This device has not signed in</td>
+<td>The daemon is running but this device has no identity on the tailnet.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The lines are synthetic, modeled on the output format of the command, and the sim labels them "synthetic example". Addresses use placeholders and a documentation address range.</p>
+<p><strong>Rules:</strong> Lines are shown in the fixed order 1 to 6. Each line allows one final choice, and exactly one of the six meanings is correct for each line.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads line 1.</li>
+<li>The learner chooses one of the six meanings and confirms.</li>
+<li>The sim shows the correct meaning and the Why text, and marks the line correct or incorrect.</li>
+<li>The learner repeats for lines 2 to 6. After line 6 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Six lines, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct meaning and the Why text. The final score reads "n of 6 correct".</p>
+<p><strong>Starting State:</strong> Line 1 is shown with no meaning chosen, and the question on screen is "What is this line telling you?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that a dash marks this device, that <code>active; direct</code> means a peer-to-peer path, that <code>relay</code> means traffic goes through a relay server, that <code>idle</code> means no traffic at the moment, and that <code>offline</code> with a time means the device was not reachable for that long.</p>
+</details>
+<h2 id="the-read-only-inventory">The Read-Only Inventory<a class="headerlink" href="#the-read-only-inventory" title="Permanent link">&para;</a></h2>
+<h3 id="read-only-inventory">Read-Only Inventory<a class="headerlink" href="#read-only-inventory" title="Permanent link">&para;</a></h3>
+<p>A <strong>read-only inventory</strong> is a survey of a machine's hardware and software made with commands that change nothing and need no administrator rights. It is the first thing to do on any machine you do not know, and it is the right first thing to do on one that belongs to someone else, because it answers the hardware questions of Chapter 5 without asking permission to install anything.</p>
+<h3 id="linux-inventory-commands">Linux Inventory Commands<a class="headerlink" href="#linux-inventory-commands" title="Permanent link">&para;</a></h3>
+<p>A small set of standard commands covers the questions. Each prints a few lines and writes nothing.</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Command</th>
+<th>What to read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Which operating system?</td>
+<td><code>grep PRETTY_NAME /etc/os-release</code></td>
+<td>Name and release</td>
+</tr>
+<tr>
+<td>Which kernel and architecture?</td>
+<td><code>uname -srm</code></td>
+<td><code>aarch64</code> or <code>x86_64</code></td>
+</tr>
+<tr>
+<td>Which processor?</td>
+<td><code>lscpu</code></td>
+<td>Core count, model name</td>
+</tr>
+<tr>
+<td>How much memory?</td>
+<td><code>free -h</code></td>
+<td>Total and available</td>
+</tr>
+<tr>
+<td>How much disk?</td>
+<td><code>df -h /</code></td>
+<td>Size and free space</td>
+</tr>
+<tr>
+<td>Which GPU and driver?</td>
+<td><code>nvidia-smi</code></td>
+<td>Name, driver, CUDA version</td>
+</tr>
+<tr>
+<td>Are containers available?</td>
+<td><code>docker --version</code></td>
+<td>Present or not</td>
+</tr>
+<tr>
+<td>Which groups am I in?</td>
+<td><code>id -nG</code></td>
+<td>Whether <code>docker</code> is listed</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Run the Inventory Before You Install Anything</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+A five-minute read-only look tells you whether a plan is possible: the architecture, the free space, whether Docker answers. Finding out after a two-hour download that the disk is full is a much worse way to learn it.</p>
+</div>
+<h3 id="piping-scripts-over-ssh">Piping Scripts Over SSH<a class="headerlink" href="#piping-scripts-over-ssh" title="Permanent link">&para;</a></h3>
+<p><strong>Piping a script over SSH</strong> runs a local file on a remote machine without copying it there first. The shell on the DGX reads the script from its standard input, so nothing is written to the machine's disk. It is the right method for an inventory, because it leaves no trace and needs no permission to write anywhere.</p>
+<p>The command below sends the local file <code>inventory.sh</code> to the remote <code>bash</code>, where <code>-s</code> tells it to read the commands from standard input, and saves the output on your own machine.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ssh<span class="w"> </span>&lt;user&gt;@&lt;dgx-host&gt;<span class="w"> </span><span class="s1">'bash -s'</span><span class="w"> </span>&lt;<span class="w"> </span>src/dgx-setup/inventory.sh<span class="w"> </span>&gt;<span class="w"> </span>inventory.txt
+</span></code></pre></div>
+<h3 id="standard-library-only-python">Standard-Library-Only Python<a class="headerlink" href="#standard-library-only-python" title="Permanent link">&para;</a></h3>
+<p><strong>Standard-library-only Python</strong> is a script that imports only modules that ship with Python itself. It runs on a fresh machine with no <code>pip install</code>, no environment, and no administrator rights. Every script this project runs on the DGX is written this way, for exactly that reason: the machine needs nothing added before the first measurement.</p>
+<p>The cost is real and accepted. Without the <code>psutil</code> package, memory and CPU figures are read from files such as <code>/proc/meminfo</code>, and GPU readings are parsed from the text of <code>nvidia-smi</code>. Chapter 10 builds probes that way and shows where the optional packages are worth adding.</p>
+<div class="admonition warning">
+<p class="admonition-title">Some system files contain identifiers</p>
+<p>On DGX OS, <code>/etc/dgx-release</code> includes the unit's serial number. Read it with <code>grep -v SERIAL /etc/dgx-release</code>, and read any captured inventory before you save or share it. An inventory is a description of a specific machine, and Chapter 23 builds the review that makes it safe to publish.</p>
+</div>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>You installed the Tailscale client and daemon in a dedicated environment, brought the device onto the tailnet with <code>tailscale up</code>, and signed in with the account the administrator invited. Names come from MagicDNS, and an access control list decides who may reach what. The connectivity test proves the path in three steps: status lists the device, ping shows packets arriving and by which path, and a BatchMode login proves the key works. With that, a read-only inventory answers the hardware questions of Chapter 5, using standard commands and a standard-library-only script piped over SSH.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Have a Verified Path and a First Look Inside</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now bring a machine onto a tailnet, prove the connection at three layers, and take an inventory that changes nothing. Chapter 10 turns the inventory into repeatable Python probes.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

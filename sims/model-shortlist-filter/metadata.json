@@ -1,0 +1,23 @@
+{
+  "title": "Model Shortlist Filter",
+  "description": "The learner will apply four selection criteria to 8 candidate models for a 128 GB unified-memory machine, deciding shortlist or exclude and naming the first failed criterion, with at least 7 of 8 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "model-shortlist-filter",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "apply",
+  "completion_status": "scaffold",
+  "chapter_number": 12,
+  "chapter_title": "Selecting and Downloading an Open-Weight Model",
+  "chapter_dir": "12-selecting-downloading-models",
+  "chapter_rel_dir": "chapters/12-selecting-downloading-models"
+}

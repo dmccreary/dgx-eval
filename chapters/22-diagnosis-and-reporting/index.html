@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="Turning run data into a decision: diagnosing failures from logs, computing success rates, time, energy, and cost per textbook, comparing against a baseline, and writing an evidence-based recommendation for a local, cloud, or hybrid workflow.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>22. Diagnosing Failures, Reporting, and Cost per Textbook - DGX Evaluation for Textbook Generation</title>
+        <title>Diagnosing Failures, Reporting, and Cost per Textbook - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              22. Diagnosing Failures, Reporting, and Cost per Textbook
+              Diagnosing Failures, Reporting, and Cost per Textbook
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1139,6 +962,225 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnosing-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnosing Failures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagnosing Failures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failure-diagnosis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failure Diagnosis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-call-count-failed-tool-calls-and-tool-call-success-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Call Count, Failed Tool Calls, and Tool-Call Success Rate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#malformed-tool-call-and-text-emitted-tool-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      Malformed Tool Call and Text-Emitted Tool Call
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premature-turn-termination-and-task-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Premature Turn Termination and Task Loss
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-overflow-and-harness-misconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Overflow and Harness Misconfiguration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context Overflow and Harness Misconfiguration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-failure-diagnosis-chooser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Failure Diagnosis Chooser
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computing-the-cost-of-a-book" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing the Cost of a Book
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computing the Cost of a Book">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-breakdown-and-whole-book-time-estimate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Breakdown and Whole-Book Time Estimate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-per-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy per Textbook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-per-textbook-cost-per-chapter-and-books-per-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost per Textbook, Cost per Chapter, and Books per Year
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-price-calculation-and-quality-adjusted-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Price Calculation and Quality-Adjusted Cost
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#human-review-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Human Review Cost
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Human Review Cost">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cost-per-textbook-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cost per Textbook Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deciding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deciding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deciding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-report-and-baseline-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Report and Baseline Textbook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dgx-sufficiency-judgment" class="md-nav__link">
+    <span class="md-ellipsis">
+      DGX Sufficiency Judgment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-report-and-report-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation Report and Report Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendation-and-the-local-cloud-or-hybrid-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendation and the Local, Cloud, or Hybrid Decision
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1201,6 +1243,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1258,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1359,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1501,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1660,225 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnosing-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnosing Failures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagnosing Failures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failure-diagnosis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failure Diagnosis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-call-count-failed-tool-calls-and-tool-call-success-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Call Count, Failed Tool Calls, and Tool-Call Success Rate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#malformed-tool-call-and-text-emitted-tool-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      Malformed Tool Call and Text-Emitted Tool Call
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premature-turn-termination-and-task-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Premature Turn Termination and Task Loss
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-overflow-and-harness-misconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Overflow and Harness Misconfiguration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context Overflow and Harness Misconfiguration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-failure-diagnosis-chooser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Failure Diagnosis Chooser
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computing-the-cost-of-a-book" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing the Cost of a Book
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computing the Cost of a Book">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-breakdown-and-whole-book-time-estimate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Breakdown and Whole-Book Time Estimate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-per-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy per Textbook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-per-textbook-cost-per-chapter-and-books-per-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost per Textbook, Cost per Chapter, and Books per Year
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-price-calculation-and-quality-adjusted-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Price Calculation and Quality-Adjusted Cost
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#human-review-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Human Review Cost
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Human Review Cost">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cost-per-textbook-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cost per Textbook Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deciding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deciding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deciding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-report-and-baseline-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Report and Baseline Textbook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dgx-sufficiency-judgment" class="md-nav__link">
+    <span class="md-ellipsis">
+      DGX Sufficiency Judgment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-report-and-report-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation Report and Report Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendation-and-the-local-cloud-or-hybrid-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendation and the Local, Cloud, or Hybrid Decision
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1543,13 +2044,493 @@
 <li><a href="../21-running-the-benchmark/">Chapter 21: Running the Textbook Benchmark</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Raw Logs In, A Decision Out</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+A folder of event streams is not an answer. By the end of this chapter you will turn one into a diagnosis of why a run failed, a cost per textbook, and a recommendation you can defend. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Chapter 21 ended with complete, logged runs. This chapter is what you do with them. It has three parts, in the order the work goes. First, diagnose: for each run that failed, work out why from the evidence, because a failed run is a result and the cause decides what to do next. Second, compute: from the measured times and speeds, work out the time, the energy, and the cost of a textbook. Third, decide: assemble the evidence into a report with a recommendation.</p>
+<p>The discipline that runs through all three is to keep what was measured separate from what was assumed. Where this evaluation could only assume, such as the time for stages it had not yet run, the chapter says so, and the recommendation carries the same caveat.</p>
+<h2 id="diagnosing-failures">Diagnosing Failures<a class="headerlink" href="#diagnosing-failures" title="Permanent link">&para;</a></h2>
+<h3 id="failure-diagnosis">Failure Diagnosis<a class="headerlink" href="#failure-diagnosis" title="Permanent link">&para;</a></h3>
+<p><strong>Failure diagnosis</strong> is working from the symptoms in the logs to the cause of a failed run. The skill is to ask what the evidence rules out and not what the failure feels like, because several different causes produce runs that look similar from the outside: a run that ended early, a stage with nothing written, a model that seems to have given up.</p>
+<p>The evidence is the run event stream, the final result, and the server log, and the questions are the same in every case. How many turns were taken? How many tool calls, and how many failed? What was the last thing the model said? What was the peak context size, against the window? Did the run end on its own, or was it stopped?</p>
+<h3 id="tool-call-count-failed-tool-calls-and-tool-call-success-rate">Tool Call Count, Failed Tool Calls, and Tool-Call Success Rate<a class="headerlink" href="#tool-call-count-failed-tool-calls-and-tool-call-success-rate" title="Permanent link">&para;</a></h3>
+<p>The <strong>tool call count</strong> is the number of tool calls a model made in a run, and <strong>failed tool calls</strong> is how many of them returned an error. The <strong>tool-call success rate</strong> is the successful share. All three come straight from the event stream, and the run-report script prints them.</p>
+<p>The measured values in this evaluation's first stage show how different runs can look.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Tool calls</th>
+<th>Failed</th>
+<th>Success rate</th>
+<th>Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gpt-oss:120b</code></td>
+<td>28</td>
+<td>0</td>
+<td>100%</td>
+<td>Few calls, none failed</td>
+</tr>
+<tr>
+<td><code>qwen3.8:27b</code></td>
+<td>55</td>
+<td>1</td>
+<td>98%</td>
+<td>Careful and slow</td>
+</tr>
+<tr>
+<td><code>gemma4:31b</code></td>
+<td>50</td>
+<td>8</td>
+<td>84%</td>
+<td>Eight failures in fifty calls</td>
+</tr>
+<tr>
+<td><code>nemotron-3.5-lightning:30b</code></td>
+<td>140</td>
+<td>not recorded here</td>
+<td>n/a</td>
+<td>Nearly three times as many calls as any other model</td>
+</tr>
+</tbody>
+</table>
+<p>A number alone does not diagnose. 100% success on 28 calls is not better than 84% on 50 if the 28 calls never reached the step that writes the file. The count is the prompt for a question, and the event stream holds the answer.</p>
+<h3 id="malformed-tool-call-and-text-emitted-tool-call">Malformed Tool Call and Text-Emitted Tool Call<a class="headerlink" href="#malformed-tool-call-and-text-emitted-tool-call" title="Permanent link">&para;</a></h3>
+<p>A <strong>malformed tool call</strong> is a tool call with a wrong name, a missing argument, or an argument of the wrong type. The harness returns an error, the model usually reads it and tries again, and it counts as a failed tool call. It is a nuisance, and a run can recover from it.</p>
+<p>A <strong>text-emitted tool call</strong> is a tool call that the model writes out as ordinary text in its reply, in the shape of a call but not as a call. The harness sees no tool call and treats the reply as a final answer, so the run ends. Two of this evaluation's candidates failed this way: one wrote its first tool call as text in both harness tests and did no work, and another did so in one of two runs and stopped after a single turn. The signature is a run of one turn whose last message contains something that looks like a call.</p>
+<h3 id="premature-turn-termination-and-task-loss">Premature Turn Termination and Task Loss<a class="headerlink" href="#premature-turn-termination-and-task-loss" title="Permanent link">&para;</a></h3>
+<p><strong>Premature turn termination</strong> is the model ending its turn before the work is done, with no error. In this evaluation one model, in four of its ten chapter runs, announced that the skill was running, as if something else would do the work, and ended its turn without writing the chapter. The signature is a final message that describes work and no file that contains it.</p>
+<p><strong>Task loss</strong> is the model abandoning the task and answering something unrelated. One candidate, after a few steps, answered with a greeting as if the conversation had just begun. It is usually a context problem: that model's first prompt took 35,000 tokens where the others took 17,000 to 21,000, and within eight turns it was at 120,000, the edge of its window.</p>
+<h3 id="context-overflow-and-harness-misconfiguration">Context Overflow and Harness Misconfiguration<a class="headerlink" href="#context-overflow-and-harness-misconfiguration" title="Permanent link">&para;</a></h3>
+<p><strong>Context overflow</strong> is the conversation exceeding the model's window, so that earlier content is dropped or the request is rejected. Its signature is a run that does well for a while and then behaves as if it had forgotten the task, with a peak context size close to the window.</p>
+<p><strong>Harness misconfiguration</strong> is a fault in how the harness was set up and not in the model: a wrong address, a model name that the server does not have, a skill folder that was not mounted, or a permission rule that stalls. The signature is a failure at the very first turn, for every model, with an error message that names the configuration. A failure that is identical across all models is a configuration fault until shown otherwise.</p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely cause</th>
+<th>First thing to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One turn, last message looks like a call</td>
+<td>Text-emitted tool call</td>
+<td>The final message in the event stream</td>
+</tr>
+<tr>
+<td>An error, then a correct retry</td>
+<td>Malformed tool call</td>
+<td>The failed call's arguments</td>
+</tr>
+<tr>
+<td>Ends after announcing, no file written</td>
+<td>Premature turn termination</td>
+<td>The last message and the run directory</td>
+</tr>
+<tr>
+<td>Answers a greeting after several turns</td>
+<td>Task loss</td>
+<td>Peak context size against the window</td>
+</tr>
+<tr>
+<td>Forgets the task late in the run</td>
+<td>Context overflow</td>
+<td>Peak context size against the window</td>
+</tr>
+<tr>
+<td>Same error at turn one for every model</td>
+<td>Harness misconfiguration</td>
+<td>The base address, model name, and mounts</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Check Whether Every Model Failed the Same Way</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A failure that appears for every model at the same place is almost never the models. Before you write that a model "cannot" do something, run the failing step with a model that is known to work. If it fails there too, you have found a configuration or skill fault, and the models were innocent.</p>
+</div>
+<h4 id="diagram-failure-diagnosis-chooser">Diagram: Failure Diagnosis Chooser<a class="headerlink" href="#diagram-failure-diagnosis-chooser" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Failure Diagnosis Chooser</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> failure-diagnosis-chooser<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> attribute<br/>
+<strong>Learning Objective:</strong> The learner will attribute each of 8 failed-run symptoms to its most likely cause from a list of 8, with at least 7 of 8 correct.</p>
+<p><strong>Prerequisites:</strong> malformed tool call, text-emitted tool call, premature turn termination, task loss, context overflow, harness misconfiguration, prompt re-reading, chapter dependency check (all defined in this chapter and in Chapters 15, 16, and 21).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 8 symptoms the learner commits one cause from the eight listed before the sim reveals the answer. A choice is correct when it equals the Correct cause column. Mastery is 7 of 8 correct on the first attempt. Reading the symptoms is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A failure that ends a run is always a model failure. (2) A tool error means the run cannot recover. (3) A slow run is a failed run. (4) A model that says it is doing the work has done it.</p>
+<p><strong>Instructional Rationale:</strong> Attributing a symptom to a cause needs the learner to use the discriminating detail in each case, so each symptom has exactly one cause and the eight causes are different enough to confuse only if the detail is missed.</p>
+<p><strong>Content:</strong></p>
+<p>The eight causes the learner chooses from: "Text-emitted tool call", "Malformed tool call", "Task loss", "Context overflow", "Harness misconfiguration", "Premature turn termination", "Slow turns from prompt re-reading", and "Upstream stage fault".</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Symptom shown to the learner</th>
+<th>Correct cause</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The run ended after one turn. Its last message contains text shaped like a tool call, written as ordinary prose.</td>
+<td>Text-emitted tool call</td>
+<td>The harness saw no real tool call, so it treated the reply as the final answer.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The harness reported invalid arguments for a file write. On the next turn the model sent a correct call and the run went on.</td>
+<td>Malformed tool call</td>
+<td>The call was ill-formed and the model recovered after the error.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>After about eight turns the model answers "Hello, how can I help?" and ignores the skill.</td>
+<td>Task loss</td>
+<td>The model has dropped the task, which is usually a sign of a context that was too large for it.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The conversation reached 127,000 tokens in a 128,000-token window, and the model began to contradict its own earlier instructions.</td>
+<td>Context overflow</td>
+<td>The window was close to full, so earlier content was lost.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Every request returns "model not found" at turn one, for every model tried.</td>
+<td>Harness misconfiguration</td>
+<td>The same failure at the first turn for every model points at the setup, not a model.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The final message says "I will now run the chapter skill", with no tool call made and no file written.</td>
+<td>Premature turn termination</td>
+<td>The model described the work and ended its turn without doing it.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Four of 14 chapters were not written. The skill's own dependency check reported that each chapter needed concepts placed in later chapters, and stopped.</td>
+<td>Upstream stage fault</td>
+<td>The chapter structure from stage 2 was the cause, so the stage 3 failure is a symptom of it.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The stage hit its 90-minute limit after about twenty tool calls. Each turn took close to two minutes, and the server log shows most of that reading the prompt.</td>
+<td>Slow turns from prompt re-reading</td>
+<td>The time went to the server recomputing the conversation, not to the model's generating.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The symptoms are synthetic but follow failures observed in this evaluation, and the sim labels them "synthetic example". The causes come from this chapter and Chapters 15, 16, and 21.</p>
+<p><strong>Rules:</strong> Symptoms are shown in the fixed order 1 to 8. Each allows one final choice, and exactly one cause is correct for each. A cause is the correct answer for exactly one symptom.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads symptom 1.</li>
+<li>The learner chooses one of the eight causes and confirms.</li>
+<li>The sim shows the correct cause and the Why text, and marks the symptom correct or incorrect.</li>
+<li>The learner repeats for symptoms 2 to 8. After symptom 8 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Eight symptoms, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct cause and the Why text. The final score reads "n of 8 correct".</p>
+<p><strong>Starting State:</strong> Symptom 1 is shown with no cause chosen, and the question on screen is "What most likely caused this?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that a text-emitted tool call ends a run after one turn, that a malformed call is recoverable, that a failure identical for every model at turn one is a configuration fault, and that a dependency-check stop in stage 3 traces back to stage 2.</p>
+</details>
+<h2 id="computing-the-cost-of-a-book">Computing the Cost of a Book<a class="headerlink" href="#computing-the-cost-of-a-book" title="Permanent link">&para;</a></h2>
+<h3 id="time-breakdown-and-whole-book-time-estimate">Time Breakdown and Whole-Book Time Estimate<a class="headerlink" href="#time-breakdown-and-whole-book-time-estimate" title="Permanent link">&para;</a></h3>
+<p>A <strong>time breakdown</strong> splits a run's wall-clock time into loading, reading, writing, and tools, as Chapter 15 did for one turn. A <strong>whole-book time estimate</strong> extrapolates the time for the whole book from the stages that were measured, and it is the number the cost model needs.</p>
+<p>The benchmark covers three stages, which the Primary Author set at 10% of the cost of a whole book, because the learning graph, the chapter design, and the chapter content are one tenth of the work; the MicroSims, glossary, FAQ, quizzes, and references are the rest. The estimate follows:</p>
+<div class="arithmatex">\[ T_{\text{book}} = \frac{T_{\text{three stages}}}{0.10} \]</div>
+<p>For the reference model, the three stages take 2.8 hours, so a whole book is about 28 hours of machine time. The estimate rests on an assumption about stages that have not been run, and a reader should treat it as a model to adjust. If the three stages were 5% of the book, the estimate doubles.</p>
+<h3 id="energy-per-textbook">Energy per Textbook<a class="headerlink" href="#energy-per-textbook" title="Permanent link">&para;</a></h3>
+<p><strong>Energy per textbook</strong> is the electricity a book takes. It is the generating power times the generating time. At 150 W for 28 hours it is 4.2 kWh, which at $0.1385 per kWh is about 58 cents. It is the smallest cost in the model, and the reason to compute it is to be able to say so with a number.</p>
+<h3 id="cost-per-textbook-cost-per-chapter-and-books-per-year">Cost per Textbook, Cost per Chapter, and Books per Year<a class="headerlink" href="#cost-per-textbook-cost-per-chapter-and-books-per-year" title="Permanent link">&para;</a></h3>
+<p>The <strong>cost per textbook</strong> is the machine's yearly cost spread over the books it makes, which comes down to the book's hours times the cost of a generating hour. The <strong>cost per chapter</strong> divides it by the number of chapters, and <strong>books per year</strong> is the generating hours in a year divided by the hours for one book.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>generating hours per year  = 8,760 × utilization
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cost per generating hour   = yearly cost ÷ generating hours per year
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>cost per book              = whole-book hours × cost per generating hour
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>cost per chapter           = cost per book ÷ chapters
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>books per year             = generating hours per year ÷ whole-book hours
+</span></code></pre></div>
+<p>The reference case gives each. At 50% utilization there are 4,380 generating hours, and with a yearly cost of $8,275 each is $1.89. A 28-hour book costs $52.92, a 13-chapter book is $4.07 a chapter, and the unit makes 156 books a year.</p>
+<h3 id="service-price-calculation-and-quality-adjusted-cost">Service Price Calculation and Quality-Adjusted Cost<a class="headerlink" href="#service-price-calculation-and-quality-adjusted-cost" title="Permanent link">&para;</a></h3>
+<p>The <strong>service price calculation</strong> is the price a book-generation service would have to charge to keep a stated margin: the cost divided by one minus the margin. At a 20% margin, $52.92 becomes $66.15.</p>
+<p><strong>Quality-adjusted cost</strong> corrects the cost for how much of the output is usable. A book generated for $53 of which only 10 of 14 chapters are written has not cost $53 for a book. One way to express it is the cost per usable chapter, which is the cost divided by the chapters that met the completion criterion. A cheap model that writes 6 of 10 chapters is more expensive per chapter than the arithmetic of its speed suggests.</p>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Cost to generate</th>
+<th>Usable chapters</th>
+<th>Cost per usable chapter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All 13 chapters complete</td>
+<td>$52.92</td>
+<td>13</td>
+<td>$4.07</td>
+</tr>
+<tr>
+<td>10 of 13 complete</td>
+<td>$52.92</td>
+<td>10</td>
+<td>$5.29</td>
+</tr>
+<tr>
+<td>6 of 13 complete</td>
+<td>$52.92</td>
+<td>6</td>
+<td>$8.82</td>
+</tr>
+</tbody>
+</table>
+<h3 id="human-review-cost">Human Review Cost<a class="headerlink" href="#human-review-cost" title="Permanent link">&para;</a></h3>
+<p><strong>Human review cost</strong> is the price of the person who judges quality. It is not in the generation cost and it can be much larger. Ten hours of subject-expert review at $90 an hour is $900, seventeen times the $53 generation cost. A quality-adjusted comparison that leaves it out has priced the book as though nobody had to read it.</p>
+<h4 id="diagram-cost-per-textbook-calculator">Diagram: Cost per Textbook Calculator<a class="headerlink" href="#diagram-cost-per-textbook-calculator" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Cost per Textbook Calculator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> cost-per-textbook-calculator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/economics-course/tree/main/docs/sims/opportunity-cost-calculator<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate the cost per textbook and the price at a stated margin to within 1 dollar for 3 scenarios.</p>
+<p><strong>Prerequisites:</strong> utilization rate, whole-book time estimate, cost per textbook, service price calculation, margin versus markup (all defined in this chapter and in Chapter 6).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 3 scenarios the learner types the cost per textbook and the price at the stated margin, in dollars, before the sim reveals the answers. A scenario is correct when both typed values are within $1 of the model values. Mastery is 3 of 3. Changing sliders in exploration is not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A faster model always lowers the cost per book. (2) The cost is set by the electricity. (3) A 20% margin means a 20% markup. (4) A machine's cost per book does not depend on how often it is used.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level calculation needs a formula the learner commits to, and the three scenarios isolate the two inputs that move the answer most, utilization and the hours per book, so exploration can then confirm that hardware price moves it far less.</p>
+<p><strong>Content:</strong></p>
+<p>The learner can change five quantities:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Min</th>
+<th>Max</th>
+<th>Step</th>
+<th>Default</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yearly cost</td>
+<td>2,000</td>
+<td>20,000</td>
+<td>25</td>
+<td>8,275</td>
+<td>dollars a year</td>
+</tr>
+<tr>
+<td>Utilization</td>
+<td>0.05</td>
+<td>0.95</td>
+<td>0.05</td>
+<td>0.50</td>
+<td>share of 8,760 hours</td>
+</tr>
+<tr>
+<td>Whole-book hours</td>
+<td>5</td>
+<td>100</td>
+<td>1</td>
+<td>28</td>
+<td>hours</td>
+</tr>
+<tr>
+<td>Margin</td>
+<td>0</td>
+<td>0.50</td>
+<td>0.05</td>
+<td>0.20</td>
+<td>share of price</td>
+</tr>
+<tr>
+<td>Chapters</td>
+<td>5</td>
+<td>30</td>
+<td>1</td>
+<td>13</td>
+<td>chapters</td>
+</tr>
+</tbody>
+</table>
+<p>The three scenarios, in this order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Yearly cost</th>
+<th>Utilization</th>
+<th>Whole-book hours</th>
+<th>Margin</th>
+<th>Model cost per book</th>
+<th>Model price</th>
+<th>Feedback when wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>8,275</td>
+<td>0.50</td>
+<td>28</td>
+<td>0.20</td>
+<td>$52.9</td>
+<td>$66.1</td>
+<td>8,760 × 0.50 = 4,380 hours, $8,275 ÷ 4,380 = $1.89 an hour, × 28 = $52.9, ÷ 0.80 = $66.1.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8,275</td>
+<td>0.25</td>
+<td>28</td>
+<td>0.20</td>
+<td>$105.8</td>
+<td>$132.2</td>
+<td>8,760 × 0.25 = 2,190 hours, $8,275 ÷ 2,190 = $3.78 an hour, × 28 = $105.8, ÷ 0.80 = $132.2.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8,275</td>
+<td>0.50</td>
+<td>17</td>
+<td>0.20</td>
+<td>$32.1</td>
+<td>$40.1</td>
+<td>$1.89 an hour × 17 = $32.1, ÷ 0.80 = $40.1.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The yearly cost, utilization, and whole-book hours are the reference and sensitivity values of the cost analysis page. The scenario 3 hours of 17 are the whole-book estimate for a mixture-of-experts model in that analysis. The sim labels them "estimate, not a measurement".</p>
+<p><strong>Rules:</strong> Generating hours = 8,760 × utilization. Cost per generating hour = yearly cost ÷ generating hours. Cost per book = whole-book hours × cost per generating hour. Price = cost per book ÷ (1 − margin). Cost per chapter = cost per book ÷ chapters. Books per year = generating hours ÷ whole-book hours, rounded down. Dollars are shown to one decimal.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads scenario 1, whose inputs are shown, and types the cost per book and the price.</li>
+<li>The learner presses Check.</li>
+<li>The sim reveals the model values and the Feedback text, and marks the scenario correct or missed.</li>
+<li>After all three scenarios the exploration mode unlocks, with a readout of cost per chapter and books per year, and the learner changes any of the five quantities.</li>
+<li>In exploration the learner should notice that halving utilization doubles the cost per book, and that a 10% change in yearly cost moves it by 10%.</li>
+</ol>
+<p><strong>Feedback:</strong> Three scenarios, fixed order, two attempts each. Correct: "Correct: cost $<value>, price $<value>." Incorrect: the "Feedback when wrong" text for that scenario. After the second wrong attempt the model values and the worked calculation are shown, and the scenario counts as missed. A running count "Scenarios correct: n of 3" is shown.</p>
+<p><strong>Starting State:</strong> Scenario 1 is shown with empty answer boxes and its inputs displayed, and the question on screen is "What does one textbook cost, and what must it sell for?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states $1.89 per generating hour, $52.92 per 28-hour book, $66.15 at a 20% margin, 156 books a year at 50% utilization, and that halving utilization doubles the cost per book.</p>
+</details>
+<h2 id="deciding">Deciding<a class="headerlink" href="#deciding" title="Permanent link">&para;</a></h2>
+<h3 id="run-report-and-baseline-textbook">Run Report and Baseline Textbook<a class="headerlink" href="#run-report-and-baseline-textbook" title="Permanent link">&para;</a></h3>
+<p>A <strong>run report</strong> is the summary of one run produced from its event stream: turns, tool calls, failed tool calls, tokens, and time. This project's <code>run_report.py</code> produces it, and it works on a run that is still going, which makes it the tool for deciding whether to wait or to stop one.</p>
+<p>A <strong>baseline textbook</strong> is the comparison book generated by a cloud model under the same rules, and it is what lets a local result be judged against something. This evaluation has a reference book for scale and has not yet generated a baseline. Until it does, the report can state costs and structural results and cannot state a quality gap, and it says so.</p>
+<h3 id="dgx-sufficiency-judgment">DGX Sufficiency Judgment<a class="headerlink" href="#dgx-sufficiency-judgment" title="Permanent link">&para;</a></h3>
+<p>A <strong>DGX sufficiency judgment</strong> is the answer to the question the evaluation was set up to ask: is this machine, with these models and this harness, enough to generate the textbook? It is a judgment and not a calculation, and it should be made against criteria written down before the data arrived.</p>
+<p>The criteria this evaluation can state are concrete. Does at least one model complete all three stages without a fault that makes the output unusable? Does it do so within a time and cost the user can accept? Does the quality, once reviewed, meet the standard the course sets? The honest answer at any given moment can be that the first is established, the second is estimated, and the third is not yet known, and a report says which.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Sufficient Is a Threshold You Set, Not a Number You Find</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+A machine is sufficient for a purpose, and the purpose has to say how fast, how good, and at what cost. Write the thresholds down first. If you decide what counts as enough after seeing what the machine can do, the answer is always yes.</p>
+</div>
+<h3 id="evaluation-report-and-report-structure">Evaluation Report and Report Structure<a class="headerlink" href="#evaluation-report-and-report-structure" title="Permanent link">&para;</a></h3>
+<p>An <strong>evaluation report</strong> is the document that carries the evaluation to a reader who was not there. A <strong>report structure</strong> is the order of its parts, and the five parts below are the ones that let a reader judge the conclusion for themselves.</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What it states</th>
+<th>The question a reader asks of it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Question</td>
+<td>What was being evaluated, for whom</td>
+<td>Is this my question?</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>The design: variables, inputs, runs, metrics</td>
+<td>Could I repeat it, and was it fair?</td>
+</tr>
+<tr>
+<td>Results</td>
+<td>What was measured, with the assumed marked</td>
+<td>What actually happened?</td>
+</tr>
+<tr>
+<td>Limitations</td>
+<td>What the results do not show</td>
+<td>How far can I trust this?</td>
+</tr>
+<tr>
+<td>Recommendation</td>
+<td>Local, cloud, or hybrid, and the conditions</td>
+<td>What should I do?</td>
+</tr>
+</tbody>
+</table>
+<p>The order matters. A reader who meets the recommendation before the method has nothing to judge it with, and a report that puts limitations at the end after a confident recommendation has buried the part that tempers it.</p>
+<h3 id="recommendation-and-the-local-cloud-or-hybrid-decision">Recommendation and the Local, Cloud, or Hybrid Decision<a class="headerlink" href="#recommendation-and-the-local-cloud-or-hybrid-decision" title="Permanent link">&para;</a></h3>
+<p>A <strong>recommendation</strong> is the action the evidence supports, stated with its conditions. The <strong>local, cloud, or hybrid decision</strong> is its most common form for this course: which of the three workflows to adopt for textbook generation, or which parts of the workflow go where.</p>
+<p>The decision follows from the evidence in a way that can be written as rules, and the rules are better than the verdict, because a reader can apply them to their own circumstances. The table gives the structure, with the evidence it needs, and an illustrative reading from this evaluation's provisional results.</p>
+<table>
+<thead>
+<tr>
+<th>If the evidence shows</th>
+<th>Then the recommendation leans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A local model completes every stage, at a cost per book below the service price, and review finds the quality acceptable</td>
+<td>Local</td>
+</tr>
+<tr>
+<td>No local model completes a stage that the skills need</td>
+<td>Cloud for that stage</td>
+</tr>
+<tr>
+<td>Local completes the high-volume or sensitive stages and fails a hard one</td>
+<td>Hybrid, routed by stage</td>
+</tr>
+<tr>
+<td>Quality is acceptable and the cost depends on utilization the user cannot reach</td>
+<td>Cloud, or a shared unit</td>
+</tr>
+</tbody>
+</table>
+<p>An illustrative reading, and not a conclusion, uses the first round's pattern. Several models completed the learning-graph and chapter-structure stages, and the stage that exposed capability differences was the chapter text. That pattern would point to a hybrid workflow: the structural stages local, with a stronger model for the hard prose, until a local model's prose is reviewed and shown to be acceptable. It is provisional, because every result is one run and no human review has been finished.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Writing the Recommendation Is the Hard Part, and That Is Normal</p>
+<p><img alt="Tera encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+After all the measuring, a recommendation can feel like a leap, and it is meant to. If the evidence is mixed, say so and state the conditions under which each answer holds. A recommendation that says "local for this, cloud for that, and here is what would change my mind" is a good one.</p>
+</div>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>Failure diagnosis starts from the event stream and asks what the evidence rules out. A text-emitted tool call ends a run after one turn, a malformed one is recoverable, premature termination and task loss leave no work behind, context overflow shows as forgetting late in a run, and a failure identical for every model at the first turn is a configuration fault. A failure in stage 3 can be a symptom of stage 2. The cost of a book comes from the whole-book time estimate, itself an assumption about the unrun stages, times the cost of a generating hour, and quality adjusts it for how much was usable, while human review is a separate and larger cost. The report states the question, method, results, limitations, and recommendation in that order, and the recommendation is a set of conditions and not a verdict.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">From Run Logs to a Defensible Recommendation</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now diagnose a failed run from its evidence, compute cost and energy per book, adjust for quality, and structure a report whose recommendation states its conditions. Chapter 23 makes that report safe to publish.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

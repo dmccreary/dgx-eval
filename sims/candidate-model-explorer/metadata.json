@@ -1,0 +1,23 @@
+{
+  "title": "Candidate Model Explorer",
+  "description": "The learner will compare the ten candidate models on parameter count, generation speed, and download size by answering 5 questions from a bubble chart, with at least 4 of 5 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "candidate-model-explorer",
+  "library": "Chart.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "completion_status": "scaffold",
+  "chapter_number": 14,
+  "chapter_title": "Open-Weight Model Families and Candidate Models",
+  "chapter_dir": "14-candidate-models",
+  "chapter_rel_dir": "chapters/14-candidate-models"
+}

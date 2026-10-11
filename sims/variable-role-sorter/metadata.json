@@ -1,0 +1,23 @@
+{
+  "title": "Experiment Variable Role Sorter",
+  "description": "The learner will differentiate the role of each of 10 items in a model-comparison experiment as independent variable, controlled variable, measured result, or uncontrolled variable, with at least 9 of 10 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "variable-role-sorter",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "differentiate",
+  "completion_status": "scaffold",
+  "chapter_number": 19,
+  "chapter_title": "Designing a Fair Evaluation",
+  "chapter_dir": "19-fair-evaluation-design",
+  "chapter_rel_dir": "chapters/19-fair-evaluation-design"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Words to Tokens Estimator",
+  "description": "The learner will calculate the estimated token count of a document from its word count and decide whether the document and a 2,000-token reply fit in a given context window, correct on at least 5 of 6 items.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "words-to-tokens-estimator",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "calculate",
+  "completion_status": "scaffold",
+  "chapter_number": 3,
+  "chapter_title": "Small Language Models",
+  "chapter_dir": "03-small-language-models",
+  "chapter_rel_dir": "chapters/03-small-language-models"
+}

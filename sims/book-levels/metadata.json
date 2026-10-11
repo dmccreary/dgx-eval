@@ -1,0 +1,23 @@
+{
+  "title": "Book Levels MicroSim",
+  "description": "The learner will compare the five levels of intelligent textbooks by the capability each level adds over the one below it.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "book-levels",
+  "library": "p5.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "compare",
+  "completion_status": "scaffold",
+  "chapter_number": 1,
+  "chapter_title": "Prerequisites and the Intelligent Textbook",
+  "chapter_dir": "01-intro-intelligent-textbooks",
+  "chapter_rel_dir": "chapters/01-intro-intelligent-textbooks"
+}

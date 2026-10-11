@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Textbook Generation Pipeline Explorer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Textbook Generation Pipeline Explorer</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> textbook-pipeline-explorer</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Remember</p>
+            <p><strong>Learning Objective:</strong> The learner will identify, for each of the seven generated artifacts of the textbook pipeline, which of the other seven artifacts it is built from, with at least 6 of 7 exactly correct.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** textbook-pipeline-explorer<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified<br/>
+    **Template:** https://github.com/dmccreary/signal-processing/tree/main/docs/sims/book-gen-workflow<br/>
+    **Bloom Level:** Remember<br/>
+    **Bloom Verb:** identify<br/>
+    **Learning Objective:** The learner will identify, for each of the seven generated artifacts of the textbook pipeline, which of the other seven artifacts it is built from, with at least 6 of 7 exactly correct.
+    
+    **Prerequisites:** course description, learning graph, skill, glossary, FAQ, quiz, MicroSim (all defined in the sections "Course Description" and "MicroSim" above this block).
+    
+    **Evidence of Mastery:** For each generated artifact, the learner checks every other artifact it is built from, then submits. A submission is correct only when the checked set equals the set in the "Built from" column of Content exactly. Mastery is 6 of 7 correct. Reading the "Contains" and "Location" text is exploration, not evidence.
+    
+    **Misconceptions:** (1) The chapters are written directly from the course description without a learning graph. (2) The glossary is written from the chapters rather than from the concept list. (3) A MicroSim is built from the course description rather than from a specification inside a chapter.
+    
+    **Instructional Rationale:** Remember-level mastery of a chain is the ability to say what comes from what, so the check asks for the set of inputs of each artifact. Letting the learner read each artifact's contents first makes the dependencies something they have seen before they are asked to recall them.
+    
+    **Content:**
+    
+    Eight artifacts. The learner can open any of them and read its row. The sim labels the "Built from" column as the answer key and hides it until the learner has submitted.
+    
+    | # | Artifact | Built from | Contains | Location |
+    |---|---|---|---|---|
+    | 1 | Course Description | none (written by the author) | audience, prerequisites, overview, topics, exclusions, outcomes | `docs/course-description.md` |
+    | 2 | Learning Graph | Course Description | concepts and dependency edges, as a CSV file and a JSON file | `docs/learning-graph/learning-graph.json` |
+    | 3 | Chapter Structure | Course Description, Learning Graph | chapter folders with titles, summaries, and assigned concept lists | `docs/chapters/NN-slug/index.md` |
+    | 4 | Chapter Content | Course Description, Learning Graph, Chapter Structure | prose, tables, and specifications for interactive elements | `docs/chapters/NN-slug/index.md` |
+    | 5 | MicroSims | Chapter Content | one `main.html` and one `index.md` per simulation | `docs/sims/<sim-id>/` |
+    | 6 | Glossary | Learning Graph | one definition for each concept in the concept list | `docs/glossary.md` |
+    | 7 | FAQ | Chapter Content, Learning Graph, Glossary | questions and answers drawn from the book | `docs/faq.md` |
+    | 8 | Quizzes | Chapter Content, Learning Graph | questions for each chapter | `docs/chapters/NN-slug/quiz.md` |
+    
+    Why each answer is correct, shown as feedback after the learner submits:
+    
+    | Artifact | Why (shown as feedback) |
+    |---|---|
+    | Learning Graph | The concepts are enumerated from the topics and outcomes the course description states. |
+    | Chapter Structure | Chapters group the graph's concepts under the course description's scope, with prerequisites in the same or an earlier chapter. |
+    | Chapter Content | Each chapter is written from its outline and concept list, within the course description's audience and scope, and the graph's impact scores set how much space each concept gets. |
+    | MicroSims | A MicroSim is built from the specification block written inside a chapter. |
+    | Glossary | One definition is written for each concept in the graph's concept list. |
+    | FAQ | Questions come from what the chapters teach, the concepts in the graph, and the terms the glossary defines. |
+    | Quizzes | Questions test what a chapter teaches and are aligned to the graph's concepts. |
+    
+    **Provenance:** The artifact names, inputs, and locations come from this chapter's section "Course Description" and from the skill descriptions in the ibook-skills library (learning-graph-generator, book-chapter-generator, chapter-content-generator, glossary-generator, faq-generator, quiz-generator, microsim-generator). No value is synthetic.
+    
+    **Rules:** The seven check items run in the fixed order 2 to 8. Each item offers all seven other artifacts as checkboxes, including artifacts that come later in the pipeline. An item is correct only when the checked set equals the "Built from" set exactly: a missing artifact and an extra artifact are both incorrect. The Course Description has no inputs, so it is never a check item.
+    
+    **Learner Activity:**
+    
+    1. The learner opens each of the eight artifacts in any order and reads its Contains and Location text. The learner should notice that Chapter Structure and Chapter Content share a file.
+    2. The learner starts the check. The sim shows artifact 2, Learning Graph, with seven checkboxes for the other artifacts.
+    3. The learner checks every artifact they think it is built from and submits. The sim shows the correct set, marks the item correct or incorrect, and shows the Why text.
+    4. The learner repeats for artifacts 3 to 8 in order. The sim then shows the first-attempt score and, for each missed item, the misconception it corresponds to.
+    
+    **Feedback:** Seven items, fixed order, one submission per item, and the submission is final. Correct: "Correct" followed by the Why text. Incorrect: "Not quite. It is built from: <correct set>" followed by the Why text. The correct set is revealed immediately after each submission. The final score reads "n of 7 correct".
+    
+    **Starting State:** All eight artifacts are shown in pipeline order with the course description first, nothing selected, and the question on screen is "What is each artifact built from?"
+    
+    **Chapter Anchors:** The chapter states that the pipeline has eight artifacts: the course description and seven generated ones. It states that the course description is the seed document and that the learning graph is generated from it.
+    -->
+</body>
+</html>

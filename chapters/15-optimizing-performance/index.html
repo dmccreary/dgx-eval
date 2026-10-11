@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="Measuring and tuning inference speed: prompt processing versus generation, tokens per second, time to first token, caching, batching, context length, sampling, and the memory and thermal limits that decide a run's wall-clock time.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>15. Optimizing Small Language Model Performance - DGX Evaluation for Textbook Generation</title>
+        <title>Optimizing Small Language Model Performance - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              15. Optimizing Small Language Model Performance
+              Optimizing Small Language Model Performance
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -992,6 +815,249 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-kinds-of-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Kinds of Time
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Kinds of Time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-load-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Load Time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-processing-speed-and-time-to-first-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Processing Speed and Time to First Token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens-per-second" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokens per Second
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latency-and-throughput" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latency and Throughput
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-an-agent-turn-is-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why an Agent Turn Is Slow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why an Agent Turn Is Slow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-caching-and-prompt-re-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Caching and Prompt Re-Reading
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context-length-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Length Setting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-size-batched-serving-and-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch Size, Batched Serving, and Concurrency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-parameters-temperature-top-p-and-top-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampling Parameters, Temperature, Top-p, and Top-k
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantization-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization Tradeoffs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Limits
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Limits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Pressure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-memory-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Out-of-Memory Error
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-utilization-and-gpu-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Utilization and GPU Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermal-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermal Throttling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turning-measurements-into-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turning Measurements Into Changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Turning Measurements Into Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-breakdown-for-an-agent-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Breakdown for an Agent Turn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Time Breakdown for an Agent Turn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-agent-turn-time-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Agent Turn Time Breakdown
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1201,6 +1267,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1282,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1383,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1525,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1684,249 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-kinds-of-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Kinds of Time
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Kinds of Time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-load-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Load Time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-processing-speed-and-time-to-first-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Processing Speed and Time to First Token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens-per-second" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokens per Second
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latency-and-throughput" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latency and Throughput
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-an-agent-turn-is-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why an Agent Turn Is Slow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why an Agent Turn Is Slow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-caching-and-prompt-re-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Caching and Prompt Re-Reading
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context-length-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Length Setting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-size-batched-serving-and-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch Size, Batched Serving, and Concurrency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-parameters-temperature-top-p-and-top-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampling Parameters, Temperature, Top-p, and Top-k
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantization-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization Tradeoffs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Limits
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Limits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Pressure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-memory-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Out-of-Memory Error
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-utilization-and-gpu-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Utilization and GPU Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermal-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermal Throttling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turning-measurements-into-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turning Measurements Into Changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Turning Measurements Into Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-breakdown-for-an-agent-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Breakdown for an Agent Turn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Time Breakdown for an Agent Turn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-agent-turn-time-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Agent Turn Time Breakdown
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1519,13 +2068,356 @@
 <li><a href="../13-inference-servers/">Chapter 13: Inference Servers and Local API Endpoints</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Find Out Where the Minutes Go</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+A model that benchmarks as fast can still take ninety minutes to do a job a slower model finishes in twenty. By the end of this chapter you will be able to split a run's wall-clock time into its causes and say which setting to change first. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Speed is the property most people ask about first and measure worst. A single "tokens per second" figure hides the fact that a run has several kinds of time in it, and which kind dominates depends on the workload. A chat answer is dominated by generating the reply. An agent session, which resends a growing conversation on every turn, is dominated by something else entirely.</p>
+<p>The chapter defines each kind of time and the settings that move it. It follows the order a request meets them: loading the model, reading the prompt, generating the reply, and running the tool the reply asks for. Then it covers the limits that cut a run short, which are memory pressure, the out-of-memory error, and heat. The worked examples use this evaluation's own measurements, including the one case where re-reading a conversation cost more than everything else combined.</p>
+<h2 id="the-kinds-of-time">The Kinds of Time<a class="headerlink" href="#the-kinds-of-time" title="Permanent link">&para;</a></h2>
+<h3 id="model-load-time">Model Load Time<a class="headerlink" href="#model-load-time" title="Permanent link">&para;</a></h3>
+<p><strong>Model load time</strong> is how long the server takes to read a model from disk into memory and get it ready, and it is paid whenever a model is not already loaded. It is the storage read speed of Chapter 5 applied to the model's size, plus the setup of the GPU. A 20 GB model at 2 GB per second is about ten seconds of reading, and a larger one proportionally more.</p>
+<p>It matters when it is paid repeatedly. A server that unloads an idle model and reloads it for the next request spends that time again, which is why the keep-alive setting of Chapter 13 exists. For a benchmark that runs for hours, one load is a rounding error, and a load before every request is not.</p>
+<h3 id="prompt-processing-speed-and-time-to-first-token">Prompt Processing Speed and Time to First Token<a class="headerlink" href="#prompt-processing-speed-and-time-to-first-token" title="Permanent link">&para;</a></h3>
+<p><strong>Prompt processing speed</strong> is how fast the server reads the prompt, measured in input tokens per second. Reading is fast because the model can process all the prompt's tokens in parallel. <strong>Time to first token</strong> is the delay between sending a request and receiving the first token of the reply, and it is made up mostly of loading, if needed, and prompt processing.</p>
+<p>A worked example from this evaluation: one model read a 30,000-token prompt in ten seconds, which is about 3,000 tokens a second, so its time to first token for that prompt was about ten seconds. The same prompt on a model that processes 500 tokens a second would take a full minute before a single word appeared.</p>
+<h3 id="tokens-per-second">Tokens per Second<a class="headerlink" href="#tokens-per-second" title="Permanent link">&para;</a></h3>
+<p><strong>Tokens per second</strong> is the generation speed: how many output tokens the model produces each second once it has started. Generation is slower than reading because each token depends on the one before it, so the tokens are produced in sequence and each requires reading the model's active weights from memory.</p>
+<p>The measured speeds in this evaluation spanned a factor of forty, from 3 tokens a second for the largest dense model to 130 for the fastest mixture-of-experts model. They are the figure behind every estimate of how long a chapter takes.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Reading Is Parallel and Writing Is Sequential</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+The model can look at an entire prompt at once, but it can only write one token at a time, because each depends on the last. That is why a prompt of 30,000 tokens is read in seconds and a reply of 600 tokens takes tens of seconds. Two different speeds govern two different halves of every request.</p>
+</div>
+<h3 id="latency-and-throughput">Latency and Throughput<a class="headerlink" href="#latency-and-throughput" title="Permanent link">&para;</a></h3>
+<p><strong>Latency</strong> is the total time for one request, from sending it to receiving the last token. <strong>Throughput</strong> is the total amount of work done per unit of time across all requests, usually tokens per second summed over everything in flight. They are different goals and often pull against each other. A setting that lowers one request's latency can lower the machine's total throughput, and the reverse.</p>
+<p>For a single benchmark session, latency is what you feel and throughput is irrelevant, because only one request is in flight at a time. For a service that generates many books, throughput is the number that sets the cost per book.</p>
+<h2 id="why-an-agent-turn-is-slow">Why an Agent Turn Is Slow<a class="headerlink" href="#why-an-agent-turn-is-slow" title="Permanent link">&para;</a></h2>
+<h3 id="prompt-caching-and-prompt-re-reading">Prompt Caching and Prompt Re-Reading<a class="headerlink" href="#prompt-caching-and-prompt-re-reading" title="Permanent link">&para;</a></h3>
+<p>An agent harness resends the whole conversation on every turn: the system prompt, the skill, every earlier message, and every tool result. <strong>Prompt caching</strong> is the server's remedy: it keeps the already-computed internal state for the part of the prompt that has not changed, so each new turn only has to read what is new. With caching working, a turn that adds 2,000 tokens to a 50,000-token conversation reads 2,000.</p>
+<p><strong>Prompt re-reading</strong> is the failure of that remedy, where the server recomputes most of the conversation on each turn. This evaluation observed it. With one model under the Ollama version used, on every agent turn the server restored a saved state just past the 19,000-token system prompt and then re-read the rest of the conversation, which was 46,000 to 65,000 tokens, taking one and a half to two minutes per turn. A different model, on the same server, did not show it. The cause was not identified.</p>
+<p>The effect on the cost of a run was larger than anything else. The first stage of one model took 102 minutes where the others took 6 to 22. Its 55 tool calls at 90 seconds each of re-reading account for about 83 of those minutes, and a single turn of reasoning accounts for another 19.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tokens re-read per turn</td>
+<td>46,000 to 65,000</td>
+<td>Measured from the server log</td>
+</tr>
+<tr>
+<td>Time per turn spent re-reading</td>
+<td>1.5 to 2 minutes</td>
+<td>Measured</td>
+</tr>
+<tr>
+<td>Tool calls in the stage</td>
+<td>55</td>
+<td>Measured</td>
+</tr>
+<tr>
+<td>Time from re-reading</td>
+<td>about 83 minutes</td>
+<td>55 × 90 seconds</td>
+</tr>
+<tr>
+<td>One reasoning turn</td>
+<td>about 19 minutes</td>
+<td>Measured</td>
+</tr>
+<tr>
+<td>Stage total</td>
+<td>102 minutes</td>
+<td>Measured</td>
+</tr>
+</tbody>
+</table>
+<p>The sum of the two causes, 83 plus 19, is the 102 minutes. Neither cause was the model's speed.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Look for the Restore Line in the Server Log</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+If one model is slow and another on the same server is not, search the server log for lines that say a context checkpoint was restored, and compare how many tokens each turn then processed. A turn that re-reads most of the conversation is the signature, and it is a different problem from slow generation.</p>
+</div>
+<h2 id="the-settings">The Settings<a class="headerlink" href="#the-settings" title="Permanent link">&para;</a></h2>
+<h3 id="context-length-setting">Context Length Setting<a class="headerlink" href="#context-length-setting" title="Permanent link">&para;</a></h3>
+<p>The <strong>context length setting</strong> is the window size the server is configured with, and Chapter 11 showed that it reserves memory for the cache. It also bounds how large a conversation can get before the harness must shrink it. The setting is a trade between room for long conversations and memory for everything else.</p>
+<p>This project's batch runner chooses it for each model from a memory estimate that keeps about 45 GiB free, and not a single value for all models. That is the Chapter 11 calculation applied as a setting.</p>
+<h3 id="batch-size-batched-serving-and-concurrency">Batch Size, Batched Serving, and Concurrency<a class="headerlink" href="#batch-size-batched-serving-and-concurrency" title="Permanent link">&para;</a></h3>
+<p><strong>Batch size</strong> is how many tokens, or requests, the server processes together in one step. A larger batch uses the GPU more fully, because the same weights are read once and applied to many tokens. <strong>Batched serving</strong> is a server design that combines concurrent requests into batches so that several users share one pass over the weights. <strong>Concurrency</strong> is the number of requests being handled at once.</p>
+<p>The three are one idea at three levels. Raising concurrency, in a server that batches, raises throughput, and it can raise each request's latency. For a benchmark that deliberately runs one session at a time, this is a lever left unused, which is why vLLM, Chapter 13's batching server, is the candidate for a second pass.</p>
+<h3 id="sampling-parameters-temperature-top-p-and-top-k">Sampling Parameters, Temperature, Top-p, and Top-k<a class="headerlink" href="#sampling-parameters-temperature-top-p-and-top-k" title="Permanent link">&para;</a></h3>
+<p><strong>Sampling parameters</strong> are the settings that control how the next token is chosen from the model's probabilities. <strong>Temperature</strong> scales how adventurous the choice is: 0 always takes the most likely token, and higher values spread the choice. <strong>Top-k</strong> limits the choice to the k most likely tokens, and <strong>top-p</strong> limits it to the smallest set of tokens whose probabilities add up to p.</p>
+<p>They matter for two reasons. They change the output, so a benchmark must fix and record them or its runs are not comparable. And they interact with reasoning models, where a high temperature can lengthen a chain of thought. They have little effect on speed, and a reader looking for speed will not find it here.</p>
+<h3 id="quantization-tradeoffs">Quantization Tradeoffs<a class="headerlink" href="#quantization-tradeoffs" title="Permanent link">&para;</a></h3>
+<p><strong>Quantization tradeoffs</strong> are what you give and get by storing weights in fewer bits. A 4-bit file is smaller, loads faster, and reads fewer bytes per token, so it generates faster than the same model at 8 bits. It also loses some accuracy, more on hard tasks than easy ones. This evaluation ran every candidate at its default 4-bit and left an 8-bit retest for the winner. Whether the quality loss matters is a measurement, and it is the one dial in this chapter that changes the output and not only the speed.</p>
+<h2 id="the-limits">The Limits<a class="headerlink" href="#the-limits" title="Permanent link">&para;</a></h2>
+<h3 id="memory-pressure">Memory Pressure<a class="headerlink" href="#memory-pressure" title="Permanent link">&para;</a></h3>
+<p><strong>Memory pressure</strong> is the condition in which available memory is low enough that the system starts to struggle: it swaps data to disk, stalls, or kills a process. It builds gradually as the context grows, and the symptom is that the same job slows down for no obvious reason in the later part of a run.</p>
+<p>The probe of Chapter 10 reports available memory directly, and the vitals log of the same chapter records it every 30 seconds, so the slope is visible. Take an illustrative run that begins with 72 GiB available and ends with 18. It has been under growing pressure, and the second number is the one a watchdog acts on.</p>
+<h3 id="out-of-memory-error">Out-of-Memory Error<a class="headerlink" href="#out-of-memory-error" title="Permanent link">&para;</a></h3>
+<p>An <strong>out-of-memory error</strong> is the failure when a program asks for memory that is not there. On a machine with dedicated GPU memory it shows up as a message in the server log, such as a CUDA allocation failure, and it ends one request or one process. On a unified-memory machine, the same shortage is shared with the operating system, and it can end in a frozen machine instead of a clean error. The practical rule is the one of Chapter 11: leave headroom, and watch the available figure so that you act before the error arrives.</p>
+<h3 id="gpu-utilization-and-gpu-monitoring">GPU Utilization and GPU Monitoring<a class="headerlink" href="#gpu-utilization-and-gpu-monitoring" title="Permanent link">&para;</a></h3>
+<p><strong>GPU utilization</strong> is the share of the time the GPU is busy. <strong>GPU monitoring</strong> is watching it, and the temperature, power, and memory, while a job runs. A low utilization during generation means the GPU is waiting: for the prompt to be read, for a tool to run, or for the CPU to hand it work. A high utilization during a long reply is normal and healthy.</p>
+<p>A single command shows it, refreshed every five seconds. The query asks for utilization, temperature, and power, and <code>-l 5</code> repeats it.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nvidia-smi<span class="w"> </span>--query-gpu<span class="o">=</span>utilization.gpu,temperature.gpu,power.draw<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">           </span>--format<span class="o">=</span>csv<span class="w"> </span>-l<span class="w"> </span><span class="m">5</span>
+</span></code></pre></div>
+<p>During this evaluation a reading at about 43 seconds into a heavy run was 92% utilization, 72 degrees, and 69 W. Those numbers describe a GPU working hard on a single request, not a ceiling.</p>
+<h3 id="thermal-throttling">Thermal Throttling<a class="headerlink" href="#thermal-throttling" title="Permanent link">&para;</a></h3>
+<p><strong>Thermal throttling</strong> is the chip reducing its own speed to stay below a safe temperature. It shows up as a speed that falls over a long run with no change in the workload, and it is invisible in a short test. The only way to find it is to run long and read the temperature and tokens per second together. The watchdog ceiling in this project was 95 degrees Celsius, chosen to stop a run before the chip had to protect itself, and a speed that decays while the temperature climbs is the pattern to look for.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A Fast Short Test Can Hide a Slow Long Run</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A thirty-second speed test finishes before the chassis has warmed and before the cache has grown. Measure speed again at the end of a long run, with the same prompt, and compare. If the two numbers differ, the difference is memory pressure or heat, and the first number was never the machine's real speed.</p>
+</div>
+<h2 id="turning-measurements-into-changes">Turning Measurements Into Changes<a class="headerlink" href="#turning-measurements-into-changes" title="Permanent link">&para;</a></h2>
+<h3 id="performance-optimization">Performance Optimization<a class="headerlink" href="#performance-optimization" title="Permanent link">&para;</a></h3>
+<p><strong>Performance optimization</strong> is changing one setting at a time and measuring the result against a fixed baseline. The discipline is the same as the sensitivity analysis of Chapter 6: one change, one measurement, then restore. A comparison between two runs that differ in three settings tells you nothing about which one mattered.</p>
+<p>Each setting in this chapter moves a different part of the time, and the table matches them so that you change the one aimed at your bottleneck.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it moves</th>
+<th>What it costs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quantization to fewer bits</td>
+<td>Generation speed up, memory down</td>
+<td>Some quality</td>
+</tr>
+<tr>
+<td>Context length down</td>
+<td>Memory down, room for the system up</td>
+<td>Smaller conversations</td>
+</tr>
+<tr>
+<td>Keep-alive up</td>
+<td>Fewer reloads</td>
+<td>Memory held while idle</td>
+</tr>
+<tr>
+<td>Prompt caching working</td>
+<td>Prompt processing time down per turn</td>
+<td>Nothing, when it works</td>
+</tr>
+<tr>
+<td>Batching and concurrency up</td>
+<td>Throughput up</td>
+<td>Latency per request</td>
+</tr>
+<tr>
+<td>Sampling parameters</td>
+<td>The output, not the speed</td>
+<td>Different results</td>
+</tr>
+</tbody>
+</table>
+<h3 id="time-breakdown-for-an-agent-turn">Time Breakdown for an Agent Turn<a class="headerlink" href="#time-breakdown-for-an-agent-turn" title="Permanent link">&para;</a></h3>
+<p>A <strong>time breakdown</strong> splits one turn into the parts above. For a turn that begins with a prompt, produces a reply, and runs one tool, the time is the sum of reading, writing, and tool execution:</p>
+<div class="arithmatex">\[ T_{\text{turn}} = \frac{\text{prompt tokens}}{\text{prompt processing speed}} + \frac{\text{output tokens}}{\text{tokens per second}} + T_{\text{tool}} \]</div>
+<p>With caching working, the prompt tokens are only the new ones. With re-reading, they are most of the conversation, and the first term dominates.</p>
+<p>The three cases below use measured speeds from this evaluation. In each, the tool takes 5 seconds.</p>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Prompt tokens read</th>
+<th>Reading speed</th>
+<th>Reply tokens</th>
+<th>Writing speed</th>
+<th>Turn time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Caching works, dense model</td>
+<td>2,000</td>
+<td>3,000 per second</td>
+<td>600</td>
+<td>34 per second</td>
+<td>23.3 s</td>
+</tr>
+<tr>
+<td>Re-reading, a slower model</td>
+<td>55,000</td>
+<td>500 per second</td>
+<td>600</td>
+<td>26 per second</td>
+<td>138.1 s</td>
+</tr>
+<tr>
+<td>Caching works, fast mixture-of-experts model</td>
+<td>2,000</td>
+<td>3,000 per second</td>
+<td>600</td>
+<td>108 per second</td>
+<td>11.2 s</td>
+</tr>
+</tbody>
+</table>
+<p>In the second case the reading takes 110 of the 138 seconds, and tripling the generation speed would barely change the turn. In the first, writing takes 17.6 of 23.3 seconds, and faster generation is the lever. The same model can be on either row depending on whether the server is caching.</p>
+<h4 id="diagram-agent-turn-time-breakdown">Diagram: Agent Turn Time Breakdown<a class="headerlink" href="#diagram-agent-turn-time-breakdown" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Agent Turn Time Breakdown</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> turn-time-breakdown<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate the time of an agent turn from its prompt tokens, reply tokens, speeds, and tool time to within 1 second, and name the component that dominates it, for 3 challenges.</p>
+<p><strong>Prerequisites:</strong> prompt processing speed, tokens per second, prompt caching, prompt re-reading, latency, time breakdown (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 3 challenges the learner types the turn time in seconds and chooses the dominant component from "Reading the prompt", "Writing the reply", and "Running the tool" before the sim reveals the answer. A challenge is correct when the typed value is within 1 second of the model value and the dominant component matches. Mastery is 3 of 3. Changing sliders in exploration is not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Faster generation always makes a turn faster. (2) Prompt reading is negligible. (3) A model's speed is one number for every workload. (4) Re-reading happens only when the context is full.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level calculation needs a stated formula and committed numbers, and the dominant-component question turns the arithmetic into a diagnosis. The three cases are chosen so that each has a different dominant component or a different cause for the same one.</p>
+<p><strong>Content:</strong></p>
+<p>The learner can change five quantities:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Min</th>
+<th>Max</th>
+<th>Step</th>
+<th>Default</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prompt tokens read this turn</td>
+<td>0</td>
+<td>100,000</td>
+<td>500</td>
+<td>2,000</td>
+<td>tokens</td>
+</tr>
+<tr>
+<td>Prompt processing speed</td>
+<td>100</td>
+<td>5,000</td>
+<td>100</td>
+<td>3,000</td>
+<td>tokens per second</td>
+</tr>
+<tr>
+<td>Reply tokens</td>
+<td>50</td>
+<td>5,000</td>
+<td>50</td>
+<td>600</td>
+<td>tokens</td>
+</tr>
+<tr>
+<td>Generation speed</td>
+<td>5</td>
+<td>150</td>
+<td>1</td>
+<td>34</td>
+<td>tokens per second</td>
+</tr>
+<tr>
+<td>Tool time</td>
+<td>0</td>
+<td>60</td>
+<td>1</td>
+<td>5</td>
+<td>seconds</td>
+</tr>
+</tbody>
+</table>
+<p>The three challenges, in this order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Prompt tokens</th>
+<th>Reading speed</th>
+<th>Reply tokens</th>
+<th>Writing speed</th>
+<th>Tool time</th>
+<th>Model turn time</th>
+<th>Dominant component</th>
+<th>Feedback when wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2,000</td>
+<td>3,000</td>
+<td>600</td>
+<td>34</td>
+<td>5</td>
+<td>23.3 s</td>
+<td>Writing the reply</td>
+<td>2,000 ÷ 3,000 = 0.7 s, 600 ÷ 34 = 17.6 s, tool 5 s, total 23.3 s, and writing is the largest.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>55,000</td>
+<td>500</td>
+<td>600</td>
+<td>26</td>
+<td>5</td>
+<td>138.1 s</td>
+<td>Reading the prompt</td>
+<td>55,000 ÷ 500 = 110 s, 600 ÷ 26 = 23.1 s, tool 5 s, total 138.1 s, and reading is the largest.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2,000</td>
+<td>3,000</td>
+<td>600</td>
+<td>108</td>
+<td>8</td>
+<td>14.2 s</td>
+<td>Running the tool</td>
+<td>0.7 s reading, 600 ÷ 108 = 5.6 s writing, tool 8 s, total 14.2 s, and the tool is the largest.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The speeds and token counts are drawn from the measurements in this chapter and the cost analysis page: 3,000 tokens per second reading and 108 writing for the mixture-of-experts model, 34 writing for the dense model, 26 writing and about 500 reading with 55,000 tokens re-read for the slow case. Tool times are illustrative, and the sim labels them "illustrative".</p>
+<p><strong>Rules:</strong> Turn time = prompt tokens ÷ reading speed + reply tokens ÷ writing speed + tool time, in seconds, shown to one decimal. The dominant component is the largest of the three terms; a tie is shown as "tie". Model load time is not included.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads challenge 1, whose inputs are shown, and types the turn time in seconds.</li>
+<li>The learner chooses the dominant component and presses Check.</li>
+<li>The sim reveals the model value, the dominant component, and the Feedback text, and marks the challenge correct or missed.</li>
+<li>After the three challenges the exploration mode unlocks, with a stacked bar of the three components, and the learner changes any of the five quantities.</li>
+<li>In exploration the learner should notice that changing generation speed barely moves the bar when reading dominates.</li>
+</ol>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: <model value> s, <component> dominates." Incorrect: the "Feedback when wrong" text for that challenge. After the second wrong attempt the model value and the worked calculation are shown, and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Starting State:</strong> Challenge 1 is shown with an empty answer box and its inputs displayed. The question on screen is "How long does this turn take, and where does the time go?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states a 23.3-second turn with caching on a dense model, a 138.1-second turn with 55,000 tokens re-read, and 110 of those seconds spent reading, and that the stage total of 102 minutes was about 83 minutes of re-reading plus a 19-minute reasoning turn.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>A run's wall-clock time is made of loading the model, reading the prompt, writing the reply, and running tools, and each has its own speed and its own setting. Reading is parallel and fast, and writing is sequential and slow, so a turn that resends a long conversation can spend most of its time reading unless prompt caching holds. The server's caching can silently fail, as it did for one model in this evaluation, and the cost was larger than any difference in generation speed. The settings move different parts of the time and some move the output, and a measurement with one change at a time is the only way to know which. Memory pressure, out-of-memory errors, and heat set the limits, and a long run is the only test that finds them.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Split a Run Into Its Causes</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now take a slow run, separate loading, reading, writing, and tool time, and say which setting to change first. Chapter 16 opens up the harness itself to see where an agent turn spends its time and its context.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

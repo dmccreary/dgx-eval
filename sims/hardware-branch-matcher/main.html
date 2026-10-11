@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Hardware Finding to Setup Branch Matcher</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Hardware Finding to Setup Branch Matcher</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> hardware-branch-matcher</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Apply</p>
+            <p><strong>Learning Objective:</strong> The learner will apply the hardware-to-setup rules of this chapter to 6 findings by choosing the setup branch each finding triggers, with at least 5 of 6 correct.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** hardware-branch-matcher<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified<br/>
+    **Bloom Level:** Apply<br/>
+    **Bloom Verb:** apply<br/>
+    **Learning Objective:** The learner will apply the hardware-to-setup rules of this chapter to 6 findings by choosing the setup branch each finding triggers, with at least 5 of 6 correct.
+    
+    **Prerequisites:** CPU architecture, x86_64, aarch64, dedicated GPU memory, unified memory, multi-GPU system, NVIDIA driver, CUDA (all defined in the sections above this block).
+    
+    **Evidence of Mastery:** For each of the 6 findings the learner commits one branch from the six listed in Content before the sim reveals the answer. A choice is correct when it equals the Correct branch column. Mastery is 5 of 6 correct on the first attempt. Reading the finding text is exploration, not evidence.
+    
+    **Misconceptions:** (1) Every DGX has dedicated GPU memory. (2) A download that completes will run on any DGX. (3) `nvidia-smi` always reports how much GPU memory there is. (4) A newer CUDA build is always better.
+    
+    **Instructional Rationale:** Apply-level work needs the learner to use a rule on a new case, so each finding is a realistic probe result that triggers exactly one branch. Committing before the reveal separates a reasoned choice from recognition.
+    
+    **Content:**
+    
+    The six setup branches the learner chooses from are: "Use aarch64 packages", "Use x86_64 packages", "Size models against one shared memory pool", "Size models against one GPU's dedicated memory", "Plan to split the model across several GPUs", and "Choose a CUDA build at or below the driver's version".
+    
+    | # | Finding shown to the learner | Correct branch | Why (shown as feedback) |
+    |---|---|---|---|
+    | 1 | `uname -m` prints `aarch64`. | Use aarch64 packages | The processor is Arm, so only builds for aarch64 will run. |
+    | 2 | `uname -m` prints `x86_64`. | Use x86_64 packages | The processor is Intel or AMD, so builds for x86_64 are the ones that run. |
+    | 3 | `nvidia-smi` lists one GPU with memory reported as `Not Supported`; `free -h` shows about 120 GiB of memory. | Size models against one shared memory pool | The GPU has no memory of its own, so the system's memory is the limit. |
+    | 4 | `nvidia-smi` lists one GPU with 80 GB of memory; `free -h` shows 512 GiB. | Size models against one GPU's dedicated memory | The weights must fit in the GPU's own 80 GB, however much system RAM there is. |
+    | 5 | `nvidia-smi` lists eight GPUs of 80 GB each. | Plan to split the model across several GPUs | A model larger than 80 GB can run only if it is divided across the GPUs. |
+    | 6 | The driver reports CUDA 13.0; the framework build you downloaded needs CUDA 13.2. | Choose a CUDA build at or below the driver's version | The driver sets a ceiling, and a runtime above it will not start. |
+    
+    **Provenance:** The findings are synthetic examples written for this exercise, and the sim labels them "synthetic example". The meanings of the branches come from the sections of this chapter above.
+    
+    **Rules:** Findings are shown in the fixed order 1 to 6. Each finding allows exactly one branch choice, and the choice is final. A finding is correct only when the chosen branch equals the Correct branch. Each finding triggers exactly one branch of the six.
+    
+    **Learner Activity:**
+    
+    1. The learner reads finding 1.
+    2. The learner chooses one of the six branches and confirms.
+    3. The sim shows the correct branch and the Why text, and marks the finding correct or incorrect.
+    4. The learner repeats for findings 2 to 6. After finding 6 the sim shows the score and, for each miss, the misconception behind it.
+    
+    **Feedback:** Six findings, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct branch and the Why text. The final score reads "n of 6 correct".
+    
+    **Starting State:** Finding 1 is shown with no branch chosen, and the question on screen is "Which setup branch does this finding trigger?"
+    
+    **Chapter Anchors:** The chapter states that aarch64 and x86_64 builds are not interchangeable, that on unified memory the GPU has no memory of its own and `nvidia-smi` reports it as `Not Supported`, that a model larger than one GPU's dedicated memory must be split across GPUs, and that the driver sets a ceiling on the CUDA version.
+    -->
+</body>
+</html>

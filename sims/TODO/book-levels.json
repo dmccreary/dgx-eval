@@ -1,0 +1,15 @@
+{
+  "sim_id": "book-levels",
+  "diagram_name": "Book Levels MicroSim",
+  "chapter_number": 1,
+  "chapter_title": "Prerequisites and the Intelligent Textbook",
+  "chapter_dir": "01-intro-intelligent-textbooks",
+  "chapter_rel_dir": "chapters/01-intro-intelligent-textbooks",
+  "library": "p5.js",
+  "bloom_level": "Understand",
+  "bloom_verb": "compare",
+  "learning_objective": "The learner will compare the five levels of intelligent textbooks by the capability each level adds over the one below it.",
+  "completion_status": "specified",
+  "extracted_date": "2026-10-11",
+  "specification": "Type: microsim\n**sim-id:** book-levels<br/>\n**Library:** p5.js<br/>\n**Status:** Reused<br/>\n**Source:** https://dmccreary.github.io/ibook-skills/sims/book-levels/<br/>\n**Source Repo:** https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/book-levels<br/>\n**Bloom Level:** Understand<br/>\n**Bloom Verb:** compare<br/>\n**Learning Objective:** The learner will compare the five levels of intelligent textbooks by the capability each level adds over the one below it.\n\nReused from the MicroSim catalog (WHAT match score 0.7579)."
+}

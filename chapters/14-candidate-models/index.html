@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="The open-weight model families a DGX evaluator will meet and the ten candidates this evaluation tested, with where each came from, why it was included, and what its first round showed.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>14. Open-Weight Model Families and Candidate Models - DGX Evaluation for Textbook Generation</title>
+        <title>Open-Weight Model Families and Candidate Models - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              14. Open-Weight Model Families and Candidate Models
+              Open-Weight Model Families and Candidate Models
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -971,6 +794,141 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Families
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Families">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qwen-gemma-and-mistral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qwen, Gemma, and Mistral
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nemotron-gpt-oss-and-granite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nemotron, gpt-oss, and Granite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llama-and-phi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Llama and Phi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ten-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Ten Candidates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Ten Candidates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-qwen-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Qwen Candidates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-gemma-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Gemma Candidates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-mistral-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Mistral Candidates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-remaining-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Remaining Candidates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-first-round-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      The First Round at a Glance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The First Round at a Glance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-candidate-model-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Candidate Model Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1201,6 +1159,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1174,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1275,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1417,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1576,141 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Families
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Families">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qwen-gemma-and-mistral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qwen, Gemma, and Mistral
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nemotron-gpt-oss-and-granite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nemotron, gpt-oss, and Granite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llama-and-phi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Llama and Phi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ten-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Ten Candidates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Ten Candidates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-qwen-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Qwen Candidates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-gemma-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Gemma Candidates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-mistral-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Mistral Candidates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-remaining-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Remaining Candidates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-first-round-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      The First Round at a Glance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The First Round at a Glance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-candidate-model-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Candidate Model Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1502,13 +1835,347 @@
 <li><a href="../13-inference-servers/">Chapter 13: Inference Servers and Local API Endpoints</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Ten Candidates, Each With a Reason</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+A list of model names tells you nothing until each one has a reason attached. By the end of this chapter you will be able to say, for every candidate in this evaluation, where it came from, why it was chosen, and what the first round of testing showed. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Chapter 12 gave you the criteria for choosing a model, and this chapter shows the criteria applied. It introduces the model families that publish open-weight models, then the ten candidates this evaluation tested, with the reason for each and the first-round result.</p>
+<p>Two cautions apply to everything here. The first is that these are measurements from one set of runs, on one kind of machine, with one run of each test, and they are provisional. The second is that the model landscape changes within months, so the specific names will date. The reasoning the chapter models, which is a claim, a test, and a result for each candidate, is the part meant to last.</p>
+<h2 id="the-families">The Families<a class="headerlink" href="#the-families" title="Permanent link">&para;</a></h2>
+<p>A <strong>model family</strong> is a series of models from one publisher that share a design lineage and a naming scheme. Members of a family usually differ in size and in whether they are specialized for code or for general use. Knowing the family tells you what to expect about licensing, tool-calling support, and how sizes relate to each other.</p>
+<h3 id="qwen-gemma-and-mistral">Qwen, Gemma, and Mistral<a class="headerlink" href="#qwen-gemma-and-mistral" title="Permanent link">&para;</a></h3>
+<p>The <strong>Qwen family</strong> comes from Alibaba. Its recent releases are aimed at long agent tasks and tool use, and a mid-2026 survey reported Qwen models holding most of the top places on a public function-calling leaderboard. It spans dense models and mixture-of-experts models. Two candidates are here: <code>qwen3.8:27b</code> and <code>qwen3.6:35b</code>.</p>
+<p>The <strong>Gemma family</strong> comes from Google. It is offered in sizes that fit a single machine, with both a dense model and a mixture-of-experts model at similar total size in the Gemma 4 release, which makes a clean comparison of the two designs. Two candidates are here: <code>gemma4:26b</code> and <code>gemma4:31b</code>.</p>
+<p>The <strong>Mistral family</strong> comes from Mistral AI, a French company. It includes a large dense general model and a smaller one built for coding agents. Two candidates are here: <code>mistral-medium-3.5:128b</code> and <code>devstral-small-2:24b</code>.</p>
+<h3 id="nemotron-gpt-oss-and-granite">Nemotron, gpt-oss, and Granite<a class="headerlink" href="#nemotron-gpt-oss-and-granite" title="Permanent link">&para;</a></h3>
+<p>The <strong>Nemotron family</strong> comes from NVIDIA, which also makes the hardware. Its models are positioned for agents and for efficient throughput, and its newer releases use mixture-of-experts designs with a very long context window. One candidate is here: <code>nemotron-3.5-lightning:30b</code>.</p>
+<p>The <strong>gpt-oss family</strong> comes from OpenAI, and it is the company's open-weight release. It is a mixture-of-experts model released with function calling, structured output, and adjustable reasoning effort. One candidate is here: <code>gpt-oss:120b</code>.</p>
+<p>The <strong>Granite family</strong> comes from IBM. It is positioned for enterprise use, with a plain Apache 2.0 license, structured output, and documentation of its training data governance. One candidate is here: <code>granite4.2:30b</code>.</p>
+<h3 id="llama-and-phi">Llama and Phi<a class="headerlink" href="#llama-and-phi" title="Permanent link">&para;</a></h3>
+<p>The <strong>Llama family</strong> is Meta's long-running open-weight line, and the one most tutorials were written for. None of the ten candidates carries the Llama name. The one Meta model on the list, <code>muse-glimmer:30b</code>, is a newer line that its publisher describes as built for local agents.</p>
+<p>The <strong>Phi family</strong> is Microsoft's line of small models, designed to give strong results at a size that fits modest hardware. None of the ten candidates is a Phi model, because the benchmark's long skills and 64,000-token minimum favored larger models. A reader with less memory would start here.</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Publisher</th>
+<th>Candidates in this evaluation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen</td>
+<td>Alibaba</td>
+<td><code>qwen3.8:27b</code>, <code>qwen3.6:35b</code></td>
+</tr>
+<tr>
+<td>Gemma</td>
+<td>Google</td>
+<td><code>gemma4:26b</code>, <code>gemma4:31b</code></td>
+</tr>
+<tr>
+<td>Mistral</td>
+<td>Mistral AI</td>
+<td><code>mistral-medium-3.5:128b</code>, <code>devstral-small-2:24b</code></td>
+</tr>
+<tr>
+<td>Nemotron</td>
+<td>NVIDIA</td>
+<td><code>nemotron-3.5-lightning:30b</code></td>
+</tr>
+<tr>
+<td>gpt-oss</td>
+<td>OpenAI</td>
+<td><code>gpt-oss:120b</code></td>
+</tr>
+<tr>
+<td>Granite</td>
+<td>IBM</td>
+<td><code>granite4.2:30b</code></td>
+</tr>
+<tr>
+<td>Llama</td>
+<td>Meta</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Phi</td>
+<td>Microsoft</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The one remaining candidate, <code>muse-glimmer:30b</code>, is from Meta and is listed with the candidates below.</p>
+<h2 id="the-ten-candidates">The Ten Candidates<a class="headerlink" href="#the-ten-candidates" title="Permanent link">&para;</a></h2>
+<p>Each entry gives the claim that put the model on the list and what the first round of testing found. The first round was one run of each test, so a result is a first observation, not a verdict.</p>
+<h3 id="the-qwen-candidates">The Qwen Candidates<a class="headerlink" href="#the-qwen-candidates" title="Permanent link">&para;</a></h3>
+<p><strong><code>qwen3.8:27b</code></strong> is the newest Qwen release and is described by its publisher as improved for long-running agent tasks. It produced the cleanest learning graph of the first stage, with exactly 200 concepts, no cycles, and no duplicate labels. It took 102 minutes where the five others that finished took 6 to 22, because the server re-read almost the whole conversation on every turn. In the later chapter-writing stage it was too slow to finish a chapter inside 90 minutes.</p>
+<p><strong><code>qwen3.6:35b</code></strong> is the release before it, in a larger mixture-of-experts form with about 3 billion parameters active for each token. It was the best combination of speed and correctness in the first round: 83 to 105 tokens per second and a learning graph in 22 minutes with every file present. The graph is looser than the Qwen 3.8 one, with 19 concepts that have no prerequisite.</p>
+<h3 id="the-gemma-candidates">The Gemma Candidates<a class="headerlink" href="#the-gemma-candidates" title="Permanent link">&para;</a></h3>
+<p><strong><code>gemma4:31b</code></strong> is a dense model of 30.7 billion parameters and the most consistent rule-follower in the tests. It passed every model-only rule twice and ended every smoke run with a site that builds. It ran at 28 to 40 tokens per second. Its first learning-graph attempt was lost when a machine froze at a context setting that is now treated as unsafe, and its second finished in 21 minutes without the taxonomy page or the navigation entries.</p>
+<p><strong><code>gemma4:26b</code></strong> is the mixture-of-experts sibling, with 25.2 billion parameters and 3.8 billion active. It was the fastest model tested at 86 to 130 tokens per second, and it finished the learning graph in under six minutes. That graph has 40 duplicate concept labels out of 200, which is a serious flaw. A model this fast can afford a second attempt, but something has to notice that one is needed.</p>
+<h3 id="the-mistral-candidates">The Mistral Candidates<a class="headerlink" href="#the-mistral-candidates" title="Permanent link">&para;</a></h3>
+<p><strong><code>mistral-medium-3.5:128b</code></strong> is a dense model of 128 billion parameters, promoted for instruction and system-prompt adherence. It loaded and ran, at 3 tokens per second, and used 88 GiB at a 32,000-token context, so no context of 64,000 tokens or more would fit. On one unit of this hardware it is not usable.</p>
+<p><strong><code>devstral-small-2:24b</code></strong> is built to drive software-engineering agents and has a 384,000-token window in a 15 GB download. It did no work in either harness test: both times it wrote its first tool call as plain text, the harness saw no tool call, and the run ended after one turn.</p>
+<h3 id="the-remaining-candidates">The Remaining Candidates<a class="headerlink" href="#the-remaining-candidates" title="Permanent link">&para;</a></h3>
+<p><strong><code>nemotron-3.5-lightning:30b</code></strong> is NVIDIA's model for always-on agents, with 3 billion active parameters and a one-million-token context window. It was as fast as claimed, at 84 to 105 tokens per second, and finished the learning graph in 18 minutes with 199 concepts, one short of the 200 asked for. It made 140 tool calls, nearly three times as many as any other model.</p>
+<p><strong><code>gpt-oss:120b</code></strong> is the largest model that still ran at a usable speed, at 38 to 44 tokens per second, because only about 5 billion of its 117 billion parameters are active. It finished the learning graph in 17 minutes with every tool call succeeding, and the graph is thin: 19 concepts connected to nothing. In one run it printed a tool call as plain text.</p>
+<p><strong><code>granite4.2:30b</code></strong> is the conservative choice, with a plain Apache 2.0 license and structured-output support. It was too slow to finish: 12 tokens per second, and it was stopped at the 150-minute limit having produced only the concept list.</p>
+<p><strong><code>muse-glimmer:30b</code></strong> is Meta's model, positioned around instruction following and recovery in unattended agent runs. It lost the task after a few steps in the harness, which looks like a context problem: its first prompt took 35,000 tokens where the others took 17,000 to 21,000.</p>
+<h2 id="the-first-round-at-a-glance">The First Round at a Glance<a class="headerlink" href="#the-first-round-at-a-glance" title="Permanent link">&para;</a></h2>
+<p>The table gathers the first-round measurements. It is the answer to the question this chapter began with, and it is also a reminder of how much of the ordering a single stage could not have predicted.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters</th>
+<th>Download</th>
+<th>Speed (tokens/s)</th>
+<th>First-stage result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen3.8:27b</code></td>
+<td>27 billion</td>
+<td>17 GB</td>
+<td>26</td>
+<td>200 concepts in 102 minutes, no structural fault</td>
+</tr>
+<tr>
+<td><code>gemma4:31b</code></td>
+<td>30.7 billion, dense</td>
+<td>20 GB</td>
+<td>28–40</td>
+<td>200 concepts in 21 minutes, two files missing</td>
+</tr>
+<tr>
+<td><code>muse-glimmer:30b</code></td>
+<td>30 billion</td>
+<td>18 GB</td>
+<td>13</td>
+<td>No graph; lost the task</td>
+</tr>
+<tr>
+<td><code>qwen3.6:35b</code></td>
+<td>35 billion, about 3 active</td>
+<td>22 GB</td>
+<td>83–105</td>
+<td>200 concepts in 22 minutes, 19 without prerequisites</td>
+</tr>
+<tr>
+<td><code>gemma4:26b</code></td>
+<td>25.2 billion, 3.8 active</td>
+<td>18 GB</td>
+<td>86–130</td>
+<td>200 concepts in under 6 minutes, 40 duplicate labels</td>
+</tr>
+<tr>
+<td><code>nemotron-3.5-lightning:30b</code></td>
+<td>30 billion, 3 active</td>
+<td>25 GB</td>
+<td>84–105</td>
+<td>199 concepts in 18 minutes</td>
+</tr>
+<tr>
+<td><code>mistral-medium-3.5:128b</code></td>
+<td>128 billion, dense</td>
+<td>80 GB</td>
+<td>3</td>
+<td>Not run; no usable context fits</td>
+</tr>
+<tr>
+<td><code>gpt-oss:120b</code></td>
+<td>117 billion, 5.1 active</td>
+<td>65 GB</td>
+<td>38–44</td>
+<td>200 concepts in 17 minutes, 19 unconnected</td>
+</tr>
+<tr>
+<td><code>devstral-small-2:24b</code></td>
+<td>24 billion</td>
+<td>15 GB</td>
+<td>15</td>
+<td>No graph; tool call written as text</td>
+</tr>
+<tr>
+<td><code>granite4.2:30b</code></td>
+<td>about 30 billion, dense</td>
+<td>17 GB</td>
+<td>12</td>
+<td>Stopped at 150 minutes; concept list only</td>
+</tr>
+</tbody>
+</table>
+<p>The speed for <code>qwen3.8:27b</code> was measured on one long turn and is not a range, and the speeds of the three models with a failed first stage come from the model-only test.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">One Run Is an Observation, Not a Ranking</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Every figure in this table comes from a single attempt, and a model that failed once may succeed on a second try, as one candidate did after its skill was corrected. Treat the first round as a way to decide what to test further, and repeat a run before you write a sentence that begins "model X cannot".</p>
+</div>
+<h4 id="diagram-candidate-model-explorer">Diagram: Candidate Model Explorer<a class="headerlink" href="#diagram-candidate-model-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Candidate Model Explorer</summary>
+<p>Type: chart
+<strong>sim-id:</strong> candidate-model-explorer<br/>
+<strong>Library:</strong> Chart.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/lm-arena-timeline<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> compare<br/>
+<strong>Learning Objective:</strong> The learner will compare the ten candidate models on parameter count, generation speed, and download size by answering 5 questions from a bubble chart, with at least 4 of 5 correct.</p>
+<p><strong>Prerequisites:</strong> dense model, mixture of experts, active parameters, tokens per second, model download (all defined in Chapters 11 and 12 and in this chapter).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 5 questions the learner selects one model from the ten before the sim reveals the answer. A selection is correct when it equals the Correct model column. Mastery is 4 of 5 correct on the first attempt. Hovering over a bubble to read its values is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A bigger model is a faster model. (2) A bigger download means more parameters. (3) A mixture-of-experts model needs less memory. (4) The model with the most parameters is the best choice.</p>
+<p><strong>Instructional Rationale:</strong> Analyze-level comparing needs the learner to hold several dimensions at once, so a bubble chart places parameters, speed, and download size together, and questions that need two dimensions at a time prevent a single-dimension answer.</p>
+<p><strong>Content:</strong></p>
+<p>The chart plots each of ten models as a bubble. The horizontal position is the parameter count in billions, the vertical position is the generation speed in tokens per second, and the bubble's size is the download size in gigabytes.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters (billions)</th>
+<th>Speed (tokens/s)</th>
+<th>Download (GB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen3.8:27b</code></td>
+<td>27</td>
+<td>26</td>
+<td>17</td>
+</tr>
+<tr>
+<td><code>gemma4:31b</code></td>
+<td>30.7</td>
+<td>34</td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>muse-glimmer:30b</code></td>
+<td>30</td>
+<td>13</td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>qwen3.6:35b</code></td>
+<td>35</td>
+<td>94</td>
+<td>22</td>
+</tr>
+<tr>
+<td><code>gemma4:26b</code></td>
+<td>25.2</td>
+<td>108</td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>nemotron-3.5-lightning:30b</code></td>
+<td>30</td>
+<td>95</td>
+<td>25</td>
+</tr>
+<tr>
+<td><code>mistral-medium-3.5:128b</code></td>
+<td>128</td>
+<td>3</td>
+<td>80</td>
+</tr>
+<tr>
+<td><code>gpt-oss:120b</code></td>
+<td>117</td>
+<td>41</td>
+<td>65</td>
+</tr>
+<tr>
+<td><code>devstral-small-2:24b</code></td>
+<td>24</td>
+<td>15</td>
+<td>15</td>
+</tr>
+<tr>
+<td><code>granite4.2:30b</code></td>
+<td>30</td>
+<td>12</td>
+<td>17</td>
+</tr>
+</tbody>
+</table>
+<p>The five questions:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question shown to the learner</th>
+<th>Correct model</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Which model has the highest generation speed?</td>
+<td><code>gemma4:26b</code></td>
+<td>At 108 tokens per second it is the highest point on the chart.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Which model has the largest download?</td>
+<td><code>mistral-medium-3.5:128b</code></td>
+<td>At 80 GB it is the largest bubble.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Among models faster than 80 tokens per second, which has the largest download?</td>
+<td><code>nemotron-3.5-lightning:30b</code></td>
+<td>The three above 80 are 18, 22, and 25 GB, and 25 GB is the largest.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Which model has more than 100 billion parameters and runs faster than 30 tokens per second?</td>
+<td><code>gpt-oss:120b</code></td>
+<td>It has 117 billion parameters at 41 tokens per second, and the other model above 100 billion runs at 3.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Which model has the fewest parameters?</td>
+<td><code>devstral-small-2:24b</code></td>
+<td>At 24 billion it is the leftmost bubble.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The values are the midpoints of the measured ranges in this chapter's table, rounded to whole tokens per second, and the sim labels them "measured, one run each, provisional". The speed for <code>qwen3.8:27b</code> was measured on one long turn. The speeds for <code>muse-glimmer:30b</code>, <code>devstral-small-2:24b</code>, <code>granite4.2:30b</code>, and <code>mistral-medium-3.5:128b</code> come from the model-only test.</p>
+<p><strong>Rules:</strong> Questions are shown in the fixed order 1 to 5. Each allows one final choice among the ten models. Exactly one model is correct for each question under the data in Content.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner hovers over bubbles to read each model's three values.</li>
+<li>The learner reads question 1 and clicks the bubble for the model they choose, then confirms.</li>
+<li>The sim shows the correct model and the Why text, and marks the question correct or incorrect.</li>
+<li>The learner repeats for questions 2 to 5. After question 5 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Five questions, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct model and the Why text. The final score reads "n of 5 correct".</p>
+<p><strong>Starting State:</strong> The chart is shown with all ten bubbles, no question answered, and the instruction on screen is "Hover over a bubble to read its values".</p>
+<p><strong>Chapter Anchors:</strong> The chapter states a fastest speed of 108 tokens per second for <code>gemma4:26b</code>, an 80 GB download for <code>mistral-medium-3.5:128b</code>, 117 billion parameters at about 41 tokens per second for <code>gpt-oss:120b</code>, and 3 tokens per second for the 128-billion-parameter model.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>Eight families publish the open-weight models a DGX evaluator is likely to meet, and ten candidates from six of them were tested. Each had a claim that put it on the list and a first-round result that qualified the claim: the model built for agents was the cleanest and the slowest, the fastest model wrote a graph with duplicate labels, the largest dense model did not fit with a usable context, and two models wrote their tool calls as text and did no work at all. None of that could have been read from a name, a size, or a leaderboard.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Every Name Now Has a Reason</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now say where each of the ten candidates came from, why it was tested, and what the first round showed, and you know that each number is one observation and not a ranking. Chapter 15 measures why the same model can be fast in one test and slow in another.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

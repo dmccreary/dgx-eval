@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="What an agent harness does between a prompt and a result: the agent loop, tool definitions, file and shell tools, permissions, context management, compaction and truncation, and how orchestrators and subagents divide work.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>16. The Agent Loop, Tools, and Context - DGX Evaluation for Textbook Generation</title>
+        <title>The Agent Loop, Tools, and Context - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              16. The Agent Loop, Tools, and Context
+              The Agent Loop, Tools, and Context
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1013,6 +836,189 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-harness-and-the-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Harness and the Loop
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Harness and the Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai-agent-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Agent Harness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-loop-and-agent-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Loop and Agent Turn
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools and Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools and Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Prompt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-editing-tool-and-shell-execution-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Editing Tool and Shell Execution Tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context-management-and-peak-context-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Management and Peak Context Size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-truncation-and-context-compaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Truncation and Context Compaction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turn Overhead
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dividing-the-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dividing the Work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dividing the Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orchestrator-subagent-and-role-separation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orchestrator, Subagent, and Role Separation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Orchestrator, Subagent, and Role Separation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-agent-loop-stepper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Agent Loop Stepper
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1201,6 +1207,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1222,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1323,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1465,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1624,189 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-harness-and-the-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Harness and the Loop
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Harness and the Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai-agent-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Agent Harness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-loop-and-agent-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Loop and Agent Turn
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools and Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools and Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Prompt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-editing-tool-and-shell-execution-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Editing Tool and Shell Execution Tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context-management-and-peak-context-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Management and Peak Context Size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-truncation-and-context-compaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Truncation and Context Compaction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turn Overhead
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dividing-the-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dividing the Work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dividing the Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orchestrator-subagent-and-role-separation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orchestrator, Subagent, and Role Separation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Orchestrator, Subagent, and Role Separation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-agent-loop-stepper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Agent Loop Stepper
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1495,13 +1924,245 @@
 <li><a href="../15-optimizing-performance/">Chapter 15: Optimizing Small Language Model Performance</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Follow One Turn All the Way Through</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+A model by itself only produces text, and an agent is the machinery that turns that text into actions. By the end of this chapter you will be able to trace one agent turn and say where its time and its context go. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Chapter 13 gave you an endpoint that answers a prompt. A textbook, though, is not one answer. It is hundreds of steps: read a file, plan a chapter, write it, build the site, notice an error, fix it. Something has to turn a model's single reply into that sequence, and that something is the <strong>AI agent harness</strong>.</p>
+<p>This chapter takes the harness apart. It defines the loop at its center, the tools the model can call, and the permission rules that decide which calls are allowed. It then covers the part that most often limits a long session, which is the context, and what a harness does when the context grows too large. It ends with two ways of dividing work among several agents, which this evaluation used and which affect how its results should be read.</p>
+<h2 id="the-harness-and-the-loop">The Harness and the Loop<a class="headerlink" href="#the-harness-and-the-loop" title="Permanent link">&para;</a></h2>
+<h3 id="ai-agent-harness">AI Agent Harness<a class="headerlink" href="#ai-agent-harness" title="Permanent link">&para;</a></h3>
+<p>An <strong>AI agent harness</strong> is the program that wraps a language model so that it can act in the world. The model supplies language: given a conversation, it produces the next message. The harness supplies everything else: the system prompt that sets the task, the list of tools the model may call, the code that carries out those calls, the rules that allow or refuse them, and the bookkeeping that keeps the conversation going.</p>
+<p>Claude Code is a harness. So are OpenCode, Codex CLI, and Goose, which Chapter 17 compares. They differ in their prompts and their tool sets, and they share one structure, which is the loop.</p>
+<p>The harness is a separate piece of software from the model, and the distinction is the reason this evaluation can swap the model underneath. The harness stays the same, a different model answers its requests, and any difference in the result belongs to the model.</p>
+<h3 id="agent-loop-and-agent-turn">Agent Loop and Agent Turn<a class="headerlink" href="#agent-loop-and-agent-turn" title="Permanent link">&para;</a></h3>
+<p>The <strong>agent loop</strong> is the cycle at the harness's center. It sends the conversation to the model. If the reply contains a request to call a tool, the harness runs the tool, appends the result to the conversation, and sends the conversation to the model again. If the reply contains no tool call, the loop ends and the reply is the final answer.</p>
+<p>An <strong>agent turn</strong> is one trip around that loop: one request to the model and one response, plus the tool call and result if there was one. A task that takes 55 tool calls takes at least 55 turns, and each is a full request to the model with everything so far.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conversation = [system prompt, user request]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>repeat:
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    reply = model(conversation)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    if reply has no tool call:
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        stop, the reply is the answer
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    result = run the tool the reply names
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    conversation += [reply, result]
+</span></code></pre></div>
+<p>Four things follow directly from that sketch, and each has a chapter behind it.</p>
+<ul>
+<li><strong>The conversation only grows.</strong> Each turn appends a reply and a result, so the prompt of turn 40 contains everything in turns 1 to 39. This is why Chapter 15's prompt re-reading matters.</li>
+<li><strong>Every turn pays the model's latency.</strong> Reading the prompt, writing the reply, and running the tool happen in sequence, once per turn.</li>
+<li><strong>A single bad reply can end the run.</strong> If the model writes a tool call as plain text, the harness sees no tool call and the loop stops. Two of this evaluation's candidates failed exactly this way.</li>
+<li><strong>The model chooses the path.</strong> The harness never says which tool comes next. A model that picks poorly wastes turns, and one that loses the task stops making progress.</li>
+</ul>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Loop Is the Whole Idea</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+An agent is not a smarter model. It is an ordinary model inside a loop that feeds it the results of its own actions. The model's only job on each turn is to say what to do next, and the harness's job is to do it and report back, so most agent failures are failures to say it in the form the harness can run.</p>
+</div>
+<h2 id="tools-and-permissions">Tools and Permissions<a class="headerlink" href="#tools-and-permissions" title="Permanent link">&para;</a></h2>
+<h3 id="system-prompt">System Prompt<a class="headerlink" href="#system-prompt" title="Permanent link">&para;</a></h3>
+<p>The <strong>system prompt</strong> is the standing instruction that opens every conversation. In a harness it is long: it describes the task, the style, the rules, and the tools. It is resent at the start of every turn, and it is the same every time, which is what makes it cacheable.</p>
+<p>Its size is a real cost for a local model. Claude Code's own instructions and tool definitions run to about 19,000 tokens, and they were written for Claude models. A local model that struggles in the harness may be struggling with that prompt and not with the task, which is one reason a model is tested alone first.</p>
+<h3 id="tool-definition">Tool Definition<a class="headerlink" href="#tool-definition" title="Permanent link">&para;</a></h3>
+<p>A <strong>tool definition</strong> is the description of one tool that the harness gives the model: its name, what it does, and the arguments it takes. The model never runs a tool. It writes a structured request that names a tool and supplies arguments, and the harness runs it.</p>
+<p>The shape is the same across harnesses. This example defines a tool that reads a file. <code>name</code> is how the model refers to it. <code>description</code> tells the model when to use it. <code>input_schema</code> lists the arguments and their types, so that the harness can check a request before running it.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read_file"</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Read a text file and return its contents."</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">"input_schema"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"path"</span><span class="p">]</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>A model's tool-calling reliability, from Chapter 12, is how often it writes a request that matches a definition like this one. A request with a missing argument or a wrong name is a malformed tool call, and Chapter 22 diagnoses them.</p>
+<h3 id="file-editing-tool-and-shell-execution-tool">File Editing Tool and Shell Execution Tool<a class="headerlink" href="#file-editing-tool-and-shell-execution-tool" title="Permanent link">&para;</a></h3>
+<p>Two kinds of tool do most of the work in a skill. A <strong>file editing tool</strong> reads, creates, and changes files in the working directory, and it is how a model writes a chapter or a learning graph to disk. A <strong>shell execution tool</strong> runs a command in a terminal and returns its output, and it is how a model builds the site, runs a script, or checks a result.</p>
+<p>Between them they let a model do nearly everything a person at a keyboard can. That power is the reason the next two concepts exist.</p>
+<h3 id="permission-model">Permission Model<a class="headerlink" href="#permission-model" title="Permanent link">&para;</a></h3>
+<p>The <strong>permission model</strong> is the set of rules that decide whether a tool call is allowed. A rule can allow a call, forbid it, or require a person to approve it first. A harness that runs interactively asks, and a person answers. A harness that runs unattended has nobody to ask, so an approval rule stalls the run.</p>
+<p>This evaluation met that directly. The benchmark prompts carry a standing answer to the skill's approval questions, because no one is present during a run, and a paused run measures nothing. The harness also ran inside a container, so that the agent could run any command and could write only to its run directory. Chapter 18 builds that boundary. The first runs, with the harness on a laptop and no sandbox, allowed the agent no shell commands at all, and most skills need them.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">An Unattended Run Cannot Answer a Question</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+If a permission rule asks for approval and nobody is there, the run waits forever and produces nothing. Decide every approval in advance, either by allowing the call or by putting a standing answer in the prompt, and confirm with a short test run that nothing pauses.</p>
+</div>
+<h2 id="the-context">The Context<a class="headerlink" href="#the-context" title="Permanent link">&para;</a></h2>
+<h3 id="context-management-and-peak-context-size">Context Management and Peak Context Size<a class="headerlink" href="#context-management-and-peak-context-size" title="Permanent link">&para;</a></h3>
+<p><strong>Context management</strong> is how a harness keeps the conversation within the model's window. The window is a fixed limit, and the conversation only grows, so sooner or later it has to be reduced. <strong>Peak context size</strong> is the largest the conversation reached in a run, and it is the figure that tells you whether a window was big enough.</p>
+<p>Measurements in this evaluation show the range. One model's first prompt took 35,000 tokens where the others took 17,000 to 21,000, and within eight turns it was at 120,000, the edge of its window. Two others peaked at 135,000 and 147,000 tokens in a single stage. A window of 128,000 would have cut both off.</p>
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Peak context</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>muse-glimmer:30b</code>, harness test</td>
+<td>About 120,000 within eight turns</td>
+<td>Its first prompt was already 35,000 tokens</td>
+</tr>
+<tr>
+<td><code>qwen3.6:35b</code>, stage 1</td>
+<td>135,000 tokens</td>
+<td>Second largest of any run</td>
+</tr>
+<tr>
+<td><code>nemotron-3.5-lightning:30b</code>, stage 1</td>
+<td>147,000 tokens</td>
+<td>140 tool calls, nearly three times any other</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-truncation-and-context-compaction">Context Truncation and Context Compaction<a class="headerlink" href="#context-truncation-and-context-compaction" title="Permanent link">&para;</a></h3>
+<p>When the conversation approaches the window, a harness has two ways to shrink it. <strong>Context truncation</strong> drops the oldest content, and it is crude: the beginning of the conversation, which holds the task, is exactly what disappears. <strong>Context compaction</strong> asks the model to summarize the earlier conversation into a short note and replaces the old content with it. Compaction keeps the thread and loses detail, and it costs a model call.</p>
+<p>The two have a dangerous interaction with the server's window. Claude Code assumes a window of about 200,000 tokens. If the server was configured with a smaller one, the server truncates silently before the harness knows to compact, and the model loses the start of its own task without any message. This is why this evaluation raised the server's context setting to a large value, and why Chapter 11 warned that raising it has a memory cost.</p>
+<h3 id="turn-overhead">Turn Overhead<a class="headerlink" href="#turn-overhead" title="Permanent link">&para;</a></h3>
+<p><strong>Turn overhead</strong> is the time in a turn that is not generating the reply: reading the new part of the prompt, running the tool, and the harness's own bookkeeping. Chapter 15 measured it. The cost analysis assumes 15 seconds per turn when caching works, and the one model whose server re-read the conversation each turn showed 90.</p>
+<p>Overhead is easy to overlook because no single request looks slow. It is spread across hundreds of turns, and for the fast models in this evaluation it was longer than the generation itself.</p>
+<h2 id="dividing-the-work">Dividing the Work<a class="headerlink" href="#dividing-the-work" title="Permanent link">&para;</a></h2>
+<h3 id="orchestrator-subagent-and-role-separation">Orchestrator, Subagent, and Role Separation<a class="headerlink" href="#orchestrator-subagent-and-role-separation" title="Permanent link">&para;</a></h3>
+<p>An <strong>orchestrator</strong> is an agent, or a person, that starts work and coordinates it without doing it. A <strong>subagent</strong> is an agent started by another to handle one part of a task in its own conversation, and it returns a summary, so its working detail never enters the parent's context. <strong>Role separation</strong> is keeping the roles of those agents distinct and recording who did what.</p>
+<p>This evaluation has two roles that must not be confused. The orchestrator is a Claude Code session using a cloud model, running on the laptop, and its job is to start runs, watch them, and score the results. The harness is Claude Code inside a container with a local model, and its job is to generate. The rule that holds the evaluation together is that the orchestrator never writes benchmark content, because the question is whether a local model can.</p>
+<p>The skills themselves can use subagents. The chapter-content skill has a parallel mode that starts one agent per group of chapters, at a stated token cost. The benchmark does not use it: each chapter is a separate harness run, so that each has its own timing and token counts.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Fills it</th>
+<th>Where it runs</th>
+<th>May write benchmark content?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orchestrator</td>
+<td>A Claude Code session on a cloud model</td>
+<td>The laptop</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Harness</td>
+<td>Claude Code in a container</td>
+<td>The DGX</td>
+<td>Only by calling the local model</td>
+</tr>
+<tr>
+<td>Model</td>
+<td>An open-weight model behind the endpoint</td>
+<td>The DGX GPU</td>
+<td>Yes, all of it</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-agent-loop-stepper">Diagram: Agent Loop Stepper<a class="headerlink" href="#diagram-agent-loop-stepper" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Agent Loop Stepper</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> agent-loop-stepper<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/ai-strategy-for-education/tree/main/docs/sims/ai-agent-anatomy<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> explain<br/>
+<strong>Learning Objective:</strong> The learner will explain what the harness does after each of 6 model replies or tool results by choosing the outcome of each, with at least 5 of 6 correct.</p>
+<p><strong>Prerequisites:</strong> AI agent harness, agent loop, agent turn, tool definition, permission model, context compaction, context truncation (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner first steps once through the five phases of one turn. The learner then answers 6 situations by choosing one of the six outcomes before any answer is revealed. A choice is correct when it equals the Correct outcome column. Mastery is 5 of 6 correct on the first attempt. Stepping through is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) The model runs its own tools. (2) A tool call written as text still runs. (3) The conversation is reset each turn. (4) A permission question is answered automatically.</p>
+<p><strong>Instructional Rationale:</strong> Explaining a mechanism needs the learner to predict its behavior in cases that differ in one detail, so each situation changes a single fact about the reply or the result, and the outcomes are the possible next states of the loop.</p>
+<p><strong>Content:</strong></p>
+<p>The five phases of one turn, shown as the learner steps through them:</p>
+<ol>
+<li>The harness sends the whole conversation to the model.</li>
+<li>The model writes a reply.</li>
+<li>The harness checks the reply for a tool call.</li>
+<li>If there is one, the harness checks the permission rules and runs the tool.</li>
+<li>The harness appends the reply and the result to the conversation, and the loop starts again.</li>
+</ol>
+<p>The six outcomes the learner chooses from: "The harness runs the tool, appends the result, and calls the model again", "The loop ends and the reply is returned", "The harness sees no tool call and the loop ends early", "The conversation grows by the size of the result", "The harness compacts or truncates earlier content", and "The run stalls waiting for an approval".</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Situation shown to the learner</th>
+<th>Correct outcome</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The reply contains a well-formed request to read a file.</td>
+<td>The harness runs the tool, appends the result, and calls the model again</td>
+<td>A tool call is exactly what the loop acts on.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The reply is a finished answer with no tool call.</td>
+<td>The loop ends and the reply is returned</td>
+<td>With no tool call the loop has nothing to run.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The reply writes the tool call out as plain text inside its answer.</td>
+<td>The harness sees no tool call and the loop ends early</td>
+<td>Only a structured request is a tool call, so the text is treated as a final reply.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>A shell command returns 8,000 tokens of output.</td>
+<td>The conversation grows by the size of the result</td>
+<td>The result is appended, so every later turn reads it.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The conversation is about to exceed the model's window.</td>
+<td>The harness compacts or truncates earlier content</td>
+<td>The conversation has to shrink to fit, by summary or by dropping the oldest content.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>A permission rule requires approval for the tool and nobody is present.</td>
+<td>The run stalls waiting for an approval</td>
+<td>An unattended run cannot answer, so it waits.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The situations are synthetic, written for this exercise, and the sim labels them "synthetic example". The mechanism comes from the sections of this chapter above.</p>
+<p><strong>Rules:</strong> Situations are shown in the fixed order 1 to 6. Each allows one final choice, and exactly one outcome is correct for each situation.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner presses Next to move through the five phases of one turn, with the conversation shown growing at phase 5.</li>
+<li>After phase 5 the learner begins the six situations and reads situation 1.</li>
+<li>The learner chooses one of the six outcomes and confirms.</li>
+<li>The sim shows the correct outcome and the Why text, and marks the situation correct or incorrect.</li>
+<li>After situation 6 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Six situations, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct outcome and the Why text. The final score reads "n of 6 correct".</p>
+<p><strong>Starting State:</strong> The loop is shown at phase 1 with a short conversation, and the question on screen is "What does the harness do with the model's reply?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that a tool call written as plain text ends the loop, that a tool result is appended and read by every later turn, that an approval rule stalls an unattended run, and that a conversation near the window is compacted or truncated.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>A harness is a loop around a model: it sends the conversation, runs the tool the reply asks for, appends the result, and repeats until a reply has no tool call. Tool definitions tell the model what it may ask for, file and shell tools give it reach, and the permission model decides what is allowed, which for an unattended run must be settled in advance. The conversation only grows, so the harness must truncate or compact it, and a server window smaller than the harness assumes cuts it off silently. The orchestrator, the harness, and the model are three roles, and the evaluation depends on the first never doing the work of the third.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Trace One Turn</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now follow a turn through the loop, say which tool and permission rule applied, and find where its context and its time went. Chapter 17 loads the benchmark workload, the skills, into a harness connected to your local model.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

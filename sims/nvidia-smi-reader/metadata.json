@@ -1,0 +1,23 @@
+{
+  "title": "nvidia-smi Output Reader",
+  "description": "The learner will interpret 6 highlighted fields of an `nvidia-smi` listing by choosing what each one reports, with at least 5 of 6 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "nvidia-smi-reader",
+  "library": "p5.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "interpret",
+  "completion_status": "scaffold",
+  "chapter_number": 10,
+  "chapter_title": "Python Hardware Probes",
+  "chapter_dir": "10-hardware-probes",
+  "chapter_rel_dir": "chapters/10-hardware-probes"
+}

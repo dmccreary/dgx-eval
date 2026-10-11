@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="Executing the textbook pipeline as a benchmark: the workspace template, fixed stage prompts, chained stages, per-chapter runs, time limits, retrieving outputs, and the per-stage metrics that make a run ready to diagnose and score.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>21. Running the Textbook Benchmark - DGX Evaluation for Textbook Generation</title>
+        <title>Running the Textbook Benchmark - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              21. Running the Textbook Benchmark
+              Running the Textbook Benchmark
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1118,6 +941,237 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Benchmark
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Benchmark">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textbook-benchmark-and-the-algebra-i-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textbook Benchmark and the Algebra I Benchmark
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-book-for-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference Book for Scale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-stage-stage-chaining-and-stage-sensitivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline Stage, Stage Chaining, and Stage Sensitivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmark-workspace-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmark Workspace Template
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running a Stage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running a Stage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-prompt-and-standing-approval-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stage Prompt and Standing Approval Answer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmark-runner" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmark Runner
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-event-stream-and-run-time-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Event Stream and Run Time Limit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wall-clock-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wall-Clock Time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-chapter-generation-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per-Chapter Generation Run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-completion-criterion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Completion Criterion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-dependency-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Dependency Check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-stage-must-leave-behind" class="md-nav__link">
+    <span class="md-ellipsis">
+      What a Stage Must Leave Behind
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What a Stage Must Leave Behind">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-output-files-and-navigation-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Output Files and Navigation Entries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-stage-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per-Stage Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-output-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Output Retrieval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textbook-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textbook Preview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-status-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation Status Tracking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-queue-of-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Queue of Runs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Queue of Runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-benchmark-stage-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Benchmark Stage Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1201,6 +1255,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1270,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1371,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1513,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1672,237 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Benchmark
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Benchmark">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textbook-benchmark-and-the-algebra-i-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textbook Benchmark and the Algebra I Benchmark
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-book-for-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference Book for Scale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-stage-stage-chaining-and-stage-sensitivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline Stage, Stage Chaining, and Stage Sensitivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmark-workspace-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmark Workspace Template
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running a Stage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running a Stage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-prompt-and-standing-approval-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stage Prompt and Standing Approval Answer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmark-runner" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmark Runner
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-event-stream-and-run-time-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Event Stream and Run Time Limit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wall-clock-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wall-Clock Time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-chapter-generation-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per-Chapter Generation Run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-completion-criterion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Completion Criterion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-dependency-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Dependency Check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-stage-must-leave-behind" class="md-nav__link">
+    <span class="md-ellipsis">
+      What a Stage Must Leave Behind
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What a Stage Must Leave Behind">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-output-files-and-navigation-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Output Files and Navigation Entries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-stage-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per-Stage Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-output-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Output Retrieval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textbook-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textbook Preview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-status-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation Status Tracking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-queue-of-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Queue of Runs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Queue of Runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-benchmark-stage-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Benchmark Stage Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1537,13 +2062,348 @@
 <li><a href="../20-scoring-and-bias/">Chapter 20: Scoring, Bias, and Structural Checks</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">From a Design to a Run You Can Check</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+You have a question, a design, a harness, and a way to score. Now you run it, and the discipline is that every run leaves a record complete enough to diagnose later. By the end of this chapter you will have run each stage with fixed prompts and collected its metrics. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>This is the execution chapter. It takes the pieces that the previous chapters built and runs them as a benchmark: a fixed starting workspace, one prompt for each stage, stages chained so that each starts from the last one's output, and a runner that records what happened. It then covers how a long stage that runs once per chapter is organized, what limits a run's time, and how the output gets back to the laptop.</p>
+<p>Two ideas hold the chapter together. The first is that a run must not change its input, so that a run can be repeated and a failed one cannot corrupt the next. The second is that a stage is only finished when its output passes a stated criterion, and not when the model says it is done. A model that announces completion has told you what it believes, and the criteria tell you what happened.</p>
+<h2 id="the-benchmark">The Benchmark<a class="headerlink" href="#the-benchmark" title="Permanent link">&para;</a></h2>
+<h3 id="textbook-benchmark-and-the-algebra-i-benchmark">Textbook Benchmark and the Algebra I Benchmark<a class="headerlink" href="#textbook-benchmark-and-the-algebra-i-benchmark" title="Permanent link">&para;</a></h3>
+<p>A <strong>textbook benchmark</strong> is a fixed task that asks a system to generate a textbook, with a fixed input and a fixed way of scoring what comes out. The <strong>Algebra I benchmark</strong> is this evaluation's instance: the input is the description of a high school Algebra I course, and the task is to produce its learning graph, its chapter structure, and the content of its chapters.</p>
+<p>The course was chosen for a practical reason. A published Algebra I book already exists, so its size can serve as a reference for scale, and Algebra I is familiar enough that a reviewer can judge the output without special expertise. The scope was set deliberately narrow: three skills, and no MicroSims, glossary, FAQ, or quizzes. The benchmark tests whether a local harness can execute those skills correctly.</p>
+<h3 id="reference-book-for-scale">Reference Book for Scale<a class="headerlink" href="#reference-book-for-scale" title="Permanent link">&para;</a></h3>
+<p>The <strong>reference book for scale</strong> is the published Algebra I book, used to say how big a finished textbook is. The numbers that matter for the three stages are a learning graph of 200 concepts with 277 dependencies, and 13 chapters of about 55,000 words. It is a reference and not a baseline: it was generated with earlier skill versions, and no timings or token counts were kept.</p>
+<h3 id="pipeline-stage-stage-chaining-and-stage-sensitivity">Pipeline Stage, Stage Chaining, and Stage Sensitivity<a class="headerlink" href="#pipeline-stage-stage-chaining-and-stage-sensitivity" title="Permanent link">&para;</a></h3>
+<p>A <strong>pipeline stage</strong> is one skill run, with defined inputs and outputs. <strong>Stage chaining</strong> is the arrangement in which each stage starts from the previous stage's output directory, so that the work accumulates. The three stages, in order, and what each starts from and produces:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Skill</th>
+<th>Starts from</th>
+<th>Produces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>learning-graph-generator</code></td>
+<td>The benchmark workspace template</td>
+<td>200 concepts, dependencies, taxonomy, <code>learning-graph.json</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>book-chapter-generator</code></td>
+<td>The stage 1 run directory</td>
+<td>The chapter structure: a directory and outline per chapter</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>chapter-content-generator</code></td>
+<td>The previous run's directory, once per chapter</td>
+<td>The text of one chapter, added to the book so far</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Stage sensitivity</strong> is how much a stage's result depends on the capability of the model, and the stages differ. The learning graph asks for dependency reasoning across 200 concepts, which punishes a model that cannot hold a structure in mind. The chapter structure asks for assignment and ordering, which a small error in stage 1 turns into a failed dependency check. The chapter text asks for sustained, accurate prose at a stated level. A model that does one of these well can fail another, and the results of this evaluation say so.</p>
+<h3 id="benchmark-workspace-template">Benchmark Workspace Template<a class="headerlink" href="#benchmark-workspace-template" title="Permanent link">&para;</a></h3>
+<p>The <strong>benchmark workspace template</strong> is the starting directory for stage 1: a minimal book project holding the course description and the site configuration. The runner copies it fresh for every run, so no run sees another's output. The template contains an unchanged copy of the published course description, and that is the single input to the whole chain.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Template Is Never the Working Copy</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+A run works on a copy, and the original stays byte for byte what it was. That is the whole mechanism by which a failed run, a killed run, or a run that wrote garbage cannot reach the next one. If a run changes its own starting point, you can never again say what it started from.</p>
+</div>
+<h2 id="running-a-stage">Running a Stage<a class="headerlink" href="#running-a-stage" title="Permanent link">&para;</a></h2>
+<h3 id="stage-prompt-and-standing-approval-answer">Stage Prompt and Standing Approval Answer<a class="headerlink" href="#stage-prompt-and-standing-approval-answer" title="Permanent link">&para;</a></h3>
+<p>A <strong>stage prompt</strong> is the text that starts a stage, and there is one per stage, fixed. It is what a person would type to begin the skill, with the course description's location and the target. A <strong>standing approval answer</strong> is the paragraph in the prompt that tells the agent how to handle the skill's questions when no one is there. Without it, a skill that pauses for review stalls an unattended run.</p>
+<p>The three prompts differ only in which skill they name. The shared closing is the part that matters: it says nobody is available, that every approval request counts as approved, to work through every step of the skill, and to stop when the skill is complete without starting the next one. That last clause keeps each stage's metrics separate.</p>
+<h3 id="benchmark-runner">Benchmark Runner<a class="headerlink" href="#benchmark-runner" title="Permanent link">&para;</a></h3>
+<p>The <strong>benchmark runner</strong> is the script that executes one stage. It takes a model, a label for the run, a prompt file, and a starting directory, and it does five things in order.</p>
+<ul>
+<li>It copies the starting directory to a fresh run directory.</li>
+<li>It starts the harness container with that directory mounted and the model's tag set.</li>
+<li>It feeds the prompt file in and captures every event.</li>
+<li>It stops the run at its time limit if the limit is reached.</li>
+<li>It records the exit code and the wall-clock seconds.</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>src/harness/run_skill.sh<span class="w"> </span>&lt;model&gt;<span class="w"> </span>s1-&lt;label&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>benchmark/algebra-1/prompts/01-learning-graph-generator.txt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>benchmark/algebra-1/template
+</span></code></pre></div>
+<p>The label, <code>s1-&lt;label&gt;</code>, names the run and every file it produces. The starting directory is the template for stage 1, and for each later stage it is the previous stage's run directory.</p>
+<h3 id="run-event-stream-and-run-time-limit">Run Event Stream and Run Time Limit<a class="headerlink" href="#run-event-stream-and-run-time-limit" title="Permanent link">&para;</a></h3>
+<p>The <strong>run event stream</strong> is the log the harness writes as it works, one JSON object per line: each message, each tool call, and each result. It is the complete record of what the agent did, and every later diagnosis reads it. It is kept outside the repository, because it holds local paths and has not been sanitized.</p>
+<p>The <strong>run time limit</strong> is the longest a run may take before the runner stops it. A model that is stuck or merely very slow would otherwise occupy the machine for hours. A run stopped by the limit exits with code 124, and what it wrote so far is kept, so a timeout is a result and not a lost run. The limits in this evaluation were 150 minutes for stage 1, 2 hours for stage 2, and 90 minutes for each chapter in stage 3.</p>
+<table>
+<thead>
+<tr>
+<th>Output file</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;label&gt;/</code></td>
+<td>The run directory after the run, with the generated files</td>
+</tr>
+<tr>
+<td><code>&lt;label&gt;.jsonl</code></td>
+<td>The event stream</td>
+</tr>
+<tr>
+<td><code>&lt;label&gt;.json</code></td>
+<td>The final result: turns, token counts, timings</td>
+</tr>
+<tr>
+<td><code>&lt;label&gt;.status</code></td>
+<td>The exit code and wall-clock seconds</td>
+</tr>
+<tr>
+<td><code>&lt;label&gt;.stderr</code></td>
+<td>Anything the harness wrote to its error stream</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wall-clock-time">Wall-Clock Time<a class="headerlink" href="#wall-clock-time" title="Permanent link">&para;</a></h3>
+<p><strong>Wall-clock time</strong> is the elapsed real time of a run, from start to finish, as measured by a clock on the wall. It is the figure a person waits for and the one the cost model uses. It includes everything: loading, reading, writing, tools, and waiting. Chapter 15 splits it into those causes, and the runner records the total in the status file.</p>
+<h3 id="per-chapter-generation-run">Per-Chapter Generation Run<a class="headerlink" href="#per-chapter-generation-run" title="Permanent link">&para;</a></h3>
+<p>A <strong>per-chapter generation run</strong> is a stage 3 run for a single chapter. The chapter-content skill is run once for each chapter, in order, each starting from the book as it stands. The reason is isolation: each chapter gets its own timing, token counts, and time limit, and a failure on one chapter does not discard the others.</p>
+<p>A model stops after two time-outs in a row, because a model that cannot finish two chapters in 90 minutes each will not finish twelve, and the remaining runs would only occupy the machine. The runs not made are recorded as not run, with the reason.</p>
+<h3 id="chapter-completion-criterion">Chapter Completion Criterion<a class="headerlink" href="#chapter-completion-criterion" title="Permanent link">&para;</a></h3>
+<p>The <strong>chapter completion criterion</strong> is the rule that says a chapter counts as written: its placeholder text is gone and it has at least 1,000 words. It exists because "the model said it finished" is not evidence. A model that announces it is running a skill and ends its turn without writing anything has not written a chapter, and the criterion catches it.</p>
+<h3 id="chapter-dependency-check">Chapter Dependency Check<a class="headerlink" href="#chapter-dependency-check" title="Permanent link">&para;</a></h3>
+<p>The <strong>chapter dependency check</strong> is a step in the chapter-content skill that verifies that each chapter's concepts depend only on concepts in earlier chapters. If the check finds a violation, the skill stops and says so. In three of one model's runs it did exactly that, because the model's own chapter structure from stage 2 had placed concepts out of order. The failure is real and the stage that caused it was the earlier one, which is why chained stages must be diagnosed from the start.</p>
+<h2 id="what-a-stage-must-leave-behind">What a Stage Must Leave Behind<a class="headerlink" href="#what-a-stage-must-leave-behind" title="Permanent link">&para;</a></h2>
+<h3 id="required-output-files-and-navigation-entries">Required Output Files and Navigation Entries<a class="headerlink" href="#required-output-files-and-navigation-entries" title="Permanent link">&para;</a></h3>
+<p><strong>Required output files</strong> are the files a skill is supposed to produce, and checking that they exist is the cheapest verification there is. The learning-graph stage has seven: the concept list, the dependency graph as CSV and as JSON, the concept taxonomy, a quality-metrics report, a taxonomy-distribution report, and an index page.</p>
+<p><strong>Navigation entries</strong> are the lines in the site configuration that make the new pages reachable. A page that exists on disk and is missing from the navigation is invisible to readers, and a strict build can fail on it. Several models left the entries out, even when they wrote the files, which is why this is a check of its own.</p>
+<h3 id="per-stage-metrics">Per-Stage Metrics<a class="headerlink" href="#per-stage-metrics" title="Permanent link">&para;</a></h3>
+<p><strong>Per-stage metrics</strong> are the measurements recorded for each stage of each run, so that stages can be compared across models. They fall into the three groups of Chapter 19, and the table defines each metric in terms of something a program can compute.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Definition</th>
+<th>Group</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Skill completion rate</td>
+<td>Stages that ended on their own with every required file, divided by stages attempted</td>
+<td>Completion</td>
+</tr>
+<tr>
+<td>Build success</td>
+<td>The strict site build exits with no errors</td>
+<td>Completion</td>
+</tr>
+<tr>
+<td>Structural validity</td>
+<td>The structural checks of Chapter 20 pass</td>
+<td>Completion</td>
+</tr>
+<tr>
+<td>Wall-clock time</td>
+<td>Real elapsed time of the run</td>
+<td>Efficiency</td>
+</tr>
+<tr>
+<td>Tool call count and failed tool calls</td>
+<td>From the event stream</td>
+<td>Efficiency</td>
+</tr>
+<tr>
+<td>Tokens</td>
+<td>Input and output, from the final result</td>
+<td>Efficiency</td>
+</tr>
+<tr>
+<td>Words and reading level</td>
+<td>For chapters, from the chapter-metrics script</td>
+<td>Quality</td>
+</tr>
+</tbody>
+</table>
+<p>A worked example uses one model's actual results, from this book's model results page. The model is <code>gemma4:26b</code>, run on one DGX unit at a 163,840-token context.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Produced</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Learning graph</td>
+<td>200 concepts, 483 dependencies, 40 duplicate labels</td>
+<td>6 minutes</td>
+</tr>
+<tr>
+<td>2. Book structure</td>
+<td>14 chapters, 160 of 200 concepts assigned</td>
+<td>4 minutes</td>
+</tr>
+<tr>
+<td>3. Chapter content</td>
+<td>10 of 14 chapters written, 27,217 words</td>
+<td>100 minutes in 14 runs</td>
+</tr>
+</tbody>
+</table>
+<p>Each row carries something a person would miss on a reading. The stage 1 row has a fault in it, 40 duplicate labels, that the structural check found. The stage 2 row says that 40 of the 200 concepts were not assigned to any chapter, which will limit what stage 3 can write. And the stage 3 row says four of 14 chapters were not written, for reasons the event streams explain. Chapter 22 reads them.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Write the Metric Definitions Down Before the First Run</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Ten minutes spent writing "build success means a strict build exits zero" saves the argument, later, about whether a run that built with warnings counts. Put the definitions in the same record as the prompts, and score every run with the same script.</p>
+</div>
+<h3 id="run-output-retrieval">Run Output Retrieval<a class="headerlink" href="#run-output-retrieval" title="Permanent link">&para;</a></h3>
+<p><strong>Run output retrieval</strong> is bringing the run directories and event streams back from the DGX to the laptop, where they are reviewed and scored. This project's script copies each unit's run directory with <code>rsync</code>, which transfers only new and changed files and never deletes. The hosts come from an environment variable, so no address is written into the script.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DGX_HOSTS</span><span class="o">=</span><span class="s2">"&lt;user&gt;@&lt;dgx-host-a&gt; &lt;user&gt;@&lt;dgx-host-b&gt;"</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>src/orchestration/fetch_runs.sh<span class="w"> </span>--watch<span class="w"> </span><span class="m">300</span>
+</span></code></pre></div>
+<p>With <code>--watch</code> it fetches again every 300 seconds, and stops when a book or a phase finishes, when a host that was answering fails twice in a row, or when no run is going. The last two conditions are the useful ones: a unit that has frozen announces itself by failing to answer.</p>
+<p>The fetched output is not sanitized. It holds local paths and, in the event streams, whatever the commands printed. It stays outside the repository, and only the learning graph and the chapter text are published, through a script that leaves out any file with an address, a host name, or a home-directory path.</p>
+<h3 id="textbook-preview">Textbook Preview<a class="headerlink" href="#textbook-preview" title="Permanent link">&para;</a></h3>
+<p>A <strong>textbook preview</strong> is building the generated book and reading it as a reader would. It is the only way to see the rendered result, with its navigation, its tables, and its admonitions, and not the Markdown. The book is a project like any other, so <code>mkdocs build --strict</code> builds it, and a model's output can be previewed on the laptop after retrieval, with no need to reach the DGX at all.</p>
+<h3 id="evaluation-status-tracking">Evaluation Status Tracking<a class="headerlink" href="#evaluation-status-tracking" title="Permanent link">&para;</a></h3>
+<p><strong>Evaluation status tracking</strong> is a single table that shows, for each model, how far it has got. This book's status page is the form: one row per model, one column per stage, with a check, a cross, a count such as "10 of 14", "Running", or a dash for not started. It is updated after each run, and it carries a "last updated" line. It records that a stage finished and nothing about how good the output is, and the page says so.</p>
+<h2 id="a-queue-of-runs">A Queue of Runs<a class="headerlink" href="#a-queue-of-runs" title="Permanent link">&para;</a></h2>
+<p>A benchmark of ten models is a queue, and a queue needs more than the runner. This project's batch script works through a list of models one at a time, in phases: download and model-only test, harness smoke test, then stages 1, 2, and 3. A run that already has a status file is skipped, so a stopped queue restarts where it left off. An empty file named <code>skip-&lt;model&gt;</code> in the runs directory makes a running queue pass over a model.</p>
+<p>Three practices make a long queue survivable. The queue runs in a <code>tmux</code> session named <code>bench</code>, with the watchdog in a session named <code>watchdog</code>, so that a dropped connection stops neither. The script restarts the model server for each model with a context chosen from a memory estimate that keeps about 45 GiB free. And each model's results are fetched back as it finishes, so that a unit that freezes does not take unfetched results with it.</p>
+<h4 id="diagram-benchmark-stage-pipeline">Diagram: Benchmark Stage Pipeline<a class="headerlink" href="#diagram-benchmark-stage-pipeline" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Benchmark Stage Pipeline</summary>
+<p>Type: workflow
+<strong>sim-id:</strong> benchmark-stage-pipeline<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/learning-graphs/tree/main/docs/sims/book-build-workflow-pipeline<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> explain<br/>
+<strong>Learning Objective:</strong> The learner will explain how the three benchmark stages chain by opening each of 7 elements of the pipeline and then answering 4 questions about what starts from what, with at least 3 of 4 correct.</p>
+<p><strong>Prerequisites:</strong> pipeline stage, stage chaining, benchmark workspace template, per-chapter generation run, run time limit, run event stream (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner opens all 7 elements to read their descriptions, then answers 4 questions, each by choosing one element, before any answer is revealed. A choice is correct when it equals the Correct element column. Mastery is 3 of 4 correct on the first attempt. Opening an element is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Every stage starts from the template. (2) Stage 3 is one run for the whole book. (3) A run that hits its time limit loses what it wrote. (4) A run can change its starting directory.</p>
+<p><strong>Instructional Rationale:</strong> Understand-level explaining of a chained process needs the learner to place inputs and outputs, so each element's description names where it starts from and what it leaves, and the questions ask the learner to locate a fact in that structure.</p>
+<p><strong>Content:</strong></p>
+<p>The seven elements, in order, with the description shown when an element is opened:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Element</th>
+<th>Description shown</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Template workspace</td>
+<td>The fixed starting directory with the course description. It is copied for each run and never changed.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Stage 1 run</td>
+<td>Runs the learning-graph skill on a copy of the template, with a 150-minute limit.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Stage 1 output</td>
+<td>The run directory holding the seven required files of the learning graph.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Stage 2 run</td>
+<td>Runs the chapter-structure skill on a copy of the stage 1 output, with a 2-hour limit.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Stage 2 output</td>
+<td>The run directory holding one directory and outline per chapter.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Stage 3 runs</td>
+<td>One run per chapter, each on a copy of the book so far, with a 90-minute limit each.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Finished book</td>
+<td>The run directory after the last chapter, which is the book the model wrote.</td>
+</tr>
+</tbody>
+</table>
+<p>The four questions:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question shown to the learner</th>
+<th>Correct element</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Which element is the starting point of stage 2?</td>
+<td>Stage 1 output</td>
+<td>Each stage starts from a copy of the previous stage's output.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Which element runs once for each chapter?</td>
+<td>Stage 3 runs</td>
+<td>The chapter skill is run once per chapter so each gets its own timing and limit.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Which element must never be changed by a run?</td>
+<td>Template workspace</td>
+<td>It is copied for each run, so every run starts from the same input.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Which element holds the seven required files of the learning graph?</td>
+<td>Stage 1 output</td>
+<td>The seven files are the required output of stage 1.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The elements and limits come from the benchmark's runner and prompts and from the sections of this chapter above. The questions are synthetic, written for this exercise, and the sim labels them "synthetic example".</p>
+<p><strong>Rules:</strong> Elements may be opened in any order. The questions are asked in the fixed order 1 to 4, each allows one final choice among the seven elements, and exactly one element is correct for each question.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner opens each of the 7 elements of the pipeline and reads its description. The questions unlock after all seven have been opened.</li>
+<li>The learner reads question 1 and chooses an element, then confirms.</li>
+<li>The sim shows the correct element and the Why text, and marks the question correct or incorrect.</li>
+<li>The learner repeats for questions 2 to 4. After question 4 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Four questions, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct element and the Why text. The final score reads "n of 4 correct".</p>
+<p><strong>Starting State:</strong> The pipeline is shown with no element opened, and the instruction on screen is "Open each element to see what it does".</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that each stage starts from a copy of the previous stage's output, that the template is never changed, that stage 3 runs once per chapter, and that the limits are 150 minutes, 2 hours, and 90 minutes per chapter.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>The benchmark runs three chained stages from a fixed template with one prompt each, and a runner that copies the starting directory so no run changes its input. Each run leaves an event stream, a result, and a status file, and a time limit turns a stuck run into a recorded result. Stage 3 runs once per chapter, with a completion criterion in place of the model's own claim. A stage must leave its required files and navigation entries, and its metrics are defined before the first run and computed by the same script every time. Outputs come back to the laptop by a script that never deletes, a status table tracks progress, and a queue is made survivable by tmux, a watchdog, per-model context choice, and fetching as it goes.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Have a Complete, Logged Run</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now run the three stages from a fixed template, bound each by a time limit, retrieve the outputs, and record per-stage metrics against definitions you wrote first. Chapter 22 turns those raw records into a diagnosis and a decision.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

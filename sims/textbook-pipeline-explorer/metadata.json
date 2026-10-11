@@ -1,0 +1,23 @@
+{
+  "title": "Textbook Generation Pipeline Explorer",
+  "description": "The learner will identify, for each of the seven generated artifacts of the textbook pipeline, which of the other seven artifacts it is built from, with at least 6 of 7 exactly correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "textbook-pipeline-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Remember",
+  "bloomVerb": "identify",
+  "completion_status": "scaffold",
+  "chapter_number": 1,
+  "chapter_title": "Prerequisites and the Intelligent Textbook",
+  "chapter_dir": "01-intro-intelligent-textbooks",
+  "chapter_rel_dir": "chapters/01-intro-intelligent-textbooks"
+}

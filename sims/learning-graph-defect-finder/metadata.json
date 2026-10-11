@@ -1,0 +1,23 @@
+{
+  "title": "Learning Graph Defect Finder",
+  "description": "The learner will examine a 16-concept dependency graph and mark the concepts that have one of four structural defects, finding all 4 defects with no more than 1 false flag.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "learning-graph-defect-finder",
+  "library": "vis-network",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "examine",
+  "completion_status": "scaffold",
+  "chapter_number": 20,
+  "chapter_title": "Scoring, Bias, and Structural Checks",
+  "chapter_dir": "20-scoring-and-bias",
+  "chapter_rel_dir": "chapters/20-scoring-and-bias"
+}

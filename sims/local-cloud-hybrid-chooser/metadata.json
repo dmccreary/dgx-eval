@@ -1,0 +1,23 @@
+{
+  "title": "Local, Cloud, or Hybrid Chooser",
+  "description": "The learner will recommend local, cloud, or hybrid deployment for each of 6 scenarios and identify the constraint that decides it, with at least 5 of 6 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "local-cloud-hybrid-chooser",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate",
+  "bloomVerb": "recommend",
+  "completion_status": "scaffold",
+  "chapter_number": 4,
+  "chapter_title": "Local SLMs Versus Cloud LLM Services",
+  "chapter_dir": "04-local-versus-cloud",
+  "chapter_rel_dir": "chapters/04-local-versus-cloud"
+}

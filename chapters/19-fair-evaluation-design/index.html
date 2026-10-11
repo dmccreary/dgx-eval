@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="Turning an evaluation question into an experiment that can be defended: the question, the independent variable, the controlled and uncontrolled variables, fixed inputs, metrics, repeated runs, baselines, and two layers of testing.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>19. Designing a Fair Evaluation - DGX Evaluation for Textbook Generation</title>
+        <title>Designing a Fair Evaluation - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              19. Designing a Fair Evaluation
+              Designing a Fair Evaluation
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1076,6 +899,267 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-question-and-the-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Question and the Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Question and the Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation Question
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#independent-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Independent Variable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlled-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlled Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uncontrolled-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uncontrolled Variable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metric-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metric Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is-the-result-repeatable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is the Result Repeatable?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Is the Result Repeatable?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repeated-runs-run-variance-and-sample-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repeated Runs, Run Variance, and Sample Size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducible-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproducible Experiment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-compare-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to Compare Against
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What to Compare Against">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline-comparison-and-fair-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Baseline Comparison and Fair Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-it-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing It Down
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing It Down">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicit-assumptions-and-measured-versus-assumed-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicit Assumptions and Measured Versus Assumed Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-decision-record-and-decision-attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Decision Record and Decision Attribution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-in-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing in Layers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing in Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-layer-testing-model-only-test-and-harness-smoke-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Layer Testing, Model-Only Test, and Harness Smoke Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-context-recall-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long-Context Recall Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-defect-correction-and-retest-after-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill Defect Correction and Retest After Fix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skill Defect Correction and Retest After Fix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-experiment-variable-role-sorter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Experiment Variable Role Sorter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-evaluation-design-flaw-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Evaluation Design Flaw Finder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1201,6 +1285,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1300,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1401,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1543,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1702,267 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-question-and-the-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Question and the Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Question and the Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation Question
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#independent-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Independent Variable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlled-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlled Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uncontrolled-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uncontrolled Variable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metric-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metric Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is-the-result-repeatable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is the Result Repeatable?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Is the Result Repeatable?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repeated-runs-run-variance-and-sample-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repeated Runs, Run Variance, and Sample Size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducible-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproducible Experiment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-compare-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to Compare Against
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What to Compare Against">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline-comparison-and-fair-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Baseline Comparison and Fair Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-it-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing It Down
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing It Down">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicit-assumptions-and-measured-versus-assumed-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicit Assumptions and Measured Versus Assumed Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-decision-record-and-decision-attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Decision Record and Decision Attribution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-in-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing in Layers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing in Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-layer-testing-model-only-test-and-harness-smoke-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Layer Testing, Model-Only Test, and Harness Smoke Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-context-recall-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long-Context Recall Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-defect-correction-and-retest-after-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill Defect Correction and Retest After Fix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skill Defect Correction and Retest After Fix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-experiment-variable-role-sorter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Experiment Variable Role Sorter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-evaluation-design-flaw-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Evaluation Design Flaw Finder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1529,13 +2114,545 @@
 <li><a href="../17-agent-skills-and-harness/">Chapter 17: Agent Skills and Connecting a Harness to a Local Model</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">A Result Is Only as Good as Its Design</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Two people can run the same models on the same machine and reach opposite conclusions, and the difference is almost never the models. By the end of this chapter you will be able to design a comparison that holds up, and critique one that does not. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Everything so far built capability: a reachable machine, a measured one, a model that fits, a server that answers, and a harness that runs a skill. This chapter decides what to do with it. The step from "it runs" to "it is better" is where evaluations most often go wrong, and it goes wrong in the design, long before any number is produced.</p>
+<p>The chapter works through the parts of a design in the order a person makes them: the question, the one thing you vary, the things you hold fixed, the things you could not control and must record, and the measurements. It then covers how to know whether a result is repeatable, what to compare it against, and how to test in two layers so that failures are found cheaply. This evaluation's own choices appear throughout, including the ones that did not hold up.</p>
+<h2 id="the-question-and-the-variables">The Question and the Variables<a class="headerlink" href="#the-question-and-the-variables" title="Permanent link">&para;</a></h2>
+<h3 id="evaluation-question">Evaluation Question<a class="headerlink" href="#evaluation-question" title="Permanent link">&para;</a></h3>
+<p>An <strong>evaluation question</strong> is the single, answerable question the experiment exists to answer. Everything else in the design follows from it, so a vague question produces a design that measures everything and decides nothing. A good one names what is being compared, on what task, under what conditions, and what would count as an answer.</p>
+<p>This evaluation's question, in the Primary Author's words, is whether a local harness can execute the skills correctly. Stated as a full question, it is: can a DGX running an open-weight model, driven by a local harness, run the <code>ibook-skills</code> chain to produce an intelligent textbook without sending a token to the cloud, and how good is the result?</p>
+<p>The difference between a good question and a poor one is easiest to see side by side.</p>
+<table>
+<thead>
+<tr>
+<th>Poor question</th>
+<th>Why it fails</th>
+<th>Better question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Which model is best?</td>
+<td>Best at what, for whom?</td>
+<td>Which candidate completes stages 1 to 3 on Algebra I with the fewest structural faults on one DGX unit?</td>
+</tr>
+<tr>
+<td>Is local cheaper than cloud?</td>
+<td>Mixes cost and price, and ignores quality</td>
+<td>What is the cost per textbook of local generation at the measured speed, and what would a service charge at a 20% margin?</td>
+</tr>
+<tr>
+<td>Does the DGX work?</td>
+<td>Nothing could ever answer "no"</td>
+<td>Does a local model produce a learning graph that passes structural checks within a 150-minute limit?</td>
+</tr>
+</tbody>
+</table>
+<p>The test of a question is whether you can imagine two different outcomes. If you cannot, it is not a question for an experiment.</p>
+<h3 id="independent-variable">Independent Variable<a class="headerlink" href="#independent-variable" title="Permanent link">&para;</a></h3>
+<p>The <strong>independent variable</strong> is the one thing the experiment deliberately changes, so that its effect can be observed. A comparison of ten models has a single independent variable, which is the model, and that single choice is what lets a difference in the results be attributed to it.</p>
+<p>The discipline is to change one thing. A design that varies the model and the harness and the context length at once can report that the runs differ, and cannot say why. This is the same one-change-at-a-time rule that Chapters 6 and 15 applied to cost and speed, now applied to the whole experiment.</p>
+<p>A worked example compares three designs for the same ten-model question. The first changes the model and nothing else. The second lets each model run at its own best context length and its own reasoning setting. The third runs half of the models on one DGX unit and half on the other.</p>
+<table>
+<thead>
+<tr>
+<th>Design</th>
+<th>What varies</th>
+<th>What a difference in results can be blamed on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model only</td>
+<td>The model</td>
+<td>The model</td>
+</tr>
+<tr>
+<td>Model, context, and reasoning</td>
+<td>Three things together</td>
+<td>Any of the three, or their combination, and you cannot say which</td>
+</tr>
+<tr>
+<td>Model, split across two units</td>
+<td>The model and the machine</td>
+<td>The model or the unit, and you cannot say which</td>
+</tr>
+</tbody>
+</table>
+<p>Only the first can answer the question as asked. The second may still be worth running, as a second experiment about tuning, but its results must not be presented as a comparison of models.</p>
+<h3 id="controlled-variables">Controlled Variables<a class="headerlink" href="#controlled-variables" title="Permanent link">&para;</a></h3>
+<p><strong>Controlled variables</strong> are everything else that could affect the result, which the design holds fixed on purpose. They are the reason a difference can be blamed on the independent variable. Each one is a decision, written down, and for this evaluation the list is long.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>How it was controlled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Course</td>
+<td>One fixed course, Algebra I, an unchanged copy of its description</td>
+</tr>
+<tr>
+<td>Workload</td>
+<td>Three skills, with one fixed prompt per stage</td>
+</tr>
+<tr>
+<td>Harness</td>
+<td>Claude Code, pinned to one version</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>Ollama, pinned to one release</td>
+</tr>
+<tr>
+<td>Skills</td>
+<td>One checkout, mounted read-only</td>
+</tr>
+<tr>
+<td>Hardware</td>
+<td>One DGX unit for all ten candidates</td>
+</tr>
+<tr>
+<td>Quantization</td>
+<td>Each model's default 4-bit file</td>
+</tr>
+<tr>
+<td>Starting state</td>
+<td>A fresh copy of the template workspace for every run</td>
+</tr>
+<tr>
+<td>Time limits</td>
+<td>150 minutes for stage 1, a fixed limit per chapter</td>
+</tr>
+</tbody>
+</table>
+<p>A controlled variable is a promise, and some promises were not kept. The next two sections name the ones that were not.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Every Fixed Thing Is a Claim You Must Be Able to Defend</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Writing "same harness" in a design is a statement that you checked. Each controlled variable should have a line in the record that says what the value was and how you know. The ones you cannot back with a record are the ones a critic will find.</p>
+</div>
+<h3 id="uncontrolled-variable">Uncontrolled Variable<a class="headerlink" href="#uncontrolled-variable" title="Permanent link">&para;</a></h3>
+<p>An <strong>uncontrolled variable</strong> is something that could affect the result and that the design did not hold fixed. Some cannot be controlled, and others were not noticed. The honest response is not to pretend they were controlled, but to record them and say which direction they might push.</p>
+<p>This evaluation had at least three. <strong>Reasoning mode</strong>: the model-only tests ran with reasoning turned off to bound their time, and the harness runs used each model's own default, so one model spent nineteen minutes on a single turn and predictions from the model-only test did not match. <strong>Context length</strong>: it was chosen for each model from a memory estimate, so the models did not all run at the same setting. <strong>Server behavior</strong>: one model's server re-read the conversation on every turn, and the cause was not identified, so a speed difference could belong to the server and not to the model.</p>
+<h3 id="fixed-inputs">Fixed Inputs<a class="headerlink" href="#fixed-inputs" title="Permanent link">&para;</a></h3>
+<p><strong>Fixed inputs</strong> are the exact files and prompts every run starts from. They are the most concrete controlled variable, and the cheapest to get right. In this evaluation the course description is an unchanged copy of a published description, the starting workspace is copied fresh for every run, and each stage has one prompt file, numbered in stage order.</p>
+<p>Two habits make fixed inputs trustworthy. Keep them in version control so a change is visible. And copy them into each run instead of pointing to them, so that no run can alter the input of the next. The runner's header says it plainly: the start directory is copied to a fresh run directory, so a run never changes its input.</p>
+<h3 id="metric-selection">Metric Selection<a class="headerlink" href="#metric-selection" title="Permanent link">&para;</a></h3>
+<p><strong>Metric selection</strong> is choosing what to measure, and it is as much a decision as choosing the question. A metric is only useful if it answers the question, if it can be computed the same way for every run, and if you decided it before you saw the data.</p>
+<p>The metrics this evaluation collects fall into three groups, and the table gives each group's role.</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Examples</th>
+<th>What it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Completion</td>
+<td>Stage finished, files present, build succeeds</td>
+<td>Did the run do the task at all?</td>
+</tr>
+<tr>
+<td>Efficiency</td>
+<td>Wall-clock time, tool calls, failed tool calls, tokens, peak memory</td>
+<td>What did it cost to do it?</td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>Structural checks, reading level, human review</td>
+<td>Is what it produced any good?</td>
+</tr>
+</tbody>
+</table>
+<p>The groups differ in how much they can be trusted. Completion and efficiency are computed by a program and are repeatable. Quality is the one that matters most and the hardest to measure, which is the subject of Chapter 20. A design that reports only completion and efficiency has measured the cheapest things.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Do Not Pick the Metric After You See the Result</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+If you look at the data and then choose the measure that makes your favorite model look best, you have not run an experiment. Write the metrics and how each is computed into the record before the first run, and add new ones afterward only as clearly labeled extras.</p>
+</div>
+<h2 id="is-the-result-repeatable">Is the Result Repeatable?<a class="headerlink" href="#is-the-result-repeatable" title="Permanent link">&para;</a></h2>
+<h3 id="repeated-runs-run-variance-and-sample-size">Repeated Runs, Run Variance, and Sample Size<a class="headerlink" href="#repeated-runs-run-variance-and-sample-size" title="Permanent link">&para;</a></h3>
+<p>A <strong>repeated run</strong> is running the same configuration more than once. <strong>Run variance</strong> is how much the results differ among them. A language model samples its output, and even at a low temperature a long agent session takes a path that depends on small differences early on, so two runs of the same configuration are not the same run.</p>
+<p><strong>Sample size</strong> is the number of runs behind a conclusion. A single run is a sample of one, and it supports a statement about that run only. Nearly every result in this evaluation so far is one run: each model attempted each stage once. That is enough to find what fails, and not enough to rank.</p>
+<p>A worked illustration shows why. Suppose a model finishes a stage in 20 minutes on one run and 45 on another, because in the second it made a wrong turn and recovered. A second model finishes in 30 minutes on its one run. Ranking the second ahead of the first from those numbers is a coin flip. With five runs of each, the spread of each is visible and the comparison can be stated with its uncertainty.</p>
+<table>
+<thead>
+<tr>
+<th>Runs per configuration</th>
+<th>What you can say</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>What happened; which things failed outright</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Whether the result is stable, roughly</td>
+</tr>
+<tr>
+<td>5 or more</td>
+<td>A typical value and a range, with caution</td>
+</tr>
+</tbody>
+</table>
+<h3 id="control-run">Control Run<a class="headerlink" href="#control-run" title="Permanent link">&para;</a></h3>
+<p>A <strong>control run</strong> is a repeat of a run that should give the same answer, done to check the apparatus and not the subject. This project's model-test script ends with one: it runs its smoke test on two models as their downloads finish, then repeats the first as a control. If the control differs from the original by more than the expected variation, something in the setup changed in between, such as memory pressure, a thermal state, or a different server setting.</p>
+<p>A control is cheap, and it is the first thing to do when a surprising number appears. It separates "this model really behaves this way" from "this machine behaved differently this afternoon".</p>
+<h3 id="reproducible-experiment">Reproducible Experiment<a class="headerlink" href="#reproducible-experiment" title="Permanent link">&para;</a></h3>
+<p>A <strong>reproducible experiment</strong> is one that someone else can repeat from the record and obtain a comparable result. It is the combination of this chapter's parts: a stated question, a recorded configuration, fixed inputs under version control, pinned software, and logs that show what happened. Reproducibility is not a property of the result. It is a property of the record.</p>
+<h2 id="what-to-compare-against">What to Compare Against<a class="headerlink" href="#what-to-compare-against" title="Permanent link">&para;</a></h2>
+<h3 id="baseline-comparison-and-fair-comparison">Baseline Comparison and Fair Comparison<a class="headerlink" href="#baseline-comparison-and-fair-comparison" title="Permanent link">&para;</a></h3>
+<p>A <strong>baseline comparison</strong> judges a result against a reference produced under the same rules. Without one, "the local model's learning graph has 200 concepts" has no meaning, because nobody knows whether a cloud model's would too. A <strong>fair comparison</strong> is one in which the only meaningful difference between the two sides is the thing being compared.</p>
+<p>This evaluation has a reference for scale, and not yet a baseline. A published Algebra I book was generated with cloud models, and it has 200 concepts and 13 chapters of about 55,000 words. It was made with earlier versions of the skills, and no timings or token counts were kept. It shows how large a finished book is. It cannot say how long a cloud model takes or how good its output is under these exact conditions. The cloud baseline remains to be run.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement for a fair comparison</th>
+<th>Satisfied by the published book?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Same course description</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Same skill versions</td>
+<td>No, earlier versions</td>
+</tr>
+<tr>
+<td>Same prompts</td>
+<td>Not recorded</td>
+</tr>
+<tr>
+<td>Timings and token counts recorded</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Same scoring applied</td>
+<td>Not yet</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Ask Three Questions of Any Baseline</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Did it use the same inputs? Is its configuration recorded? Was it scored by the same method as the thing you are comparing it to? A baseline that fails any of the three is a reference point, and the comparison should call it that.</p>
+</div>
+<h2 id="writing-it-down">Writing It Down<a class="headerlink" href="#writing-it-down" title="Permanent link">&para;</a></h2>
+<h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
+<p><strong>Logging</strong> is recording what happened during a run, in enough detail to reconstruct it. The log is what lets a surprising result be investigated later, and it is the difference between a measurement and a memory.</p>
+<p>The records this evaluation keeps for each run are worth listing, because each answers a specific later question.</p>
+<table>
+<thead>
+<tr>
+<th>Record</th>
+<th>What it holds</th>
+<th>Answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The event stream</td>
+<td>Every message, tool call, and result</td>
+<td>What did the agent actually do?</td>
+</tr>
+<tr>
+<td>The final result</td>
+<td>Turns, token counts, timings</td>
+<td>How much did it use?</td>
+</tr>
+<tr>
+<td>The status file</td>
+<td>Exit code and wall-clock seconds</td>
+<td>Did it finish, and how long did it take?</td>
+</tr>
+<tr>
+<td>The server log</td>
+<td>Loads, memory, request timings</td>
+<td>Why was it slow?</td>
+</tr>
+<tr>
+<td>The vitals log</td>
+<td>Memory, temperature, power every 30 seconds</td>
+<td>What did the machine look like?</td>
+</tr>
+<tr>
+<td>The configuration</td>
+<td>Versions, settings, dates</td>
+<td>Can this be repeated?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="explicit-assumptions-and-measured-versus-assumed-values">Explicit Assumptions and Measured Versus Assumed Values<a class="headerlink" href="#explicit-assumptions-and-measured-versus-assumed-values" title="Permanent link">&para;</a></h3>
+<p><strong>Explicit assumptions</strong> are the things the analysis takes as true without having tested them, stated as such. <strong>Measured versus assumed values</strong> is the distinction applied to each number: a measured value came from an observation in this evaluation, and an assumed one came from a rule, a published figure, or a guess.</p>
+<p>The cost analysis is the model for this. Its tables label every speed as measured, or as assumed equal to a measured model. Six of the ten speeds are assumed. It also tests its own rule against the one case it can check: the rule predicted 34 tokens a second for one model, and the measured figure was 26. Reporting the miss is what makes the other assumptions credible.</p>
+<h3 id="design-decision-record-and-decision-attribution">Design Decision Record and Decision Attribution<a class="headerlink" href="#design-decision-record-and-decision-attribution" title="Permanent link">&para;</a></h3>
+<p>A <strong>design decision record</strong> is a written account of each choice in the design: what was chosen, what else was considered, and why. <strong>Decision attribution</strong> is recording who made each decision, because a choice made by a person with a goal and a choice made by an assistant filling a gap deserve different scrutiny.</p>
+<p>This book's design-choices page is such a record, and it has a table of who decided what. Three parties appear in it: the Primary Author, the Administrator, and the AI assistant that built and ran the tests under the Primary Author's direction. It also has a section on the choices that did not hold up, which is the part that earns the reader's trust.</p>
+<h2 id="testing-in-layers">Testing in Layers<a class="headerlink" href="#testing-in-layers" title="Permanent link">&para;</a></h2>
+<h3 id="two-layer-testing-model-only-test-and-harness-smoke-test">Two-Layer Testing, Model-Only Test, and Harness Smoke Test<a class="headerlink" href="#two-layer-testing-model-only-test-and-harness-smoke-test" title="Permanent link">&para;</a></h3>
+<p><strong>Two-layer testing</strong> is testing a model alone first, and then inside the harness. The <strong>model-only test</strong> sends a model short, fixed tasks directly through the server, with no harness, and checks the output against rules. The <strong>harness smoke test</strong> is the three-minute skill run of Chapter 17, which checks the model, the harness, and a skill together.</p>
+<p>The layers differ in what a failure costs and what it can tell you.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Time per model</th>
+<th>What a failure means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model-only test</td>
+<td>Minutes</td>
+<td>The model cannot follow a rule on its own, such as a blank line before a list</td>
+</tr>
+<tr>
+<td>Harness smoke test</td>
+<td>About three minutes</td>
+<td>The model cannot work through a skill with tools</td>
+</tr>
+<tr>
+<td>Full stage</td>
+<td>Tens of minutes to hours</td>
+<td>The model fails at scale, or is too slow</td>
+</tr>
+</tbody>
+</table>
+<p>The benefit is isolation. A model that fails the first layer fails in seconds and for a reason you can name, and a model that passes it and fails the second fails for a reason that involves the harness. Going straight to the full pipeline makes every failure slow and mixes the causes. The model-only test in this project has five tasks: Markdown writing, p5.js code, schema-constrained JSON, a tool call, and a 30,000-token prompt.</p>
+<h3 id="long-context-recall-test">Long-Context Recall Test<a class="headerlink" href="#long-context-recall-test" title="Permanent link">&para;</a></h3>
+<p>A <strong>long-context recall test</strong> checks that a model can find a specific fact in a long prompt. A value is placed in a long block of text, and the model is asked to return it. It is the model-only test's way of asking whether a model that advertises a large window can use it.</p>
+<p>It found something the other tasks did not. One model returned the wrong value from a long prompt in two of its model-only runs and again in a third. A model that misreads a long prompt is a poor fit for long skills, and that is a hypothesis to test in the harness, not a conclusion.</p>
+<h3 id="skill-defect-correction-and-retest-after-fix">Skill Defect Correction and Retest After Fix<a class="headerlink" href="#skill-defect-correction-and-retest-after-fix" title="Permanent link">&para;</a></h3>
+<p>A <strong>skill defect correction</strong> is fixing a fault in the skill or in the test, and not in the model that revealed it. A <strong>retest after fix</strong> is running the affected models again once the fault is corrected, so that an early conclusion does not stand on a broken check.</p>
+<p>Two cases in this evaluation show the need. A faulty example in a skill produced navigation files that would not build, and a fast model that copied it was set aside. The skill was corrected. The model was retested afterward, passed the short skill test, and finished the learning graph in under six minutes, and it was the graph itself, with 40 duplicate labels, that remained a serious fault. Separately, the first versions of three model-only checks were too strict and failed correct output. Each was fixed and the saved output was scored again.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Finding Your Own Bug Is Part of the Method</p>
+<p><img alt="Tera encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+If a result turns out to come from a faulty check or a broken example, that is the evaluation working. Record the defect, fix it, rerun what it touched, and note which conclusions changed. The report that says so is more trustworthy than one that never found a mistake.</p>
+</div>
+<h4 id="diagram-experiment-variable-role-sorter">Diagram: Experiment Variable Role Sorter<a class="headerlink" href="#diagram-experiment-variable-role-sorter" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Experiment Variable Role Sorter</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> variable-role-sorter<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> differentiate<br/>
+<strong>Learning Objective:</strong> The learner will differentiate the role of each of 10 items in a model-comparison experiment as independent variable, controlled variable, measured result, or uncontrolled variable, with at least 9 of 10 correct.</p>
+<p><strong>Prerequisites:</strong> independent variable, controlled variables, uncontrolled variable, metric selection, fixed inputs (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 10 items the learner commits one of four roles before the sim reveals the answer. A choice is correct when it equals the Correct role column. Mastery is 9 of 10 correct on the first attempt. Reading the items is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Anything that is the same in every run is controlled, whether or not it was decided. (2) A measured result can also be the independent variable. (3) A variable that cannot be controlled can be ignored. (4) The model's default setting counts as controlled.</p>
+<p><strong>Instructional Rationale:</strong> Differentiating roles needs the learner to ask two questions of each item, who set it and whether it was held the same, so the items cover all four roles and include two that look controlled and are not.</p>
+<p><strong>Content:</strong></p>
+<p>The four roles the learner chooses from: "Independent variable", "Controlled variable", "Measured result", and "Uncontrolled variable".</p>
+<p>The experiment: ten candidate models each run the same three skills on one DGX unit, and the question is how well each completes them.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item shown to the learner</th>
+<th>Correct role</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Which model is loaded for the run</td>
+<td>Independent variable</td>
+<td>It is the one thing the experiment deliberately changes.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The course description, an unchanged copy for every run</td>
+<td>Controlled variable</td>
+<td>It was held fixed on purpose.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The harness version, pinned to one release</td>
+<td>Controlled variable</td>
+<td>It was held fixed on purpose.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Wall-clock time of the stage</td>
+<td>Measured result</td>
+<td>It is an outcome recorded for every run.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Which DGX unit a run happened on, when runs were spread across both with no plan</td>
+<td>Uncontrolled variable</td>
+<td>It varied without being decided, so a difference could belong to the unit.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The prompt text for each stage</td>
+<td>Controlled variable</td>
+<td>It was held fixed on purpose.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Number of tool calls that failed</td>
+<td>Measured result</td>
+<td>It is an outcome recorded for every run.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Other work running on the machine during the run</td>
+<td>Uncontrolled variable</td>
+<td>It varied without being managed.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Quantization, each model's default 4-bit file</td>
+<td>Controlled variable</td>
+<td>The same level was chosen for every model.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Whether a model's reasoning mode is on, when each model uses its own default</td>
+<td>Uncontrolled variable</td>
+<td>It differs by model without being decided, so it is mixed with the independent variable.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The items are synthetic but drawn from this evaluation's design, and the sim labels them "synthetic example". The roles come from the sections of this chapter above.</p>
+<p><strong>Rules:</strong> Items are shown in the fixed order 1 to 10. Each allows one final choice, and exactly one role is correct for each. A variable is "Controlled" only if the design held it fixed on purpose, and "Uncontrolled" if it varied without being decided.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads item 1.</li>
+<li>The learner chooses one of the four roles and confirms.</li>
+<li>The sim shows the correct role and the Why text, and marks the item correct or incorrect.</li>
+<li>The learner repeats for items 2 to 10. After item 10 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Ten items, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct role and the Why text. The final score reads "n of 10 correct".</p>
+<p><strong>Starting State:</strong> Item 1 is shown with no role chosen, and the question on screen is "What role does this play in the experiment?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that the model is the single independent variable, that the course description, harness version, prompts, and quantization are controlled, and that reasoning mode, context length, and server behavior were uncontrolled.</p>
+</details>
+<h4 id="diagram-evaluation-design-flaw-finder">Diagram: Evaluation Design Flaw Finder<a class="headerlink" href="#diagram-evaluation-design-flaw-finder" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Evaluation Design Flaw Finder</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> design-flaw-finder<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/statistics-course/tree/main/docs/sims/experimental-designs-compare<br/>
+<strong>Bloom Level:</strong> Evaluate<br/>
+<strong>Bloom Verb:</strong> critique<br/>
+<strong>Learning Objective:</strong> The learner will critique a described evaluation by judging each of 8 statements about it as a flaw or not a flaw, with at least 7 of 8 correct.</p>
+<p><strong>Prerequisites:</strong> evaluation question, controlled variables, fixed inputs, repeated runs, sample size, fair comparison, bias, limitations statement (all defined in this chapter and in Chapter 20).</p>
+<p><strong>Evidence of Mastery:</strong> The learner reads the described evaluation, then judges each of 8 statements as "Flaw" or "Not a flaw" before the sim reveals the answer. A judgment is correct when it equals the Correct judgment column. Mastery is 7 of 8 correct on the first attempt. Re-reading the description is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A comparison of two systems needs no controls if one is clearly stronger. (2) A single run is enough to rank. (3) A result scored by the system that produced it is neutral. (4) Having a method is the same as having a fair method.</p>
+<p><strong>Instructional Rationale:</strong> Evaluating a design needs criteria applied to a case, so the description contains five real flaws and three sound practices, which prevents answering "flaw" to everything.</p>
+<p><strong>Content:</strong></p>
+<p>The described evaluation, shown in full to the learner:</p>
+<p>"A team compares a local model and a cloud model on textbook generation. They run the local model once on Monday on a machine that is also running a database backup, using the Algebra I course description, with the same harness and the same skills as the cloud run. They run the cloud model once on Friday using a rewritten course description that adds a glossary requirement. They score both outputs with the cloud model that wrote the cloud result. The team recorded the model names, versions, and dates of both runs, and stated its evaluation question before running anything. They report that the cloud model is better, without further comment."</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Statement shown to the learner</th>
+<th>Correct judgment</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Each model was run once.</td>
+<td>Flaw</td>
+<td>One run gives no estimate of run variance, so a difference may be noise.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The two runs used different course descriptions.</td>
+<td>Flaw</td>
+<td>The inputs were not fixed, so a difference could come from the description and not the model.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The local model ran while a backup ran on the same machine.</td>
+<td>Flaw</td>
+<td>Competing load is an uncontrolled variable that can slow or starve the run.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Both runs used the same harness and the same skills.</td>
+<td>Not a flaw</td>
+<td>Holding these fixed is exactly what a fair comparison requires.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The cloud model's output was scored by the cloud model that wrote it.</td>
+<td>Flaw</td>
+<td>A model judging its own work is a source of bias, so the score is not neutral.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The team recorded the model names, versions, and dates of both runs.</td>
+<td>Not a flaw</td>
+<td>A record of the configuration is what makes an experiment reproducible.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>The team stated its evaluation question before running anything.</td>
+<td>Not a flaw</td>
+<td>Fixing the question first prevents choosing a measure after seeing the data.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The result was reported as "the cloud model is better" with no limitations.</td>
+<td>Flaw</td>
+<td>A claim from one run per side needs a limitations statement that says so.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The described evaluation and statements are synthetic, written for this exercise, and the sim labels them "synthetic example". The criteria come from the sections of this chapter above.</p>
+<p><strong>Rules:</strong> Statements are shown in the fixed order 1 to 8. Each allows one final judgment, and exactly one of "Flaw" or "Not a flaw" is correct for each. The description contains five flaws and three sound practices.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads the described evaluation.</li>
+<li>The learner reads statement 1 and chooses "Flaw" or "Not a flaw", then confirms.</li>
+<li>The sim shows the correct judgment and the Why text, and marks the statement correct or incorrect.</li>
+<li>The learner repeats for statements 2 to 8. After statement 8 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Eight statements, fixed order, one confirmed judgment each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct judgment and the Why text. The final score reads "n of 8 correct".</p>
+<p><strong>Starting State:</strong> The described evaluation is shown with statement 1 beneath it and no judgment made, and the question on screen is "Is this a flaw in the design?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that one run per side gives no run variance, that inputs must be fixed, that uncontrolled load is a variable, that a model should not score its own output, and that a result needs a limitations statement.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>A defensible evaluation starts from a question that could have different answers, and changes one thing. It holds everything else fixed on purpose, records the variables it could not hold, and chooses its metrics before it sees data. A result from one run is an observation. Repeated runs, control runs, and a stated sample size are what turn it into evidence, and a baseline is only a baseline if it was produced under the same rules. A record of the configuration, the assumptions, and the decisions, with who made each, is what makes the experiment reproducible. Testing in layers finds cheap failures first, and a defect found in the checks, once corrected, means a retest and a note of what changed.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Defend a Design and Attack One</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now turn a question into a design with named variables, say which were controlled and which were not, and critique a comparison that skipped the steps. Chapter 20 turns to the hardest measurement in the design, which is how good the output is.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

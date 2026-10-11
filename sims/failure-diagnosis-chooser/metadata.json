@@ -1,0 +1,23 @@
+{
+  "title": "Failure Diagnosis Chooser",
+  "description": "The learner will attribute each of 8 failed-run symptoms to its most likely cause from a list of 8, with at least 7 of 8 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "failure-diagnosis-chooser",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "attribute",
+  "completion_status": "scaffold",
+  "chapter_number": 22,
+  "chapter_title": "Diagnosing Failures, Reporting, and Cost per Textbook",
+  "chapter_dir": "22-diagnosis-and-reporting",
+  "chapter_rel_dir": "chapters/22-diagnosis-and-reporting"
+}

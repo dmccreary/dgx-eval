@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Tailscale Status Reader</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Tailscale Status Reader</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> tailscale-status-reader</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Understand</p>
+            <p><strong>Learning Objective:</strong> The learner will interpret 6 sanitized lines of Tailscale output by choosing the meaning of each, with at least 5 of 6 correct.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** tailscale-status-reader<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified<br/>
+    **Bloom Level:** Understand<br/>
+    **Bloom Verb:** interpret<br/>
+    **Learning Objective:** The learner will interpret 6 sanitized lines of Tailscale output by choosing the meaning of each, with at least 5 of 6 correct.
+    
+    **Prerequisites:** tailscale status command, tailscale ping, device key expiry, DERP relay, peer-to-peer connection (all defined in the sections above this block and in Chapter 7).
+    
+    **Evidence of Mastery:** For each of the 6 lines the learner commits one meaning from the six listed in Content before the sim reveals the answer. A choice is correct when it equals the Correct meaning column. Mastery is 5 of 6 correct on the first attempt. Reading the line is exploration, not evidence.
+    
+    **Misconceptions:** (1) `idle` means the device is down. (2) A relay connection is a failure. (3) A listed device is reachable. (4) A dash in the last column means something is wrong.
+    
+    **Instructional Rationale:** Interpreting needs the learner to turn a terse string into a statement about the system, so each line is a realistic fragment with exactly one correct reading. Committing before the reveal separates reading from guessing.
+    
+    **Content:**
+    
+    The six meanings the learner chooses from: "This device", "Connected directly", "Connected through a relay", "Connected but idle", "Offline, not reachable", and "This device has not signed in".
+    
+    | # | Line shown to the learner | Correct meaning | Why (shown as feedback) |
+    |---|---|---|---|
+    | 1 | `100.x.y.z   <laptop-name>   <you>@   macOS   -` | This device | A dash in the state column marks the device running the command. |
+    | 2 | `100.x.y.z   <dgx-host>   <admin>@   linux   active; direct 198.51.100.7:41641` | Connected directly | `direct` followed by an address means a peer-to-peer path is in use. |
+    | 3 | `100.x.y.z   <dgx-host>   <admin>@   linux   active; relay "<region>"` | Connected through a relay | `relay` means the encrypted traffic goes through a relay server. |
+    | 4 | `100.x.y.z   <dgx-host>   <admin>@   linux   idle` | Connected but idle | `idle` means connected with no traffic in flight at the moment. |
+    | 5 | `100.x.y.z   <dgx-host>   <admin>@   linux   offline, last seen 13h ago` | Offline, not reachable | `offline` with a time means the device has not been reachable for that long. |
+    | 6 | `Logged out.` | This device has not signed in | The daemon is running but this device has no identity on the tailnet. |
+    
+    **Provenance:** The lines are synthetic, modeled on the output format of the command, and the sim labels them "synthetic example". Addresses use placeholders and a documentation address range.
+    
+    **Rules:** Lines are shown in the fixed order 1 to 6. Each line allows one final choice, and exactly one of the six meanings is correct for each line.
+    
+    **Learner Activity:**
+    
+    1. The learner reads line 1.
+    2. The learner chooses one of the six meanings and confirms.
+    3. The sim shows the correct meaning and the Why text, and marks the line correct or incorrect.
+    4. The learner repeats for lines 2 to 6. After line 6 the sim shows the score and the misconception behind each miss.
+    
+    **Feedback:** Six lines, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct meaning and the Why text. The final score reads "n of 6 correct".
+    
+    **Starting State:** Line 1 is shown with no meaning chosen, and the question on screen is "What is this line telling you?"
+    
+    **Chapter Anchors:** The chapter states that a dash marks this device, that `active; direct` means a peer-to-peer path, that `relay` means traffic goes through a relay server, that `idle` means no traffic at the moment, and that `offline` with a time means the device was not reachable for that long.
+    -->
+</body>
+</html>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="What a language model is, how tokens, parameters, and context windows work, how a small model differs from a frontier model, and the abilities textbook generation demands.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>3. Small Language Models - DGX Evaluation for Textbook Generation</title>
+        <title>Small Language Models - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. Small Language Models
+              Small Language Models
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -735,6 +558,306 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-models-from-the-ground-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language Models From the Ground Up
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Language Models From the Ground Up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-ai-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative AI Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#large-language-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Large Language Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokenizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens-per-word" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokens per Word
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Window
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context Window">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-words-to-tokens-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Words to Tokens Estimator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter Count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-models-and-open-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small Models and Open Weights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Small Models and Open Weights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-language-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small Language Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontier-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontier Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-weight-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open-Weight Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-source-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open-Source License
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-license-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model License Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Family
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Card
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-textbook-generation-demands" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Textbook Generation Demands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Textbook Generation Demands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instruction-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instruction Following
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-form-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long-Form Writing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structured-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structured Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-structured-output-judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Structured Output Judge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Calling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Generation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reasoning-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reasoning Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multimodal-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multimodal Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Input
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1201,6 +1324,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1339,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1440,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1582,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1741,306 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-models-from-the-ground-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language Models From the Ground Up
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Language Models From the Ground Up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-ai-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative AI Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#large-language-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Large Language Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokenizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens-per-word" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokens per Word
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Window
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context Window">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-words-to-tokens-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Words to Tokens Estimator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter Count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-models-and-open-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small Models and Open Weights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Small Models and Open Weights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-language-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small Language Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontier-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontier Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-weight-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open-Weight Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-source-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open-Source License
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-license-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model License Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Family
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Card
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-textbook-generation-demands" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Textbook Generation Demands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Textbook Generation Demands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instruction-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instruction Following
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-form-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long-Form Writing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structured-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structured Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-structured-output-judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Structured Output Judge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Calling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Generation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reasoning-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reasoning Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multimodal-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multimodal Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Input
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1519,13 +2182,614 @@
 <li><a href="../01-intro-intelligent-textbooks/">Chapter 1: Prerequisites and the Intelligent Textbook</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Meet the Thing Being Measured</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Everything in this course is measured against a language model, so this chapter makes sure you know exactly what one is. By the end you will be able to define a small language model, estimate whether a document fits in its memory of a conversation, and name the five abilities that textbook generation demands. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Chapter 1 gave you the textbook and Chapter 2 gave you its data structure. This chapter turns to the machine that has to write it. It begins with the vocabulary of language models: what they are, how they read text in tokens, and what the numbers attached to them, such as parameter count and context window, actually mean. It then separates a small language model from a frontier model, explains what open weights and licenses allow, and ends with the capabilities that the benchmark workload exercises.</p>
+<p>Several of these ideas are quantitative, and they come back repeatedly. Parameter count reappears in Chapter 11 when it is converted into gigabytes, and the context window decides what a harness can load in Chapter 16. Learning them precisely here costs less than re-deriving them later.</p>
+<h2 id="language-models-from-the-ground-up">Language Models From the Ground Up<a class="headerlink" href="#language-models-from-the-ground-up" title="Permanent link">&para;</a></h2>
+<h3 id="generative-ai-model">Generative AI Model<a class="headerlink" href="#generative-ai-model" title="Permanent link">&para;</a></h3>
+<p>A <strong>generative AI model</strong> is a trained program that produces new content, such as text, images, code, or audio, in response to an input. It learned statistical patterns from a large body of training data, and it generates by applying those patterns to produce output that is plausible given the input. This course concerns only models that generate text.</p>
+<p>The contrast with a classifier makes the definition concrete. A <strong>classifier</strong> maps an input to one label from a fixed set. A generative model produces open-ended output, so there is no fixed list of possible answers. Consider the same email handled both ways.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Classifier</th>
+<th>Generative model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input</td>
+<td>The text of an email</td>
+<td>The text of an email and an instruction</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>One label: <code>spam</code> or <code>not spam</code></td>
+<td>Any text: a summary, a reply, a rewrite</td>
+</tr>
+<tr>
+<td>Possible outputs</td>
+<td>Two</td>
+<td>Effectively unlimited</td>
+</tr>
+<tr>
+<td>Failure mode</td>
+<td>Wrong label</td>
+<td>Fluent text that is wrong or off-task</td>
+</tr>
+</tbody>
+</table>
+<p>The last row is the important one for this course. A classifier's mistakes are bounded: there are only two labels to get wrong. A generative model's mistakes are not, which is why measuring one needs the careful design that Chapters 19 and 20 teach.</p>
+<h3 id="large-language-model">Large Language Model<a class="headerlink" href="#large-language-model" title="Permanent link">&para;</a></h3>
+<p>A <strong>large language model</strong>, abbreviated LLM, is a generative AI model trained on very large amounts of text to predict what text comes next. It is a neural network, a program built from many layers of simple numeric operations, whose behavior is determined by a very large set of learned numbers. The word "large" refers to the number of those numbers and the amount of text used in training.</p>
+<p>The core mechanism is one repeated step. Given the text so far, the model assigns a probability to every possible next piece of text. A piece is chosen, appended to the text, and the process repeats until a stop condition is met. The table shows one step of that process for the input "The capital of France is". The probabilities are illustrative.</p>
+<table>
+<thead>
+<tr>
+<th>Candidate next piece</th>
+<th>Illustrative probability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Paris</code></td>
+<td>0.92</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>0.02</td>
+</tr>
+<tr>
+<td><code>the</code></td>
+<td>0.01</td>
+</tr>
+<tr>
+<td><code>located</code></td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>all other candidates combined</td>
+<td>0.04</td>
+</tr>
+</tbody>
+</table>
+<p>If the model always takes the highest-probability piece, its output is repeatable; if it samples in proportion to the probabilities, the output varies from run to run. Chapter 15 covers the settings that control this. What matters here is the mechanism: a language model writes one piece at a time, and every piece depends on everything before it.</p>
+<p>One consequence is easy to miss. Everything a model knows was fixed when training ended, and during use it sees only the text it is given. It cannot look at your files, your machine, or yesterday's news unless that text is placed in its input. This is why the tools and harnesses of Chapters 16 and 17 exist: they are how a model gets to see, and act on, anything outside its prompt.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Everything Else Is Built on This Loop</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+A language model that writes a chapter, fills a JSON file, or calls a tool is doing the same thing at each step: choosing the next piece of text. That explains both its fluency and its failures, because a mistake early in the output is never revisited, only built upon.</p>
+</div>
+<h3 id="token">Token<a class="headerlink" href="#token" title="Permanent link">&para;</a></h3>
+<p>A <strong>token</strong> is the unit of text a language model reads and writes. A token is usually a whole common word, a piece of a longer or rarer word, a number, or a punctuation mark. Models do not see letters or whole sentences; they see a sequence of tokens, each identified by a number.</p>
+<p>Rare words split into several tokens, so a sentence's token count is not its word count. The split below is illustrative, because the exact pieces depend on the model.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Sentence:  Quantization shrinks models.
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Tokens:    Quant | ization |  shr | inks |  models | .
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Count:     6 tokens for 3 words
+</span></code></pre></div>
+<p>The same text can have a different token count under a different model, because each model has its own vocabulary of pieces. Counting tokens is therefore always relative to a particular model. That component is the next concept.</p>
+<h3 id="tokenizer">Tokenizer<a class="headerlink" href="#tokenizer" title="Permanent link">&para;</a></h3>
+<p>A <strong>tokenizer</strong> is the component that converts text into tokens before the model reads it, and converts tokens back into text afterwards. It uses a fixed vocabulary learned alongside the model, and it is not interchangeable between models: text tokenized for one model must be decoded with the same tokenizer. The tokenizer also decides how efficiently a model handles different kinds of text.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Count With the Model's Own Tokenizer</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+A words-to-tokens ratio is a good planning estimate, but the budget that matters is the one the model's own tokenizer reports. Run the real text through it before you commit to a context size; the gap grows for code, numbers, and non-English text.</p>
+</div>
+<h3 id="tokens-per-word">Tokens per Word<a class="headerlink" href="#tokens-per-word" title="Permanent link">&para;</a></h3>
+<p><strong>Tokens per word</strong> is the average number of tokens produced per word of ordinary English prose. A common planning figure is about 1.33 tokens per word, which is the same as saying about three-quarters of a word per token. This book's cost model uses 1.33, so a 55,000-word book is about 73,000 tokens.</p>
+<p>The figure is an estimate with a known direction of error. Text full of code, identifiers, numbers, or technical terms produces more tokens per word, so the 1.33 figure understates it. Use it for planning, and use the real tokenizer for decisions.</p>
+<h3 id="context-window">Context Window<a class="headerlink" href="#context-window" title="Permanent link">&para;</a></h3>
+<p>The <strong>context window</strong> is the maximum number of tokens a model can consider at one time, counting both the text it is given and the text it generates. When a conversation grows past the window, something has to be dropped or the request fails. The window is a hard limit, and it is measured in tokens, not words. In a multi-turn session it is also a running total: each new turn adds the earlier conversation, every file the model has read, and every result a tool returned, so a long agent session fills the window faster than a single prompt would suggest.</p>
+<p>A worked example shows the arithmetic. Suppose a model has an 8,000-token window and you give it a 5,000-word document to summarize and expect a reply of up to 2,000 tokens. The document is about 5,000 × 1.33 = 6,650 tokens. Add the reply's room and you need about 8,650 tokens, which is more than 8,000. The document fits by itself, and the task does not.</p>
+<p>The following table lists the context windows of five of this evaluation's candidate models, as their publishers report them. They span nearly an order of magnitude.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context window (tokens)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>devstral-small-2:24b</code></td>
+<td>384,000</td>
+</tr>
+<tr>
+<td><code>nemotron-3.5-lightning:30b</code></td>
+<td>1,000,000</td>
+</tr>
+<tr>
+<td><code>qwen3.8:27b</code></td>
+<td>256,000</td>
+</tr>
+<tr>
+<td><code>gemma4:26b</code></td>
+<td>128,000</td>
+</tr>
+<tr>
+<td><code>gpt-oss:120b</code></td>
+<td>128,000</td>
+</tr>
+</tbody>
+</table>
+<p>A larger window is not free. Chapter 11 shows that a longer context takes memory from the same pool as the model's weights, so the largest advertised window is often not the largest usable one. The exercise below drills the arithmetic you just saw.</p>
+<h4 id="diagram-words-to-tokens-estimator">Diagram: Words to Tokens Estimator<a class="headerlink" href="#diagram-words-to-tokens-estimator" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Words to Tokens Estimator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> words-to-tokens-estimator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/Digital-Transformation-with-AI-Spring-2026/tree/main/docs/sims/tokenization-process<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate the estimated token count of a document from its word count and decide whether the document and a 2,000-token reply fit in a given context window, correct on at least 5 of 6 items.</p>
+<p><strong>Prerequisites:</strong> token, tokens per word, context window (all defined in the sections "Token", "Tokens per Word", and "Context Window" above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each item the learner enters an estimated token count and then chooses "Fits" or "Does not fit" before the sim reveals the answer. An item is correct when the entry is within 1% of the value in the Estimated tokens column and the choice equals the Answer column. Mastery is 5 of 6 correct. Reading the reference formula is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A token is a word, so the token count equals the word count. (2) The context window holds only the document, and the reply does not count against it. (3) A document that fits by itself also fits with the reply. (4) A model with a larger window can always use all of it.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level calculation needs a procedure carried to a decision, so the learner converts words to tokens and then compares to a limit. Items are ordered so that item 2 fits before the reply is added and does not fit after, which makes the second misconception visible.</p>
+<p><strong>Content:</strong></p>
+<p>The formula shown to the learner is: estimated tokens = words × 1.33. The reserved reply is always 2,000 tokens. An item fits when estimated tokens + 2,000 is less than or equal to the window. The sim labels all numbers "illustrative".</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Document (words)</th>
+<th>Window (tokens)</th>
+<th>Estimated tokens</th>
+<th>Estimated tokens + 2,000</th>
+<th>Answer</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1,000</td>
+<td>8,000</td>
+<td>1,330</td>
+<td>3,330</td>
+<td>Fits</td>
+<td>3,330 is below 8,000, so there is room to spare.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5,000</td>
+<td>8,000</td>
+<td>6,650</td>
+<td>8,650</td>
+<td>Does not fit</td>
+<td>The document alone is 6,650 tokens, but with the 2,000-token reply the total is 8,650, which is over 8,000.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4,000</td>
+<td>8,000</td>
+<td>5,320</td>
+<td>7,320</td>
+<td>Fits</td>
+<td>7,320 is below 8,000, so the reply also fits.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>55,000</td>
+<td>128,000</td>
+<td>73,150</td>
+<td>75,150</td>
+<td>Fits</td>
+<td>75,150 is below 128,000, so a whole book of this size fits.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>95,000</td>
+<td>128,000</td>
+<td>126,350</td>
+<td>128,350</td>
+<td>Does not fit</td>
+<td>The document alone is under the window, but 128,350 is over 128,000 by 350 tokens.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>95,000</td>
+<td>256,000</td>
+<td>126,350</td>
+<td>128,350</td>
+<td>Fits</td>
+<td>The same document fits easily in a 256,000-token window.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The tokens-per-word figure of 1.33 and the 55,000-word book size are the values used in this book's cost model (cost analysis page). The documents, windows, and reply size are illustrative and invented for this exercise.</p>
+<p><strong>Rules:</strong> Estimated tokens = words × 1.33, so 1,000 words is 1,330 tokens. The word count entry is fixed per item and not adjustable. The learner's token entry is a whole number from 0 to 300,000 with step 1, and the default is empty. The entry is correct when it is within 1% of the Estimated tokens value. Fit rule: Estimated tokens + 2,000 &lt;= window.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees item 1: a document's word count and a window size.</li>
+<li>The learner enters an estimated token count and chooses "Fits" or "Does not fit", then confirms.</li>
+<li>The sim reveals the model value, the total with the reply, the correct choice, and the Why text, and marks the item correct or incorrect.</li>
+<li>The learner repeats for items 2 to 6. After item 6 the sim shows the score and the misconception behind each missed item.</li>
+</ol>
+<p><strong>Feedback:</strong> Six items, fixed order, one confirmed answer each, and the answer is final. An item is correct only when both the entry and the choice are correct. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the model value, the correct choice, and the Why text. The final score reads "n of 6 correct".</p>
+<p><strong>Starting State:</strong> Item 1 is shown with an empty entry and no choice, and the question on screen is "How many tokens is this, and does it fit?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that tokens per word is about 1.33, that the context window counts both the text given and the text generated, that a 5,000-word document in an 8,000-token window with a 2,000-token reply needs about 8,650 tokens and does not fit, and that a 55,000-word book is about 73,000 tokens.</p>
+</details>
+<h3 id="parameter-count">Parameter Count<a class="headerlink" href="#parameter-count" title="Permanent link">&para;</a></h3>
+<p>A <strong>parameter</strong> is one of the learned numbers inside a model, and the <strong>parameter count</strong> is how many there are. It is the usual measure of a model's size. A model described as 27B has 27 billion parameters, which is 27,000,000,000 separate numbers that were adjusted during training and are fixed at the time you use it.</p>
+<p>Parameter count is the main driver of two practical quantities. The first is memory: every parameter must be held in memory to run the model, so more parameters means more memory, a conversion Chapter 11 performs exactly. The second is the work per token: a model with more parameters generally does more arithmetic for each token it produces and so, other things equal, generates more slowly.</p>
+<p>The five models below show the range this evaluation covers. Parameter counts are as the publishers report them.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters</th>
+<th>Relative to the smallest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>devstral-small-2:24b</code></td>
+<td>24 billion</td>
+<td>1.0 times</td>
+</tr>
+<tr>
+<td><code>qwen3.8:27b</code></td>
+<td>27 billion</td>
+<td>1.1 times</td>
+</tr>
+<tr>
+<td><code>gemma4:31b</code></td>
+<td>30.7 billion</td>
+<td>1.3 times</td>
+</tr>
+<tr>
+<td><code>gpt-oss:120b</code></td>
+<td>117 billion</td>
+<td>4.9 times</td>
+</tr>
+<tr>
+<td><code>mistral-medium-3.5:128b</code></td>
+<td>128 billion</td>
+<td>5.3 times</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Size Is a Cost, Not a Score</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Parameter count tells you what a model costs to hold and run. It does not tell you how well it writes or follows a skill, and a smaller model can outperform a larger one on a given task. Treat the number as an input to the memory calculation and let a measurement decide quality.</p>
+</div>
+<p>Some models report two counts, a total and a smaller number that is active for each token. The distinction between dense and mixture-of-experts models is part of Chapter 11, and it explains why <code>gpt-oss:120b</code> in the table can run fast despite its size.</p>
+<h3 id="inference">Inference<a class="headerlink" href="#inference" title="Permanent link">&para;</a></h3>
+<p><strong>Inference</strong> is the act of running a trained model to produce output. It is distinct from <strong>training</strong>, which is the process that created the model's parameters from data. A model is trained once, at great expense, and then used for inference many times. This course evaluates inference only; training and fine-tuning are out of scope.</p>
+<p>Inference happens in two phases. First the model reads the whole prompt, which can be processed in parallel. Then it generates the reply one token at a time, and each new token requires another pass through the network. Output length therefore dominates the time a long generation takes. As an illustration, generating 1,000 tokens at 20 tokens per second takes 50 seconds, and a 10,000-token chapter takes 500 seconds at the same rate. The rate here is invented to show the arithmetic; Chapter 15 measures real ones.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Training</th>
+<th>Inference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What it does</td>
+<td>Creates the parameters from data</td>
+<td>Uses fixed parameters to produce output</td>
+</tr>
+<tr>
+<td>How often</td>
+<td>Once per model version</td>
+<td>Every time the model is used</td>
+</tr>
+<tr>
+<td>Hardware demand</td>
+<td>Very large clusters</td>
+<td>One machine can be enough</td>
+</tr>
+<tr>
+<td>In this course</td>
+<td>Out of scope</td>
+<td>The whole subject</td>
+</tr>
+</tbody>
+</table>
+<h2 id="small-models-and-open-weights">Small Models and Open Weights<a class="headerlink" href="#small-models-and-open-weights" title="Permanent link">&para;</a></h2>
+<h3 id="small-language-model">Small Language Model<a class="headerlink" href="#small-language-model" title="Permanent link">&para;</a></h3>
+<p>A <strong>small language model</strong>, abbreviated SLM, is a language model small enough to run on a single machine you control. There is no universal parameter threshold, and the boundary moves as hardware improves. This course uses a working definition tied to the machine under test: a model that fits in the memory of one DGX system and can be served from it.</p>
+<p>Under that definition the candidates in this evaluation range from 24 billion to 128 billion parameters, large by the standard of older "small" models and small next to the largest frontier systems. What makes a model an SLM in this course is not an absolute size but a circumstance: you can download it, run it on hardware you own, and keep every token on that machine.</p>
+<p>The working definition has two parts, and a model can pass one and fail the other. Consider two candidates from this evaluation's first round on one DGX unit with 128 GB of memory. Each can be downloaded and loaded, so each meets the first test of being open-weight and local.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Download</th>
+<th>Result on one unit</th>
+<th>Usable as an SLM here?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen3.8:27b</code></td>
+<td>17 GB</td>
+<td>Completed the first benchmark stage</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>mistral-medium-3.5:128b</code></td>
+<td>80 GB</td>
+<td>Loaded and ran at 3 tokens per second; no context of 64,000 tokens or more fit</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>The second model is a language model you can own, and on this machine it is not a small one in the sense that matters. The definition is relative to the hardware, so the answer for the same model could change on a larger system.</p>
+<h3 id="frontier-model">Frontier Model<a class="headerlink" href="#frontier-model" title="Permanent link">&para;</a></h3>
+<p>A <strong>frontier model</strong> is one of the most capable models available at a given time, typically operated by a leading AI lab and offered as a cloud service. Its weights are usually not released and its size is often not disclosed. "Frontier" is a moving target: a model leaves the frontier when a newer one surpasses it.</p>
+<p>The comparison below is the one this course returns to throughout. It is a summary of definitions already given, not a verdict on quality.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Small language model</th>
+<th>Frontier model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Where it runs</td>
+<td>On hardware you own</td>
+<td>On the provider's servers</td>
+</tr>
+<tr>
+<td>Weights available</td>
+<td>Yes, downloadable</td>
+<td>Typically no</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Known</td>
+<td>Often undisclosed</td>
+</tr>
+<tr>
+<td>Typical access</td>
+<td>Local endpoint</td>
+<td>Cloud API or subscription</td>
+</tr>
+<tr>
+<td>Who controls the version</td>
+<td>You</td>
+<td>The provider</td>
+</tr>
+</tbody>
+</table>
+<p>Chapter 4 treats the practical consequences of each row, including the capability gap that the table does not state.</p>
+<h3 id="open-weight-model">Open-Weight Model<a class="headerlink" href="#open-weight-model" title="Permanent link">&para;</a></h3>
+<p>An <strong>open-weight model</strong> is a model whose trained parameters are published for anyone to download and run. Having the weights lets you run the model locally and inspect or fine-tune it. It does not necessarily mean that the training data, the training code, or the right to do anything you like with the weights are also public.</p>
+<p>A typical open-weight release is a folder of files rather than a service. It holds the weights, usually as one or more large files; the tokenizer files; a small configuration file that describes the model's shape; and a model card with the license, which a later section covers. The weights dominate the size, so a 27-billion-parameter model is a download of tens of gigabytes.</p>
+<p>The term is often confused with "open source", so the distinction deserves its own comparison.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Closed model</th>
+<th>Open-weight model</th>
+<th>Open-source model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weights downloadable</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Training data and code published</td>
+<td>No</td>
+<td>Usually not</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Runs on your hardware</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Use is governed by</td>
+<td>Provider terms of service</td>
+<td>A model license</td>
+<td>An open-source license</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Open Weights Are Not a Blank Check</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Being able to download a model does not mean you may use it for any purpose. Each model ships with a license that can limit commercial use, and a model's own page sometimes states none at all. Read the license before you build a workflow on a model, and record what it says.</p>
+</div>
+<h3 id="open-source-license">Open-Source License<a class="headerlink" href="#open-source-license" title="Permanent link">&para;</a></h3>
+<p>An <strong>open-source license</strong> is a license that grants anyone the right to use, modify, and redistribute software, subject to stated conditions. Permissive licenses, such as Apache 2.0 and MIT, impose few conditions; others require that changes be shared. The defining feature is that the rights granted are broad and the conditions are published and uniform.</p>
+<h3 id="model-license-terms">Model License Terms<a class="headerlink" href="#model-license-terms" title="Permanent link">&para;</a></h3>
+<p><strong>Model license terms</strong> are the conditions attached to a specific model's weights. They may be a standard open-source license, or they may be a custom or modified one that restricts use. One candidate in this evaluation is released under a modified MIT license that allows commercial use but carves out an exception for companies with large revenue. Another candidate's page does not state a license at all.</p>
+<p>Three questions apply to every model. Is commercial use allowed? Are there size or revenue exceptions? And is the license actually stated by the publisher or only reported by a third party? In this evaluation, a license that a publisher's page reports without independent verification is recorded as "reported", not as confirmed.</p>
+<h3 id="model-family">Model Family<a class="headerlink" href="#model-family" title="Permanent link">&para;</a></h3>
+<p>A <strong>model family</strong> is a group of related models from one publisher that share a design and training lineage and differ in size or specialization. The two <code>gemma4</code> models in this evaluation, <code>gemma4:26b</code> and <code>gemma4:31b</code>, belong to one family. Families matter because the behavior you measured in one member is a reasonable, though not certain, guide to the others. Chapter 14 surveys the families behind this evaluation's candidates.</p>
+<h3 id="model-card">Model Card<a class="headerlink" href="#model-card" title="Permanent link">&para;</a></h3>
+<p>A <strong>model card</strong> is the document a publisher releases with a model, describing what it is for, how it was trained, how it performed on benchmarks, and what its limits and license are. It is the primary source for the facts in this section, and also the source of claims the publisher makes about its own model.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Read the Card Like a Marketing Page With Facts In It</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+A model card is the fastest way to learn size, window, and license, so read those fields first and trust them. Treat the benchmark scores and strength claims as the publisher's own, to be tested, and never carry them into your report as measured results.</p>
+</div>
+<h2 id="what-textbook-generation-demands">What Textbook Generation Demands<a class="headerlink" href="#what-textbook-generation-demands" title="Permanent link">&para;</a></h2>
+<p>The benchmark workload exercises a short list of abilities. Each is defined here, because Chapters 12 through 22 ask a model to demonstrate them and score the result.</p>
+<h3 id="instruction-following">Instruction Following<a class="headerlink" href="#instruction-following" title="Permanent link">&para;</a></h3>
+<p><strong>Instruction following</strong> is a model's ability to do what a prompt or a document of instructions says, including the constraints, in the order given. A skill file that runs past a thousand lines is a long instruction, and a model that drifts from it produces a book that violates the rules it was handed.</p>
+<h3 id="long-form-writing">Long-Form Writing<a class="headerlink" href="#long-form-writing" title="Permanent link">&para;</a></h3>
+<p><strong>Long-form writing</strong> is sustained, coherent prose across many paragraphs, with consistent terminology and a stable argument. A chapter of several thousand words tests whether a model stays on topic and avoids repeating itself, which is a different skill from answering a question.</p>
+<h3 id="structured-output">Structured Output<a class="headerlink" href="#structured-output" title="Permanent link">&para;</a></h3>
+<p><strong>Structured output</strong> is output that conforms to a required format, such as a JSON object with named fields of given types. A downstream program reads it, so a single missing field or stray character can break the whole step. A learning graph in this workload must be a valid JSON file and a CSV file that agree, with no duplicate labels.</p>
+<p>A short example shows what "valid" means. The required format is a JSON object with an integer <code>id</code>, a string <code>label</code>, a string <code>group</code>, and an array of integers <code>depends_on</code>. This reply is valid:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token"</span><span class="p">,</span><span class="w"> </span><span class="nt">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SLM"</span><span class="p">,</span><span class="w"> </span><span class="nt">"depends_on"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">40</span><span class="p">]}</span>
+</span></code></pre></div>
+<p>This one is not, because <code>id</code> is a string instead of an integer:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w"> </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token"</span><span class="p">,</span><span class="w"> </span><span class="nt">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SLM"</span><span class="p">,</span><span class="w"> </span><span class="nt">"depends_on"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">40</span><span class="p">]}</span>
+</span></code></pre></div>
+<p>Both look right at a glance, which is the problem. Judging output against a schema takes a precise eye, so the exercise below trains it.</p>
+<h4 id="diagram-structured-output-judge">Diagram: Structured Output Judge<a class="headerlink" href="#diagram-structured-output-judge" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Structured Output Judge</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> structured-output-judge<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Evaluate<br/>
+<strong>Bloom Verb:</strong> judge<br/>
+<strong>Learning Objective:</strong> The learner will judge whether each of 6 model replies is valid JSON that matches a given required format, naming the defect in each invalid reply, with at least 5 of 6 judged correctly.</p>
+<p><strong>Prerequisites:</strong> structured output, JSON object, field, integer, string, array (the format is defined in the section "Structured Output" above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each reply the learner chooses "Valid" or "Invalid" and, when "Invalid", chooses the defect from the four defect types listed in Content. A judgment is correct when the choice equals the Answer column and, for invalid replies, the defect equals the Defect column. Mastery is 5 of 6 correct. Reading the required format is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A reply that looks right is valid. (2) A reply containing valid JSON inside explanatory text is valid. (3) A trailing comma is harmless. (4) An empty array is a missing field.</p>
+<p><strong>Instructional Rationale:</strong> Evaluate-level judging needs criteria applied to evidence, so the required format is fixed and visible and the replies differ from it in one precise way each. Requiring the learner to name the defect shows whether they can justify the judgment, not only guess it.</p>
+<p><strong>Content:</strong></p>
+<p>The required format, shown on screen for every reply: a JSON object with exactly these four fields. <code>id</code> is an integer. <code>label</code> is a string. <code>group</code> is a string. <code>depends_on</code> is an array of integers, and it may be empty. The only text in the reply must be the JSON object itself. The four defect types the learner can choose from are: "Wrong type", "Missing field", "Extra text around the JSON", and "Invalid JSON syntax".</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Reply shown to the learner</th>
+<th>Answer</th>
+<th>Defect</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>{"id": 7, "label": "Token", "group": "SLM", "depends_on": [40]}</code></td>
+<td>Valid</td>
+<td>none</td>
+<td>All four fields are present with the right types and there is no other text.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>{"id": "7", "label": "Token", "group": "SLM", "depends_on": [40]}</code></td>
+<td>Invalid</td>
+<td>Wrong type</td>
+<td><code>id</code> is the string "7", but the format requires an integer.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>{"id": 7, "label": "Token", "group": "SLM"}</code></td>
+<td>Invalid</td>
+<td>Missing field</td>
+<td><code>depends_on</code> is required and is absent.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>Here is the record: {"id": 7, "label": "Token", "group": "SLM", "depends_on": [40]}</code></td>
+<td>Invalid</td>
+<td>Extra text around the JSON</td>
+<td>The JSON is correct, but the sentence before it means a program cannot parse the reply as JSON.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>{"id": 7, "label": "Token", "group": "SLM", "depends_on": [40],}</code></td>
+<td>Invalid</td>
+<td>Invalid JSON syntax</td>
+<td>JSON does not allow a trailing comma after the last field.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>{"id": 7, "label": "Token", "group": "SLM", "depends_on": []}</code></td>
+<td>Valid</td>
+<td>none</td>
+<td>An empty array is valid; it means the concept has no prerequisites.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The required format and the six replies are synthetic, written for this exercise, and the sim labels them "synthetic example". The meaning of valid follows the chapter section "Structured Output" and the JSON syntax rules.</p>
+<p><strong>Rules:</strong> Replies are shown in the fixed order 1 to 6, with the required format visible throughout. A reply is Invalid if any field is missing, any field has the wrong type, any text appears outside the JSON object, or the JSON syntax is invalid. Each reply allows one Valid or Invalid choice and, when Invalid, one defect choice, and both are final.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads the required format and reply 1.</li>
+<li>The learner chooses "Valid" or "Invalid". If "Invalid", the learner chooses one of the four defect types, then confirms.</li>
+<li>The sim shows the correct judgment, the defect if any, and the Why text, and marks the reply correct or incorrect.</li>
+<li>The learner repeats for replies 2 to 6. After reply 6 the sim shows the score and the misconception behind each missed reply.</li>
+</ol>
+<p><strong>Feedback:</strong> Six replies, fixed order, one confirmed judgment each, and the judgment is final. A reply is correct only when both the validity choice and, where needed, the defect choice are correct. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct judgment, the defect, and the Why text. The final score reads "n of 6 correct".</p>
+<p><strong>Starting State:</strong> The required format and reply 1 are shown with no choice made, and the question on screen is "Would a program accept this reply?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states the required format as an integer <code>id</code>, a string <code>label</code>, a string <code>group</code>, and an array of integers <code>depends_on</code>, and that <code>{"id": "7", ...}</code> is invalid because <code>id</code> is a string.</p>
+</details>
+<h3 id="tool-calling">Tool Calling<a class="headerlink" href="#tool-calling" title="Permanent link">&para;</a></h3>
+<p><strong>Tool calling</strong> is a model's ability to ask a program to do something on its behalf by emitting a structured request, and then to use the result. The model does not run commands itself. It writes a request naming a tool and its arguments, a surrounding program called the harness executes it, and the result is returned to the model as new text. Tool calling is what turns a text generator into something that can read files and run scripts.</p>
+<p>Here is one round of that exchange, with the user's question and a tool for running shell commands. The tool name and fields are illustrative.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Who</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>User</td>
+<td>Asks "How many lines are in <code>notes.txt</code>?"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Model</td>
+<td>Emits a tool call: <code>{"name": "run_shell", "arguments": {"command": "wc -l notes.txt"}}</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Harness</td>
+<td>Runs <code>wc -l notes.txt</code> and returns the output <code>3 notes.txt</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Model</td>
+<td>Reads the result and answers "It has 3 lines."</td>
+</tr>
+</tbody>
+</table>
+<p>Tool calling depends directly on structured output, because step 2 must be valid JSON for the harness to execute it. A malformed call is one of the failure types Chapter 22 teaches you to diagnose, and a call that the model writes as ordinary prose instead of as a structured request is another.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Model Asks, the Harness Acts</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+A language model never touches your machine. It only produces text, and one kind of text is a request that a separate program chooses to carry out. Keeping that boundary in mind explains both what agents can do and where the safety limits sit.</p>
+</div>
+<h3 id="code-generation">Code Generation<a class="headerlink" href="#code-generation" title="Permanent link">&para;</a></h3>
+<p><strong>Code generation</strong> is a model's ability to write programs, scripts, and configuration in a programming language. The benchmark uses it in two places: shell and Python scripts that an agent writes to do its work, and the JavaScript for MicroSims. Code has a property prose lacks, which is that it can be run, so a model's code can be checked by executing it.</p>
+<h3 id="reasoning-mode">Reasoning Mode<a class="headerlink" href="#reasoning-mode" title="Permanent link">&para;</a></h3>
+<p><strong>Reasoning mode</strong> is a setting or behavior in which a model produces intermediate reasoning, extra tokens that work through a problem, before it gives its final answer. It can improve results on multi-step problems. It also uses more tokens, which costs time and fills the context window, so it is a trade-off to measure, not to assume.</p>
+<h3 id="multimodal-model">Multimodal Model<a class="headerlink" href="#multimodal-model" title="Permanent link">&para;</a></h3>
+<p>A <strong>multimodal model</strong> is a model that accepts or produces more than one kind of content, such as text together with images. Most language models in this course are text-only for generation. The multimodal capability exists on some candidates, and the benchmark does not use it.</p>
+<h3 id="image-input">Image Input<a class="headerlink" href="#image-input" title="Permanent link">&para;</a></h3>
+<p><strong>Image input</strong> is the ability of a multimodal model to accept an image as part of its prompt and answer questions about it. It is a distinct capability from generating images, which is out of scope for this course.</p>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>You started with a definition of a generative model and ended with the abilities a benchmark exercises. A language model predicts the next token, one at a time, using parameters it learned in training, and it works within a context window measured in tokens. Inference runs it. A small language model is one you can run on your own hardware, in contrast with a frontier model, and an open-weight model's license decides what you may do with it. Instruction following, long-form writing, structured output, tool calling, and code generation are what textbook generation asks of it.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Vocabulary Locked In</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now convert words to tokens, test whether a document fits a context window, tell an open-weight model from an open-source one, and name the five abilities this benchmark scores. Chapter 4 puts those terms to work in the case for and against running them locally.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

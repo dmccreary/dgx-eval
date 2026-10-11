@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="Bounding what an agent harness can reach: running it in a Docker container with a non-root user and read-only skills, understanding the network boundary, tracing what data leaves the machine, and guarding against a frozen host.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>18. Containing the Harness: Containers and Network Boundaries - DGX Evaluation for Textbook Generation</title>
+        <title>Containing the Harness: Containers and Network Boundaries - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              18. Containing the Harness: Containers and Network Boundaries
+              Containing the Harness: Containers and Network Boundaries
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1055,6 +878,216 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Container
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Container">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-group-membership" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Group Membership
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-container-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIDIA Container Toolkit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harness-container-container-sandbox-and-harness-on-dgx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harness Container, Container Sandbox, and Harness on DGX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-root-container-user-and-read-only-skill-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Root Container User and Read-Only Skill Mount
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholder-credential-and-telemetry-disabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      Placeholder Credential and Telemetry Disabled
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-network-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Network Boundary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Network Boundary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Boundary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Boundary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-testing-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Testing Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-egress-trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Egress Trace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supervision-data-exposure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervision Data Exposure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-network-mode-and-the-network-sandbox-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host Network Mode and the Network Sandbox Gap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packet-capture-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packet Capture Verification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Packet Capture Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-egress-trace-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Egress Trace Classifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-machine-stops" class="md-nav__link">
+    <span class="md-ellipsis">
+      When the Machine Stops
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When the Machine Stops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-freeze" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Freeze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-watchdog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Watchdog
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1201,6 +1234,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1249,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1350,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1492,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1651,216 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Container
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Container">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-group-membership" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Group Membership
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-container-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIDIA Container Toolkit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harness-container-container-sandbox-and-harness-on-dgx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harness Container, Container Sandbox, and Harness on DGX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-root-container-user-and-read-only-skill-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Root Container User and Read-Only Skill Mount
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholder-credential-and-telemetry-disabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      Placeholder Credential and Telemetry Disabled
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-network-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Network Boundary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Network Boundary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Boundary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Boundary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-testing-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Testing Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-egress-trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Egress Trace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supervision-data-exposure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervision Data Exposure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-network-mode-and-the-network-sandbox-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host Network Mode and the Network Sandbox Gap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packet-capture-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packet Capture Verification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Packet Capture Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-egress-trace-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Egress Trace Classifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-machine-stops" class="md-nav__link">
+    <span class="md-ellipsis">
+      When the Machine Stops
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When the Machine Stops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-freeze" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Freeze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-watchdog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Watchdog
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1508,13 +1991,318 @@
 <li><a href="../17-agent-skills-and-harness/">Chapter 17: Agent Skills and Connecting a Harness to a Local Model</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Let the Agent Work, and Fence the Yard</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+An agent that can run any command is exactly as useful as it is dangerous, and the container is how you keep the first and limit the second. By the end of this chapter you will know what a contained run can and cannot touch, and how to check where its data goes. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Chapter 17 ended with a harness that runs a skill, and with a flag that lets the agent run any command without asking. That is only reasonable inside a boundary. This chapter builds the boundary and, just as important, states honestly where it has gaps.</p>
+<p>There are two boundaries to keep apart. The first is the <strong>filesystem boundary</strong>: what files the agent can read and change. A container handles it well. The second is the <strong>network boundary</strong>: where the agent's traffic can go. A container handles it only if it is configured to, and the arrangement this evaluation used did not. The chapter closes with a third concern that has nothing to do with security, which is a run that exhausts the machine's memory and freezes it.</p>
+<h2 id="the-container">The Container<a class="headerlink" href="#the-container" title="Permanent link">&para;</a></h2>
+<h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p><strong>Docker</strong> is a tool that runs programs in containers. A container is an isolated process with its own view of the filesystem, built from an <strong>image</strong>, a packaged set of files and settings. It shares the host's operating system kernel and is not a full virtual machine, so it starts in a second and costs little. The isolation is real and it is partial, and what it covers depends on how the container is started.</p>
+<p>For this evaluation Docker does three jobs. It gives every run the same software, because the image is built once with pinned versions. It limits what the agent can write to, by mounting only specified folders. And it can be killed cleanly, with every process the agent started, by killing the container.</p>
+<h3 id="docker-group-membership">Docker Group Membership<a class="headerlink" href="#docker-group-membership" title="Permanent link">&para;</a></h3>
+<p><strong>Docker group membership</strong> is the permission that lets a user run <code>docker</code> commands on a Linux machine. Because the Docker service runs as <code>root</code>, a member of the group can start a container that mounts any directory of the host, which makes membership equivalent to administrator access.</p>
+<p>That is the reason the Administrator, and not the evaluator, decided it. The benchmark account was at first in no group but its own, and every Docker command failed with <code>permission denied</code>. After the Administrator added the account to the <code>docker</code> group, new logins could run containers.</p>
+<h3 id="nvidia-container-toolkit">NVIDIA Container Toolkit<a class="headerlink" href="#nvidia-container-toolkit" title="Permanent link">&para;</a></h3>
+<p>The <strong>NVIDIA Container Toolkit</strong> is the software that lets a container use the host's GPU. The harness container in this evaluation does not need the GPU, because the model runs in the server on the host and the container only calls it over the network. The toolkit was present on the units, and it matters for a reader who wants to run the model server itself in a container, as vLLM usually is.</p>
+<h3 id="harness-container-container-sandbox-and-harness-on-dgx">Harness Container, Container Sandbox, and Harness on DGX<a class="headerlink" href="#harness-container-container-sandbox-and-harness-on-dgx" title="Permanent link">&para;</a></h3>
+<p>The <strong>harness container</strong> is the container that holds the agent. The <strong>container sandbox</strong> is the boundary it creates: inside it the agent may run any command, and the only paths it can write to are the ones deliberately mounted in. <strong>Harness on DGX</strong> is the arrangement in which that container runs on the DGX itself, beside the model server, so that the harness and the model talk over the machine's own loopback interface.</p>
+<p>The excerpt from this project's runner shows the boundary as code. Before the lines are read, three Docker options need defining. <code>-v host:container</code> mounts a host folder into the container, and a <code>:ro</code> suffix makes it read-only. <code>-w</code> sets the working directory. <code>-e</code> sets an environment variable inside.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-i<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>--name<span class="w"> </span><span class="s2">"harness-</span><span class="nv">$label</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>-v<span class="w"> </span><span class="s2">"</span><span class="nv">$run</span><span class="s2">"</span>:/work<span class="w"> </span>-w<span class="w"> </span>/work<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-v<span class="w"> </span><span class="s2">"</span><span class="nv">$state</span><span class="s2">"</span>:/home/agent/.claude<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-v<span class="w"> </span><span class="s2">"</span><span class="nv">$skills_repo</span><span class="s2">/skills"</span>:/home/agent/.claude/skills:ro<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">ANTHROPIC_BASE_URL</span><span class="o">=</span><span class="s2">"http://127.0.0.1:</span><span class="nv">$port</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">ANTHROPIC_AUTH_TOKEN</span><span class="o">=</span>ollama<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="s2">"</span><span class="nv">$image</span><span class="s2">"</span><span class="w"> </span>claude<span class="w"> </span>-p<span class="w"> </span>...
+</span></code></pre></div>
+<p>Reading the excerpt as a list of what the agent can and cannot reach gives the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Mount or setting</th>
+<th>What it grants</th>
+<th>What it prevents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-v "$run":/work</code></td>
+<td>Read and write in this run's directory</td>
+<td>Touching any other directory on the host</td>
+</tr>
+<tr>
+<td><code>-v "$state":/home/agent/.claude</code></td>
+<td>Write the harness's own transcript</td>
+<td>Nothing else; it is a separate folder</td>
+</tr>
+<tr>
+<td><code>...skills:ro</code></td>
+<td>Read the skills</td>
+<td>Changing a skill</td>
+</tr>
+<tr>
+<td>Non-root user in the image</td>
+<td>Ordinary file permissions</td>
+<td>Acting as root inside the container</td>
+</tr>
+<tr>
+<td><code>--rm</code></td>
+<td>The container is deleted when it ends</td>
+<td>Leaving a stopped container behind</td>
+</tr>
+</tbody>
+</table>
+<h3 id="non-root-container-user-and-read-only-skill-mount">Non-Root Container User and Read-Only Skill Mount<a class="headerlink" href="#non-root-container-user-and-read-only-skill-mount" title="Permanent link">&para;</a></h3>
+<p>A <strong>non-root container user</strong> is a user with ordinary permissions inside the container, created in the image with the same numeric user and group identifiers as the account that started the run. Two things follow. Files the agent writes into the run directory belong to the evaluator and not to <code>root</code>, so they can be read and deleted without special rights. And the agent cannot do the things only root can do, even inside its own container.</p>
+<p>A <strong>read-only skill mount</strong> is the <code>:ro</code> on the skills folder. The agent can follow a skill and cannot alter it. Chapter 17 gave the reason: a model that could edit the skill would be measuring itself against a different test.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Make the Container's User Match Yours</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Build the image with your own user and group identifiers, using the <code>UID</code> and <code>GID</code> build arguments. Otherwise every file the agent writes is owned by a different user, and you will need elevated rights to clean up a run.</p>
+</div>
+<h3 id="placeholder-credential-and-telemetry-disabled">Placeholder Credential and Telemetry Disabled<a class="headerlink" href="#placeholder-credential-and-telemetry-disabled" title="Permanent link">&para;</a></h3>
+<p>A <strong>placeholder credential</strong> is a fake value in the place a real one would go. The harness insists on having a credential, and the local server does not check one, so the evaluation gave it a word that is not a secret. If the harness ever tried to reach the vendor's service, the request would fail for want of a real credential.</p>
+<p><strong>Telemetry disabled</strong> means turning off the harness's optional reporting and update checks, with the settings <code>CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1</code> and <code>DISABLE_AUTOUPDATER=1</code>. They remove two sources of network traffic that a local-only evaluation does not want. They are configuration, not a guarantee, which is what the next section addresses.</p>
+<h2 id="the-network-boundary">The Network Boundary<a class="headerlink" href="#the-network-boundary" title="Permanent link">&para;</a></h2>
+<h3 id="network-boundary">Network Boundary<a class="headerlink" href="#network-boundary" title="Permanent link">&para;</a></h3>
+<p>A <strong>network boundary</strong> is the line between traffic that stays on a machine, or on a network you control, and traffic that leaves it. The reason to run a model locally is to control that line, so the line has to be drawn and checked, not assumed.</p>
+<p>Chapter 4 listed what data crosses it in each arrangement, and the testing-architecture diagram of this evaluation shows its own. The sim below is the existing diagram, embedded: step through it to see which machine does each job and what each outside party can see.</p>
+<h4 id="diagram-testing-architecture">Diagram: Testing Architecture<a class="headerlink" href="#diagram-testing-architecture" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/testing-architecture/main.html" width="100%" height="714px" scrolling="no"></iframe>
+
+<p><a class="md-button" href="../../sims/testing-architecture/main.html">Run the Testing Architecture MicroSim fullscreen</a></p>
+<details>
+<summary>Testing Architecture (reused MicroSim)</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> testing-architecture<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Reused<br/>
+<strong>Source:</strong> sims/testing-architecture/index.md in this book<br/>
+<strong>Source Repo:</strong> https://github.com/dmccreary/dgx-eval/tree/main/docs/sims/testing-architecture<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> explain<br/>
+<strong>Learning Objective:</strong> The learner will explain which machine performs each role in this evaluation and which outside parties can see which data.</p>
+<p>Reused from this book's own MicroSims, which already exists locally, so no new specification is needed.</p>
+</details>
+<h3 id="data-egress-trace">Data Egress Trace<a class="headerlink" href="#data-egress-trace" title="Permanent link">&para;</a></h3>
+<p>A <strong>data egress trace</strong> is an accounting of every place a system's data goes when it leaves. It is built component by component, and for each one it records the destination, what is sent, and how often. The result is a table that can be checked against what actually happened.</p>
+<p>The trace for this evaluation, for the generation loop itself, is short, and it is worth reading as a model of the form.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Sends to</th>
+<th>What</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Harness</td>
+<td>The model server on the same machine</td>
+<td>Prompts and tool results</td>
+<td>Every turn, over loopback</td>
+</tr>
+<tr>
+<td>Model server</td>
+<td>A model registry</td>
+<td>A request for a file</td>
+<td>Once, at download</td>
+</tr>
+<tr>
+<td>Container build</td>
+<td>A package index and the vendor's installer host</td>
+<td>Requests for packages</td>
+<td>Once, at build</td>
+</tr>
+<tr>
+<td>Harness optional features</td>
+<td>The vendor's service</td>
+<td>Update checks and reports</td>
+<td>Disabled by configuration</td>
+</tr>
+<tr>
+<td>Laptop and DGX</td>
+<td>Each other, over the tailnet</td>
+<td>SSH sessions and fetched output</td>
+<td>Throughout, encrypted</td>
+</tr>
+<tr>
+<td>Orchestrator</td>
+<td>A cloud model's API</td>
+<td>Whatever it reads to monitor and score</td>
+<td>Throughout</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supervision-data-exposure">Supervision Data Exposure<a class="headerlink" href="#supervision-data-exposure" title="Permanent link">&para;</a></h3>
+<p><strong>Supervision data exposure</strong> is the data that reaches a third party because something is watching the run, even though the run itself is local. It is the row at the bottom of the table. The orchestrator is a cloud model, and everything it reads back to monitor or score a run, including generated text and log excerpts, goes to its service.</p>
+<p>The generation loop kept its tokens local, and the supervision of it did not. Nothing about this is a flaw in the setup. It is a fact that has to be stated, because a claim of "everything stayed local" would have been false. A reader with strict data-sovereignty needs replaces the cloud orchestrator with a script or a local one, and Chapter 4's privacy table is the checklist for which parts to bring in.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">'The Model Runs Locally' Is Not 'Nothing Leaves'</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Whatever reads the output, whether a reviewer, a scoring script that uploads, or a supervising assistant, can send it away. Trace where the generated text travels after the model writes it, and put every destination in the trace table before you claim a boundary.</p>
+</div>
+<h3 id="host-network-mode-and-the-network-sandbox-gap">Host Network Mode and the Network Sandbox Gap<a class="headerlink" href="#host-network-mode-and-the-network-sandbox-gap" title="Permanent link">&para;</a></h3>
+<p><strong>Host network mode</strong> is the Docker setting, <code>--network host</code>, that makes a container share the host's network instead of having its own. The harness container was started this way so that it could reach the model server, which listens only on the host's loopback address. A container on its own network cannot see the host's loopback.</p>
+<p>The cost is the <strong>network sandbox gap</strong>. A container in host network mode can reach anything the host can: the internet, other machines on the tailnet, and every service on the host's loopback. The container is a filesystem sandbox, not a network sandbox, and the project's runner says so in its own header. The agent can be told not to reach out, and a model that has been told is not a boundary.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>What it costs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Host network mode, as used</td>
+<td>Container reaches the loopback server</td>
+<td>No network isolation</td>
+</tr>
+<tr>
+<td>A private network with no outside route, and the server on it too</td>
+<td>Container can reach only the server</td>
+<td>The server has to run in a container too</td>
+</tr>
+<tr>
+<td>A firewall rule limiting the container's traffic</td>
+<td>Container reaches only listed destinations</td>
+<td>Needs administrator rights on the host</td>
+</tr>
+<tr>
+<td>No network at all</td>
+<td>Nothing leaves</td>
+<td>The container cannot reach the model</td>
+</tr>
+</tbody>
+</table>
+<h3 id="packet-capture-verification">Packet Capture Verification<a class="headerlink" href="#packet-capture-verification" title="Permanent link">&para;</a></h3>
+<p><strong>Packet capture verification</strong> is watching the network interface during a run and confirming that the only traffic is the traffic the trace says. It turns the table above from a claim into a result. It needs administrator rights, because reading raw packets is a privileged operation.</p>
+<p>This evaluation did not do it. The configuration, which is a placeholder credential and the optional features turned off, is stated, and it was not confirmed with a capture. The book says so for the same reason it names the supervision exposure: a boundary that has not been verified is a hypothesis.</p>
+<p>A lighter check needs no special rights and catches the gross cases. While a run is going, list the established connections on the machine and look for any peer that is not the loopback address.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ss<span class="w"> </span>-tnH<span class="w"> </span>state<span class="w"> </span>established<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $4}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c
+</span></code></pre></div>
+<p><code>ss</code> lists the machine's sockets. <code>-t</code> selects TCP, <code>-n</code> prints addresses numerically, <code>-H</code> drops the header line, and <code>state established</code> keeps only live connections. The fourth column is the peer. Any address you cannot account for is a line to add to the trace, and an address you capture is one to redact before it goes in a published document.</p>
+<h4 id="diagram-data-egress-trace-classifier">Diagram: Data Egress Trace Classifier<a class="headerlink" href="#diagram-data-egress-trace-classifier" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Data Egress Trace Classifier</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> egress-trace-classifier<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> distinguish<br/>
+<strong>Learning Objective:</strong> The learner will distinguish, for 8 data flows in a local-generation setup, whether each stays on the DGX, goes to the evaluator's own machine, or goes to a third party, with at least 7 of 8 correct.</p>
+<p><strong>Prerequisites:</strong> network boundary, data egress trace, supervision data exposure, host network mode, telemetry disabled (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 8 flows the learner commits one of three destinations before the sim reveals the answer. A choice is correct when it equals the Correct destination column. Mastery is 7 of 8 correct on the first attempt. Reading the flows is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A locally hosted model means no data leaves. (2) Traffic to the evaluator's own laptop is traffic to a third party. (3) A one-time download is not egress. (4) The supervising assistant's reads are local.</p>
+<p><strong>Instructional Rationale:</strong> Analyzing a boundary needs the learner to separate flows by where they end, so the three destinations are exclusive and each flow ends in exactly one. Mixed flows prevent the habit of answering "stays" or "leaves" for everything.</p>
+<p><strong>Content:</strong></p>
+<p>The three destinations the learner chooses from: "Stays on the DGX", "Goes to the evaluator's own machine", and "Goes to a third party".</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Flow shown to the learner</th>
+<th>Correct destination</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The harness in the container sends a prompt to the model server at the loopback address.</td>
+<td>Stays on the DGX</td>
+<td>Both ends are on the same machine and the traffic never leaves its loopback interface.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The model server reads a model file from the DGX's disk.</td>
+<td>Stays on the DGX</td>
+<td>A disk read is internal to the machine.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The model server downloads a model file from the public model library.</td>
+<td>Goes to a third party</td>
+<td>The request and the file travel to and from the library's host.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The container build downloads a base image and the harness installer.</td>
+<td>Goes to a third party</td>
+<td>The requests go to the hosts that serve those files.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The orchestrator on the laptop reads a generated chapter and sends it to a cloud model to be scored.</td>
+<td>Goes to a third party</td>
+<td>The generated text ends at the cloud model's service.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The laptop fetches the finished book from the DGX over SSH on the tailnet.</td>
+<td>Goes to the evaluator's own machine</td>
+<td>The destination is the evaluator's laptop, and the connection is encrypted.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>The harness's optional update check runs, with its optional features left on.</td>
+<td>Goes to a third party</td>
+<td>The check contacts the vendor's service.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The watchdog appends a line to its log file on the DGX.</td>
+<td>Stays on the DGX</td>
+<td>It is a local file write.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The flows are synthetic, written for this exercise, and the sim labels them "synthetic example". They follow the egress table in this chapter.</p>
+<p><strong>Rules:</strong> Flows are shown in the fixed order 1 to 8. Each allows one final choice, and exactly one destination is correct for each. A flow's destination is where its data ends, not the first hop.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads flow 1.</li>
+<li>The learner chooses one of the three destinations and confirms.</li>
+<li>The sim shows the correct destination and the Why text, and marks the flow correct or incorrect.</li>
+<li>The learner repeats for flows 2 to 8. After flow 8 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Eight flows, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct destination and the Why text. The final score reads "n of 8 correct".</p>
+<p><strong>Starting State:</strong> Flow 1 is shown with no destination chosen, and the question on screen is "Where does this data end up?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that the harness-to-server traffic stays on loopback, that downloads and container builds go to third parties, that the cloud orchestrator's reads reach its API, and that the fetch of the finished book goes to the evaluator's own laptop.</p>
+</details>
+<h2 id="when-the-machine-stops">When the Machine Stops<a class="headerlink" href="#when-the-machine-stops" title="Permanent link">&para;</a></h2>
+<h3 id="system-freeze">System Freeze<a class="headerlink" href="#system-freeze" title="Permanent link">&para;</a></h3>
+<p>A <strong>system freeze</strong> is the machine ceasing to respond entirely: no SSH, no network, no output. It is different from a crashed program. On a unified-memory machine it is a recognizable consequence of exhausting the shared pool, and it needs the Administrator to restart it, because nothing remote can reach a machine that is not answering.</p>
+<p>This evaluation had one unit stop responding twice, each time a few minutes into a long run with the same model. The first was at a 256,000-token context. The second was at a smaller context with a watchdog running, and the watchdog logged no action, so memory exhaustion as the only cause is not confirmed. Heat, power, and the memory hardware itself were not ruled out.</p>
+<h3 id="memory-watchdog">Memory Watchdog<a class="headerlink" href="#memory-watchdog" title="Permanent link">&para;</a></h3>
+<p>A <strong>memory watchdog</strong> is a small program that watches memory and temperature and acts before they reach a dangerous level. This project's version checks available memory and GPU temperature every five seconds. When memory falls below a floor, or the temperature passes a ceiling, it kills the harness containers and unloads every model from the server, then keeps watching.</p>
+<p>It takes two arguments: the floor in gibibytes and the ceiling in degrees Celsius, with defaults of 16 and 95. This evaluation ran it with a 20 GiB floor, which, on a 128 GB machine, leaves about 15% for the system.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>src/dgx-setup/mem_watchdog.sh<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">95</span><span class="w"> </span><span class="p">&amp;</span>
+</span></code></pre></div>
+<p>A watchdog is a safeguard against the failure you expect, and it is not a diagnosis of the one you get. It does not replace the vitals log of Chapter 10, which records the readings that a frozen machine would otherwise take with it. Run both before any long run, and treat the pair as a precondition.</p>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>A container gives an agent a filesystem sandbox: a pinned image, a non-root user whose files belong to the evaluator, a writable run directory, and read-only skills. It does not give a network sandbox when started in host network mode, which this evaluation used so the harness could reach a loopback-bound server, and the gap is stated. A data egress trace lists every destination, and it must include the supervision that reads the output, which in this evaluation was a cloud model. A packet capture would verify the trace, and a lighter <code>ss</code> check catches gross cases. A memory watchdog and a vitals log are preconditions for a long run on a unified-memory machine, and neither explains a freeze.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Fence the Run and Say Where It Leaks</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now run a harness in a sandbox that limits what it can write, draw the network boundary honestly, and put a watchdog under a long run. Chapter 19 designs the evaluation those runs will serve.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="How a laptop reaches a machine on another network: SSH, key pairs and unattended login, and how a WireGuard-based mesh VPN such as Tailscale separates coordination from data transfer.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>7. Remote Access, SSH, and Mesh VPN Concepts - DGX Evaluation for Textbook Generation</title>
+        <title>Remote Access, SSH, and Mesh VPN Concepts - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              7. Remote Access, SSH, and Mesh VPN Concepts
+              Remote Access, SSH, and Mesh VPN Concepts
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -819,6 +642,270 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remote Access
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remote-access_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remote Access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home Router
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-key-fingerprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host Key Fingerprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-key-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Key Pair
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ed25519-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ed25519 Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-copy-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssh-copy-id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passphrase-free-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passphrase-Free Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unattended-ssh-login-and-batchmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unattended SSH Login and BatchMode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-port-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Port Forward
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-hygiene" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host Hygiene
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh-vpns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh VPNs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesh VPNs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mesh-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh VPN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      WireGuard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailnet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-connection-is-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the Connection Is Built
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How the Connection Is Built">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coordination-plane-and-data-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordination Plane and Data Plane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-traversal-and-the-peer-to-peer-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT Traversal and the Peer-to-Peer Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derp-relay" class="md-nav__link">
+    <span class="md-ellipsis">
+      DERP Relay
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DERP Relay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-tailscale-connection-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Tailscale Connection Path
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-each-party-can-see" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Each Party Can See
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1201,6 +1288,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1303,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1404,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1546,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1705,270 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remote Access
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remote-access_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remote Access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home Router
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-key-fingerprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host Key Fingerprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-key-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Key Pair
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ed25519-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ed25519 Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-copy-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssh-copy-id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passphrase-free-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passphrase-Free Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unattended-ssh-login-and-batchmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unattended SSH Login and BatchMode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-port-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Port Forward
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-hygiene" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host Hygiene
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh-vpns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh VPNs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesh VPNs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mesh-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh VPN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      WireGuard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailscale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tailnet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-connection-is-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the Connection Is Built
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How the Connection Is Built">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coordination-plane-and-data-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordination Plane and Data Plane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-traversal-and-the-peer-to-peer-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT Traversal and the Peer-to-Peer Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derp-relay" class="md-nav__link">
+    <span class="md-ellipsis">
+      DERP Relay
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DERP Relay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-tailscale-connection-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Tailscale Connection Path
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-each-party-can-see" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Each Party Can See
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1512,13 +2103,470 @@
 <li><a href="../06-cost-price-quality/">Chapter 6: Cost, Price, and Quality</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Reaching the Machine Without Opening a Door</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+The DGX is in one building and you are in another, with two home routers between you that neither of you controls. By the end of this chapter you will be able to describe the exact path a command takes from your laptop to the machine, and say what each party on that path can see. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Everything after this chapter happens on a machine you reach over a network. If that connection is fragile, insecure, or impossible to script, every later step inherits the problem. The chapter therefore teaches the connection itself before any software is installed on the DGX.</p>
+<p>It has two layers. The first is <strong>SSH</strong>, the protocol you use to run commands on a remote machine, and the key-based login that lets scripts and agents use it without a person typing a password. The second is the <strong>mesh VPN</strong>, the network layer that makes a machine behind someone else's router reachable at all. Chapter 9 installs and configures Tailscale. This chapter explains why it works, so the installation steps make sense.</p>
+<h2 id="remote-access">Remote Access<a class="headerlink" href="#remote-access" title="Permanent link">&para;</a></h2>
+<h3 id="remote-access_1">Remote Access<a class="headerlink" href="#remote-access_1" title="Permanent link">&para;</a></h3>
+<p><strong>Remote access</strong> is the ability to use a computer that is not in front of you: to log in, run commands, move files, and watch its output. Every DGX evaluation needs it, because the machine is in a lab, a server room, or someone else's home, and the work of the evaluation runs for hours.</p>
+<p>There are three common ways to arrange it, and they differ in what they expose to the public internet.</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>How it works</th>
+<th>What is exposed</th>
+<th>Main drawback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Port forwarding</td>
+<td>The router forwards a public port to the machine</td>
+<td>The machine's login service, to everyone on the internet</td>
+<td>Constant automated attacks, and it needs router access</td>
+</tr>
+<tr>
+<td>A conventional VPN</td>
+<td>Both sides connect to a central VPN server</td>
+<td>The VPN server</td>
+<td>All traffic passes through one point, and someone must run it</td>
+</tr>
+<tr>
+<td>A mesh VPN</td>
+<td>Each machine connects directly to the others</td>
+<td>Nothing on the machine's own address</td>
+<td>Depends on a coordination service</td>
+</tr>
+</tbody>
+</table>
+<p>A worked decision shows how the three compare against this evaluation's actual constraints. The laptop and the DGX are on different home networks. Nobody involved controls both routers, and the person running the benchmark has no access to the DGX's router at all. Scripts and an AI agent must log in with no person present. And the machine must not become reachable by strangers, because it belongs to someone else.</p>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Port forwarding</th>
+<th>Conventional VPN</th>
+<th>Mesh VPN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No access to the DGX's router</td>
+<td>Fails: it needs a router change</td>
+<td>Works if the server is reachable</td>
+<td>Works</td>
+</tr>
+<tr>
+<td>Scripts must connect unattended</td>
+<td>Works</td>
+<td>Works</td>
+<td>Works</td>
+</tr>
+<tr>
+<td>Must not be reachable by strangers</td>
+<td>Fails: the login port is public</td>
+<td>Works</td>
+<td>Works</td>
+</tr>
+<tr>
+<td>No new server to run and patch</td>
+<td>Works</td>
+<td>Fails: someone runs the hub</td>
+<td>Works</td>
+</tr>
+</tbody>
+</table>
+<p>Only the mesh VPN passes every row, which is why the Administrator chose Tailscale and why the rest of this chapter explains how it works.</p>
+<p>Port forwarding is the approach a tutorial reaches for first, and it is the one this course does not use. A login service open to the whole internet receives guessing attempts within minutes of appearing, and exposing a DGX that way endangers the machine and the network it sits on.</p>
+<h3 id="home-router">Home Router<a class="headerlink" href="#home-router" title="Permanent link">&para;</a></h3>
+<p>A <strong>home router</strong> is the device that connects a local network to the internet and gives the devices behind it private addresses. It also performs network address translation, or NAT: many devices on the private side share one public address, and the router keeps a table that records which internal device each outgoing conversation belongs to.</p>
+<p>NAT has a consequence that explains the whole chapter. A reply to a conversation you started is allowed back in, because the router remembers it. A new connection that arrives unprompted has no entry in the table, so the router drops it. Two machines behind two routers therefore cannot simply connect to each other: each router sees an unsolicited connection and refuses it.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What happens</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The laptop at <code>192.0.2.10</code> opens a connection to a website</td>
+<td>The router records the conversation and sends it out under its public address</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The website replies</td>
+<td>The router finds the record and forwards the reply to the laptop</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A stranger sends a packet to the router's public address</td>
+<td>There is no record, so the router drops it</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The DGX's router receives an unsolicited connection from the laptop's router</td>
+<td>Also no record, so it is dropped</td>
+</tr>
+</tbody>
+</table>
+<p>The addresses in this chapter come from the ranges reserved for documentation, such as <code>192.0.2.0/24</code> and <code>198.51.100.0/24</code>. A real address never appears in this book.</p>
+<h2 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
+<h3 id="ssh_1">SSH<a class="headerlink" href="#ssh_1" title="Permanent link">&para;</a></h3>
+<p><strong>SSH</strong>, short for Secure Shell, is a protocol for logging in to another computer and running commands there over an encrypted connection. The machine you want to reach runs an SSH server, your machine runs an SSH client, and the two negotiate encryption before anything is sent. The server listens on port 22 by default, and it is what runs underneath nearly every remote administration task on Linux.</p>
+<p>The simplest use is a single command run on the remote machine, with its output printed on yours. The command below logs in as <code>&lt;user&gt;</code> on <code>&lt;dgx-host&gt;</code>, runs <code>hostname</code>, prints the result, and returns. The two angle-bracketed names are placeholders, and the book uses them for every login and every address.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>&lt;user&gt;@&lt;dgx-host&gt;<span class="w"> </span>hostname
+</span></code></pre></div>
+<p>The first time you connect, the client asks whether you trust the server's key, and later sessions skip the question. That prompt is the subject of the next concept, because answering it carelessly defeats the point of the protocol.</p>
+<h3 id="host-key-fingerprint">Host Key Fingerprint<a class="headerlink" href="#host-key-fingerprint" title="Permanent link">&para;</a></h3>
+<p>A <strong>host key fingerprint</strong> is a short value derived from the server's public key that identifies the server. The first time you connect, your client shows the fingerprint and asks you to accept it. It stores the key in a file called <code>known_hosts</code>, and on every later connection it checks that the server presents the same key.</p>
+<p>The check protects against someone placing themselves between you and the server. If the key suddenly differs, the client refuses to continue and prints a loud warning. The warning has two ordinary causes and one serious one: the machine was reinstalled, its disk image was cloned onto another machine, or something is intercepting the connection. A fingerprint is useful only if you compare it, once, with a value the administrator gave you through another channel.</p>
+<h3 id="ssh-key-pair">SSH Key Pair<a class="headerlink" href="#ssh-key-pair" title="Permanent link">&para;</a></h3>
+<p>An <strong>SSH key pair</strong> is two linked files: a private key that stays on your machine and a public key that you give to servers. A server holding your public key can check that you hold the matching private key without the private key ever crossing the network. The check replaces a password, and it cannot be guessed by trying passwords against a login prompt.</p>
+<p>The public key goes into a file on the server named <code>authorized_keys</code>. Anyone who holds the private key can log in as you, so the private key is the secret, and the public key is safe to share.</p>
+<h3 id="ed25519-key">Ed25519 Key<a class="headerlink" href="#ed25519-key" title="Permanent link">&para;</a></h3>
+<p>An <strong>Ed25519 key</strong> is a key using a modern elliptic-curve signature scheme. It produces short keys, which are 68 characters when printed, it is fast, and it is the default recommendation for new SSH keys. The older RSA type is still accepted but needs far longer keys for comparable strength. Create one with <code>ssh-keygen -t ed25519</code>.</p>
+<p>The command writes two files in <code>~/.ssh</code>: <code>id_ed25519</code>, the private key, and <code>id_ed25519.pub</code>, the public key. The permissions on the private file matter, and SSH refuses a key that other users on the machine can read.</p>
+<h3 id="ssh-copy-id">ssh-copy-id<a class="headerlink" href="#ssh-copy-id" title="Permanent link">&para;</a></h3>
+<p><strong><code>ssh-copy-id</code></strong> installs your public key on a server's <code>authorized_keys</code> file. It logs in once with your password, appends the key, and sets the correct permissions. It is the standard way to move from password login to key login.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-copy-id<span class="w"> </span>&lt;user&gt;@&lt;dgx-host&gt;
+</span></code></pre></div>
+<p>Run it once for each machine you want to reach. After it succeeds, the next login needs no password.</p>
+<h3 id="passphrase-free-key">Passphrase-Free Key<a class="headerlink" href="#passphrase-free-key" title="Permanent link">&para;</a></h3>
+<p>A <strong>passphrase</strong> is a password that encrypts the private key file on disk, so a stolen file is useless without it. A <strong>passphrase-free key</strong> has no such protection: the file alone is enough to log in. It is what makes unattended login possible, since a script cannot type a passphrase.</p>
+<p>This is a trade, not a mistake, and the design choice in this evaluation was made knowingly. The scripts and the agent that ran the benchmark logged in unattended, so the key had no passphrase. The price is that the file on the laptop is as sensitive as a password.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A Key With No Passphrase Is a Password in a File</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Anyone who copies the private key file can log in as you from anywhere, with nothing to guess. Keep it only on the machine that needs it, never commit it to a repository, and tell the administrator that you installed a key on their machine so they can remove it when the project ends.</p>
+</div>
+<h3 id="unattended-ssh-login-and-batchmode">Unattended SSH Login and BatchMode<a class="headerlink" href="#unattended-ssh-login-and-batchmode" title="Permanent link">&para;</a></h3>
+<p><strong>Unattended SSH login</strong> is a login that needs no person: the client authenticates with the key and runs the command. <strong>BatchMode</strong> is the SSH option that makes this explicit. It tells the client never to prompt for a password or a passphrase, and to fail at once if a prompt would be needed.</p>
+<p>That failure is the useful property. A script that hangs waiting for a prompt nobody can see wastes hours, and a script that fails with an error in a second does not. The command below is also the standard test that key login works.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssh<span class="w"> </span>-o<span class="w"> </span><span class="nv">BatchMode</span><span class="o">=</span>yes<span class="w"> </span>&lt;user&gt;@&lt;dgx-host&gt;<span class="w"> </span>hostname
+</span></code></pre></div>
+<p>If it prints the machine's name, key login works. If it prints <code>Permission denied</code>, the key is not installed or is not the one the client offered.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Always Test Key Login With BatchMode</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+A normal <code>ssh</code> can fall back to asking for a password and appear to work, which hides a broken key. Add <code>-o BatchMode=yes</code> to the test and it either succeeds silently or tells you which part failed.</p>
+</div>
+<h3 id="ssh-port-forward">SSH Port Forward<a class="headerlink" href="#ssh-port-forward" title="Permanent link">&para;</a></h3>
+<p>An <strong>SSH port forward</strong> carries traffic for one network port through an SSH connection, so a service on the remote machine appears as though it were on your own. In the first benchmark runs the model server on the DGX listened only on that machine's own loopback address, which no other machine can reach. A forward made it reachable from the laptop.</p>
+<p>The command has three parts that need explaining before you read it. <code>-N</code> tells SSH not to run a remote command and only hold the tunnel open. <code>-L</code> creates the forward and takes the form <code>local-port:destination:destination-port</code>. The destination is resolved on the remote side, so <code>127.0.0.1</code> there means the DGX itself.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span><span class="m">11434</span>:127.0.0.1:11434<span class="w"> </span>&lt;user&gt;@&lt;dgx-host&gt;
+</span></code></pre></div>
+<p>While that command runs, a request to port 11434 on the laptop reaches the model server on the DGX, and the traffic travels inside the encrypted SSH connection. Port 11434 is the port the Ollama model server uses by default. Chapter 13 sets it up.</p>
+<h3 id="host-hygiene">Host Hygiene<a class="headerlink" href="#host-hygiene" title="Permanent link">&para;</a></h3>
+<p><strong>Host hygiene</strong> is the set of habits that keep a remote-access setup from becoming a liability. For this course five are enough.</p>
+<ul>
+<li><strong>Keep private keys private.</strong> Never copy <code>id_ed25519</code> to another machine, a chat, or a repository.</li>
+<li><strong>Use one key per purpose.</strong> A separate key for the DGX project can be revoked without affecting anything else.</li>
+<li><strong>Remove what you added.</strong> When the project ends, delete your public key from the server's <code>authorized_keys</code> and ask the administrator to remove the account.</li>
+<li><strong>Tell the owner.</strong> Installing a key on a machine you do not own is a change to their security, and they are entitled to know.</li>
+<li><strong>Read the output before saving it.</strong> A pasted SSH session contains hostnames and addresses. Chapter 23 builds the review that catches them.</li>
+</ul>
+<h2 id="mesh-vpns">Mesh VPNs<a class="headerlink" href="#mesh-vpns" title="Permanent link">&para;</a></h2>
+<h3 id="mesh-vpn">Mesh VPN<a class="headerlink" href="#mesh-vpn" title="Permanent link">&para;</a></h3>
+<p>A <strong>VPN</strong>, or virtual private network, is an encrypted virtual network built on top of the internet, so that devices far apart behave as if they shared one private local network. A <strong>mesh VPN</strong> is one in which every device can connect directly to every other device, with no central machine that all traffic must pass through.</p>
+<p>The structure matters because a conventional VPN is hub-and-spoke: every device connects to one server, and traffic between two devices goes through it. A mesh removes the middle. The comparison below uses the three machines of this evaluation: the laptop and two DGX units.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Hub-and-spoke VPN</th>
+<th>Mesh VPN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Path from laptop to a DGX</td>
+<td>Laptop → hub → DGX</td>
+<td>Laptop → DGX</td>
+</tr>
+<tr>
+<td>Number of hops</td>
+<td>Two</td>
+<td>One</td>
+</tr>
+<tr>
+<td>What fails if one machine fails</td>
+<td>The hub takes everything down</td>
+<td>Only that machine</td>
+</tr>
+<tr>
+<td>Who runs central infrastructure</td>
+<td>You</td>
+<td>A coordination service, which carries no traffic</td>
+</tr>
+<tr>
+<td>Direct links among 3 devices</td>
+<td>3, all via the hub</td>
+<td>3, each direct</td>
+</tr>
+</tbody>
+</table>
+<p>The number of possible links among <span class="arithmatex">\( n \)</span> devices is <span class="arithmatex">\( n(n-1)/2 \)</span>. Three devices have 3 pairs and ten devices have 45, which is why configuring a mesh by hand does not scale and why the coordination step in the next sections exists.</p>
+<h3 id="wireguard">WireGuard<a class="headerlink" href="#wireguard" title="Permanent link">&para;</a></h3>
+<p><strong>WireGuard</strong> is a VPN protocol built around a small set of modern cryptographic choices and a short code base. Each device has a key pair, and a connection is defined by listing the other device's public key and the address to reach it at. It runs over UDP, it encrypts with ChaCha20-Poly1305, and it has been part of the Linux kernel since version 5.6, so on a current DGX OS the protocol is already present.</p>
+<p>A minimal configuration shows what WireGuard asks of a person. Three things need defining before you read it. The <code>[Interface]</code> block describes this device, and its <code>Address</code> is the private address it takes inside the VPN. A <code>[Peer]</code> block describes one other device, identified by its public key. <code>AllowedIPs</code> lists the addresses that may be sent to that peer, and <code>Endpoint</code> is where the peer can be reached on the real network.</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[Interface]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">PrivateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;laptop-private-key&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="na">Address</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">100.x.y.z/32</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">[Peer]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="na">PublicKey</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;dgx-public-key&gt;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="na">AllowedIPs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">100.x.y.z/32</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="na">Endpoint</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;dgx-public-address&gt;:51820</span>
+</span></code></pre></div>
+<p>Every placeholder above is a value that someone has to generate, copy to the right place, and keep current. For two devices behind home routers it is worse: the <code>Endpoint</code> line assumes the DGX has a fixed public address that accepts connections, which a device behind a home router does not. WireGuard secures the connection and leaves finding and keying the peers to you.</p>
+<h3 id="tailscale">Tailscale<a class="headerlink" href="#tailscale" title="Permanent link">&para;</a></h3>
+<p><strong>Tailscale</strong> is a service and a set of client programs that build a WireGuard mesh automatically. It does the work the configuration above asks of a person: it generates each device's keys, distributes the public keys to the devices that should have them, discovers each device's current address, and arranges the connection across the routers. The client software is open source, and the coordination service that ties devices together is hosted.</p>
+<p>A device joins by signing in with an identity, and from then on the other devices in the same network can find it by name or by a private address. In this evaluation the laptop signed in with an account the Administrator had invited, and the two DGX units were already members, so a single status command listed all three. Chapter 9 performs those steps.</p>
+<table>
+<thead>
+<tr>
+<th>What you would do by hand with WireGuard</th>
+<th>What Tailscale does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generate a key pair on each device</td>
+<td>The client generates it at first start</td>
+</tr>
+<tr>
+<td>Copy each public key to every peer</td>
+<td>The coordination service distributes it</td>
+</tr>
+<tr>
+<td>Find each peer's current public address</td>
+<td>The coordination service tracks it</td>
+</tr>
+<tr>
+<td>Open a path through two routers</td>
+<td>The clients negotiate it, with a relay as fallback</td>
+</tr>
+<tr>
+<td>Write and update a config file per device</td>
+<td>None, the clients keep it current</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tailnet">Tailnet<a class="headerlink" href="#tailnet" title="Permanent link">&para;</a></h3>
+<p>A <strong>tailnet</strong> is a private network of devices and users managed together under one Tailscale account or organization. Devices in a tailnet get stable private addresses from a reserved range that starts <code>100.</code>, and they get names that resolve only inside the tailnet. Only members can reach one another, and the administrator of the tailnet controls who is a member and what each may reach.</p>
+<p>A tailnet also has a name, in the form <code>&lt;tailnet-name&gt;.ts.net</code>, which is part of every machine's full name. Like an address, it is a detail that helps a stranger locate the network, so it is a placeholder in this book.</p>
+<p>Membership gives a device four things, and each one is a place where a setting can go wrong later.</p>
+<ul>
+<li><strong>A stable private address.</strong> The device keeps it as it moves between networks, so a script written against the address or name keeps working from a coffee shop or an office.</li>
+<li><strong>A name.</strong> Names resolve only inside the tailnet, through a feature called MagicDNS that Chapter 9 configures.</li>
+<li><strong>Access rules.</strong> The tailnet's administrator can restrict which devices and users may reach which machines and ports, using an access control list.</li>
+<li><strong>A key that expires.</strong> A device's credentials last for a period and then must be renewed, so a machine that has not been touched in months may have silently dropped off the network.</li>
+</ul>
+<p>The machines in this evaluation sat in a tailnet that the Administrator ran. That is the fact behind two later cautions: the Administrator decides who joins, and the evaluator's laptop is a guest on a network the evaluator does not control.</p>
+<h2 id="how-the-connection-is-built">How the Connection Is Built<a class="headerlink" href="#how-the-connection-is-built" title="Permanent link">&para;</a></h2>
+<h3 id="coordination-plane-and-data-plane">Coordination Plane and Data Plane<a class="headerlink" href="#coordination-plane-and-data-plane" title="Permanent link">&para;</a></h3>
+<p>Tailscale's design separates two jobs that a conventional VPN combines. The <strong>coordination plane</strong> is the exchange of information needed to set up connections: who the devices are, their public keys, where they can currently be reached, and which devices are allowed to reach which. The <strong>data plane</strong> is the traffic itself: the packets that carry your commands, your prompts, and a model's replies.</p>
+<p>The two planes use different paths. Coordination goes between each device and the coordination service. Data goes between the devices, and does not pass through the service.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Coordination plane</th>
+<th>Data plane</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carries</td>
+<td>Public keys, addresses, access rules</td>
+<td>Your SSH sessions, prompts, and replies</td>
+</tr>
+<tr>
+<td>Goes between</td>
+<td>A device and the coordination service</td>
+<td>The two devices</td>
+</tr>
+<tr>
+<td>Volume</td>
+<td>Tiny</td>
+<td>As much as you send</td>
+</tr>
+<tr>
+<td>What the service learns</td>
+<td>Identities, keys, and addresses</td>
+<td>Nothing about the content</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Service Introduces You and Then Steps Aside</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think of the coordination service as a mutual friend who tells two strangers each other's names and phone numbers, then leaves the room. It knows who talked to whom, and it never hears the conversation. The privacy of your prompts rests on that second half, and it is why the data plane has to be encrypted device to device.</p>
+</div>
+<h3 id="nat-traversal-and-the-peer-to-peer-connection">NAT Traversal and the Peer-to-Peer Connection<a class="headerlink" href="#nat-traversal-and-the-peer-to-peer-connection" title="Permanent link">&para;</a></h3>
+<p><strong>NAT traversal</strong> is the set of techniques for opening a direct path between two devices that are each behind a router performing NAT. Recall that a router drops a connection nobody inside asked for, and that it accepts replies to conversations that started from inside. The traversal exploits that rule.</p>
+<p>Following the sequence shows how it works. Each device learns, from the coordination service, the other's public address. Both then send a packet to the other's address at about the same moment. Each router sees an outgoing packet and records an entry for it, and each incoming packet from the other side now matches that entry and is let through. The result is a <strong>peer-to-peer connection</strong>: the two devices exchange packets directly, with no one between them.</p>
+<p>The data plane then carries every packet encrypted by WireGuard, so the routers on the path see only that two public addresses exchanged data.</p>
+<h3 id="derp-relay">DERP Relay<a class="headerlink" href="#derp-relay" title="Permanent link">&para;</a></h3>
+<p>Sometimes the direct path cannot be opened: a strict firewall may block outgoing UDP, or a router may allocate a different port for each destination in a way the technique cannot predict. For those cases Tailscale runs relay servers called <strong>DERP</strong> servers, short for Designated Encrypted Relay for Packets. The two devices connect outward to a relay, and the relay forwards their packets.</p>
+<p>Two properties make the relay safe to use. The packets are already encrypted by the devices, so the relay forwards data it cannot read. And the relay is only a fallback: the clients keep probing, and as soon as a direct path becomes possible they switch to it. A relayed connection is slower, because the traffic takes a longer route, and the status listing marks such connections so you can see which one you have.</p>
+<p>The evaluation's laptop reached the DGX units across two home routers, and the status listing for one unit showed a relay in use instead of a direct connection. Chapter 9 shows how to read that listing.</p>
+<h4 id="diagram-tailscale-connection-path">Diagram: Tailscale Connection Path<a class="headerlink" href="#diagram-tailscale-connection-path" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Tailscale Connection Path</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> tailscale-connection-path<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> explain<br/>
+<strong>Learning Objective:</strong> The learner will explain how two devices behind NAT build an encrypted connection by predicting the path for 3 scenarios and assigning 3 messages to the coordination plane or the data plane, with at least 5 of 6 correct.</p>
+<p><strong>Prerequisites:</strong> home router, NAT traversal, peer-to-peer connection, DERP relay, coordination plane, data plane (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner first steps through the five connection steps listed in Content. The learner then answers 6 items before any answer is revealed: three path predictions ("Direct" or "Relay") and three message assignments ("Coordination plane" or "Data plane"). An item is correct when the choice equals the Correct answer column. Mastery is 5 of 6 correct on the first attempt. Stepping through is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) The coordination service carries or can read the traffic. (2) A relay can read the traffic it forwards. (3) Two devices behind routers can never connect directly. (4) A relayed connection is not encrypted.</p>
+<p><strong>Instructional Rationale:</strong> Understand-level explaining needs the learner to predict an outcome from the mechanism, so the path items are cases where the correct answer follows from the NAT and UDP rules of the chapter. Separating the planes in a second set of items checks that the learner assigns each message to the right path.</p>
+<p><strong>Content:</strong></p>
+<p>The five steps the learner steps through, in order:</p>
+<ol>
+<li>Both devices sign in to the coordination service and give it their public keys.</li>
+<li>The service gives each device the other's public key and its candidate addresses.</li>
+<li>Each device sends packets to the other's addresses at the same moment, so each router creates a table entry for the conversation.</li>
+<li>If those packets get through, the devices talk directly. If they do not, both connect outward to a relay.</li>
+<li>Everything the devices exchange is encrypted by the devices themselves, so neither the relay nor the service can read it.</li>
+</ol>
+<p>The six items:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item shown to the learner</th>
+<th>Choices</th>
+<th>Correct answer</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Laptop and DGX are each behind an ordinary home router.</td>
+<td>Direct or Relay</td>
+<td>Direct</td>
+<td>Ordinary NAT allows the simultaneous-send technique to open both routers.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The laptop is on a network whose firewall blocks all outgoing UDP.</td>
+<td>Direct or Relay</td>
+<td>Relay</td>
+<td>The direct path uses UDP, so the encrypted packets go through a relay instead.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Laptop and DGX are on the same local network.</td>
+<td>Direct or Relay</td>
+<td>Direct</td>
+<td>They can reach each other's local addresses without leaving the network.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>A device uploads its public key.</td>
+<td>Coordination plane or Data plane</td>
+<td>Coordination plane</td>
+<td>It is setup information exchanged with the service.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A packet carrying part of a model's reply.</td>
+<td>Coordination plane or Data plane</td>
+<td>Data plane</td>
+<td>It is traffic between the two devices.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The list of which devices may reach which.</td>
+<td>Coordination plane or Data plane</td>
+<td>Coordination plane</td>
+<td>Access rules are distributed by the service to the devices.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The items are synthetic, written for this exercise, and the sim labels them "synthetic example". The mechanism comes from the sections of this chapter above.</p>
+<p><strong>Rules:</strong> A connection is Direct when a UDP path can be opened between the two devices, and Relay otherwise. A relay forwards only encrypted packets. Items are shown in the fixed order 1 to 6, and each item allows one final choice.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner presses Next to move through the five steps, with the devices, routers, service, and relay shown and the current step's message highlighted.</li>
+<li>After step 5 the learner begins the six items and reads item 1.</li>
+<li>For each item the learner chooses one of the two answers and confirms.</li>
+<li>The sim shows the correct answer and the Why text, and marks the item correct or incorrect.</li>
+<li>After item 6 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Six items, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct answer and the Why text. The final score reads "n of 6 correct".</p>
+<p><strong>Starting State:</strong> The five-step walkthrough is at step 1 with the two devices, their routers, and the coordination service shown, and the question on screen is "How do these two devices end up able to talk?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that a router drops unsolicited connections, that NAT traversal makes both routers create entries by sending at the same moment, that a relay forwards packets it cannot read, and that coordination carries keys, addresses, and rules while data carries content.</p>
+</details>
+<h2 id="what-each-party-can-see">What Each Party Can See<a class="headerlink" href="#what-each-party-can-see" title="Permanent link">&para;</a></h2>
+<p>The reason to understand the path is to know who can see what. The table assigns each party on the way from the laptop to the DGX to its role.</p>
+<table>
+<thead>
+<tr>
+<th>Party</th>
+<th>What it can see</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The laptop's router</td>
+<td>That encrypted packets go to a public address</td>
+<td>It forwards packets and sees no content</td>
+</tr>
+<tr>
+<td>The coordination service</td>
+<td>Which devices exist, their public keys, and addresses</td>
+<td>It runs the coordination plane</td>
+</tr>
+<tr>
+<td>A DERP relay, if used</td>
+<td>Encrypted packets and the two endpoints</td>
+<td>It forwards without the keys</td>
+</tr>
+<tr>
+<td>The DGX's router</td>
+<td>That encrypted packets arrive from a public address</td>
+<td>Same as the first router</td>
+</tr>
+<tr>
+<td>The two devices</td>
+<td>Everything</td>
+<td>They hold the keys</td>
+</tr>
+</tbody>
+</table>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>Remote access to a machine behind a home router fails by default, because the router drops connections nobody inside asked for. SSH gives an encrypted login, and a key pair gives a login that a script can use, at the price of a private key that must be protected like a password. A mesh VPN solves the routing problem: WireGuard provides the encryption, and Tailscale automates the key distribution, address discovery, and NAT traversal, falling back to an encrypted relay when a direct path cannot be opened. The coordination plane sets up the connection and the data plane carries the traffic, and the two are separate paths.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Trace the Whole Path</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now follow a command from your laptop through two routers to the DGX, say which party sees what, and explain why the privacy of your prompts does not depend on trusting the coordination service. Chapter 8 builds the Python environment that the tooling will live in.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

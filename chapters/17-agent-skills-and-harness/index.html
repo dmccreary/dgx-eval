@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="The skill format and the ibook-skills chain, then connecting Claude Code or an alternative harness to a local endpoint and verifying that a skill executes from start to finish.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>17. Agent Skills and Connecting a Harness to a Local Model - DGX Evaluation for Textbook Generation</title>
+        <title>Agent Skills and Connecting a Harness to a Local Model - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              17. Agent Skills and Connecting a Harness to a Local Model
+              Agent Skills and Connecting a Harness to a Local Model
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1034,6 +857,216 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skills
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skills">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Skill
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skillmd-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      SKILL.md Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill Loading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ibook-skills-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      The ibook-skills Chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The ibook-skills Chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibook-skills-skill-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      ibook-skills Skill Chain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-the-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting the Harness
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting the Harness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Claude Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-endpoint-connection-and-harness-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Endpoint Connection and Harness Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harness-prompt-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harness Prompt Overhead
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harness-on-laptop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harness on Laptop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternatives-opencode-codex-cli-and-goose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternatives: OpenCode, Codex CLI, and Goose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentsmd-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      AGENTS.md File
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-that-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying That It Works
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verifying That It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skill-execution-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill Execution Verification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harness-compatibility-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harness Compatibility Test
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Harness Compatibility Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-skillmd-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: SKILL.md Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1201,6 +1234,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1249,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1350,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1492,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1651,216 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skills
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skills">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Skill
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skillmd-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      SKILL.md Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill Loading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ibook-skills-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      The ibook-skills Chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The ibook-skills Chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibook-skills-skill-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      ibook-skills Skill Chain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-the-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting the Harness
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting the Harness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Claude Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-endpoint-connection-and-harness-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Endpoint Connection and Harness Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harness-prompt-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harness Prompt Overhead
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harness-on-laptop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harness on Laptop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternatives-opencode-codex-cli-and-goose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternatives: OpenCode, Codex CLI, and Goose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentsmd-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      AGENTS.md File
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-that-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying That It Works
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verifying That It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skill-execution-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill Execution Verification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harness-compatibility-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harness Compatibility Test
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Harness Compatibility Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-skillmd-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: SKILL.md Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1495,13 +1978,387 @@
 <li><a href="../16-agent-loop-and-tools/">Chapter 16: The Agent Loop, Tools, and Context</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Giving the Harness Something to Do</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+The harness is only a loop until you hand it a skill, and the skill is the benchmark. By the end of this chapter you will have a harness pointed at your local model, a skill installed where it can find it, and a three-minute test that proves the whole chain runs. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Chapter 16 explained the loop and Chapter 13 supplied the endpoint. This chapter joins them to the workload. A skill is a packaged set of instructions that a harness can load on demand, and the <code>ibook-skills</code> collection is the set of skills that turns a course description into a textbook. Running them against a local model is the whole benchmark.</p>
+<p>The chapter defines the skill format, shows how a harness finds and loads one, and lays out the chain this book uses. It then configures Claude Code to talk to the local endpoint, names the alternatives, and ends with the verification step that you should never skip: a short skill run whose result you can check, before you commit hours to a long one.</p>
+<h2 id="skills">Skills<a class="headerlink" href="#skills" title="Permanent link">&para;</a></h2>
+<h3 id="agent-skill">Agent Skill<a class="headerlink" href="#agent-skill" title="Permanent link">&para;</a></h3>
+<p>An <strong>agent skill</strong> is a folder of instructions, and sometimes helper files, that teaches a harness how to carry out one kind of task well. It is a procedure written down so that a model can follow it: the steps, the order, the checks, and the formats of the files to produce. A skill does not add a capability the harness lacks. It supplies knowledge of how to use the capabilities it has.</p>
+<p>The reason skills exist is that a model's general ability is not a procedure. A person who asks a model to "generate a learning graph" gets something plausible and unrepeatable. A skill pins down what a good learning graph is, how to build one, and how to check it, so that the same request gives a comparable result each time. That repeatability is what makes a skill usable as a benchmark.</p>
+<p>A skill is a directory, and the layout is a convention that several harnesses share.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>learning-graph-generator/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── SKILL.md              the instructions, with a header the harness reads first
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── references/           longer documents, read only when a step needs them
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── taxonomy.md
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── quality-checks.md
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── scripts/              helper programs the instructions tell the model to run
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── analyze-graph.py
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>└── assets/               templates and files copied into the project
+</span></code></pre></div>
+<p>The file names under <code>references/</code>, <code>scripts/</code>, and <code>assets/</code> are illustrative. The table gives each part its job, because the loading mechanism in the next section depends on keeping them separate.</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What it holds</th>
+<th>When the harness reads it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SKILL.md</code> header</td>
+<td>Name and a one-paragraph description</td>
+<td>At startup, for every installed skill</td>
+</tr>
+<tr>
+<td><code>SKILL.md</code> body</td>
+<td>The step-by-step instructions</td>
+<td>When the skill is invoked</td>
+</tr>
+<tr>
+<td><code>references/</code></td>
+<td>Long documents, standards, examples</td>
+<td>Only when a step names them</td>
+</tr>
+<tr>
+<td><code>scripts/</code></td>
+<td>Programs the steps call</td>
+<td>When a step runs them</td>
+</tr>
+<tr>
+<td><code>assets/</code></td>
+<td>Templates and fixed inputs</td>
+<td>When a step copies them</td>
+</tr>
+</tbody>
+</table>
+<h3 id="skillmd-format">SKILL.md Format<a class="headerlink" href="#skillmd-format" title="Permanent link">&para;</a></h3>
+<p>The <strong><code>SKILL.md</code> format</strong> is a Markdown file that opens with a block of YAML metadata between two lines of three dashes. The block carries the fields a harness needs to decide whether the skill applies, and the Markdown below it carries the procedure. The header of a real skill from this project's chain, abbreviated, looks like this.</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nn">---</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapter-content-generator</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generates detailed chapter content for an intelligent textbook,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">with text, diagrams, MicroSims, and exercises at the appropriate Bloom's</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">level. Use when a chapter's index.md exists with title, summary, and</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">concept list.</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Creative Commons Attribution-NonCommercial 4.0 International</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">ibook.version</span><span class="p">:</span><span class="w"> </span><span class="s">"1.11"</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nn">---</span>
+</span></code></pre></div>
+<p>Two fields do the work. The <code>name</code> is the identifier, and it matches the directory name. The <code>description</code> is the text the harness uses to decide when the skill is relevant, so it must say both what the skill does and when to use it. A description that says only what the skill does gives the harness no way to tell when it applies.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Description Is How a Skill Gets Chosen</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+A harness with thirty skills installed cannot read thirty full procedures on every request. It reads thirty one-paragraph descriptions and loads the one that fits. A skill with an unclear description is invisible, however good its body is, so the description is the part to write most carefully.</p>
+</div>
+<h3 id="skill-loading">Skill Loading<a class="headerlink" href="#skill-loading" title="Permanent link">&para;</a></h3>
+<p><strong>Skill loading</strong> is how a harness brings a skill into the conversation. It works in stages so that the context is not spent on instructions that are not needed. At startup the harness reads only the name and description of each installed skill and places those short entries in the system prompt. When the model, or the user's request, selects a skill, the harness loads that skill's <code>SKILL.md</code> body. The reference documents load later still, one at a time, when a step names them.</p>
+<p>The staging has a consequence for a local model. A skill whose body runs past a thousand lines, with reference documents beside it, asks the model to find the right file at the right step. A model that does not look when it should will proceed without the reference and produce something that ignores a rule the reference stated. That is a failure of skill following, and it is one of the two abilities this benchmark tests.</p>
+<h3 id="skill-installation">Skill Installation<a class="headerlink" href="#skill-installation" title="Permanent link">&para;</a></h3>
+<p><strong>Skill installation</strong> is placing the skill directories where the harness looks for them. For Claude Code that is a <code>skills</code> directory under its configuration folder in the home directory. This evaluation's skills live in one repository and are linked there, so that updating the repository updates every harness.</p>
+<p>Inside the benchmark container the skills are mounted read-only. The agent can read every skill and cannot change any of them, which matters for the comparison: a model that rewrote a skill to make its own task easier would be measuring itself against a different test.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>-v &lt;skills-repo&gt;/skills:/home/agent/.claude/skills:ro
+</span></code></pre></div>
+<p>The <code>:ro</code> suffix marks the mount read-only.</p>
+<h2 id="the-ibook-skills-chain">The ibook-skills Chain<a class="headerlink" href="#the-ibook-skills-chain" title="Permanent link">&para;</a></h2>
+<h3 id="ibook-skills-skill-chain">ibook-skills Skill Chain<a class="headerlink" href="#ibook-skills-skill-chain" title="Permanent link">&para;</a></h3>
+<p>The <strong><code>ibook-skills</code> skill chain</strong> is the ordered set of skills that builds an intelligent textbook. Each skill takes the previous one's output as its input, so the order is part of the design. The full chain has ten steps.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Skill</th>
+<th>What it produces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>course-description-analyzer</code></td>
+<td>A validated course description, scored for completeness</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>learning-graph-generator</code></td>
+<td>The concept list and dependency graph</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>book-chapter-generator</code></td>
+<td>The chapter structure, one outline per chapter</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>chapter-content-generator</code></td>
+<td>The text of each chapter</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>microsim-generator</code></td>
+<td>The interactive simulations</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>glossary-generator</code></td>
+<td>Definitions of the concepts</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>faq-generator</code></td>
+<td>Frequently asked questions</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>quiz-generator</code></td>
+<td>Chapter quizzes</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>reference-generator</code></td>
+<td>Citations for each chapter</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>book-installer</code></td>
+<td>Site features such as the mascot and graph viewer</td>
+</tr>
+</tbody>
+</table>
+<p>This benchmark runs three of the ten, steps 2 through 4, and uses step 1 as a short check that the wiring works. MicroSims, the glossary, the FAQ, and the quizzes are outside the benchmark. The worked example is the first stage's prompt, which is what a person would type to start the skill, plus a standing answer to its approval questions.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Run the learning-graph-generator skill on this project. The course
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>description is at docs/course-description.md. Generate 200 concepts.
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>I am not available to answer questions or to review intermediate results.
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Whenever the skill tells you to ask me something, or to wait for my review
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>or approval, treat it as approved and continue. Work through every step of
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>the skill, and stop when the skill is complete. Do not start the next skill.
+</span></code></pre></div>
+<p>The second paragraph is the standing approval answer that Chapter 16's permission section called for. Without it, a skill that stops to ask "does this look right?" would wait forever in an unattended run.</p>
+<h2 id="connecting-the-harness">Connecting the Harness<a class="headerlink" href="#connecting-the-harness" title="Permanent link">&para;</a></h2>
+<h3 id="claude-code">Claude Code<a class="headerlink" href="#claude-code" title="Permanent link">&para;</a></h3>
+<p><strong>Claude Code</strong> is Anthropic's command-line coding agent, and it is the harness this evaluation uses. It was chosen for a practical reason: the published comparison books were generated with it and the skills were written for it, so using it makes the model the only thing that changes. It runs interactively for a person and headlessly for a script, and the headless form is the one a benchmark needs.</p>
+<p>It is worth being exact about what Claude Code is doing here. It is the agent loop and nothing more. Every token of the textbook comes from the local model behind the endpoint, and the harness is given a placeholder credential so that it cannot reach Anthropic's service even if it tried.</p>
+<h3 id="local-endpoint-connection-and-harness-configuration">Local Endpoint Connection and Harness Configuration<a class="headerlink" href="#local-endpoint-connection-and-harness-configuration" title="Permanent link">&para;</a></h3>
+<p>A <strong>local endpoint connection</strong> points the harness at your own server instead of the vendor's. It is done with environment variables, and the set below is the one this project's runner uses. Each variable is explained before the table puts them together.</p>
+<p><code>ANTHROPIC_BASE_URL</code> is the address the harness sends requests to, which here is the Ollama endpoint on the same machine. <code>ANTHROPIC_AUTH_TOKEN</code> is the credential the harness presents, and a placeholder word is enough because the local server does not check it. <code>ANTHROPIC_API_KEY</code> is left empty. The several <code>...MODEL</code> variables tell the harness which model to use in each role, and setting all of them to the same local model prevents it from asking for a name that does not exist.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ANTHROPIC_BASE_URL</code></td>
+<td><code>http://127.0.0.1:11434</code></td>
+<td>Send requests to the local server</td>
+</tr>
+<tr>
+<td><code>ANTHROPIC_AUTH_TOKEN</code></td>
+<td>A placeholder word</td>
+<td>Satisfy the harness without a real credential</td>
+</tr>
+<tr>
+<td><code>ANTHROPIC_API_KEY</code></td>
+<td>Empty</td>
+<td>Make sure no real key is used</td>
+</tr>
+<tr>
+<td><code>ANTHROPIC_MODEL</code> and the <code>DEFAULT_*_MODEL</code> variables</td>
+<td>The local model's tag</td>
+<td>Use the same model in every role</td>
+</tr>
+<tr>
+<td><code>CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC</code></td>
+<td><code>1</code></td>
+<td>Turn off the harness's optional network features</td>
+</tr>
+<tr>
+<td><code>API_TIMEOUT_MS</code></td>
+<td>A large value</td>
+<td>Allow a slow model a long time per request</td>
+</tr>
+<tr>
+<td><code>CLAUDE_CODE_MAX_OUTPUT_TOKENS</code></td>
+<td><code>32000</code></td>
+<td>Allow long replies without cutting them off</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Harness configuration</strong> is the whole of those choices plus the command-line flags. The command that runs one stage reads the prompt from a file and writes every event to a log. <code>-p</code> runs it non-interactively, and <code>--output-format stream-json --verbose</code> writes each message, tool call, and result as a line of JSON, which is the record the later chapters analyze. <code>--max-turns</code> caps the loop so a confused model cannot run forever.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>claude<span class="w"> </span>-p<span class="w"> </span>--model<span class="w"> </span>&lt;model&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--output-format<span class="w"> </span>stream-json<span class="w"> </span>--verbose<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>--max-turns<span class="w"> </span><span class="m">150</span><span class="w"> </span>--dangerously-skip-permissions<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>&lt;<span class="w"> </span>prompt.txt<span class="w"> </span>&gt;<span class="w"> </span>run.jsonl
+</span></code></pre></div>
+<div class="admonition mascot-warning">
+<p class="admonition-title">That Last Flag Is Safe Only Inside the Sandbox</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+<code>--dangerously-skip-permissions</code> lets the agent run any command without asking, which an unattended run requires. It is acceptable here only because the container limits what the agent can touch to its own run directory. Never use it on a machine where the agent can reach files you care about, and Chapter 18 builds the boundary.</p>
+</div>
+<h3 id="harness-prompt-overhead">Harness Prompt Overhead<a class="headerlink" href="#harness-prompt-overhead" title="Permanent link">&para;</a></h3>
+<p><strong>Harness prompt overhead</strong> is the number of tokens the harness's own instructions and tool definitions take before your task begins. For Claude Code it is about 19,000 tokens, and it was written for Claude models. Every turn carries it, and a local model's window and speed pay for it. In this evaluation the prompts of the models in the harness started at 17,000 to 21,000 tokens, and one model's started at 35,000, which was an early sign that it would run out of window.</p>
+<h3 id="harness-on-laptop">Harness on Laptop<a class="headerlink" href="#harness-on-laptop" title="Permanent link">&para;</a></h3>
+<p><strong>Harness on laptop</strong> is the arrangement in which the harness runs on the machine you sit at and reaches the model on the DGX through an SSH port forward. It was this evaluation's first arrangement, and it is the quickest way to try a model, because nothing is installed on the DGX but the server. It has two drawbacks. Prompts and tokens cross the network on every turn, and the harness has no sandbox, so it was allowed no shell commands, which most skills need. The later runs moved the harness into a container on the DGX, so that a run kept going with the laptop disconnected.</p>
+<h3 id="alternatives-opencode-codex-cli-and-goose">Alternatives: OpenCode, Codex CLI, and Goose<a class="headerlink" href="#alternatives-opencode-codex-cli-and-goose" title="Permanent link">&para;</a></h3>
+<p>Claude Code is not the only harness, and the skill format is shared enough that others can run the same skills. <strong>OpenCode</strong> is an open-source harness with a lighter prompt, and it is a good second harness for telling a model failure from a harness mismatch. <strong>Codex CLI</strong> is OpenAI's command-line agent, and <strong>Goose</strong> is an open-source agent from a different publisher. Both implement the same skill format.</p>
+<table>
+<thead>
+<tr>
+<th>Harness</th>
+<th>Publisher</th>
+<th>Why consider it</th>
+<th>Why this evaluation did not use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Code</td>
+<td>Anthropic</td>
+<td>The comparison books and skills were made with it</td>
+<td>Chosen</td>
+</tr>
+<tr>
+<td>OpenCode</td>
+<td>Open source</td>
+<td>Lighter prompt</td>
+<td>A good second pass, not yet run</td>
+</tr>
+<tr>
+<td>Codex CLI</td>
+<td>OpenAI</td>
+<td>Implements the skill format</td>
+<td>Did not match how the comparison books were made</td>
+</tr>
+<tr>
+<td>Goose</td>
+<td>Open source</td>
+<td>Implements the skill format</td>
+<td>Did not match how the comparison books were made</td>
+</tr>
+</tbody>
+</table>
+<h3 id="agentsmd-file">AGENTS.md File<a class="headerlink" href="#agentsmd-file" title="Permanent link">&para;</a></h3>
+<p>An <strong><code>AGENTS.md</code> file</strong> is a plain Markdown file at the root of a project that gives any coding agent the project's standing instructions: how to build, which rules to follow, where things live. It is the cross-harness counterpart of a harness-specific instruction file, and this book uses one. Its <code>CLAUDE.md</code> contains only a pointer to it, so that Claude Code, Codex, and any other agent that looks for <code>AGENTS.md</code> read the same rules.</p>
+<h2 id="verifying-that-it-works">Verifying That It Works<a class="headerlink" href="#verifying-that-it-works" title="Permanent link">&para;</a></h2>
+<h3 id="skill-execution-verification">Skill Execution Verification<a class="headerlink" href="#skill-execution-verification" title="Permanent link">&para;</a></h3>
+<p><strong>Skill execution verification</strong> is confirming that a skill ran to completion and produced what it should. It is a separate check from the first-prompt smoke test of Chapter 13, which tested only the server. This one tests the harness, the model, and the skill together.</p>
+<p>The check this project uses is a short skill run of about three minutes, the course-description analyzer, whose output can be inspected quickly. It passes when four things are true.</p>
+<ul>
+<li><strong>The report was written.</strong> The skill's output file exists.</li>
+<li><strong>A score was given.</strong> The report contains the quality score the skill is meant to assign.</li>
+<li><strong>The project files were updated.</strong> The frontmatter and the site navigation reflect the skill's work.</li>
+<li><strong>The site builds.</strong> A strict <code>mkdocs build</code> finishes with no errors.</li>
+</ul>
+<p>A script, <code>score_analyzer_runs.py</code>, applies exactly these checks, so the verdict does not depend on someone reading the output.</p>
+<h3 id="harness-compatibility-test">Harness Compatibility Test<a class="headerlink" href="#harness-compatibility-test" title="Permanent link">&para;</a></h3>
+<p>A <strong>harness compatibility test</strong> runs the same short skill against several harness and model combinations, to find which pairs work at all before spending hours on any of them. Failures at this stage are cheap and informative. In this evaluation it showed a model that wrote its first tool call as plain text, and a model that lost the task after a few turns, both within minutes, and neither would have been found by a first-prompt smoke test.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Run the Three-Minute Test Before the Three-Hour One</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+A model that fails the short skill will fail the long one more slowly. Put the analyzer run, with its scripted checks, in front of every model you intend to benchmark, and discard the ones that fail for reasons you can name.</p>
+</div>
+<h4 id="diagram-skillmd-anatomy">Diagram: SKILL.md Anatomy<a class="headerlink" href="#diagram-skillmd-anatomy" title="Permanent link">&para;</a></h4>
+<details>
+<summary>SKILL.md Anatomy</summary>
+<p>Type: infographic
+<strong>sim-id:</strong> skill-md-anatomy<br/>
+<strong>Library:</strong> html<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-file-anatomy-diagram<br/>
+<strong>Bloom Level:</strong> Remember<br/>
+<strong>Bloom Verb:</strong> identify<br/>
+<strong>Learning Objective:</strong> The learner will identify the part of a skill that answers each of 6 questions about how a harness uses it, with at least 5 of 6 correct.</p>
+<p><strong>Prerequisites:</strong> agent skill, SKILL.md format, skill loading, skill installation (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The sim shows an annotated skill folder with six labeled regions. For each of 6 questions the learner selects one region before the sim reveals the answer. A selection is correct when it equals the Correct region column. Mastery is 5 of 6 correct on the first attempt. Hovering over a region to read its label is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) The harness reads every file in a skill at startup. (2) The body of <code>SKILL.md</code> is how a skill is chosen. (3) Reference documents are loaded with the instructions. (4) A skill's scripts run by themselves.</p>
+<p><strong>Instructional Rationale:</strong> Identifying a part at the Remember level needs a labeled structure and questions that name a function, so that the learner links each function to its place. The questions are phrased by what the harness does, which is the behavior the chapter taught.</p>
+<p><strong>Content:</strong></p>
+<p>The six regions of the annotated skill folder: "name field", "description field", "metadata field", "instruction body", "references folder", and "scripts folder".</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question shown to the learner</th>
+<th>Correct region</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Which part is the skill's identifier, matching the directory name?</td>
+<td>name field</td>
+<td>The name identifies the skill to the harness.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Which part does the harness read at startup to decide whether the skill applies?</td>
+<td>description field</td>
+<td>Only the name and description of each skill are loaded at startup.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Which part holds the step-by-step procedure, loaded when the skill is invoked?</td>
+<td>instruction body</td>
+<td>The body is loaded on selection, not at startup.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Which part holds long documents that are read only when a step names them?</td>
+<td>references folder</td>
+<td>References are loaded last, one at a time.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Which part holds helper programs that a step tells the model to run?</td>
+<td>scripts folder</td>
+<td>Scripts are run by a step, and they do not run on their own.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Which part records the skill's version?</td>
+<td>metadata field</td>
+<td>The version is carried in the metadata block of the header.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The annotated folder and the questions are synthetic, written for this exercise, and the sim labels them "synthetic example". The meanings of the parts come from the sections of this chapter above.</p>
+<p><strong>Rules:</strong> Questions are shown in the fixed order 1 to 6. Each allows one final choice among the six regions, and exactly one region is correct for each question. A region may be the answer to only one question.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner hovers over the regions of the annotated folder to read their labels.</li>
+<li>The learner reads question 1 and selects a region, then confirms.</li>
+<li>The sim shows the correct region and the Why text, and marks the question correct or incorrect.</li>
+<li>The learner repeats for questions 2 to 6. After question 6 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Six questions, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct region and the Why text. The final score reads "n of 6 correct".</p>
+<p><strong>Starting State:</strong> The annotated folder is shown with no region selected, and the instruction on screen is "Hover over a region to read its label".</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that a harness reads only each skill's name and description at startup, loads the body when the skill is selected, and loads references only when a step names them, and that scripts run only when a step runs them.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>A skill is a folder whose <code>SKILL.md</code> header lets a harness choose it and whose body, references, and scripts supply the procedure in stages. The <code>ibook-skills</code> chain has ten steps, and the benchmark runs three of them, with a fourth used as a short wiring check. Claude Code connects to the local endpoint through environment variables that set its address, a placeholder credential, and the model in every role, and its headless flags write a full event log. Alternative harnesses read the same skills, and an <code>AGENTS.md</code> file gives all of them the project's rules. Skill execution verification applies four scripted checks to a three-minute run, and a harness compatibility test applies it across combinations, so that a failure costs minutes and not hours.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">The Harness Runs a Skill End to End</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now install a skill, point a harness at your own endpoint with a placeholder credential, and prove with a scripted three-minute run that the chain works. Chapter 18 builds the container and the boundaries that keep that run from reaching anything it should not.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

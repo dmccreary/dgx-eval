@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="Installing the software that loads a model and exposes it through a local API: Ollama, llama.cpp, and vLLM compared, a localhost-bound OpenAI-compatible endpoint, sharing across the tailnet, and a first-prompt smoke test from curl and Python.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>13. Inference Servers and Local API Endpoints - DGX Evaluation for Textbook Generation</title>
+        <title>Inference Servers and Local API Endpoints - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              13. Inference Servers and Local API Endpoints
+              Inference Servers and Local API Endpoints
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -950,6 +773,267 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inference-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ollama-and-the-ollama-model-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ollama and the Ollama Model Library
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llamacpp-and-vllm" class="md-nav__link">
+    <span class="md-ellipsis">
+      llama.cpp and vLLM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-and-running-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing and Running It
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing and Running It">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runtime-installation-release-archive-and-user-space-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime Installation, Release Archive, and User-Space Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmux-session-and-background-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      tmux Session and Background Service
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-configuration-and-model-keep-alive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime Configuration and Model Keep-Alive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-offload-and-model-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Offload and Model Loading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Logs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-api-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local API Endpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-compatible-api-and-chat-completions-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAI-Compatible API and Chat Completions Endpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anthropic-compatible-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anthropic-Compatible API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sending-a-first-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sending a First Prompt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sending a First Prompt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curl-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      curl Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-prompt-smoke-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      First-Prompt Smoke Test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-can-reach-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who Can Reach It
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Who Can Reach It">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#localhost-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      localhost Binding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-sharing-and-tailscale-serve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Sharing and Tailscale Serve
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoint Sharing and Tailscale Serve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-inference-request-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Inference Request Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-endpoint-exposure-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Endpoint Exposure Classifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1201,6 +1285,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1300,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1401,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1543,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1702,267 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inference-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ollama-and-the-ollama-model-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ollama and the Ollama Model Library
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llamacpp-and-vllm" class="md-nav__link">
+    <span class="md-ellipsis">
+      llama.cpp and vLLM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-and-running-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing and Running It
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing and Running It">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runtime-installation-release-archive-and-user-space-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime Installation, Release Archive, and User-Space Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmux-session-and-background-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      tmux Session and Background Service
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-configuration-and-model-keep-alive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime Configuration and Model Keep-Alive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-offload-and-model-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Offload and Model Loading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Logs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-api-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local API Endpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-compatible-api-and-chat-completions-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAI-Compatible API and Chat Completions Endpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anthropic-compatible-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anthropic-Compatible API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sending-a-first-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sending a First Prompt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sending a First Prompt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curl-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      curl Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-prompt-smoke-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      First-Prompt Smoke Test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-can-reach-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who Can Reach It
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Who Can Reach It">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#localhost-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      localhost Binding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-sharing-and-tailscale-serve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Sharing and Tailscale Serve
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoint Sharing and Tailscale Serve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-inference-request-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Inference Request Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-endpoint-exposure-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Endpoint Exposure Classifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1534,13 +2119,395 @@
 <li><a href="../12-selecting-downloading-models/">Chapter 12: Selecting and Downloading an Open-Weight Model</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">From Files on Disk to an Answer on the Wire</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+A model file does nothing until a server loads it and listens for requests. By the end of this chapter you will have a local endpoint that answers a prompt, bound so that only the right machines can reach it, and a smoke test that tells you in minutes whether it works. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>You have a machine that is reachable, probed, and sized for a model, and a shortlist of models. This chapter connects them with the software in the middle. An inference server loads a model's weights into memory and exposes an interface that other programs call, which is how the harness of Chapters 16 and 17 will eventually reach the model.</p>
+<p>The chapter compares the three servers a DGX evaluator is likely to meet, installs one without administrator rights, and keeps it running in a way that survives a dropped connection. It then covers the interface it exposes, decides who may reach it, and ends with a first prompt sent from <code>curl</code> and from Python, and a smoke test that makes that first prompt a repeatable check.</p>
+<h2 id="the-server">The Server<a class="headerlink" href="#the-server" title="Permanent link">&para;</a></h2>
+<h3 id="inference-server">Inference Server<a class="headerlink" href="#inference-server" title="Permanent link">&para;</a></h3>
+<p>An <strong>inference server</strong> is a program that loads a trained model into memory and answers requests to generate text from it. It owns the hard parts of running a model, which are placing the weights on the GPU, managing the KV cache, scheduling requests, and turning the model's raw output into text, and it hides them behind a simple interface. Everything else in the stack talks to the server and never to the model directly.</p>
+<p>Three servers matter for this course, and they differ in what they optimize.</p>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>What it is</th>
+<th>Strength</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ollama</td>
+<td>A server with a model library and one-command downloads</td>
+<td>The quickest path from nothing to an answer</td>
+<td>Less control over scheduling than the others</td>
+</tr>
+<tr>
+<td>llama.cpp</td>
+<td>A C++ inference engine for quantized models in the GGUF format</td>
+<td>Runs almost anywhere, and is what Ollama is built on</td>
+<td>You build it and fetch models by hand</td>
+</tr>
+<tr>
+<td>vLLM</td>
+<td>A high-throughput server for Python and GPU deployments</td>
+<td>Many concurrent requests served efficiently</td>
+<td>The usual route on this hardware is a container</td>
+</tr>
+</tbody>
+</table>
+<p>This evaluation chose Ollama. It installs from one archive into a home directory, has the widest ready-made library, and offers an interface the harness can use directly. vLLM remains the candidate for a second pass on whichever model wins, because its strength, serving several sessions at once, is the lever for lowering cost per book.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Server Is a Loader Plus an API</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Hold two jobs in mind. One is the loader, which puts the weights and cache into memory and runs them on the GPU. The other is the interface, which accepts a request and returns text. Almost every problem in this chapter is a problem in one or the other, and knowing which halves your search.</p>
+</div>
+<h3 id="ollama-and-the-ollama-model-library">Ollama and the Ollama Model Library<a class="headerlink" href="#ollama-and-the-ollama-model-library" title="Permanent link">&para;</a></h3>
+<p><strong>Ollama</strong> is the server this course uses. It runs as one background process, loads models on demand, and serves them over HTTP. The <strong>Ollama model library</strong> is its catalog of ready-to-pull models, named <code>family:tag</code> such as <code>gemma4:31b</code>, where the tag selects the size and the quantization. Pulling from the library gives you a file in the right format with its digests verified, which removes Chapter 12's download and verification steps for the common case.</p>
+<h3 id="llamacpp-and-vllm">llama.cpp and vLLM<a class="headerlink" href="#llamacpp-and-vllm" title="Permanent link">&para;</a></h3>
+<p><strong>llama.cpp</strong> is the C++ engine for running quantized models that Ollama wraps. It can be built and run directly when you need control over a setting that Ollama does not expose, at the price of fetching GGUF files and passing flags by hand. <strong>vLLM</strong> is a server built for throughput: it batches many requests together on the GPU, so it produces more total tokens per second when several sessions are active. For one benchmark session at a time the gain is small, and for a service that generates many books at once it is the main lever. Chapter 15 explains batching.</p>
+<h2 id="installing-and-running-it">Installing and Running It<a class="headerlink" href="#installing-and-running-it" title="Permanent link">&para;</a></h2>
+<h3 id="runtime-installation-release-archive-and-user-space-installation">Runtime Installation, Release Archive, and User-Space Installation<a class="headerlink" href="#runtime-installation-release-archive-and-user-space-installation" title="Permanent link">&para;</a></h3>
+<p><strong>Runtime installation</strong> is putting the server on the machine. The usual instructions run an installer script with <code>sudo</code>, which creates a system-wide service. On a machine that belongs to someone else, that is a step you should not take on your own.</p>
+<p>A <strong>release archive</strong> is the alternative: a compressed file of the program, published with a checksum. A <strong>user-space installation</strong> unpacks it into your own home directory, with no administrator rights and no system changes. This evaluation did exactly that: the pinned Ollama release was downloaded as an archive for the machine's architecture, its SHA-256 was compared with the published value, and it was unpacked under the home directory. The cost is that the server is not a system service and does not start on its own. The benefit is that removing it is deleting one directory.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>&lt;user&gt;@&lt;dgx-host&gt;<span class="w"> </span><span class="s1">'bash -s'</span><span class="w"> </span>&lt;<span class="w"> </span>src/dgx-setup/install_ollama.sh
+</span></code></pre></div>
+<h3 id="tmux-session-and-background-service">tmux Session and Background Service<a class="headerlink" href="#tmux-session-and-background-service" title="Permanent link">&para;</a></h3>
+<p>A <strong>tmux session</strong> is a terminal that keeps running after you disconnect. It lets a server, a download, or a long benchmark continue when your SSH connection drops, and you can reattach later to see what it printed. A <strong>background service</strong> is the system-level equivalent, managed by the operating system, started at boot, and restarted if it fails.</p>
+<p>This evaluation ran the server in a tmux session named <code>ollama</code>, bound to the loopback address, writing its output to a log file.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tmux<span class="w"> </span>new-session<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>ollama<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/opt/ollama/bin/ollama serve &gt; </span><span class="nv">$HOME</span><span class="s2">/opt/ollama/serve.log 2&gt;&amp;1"</span>
+</span></code></pre></div>
+<p>The command creates a detached session, <code>-d</code>, named <code>ollama</code>, <code>-s</code>, which runs the server and sends its output to <code>serve.log</code>. Check it with <code>tmux has-session -t ollama</code>, and stop it with <code>tmux kill-session -t ollama</code>. The trade-off is the one that makes a service worth having: a tmux session does not survive a reboot, so after a restart the server is simply not running until someone starts it.</p>
+<h3 id="runtime-configuration-and-model-keep-alive">Runtime Configuration and Model Keep-Alive<a class="headerlink" href="#runtime-configuration-and-model-keep-alive" title="Permanent link">&para;</a></h3>
+<p><strong>Runtime configuration</strong> is the settings that shape how the server runs, which Ollama reads from environment variables. Two matter most here. <code>OLLAMA_CONTEXT_LENGTH</code> sets the context window in tokens, which Chapter 11 showed is a memory reservation. <code>OLLAMA_KEEP_ALIVE</code> sets how long an idle model stays loaded.</p>
+<p><strong>Model keep-alive</strong> is that idle period. By default a model is unloaded after about five minutes without a request, which frees memory and means the next request pays the load time again. A benchmark that sends prompts minutes apart wants a longer keep-alive, and a machine that shares memory with other work may want a shorter one.</p>
+<p>This project's <code>start_ollama.sh</code> takes the context length as an argument and restarts the server with it, so that the setting is chosen on purpose for each model and not inherited.</p>
+<h3 id="gpu-offload-and-model-loading">GPU Offload and Model Loading<a class="headerlink" href="#gpu-offload-and-model-loading" title="Permanent link">&para;</a></h3>
+<p><strong>Model loading</strong> is reading a model's file from disk into memory and preparing it to run. It happens on the first request after a model is unloaded, and its duration is the storage read speed of Chapter 5 applied to the model's size. <strong>GPU offload</strong> is placing the model's layers on the GPU so that the GPU does the work. On a unified-memory machine every layer is offloaded, because the memory is shared.</p>
+<p>The command <code>ollama ps</code> shows what is loaded, how much memory it holds, and the share running on the GPU.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ollama<span class="w"> </span>ps
+</span></code></pre></div>
+<p>A model that shows less than 100% on the GPU is partly running on the CPU, and will be much slower than the figures in this book. On a unified-memory machine that usually points to a context setting so large that the cache and weights no longer fit together.</p>
+<h3 id="server-logs">Server Logs<a class="headerlink" href="#server-logs" title="Permanent link">&para;</a></h3>
+<p><strong>Server logs</strong> are the text the server writes about what it did: when a model loaded, how much memory it requested, which request arrived, and any error. They are the first place to look when something fails, and the only place some information exists. The log in this project is <code>serve.log</code> beside the install. Two lines to learn to find are the one that reports a model finishing its load and the one that reports a request's timing. This evaluation relied on them to see that, with one model, the server re-read the conversation on every turn.</p>
+<h2 id="the-interface">The Interface<a class="headerlink" href="#the-interface" title="Permanent link">&para;</a></h2>
+<h3 id="local-api-endpoint">Local API Endpoint<a class="headerlink" href="#local-api-endpoint" title="Permanent link">&para;</a></h3>
+<p>A <strong>local API endpoint</strong> is the network address on the machine where the server accepts requests. Ollama's is <code>127.0.0.1</code> on port <code>11434</code>, so the base address is <code>http://127.0.0.1:11434</code>. Programs on the machine call it as they would a web service, and the server answers with JSON.</p>
+<h3 id="openai-compatible-api-and-chat-completions-endpoint">OpenAI-Compatible API and Chat Completions Endpoint<a class="headerlink" href="#openai-compatible-api-and-chat-completions-endpoint" title="Permanent link">&para;</a></h3>
+<p>The <strong>OpenAI-compatible API</strong> is an interface that copies the request and response shapes of OpenAI's service, which became a de facto standard. A server that offers it can be called by any client written for that service, by changing only the base address. The <strong>chat completions endpoint</strong> is its main route, at <code>/v1/chat/completions</code>, and it accepts a list of messages and returns the model's reply.</p>
+<p>A request has a model name and a list of messages, each with a role and content. The roles are <code>system</code> for standing instructions, <code>user</code> for the person's request, and <code>assistant</code> for the model's earlier replies.</p>
+<h3 id="anthropic-compatible-api">Anthropic-Compatible API<a class="headerlink" href="#anthropic-compatible-api" title="Permanent link">&para;</a></h3>
+<p>The <strong>Anthropic-compatible API</strong> is the same idea with a different shape, copying Anthropic's messages interface. Ollama offers it too, and it is the interface that Claude Code uses, because Claude Code is built to talk to that shape. Chapter 17 points Claude Code at the local endpoint through this route. The model behind it is whichever local model you name, and no request leaves the machine.</p>
+<h2 id="sending-a-first-prompt">Sending a First Prompt<a class="headerlink" href="#sending-a-first-prompt" title="Permanent link">&para;</a></h2>
+<h3 id="curl-request">curl Request<a class="headerlink" href="#curl-request" title="Permanent link">&para;</a></h3>
+<p>A <strong><code>curl</code> request</strong> is the simplest way to call the endpoint: one command, no code. It also removes every layer between you and the server, so a failure here is a failure of the server or the model and not of your program.</p>
+<p>Before reading the command, three of its pieces need naming. <code>-H</code> adds a header, and <code>Content-Type: application/json</code> tells the server the body is JSON. <code>-d</code> supplies the body. In the body, <code>model</code> names the model, <code>messages</code> is the conversation, and <code>"stream": false</code> asks for the whole reply in one piece and not token by token.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>http://127.0.0.1:11434/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"model": "gemma4:31b", "stream": false,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="s1">       "messages": [{"role": "user", "content": "Reply with the single word: ready"}]}'</span>
+</span></code></pre></div>
+<p>The reply is a JSON object. The text is at <code>choices[0].message.content</code>, and a <code>usage</code> block reports <code>prompt_tokens</code> and <code>completion_tokens</code>, which are the two numbers every later performance measurement uses.</p>
+<h3 id="python-client">Python Client<a class="headerlink" href="#python-client" title="Permanent link">&para;</a></h3>
+<p>A <strong>Python client</strong> is a program that makes the same request. The version below uses only the standard library, so it runs on a fresh machine with no <code>pip install</code>. <code>urllib.request.Request</code> builds the call, <code>json.dumps</code> turns the dictionary into the body, and <code>urlopen</code> sends it.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="o">,</span><span class="w"> </span><span class="nn">urllib.request</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"model"</span><span class="p">:</span> <span class="s2">"gemma4:31b"</span><span class="p">,</span> <span class="s2">"stream"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="s2">"messages"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Reply with the single word: ready"</span><span class="p">}]}</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">req</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="s2">"http://127.0.0.1:11434/v1/chat/completions"</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>                             <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                             <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">})</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span> <span class="k">as</span> <span class="n">r</span><span class="p">:</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">reply</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">reply</span><span class="p">[</span><span class="s2">"choices"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"message"</span><span class="p">][</span><span class="s2">"content"</span><span class="p">])</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">reply</span><span class="p">[</span><span class="s2">"usage"</span><span class="p">])</span>
+</span></code></pre></div>
+<h3 id="first-prompt-smoke-test">First-Prompt Smoke Test<a class="headerlink" href="#first-prompt-smoke-test" title="Permanent link">&para;</a></h3>
+<p>A <strong>smoke test</strong> is a quick check that a system is alive at all, named for the old practice of powering a circuit on and watching for smoke. A <strong>first-prompt smoke test</strong> sends one tiny request and checks four things: the server answered, the reply is not empty, the speed is plausible, and the model is running on the GPU.</p>
+<p>The function below extends the client with timing. <code>max_tokens</code> caps the reply length so the test stays short. The speed is the output tokens divided by the elapsed seconds.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="o">,</span><span class="w"> </span><span class="nn">time</span><span class="o">,</span><span class="w"> </span><span class="nn">urllib.request</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">smoke</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="s2">"http://127.0.0.1:11434"</span><span class="p">):</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"model"</span><span class="p">:</span> <span class="n">model</span><span class="p">,</span> <span class="s2">"stream"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"max_tokens"</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>            <span class="s2">"messages"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>                          <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Reply with the single word: ready"</span><span class="p">}]}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">req</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s2">"/v1/chat/completions"</span><span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>                                 <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>                                 <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">})</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span> <span class="k">as</span> <span class="n">r</span><span class="p">:</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="n">reply</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">seconds</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">tokens</span> <span class="o">=</span> <span class="n">reply</span><span class="p">[</span><span class="s2">"usage"</span><span class="p">][</span><span class="s2">"completion_tokens"</span><span class="p">]</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"reply"</span><span class="p">:</span> <span class="n">reply</span><span class="p">[</span><span class="s2">"choices"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"message"</span><span class="p">][</span><span class="s2">"content"</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>            <span class="s2">"seconds"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">seconds</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>            <span class="s2">"output_tokens"</span><span class="p">:</span> <span class="n">tokens</span><span class="p">,</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>            <span class="s2">"tokens_per_second"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">tokens</span> <span class="o">/</span> <span class="n">seconds</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">seconds</span> <span class="k">else</span> <span class="kc">None</span><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition mascot-warning">
+<p class="admonition-title">The First Request Includes the Model Load</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+The first prompt after a model is unloaded pays for reading the file from disk, so its tokens per second looks terrible and is not the model's speed. Send it twice and read the speed from the second. If the second is also slow, the cause is the model, the context, or the memory.</p>
+</div>
+<p>This project's own smoke test, <code>ollama_smoke.py</code>, goes further than one word. It runs five short tasks: Markdown writing, p5.js code, schema-constrained JSON, a tool call, and a 30,000-token prompt. It reports speed, memory, GPU power, and which format rules the output broke. Chapter 19 explains why a model gets tested alone, with a script like this, before it is tested in the harness.</p>
+<h2 id="who-can-reach-it">Who Can Reach It<a class="headerlink" href="#who-can-reach-it" title="Permanent link">&para;</a></h2>
+<h3 id="localhost-binding">localhost Binding<a class="headerlink" href="#localhost-binding" title="Permanent link">&para;</a></h3>
+<p><strong>localhost binding</strong> is configuring the server to accept connections only from the machine it runs on, by listening on the loopback address <code>127.0.0.1</code>. A request from any other machine, including one on the same network, is refused before it reaches the server. This is the default and the setting this evaluation used.</p>
+<p>The alternative is to bind to all interfaces, written <code>0.0.0.0</code>, which accepts connections from any machine that can reach the port. That is sometimes what you want, and it is a security decision, because an inference endpoint has no login of its own. Anyone who can send it a request can use the machine's GPU and read whatever the model is allowed to read.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Start Closed and Open Deliberately</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Leave the server on the loopback address, confirm that everything works there, and then decide who else needs access and how to give it to exactly them. Binding to every interface to make a tutorial command work is a decision you cannot easily see later.</p>
+</div>
+<h3 id="endpoint-sharing-and-tailscale-serve">Endpoint Sharing and Tailscale Serve<a class="headerlink" href="#endpoint-sharing-and-tailscale-serve" title="Permanent link">&para;</a></h3>
+<p><strong>Endpoint sharing</strong> is making a local endpoint reachable from other machines. A harness on a laptop that needs the model on a DGX is the common reason, and so is a colleague who wants to try the model. There are three ways to do it, and they differ in who ends up able to reach the server.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>How it works</th>
+<th>Who can reach the endpoint</th>
+<th>Changes on the DGX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSH port forward</td>
+<td>The laptop forwards a local port through an SSH login</td>
+<td>Only you, for as long as the forward runs</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Tailscale Serve</td>
+<td>The Tailscale client publishes the local port to the tailnet</td>
+<td>Tailnet members the access rules allow</td>
+<td>Needs the client and a command on the DGX</td>
+</tr>
+<tr>
+<td>Bind to all interfaces</td>
+<td>The server listens on <code>0.0.0.0</code></td>
+<td>Anyone who can reach the port</td>
+<td>A server setting</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tailscale Serve</strong> is the second route. A single command makes the loopback endpoint available to the tailnet over HTTPS under the machine's tailnet name, while the server itself stays bound to the loopback address. Access is limited to tailnet members, and the access control list of Chapter 9 still applies.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>tailscale<span class="w"> </span>serve<span class="w"> </span>--bg<span class="w"> </span><span class="m">11434</span>
+</span></code></pre></div>
+<p>The flags have changed across Tailscale versions, so check <code>tailscale serve --help</code> for yours.</p>
+<p>This evaluation used the first method. A forward costs nothing on the DGX and exposes nothing, and the alternatives would have changed which services the Administrator's machine offers, which was the Administrator's decision to make. The first harness runs reached the model this way, and later runs moved the harness onto the DGX, so the port never needed to leave it.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">An Open Inference Endpoint Is an Open GPU</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+The endpoint has no login. If you bind it to every interface on a network you share, anyone on that network can run prompts on your machine and tie up its memory. Prefer a forward or Tailscale Serve, and test from a second machine that the endpoint is refused where you expect it to be.</p>
+</div>
+<h4 id="diagram-inference-request-path">Diagram: Inference Request Path<a class="headerlink" href="#diagram-inference-request-path" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Inference Request Path</summary>
+<p>Type: workflow
+<strong>sim-id:</strong> inference-request-path<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/conversational-ai/tree/main/docs/sims/user-query-components<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> explain<br/>
+<strong>Learning Objective:</strong> The learner will explain what each of 6 stages of a chat completion request does by opening each stage and then locating the stage responsible for each of 4 described events, with at least 3 of 4 correct.</p>
+<p><strong>Prerequisites:</strong> inference server, local API endpoint, chat completions endpoint, model loading, GPU offload, localhost binding, curl request (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner opens all 6 stages to read their descriptions, then answers 4 questions, each by choosing one of the 6 stages, before any answer is revealed. A choice is correct when it equals the Correct stage column. Mastery is 3 of 4 correct on the first attempt. Opening a stage is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) The first request is slow because the GPU is slow. (2) A wrong model name is rejected by the model. (3) A refused connection is a model problem. (4) Token counts are computed by the client.</p>
+<p><strong>Instructional Rationale:</strong> Understand-level explaining needs the learner to attribute an observed event to a part of the mechanism. Reading each stage first gives the vocabulary, and the questions then require the learner to place events in that structure.</p>
+<p><strong>Content:</strong></p>
+<p>The six stages, in order, with the description shown when a stage is opened:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Stage</th>
+<th>Description shown</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Client</td>
+<td>A program such as <code>curl</code> or a Python script builds a JSON body with a model name and messages, and sends it to the endpoint's address.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Endpoint</td>
+<td>The address <code>127.0.0.1</code> on port 11434, where the server listens. If nothing is listening, the client's connection is refused.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Request handler</td>
+<td>The server reads the body, checks that the named model exists, and counts the tokens in the prompt. An unknown model is rejected here.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Model loader</td>
+<td>If the model is not in memory, the server reads its file from disk and places it on the GPU. This is the slow part of a first request.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Generation</td>
+<td>The model produces the reply one token at a time on the GPU, reading the weights and the KV cache for each token.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Response</td>
+<td>The server returns JSON with the reply text and a usage block holding the prompt and completion token counts.</td>
+</tr>
+</tbody>
+</table>
+<p>The four questions:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question shown to the learner</th>
+<th>Correct stage</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The first request after the model was unloaded takes 40 seconds, and the second takes 2. Which stage accounts for the difference?</td>
+<td>Model loader</td>
+<td>The first request pays to read the model from disk into memory, which later requests skip.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A request names a model that was never pulled and returns "model not found". Which stage rejected it?</td>
+<td>Request handler</td>
+<td>The handler checks the model name before any loading or generation.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A request fails at once with "connection refused". Which stage is at fault?</td>
+<td>Endpoint</td>
+<td>Nothing is listening at the address, usually because the server is not running.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Which stage reports how many tokens the prompt and the reply used?</td>
+<td>Response</td>
+<td>The server returns the counts in the usage block of its reply.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The stages and the questions are synthetic, written for this exercise, and the sim labels them "synthetic example". The stage roles come from the "The Server" and "The Interface" sections of this chapter.</p>
+<p><strong>Rules:</strong> Stages may be opened in any order. The questions are asked in the fixed order 1 to 4, each allows one final choice from the six stages, and exactly one stage is correct for each question.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner opens each of the 6 stages in the flow diagram and reads its description. The questions unlock after all six have been opened.</li>
+<li>The learner reads question 1 and chooses the responsible stage, then confirms.</li>
+<li>The sim shows the correct stage and the Why text, and marks the question correct or incorrect.</li>
+<li>The learner repeats for questions 2 to 4. After question 4 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Four questions, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct stage and the Why text. The final score reads "n of 4 correct".</p>
+<p><strong>Starting State:</strong> The six-stage flow is shown with no stage opened, and the instruction on screen is "Open each stage to see what it does".</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that the endpoint is <code>127.0.0.1</code> on port 11434, that the first request pays for model loading, that the usage block reports prompt and completion tokens, and that a connection is refused when no server is listening.</p>
+</details>
+<h4 id="diagram-endpoint-exposure-classifier">Diagram: Endpoint Exposure Classifier<a class="headerlink" href="#diagram-endpoint-exposure-classifier" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Endpoint Exposure Classifier</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> endpoint-exposure-classifier<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> distinguish<br/>
+<strong>Learning Objective:</strong> The learner will distinguish, for 6 configurations of a local endpoint, whether a stated party can reach it, with at least 5 of 6 correct.</p>
+<p><strong>Prerequisites:</strong> localhost binding, endpoint sharing, SSH port forward, Tailscale Serve, home router, access control list (all defined in this chapter and in Chapters 7 and 9).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 6 cases the learner commits "Can reach" or "Cannot reach" before the sim reveals the answer. A choice is correct when it equals the Correct answer column. Mastery is 5 of 6 correct on the first attempt. Reading the cases is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Any machine on the same network can reach a localhost-bound server. (2) A port forward needs the server to listen on a network address. (3) Binding to every interface exposes the server to the whole internet regardless of the router. (4) Tailscale Serve opens the server to everyone.</p>
+<p><strong>Instructional Rationale:</strong> Analyzing exposure requires separating the server's binding, the path a connection takes, and the party's position, so each case varies one of them while the others are fixed. Committing before the reveal separates reasoning from pattern matching.</p>
+<p><strong>Content:</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Configuration and party shown to the learner</th>
+<th>Correct answer</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The server is bound to <code>127.0.0.1</code>. A process running on the DGX itself sends a request to port 11434.</td>
+<td>Can reach</td>
+<td>The request comes from the same machine's loopback address, which is exactly what the binding allows.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The server is bound to <code>127.0.0.1</code>. The laptop, on the same tailnet, sends a request to the DGX's tailnet address on port 11434.</td>
+<td>Cannot reach</td>
+<td>The server accepts connections only from the loopback address, and this one arrives on the network.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The server is bound to <code>127.0.0.1</code>. The laptop runs an SSH port forward to the DGX and sends a request to its own local port.</td>
+<td>Can reach</td>
+<td>The SSH server on the DGX opens the connection from the DGX itself, so it arrives on the loopback address.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The server is bound to <code>0.0.0.0</code>. A tailnet member whom the access rules permit sends a request to the DGX's tailnet address on port 11434.</td>
+<td>Can reach</td>
+<td>The server listens on every interface, including the tailnet's, and the rules allow the connection.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The server is bound to <code>0.0.0.0</code>. The DGX is behind a home router with no forwarded port. A stranger on the internet sends a request to the router's public address.</td>
+<td>Cannot reach</td>
+<td>The router drops a connection that nobody inside started, so the request never arrives.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The server is bound to <code>127.0.0.1</code>, and Tailscale Serve publishes port 11434 to the tailnet. A tailnet member whom the access rules permit sends a request to the DGX's tailnet name.</td>
+<td>Can reach</td>
+<td>Tailscale Serve relays permitted tailnet requests to the loopback address on the DGX's behalf.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The cases are synthetic, written for this exercise, and the sim labels them "synthetic example". The reasoning comes from Chapters 7 and 9 and the sections of this chapter above.</p>
+<p><strong>Rules:</strong> Cases are shown in the fixed order 1 to 6. Each allows one final choice. Two parties are never combined, and each case states the binding, the path, and the party in full.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads case 1.</li>
+<li>The learner chooses "Can reach" or "Cannot reach" and confirms.</li>
+<li>The sim shows the correct answer and the Why text, and marks the case correct or incorrect.</li>
+<li>The learner repeats for cases 2 to 6. After case 6 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Six cases, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct answer and the Why text. The final score reads "n of 6 correct".</p>
+<p><strong>Starting State:</strong> Case 1 is shown with no answer chosen, and the question on screen is "Can this party reach the endpoint?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that a loopback binding accepts connections only from the same machine, that an SSH forward arrives from the DGX's own loopback address, that binding to every interface needs a decision about who can reach the port, and that Tailscale Serve limits access to permitted tailnet members.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>An inference server loads a model and exposes it behind an API, and the stack above it talks only to the server. Ollama installs without administrator rights from a release archive, runs in a tmux session on the loopback address, and is configured through environment variables for context length and keep-alive. Its OpenAI-compatible endpoint takes a model name and messages and returns the reply with token counts, and its Anthropic-compatible endpoint is the one Claude Code uses. A first-prompt smoke test checks that the server answers, that the reply is not empty, that the speed is plausible, and that the model is on the GPU. Binding to the loopback address keeps the endpoint private, and an SSH forward or Tailscale Serve shares it with only the machines that should have it.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">A Local Endpoint That Answers and Stays Private</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now install a model server without administrator rights, send it a first prompt from <code>curl</code> and Python, and say exactly who can reach it. Chapter 14 turns to the ten models this evaluation puts behind such an endpoint.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

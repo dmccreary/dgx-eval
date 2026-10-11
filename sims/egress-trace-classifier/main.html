@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Data Egress Trace Classifier</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Data Egress Trace Classifier</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> egress-trace-classifier</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Analyze</p>
+            <p><strong>Learning Objective:</strong> The learner will distinguish, for 8 data flows in a local-generation setup, whether each stays on the DGX, goes to the evaluator's own machine, or goes to a third party, with at least 7 of 8 correct.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** egress-trace-classifier<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified<br/>
+    **Bloom Level:** Analyze<br/>
+    **Bloom Verb:** distinguish<br/>
+    **Learning Objective:** The learner will distinguish, for 8 data flows in a local-generation setup, whether each stays on the DGX, goes to the evaluator's own machine, or goes to a third party, with at least 7 of 8 correct.
+    
+    **Prerequisites:** network boundary, data egress trace, supervision data exposure, host network mode, telemetry disabled (all defined in the sections above this block).
+    
+    **Evidence of Mastery:** For each of the 8 flows the learner commits one of three destinations before the sim reveals the answer. A choice is correct when it equals the Correct destination column. Mastery is 7 of 8 correct on the first attempt. Reading the flows is exploration, not evidence.
+    
+    **Misconceptions:** (1) A locally hosted model means no data leaves. (2) Traffic to the evaluator's own laptop is traffic to a third party. (3) A one-time download is not egress. (4) The supervising assistant's reads are local.
+    
+    **Instructional Rationale:** Analyzing a boundary needs the learner to separate flows by where they end, so the three destinations are exclusive and each flow ends in exactly one. Mixed flows prevent the habit of answering "stays" or "leaves" for everything.
+    
+    **Content:**
+    
+    The three destinations the learner chooses from: "Stays on the DGX", "Goes to the evaluator's own machine", and "Goes to a third party".
+    
+    | # | Flow shown to the learner | Correct destination | Why (shown as feedback) |
+    |---|---|---|---|
+    | 1 | The harness in the container sends a prompt to the model server at the loopback address. | Stays on the DGX | Both ends are on the same machine and the traffic never leaves its loopback interface. |
+    | 2 | The model server reads a model file from the DGX's disk. | Stays on the DGX | A disk read is internal to the machine. |
+    | 3 | The model server downloads a model file from the public model library. | Goes to a third party | The request and the file travel to and from the library's host. |
+    | 4 | The container build downloads a base image and the harness installer. | Goes to a third party | The requests go to the hosts that serve those files. |
+    | 5 | The orchestrator on the laptop reads a generated chapter and sends it to a cloud model to be scored. | Goes to a third party | The generated text ends at the cloud model's service. |
+    | 6 | The laptop fetches the finished book from the DGX over SSH on the tailnet. | Goes to the evaluator's own machine | The destination is the evaluator's laptop, and the connection is encrypted. |
+    | 7 | The harness's optional update check runs, with its optional features left on. | Goes to a third party | The check contacts the vendor's service. |
+    | 8 | The watchdog appends a line to its log file on the DGX. | Stays on the DGX | It is a local file write. |
+    
+    **Provenance:** The flows are synthetic, written for this exercise, and the sim labels them "synthetic example". They follow the egress table in this chapter.
+    
+    **Rules:** Flows are shown in the fixed order 1 to 8. Each allows one final choice, and exactly one destination is correct for each. A flow's destination is where its data ends, not the first hop.
+    
+    **Learner Activity:**
+    
+    1. The learner reads flow 1.
+    2. The learner chooses one of the three destinations and confirms.
+    3. The sim shows the correct destination and the Why text, and marks the flow correct or incorrect.
+    4. The learner repeats for flows 2 to 8. After flow 8 the sim shows the score and the misconception behind each miss.
+    
+    **Feedback:** Eight flows, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct destination and the Why text. The final score reads "n of 8 correct".
+    
+    **Starting State:** Flow 1 is shown with no destination chosen, and the question on screen is "Where does this data end up?"
+    
+    **Chapter Anchors:** The chapter states that the harness-to-server traffic stays on loopback, that downloads and container builds go to third parties, that the cloud orchestrator's reads reach its API, and that the fetch of the finished book goes to the evaluator's own laptop.
+    -->
+</body>
+</html>

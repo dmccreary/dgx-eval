@@ -1,0 +1,23 @@
+{
+  "title": "Evaluation Design Flaw Finder",
+  "description": "The learner will critique a described evaluation by judging each of 8 statements about it as a flaw or not a flaw, with at least 7 of 8 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "design-flaw-finder",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate",
+  "bloomVerb": "critique",
+  "completion_status": "scaffold",
+  "chapter_number": 19,
+  "chapter_title": "Designing a Fair Evaluation",
+  "chapter_dir": "19-fair-evaluation-design",
+  "chapter_rel_dir": "chapters/19-fair-evaluation-design"
+}

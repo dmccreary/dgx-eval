@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="Turning hardware questions into Python measurements: probes for CPU, RAM, storage, GPU, driver, CUDA, temperature, and power, combined into a suite that writes a machine-readable report with identifying fields left out.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>10. Python Hardware Probes - DGX Evaluation for Textbook Generation</title>
+        <title>Python Hardware Probes - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10. Python Hardware Probes
+              Python Hardware Probes
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -882,6 +705,276 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Probes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#probe-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probe Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-processor-memory-and-storage-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Processor, Memory, and Storage Probes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Processor, Memory, and Storage Probes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ram-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAM Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      psutil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-read-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disk Read Benchmark
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gpu-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      The GPU Probes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The GPU Probes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-smi-and-its-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      nvidia-smi and Its Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-memory-total-and-free-and-the-unified-memory-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Memory Total and Free, and the Unified Memory Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvml-and-the-python-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVML and the Python Bindings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch-cuda-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyTorch CUDA Check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-the-probes-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting the Probes Together
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting the Probes Together">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#probe-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probe Suite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-readable-report-and-json-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine-Readable Report and JSON Report
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-variation-branching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Variation Branching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redacted-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redacted by Default
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trusting-a-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trusting a Probe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trusting a Probe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#probe-verification-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probe Verification Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitals-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vitals Logging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vitals Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-nvidia-smi-output-reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: nvidia-smi Output Reader
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1201,6 +1294,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1309,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1410,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1552,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1711,276 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Probes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#probe-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probe Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-processor-memory-and-storage-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Processor, Memory, and Storage Probes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Processor, Memory, and Storage Probes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ram-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAM Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      psutil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-read-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disk Read Benchmark
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gpu-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      The GPU Probes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The GPU Probes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-smi-and-its-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      nvidia-smi and Its Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-memory-total-and-free-and-the-unified-memory-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Memory Total and Free, and the Unified Memory Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvml-and-the-python-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVML and the Python Bindings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch-cuda-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyTorch CUDA Check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-the-probes-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting the Probes Together
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting the Probes Together">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#probe-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probe Suite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-readable-report-and-json-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine-Readable Report and JSON Report
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-variation-branching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Variation Branching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redacted-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redacted by Default
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trusting-a-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trusting a Probe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trusting a Probe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#probe-verification-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probe Verification Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitals-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vitals Logging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vitals Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-nvidia-smi-output-reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: nvidia-smi Output Reader
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1529,13 +2132,472 @@
 <li><a href="../08-conda-environments/">Chapter 8: Reproducible Python Environments with Conda</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Let the Machine Answer for Itself</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+A specification sheet tells you what a machine was built to be, and a probe tells you what it is right now. By the end of this chapter you will have a script that reports your DGX's hardware as data, with nothing in it that you would be afraid to publish. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Chapter 5 listed the hardware questions, and Chapter 9 answered them by reading command output. That works once. This chapter makes the answers repeatable: a small Python program asks each question, records the answer in a file a machine can read, and can be run again after a driver update, a reboot, or a move to a different DGX.</p>
+<p>The chapter builds the probes one at a time and then combines them. It ends with the habits that make a probe trustworthy, which are a test that the probe reads correctly, a report that leaves identifying details out by default, and a log that survives a machine that freezes.</p>
+<h2 id="probes">Probes<a class="headerlink" href="#probes" title="Permanent link">&para;</a></h2>
+<h3 id="hardware-probe">Hardware Probe<a class="headerlink" href="#hardware-probe" title="Permanent link">&para;</a></h3>
+<p>A <strong>hardware probe</strong> is a small, read-only measurement of one fact about a machine: how many cores it has, how much memory is free, which GPU is installed. The word "measurement" matters. A probe reads the value from the machine, so it reports what is true now, whatever the specification sheet or the last person's notes say.</p>
+<p>A probe has three parts: the question, the source it reads, and the form of the answer. The table lists the probes this chapter builds, with the source of each.</p>
+<table>
+<thead>
+<tr>
+<th>Probe</th>
+<th>Question it answers</th>
+<th>Source it reads</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>Which architecture, and how many cores?</td>
+<td><code>platform</code>, <code>os</code>, <code>lscpu</code></td>
+<td>Text and an integer</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>How much memory is total, and how much is available?</td>
+<td><code>/proc/meminfo</code></td>
+<td>Gibibytes</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>How big is the disk, and how much is free?</td>
+<td><code>shutil.disk_usage</code></td>
+<td>Gigabytes</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>Which GPU, driver, temperature, and power?</td>
+<td><code>nvidia-smi</code></td>
+<td>Fields per GPU</td>
+</tr>
+<tr>
+<td>CUDA</td>
+<td>Which CUDA version does the driver support?</td>
+<td><code>nvidia-smi</code> header</td>
+<td>A version string</td>
+</tr>
+<tr>
+<td>Unified memory</td>
+<td>Does the GPU have its own memory?</td>
+<td>The GPU memory field</td>
+<td>True or false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="probe-script">Probe Script<a class="headerlink" href="#probe-script" title="Permanent link">&para;</a></h3>
+<p>A <strong>probe script</strong> is a program that runs one or more probes and prints the results. A good one follows four rules, and each rule prevents a particular failure.</p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Failure it prevents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read only, never write</td>
+<td>A probe that changes the machine it is measuring</td>
+</tr>
+<tr>
+<td>Standard library only</td>
+<td>A probe that cannot run on a fresh machine without an install</td>
+</tr>
+<tr>
+<td>Bounded run time</td>
+<td>A probe that hangs forever when a tool misbehaves</td>
+</tr>
+<tr>
+<td>Report unknown as <code>null</code>, never guess</td>
+<td>A report that looks complete and hides a failed measurement</td>
+</tr>
+</tbody>
+</table>
+<p>The helper below is the base of every probe in this chapter. It runs a command and returns its text, or <code>None</code> if the command is missing, fails, or takes longer than <code>timeout</code> seconds. Every later probe goes through it, so a missing <code>nvidia-smi</code> on a machine without a GPU produces an empty answer instead of a crash.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="sd">"""Run a command and return its text output, or None if it fails."""</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">out</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="k">return</span> <span class="n">out</span><span class="o">.</span><span class="n">stdout</span> <span class="k">if</span> <span class="n">out</span><span class="o">.</span><span class="n">returncode</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">):</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="k">return</span> <span class="kc">None</span>
+</span></code></pre></div>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">A Probe That Cannot Say 'I Don't Know' Will Lie</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+If a probe returns zero when it cannot read the value, a failed measurement looks like a machine with no memory. Return <code>null</code> for anything you could not read, and a reader can tell a missing measurement from a measured zero.</p>
+</div>
+<h2 id="the-processor-memory-and-storage-probes">The Processor, Memory, and Storage Probes<a class="headerlink" href="#the-processor-memory-and-storage-probes" title="Permanent link">&para;</a></h2>
+<h3 id="cpu-probe">CPU Probe<a class="headerlink" href="#cpu-probe" title="Permanent link">&para;</a></h3>
+<p>The <strong>CPU probe</strong> reports the architecture and the core count. Both come from the standard library: <code>platform.machine()</code> returns <code>aarch64</code> or <code>x86_64</code>, and <code>os.cpu_count()</code> returns the number of logical cores. The model name comes from the <code>lscpu</code> command, which on a machine with two kinds of core prints one <code>Model name</code> line for each.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">platform</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">probe_cpu</span><span class="p">():</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">models</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">run</span><span class="p">([</span><span class="s2">"lscpu"</span><span class="p">])</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">if</span> <span class="n">text</span><span class="p">:</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">":"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>                  <span class="k">if</span> <span class="n">l</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"Model name"</span><span class="p">)]</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"architecture"</span><span class="p">:</span> <span class="n">platform</span><span class="o">.</span><span class="n">machine</span><span class="p">(),</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            <span class="s2">"cores"</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">(),</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="s2">"model_names"</span><span class="p">:</span> <span class="n">models</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">}</span>
+</span></code></pre></div>
+<p>The answer drives the first branch of every setup: <code>aarch64</code> selects aarch64 packages, as Chapter 5 and Chapter 8 explained.</p>
+<h3 id="ram-probe">RAM Probe<a class="headerlink" href="#ram-probe" title="Permanent link">&para;</a></h3>
+<p>The <strong>RAM probe</strong> reports the system memory. The kernel publishes it in the file <code>/proc/meminfo</code>, one <code>Name: value kB</code> line per figure, where <code>kB</code> is really kibibytes. Two names matter: <code>MemTotal</code> is all the memory the system can use, and <code>MemAvailable</code> is what a new program could use without pushing others out. Available is the number to watch, because a large total with little available is a machine about to struggle.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">probe_ram</span><span class="p">(</span><span class="n">meminfo_path</span><span class="o">=</span><span class="s2">"/proc/meminfo"</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">meminfo_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>            <span class="n">kib</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>                <span class="n">key</span><span class="p">,</span> <span class="n">rest</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">":"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>                <span class="n">kib</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rest</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">"total_gib"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">"available_gib"</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">gib</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">k</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"total_gib"</span><span class="p">:</span> <span class="n">gib</span><span class="p">(</span><span class="n">kib</span><span class="p">[</span><span class="s2">"MemTotal"</span><span class="p">]),</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>            <span class="s2">"available_gib"</span><span class="p">:</span> <span class="n">gib</span><span class="p">(</span><span class="n">kib</span><span class="p">[</span><span class="s2">"MemAvailable"</span><span class="p">])}</span>
+</span></code></pre></div>
+<p>The path is a parameter on purpose. It lets a test hand the function a fake file, which the verification test below does.</p>
+<h3 id="psutil">psutil<a class="headerlink" href="#psutil" title="Permanent link">&para;</a></h3>
+<p><strong>psutil</strong> is a third-party Python package that reports CPU, memory, disk, and process information through one portable interface. It replaces the file parsing above with calls such as <code>psutil.virtual_memory()</code>. It is worth installing in an environment you control, and this course does not depend on it, because the probes must run on a machine with nothing installed.</p>
+<h3 id="storage-probe">Storage Probe<a class="headerlink" href="#storage-probe" title="Permanent link">&para;</a></h3>
+<p>The <strong>storage probe</strong> reports the size and free space of a filesystem. The standard library has <code>shutil.disk_usage(path)</code>, which returns total, used, and free bytes for the disk that holds <code>path</code>. Disks are sold in decimal gigabytes, so the probe reports decimal values and says so.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">probe_storage</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s2">"/"</span><span class="p">):</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">usage</span> <span class="o">=</span> <span class="n">shutil</span><span class="o">.</span><span class="n">disk_usage</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">gb</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">b</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"total_gb"</span><span class="p">:</span> <span class="n">gb</span><span class="p">(</span><span class="n">usage</span><span class="o">.</span><span class="n">total</span><span class="p">),</span> <span class="s2">"free_gb"</span><span class="p">:</span> <span class="n">gb</span><span class="p">(</span><span class="n">usage</span><span class="o">.</span><span class="n">free</span><span class="p">)}</span>
+</span></code></pre></div>
+<h3 id="disk-read-benchmark">Disk Read Benchmark<a class="headerlink" href="#disk-read-benchmark" title="Permanent link">&para;</a></h3>
+<p>A <strong>disk read benchmark</strong> measures how fast the disk delivers data, which sets model load time as Chapter 5 described. It reads an existing large file for a fixed amount and divides the bytes by the seconds. The one trap is the operating system's page cache: a file read recently comes from memory, not the disk, and the number is far too high. Read a file that has not been touched since boot, such as a model file you have not loaded, and say so in the report.</p>
+<h2 id="the-gpu-probes">The GPU Probes<a class="headerlink" href="#the-gpu-probes" title="Permanent link">&para;</a></h2>
+<h3 id="nvidia-smi-and-its-output">nvidia-smi and Its Output<a class="headerlink" href="#nvidia-smi-and-its-output" title="Permanent link">&para;</a></h3>
+<p><strong><code>nvidia-smi</code></strong>, the NVIDIA System Management Interface, is the command-line tool that reports a GPU's state. It is installed with the driver, so its presence on a machine is itself a probe: no <code>nvidia-smi</code> usually means no driver.</p>
+<p>Run with no arguments it prints a table meant for people. Before reading the table you need names for its fields, and each is defined here. The <strong>driver version</strong> is the release of the NVIDIA driver. The <strong>CUDA version</strong> is the newest CUDA runtime the driver supports. <strong>Temperature</strong> is the GPU's reading in degrees Celsius. <strong>Power usage and cap</strong> is the power the board is drawing now and the limit it enforces, in watts. <strong>Memory usage</strong> is memory in use over total, in mebibytes. <strong>GPU utilization</strong> is the share of the last sampling period in which the GPU was running work.</p>
+<p>The listing below is illustrative, for a machine with one discrete GPU, and it has had the serial number, unique identifier, and bus address removed.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>+-----------------------------------------------------------------------+
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>| NVIDIA-SMI 580.xx.xx      Driver Version: 580.xx.xx    CUDA Version: 13.0 |
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>|-------------------------------+----------------------+----------------|
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>| GPU  Name                     | Temp  Perf  Pwr:Usage/Cap | Memory-Usage | GPU-Util |
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>|   0  NVIDIA H100 80GB HBM3    | 41C   P0    70W / 700W    | 0MiB / 81559MiB | 0%   |
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>+-----------------------------------------------------------------------+
+</span></code></pre></div>
+<p>A person reads that table at a glance. A script should not parse it, because its layout changes between versions. Which leads to the query form in the next concept.</p>
+<h3 id="gpu-probe">GPU Probe<a class="headerlink" href="#gpu-probe" title="Permanent link">&para;</a></h3>
+<p>The <strong>GPU probe</strong> asks <code>nvidia-smi</code> for exactly the fields it wants, in a form that is easy to parse. <code>--query-gpu</code> names the fields, and <code>--format=csv,noheader,nounits</code> asks for one comma-separated line per GPU with no header and no unit suffixes. A field the GPU cannot report comes back as <code>[N/A]</code> or <code>Not Supported</code>, and the <code>number</code> helper turns anything that is not a number into <code>None</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">number</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="sd">"""Turn '45', '45.2', '[N/A]' or 'Not Supported' into a float or None."""</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="k">return</span> <span class="kc">None</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">probe_gpu</span><span class="p">():</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">query</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"name,driver_version,temperature.gpu,power.draw,"</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>             <span class="s2">"utilization.gpu,memory.total,memory.used"</span><span class="p">)</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">run</span><span class="p">([</span><span class="s2">"nvidia-smi"</span><span class="p">,</span> <span class="s2">"--query-gpu="</span> <span class="o">+</span> <span class="n">query</span><span class="p">,</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>                <span class="s2">"--format=csv,noheader,nounits"</span><span class="p">])</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">:</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">"gpus"</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">"cuda_version"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">"unified_memory"</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="n">gpus</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)]</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>        <span class="n">gpus</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">"name"</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">"driver"</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>                     <span class="s2">"temperature_c"</span><span class="p">:</span> <span class="n">number</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="s2">"power_w"</span><span class="p">:</span> <span class="n">number</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>                     <span class="s2">"utilization_pct"</span><span class="p">:</span> <span class="n">number</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>                     <span class="s2">"memory_total_mib"</span><span class="p">:</span> <span class="n">number</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">5</span><span class="p">]),</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>                     <span class="s2">"memory_used_mib"</span><span class="p">:</span> <span class="n">number</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">6</span><span class="p">])})</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    <span class="n">header</span> <span class="o">=</span> <span class="n">run</span><span class="p">([</span><span class="s2">"nvidia-smi"</span><span class="p">])</span> <span class="ow">or</span> <span class="s2">""</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>    <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">"CUDA Version:\s*([\d.]+)"</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>    <span class="n">unified</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="s2">"memory_total_mib"</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">gpus</span><span class="p">)</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"gpus"</span><span class="p">:</span> <span class="n">gpus</span><span class="p">,</span> <span class="s2">"cuda_version"</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">m</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>            <span class="s2">"unified_memory"</span><span class="p">:</span> <span class="n">unified</span><span class="p">}</span>
+</span></code></pre></div>
+<p>Five of the concepts in the chapter's list are read from this one function, and each is a field of the answer.</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Field in the answer</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Driver version probe</td>
+<td><code>driver</code></td>
+<td>One string per GPU</td>
+</tr>
+<tr>
+<td>CUDA version probe</td>
+<td><code>cuda_version</code></td>
+<td>Parsed from the plain header, because the query form lacks it</td>
+</tr>
+<tr>
+<td>GPU temperature</td>
+<td><code>temperature_c</code></td>
+<td>Compare with the watchdog ceiling of Chapter 5</td>
+</tr>
+<tr>
+<td>GPU power draw</td>
+<td><code>power_w</code></td>
+<td>The GPU's draw, not the whole machine's</td>
+</tr>
+<tr>
+<td>GPU memory total and free</td>
+<td><code>memory_total_mib</code>, <code>memory_used_mib</code></td>
+<td><code>None</code> on unified memory</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gpu-memory-total-and-free-and-the-unified-memory-probe">GPU Memory Total and Free, and the Unified Memory Probe<a class="headerlink" href="#gpu-memory-total-and-free-and-the-unified-memory-probe" title="Permanent link">&para;</a></h3>
+<p><strong>GPU memory total and free</strong> is the memory the GPU reports for itself, and it is the figure that decides model fit on a machine with dedicated GPU memory. The <strong>unified memory probe</strong> is the check that those fields are missing. When every GPU's total comes back as <code>None</code>, the probe sets <code>unified_memory</code> to true, and the reader knows that the figure to use is the system RAM probe's <code>available_gib</code>.</p>
+<p>This is a branch in the report, and the worked example is the whole reason the probe exists. On a discrete-GPU server, the usable model size is the GPU's free memory. On the unit in this evaluation, it is the system's available memory minus the headroom Chapter 11 introduces.</p>
+<h3 id="nvml-and-the-python-bindings">NVML and the Python Bindings<a class="headerlink" href="#nvml-and-the-python-bindings" title="Permanent link">&para;</a></h3>
+<p><strong>NVML</strong>, the NVIDIA Management Library, is the C library that <code>nvidia-smi</code> itself is built on. It exposes the same readings through function calls. The <strong>NVML Python bindings</strong>, installed as the <code>nvidia-ml-py</code> package, let a Python program call it directly, which is faster than starting a new <code>nvidia-smi</code> process for every reading and gives access to fields the command does not print.</p>
+<p>The cost is a dependency. This course uses the <code>nvidia-smi</code> query for the same reason it avoids <code>psutil</code>: it has to run on a fresh machine. In a long-running monitor, where a process starts every few seconds, the bindings are the better tool.</p>
+<h3 id="pytorch-cuda-check">PyTorch CUDA Check<a class="headerlink" href="#pytorch-cuda-check" title="Permanent link">&para;</a></h3>
+<p>The <strong>PyTorch CUDA check</strong> asks the machine-learning stack, not the driver, whether a GPU is usable. It is the probe that catches a CPU-only PyTorch build, which Chapter 8 warned about. It needs PyTorch installed, so it is the one probe here that belongs in a conda environment.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>            <span class="c1"># True only if a GPU is usable</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">get_device_name</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>        <span class="c1"># for example 'NVIDIA GB10'</span>
+</span></code></pre></div>
+<p>If <code>nvidia-smi</code> lists a GPU and this prints <code>False</code>, the driver is fine and the problem is the PyTorch build or its CUDA version.</p>
+<h2 id="putting-the-probes-together">Putting the Probes Together<a class="headerlink" href="#putting-the-probes-together" title="Permanent link">&para;</a></h2>
+<h3 id="probe-suite">Probe Suite<a class="headerlink" href="#probe-suite" title="Permanent link">&para;</a></h3>
+<p>A <strong>probe suite</strong> is a set of probes run together to produce one report. The suite below calls the four probes and returns their answers in one dictionary. Keeping the probes separate and the suite thin means a single failing probe cannot take the others with it, and each probe can be tested alone.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">probe_suite</span><span class="p">():</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"cpu"</span><span class="p">:</span> <span class="n">probe_cpu</span><span class="p">(),</span> <span class="s2">"ram"</span><span class="p">:</span> <span class="n">probe_ram</span><span class="p">(),</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>            <span class="s2">"storage"</span><span class="p">:</span> <span class="n">probe_storage</span><span class="p">(),</span> <span class="s2">"gpu"</span><span class="p">:</span> <span class="n">probe_gpu</span><span class="p">()}</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">probe_suite</span><span class="p">(),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</span></code></pre></div>
+<p>Saved as <code>probe_suite.py</code> together with the functions above, the program runs on any machine with Python 3 and writes its report to standard output. It can be sent to a remote machine without being copied, with the pipe from Chapter 9.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh<span class="w"> </span>&lt;user&gt;@&lt;dgx-host&gt;<span class="w"> </span><span class="s1">'python3 -'</span><span class="w"> </span>&lt;<span class="w"> </span>probe_suite.py<span class="w"> </span>&gt;<span class="w"> </span>report.json
+</span></code></pre></div>
+<h3 id="machine-readable-report-and-json-report">Machine-Readable Report and JSON Report<a class="headerlink" href="#machine-readable-report-and-json-report" title="Permanent link">&para;</a></h3>
+<p>A <strong>machine-readable report</strong> is output in a form that a program can parse without guessing, in contrast to text written for a person. A <strong>JSON report</strong> is the form this course uses: nested key-value pairs in a plain text file, readable by every language and by people. The reason to produce one is that later steps consume it. A model-fit calculator reads <code>available_gib</code>, and a benchmark runner records the whole report beside each result so that a number is never separated from the machine that produced it.</p>
+<p>The report below is illustrative. The values are plausible for a unified-memory machine and were not taken from a specific unit.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">"cpu"</span><span class="p">:</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="nt">"architecture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aarch64"</span><span class="p">,</span><span class="w"> </span><span class="nt">"cores"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">               </span><span class="nt">"model_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Cortex-X925"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Cortex-A725"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">"ram"</span><span class="p">:</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="nt">"total_gib"</span><span class="p">:</span><span class="w"> </span><span class="mf">119.0</span><span class="p">,</span><span class="w"> </span><span class="nt">"available_gib"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="nt">"storage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"total_gb"</span><span class="p">:</span><span class="w"> </span><span class="mf">1000.0</span><span class="p">,</span><span class="w"> </span><span class="nt">"free_gb"</span><span class="p">:</span><span class="w"> </span><span class="mf">780.0</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="nt">"gpu"</span><span class="p">:</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="nt">"gpus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NVIDIA GB10"</span><span class="p">,</span><span class="w"> </span><span class="nt">"driver"</span><span class="p">:</span><span class="w"> </span><span class="s2">"580.xx.xx"</span><span class="p">,</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">                           </span><span class="nt">"temperature_c"</span><span class="p">:</span><span class="w"> </span><span class="mf">44.0</span><span class="p">,</span><span class="w"> </span><span class="nt">"power_w"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">                           </span><span class="nt">"utilization_pct"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">                           </span><span class="nt">"memory_total_mib"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nt">"memory_used_mib"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">               </span><span class="nt">"cuda_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13.0"</span><span class="p">,</span><span class="w"> </span><span class="nt">"unified_memory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Two things in the report are worth noticing. The two <code>null</code> values in the GPU's memory fields are not an error: they are the unified-memory signature, and <code>unified_memory</code> is true because of them. And the report contains no hostname, no address, and no account name, which is deliberate.</p>
+<h3 id="hardware-variation-branching">Hardware Variation Branching<a class="headerlink" href="#hardware-variation-branching" title="Permanent link">&para;</a></h3>
+<p><strong>Hardware variation branching</strong> is choosing the next setup step from the report instead of from assumption. The function below reads a report and returns the branches that apply. It is the Chapter 5 matcher as code, and the branches it names are the ones used throughout the later chapters.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">setup_branch</span><span class="p">(</span><span class="n">report</span><span class="p">):</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">branches</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="n">arch</span> <span class="o">=</span> <span class="n">report</span><span class="p">[</span><span class="s2">"cpu"</span><span class="p">][</span><span class="s2">"architecture"</span><span class="p">]</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">branches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"aarch64 packages"</span> <span class="k">if</span> <span class="n">arch</span> <span class="o">==</span> <span class="s2">"aarch64"</span> <span class="k">else</span> <span class="s2">"x86_64 packages"</span><span class="p">)</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">gpu</span> <span class="o">=</span> <span class="n">report</span><span class="p">[</span><span class="s2">"gpu"</span><span class="p">]</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">gpu</span><span class="p">[</span><span class="s2">"gpus"</span><span class="p">]:</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        <span class="n">branches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"no GPU: CPU only"</span><span class="p">)</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="k">elif</span> <span class="n">gpu</span><span class="p">[</span><span class="s2">"unified_memory"</span><span class="p">]:</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>        <span class="n">branches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"size models against system RAM"</span><span class="p">)</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">gpu</span><span class="p">[</span><span class="s2">"gpus"</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>        <span class="n">branches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"plan to split across GPUs"</span><span class="p">)</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>        <span class="n">branches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"size models against one GPU's memory"</span><span class="p">)</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    <span class="k">return</span> <span class="n">branches</span>
+</span></code></pre></div>
+<h3 id="redacted-by-default">Redacted by Default<a class="headerlink" href="#redacted-by-default" title="Permanent link">&para;</a></h3>
+<p>A report that is safe to publish is built from fields that are safe, not cleaned afterward. <strong>Redacted-by-default fields</strong> are the identifying details a probe never collects unless asked. The suite above reads no hostname, no username, no network address, no serial number, and no GPU unique identifier, so none can reach the file. A probe that never reads an identifier cannot leak it.</p>
+<table>
+<thead>
+<tr>
+<th>Collected by default</th>
+<th>Left out unless explicitly requested</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Architecture, core count, CPU model</td>
+<td>Hostname and domain name</td>
+</tr>
+<tr>
+<td>Total and available memory</td>
+<td>Account name and home directory</td>
+</tr>
+<tr>
+<td>Disk size and free space</td>
+<td>Network addresses and MAC addresses</td>
+</tr>
+<tr>
+<td>GPU name, driver, CUDA version</td>
+<td>Serial number, GPU unique identifier</td>
+</tr>
+<tr>
+<td>Temperature, power, utilization</td>
+<td>Tailnet name and access rules</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Leaving a Field Out Beats Cleaning It Later</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A report captured with every field and then edited by hand relies on you not missing one in four hundred lines. Decide the fields at the source: never read the identifier, and the review in Chapter 23 only has to confirm that you did not.</p>
+</div>
+<h2 id="trusting-a-probe">Trusting a Probe<a class="headerlink" href="#trusting-a-probe" title="Permanent link">&para;</a></h2>
+<h3 id="probe-verification-test">Probe Verification Test<a class="headerlink" href="#probe-verification-test" title="Permanent link">&para;</a></h3>
+<p>A <strong>probe verification test</strong> checks that a probe reads correctly by giving it input whose right answer is known. The RAM probe takes its file path as a parameter for exactly this reason: a test writes a small fake <code>meminfo</code> file with a total of 125,829,120 kB, which is 120 GiB, and an available figure of 104,857,600 kB, which is 100 GiB, and asserts what the probe returns.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">d</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">()</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">"meminfo"</span><span class="p">)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"MemTotal:       125829120 kB</span><span class="se">\n</span><span class="s2">"</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>            <span class="s2">"MemFree:             1000 kB</span><span class="se">\n</span><span class="s2">"</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>            <span class="s2">"MemAvailable:   104857600 kB</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="k">assert</span> <span class="n">probe_ram</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s2">"total_gib"</span><span class="p">:</span> <span class="mf">120.0</span><span class="p">,</span> <span class="s2">"available_gib"</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">}</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="k">assert</span> <span class="n">number</span><span class="p">(</span><span class="s2">"[N/A]"</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">number</span><span class="p">(</span><span class="s2">"45.2"</span><span class="p">)</span> <span class="o">==</span> <span class="mf">45.2</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"probes read correctly"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>The test also confirms the two behaviors that protect you from a silent wrong answer: a value that is not a number becomes <code>None</code>, and a missing file produces <code>None</code> fields, not an exception that stops the suite.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Test the Parser With Output That Lies</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Feed each probe a deliberately awkward input: <code>[N/A]</code>, an empty string, a missing file. The inputs a real machine produces on its worst day are the ones that break a parser, and you can write them down before that day.</p>
+</div>
+<h3 id="vitals-logging">Vitals Logging<a class="headerlink" href="#vitals-logging" title="Permanent link">&para;</a></h3>
+<p><strong>Vitals logging</strong> is recording a few measurements at a fixed interval while a long job runs, so that a machine that fails leaves its last readings behind. It uses the same probes in a loop. The loop below writes one JSON line every 30 seconds with the available memory, the GPU temperature, and the power draw. <code>flush</code> and <code>fsync</code> ask the operating system to put the line on the disk now, since a machine that freezes does not get to finish its buffers.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">time</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"vitals.txt"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        <span class="n">gpu</span> <span class="o">=</span> <span class="n">probe_gpu</span><span class="p">()[</span><span class="s2">"gpus"</span><span class="p">]</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>        <span class="n">row</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"t"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()),</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>               <span class="s2">"mem_available_gib"</span><span class="p">:</span> <span class="n">probe_ram</span><span class="p">()[</span><span class="s2">"available_gib"</span><span class="p">],</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>               <span class="s2">"gpu_temp_c"</span><span class="p">:</span> <span class="n">gpu</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"temperature_c"</span><span class="p">]</span> <span class="k">if</span> <span class="n">gpu</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>               <span class="s2">"gpu_power_w"</span><span class="p">:</span> <span class="n">gpu</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"power_w"</span><span class="p">]</span> <span class="k">if</span> <span class="n">gpu</span> <span class="k">else</span> <span class="kc">None</span><span class="p">}</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>        <span class="n">out</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>        <span class="n">os</span><span class="o">.</span><span class="n">fsync</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">fileno</span><span class="p">())</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This is the same idea as the <code>log_vitals.sh</code> script in this project, which writes memory, GPU temperature, power, and load every 30 seconds. It was added after a unit stopped responding and left no record of why. Start it before any long run, and the last line it wrote becomes the evidence. Chapter 18 pairs it with a watchdog that acts on the same readings.</p>
+<h4 id="diagram-nvidia-smi-output-reader">Diagram: nvidia-smi Output Reader<a class="headerlink" href="#diagram-nvidia-smi-output-reader" title="Permanent link">&para;</a></h4>
+<details>
+<summary>nvidia-smi Output Reader</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> nvidia-smi-reader<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret 6 highlighted fields of an <code>nvidia-smi</code> listing by choosing what each one reports, with at least 5 of 6 correct.</p>
+<p><strong>Prerequisites:</strong> nvidia-smi, driver version, CUDA version, GPU temperature, GPU power draw, GPU memory total and free, GPU utilization (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The sim shows the illustrative listing from Content with one field highlighted at a time. For each of the 6 highlighted fields the learner commits one meaning from the six listed before the sim reveals the answer. A choice is correct when it equals the Correct meaning column. Mastery is 5 of 6 correct on the first attempt. Reading the listing is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) The CUDA version is the toolkit installed on the machine. (2) The power figure is the whole machine's draw. (3) A figure in MiB is the same as one in MB. (4) A GPU at 0% utilization is not working correctly.</p>
+<p><strong>Instructional Rationale:</strong> Interpreting a terse field needs the learner to attach a meaning and a unit to it, so each highlighted field is a case where a plausible wrong meaning exists in the choices. Committing before the reveal separates reading from guessing.</p>
+<p><strong>Content:</strong></p>
+<p>The illustrative listing, a machine with one discrete GPU, shown with the serial number, unique identifier, and bus address removed:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>NVIDIA-SMI 580.xx.xx    Driver Version: 580.xx.xx    CUDA Version: 13.0
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>GPU  Name                  Temp  Perf  Pwr:Usage/Cap   Memory-Usage       GPU-Util
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  0  NVIDIA H100 80GB HBM3  41C   P0   70W / 700W      0MiB / 81559MiB    0%
+</span></code></pre></div>
+<p>The six meanings the learner chooses from: "The release of the NVIDIA driver", "The newest CUDA runtime the driver supports", "GPU temperature in degrees Celsius", "Power the board draws now over its power limit", "GPU memory in use over total memory", and "Share of the last sampling period the GPU was running work".</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Highlighted field</th>
+<th>Correct meaning</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>Driver Version: 580.xx.xx</code></td>
+<td>The release of the NVIDIA driver</td>
+<td>It names the installed driver, which is what the operating system uses to reach the GPU.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>CUDA Version: 13.0</code></td>
+<td>The newest CUDA runtime the driver supports</td>
+<td>It is a ceiling set by the driver, not the version of any toolkit installed on the machine.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>41C</code></td>
+<td>GPU temperature in degrees Celsius</td>
+<td>The unit C marks Celsius, and it is the reading of the GPU, not the room.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>70W / 700W</code></td>
+<td>Power the board draws now over its power limit</td>
+<td>The first value is current draw and the second is the cap, and neither is the whole machine's draw.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>0MiB / 81559MiB</code></td>
+<td>GPU memory in use over total memory</td>
+<td>MiB are mebibytes, so the total is about 80 GiB, shown as in use over total.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>0%</code></td>
+<td>Share of the last sampling period the GPU was running work</td>
+<td>A GPU with no running work reads 0%, which is normal for an idle machine.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The listing is illustrative, written for this exercise, and the sim labels it "illustrative". Field meanings come from the "nvidia-smi and Its Output" section of this chapter.</p>
+<p><strong>Rules:</strong> Fields are highlighted in the fixed order 1 to 6, and each allows one final choice. Exactly one of the six meanings is correct for each field. A meaning may be used for only one field.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees the listing with field 1 highlighted.</li>
+<li>The learner chooses one of the six meanings and confirms.</li>
+<li>The sim shows the correct meaning and the Why text, and marks the field correct or incorrect.</li>
+<li>The learner repeats for fields 2 to 6. After field 6 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Six fields, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct meaning and the Why text. The final score reads "n of 6 correct".</p>
+<p><strong>Starting State:</strong> The listing is shown with the driver version highlighted, and the question on screen is "What does this field report?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that the CUDA version is the newest runtime the driver supports, that power usage and cap are in watts, that memory is in mebibytes, and that a field the GPU cannot report appears as <code>[N/A]</code> or <code>Not Supported</code>.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>A hardware probe is a read-only measurement, and a probe script gathers several under four rules: read only, standard library only, bounded time, and <code>null</code> for anything it could not read. The CPU, RAM, storage, and GPU probes answer the questions of Chapter 5, with <code>nvidia-smi</code> queried in its machine-readable form, and the missing GPU memory fields give the unified-memory probe. The suite writes a JSON report that omits identifying fields by default, and the setup branch is chosen from the report. A verification test feeds each probe known input, and a vitals log records the last readings before a machine fails.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">The Machine Now Reports in Data</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now write read-only probes, combine them into a suite that produces a JSON report without identifying fields, and branch your setup on what it says. Chapter 11 uses that report to predict whether a model will fit before you download it.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

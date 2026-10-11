@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Agent Turn Time Breakdown</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Agent Turn Time Breakdown</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> turn-time-breakdown</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Apply</p>
+            <p><strong>Learning Objective:</strong> The learner will calculate the time of an agent turn from its prompt tokens, reply tokens, speeds, and tool time to within 1 second, and name the component that dominates it, for 3 challenges.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** turn-time-breakdown<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified<br/>
+    **Bloom Level:** Apply<br/>
+    **Bloom Verb:** calculate<br/>
+    **Learning Objective:** The learner will calculate the time of an agent turn from its prompt tokens, reply tokens, speeds, and tool time to within 1 second, and name the component that dominates it, for 3 challenges.
+    
+    **Prerequisites:** prompt processing speed, tokens per second, prompt caching, prompt re-reading, latency, time breakdown (all defined in the sections above this block).
+    
+    **Evidence of Mastery:** For each of the 3 challenges the learner types the turn time in seconds and chooses the dominant component from "Reading the prompt", "Writing the reply", and "Running the tool" before the sim reveals the answer. A challenge is correct when the typed value is within 1 second of the model value and the dominant component matches. Mastery is 3 of 3. Changing sliders in exploration is not evidence.
+    
+    **Misconceptions:** (1) Faster generation always makes a turn faster. (2) Prompt reading is negligible. (3) A model's speed is one number for every workload. (4) Re-reading happens only when the context is full.
+    
+    **Instructional Rationale:** Apply-level calculation needs a stated formula and committed numbers, and the dominant-component question turns the arithmetic into a diagnosis. The three cases are chosen so that each has a different dominant component or a different cause for the same one.
+    
+    **Content:**
+    
+    The learner can change five quantities:
+    
+    | Quantity | Min | Max | Step | Default | Unit |
+    |---|---|---|---|---|---|
+    | Prompt tokens read this turn | 0 | 100,000 | 500 | 2,000 | tokens |
+    | Prompt processing speed | 100 | 5,000 | 100 | 3,000 | tokens per second |
+    | Reply tokens | 50 | 5,000 | 50 | 600 | tokens |
+    | Generation speed | 5 | 150 | 1 | 34 | tokens per second |
+    | Tool time | 0 | 60 | 1 | 5 | seconds |
+    
+    The three challenges, in this order:
+    
+    | # | Prompt tokens | Reading speed | Reply tokens | Writing speed | Tool time | Model turn time | Dominant component | Feedback when wrong |
+    |---|---|---|---|---|---|---|---|---|
+    | 1 | 2,000 | 3,000 | 600 | 34 | 5 | 23.3 s | Writing the reply | 2,000 ÷ 3,000 = 0.7 s, 600 ÷ 34 = 17.6 s, tool 5 s, total 23.3 s, and writing is the largest. |
+    | 2 | 55,000 | 500 | 600 | 26 | 5 | 138.1 s | Reading the prompt | 55,000 ÷ 500 = 110 s, 600 ÷ 26 = 23.1 s, tool 5 s, total 138.1 s, and reading is the largest. |
+    | 3 | 2,000 | 3,000 | 600 | 108 | 8 | 14.2 s | Running the tool | 0.7 s reading, 600 ÷ 108 = 5.6 s writing, tool 8 s, total 14.2 s, and the tool is the largest. |
+    
+    **Provenance:** The speeds and token counts are drawn from the measurements in this chapter and the cost analysis page: 3,000 tokens per second reading and 108 writing for the mixture-of-experts model, 34 writing for the dense model, 26 writing and about 500 reading with 55,000 tokens re-read for the slow case. Tool times are illustrative, and the sim labels them "illustrative".
+    
+    **Rules:** Turn time = prompt tokens ÷ reading speed + reply tokens ÷ writing speed + tool time, in seconds, shown to one decimal. The dominant component is the largest of the three terms; a tie is shown as "tie". Model load time is not included.
+    
+    **Learner Activity:**
+    
+    1. The learner reads challenge 1, whose inputs are shown, and types the turn time in seconds.
+    2. The learner chooses the dominant component and presses Check.
+    3. The sim reveals the model value, the dominant component, and the Feedback text, and marks the challenge correct or missed.
+    4. After the three challenges the exploration mode unlocks, with a stacked bar of the three components, and the learner changes any of the five quantities.
+    5. In exploration the learner should notice that changing generation speed barely moves the bar when reading dominates.
+    
+    **Feedback:** Three challenges, fixed order, two attempts each. Correct: "Correct: <model value> s, <component> dominates." Incorrect: the "Feedback when wrong" text for that challenge. After the second wrong attempt the model value and the worked calculation are shown, and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.
+    
+    **Starting State:** Challenge 1 is shown with an empty answer box and its inputs displayed. The question on screen is "How long does this turn take, and where does the time go?"
+    
+    **Chapter Anchors:** The chapter states a 23.3-second turn with caching on a dense model, a 138.1-second turn with 55,000 tokens re-read, and 110 of those seconds spent reading, and that the stage total of 102 minutes was about 83 minutes of re-reading plus a 19-minute reasoning turn.
+    -->
+</body>
+</html>

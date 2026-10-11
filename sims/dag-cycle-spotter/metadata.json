@@ -1,0 +1,23 @@
+{
+  "title": "DAG Cycle Spotter",
+  "description": "The learner will distinguish prerequisite graphs that contain a cycle from graphs that do not, in 6 small graphs, with at least 5 of 6 classified correctly.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "dag-cycle-spotter",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "distinguish",
+  "completion_status": "scaffold",
+  "chapter_number": 2,
+  "chapter_title": "Learning Graphs, MicroSims, and Content Generation Rules",
+  "chapter_dir": "02-learning-graphs-microsims-rules",
+  "chapter_rel_dir": "chapters/02-learning-graphs-microsims-rules"
+}

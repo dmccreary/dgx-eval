@@ -1,0 +1,23 @@
+{
+  "title": "SKILL.md Anatomy",
+  "description": "The learner will identify the part of a skill that answers each of 6 questions about how a harness uses it, with at least 5 of 6 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "skill-md-anatomy",
+  "library": "html",
+  "bloomLevel": "Remember",
+  "bloomVerb": "identify",
+  "completion_status": "scaffold",
+  "chapter_number": 17,
+  "chapter_title": "Agent Skills and Connecting a Harness to a Local Model",
+  "chapter_dir": "17-agent-skills-and-harness",
+  "chapter_rel_dir": "chapters/17-agent-skills-and-harness"
+}

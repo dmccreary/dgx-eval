@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="Choosing and downloading an open-weight model: selection criteria, license review, publisher claims versus measured behavior, the Hugging Face Hub, checksum verification, and a documented shortlist.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>12. Selecting and Downloading an Open-Weight Model - DGX Evaluation for Textbook Generation</title>
+        <title>Selecting and Downloading an Open-Weight Model - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              12. Selecting and Downloading an Open-Weight Model
+              Selecting and Downloading an Open-Weight Model
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -929,6 +752,249 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choosing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-selection-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Selection Criteria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-calling-reliability-and-writing-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool-Calling Reliability and Writing Quality
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-models-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where Models Come From
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where Models Come From">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hugging-face-hub-and-model-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hugging Face Hub and Model Repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publisher-provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publisher Provenance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-leaderboard-and-public-benchmark-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Leaderboard and Public Benchmark Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publisher-claims-and-model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publisher Claims and Model Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licenses-and-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Licenses and Access
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Licenses and Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#license-review-and-commercial-use-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      License Review and Commercial Use Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-20-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache 2.0 License
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gated-model-access-and-access-token-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gated Model Access and Access Token Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-formats-and-downloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Formats and Downloading
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Formats and Downloading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safetensors-format-and-gguf-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safetensors Format and GGUF Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Download
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-cache-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Cache Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checksum-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checksum Verification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-shortlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Shortlist
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Shortlist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-shortlist-and-exclusion-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Shortlist and Exclusion Rationale
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Shortlist and Exclusion Rationale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-model-shortlist-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Model Shortlist Filter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1201,6 +1267,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1282,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1383,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1525,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1684,249 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choosing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-selection-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Selection Criteria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-calling-reliability-and-writing-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool-Calling Reliability and Writing Quality
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-models-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where Models Come From
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where Models Come From">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hugging-face-hub-and-model-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hugging Face Hub and Model Repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publisher-provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publisher Provenance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-leaderboard-and-public-benchmark-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Leaderboard and Public Benchmark Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publisher-claims-and-model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publisher Claims and Model Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licenses-and-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Licenses and Access
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Licenses and Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#license-review-and-commercial-use-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      License Review and Commercial Use Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-20-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache 2.0 License
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gated-model-access-and-access-token-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gated Model Access and Access Token Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-formats-and-downloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Formats and Downloading
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Formats and Downloading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safetensors-format-and-gguf-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safetensors Format and GGUF Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Download
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-cache-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Cache Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checksum-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checksum Verification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-shortlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Shortlist
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Shortlist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-shortlist-and-exclusion-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Shortlist and Exclusion Rationale
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Shortlist and Exclusion Rationale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-model-shortlist-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Model Shortlist Filter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1521,13 +2070,331 @@
 <li><a href="../11-model-sizing-and-fit/">Chapter 11: Model Sizing and Fit</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">A Shortlist You Can Defend</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+There are thousands of open-weight models and you have room for a handful. By the end of this chapter you will have a shortlist that fits your machine, that you are allowed to use, and whose exclusions you can explain in one sentence each. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Chapter 11 told you which models fit. This chapter decides which of those are worth the disk space and the testing time. The two questions are different: a model can fit and still be the wrong choice because its license forbids your use, its publisher cannot be identified, or its claims describe a task you are not doing.</p>
+<p>The chapter follows a choice from criteria to files on disk. It sets the criteria the benchmark needs, shows where models are published and how to read a model page, reviews licenses and the claims a publisher makes, and ends with downloading safely, verifying that the file is the one intended, and recording why each candidate was included or left out.</p>
+<h2 id="choosing">Choosing<a class="headerlink" href="#choosing" title="Permanent link">&para;</a></h2>
+<h3 id="model-selection-criteria">Model Selection Criteria<a class="headerlink" href="#model-selection-criteria" title="Permanent link">&para;</a></h3>
+<p><strong>Model selection criteria</strong> are the requirements a model must meet to be worth testing. They come from the workload, not from a leaderboard. For this course's workload, which is running a long skill through an agent harness, the criteria were four, and each can be checked before downloading.</p>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Why the workload needs it</th>
+<th>Where to check it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supports tool calling</td>
+<td>A harness acts only through tool calls</td>
+<td>The model page, then a test</td>
+</tr>
+<tr>
+<td>Context window of at least 64,000 tokens</td>
+<td>The harness prompt alone takes about 19,000 tokens</td>
+<td>The model page</td>
+</tr>
+<tr>
+<td>Fits with headroom</td>
+<td>A model that fits tightly can freeze a unified-memory machine</td>
+<td>Chapter 11's calculation</td>
+</tr>
+<tr>
+<td>Identifiable publisher and checkable terms</td>
+<td>A result cannot be recommended if readers cannot check the license</td>
+<td>The repository and its license file</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tool-calling-reliability-and-writing-quality">Tool-Calling Reliability and Writing Quality<a class="headerlink" href="#tool-calling-reliability-and-writing-quality" title="Permanent link">&para;</a></h3>
+<p><strong>Tool-calling reliability</strong> is how often a model produces a well-formed tool call when one is needed. It is the property that decides whether a harness run works at all, and it is rarely stated on a model page as a number. <strong>Writing quality</strong> is how good the prose is: clear, accurate, at the stated reading level, and sustained across thousands of words. A textbook is mostly prose.</p>
+<p>Neither can be read from a model's name. Both are measured, in different places in this course. Chapter 19 builds a model-only test that exposes tool-calling failures in seconds, and Chapter 20 builds the scoring for prose. At selection time the right move is to prefer candidates whose publishers state tool-calling support, and to expect to discard some of them after testing.</p>
+<h2 id="where-models-come-from">Where Models Come From<a class="headerlink" href="#where-models-come-from" title="Permanent link">&para;</a></h2>
+<h3 id="hugging-face-hub-and-model-repository">Hugging Face Hub and Model Repository<a class="headerlink" href="#hugging-face-hub-and-model-repository" title="Permanent link">&para;</a></h3>
+<p>The <strong>Hugging Face Hub</strong> is the main public site for sharing machine-learning models, datasets, and demonstration apps. A <strong>model repository</strong> is one model's home on it: a versioned folder of files that holds the weights, the configuration, a README called the model card, and a license file.</p>
+<p>A model repository page is a primary source, and reading it is the main selection skill. Five things are worth finding before you consider a download.</p>
+<ul>
+<li><strong>Who published it.</strong> An organization's verified account, or an individual who repackaged someone else's work.</li>
+<li><strong>The license</strong>, as a file and in the page's metadata, which can disagree.</li>
+<li><strong>The model card.</strong> Intended use, training notes, and the publisher's own benchmark claims.</li>
+<li><strong>The file list.</strong> Which formats exist and how large each is.</li>
+<li><strong>The history.</strong> When it was last updated and whether the files changed after publication.</li>
+</ul>
+<h3 id="publisher-provenance">Publisher Provenance<a class="headerlink" href="#publisher-provenance" title="Permanent link">&para;</a></h3>
+<p><strong>Publisher provenance</strong> is the answer to "where did these weights actually come from?" A file with a famous model's name can be a conversion by a third party, a fine-tune, or something else. For an evaluation that will be published, provenance matters because your recommendation is only as trustworthy as the file it was measured on. Prefer the original publisher's repository, and when you use a conversion, say who made it.</p>
+<h3 id="model-leaderboard-and-public-benchmark-score">Model Leaderboard and Public Benchmark Score<a class="headerlink" href="#model-leaderboard-and-public-benchmark-score" title="Permanent link">&para;</a></h3>
+<p>A <strong>model leaderboard</strong> ranks models by their scores on shared tests, and a <strong>public benchmark score</strong> is one model's result on one such test. They are cheap evidence and they answer a question that is rarely yours. A leaderboard of general knowledge or coding says little about whether a model follows a thousand-line skill file or keeps a blank line before every list.</p>
+<p>Use them to build a long list, not to make the final decision. A published score is one more claim to be checked against what you measure, as the next concept describes.</p>
+<h3 id="publisher-claims-and-model-comparison">Publisher Claims and Model Comparison<a class="headerlink" href="#publisher-claims-and-model-comparison" title="Permanent link">&para;</a></h3>
+<p><strong>Publisher claims</strong> are the statements a model's publisher makes about it: that it is built for agents, that it leads a benchmark, that it follows instructions better than its size suggests. They are useful as hypotheses, because they name the property the publisher optimized for.</p>
+<p>A <strong>model comparison</strong> sets candidates side by side on the criteria that matter to you, with measured values where you have them and claims marked as claims where you do not. This evaluation's candidate page is one, and its habit is the one to copy: each section states the claim, then states what testing found.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Publisher's claim</th>
+<th>What testing found</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen3.8:27b</code></td>
+<td>Built for long agent tasks</td>
+<td>The cleanest learning graph, and by far the slowest</td>
+</tr>
+<tr>
+<td><code>gemma4:26b</code></td>
+<td>A fast mixture-of-experts model</td>
+<td>The fastest, with a graph that had 40 duplicate labels</td>
+</tr>
+<tr>
+<td><code>gpt-oss:120b</code></td>
+<td>Function calling and structured output</td>
+<td>Mixed: a tool call printed as plain text in one of two runs</td>
+</tr>
+<tr>
+<td><code>muse-glimmer:30b</code></td>
+<td>Top tool-use scores in its own comparison</td>
+<td>Lost the task after a few steps</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">A Claim Tells You What to Test, Not What You Will Get</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+A publisher states the property it optimized for, and that is useful. It does not state the conditions under which the property fails, and your workload may be one of them. Read each claim as the first line of a test plan.</p>
+</div>
+<h2 id="licenses-and-access">Licenses and Access<a class="headerlink" href="#licenses-and-access" title="Permanent link">&para;</a></h2>
+<h3 id="license-review-and-commercial-use-terms">License Review and Commercial Use Terms<a class="headerlink" href="#license-review-and-commercial-use-terms" title="Permanent link">&para;</a></h3>
+<p>A <strong>license review</strong> is reading a model's license before relying on it, and recording what it permits. It is not optional for work you will publish, because a recommendation is only useful to readers who are allowed to follow it. <strong>Commercial use terms</strong> are the part of a license that says whether you may use the model, or what it writes, to make money, and under what conditions.</p>
+<p>Three questions cover most reviews. May you use the model for your purpose? May you redistribute what it generates? And are there conditions, such as a revenue threshold above which different terms apply, a required notice, or a prohibited use list? A page's metadata may say one thing and the license file another, so read the file.</p>
+<h3 id="apache-20-license">Apache 2.0 License<a class="headerlink" href="#apache-20-license" title="Permanent link">&para;</a></h3>
+<p>The <strong>Apache 2.0 license</strong> is a permissive open-source license. It allows use, modification, and redistribution, including commercial use, and it includes an express grant of patent rights from the contributors. It requires you to keep the license and copyright notices and to state changes, and it provides no warranty.</p>
+<p>For this evaluation it is the easy case: a model under Apache 2.0 raises no question about using its output in a published book. Several of the candidates carry it, and the candidate page records for each whether the license was checked against the file or reported only by secondary sources.</p>
+<h3 id="gated-model-access-and-access-token-handling">Gated Model Access and Access Token Handling<a class="headerlink" href="#gated-model-access-and-access-token-handling" title="Permanent link">&para;</a></h3>
+<p>Some publishers <strong>gate</strong> a model: you must be signed in and must accept their terms before the files can be downloaded. Gating is the publisher's way of recording who agreed to its license. A gated download needs an <strong>access token</strong>, a credential that identifies your account to the hub.</p>
+<p><strong>Access token handling</strong> is the discipline of treating that token as a secret. Keep it in an environment variable or the tool's credential store, not in a script. Never commit it, paste it into a chat, or let it appear in a log or a screenshot. Prefer a token limited to read access, and revoke it when the project ends. Chapter 23 returns to tokens as one of the categories that must never be published.</p>
+<h2 id="file-formats-and-downloading">File Formats and Downloading<a class="headerlink" href="#file-formats-and-downloading" title="Permanent link">&para;</a></h2>
+<h3 id="safetensors-format-and-gguf-format">Safetensors Format and GGUF Format<a class="headerlink" href="#safetensors-format-and-gguf-format" title="Permanent link">&para;</a></h3>
+<p>Two file formats cover almost every model you will download here.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Safetensors</th>
+<th>GGUF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What it is</td>
+<td>A format that stores tensors and nothing executable</td>
+<td>A single file holding weights, tokenizer, and metadata</td>
+</tr>
+<tr>
+<td>Typical precision</td>
+<td>16-bit, sometimes quantized</td>
+<td>Quantized, often 4-bit or 8-bit</td>
+</tr>
+<tr>
+<td>Used by</td>
+<td>Python frameworks and servers such as vLLM</td>
+<td>llama.cpp and Ollama</td>
+</tr>
+<tr>
+<td>Why you would pick it</td>
+<td>You will serve with a Python framework</td>
+<td>You will serve with Ollama or llama.cpp</td>
+</tr>
+</tbody>
+</table>
+<p>The format has a cost that is easy to overlook. Two models in this evaluation were on disk in two formats, the standard one and one in the llama.cpp format, so each took twice its download size. The ten models together took about 397 GB, a good part of a 1 TB disk.</p>
+<h3 id="model-download">Model Download<a class="headerlink" href="#model-download" title="Permanent link">&para;</a></h3>
+<p>A <strong>model download</strong> is fetching a model's files to the machine. There are two routes in this course. The first is the model library of the inference server: for Ollama a single command pulls a named model and its quantization, and this project wraps that in a script that records when every download has finished. The second is the hub's own client, which fetches a repository's files into a cache directory.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ollama<span class="w"> </span>pull<span class="w"> </span>gemma4:31b
+</span></code></pre></div>
+<p>A download is large and takes a long time on a home connection, and it should run inside <code>tmux</code> so that a dropped SSH session does not stop it. Pull deliberately, and say what was pulled, because on a machine you do not administer the disk and the bandwidth are the Administrator's.</p>
+<h3 id="model-cache-directory">Model Cache Directory<a class="headerlink" href="#model-cache-directory" title="Permanent link">&para;</a></h3>
+<p>The <strong>model cache directory</strong> is where a tool keeps downloaded models so that it does not fetch them twice. Ollama keeps its models under <code>~/.ollama/models</code> by default, and the hub client keeps files under <code>~/.cache/huggingface</code>. Both locations can be changed with an environment variable. Knowing the directory matters for two reasons: it is where the disk space went, and it is the folder to inspect when you ask whether a model is already present.</p>
+<h3 id="checksum-verification">Checksum Verification<a class="headerlink" href="#checksum-verification" title="Permanent link">&para;</a></h3>
+<p>A <strong>checksum</strong> is a fixed-length value computed from a file's bytes, such that any change to the file changes the value. <strong>Checksum verification</strong> is computing it for the file you received and comparing it with the value the publisher states. A match means the file is the one the publisher released, unaltered and complete.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sha256sum<span class="w"> </span>model.safetensors
+</span></code></pre></div>
+<p>The command prints a 64-character SHA-256 value. Compare it with the one on the publisher's file page, or in the checksum list beside the release. A mismatch means a corrupt or substituted file, and the right response is to delete it and download again. Ollama checks each layer's digest as it pulls, so for models fetched through it the verification is built in. For a file you fetch directly, you do it yourself. The install script of Chapter 8 shows the same check applied to a program.</p>
+<h3 id="storage-management">Storage Management<a class="headerlink" href="#storage-management" title="Permanent link">&para;</a></h3>
+<p><strong>Storage management</strong> is keeping the disk from filling. A model download that runs out of space fails partway through and can leave a partial file. Check free space before a pull, list what is present with <code>du -sh</code> on the cache directory, and remove what you no longer need with the server's own command, such as <code>ollama rm &lt;model&gt;</code>.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Check Free Space Against the Largest File, Not the Average</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Before a pull, run <code>df -h</code> and compare the free space with the model's download size plus a margin for a second format. A 65 GB model on a disk with 60 GB free fails after an hour, and the partial file stays behind.</p>
+</div>
+<h2 id="the-shortlist">The Shortlist<a class="headerlink" href="#the-shortlist" title="Permanent link">&para;</a></h2>
+<h3 id="model-shortlist-and-exclusion-rationale">Model Shortlist and Exclusion Rationale<a class="headerlink" href="#model-shortlist-and-exclusion-rationale" title="Permanent link">&para;</a></h3>
+<p>A <strong>model shortlist</strong> is the written list of candidates you will test, each with its reasons. An <strong>exclusion rationale</strong> is the reason a model was left off. The second is as important as the first, because a reader who sees a famous model missing will wonder whether you missed it. One line each, tied to a criterion, answers them.</p>
+<p>The shortlist for this evaluation, and some of its exclusions, show the form.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Decision</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gpt-oss:120b</code></td>
+<td>Included</td>
+<td>The largest model that still runs at a usable speed on one unit</td>
+</tr>
+<tr>
+<td><code>qwen3.5:122b</code></td>
+<td>Left out</td>
+<td>At 81 GB it was the largest download, and <code>gpt-oss:120b</code> already covered the large tier</td>
+</tr>
+<tr>
+<td><code>qwen3-coder:30b</code></td>
+<td>Left out</td>
+<td>About a year old, replaced by newer releases from the same family</td>
+</tr>
+<tr>
+<td><code>nemotron3:33b</code></td>
+<td>Left out</td>
+<td>Aimed at understanding video, audio, and documents, which this benchmark does not use</td>
+</tr>
+<tr>
+<td>A model needing both units</td>
+<td>Left out</td>
+<td>The course does not cover multi-machine serving</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Do Not Drop a Model for a Fault You Did Not Check</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+This evaluation set aside its fastest model partly for broken navigation files, and the fault turned out to be a faulty example in the skill that the model had copied. The model had not been retested. An exclusion based on a symptom needs the cause confirmed, and an exclusion that is not retested should say so in its rationale.</p>
+</div>
+<h4 id="diagram-model-shortlist-filter">Diagram: Model Shortlist Filter<a class="headerlink" href="#diagram-model-shortlist-filter" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Model Shortlist Filter</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> model-shortlist-filter<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/dgx-eval/tree/main/docs/sims/model-fit-by-memory<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> apply<br/>
+<strong>Learning Objective:</strong> The learner will apply four selection criteria to 8 candidate models for a 128 GB unified-memory machine, deciding shortlist or exclude and naming the first failed criterion, with at least 7 of 8 correct.</p>
+<p><strong>Prerequisites:</strong> model selection criteria, tool-calling reliability, context window, safety headroom, publisher provenance, license review, exclusion rationale (all defined in the sections above this block and in Chapter 11).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 8 candidates the learner commits "Shortlist" or "Exclude" and, for "Exclude", the first failed criterion from the four listed, before the sim reveals the answer. A candidate is correct when the decision equals the Correct decision column and, for an exclusion, the criterion equals the Correct failed criterion column. Mastery is 7 of 8 correct on the first attempt. Reading the candidate cards is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A model that fits in raw memory is acceptable. (2) A large context window makes up for a missing tool-calling feature. (3) A missing license statement is as good as a permissive one. (4) A popular name is proof of provenance.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level work needs the learner to use criteria on new cases, so each candidate fails at most one criterion, and the check order is fixed so that exactly one answer is correct. Mixed shortlist and exclude cases prevent a habit of excluding everything.</p>
+<p><strong>Content:</strong></p>
+<p>The machine has 128 GB of unified memory, with a 20% headroom, so the usable memory is 102.4 GB. The memory figure on each card is the estimate at a 32,768-token context.</p>
+<p>The four criteria, checked in this order: "Tool calling", "Context window", "Fit with headroom", "Publisher and terms". A model passes "Tool calling" when it supports tool calling, passes "Context window" when its window is at least 64,000 tokens, passes "Fit with headroom" when its memory is at most 102.4 GB, and passes "Publisher and terms" when its publisher is identified and its license can be read.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Card shown to the learner</th>
+<th>Correct decision</th>
+<th>Correct failed criterion</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Model A: tool calling yes; window 256,000; memory 29 GB; Apache 2.0; publisher identified</td>
+<td>Shortlist</td>
+<td>None</td>
+<td>It passes all four criteria.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Model B: tool calling no; window 128,000; memory 20 GB; Apache 2.0; publisher identified</td>
+<td>Exclude</td>
+<td>Tool calling</td>
+<td>A harness acts through tool calls, so a model without them cannot run a skill.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Model C: tool calling yes; window 32,000; memory 18 GB; Apache 2.0; publisher identified</td>
+<td>Exclude</td>
+<td>Context window</td>
+<td>32,000 tokens is below the 64,000 minimum, and the harness prompt alone takes about 19,000.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Model D: tool calling yes; window 128,000; memory 118 GB; Apache 2.0; publisher identified</td>
+<td>Exclude</td>
+<td>Fit with headroom</td>
+<td>118 GB is above the usable 102.4 GB, so it would run with no margin on a unified-memory machine.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Model E: tool calling yes; window 256,000; memory 40 GB; license not stated; publisher identified</td>
+<td>Exclude</td>
+<td>Publisher and terms</td>
+<td>Without a license the terms cannot be checked, so a result could not be recommended.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Model F: tool calling yes; window 128,000; memory 69 GB; Apache 2.0; publisher identified</td>
+<td>Shortlist</td>
+<td>None</td>
+<td>It passes all four criteria, and 69 GB is under 102.4 GB.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Model G: tool calling yes; window 256,000; memory 24 GB; Apache 2.0; publisher an unknown repackager</td>
+<td>Exclude</td>
+<td>Publisher and terms</td>
+<td>The weights cannot be traced to the original publisher, so the measurement would be of an unknown file.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Model H: tool calling yes; window 1,000,000; memory 25 GB; custom license published in the repository's license file; publisher identified</td>
+<td>Shortlist</td>
+<td>None</td>
+<td>The terms are readable, so they can be checked, and every other criterion passes.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The candidates are synthetic, written for this exercise, and the sim labels them "synthetic example". The criteria come from the "Model Selection Criteria" section of this chapter and the headroom from Chapter 11.</p>
+<p><strong>Rules:</strong> Candidates are shown in the fixed order 1 to 8. A candidate is excluded for the first criterion it fails in the listed order. A "Shortlist" decision is correct only when it passes all four. Each decision is final once confirmed.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads card 1.</li>
+<li>The learner chooses "Shortlist" or "Exclude", and for "Exclude" the first failed criterion, then confirms.</li>
+<li>The sim shows the correct decision and criterion with the Why text, and marks the card correct or incorrect.</li>
+<li>The learner repeats for cards 2 to 8. After card 8 the sim shows the score and the misconception behind each miss.</li>
+</ol>
+<p><strong>Feedback:</strong> Eight cards, fixed order, one confirmed decision each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct decision, the failed criterion, and the Why text. The final score reads "n of 8 correct".</p>
+<p><strong>Starting State:</strong> Card 1 is shown with no decision made, and the question on screen is "Does this model go on the shortlist, and if not, which criterion fails first?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that tool calling, a window of at least 64,000 tokens, a fit with headroom, and an identifiable publisher with readable terms are the four criteria, and that the usable memory of a 128 GB machine at 20% headroom is 102.4 GB.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>Selection starts from the workload: tool calling, a context window of at least 64,000 tokens, a fit with headroom, and a publisher and license you can check. A model repository is the primary source, and provenance, license, and the model card are read there. Leaderboards and publisher claims are hypotheses to test, not results. Apache 2.0 is the easy license case, a gated model needs a token that is handled as a secret, and the file format decides which server can load it. A download goes into the cache directory, its checksum is compared with the publisher's, and the disk is watched. The shortlist records each decision and, for each exclusion, the criterion that caused it.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">A Shortlist That Fits, Is Legal, and Is Explained</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now turn a long list into a shortlist with a stated reason for every name left off, and download and verify a file safely. Chapter 13 puts a model behind a local endpoint you can send a first prompt to.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

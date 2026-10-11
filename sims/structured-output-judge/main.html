@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Structured Output Judge</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Structured Output Judge</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> structured-output-judge</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Evaluate</p>
+            <p><strong>Learning Objective:</strong> The learner will judge whether each of 6 model replies is valid JSON that matches a given required format, naming the defect in each invalid reply, with at least 5 of 6 judged correctly.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** structured-output-judge<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified<br/>
+    **Bloom Level:** Evaluate<br/>
+    **Bloom Verb:** judge<br/>
+    **Learning Objective:** The learner will judge whether each of 6 model replies is valid JSON that matches a given required format, naming the defect in each invalid reply, with at least 5 of 6 judged correctly.
+    
+    **Prerequisites:** structured output, JSON object, field, integer, string, array (the format is defined in the section "Structured Output" above this block).
+    
+    **Evidence of Mastery:** For each reply the learner chooses "Valid" or "Invalid" and, when "Invalid", chooses the defect from the four defect types listed in Content. A judgment is correct when the choice equals the Answer column and, for invalid replies, the defect equals the Defect column. Mastery is 5 of 6 correct. Reading the required format is exploration, not evidence.
+    
+    **Misconceptions:** (1) A reply that looks right is valid. (2) A reply containing valid JSON inside explanatory text is valid. (3) A trailing comma is harmless. (4) An empty array is a missing field.
+    
+    **Instructional Rationale:** Evaluate-level judging needs criteria applied to evidence, so the required format is fixed and visible and the replies differ from it in one precise way each. Requiring the learner to name the defect shows whether they can justify the judgment, not only guess it.
+    
+    **Content:**
+    
+    The required format, shown on screen for every reply: a JSON object with exactly these four fields. `id` is an integer. `label` is a string. `group` is a string. `depends_on` is an array of integers, and it may be empty. The only text in the reply must be the JSON object itself. The four defect types the learner can choose from are: "Wrong type", "Missing field", "Extra text around the JSON", and "Invalid JSON syntax".
+    
+    | # | Reply shown to the learner | Answer | Defect | Why (shown as feedback) |
+    |---|---|---|---|---|
+    | 1 | `{"id": 7, "label": "Token", "group": "SLM", "depends_on": [40]}` | Valid | none | All four fields are present with the right types and there is no other text. |
+    | 2 | `{"id": "7", "label": "Token", "group": "SLM", "depends_on": [40]}` | Invalid | Wrong type | `id` is the string "7", but the format requires an integer. |
+    | 3 | `{"id": 7, "label": "Token", "group": "SLM"}` | Invalid | Missing field | `depends_on` is required and is absent. |
+    | 4 | `Here is the record: {"id": 7, "label": "Token", "group": "SLM", "depends_on": [40]}` | Invalid | Extra text around the JSON | The JSON is correct, but the sentence before it means a program cannot parse the reply as JSON. |
+    | 5 | `{"id": 7, "label": "Token", "group": "SLM", "depends_on": [40],}` | Invalid | Invalid JSON syntax | JSON does not allow a trailing comma after the last field. |
+    | 6 | `{"id": 7, "label": "Token", "group": "SLM", "depends_on": []}` | Valid | none | An empty array is valid; it means the concept has no prerequisites. |
+    
+    **Provenance:** The required format and the six replies are synthetic, written for this exercise, and the sim labels them "synthetic example". The meaning of valid follows the chapter section "Structured Output" and the JSON syntax rules.
+    
+    **Rules:** Replies are shown in the fixed order 1 to 6, with the required format visible throughout. A reply is Invalid if any field is missing, any field has the wrong type, any text appears outside the JSON object, or the JSON syntax is invalid. Each reply allows one Valid or Invalid choice and, when Invalid, one defect choice, and both are final.
+    
+    **Learner Activity:**
+    
+    1. The learner reads the required format and reply 1.
+    2. The learner chooses "Valid" or "Invalid". If "Invalid", the learner chooses one of the four defect types, then confirms.
+    3. The sim shows the correct judgment, the defect if any, and the Why text, and marks the reply correct or incorrect.
+    4. The learner repeats for replies 2 to 6. After reply 6 the sim shows the score and the misconception behind each missed reply.
+    
+    **Feedback:** Six replies, fixed order, one confirmed judgment each, and the judgment is final. A reply is correct only when both the validity choice and, where needed, the defect choice are correct. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct judgment, the defect, and the Why text. The final score reads "n of 6 correct".
+    
+    **Starting State:** The required format and reply 1 are shown with no choice made, and the question on screen is "Would a program accept this reply?"
+    
+    **Chapter Anchors:** The chapter states the required format as an integer `id`, a string `label`, a string `group`, and an array of integers `depends_on`, and that `{"id": "7", ...}` is invalid because `id` is a string.
+    -->
+</body>
+</html>

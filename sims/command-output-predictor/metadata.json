@@ -1,0 +1,23 @@
+{
+  "title": "Command Output Predictor",
+  "description": "The learner will execute five shell commands against a given directory tree by predicting the output and the resulting working directory after each, with at least 4 of 5 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "command-output-predictor",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "execute",
+  "completion_status": "scaffold",
+  "chapter_number": 1,
+  "chapter_title": "Prerequisites and the Intelligent Textbook",
+  "chapter_dir": "01-intro-intelligent-textbooks",
+  "chapter_rel_dir": "chapters/01-intro-intelligent-textbooks"
+}

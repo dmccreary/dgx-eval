@@ -1,0 +1,23 @@
+{
+  "title": "Cost per Textbook Calculator",
+  "description": "The learner will calculate the cost per textbook and the price at a stated margin to within 1 dollar for 3 scenarios.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "cost-per-textbook-calculator",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "calculate",
+  "completion_status": "scaffold",
+  "chapter_number": 22,
+  "chapter_title": "Diagnosing Failures, Reporting, and Cost per Textbook",
+  "chapter_dir": "22-diagnosis-and-reporting",
+  "chapter_rel_dir": "chapters/22-diagnosis-and-reporting"
+}

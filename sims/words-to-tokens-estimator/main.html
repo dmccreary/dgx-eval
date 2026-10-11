@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Words to Tokens Estimator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Words to Tokens Estimator</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> words-to-tokens-estimator</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Apply</p>
+            <p><strong>Learning Objective:</strong> The learner will calculate the estimated token count of a document from its word count and decide whether the document and a 2,000-token reply fit in a given context window, correct on at least 5 of 6 items.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** words-to-tokens-estimator<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified<br/>
+    **Template:** https://github.com/dmccreary/Digital-Transformation-with-AI-Spring-2026/tree/main/docs/sims/tokenization-process<br/>
+    **Bloom Level:** Apply<br/>
+    **Bloom Verb:** calculate<br/>
+    **Learning Objective:** The learner will calculate the estimated token count of a document from its word count and decide whether the document and a 2,000-token reply fit in a given context window, correct on at least 5 of 6 items.
+    
+    **Prerequisites:** token, tokens per word, context window (all defined in the sections "Token", "Tokens per Word", and "Context Window" above this block).
+    
+    **Evidence of Mastery:** For each item the learner enters an estimated token count and then chooses "Fits" or "Does not fit" before the sim reveals the answer. An item is correct when the entry is within 1% of the value in the Estimated tokens column and the choice equals the Answer column. Mastery is 5 of 6 correct. Reading the reference formula is exploration, not evidence.
+    
+    **Misconceptions:** (1) A token is a word, so the token count equals the word count. (2) The context window holds only the document, and the reply does not count against it. (3) A document that fits by itself also fits with the reply. (4) A model with a larger window can always use all of it.
+    
+    **Instructional Rationale:** Apply-level calculation needs a procedure carried to a decision, so the learner converts words to tokens and then compares to a limit. Items are ordered so that item 2 fits before the reply is added and does not fit after, which makes the second misconception visible.
+    
+    **Content:**
+    
+    The formula shown to the learner is: estimated tokens = words × 1.33. The reserved reply is always 2,000 tokens. An item fits when estimated tokens + 2,000 is less than or equal to the window. The sim labels all numbers "illustrative".
+    
+    | # | Document (words) | Window (tokens) | Estimated tokens | Estimated tokens + 2,000 | Answer | Why (shown as feedback) |
+    |---|---|---|---|---|---|---|
+    | 1 | 1,000 | 8,000 | 1,330 | 3,330 | Fits | 3,330 is below 8,000, so there is room to spare. |
+    | 2 | 5,000 | 8,000 | 6,650 | 8,650 | Does not fit | The document alone is 6,650 tokens, but with the 2,000-token reply the total is 8,650, which is over 8,000. |
+    | 3 | 4,000 | 8,000 | 5,320 | 7,320 | Fits | 7,320 is below 8,000, so the reply also fits. |
+    | 4 | 55,000 | 128,000 | 73,150 | 75,150 | Fits | 75,150 is below 128,000, so a whole book of this size fits. |
+    | 5 | 95,000 | 128,000 | 126,350 | 128,350 | Does not fit | The document alone is under the window, but 128,350 is over 128,000 by 350 tokens. |
+    | 6 | 95,000 | 256,000 | 126,350 | 128,350 | Fits | The same document fits easily in a 256,000-token window. |
+    
+    **Provenance:** The tokens-per-word figure of 1.33 and the 55,000-word book size are the values used in this book's cost model (cost analysis page). The documents, windows, and reply size are illustrative and invented for this exercise.
+    
+    **Rules:** Estimated tokens = words × 1.33, so 1,000 words is 1,330 tokens. The word count entry is fixed per item and not adjustable. The learner's token entry is a whole number from 0 to 300,000 with step 1, and the default is empty. The entry is correct when it is within 1% of the Estimated tokens value. Fit rule: Estimated tokens + 2,000 <= window.
+    
+    **Learner Activity:**
+    
+    1. The learner sees item 1: a document's word count and a window size.
+    2. The learner enters an estimated token count and chooses "Fits" or "Does not fit", then confirms.
+    3. The sim reveals the model value, the total with the reply, the correct choice, and the Why text, and marks the item correct or incorrect.
+    4. The learner repeats for items 2 to 6. After item 6 the sim shows the score and the misconception behind each missed item.
+    
+    **Feedback:** Six items, fixed order, one confirmed answer each, and the answer is final. An item is correct only when both the entry and the choice are correct. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the model value, the correct choice, and the Why text. The final score reads "n of 6 correct".
+    
+    **Starting State:** Item 1 is shown with an empty entry and no choice, and the question on screen is "How many tokens is this, and does it fit?"
+    
+    **Chapter Anchors:** The chapter states that tokens per word is about 1.33, that the context window counts both the text given and the text generated, that a 5,000-word document in an 8,000-token window with a 2,000-token reply needs about 8,650 tokens and does not fit, and that a 55,000-word book is about 73,000 tokens.
+    -->
+</body>
+</html>

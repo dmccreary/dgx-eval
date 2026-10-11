@@ -13,26 +13,6 @@
          <lastmod>2026-10-11</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/dgx-eval/cost-analysis/</loc>
-         <lastmod>2026-10-11</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/dgx-eval/course-description/</loc>
-         <lastmod>2026-10-11</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/dgx-eval/design-choices/</loc>
-         <lastmod>2026-10-11</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/dgx-eval/evaluation-status/</loc>
-         <lastmod>2026-10-11</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/dgx-eval/getting-started/</loc>
-         <lastmod>2026-10-11</lastmod>
-    </url>
-    <url>
          <loc>https://dmccreary.github.io/dgx-eval/license/</loc>
          <lastmod>2026-10-11</lastmod>
     </url>
@@ -42,6 +22,34 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/dgx-eval/testing-architecture/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/appendices/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/appendices/chapter-quality-score/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/appendices/cost-analysis/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/appendices/course-description/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/appendices/design-choices/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/appendices/evaluation-status/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/appendices/getting-started/</loc>
          <lastmod>2026-10-11</lastmod>
     </url>
     <url>
@@ -617,7 +625,83 @@
          <lastmod>2026-10-11</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/agent-loop-stepper/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/benchmark-stage-pipeline/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/book-levels/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/candidate-model-explorer/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/cis-calculator/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/command-output-predictor/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/cost-per-textbook-calculator/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/cost-price-quality-sorter/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/dag-cycle-spotter/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/design-flaw-finder/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/egress-trace-classifier/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/endpoint-exposure-classifier/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/environment-reproducibility-auditor/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/failure-diagnosis-chooser/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/dgx-eval/sims/graph-viewer/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/hardware-branch-matcher/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/inference-request-path/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/learning-graph-defect-finder/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/local-break-even-explorer/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/local-cloud-hybrid-chooser/</loc>
          <lastmod>2026-10-11</lastmod>
     </url>
     <url>
@@ -625,7 +709,55 @@
          <lastmod>2026-10-11</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/model-fit-calculator/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/model-shortlist-filter/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/nvidia-smi-reader/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/redaction-reviewer/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/skill-md-anatomy/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/structured-output-judge/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/tailscale-connection-path/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/tailscale-status-reader/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/dgx-eval/sims/testing-architecture/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/textbook-pipeline-explorer/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/turn-time-breakdown/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/variable-role-sorter/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/dgx-eval/sims/words-to-tokens-estimator/</loc>
          <lastmod>2026-10-11</lastmod>
     </url>
 </urlset>

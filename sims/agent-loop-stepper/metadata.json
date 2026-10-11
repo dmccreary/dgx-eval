@@ -1,0 +1,23 @@
+{
+  "title": "Agent Loop Stepper",
+  "description": "The learner will explain what the harness does after each of 6 model replies or tool results by choosing the outcome of each, with at least 5 of 6 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "agent-loop-stepper",
+  "library": "p5.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "scaffold",
+  "chapter_number": 16,
+  "chapter_title": "The Agent Loop, Tools, and Context",
+  "chapter_dir": "16-agent-loop-and-tools",
+  "chapter_rel_dir": "chapters/16-agent-loop-and-tools"
+}

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="How isolated, pinned conda environments make an evaluation reproducible: creating, activating, exporting, and rebuilding environments, conda versus pip, architecture-specific wheels, and CUDA-enabled PyTorch.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>8. Reproducible Python Environments with Conda - DGX Evaluation for Textbook Generation</title>
+        <title>Reproducible Python Environments with Conda - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              8. Reproducible Python Environments with Conda
+              Reproducible Python Environments with Conda
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -840,6 +663,219 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-an-environment-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      What an Environment Is
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What an Environment Is">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Isolation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda-and-miniforge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda and Miniforge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Channel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-create-activate-and-remove-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Create, Activate, and Remove Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-version-pinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Version Pinning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-tool-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dedicated Tool Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-list-and-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda List and Export
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-specification-and-the-rebuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Specification and the Rebuild
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Specification and the Rebuild">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environmentyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      environment.yml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt-and-conda-versus-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      requirements.txt and Conda Versus pip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-specific-wheels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture-Specific Wheels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch-and-cuda-enabled-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyTorch and CUDA-Enabled PyTorch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproducibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-rebuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Rebuild
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Rebuild">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-environment-reproducibility-auditor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Environment Reproducibility Auditor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1201,6 +1237,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1252,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1353,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1495,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1654,219 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-an-environment-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      What an Environment Is
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What an Environment Is">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Isolation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda-and-miniforge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda and Miniforge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Channel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-create-activate-and-remove-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Create, Activate, and Remove Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-version-pinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Version Pinning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-tool-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dedicated Tool Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-list-and-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda List and Export
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-specification-and-the-rebuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Specification and the Rebuild
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Specification and the Rebuild">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environmentyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      environment.yml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt-and-conda-versus-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      requirements.txt and Conda Versus pip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-specific-wheels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture-Specific Wheels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch-and-cuda-enabled-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyTorch and CUDA-Enabled PyTorch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproducibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-rebuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Rebuild
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Rebuild">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-environment-reproducibility-auditor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Environment Reproducibility Auditor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1512,13 +2001,317 @@
 <li><a href="../05-dgx-hardware-architecture/">Chapter 5: NVIDIA DGX Hardware Architecture</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Build the Toolbox Once, Rebuild It Anywhere</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+An evaluation whose software cannot be rebuilt is a story, not a measurement, because nobody can check it. By the end of this chapter you will have an environment specification that rebuilds your tools on a fresh machine, and a way to prove that it did. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>Chapter 7 reached the machine. This chapter prepares the software that will run against it. The aim is narrow: every Python tool in this course should run from an environment you can delete, rebuild, and compare, so that a surprising result can be traced to a cause instead of to "something I installed last week".</p>
+<p>The chapter covers what an environment is and why isolating it matters, the conda tool that manages environments, and the difference between conda and pip. It then handles the two traps that DGX machines add, which are architecture-specific packages and CUDA-enabled PyTorch, and it ends with the specification file and install script that make a rebuild a single command.</p>
+<h2 id="what-an-environment-is">What an Environment Is<a class="headerlink" href="#what-an-environment-is" title="Permanent link">&para;</a></h2>
+<h3 id="python-environment">Python Environment<a class="headerlink" href="#python-environment" title="Permanent link">&para;</a></h3>
+<p>A <strong>Python environment</strong> is a self-contained directory that holds a Python interpreter and the packages installed for it, together with a script that points your shell at them. Activating an environment puts its interpreter and packages first on your path, so the <code>python</code> command runs that interpreter and <code>import</code> finds those packages and no others.</p>
+<p>The need for one is easiest to see by what happens without it. Suppose two projects share one system Python. The first needs version 1 of a library and the second needs version 2, and a package can exist in only one version at a time in one place. Installing for the second project silently breaks the first. The break may not show up until a script that worked last month fails with an error about a function that no longer exists.</p>
+<p>The table sets out what an environment contains, so that its parts are not mysterious later.</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What it is</th>
+<th>Where it lives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interpreter</td>
+<td>The <code>python</code> executable, of one version</td>
+<td>Inside the environment directory</td>
+</tr>
+<tr>
+<td>Packages</td>
+<td>Libraries installed for that interpreter</td>
+<td>A <code>site-packages</code> folder in the environment</td>
+</tr>
+<tr>
+<td>Activation script</td>
+<td>Changes the shell's path to use the environment</td>
+<td>Run by the activate command</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>A record of what was installed</td>
+<td>A <code>conda-meta</code> folder, for conda environments</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">An Environment Is a Directory You Can Throw Away</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Once you see an environment as just a folder, the discipline follows. You never repair a broken one. You delete it and rebuild it from the specification, which is a faster and more trustworthy fix than finding the one package that drifted.</p>
+</div>
+<h3 id="environment-isolation">Environment Isolation<a class="headerlink" href="#environment-isolation" title="Permanent link">&para;</a></h3>
+<p><strong>Environment isolation</strong> is keeping each environment separate so that a change in one cannot affect another. It is what turns the list of packages from a shared, mutable pile into a record that belongs to one purpose.</p>
+<p>A real instance from this course's tooling shows the stakes. Two documentation build tools each depend on the same markdown-extension package, and each pins a different version of it. Installed together in one environment, they cannot both be satisfied, and installing the second breaks the first. The fix was not a cleverer install. It was to give each tool its own environment, so that neither one had to agree with the other.</p>
+<h2 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h2>
+<h3 id="conda-and-miniforge">Conda and Miniforge<a class="headerlink" href="#conda-and-miniforge" title="Permanent link">&para;</a></h3>
+<p><strong>Conda</strong> is a package and environment manager. It creates environments, installs packages into them, and records what it installed. Unlike a tool that handles only Python libraries, conda also installs the non-Python programs a library depends on, and Python itself, so an environment can contain a whole stack.</p>
+<p><strong>Miniforge</strong> is a minimal installer for conda that is set up to use the community-maintained conda-forge channel by default. It is the installer this course uses. The alternative, a distribution from a commercial vendor, brings a default channel with licensing terms that can require a paid license for larger organizations, and a book whose readers are professionals in unknown organizations should not depend on that.</p>
+<h3 id="package-channel">Package Channel<a class="headerlink" href="#package-channel" title="Permanent link">&para;</a></h3>
+<p>A <strong>package channel</strong> is a server that hosts packages for conda to download. When you ask for a package, conda searches the channels in order. The channel you use decides which packages and versions exist for you, and it decides who built them.</p>
+<p>The course uses <code>conda-forge</code>, which is large, community-maintained, and builds packages for both x86_64 and aarch64. A specification should always name its channel explicitly, because an unnamed channel falls back to whatever a particular machine has configured, and two machines can then resolve the same list differently.</p>
+<h3 id="the-create-activate-and-remove-commands">The Create, Activate, and Remove Commands<a class="headerlink" href="#the-create-activate-and-remove-commands" title="Permanent link">&para;</a></h3>
+<p>The <strong>conda create command</strong> makes a new environment. Its parts are worth reading before you run it. <code>-n dgx</code> names the environment. <code>-c conda-forge</code> names the channel to search. Everything after is the packages to install, and a version after an equals sign pins it.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>dgx<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12<span class="w"> </span>psutil
+</span></code></pre></div>
+<p>The <strong>conda activate command</strong> switches your shell into the environment, and the prompt shows its name.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>dgx
+</span></code></pre></div>
+<p>The <strong>conda remove command</strong> deletes the environment. <code>conda env remove -n dgx</code> removes the directory and its record, and it is the first step of a rebuild.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Activation Belongs to Interactive Shells</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+The <code>conda activate</code> function is defined by your shell's startup files, so a script or an agent running in a non-interactive shell may fail with a permission or "command not found" error. Call the environment's executables by their full path, or use <code>conda run -n dgx &lt;command&gt;</code>, and the failure goes away.</p>
+</div>
+<h3 id="python-version-pinning">Python Version Pinning<a class="headerlink" href="#python-version-pinning" title="Permanent link">&para;</a></h3>
+<p><strong>Python version pinning</strong> is fixing the interpreter's version in the environment's specification. Writing <code>python=3.12</code> fixes the major and minor version, and conda chooses the newest 3.12 patch release. Writing <code>python=3.12.4</code> fixes the patch release too.</p>
+<p>Pinning matters because a minor release can change behavior, and a compiled package is built for one interpreter version. A machine that rebuilds your environment a year later without a pin gets a newer Python, which may not have wheels for every package you use.</p>
+<h3 id="dedicated-tool-environment">Dedicated Tool Environment<a class="headerlink" href="#dedicated-tool-environment" title="Permanent link">&para;</a></h3>
+<p>A <strong>dedicated tool environment</strong> is an environment that exists for one tool or one job and holds nothing else. In this evaluation the tools for reaching the DGX live in one, named <code>dgx</code>, which holds the Tailscale client and daemon and nothing else. The environment that builds this book is a different one.</p>
+<p>The separation pays off three ways.</p>
+<ul>
+<li><strong>A break is contained.</strong> Breaking the build tool's environment cannot take out remote access.</li>
+<li><strong>The record is meaningful.</strong> The <code>dgx</code> environment's package list is exactly what reaching the DGX needs, with nothing accumulated from other work.</li>
+<li><strong>Removal is clean.</strong> When the project ends, one command removes everything it installed.</li>
+</ul>
+<h3 id="conda-list-and-export">Conda List and Export<a class="headerlink" href="#conda-list-and-export" title="Permanent link">&para;</a></h3>
+<p>The <strong>conda list</strong> command prints the packages in the active environment with their versions. The <strong>export</strong> command writes the environment to a file. The two forms of export differ in a way that decides whether the file can be used on another machine.</p>
+<table>
+<thead>
+<tr>
+<th>Export form</th>
+<th>What it records</th>
+<th>Portable across architectures?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>conda env export</code></td>
+<td>Every package, with exact builds</td>
+<td>No: the builds are specific to one platform</td>
+</tr>
+<tr>
+<td><code>conda env export --from-history</code></td>
+<td>Only the packages you asked for</td>
+<td>Yes: conda resolves the rest for the new platform</td>
+</tr>
+</tbody>
+</table>
+<p>The listing has four columns that are worth knowing by name. The sanitized example below shows the <code>dgx</code> tool environment, with the filesystem path and the last digits of each version replaced.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># packages in environment at &lt;conda-prefix&gt;/envs/dgx:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>#
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a># Name          Version    Build        Channel
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>python          3.12.4     h...         conda-forge
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>tailscale       1.xx.x     h...         conda-forge
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>tailscaled      1.xx.x     h...         conda-forge
+</span></code></pre></div>
+<p><code>Name</code> and <code>Version</code> are what you pin. <code>Build</code> identifies the exact compiled variant, and it is the column that makes a full export platform-specific. <code>Channel</code> records where the package came from, which is how you notice a package that arrived from somewhere you did not intend. The environment holds only what the tool needs, which is the point of a dedicated environment.</p>
+<p>A full export taken on a Mac with an Arm laptop chip lists builds that exist only for that platform. Rebuilding from it on a Linux aarch64 DGX fails with a list of packages that cannot be found. Exporting from history avoids this, at the price of letting each dependency resolve to whatever is current, unless you pin them in the file yourself.</p>
+<h2 id="the-specification-and-the-rebuild">The Specification and the Rebuild<a class="headerlink" href="#the-specification-and-the-rebuild" title="Permanent link">&para;</a></h2>
+<h3 id="environmentyml">environment.yml<a class="headerlink" href="#environmentyml" title="Permanent link">&para;</a></h3>
+<p>An <strong><code>environment.yml</code></strong> file is the specification of a conda environment. It names the environment, lists the channels in order, and lists the packages, with pins where you want them. It is the file that goes into the repository, because it is small, readable, and enough to rebuild.</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dgx</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">channels</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">dependencies</span><span class="p">:</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python=3.12</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tailscale</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tailscaled</span>
+</span></code></pre></div>
+<h3 id="requirementstxt-and-conda-versus-pip">requirements.txt and Conda Versus pip<a class="headerlink" href="#requirementstxt-and-conda-versus-pip" title="Permanent link">&para;</a></h3>
+<p>A <strong><code>requirements.txt</code></strong> file is pip's equivalent: a list of Python packages, one per line, with optional version pins. It is created by <code>pip freeze</code> and installed with <code>pip install -r requirements.txt</code>.</p>
+<p><strong>pip</strong> installs Python packages from the Python Package Index. <strong>Conda versus pip</strong> is a question of scope: pip handles only Python packages, while conda handles Python, non-Python libraries, and tools. The rule that avoids most trouble is to install with conda first, and use pip only for what conda does not have, and to do the pip installs last. Going back and forth lets pip replace a package conda installed, and conda's record is then wrong about what is present.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>conda</th>
+<th>pip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Installs Python itself</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Installs non-Python programs</td>
+<td>Yes, such as Tailscale</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Package source</td>
+<td>Channels such as conda-forge</td>
+<td>The Python Package Index</td>
+</tr>
+<tr>
+<td>Records its work in</td>
+<td><code>conda-meta</code> and <code>environment.yml</code></td>
+<td><code>requirements.txt</code></td>
+</tr>
+<tr>
+<td>Use it for</td>
+<td>The base of the environment</td>
+<td>Packages conda lacks, installed last</td>
+</tr>
+</tbody>
+</table>
+<h3 id="architecture-specific-wheels">Architecture-Specific Wheels<a class="headerlink" href="#architecture-specific-wheels" title="Permanent link">&para;</a></h3>
+<p>A <strong>wheel</strong> is the file format for a built Python package, and an <strong>architecture-specific wheel</strong> is one built for a particular processor architecture. Its filename says which. Reading a filename, simplified here for clarity, shows what an installer checks:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>numpy-1.26.4-cp312-cp312-manylinux_2_17_aarch64.whl
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>        |       |      |        |             |
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        |       |      |        |             processor architecture
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        |       |      |        operating system and library version
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        |       |      application binary interface
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        |       Python version (3.12)
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        package version
+</span></code></pre></div>
+<p>On an aarch64 machine, pip accepts only wheels whose last tag is <code>aarch64</code>. If a package publishes only x86_64 wheels, pip falls back to compiling it from source, which is slow, needs a compiler, and can fail. Chapter 5 introduced the two architectures, and this is where the difference becomes a failed install.</p>
+<h3 id="pytorch-and-cuda-enabled-pytorch">PyTorch and CUDA-Enabled PyTorch<a class="headerlink" href="#pytorch-and-cuda-enabled-pytorch" title="Permanent link">&para;</a></h3>
+<p><strong>PyTorch</strong> is a widely used library for numeric computing and neural networks. This course uses it for one narrow purpose: to confirm that the GPU is visible to Python's machine-learning stack. <strong>CUDA-enabled PyTorch</strong> is the build of PyTorch compiled to use an NVIDIA GPU. The default install on some platforms is a CPU-only build, and it imports without any error, so a missing GPU shows up only when you ask.</p>
+<p>Two lines establish which build you have. The first prints the CUDA version the build was compiled for, which is <code>None</code> for a CPU-only build. The second asks whether a GPU is usable right now.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">cuda</span><span class="p">)</span>          <span class="c1"># for example '13.0'; None means a CPU-only build</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>   <span class="c1"># True only if the driver and a GPU are usable</span>
+</span></code></pre></div>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Test the GPU, Not the Import</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+<code>import torch</code> succeeds on a CPU-only build, so it proves nothing about the GPU. Make <code>torch.cuda.is_available()</code> part of the rebuild check. A model that silently runs on the CPU looks like a performance problem when it is an install problem.</p>
+</div>
+<h3 id="reproducibility">Reproducibility<a class="headerlink" href="#reproducibility" title="Permanent link">&para;</a></h3>
+<p><strong>Reproducibility</strong> is the property that someone else, or you on another day, can repeat a procedure and get the same result. For an environment it means the same specification produces the same software. It is what makes a benchmark checkable: a result that cannot be reproduced cannot be disputed either, because nobody can tell what was measured.</p>
+<p>An environment specification covers the interpreter version, the package versions, and the channel they came from. It does not cover the operating system, the GPU driver, the CUDA libraries installed by the system, or the model weights. Those are separate pieces of the stack, and Chapter 4's version pinning and Chapter 12's checksum verification handle them.</p>
+<h3 id="install-script">Install Script<a class="headerlink" href="#install-script" title="Permanent link">&para;</a></h3>
+<p>An <strong>install script</strong> is a program that takes a machine from its starting state to a working tool set with no manual steps. It is the written-down version of your setup, and it is the strongest form of reproducibility because it runs.</p>
+<p>A good one pins what it installs and verifies what it downloads. The excerpt below is from this project's model-server installer. <code>V</code> pins the release version, and <code>F</code> is the archive for the machine's architecture. The script downloads a published list of checksums and the archive, computes the archive's SHA-256 value, and stops if the two differ.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">V</span><span class="o">=</span>v0.40.2
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">F</span><span class="o">=</span>ollama-linux-arm64.tar.zst
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nv">expected</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span><span class="s2">"</span><span class="nv">$F</span><span class="s2">\$"</span><span class="w"> </span>sha256sum.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $1}'</span><span class="k">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nv">actual</span><span class="o">=</span><span class="k">$(</span>sha256sum<span class="w"> </span><span class="s2">"</span><span class="nv">$F</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $1}'</span><span class="k">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$expected</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="nv">$actual</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"sha256 MISMATCH"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
+</span></code></pre></div>
+<p>Three habits make a script worth trusting: it stops at the first error, it pins every version it installs, and it prints the versions it ended up with, so a log shows what a run used.</p>
+<h3 id="environment-rebuild">Environment Rebuild<a class="headerlink" href="#environment-rebuild" title="Permanent link">&para;</a></h3>
+<p>An <strong>environment rebuild</strong> is creating an environment again from its specification and confirming that it matches the original. A specification you have never rebuilt from is an unverified claim. The rebuild is the test.</p>
+<p>The sequence below creates a throwaway environment from the file, checks that it works, and compares its package list with the original's. Each command is explained before it runs: <code>conda env create -f</code> builds from the file, <code>-n dgx-test</code> gives it a different name so it does not overwrite the original, and <code>conda list --export</code> prints the packages in a comparable form.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>dgx-test<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>conda<span class="w"> </span>run<span class="w"> </span>-n<span class="w"> </span>dgx-test<span class="w"> </span>tailscale<span class="w"> </span>version
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>diff<span class="w"> </span>&lt;<span class="o">(</span>conda<span class="w"> </span>list<span class="w"> </span>-n<span class="w"> </span>dgx<span class="w"> </span>--export<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>conda<span class="w"> </span>list<span class="w"> </span>-n<span class="w"> </span>dgx-test<span class="w"> </span>--export<span class="o">)</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>conda<span class="w"> </span>env<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span>dgx-test
+</span></code></pre></div>
+<p>An empty <code>diff</code> means the rebuild matches. A few differing lines are the packages that were not pinned and resolved to a newer release, and they are exactly what to pin next.</p>
+<h4 id="diagram-environment-reproducibility-auditor">Diagram: Environment Reproducibility Auditor<a class="headerlink" href="#diagram-environment-reproducibility-auditor" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Environment Reproducibility Auditor</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> environment-reproducibility-auditor<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Evaluate<br/>
+<strong>Bloom Verb:</strong> judge<br/>
+<strong>Learning Objective:</strong> The learner will judge whether each of 6 environment specifications rebuilds the same software on a second machine, and name the reason, with at least 5 of 6 correct.</p>
+<p><strong>Prerequisites:</strong> environment.yml, Python version pinning, package channel, architecture-specific wheels, conda export forms, CUDA-enabled PyTorch, environment rebuild (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 6 specifications the learner commits a verdict ("Reproducible" or "Not reproducible") and, for a "Not reproducible" verdict, one reason from the five listed in Content, before the sim reveals the answer. An item is correct when the verdict equals the Correct verdict column and, if the verdict is "Not reproducible", the reason equals the Correct reason column. Mastery is 5 of 6 correct on the first attempt. Reading the specifications is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A file that lists packages is automatically reproducible. (2) A full export from one machine rebuilds on any machine. (3) A package that imports without error has the capabilities you need. (4) An unnamed channel is harmless.</p>
+<p><strong>Instructional Rationale:</strong> Evaluate-level judging needs criteria applied to a case, so each specification fails, if it fails, for exactly one reason named in the chapter. A mix of failing and passing items prevents the learner from assuming every file is flawed.</p>
+<p><strong>Content:</strong></p>
+<p>The five reasons the learner can choose from: "Unpinned versions", "Platform-specific builds", "No channel named", "May install a CPU-only build", and "None, it is reproducible" (the last is valid only with the verdict "Reproducible").</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Specification shown to the learner</th>
+<th>Correct verdict</th>
+<th>Correct reason</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Channels: <code>conda-forge</code>. Packages: <code>python</code>, <code>numpy</code>, <code>psutil</code>, no versions.</td>
+<td>Not reproducible</td>
+<td>Unpinned versions</td>
+<td>A rebuild installs whatever is newest on that day, which can differ from the original.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Channels: <code>conda-forge</code>. Packages: <code>python=3.12.4</code>, <code>numpy=1.26.4</code>, <code>psutil=5.9.8</code>.</td>
+<td>Reproducible</td>
+<td>None, it is reproducible</td>
+<td>The channel is named and every package is pinned.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A full <code>conda env export</code> taken on a Mac with an Arm laptop chip, used to rebuild on a Linux aarch64 machine.</td>
+<td>Not reproducible</td>
+<td>Platform-specific builds</td>
+<td>The export lists builds that exist only for the Mac's platform, so they cannot be found on Linux.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>pip install torch</code> run on an aarch64 machine with no index named and no CUDA check afterward.</td>
+<td>Not reproducible</td>
+<td>May install a CPU-only build</td>
+<td>The default build can lack CUDA, and the import succeeds anyway.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Packages: <code>python=3.12</code>, <code>psutil=5.9.8</code>, and no channel listed.</td>
+<td>Not reproducible</td>
+<td>No channel named</td>
+<td>The rebuild uses whatever channels the second machine has configured, so it may resolve differently.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>An <code>environment.yml</code> exported with <code>--from-history</code>, naming <code>conda-forge</code> and pinned versions, plus an install script that creates the environment and then runs <code>python -c "import psutil"</code>.</td>
+<td>Reproducible</td>
+<td>None, it is reproducible</td>
+<td>It is pinned, names its channel, is portable, and verifies itself.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The specifications are synthetic, written for this exercise, and the sim labels them "synthetic example". The package versions are illustrative.</p>
+<p><strong>Rules:</strong> Specifications are shown in the fixed order 1 to 6. For each, the learner chooses a verdict, and a reason when the verdict is "Not reproducible". A verdict of "Reproducible" is correct only with the reason "None, it is reproducible". Choices are final once confirmed.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads specification 1.</li>
+<li>The learner chooses "Reproducible" or "Not reproducible", and if the latter, one of the four failure reasons, then confirms.</li>
+<li>The sim shows the correct verdict and reason with the Why text, and marks the item correct or incorrect.</li>
+<li>The learner repeats for specifications 2 to 6. After specification 6 the sim shows the score and, for each miss, the misconception behind it.</li>
+</ol>
+<p><strong>Feedback:</strong> Six items, fixed order, one confirmed pair of choices each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct verdict, the correct reason, and the Why text. The final score reads "n of 6 correct".</p>
+<p><strong>Starting State:</strong> Specification 1 is shown with no verdict chosen, and the question on screen is "Would a second machine rebuild exactly this environment?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that an unpinned package, a platform-specific export, an unnamed channel, and a possibly CPU-only build each defeat a rebuild, and that <code>--from-history</code> is the portable export.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>An environment is a directory holding an interpreter and packages, and isolating one per purpose keeps a change in one place from breaking another. Conda creates, activates, exports, and removes environments, and installs non-Python software that pip cannot. A specification is reproducible only when it names its channel, pins the interpreter and its packages, and is exported in a form that crosses platforms. On a DGX the two extra traps are wheels built for the wrong architecture and a PyTorch build with no CUDA, and both are caught by checking, not by importing. A rebuild from the specification is the test, and an install script is the specification that runs.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Rebuild Your Tools on Demand</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now write an <code>environment.yml</code> that names its channel and pins its versions, rebuild it into a throwaway environment, and diff the result against the original. Chapter 9 uses the <code>dgx</code> environment to install Tailscale and take a first inventory.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

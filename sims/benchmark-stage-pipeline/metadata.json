@@ -1,0 +1,23 @@
+{
+  "title": "Benchmark Stage Pipeline",
+  "description": "The learner will explain how the three benchmark stages chain by opening each of 7 elements of the pipeline and then answering 4 questions about what starts from what, with at least 3 of 4 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "benchmark-stage-pipeline",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "scaffold",
+  "chapter_number": 21,
+  "chapter_title": "Running the Textbook Benchmark",
+  "chapter_dir": "21-running-the-benchmark",
+  "chapter_rel_dir": "chapters/21-running-the-benchmark"
+}

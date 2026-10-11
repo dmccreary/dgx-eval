@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="The DGX family and the hardware that decides what a local model can do: CPU architecture, system RAM, GPU, dedicated versus unified memory, storage, power, thermals, DGX OS, the driver, and CUDA.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>5. NVIDIA DGX Hardware Architecture - DGX Evaluation for Textbook Generation</title>
+        <title>NVIDIA DGX Hardware Architecture - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5. NVIDIA DGX Hardware Architecture
+              NVIDIA DGX Hardware Architecture
             
           </span>
         </div>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../course-description.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,183 +291,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../testing-architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testing Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design-choices/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Design Choices
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../model-candidates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Candidates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cost-analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../evaluation-status/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../models/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Model Results
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -588,7 +411,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
@@ -597,23 +420,23 @@
               
   
   <span class="md-ellipsis">
-    Chapters
+    Textbook Chapters
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            Textbook Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -777,6 +600,273 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-dgx-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      The DGX Family
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The DGX Family">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-dgx" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIDIA DGX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dgx-spark-nvidia-gb10-and-the-blackwell-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      DGX Spark, NVIDIA GB10, and the Blackwell Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Processor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Processor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-core-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Core Count
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-and-the-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory and the GPU
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory and the GPU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-ram" class="md-nav__link">
+    <span class="md-ellipsis">
+      System RAM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-gpu-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dedicated GPU Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unified-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unified Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-bandwidth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Bandwidth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-capacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Capacity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvme-storage-and-storage-read-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVMe Storage and Storage Read Speed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-and-thermals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power and Thermals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power and Thermals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-draw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Draw
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermal-design-power-and-thermals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermal Design Power and Thermals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-software-directly-on-the-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Software Directly on the Hardware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Software Directly on the Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dgx-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      DGX OS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIDIA Driver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CUDA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-hardware-finding-to-setup-branch-matcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Hardware Finding to Setup Branch Matcher
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1201,6 +1291,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,11 +1306,68 @@
         
   
   
-    <a href="../../learning-graph/" class="md-nav__link">
+    <a href="../../appendices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Learning Graph
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
   </span>
   
 
@@ -1258,6 +1407,130 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1276,6 +1549,63 @@
   
   <span class="md-ellipsis">
     MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
   </span>
   
 
@@ -1378,6 +1708,273 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-chapter-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Chapter Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-dgx-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      The DGX Family
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The DGX Family">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-dgx" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIDIA DGX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dgx-spark-nvidia-gb10-and-the-blackwell-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      DGX Spark, NVIDIA GB10, and the Blackwell Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Processor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Processor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-core-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Core Count
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-and-the-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory and the GPU
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory and the GPU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-ram" class="md-nav__link">
+    <span class="md-ellipsis">
+      System RAM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-gpu-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dedicated GPU Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unified-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unified Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-bandwidth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Bandwidth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-capacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Capacity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvme-storage-and-storage-read-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVMe Storage and Storage Read Speed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-and-thermals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power and Thermals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power and Thermals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-draw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Draw
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermal-design-power-and-thermals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermal Design Power and Thermals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-software-directly-on-the-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Software Directly on the Hardware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Software Directly on the Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dgx-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      DGX OS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIDIA Driver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CUDA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-hardware-finding-to-setup-branch-matcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Hardware Finding to Setup Branch Matcher
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
     </span>
   </a>
   
@@ -1530,15 +2127,354 @@
 </tbody>
 </table>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
+<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description.md">course description</a>.</p>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Know the Machine Before You Ask It for Anything</p>
+<p><img alt="Tera waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Every later chapter branches on what this hardware actually has, so a few minutes spent here saves hours of confusing failures. By the end you will be able to read a machine's specification and say which setup steps it changes. Measure first, then decide!</p>
+</div>
+<h2 id="what-this-chapter-covers">What This Chapter Covers<a class="headerlink" href="#what-this-chapter-covers" title="Permanent link">&para;</a></h2>
+<p>A DGX is not one machine. The name covers a desktop box that holds one chip and a rack-mounted server that holds eight GPUs, and the two need different setup steps, different packages, and different ways of asking whether a model fits. This course therefore treats the hardware as a set of questions to answer before anything is installed.</p>
+<p>The chapter takes the questions in the order a setup follows. It starts with the product family, then the processor, memory, GPU, storage, power and cooling, and finally the three software layers that sit directly on the hardware: the operating system, the driver, and CUDA. Every section ends on the same point, which setup step changes depending on the answer.</p>
+<p>One machine runs through the chapter as the worked example. It is the DGX Spark-class unit used in this evaluation, and its measured values appear next to the general rule each time. Chapter 10 turns every question here into a Python probe that measures it.</p>
+<h2 id="the-dgx-family">The DGX Family<a class="headerlink" href="#the-dgx-family" title="Permanent link">&para;</a></h2>
+<h3 id="nvidia-dgx">NVIDIA DGX<a class="headerlink" href="#nvidia-dgx" title="Permanent link">&para;</a></h3>
+<p><strong>NVIDIA DGX</strong> is NVIDIA's line of systems built for AI work, sold as complete machines with the hardware, the operating system, and the GPU software already matched to each other. A buyer receives a computer on which the driver, the compute libraries, and a container runtime are installed and known to work together, which removes the most common source of setup trouble on a self-assembled GPU server.</p>
+<p>The line spans a wide range, and the range is the reason this course does not assume one model.</p>
+<table>
+<thead>
+<tr>
+<th>Kind of system</th>
+<th>Typical shape</th>
+<th>CPU architecture</th>
+<th>GPU memory arrangement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desktop personal system</td>
+<td>Small box on a desk</td>
+<td>aarch64</td>
+<td>One chip, memory shared with the CPU</td>
+</tr>
+<tr>
+<td>Desktop workstation</td>
+<td>Tower with a large coherent memory pool</td>
+<td>aarch64</td>
+<td>Memory shared with the CPU</td>
+</tr>
+<tr>
+<td>Rack server</td>
+<td>Eight GPUs in one chassis</td>
+<td>x86_64</td>
+<td>Each GPU has its own dedicated memory</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>DGX product family</strong> is the set of DGX models that share a design generation and a purpose. Models within a family differ in memory size and price, and families differ in nearly everything else. The practical lesson is that "I have a DGX" does not tell you how much memory a model may use, which processor architecture your downloads must match, or whether the GPUs can be treated as one device.</p>
+<h3 id="dgx-spark-nvidia-gb10-and-the-blackwell-architecture">DGX Spark, NVIDIA GB10, and the Blackwell Architecture<a class="headerlink" href="#dgx-spark-nvidia-gb10-and-the-blackwell-architecture" title="Permanent link">&para;</a></h3>
+<p><strong>DGX Spark</strong> is the small desktop member of the family and the machine this evaluation used. It is built around a single chip, the <strong>NVIDIA GB10</strong>, which combines an Arm processor and a GPU in one package and connects them to one pool of memory. The GB10's GPU belongs to the <strong>Blackwell architecture</strong>, which is NVIDIA's name for one generation of GPU design. A generation name matters because software is compiled for a generation, and a library built for an older one may not run, or may run slowly, on a newer one.</p>
+<p>Following one real inventory shows what these names turn into. The two units in this evaluation reported the same configuration.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Reported value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System</td>
+<td>DGX Spark-class desktop, aarch64</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>20 Arm cores, 10 Cortex-X925 and 10 Cortex-A725</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>128 GB unified, shared by the CPU and the GPU</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>1 TB NVMe SSD</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>NVIDIA GB10, Blackwell architecture, 6,144 CUDA cores</td>
+</tr>
+<tr>
+<td>Operating system</td>
+<td>DGX OS 7.4 on Ubuntu 24.04</td>
+</tr>
+<tr>
+<td>Driver and compute</td>
+<td>NVIDIA driver 580, CUDA 13.0</td>
+</tr>
+</tbody>
+</table>
+<p>Each row of this table is one of the sections below. The first thing to notice is that the table contains no mention of a separate GPU memory figure. That absence is the most important fact about this machine, and the memory section explains why.</p>
+<h2 id="the-processor">The Processor<a class="headerlink" href="#the-processor" title="Permanent link">&para;</a></h2>
+<h3 id="cpu-architecture">CPU Architecture<a class="headerlink" href="#cpu-architecture" title="Permanent link">&para;</a></h3>
+<p><strong>CPU architecture</strong> is the instruction set a processor executes. Two matter here. <strong>x86_64</strong> is the architecture of nearly all desktop, laptop, and server processors from Intel and AMD, and it is what most downloadable software is built for. <strong>aarch64</strong> is the 64-bit Arm architecture, used in phones, in recent laptops, and in the GB10 chip. The two are not compatible: a program compiled for one cannot run on the other without translation.</p>
+<p>The reason this affects your work is packaging. Compiled Python packages are distributed as <strong>wheels</strong> built for one architecture and one operating system, and a download site chooses the right wheel by asking the machine what it is. On an aarch64 system a package without an aarch64 build either fails to install or compiles from source, which is slow and sometimes impossible. Chapter 8 covers wheels in detail.</p>
+<p>The check takes one command, and its answer is the first branch of every setup.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uname<span class="w"> </span>-m
+</span></code></pre></div>
+<p>On the unit in this evaluation it prints <code>aarch64</code>. The same command on a typical rack DGX prints <code>x86_64</code>. A reader who copies an install command from a tutorial written for x86_64 will hit an architecture mismatch here, and the fix is to find the aarch64 build, not to retry.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">The Download Page Assumes Your Architecture</p>
+<p><img alt="Tera warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Many install pages offer an x86_64 file first, and a download that completes on an aarch64 machine will still fail when you run it. Run <code>uname -m</code> before downloading, and pick the file whose name says <code>arm64</code> or <code>aarch64</code>.</p>
+</div>
+<h3 id="cpu-core-count">CPU Core Count<a class="headerlink" href="#cpu-core-count" title="Permanent link">&para;</a></h3>
+<p><strong>CPU core count</strong> is the number of independent processing units on the processor, and it sets how many tasks the CPU can run truly at once. The unit in this evaluation has 20 cores. For model inference the GPU does most of the arithmetic, so the core count matters less than for other workloads. It still decides how fast the CPU-side work runs: tokenizing a prompt, running the harness, executing the tools a model calls, and building the site with MkDocs.</p>
+<p>A worked example makes the point. A book build that runs on one core takes the same time on 4 cores or 20, so a build is bounded by single-core speed. A benchmark that runs two model servers and two harness containers at once has four busy processes, and 20 cores keep them from competing. Read the count with <code>nproc</code>, and treat anything above 8 as comfortable for this workload.</p>
+<h2 id="memory-and-the-gpu">Memory and the GPU<a class="headerlink" href="#memory-and-the-gpu" title="Permanent link">&para;</a></h2>
+<h3 id="system-ram">System RAM<a class="headerlink" href="#system-ram" title="Permanent link">&para;</a></h3>
+<p><strong>System RAM</strong> is the main memory of the computer, the fast storage where running programs keep their data. Everything the machine does at once shares it: the operating system, the model server, the harness, and any other process. A program that needs more than is free either slows down by swapping to disk or is stopped by the operating system.</p>
+<p>On a conventional server, system RAM and GPU memory are separate pools. The model weights live in GPU memory, and system RAM holds everything else. Whether that separation exists on your machine is the single largest fact about it, and it is defined by the next two concepts.</p>
+<h3 id="dedicated-gpu-memory">Dedicated GPU Memory<a class="headerlink" href="#dedicated-gpu-memory" title="Permanent link">&para;</a></h3>
+<p><strong>Dedicated GPU memory</strong> is memory that belongs to the GPU alone, mounted on the GPU's own board and connected to it by a very fast link. A model loaded onto such a GPU must fit entirely in that memory, because the GPU cannot use the system's RAM at full speed. A rack DGX with eight GPUs has eight separate pools, each of a fixed size, and each pool is a hard limit for the part of the model placed on it.</p>
+<p>A worked example from a published configuration: a DGX H100 holds eight H100 GPUs with 80 GB each, 640 GB in total. A model whose weights take 100 GB cannot be placed on one of these GPUs, however much system RAM the server has. It must be split across at least two GPUs, and the software that does the splitting is a setup step of its own.</p>
+<h3 id="unified-memory">Unified Memory<a class="headerlink" href="#unified-memory" title="Permanent link">&para;</a></h3>
+<p><strong>Unified memory</strong> is a single pool of memory shared by the CPU and the GPU, so that both read and write the same physical chips. The GB10 uses it, and its 128 GB is the whole of the machine's memory, with nothing set aside for the GPU. The GPU has no memory of its own.</p>
+<p>The consequences run in both directions, and they are the reason the model-fit chapters in this course exist.</p>
+<ul>
+<li><strong>A larger model can fit.</strong> The limit is the whole pool, not a slice of it. A 65 GB model that would not fit on a single 24 GB gaming GPU loads on this machine.</li>
+<li><strong>Everything competes.</strong> The weights, the conversation context, the operating system, and every other program take memory from the same 128 GB. A model that fits on paper can still starve the system.</li>
+<li><strong>A memory exhaustion can freeze the whole machine.</strong> On a discrete-GPU system, running out of GPU memory stops one process. On unified memory, the pool is also what the operating system runs on, and this evaluation had a unit stop responding during a long run. The cause was not confirmed, and memory exhaustion is the leading suspect.</li>
+</ul>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The GPU Does Not Have Its Own Memory Here</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+On a unified-memory machine, "GPU memory" and "system memory" are two names for one pool. Every calculation you learned for a discrete GPU changes: the weights, the context, and the operating system all draw on the same number, and the headroom you leave is the only thing between a slow run and a frozen machine.</p>
+</div>
+<p>The tools reflect this. On the unit in this evaluation, <code>nvidia-smi</code> reports the GPU's memory as <code>Not Supported</code>, because there is no separate figure to report. Memory use has to be read from the system side, with <code>free -h</code>. Chapter 10 builds that fallback into the memory probe.</p>
+<h3 id="memory-bandwidth">Memory Bandwidth<a class="headerlink" href="#memory-bandwidth" title="Permanent link">&para;</a></h3>
+<p><strong>Memory bandwidth</strong> is how many bytes per second the memory can deliver to the processor. Generating one token requires reading the model's active weights from memory, so bandwidth, not arithmetic, usually limits how fast a model generates. This is why two models of different size run at very different speeds on the same machine.</p>
+<p>This evaluation measured the effect directly. A mixture-of-experts model that reads about 4 billion parameters for each token ran at 86 to 130 tokens per second. A dense model of about 31 billion parameters on the same unit ran at 28 to 40. The dense model reads roughly eight times as many weights per token and runs about three times slower, so the speed does not fall in strict proportion. Bandwidth sets the ceiling, and other costs fill in the rest. Chapter 11 defines dense and mixture-of-experts models.</p>
+<h3 id="gpu">GPU<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
+<p>A <strong>GPU</strong>, or graphics processing unit, is a processor built to run many simple operations at once. It started as hardware for drawing images, and its design turned out to suit the matrix arithmetic that neural networks consist of. A language model generating text is almost entirely matrix arithmetic, and a GPU does it far faster than a CPU can. Without one, the models in this course would take minutes per sentence.</p>
+<p>Two properties of a GPU matter for choosing and running a model: how much memory it can use, and which software it supports. The memory property was the previous section. The software property is its <strong>compute capability</strong>, a version number NVIDIA assigns to each GPU generation that tells the software which GPU features exist. A library compiled with support for compute capability 8.0 will run on an A100, whose capability is 8.0, and may refuse to run on a GPU with a capability it was not built for. The H100's capability is 9.0, and the GB10's is published as 12.1.</p>
+<p>A <strong>CUDA core</strong> is one of the small arithmetic units inside an NVIDIA GPU. The GB10 has 6,144 of them. The count is a rough indicator of raw arithmetic capacity and a poor indicator of model speed, because speed depends as much on memory bandwidth and on how well the software uses the cores. Compare machines on memory and measured tokens per second, not on core count.</p>
+<p>A <strong>GPU configuration</strong> is how many GPUs a system has and how they are connected, and a <strong>multi-GPU system</strong> is one that has more than one. Two or more GPUs let a model larger than any single GPU's memory run, by splitting its layers or its experts across them, at the price of splitting software and a loss of speed to the traffic between GPUs. The unit in this evaluation has one GPU, so none of this applies to it, and the course notes only where a multi-GPU system would change a step.</p>
+<p>The next table gathers the three memory arrangements and what each one changes, now that each is defined.</p>
+<table>
+<thead>
+<tr>
+<th>Arrangement</th>
+<th>Where weights live</th>
+<th>What limits model size</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unified memory</td>
+<td>The one shared pool</td>
+<td>The whole pool, minus the system's own use</td>
+<td>DGX Spark</td>
+</tr>
+<tr>
+<td>One GPU, dedicated memory</td>
+<td>That GPU's memory</td>
+<td>One GPU's capacity</td>
+<td>A workstation with one discrete GPU</td>
+</tr>
+<tr>
+<td>Several GPUs, dedicated memory</td>
+<td>Split across the GPUs</td>
+<td>The sum of the GPUs, minus splitting overhead</td>
+<td>DGX H100, eight GPUs of 80 GB</td>
+</tr>
+</tbody>
+</table>
+<h2 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h2>
+<h3 id="storage-capacity">Storage Capacity<a class="headerlink" href="#storage-capacity" title="Permanent link">&para;</a></h3>
+<p><strong>Storage capacity</strong> is the amount of data the disk can hold. A model is a file, often many gigabytes, and a benchmark of several models stores all of them on disk at once, plus their downloads in different formats. Capacity is the first limit you meet, ahead of memory, when you collect candidates.</p>
+<p>A worked example uses this evaluation's own numbers. The unit has a 1 TB drive with about 780 GB free after the operating system. The ten candidate models took about 397 GB together, because two of them were on disk in two formats, which doubled their size. That leaves roughly 380 GB, enough for the book output and the container image, and not enough for a second large model family. Check free space with <code>df -h /</code> before starting a pull, because a download that fills the disk fails partway through.</p>
+<h3 id="nvme-storage-and-storage-read-speed">NVMe Storage and Storage Read Speed<a class="headerlink" href="#nvme-storage-and-storage-read-speed" title="Permanent link">&para;</a></h3>
+<p><strong>NVMe storage</strong> is solid-state storage that connects directly to the processor over a fast bus, instead of through the older interface used by hard drives. It is the storage type in current DGX systems. <strong>Storage read speed</strong> is how many bytes per second the drive delivers when you read from it, and for a model it sets the <strong>model load time</strong>, the delay between asking for a model and being able to use it.</p>
+<p>The relation is simple division, and it is worth doing once. A 20 GB model file read at 2 GB per second takes 10 seconds to load. The same file from a hard drive at 0.15 GB per second takes over two minutes. A server that unloads an idle model and reloads it on the next request pays this cost each time, so a fast drive makes a differently configured server practical. Chapter 10 measures read speed with a simple timed read.</p>
+<h2 id="power-and-thermals">Power and Thermals<a class="headerlink" href="#power-and-thermals" title="Permanent link">&para;</a></h2>
+<h3 id="power-draw">Power Draw<a class="headerlink" href="#power-draw" title="Permanent link">&para;</a></h3>
+<p><strong>Power draw</strong> is the electrical power the system consumes, measured in watts. It matters for three reasons: it sets the running cost, it sets the heat that has to leave the box, and it bounds what circuit and uninterruptible power supply the machine needs. A GPU-heavy machine draws far more under load than at rest, so a single number misleads, and a measurement needs the workload that produced it.</p>
+<p>One worked example ties this chapter to the cost chapter. A published review measured 60 to 90 W for many model workloads on this class of machine, and just under 200 W at the most. This evaluation's own logging read 69 W from the GPU, with the GPU at 92% utilization, during one run. The cost analysis uses a deliberately high 150 W while generating and 40 W idle, which comes to about 832 kWh a year at 50% utilization and under $120 in electricity. Chapter 6 builds that calculation, and the point to carry from here is that electricity is a small part of the cost of owning this machine.</p>
+<h3 id="thermal-design-power-and-thermals">Thermal Design Power and Thermals<a class="headerlink" href="#thermal-design-power-and-thermals" title="Permanent link">&para;</a></h3>
+<p>The <strong>thermal design power</strong>, or TDP, is the amount of heat a cooling system is designed to remove from a chip under sustained load. It is a cooling specification, not a measurement of draw: a chip can draw less than its TDP most of the time, and brief bursts can exceed it. It is useful for one purpose, which is judging whether the machine's cooling is sized for the load you plan to put on it.</p>
+<p><strong>Thermals</strong> is the general term for the temperatures a system reaches and how it manages them. As a chip heats up, it reduces its own speed to stay within safe limits, which is called thermal throttling and which Chapter 15 measures. A long benchmark is the situation where this shows, because short tests finish before the chassis reaches its steady temperature.</p>
+<p>In this evaluation the memory-and-temperature watchdog used a ceiling of 95 degrees Celsius for the GPU, and logged the temperature every 30 seconds. One reading, taken 43 seconds into a heavy run, was 72 degrees. A single early reading proves little. A reading that climbs steadily over an hour and approaches the ceiling is the sign to improve airflow or to shorten runs.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Log Temperature Before You Need It</p>
+<p><img alt="Tera giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+A machine that overheats or freezes cannot tell you what happened afterward. Start a script that writes temperature, power, and memory to a file every 30 seconds before any long run, and the last line it wrote becomes your evidence.</p>
+</div>
+<h2 id="the-software-directly-on-the-hardware">The Software Directly on the Hardware<a class="headerlink" href="#the-software-directly-on-the-hardware" title="Permanent link">&para;</a></h2>
+<h3 id="dgx-os">DGX OS<a class="headerlink" href="#dgx-os" title="Permanent link">&para;</a></h3>
+<p><strong>DGX OS</strong> is NVIDIA's operating system for DGX systems: a customized Linux distribution, based on Ubuntu, with the NVIDIA driver, CUDA, the container runtime, and system tuning installed and tested together. The unit in this evaluation runs DGX OS 7.4 on Ubuntu 24.04. The practical meaning is that ordinary Ubuntu instructions work, and that NVIDIA's own components are already present and compatible.</p>
+<p>Two commands identify the system, and both are safe to run. The first prints the Ubuntu release, and the second prints the kernel and architecture.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'^(NAME|VERSION)='</span><span class="w"> </span>/etc/os-release
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>uname<span class="w"> </span>-srm
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Some system files contain identifiers</p>
+<p>On DGX OS, <code>/etc/dgx-release</code> includes the unit's serial number. Read it with <code>grep -v SERIAL /etc/dgx-release</code>, and never paste its raw contents into a file you plan to publish. Chapter 23 treats this class of file as a source of leaks.</p>
+</div>
+<p>DGX OS also determines who may do what. The account used in this evaluation belongs to a user the machine's administrator created, with no administrator rights, so installing system packages is not possible and everything was installed into the home directory. Chapter 6 treats administrator privileges as a cost and a dependency.</p>
+<h3 id="nvidia-driver">NVIDIA Driver<a class="headerlink" href="#nvidia-driver" title="Permanent link">&para;</a></h3>
+<p>The <strong>NVIDIA driver</strong> is the software that lets the operating system and programs talk to the GPU. Nothing uses a GPU without it, and every GPU program is limited by what the installed driver supports. The version is a single number, and it decides which CUDA versions can run. The unit in this evaluation has driver 580.</p>
+<p>The first line of <code>nvidia-smi</code> output holds both versions that matter. The block below is sanitized and abbreviated: the serial number, the GPU's unique identifier, and the bus address that a full listing carries have been removed, and the version numbers are shown with their last digits replaced.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>+-----------------------------------------------------------------+
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>| NVIDIA-SMI 580.xx.xx    Driver Version: 580.xx.xx   CUDA Version: 13.0 |
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>|-----------------------------+------------------+----------------|
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>| GPU  Name        Persistence-M | Temp  Perf  Pwr:Usage/Cap | Memory-Usage |
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>|   0  NVIDIA GB10          On  | 44C   P8    4W / N/A      | Not Supported |
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>+-----------------------------------------------------------------+
+</span></code></pre></div>
+<p>Reading it from left to right, <code>580.xx.xx</code> is the driver release. <code>CUDA Version: 13.0</code> is the highest CUDA runtime that driver can support, not the version of any toolkit installed on the machine. The GPU is idle in this listing, which is why the performance state is P8 and the power is a few watts. <code>Not Supported</code> in the memory column is the unified-memory signature described above.</p>
+<p>Driver trouble has a recognizable shape. A program reports that it found no CUDA device, or that the driver is too old for the CUDA runtime it was built with. The first diagnostic step is always the same: run <code>nvidia-smi</code>. If it lists the GPU and a driver version, the driver works, and the problem is in what is built on top of it.</p>
+<h3 id="cuda">CUDA<a class="headerlink" href="#cuda" title="Permanent link">&para;</a></h3>
+<p><strong>CUDA</strong> is NVIDIA's platform for running general computation on its GPUs, and it is the layer that frameworks and inference servers use to reach the GPU. It has two parts that are easy to confuse. The <strong>CUDA runtime</strong> is the set of libraries a program is built against, and it ships inside the programs that use it. The <strong>CUDA version</strong> the driver reports is the newest runtime the driver can support.</p>
+<p>The rule that follows from this is that the driver sets a ceiling and a program must be at or below it. This machine's driver supports CUDA 13.0, so a framework built for CUDA 12.8 runs and one built for CUDA 13.2 does not. Updating a driver needs administrator rights, so on a machine you do not administer the practical fix is to pick a framework build at or below the driver's version.</p>
+<p>Putting the stack in order shows why a failure in one layer looks like a failure in all of them.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What it is</th>
+<th>How to check it</th>
+<th>The failure it causes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hardware</td>
+<td>GPU, memory, storage</td>
+<td><code>nvidia-smi</code>, <code>free -h</code>, <code>df -h</code></td>
+<td>No device, or not enough memory</td>
+</tr>
+<tr>
+<td>DGX OS</td>
+<td>Linux with NVIDIA components</td>
+<td><code>cat /etc/os-release</code></td>
+<td>Wrong package source</td>
+</tr>
+<tr>
+<td>NVIDIA driver</td>
+<td>Lets software use the GPU</td>
+<td><code>nvidia-smi</code></td>
+<td>"No CUDA device" or "driver too old"</td>
+</tr>
+<tr>
+<td>CUDA</td>
+<td>The compute platform</td>
+<td><code>nvidia-smi</code>, framework check</td>
+<td>A library built for a newer CUDA fails</td>
+</tr>
+<tr>
+<td>Inference server</td>
+<td>Loads and runs the model</td>
+<td>Its own log</td>
+<td>Model does not load or fit</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-hardware-finding-to-setup-branch-matcher">Diagram: Hardware Finding to Setup Branch Matcher<a class="headerlink" href="#diagram-hardware-finding-to-setup-branch-matcher" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Hardware Finding to Setup Branch Matcher</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> hardware-branch-matcher<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> apply<br/>
+<strong>Learning Objective:</strong> The learner will apply the hardware-to-setup rules of this chapter to 6 findings by choosing the setup branch each finding triggers, with at least 5 of 6 correct.</p>
+<p><strong>Prerequisites:</strong> CPU architecture, x86_64, aarch64, dedicated GPU memory, unified memory, multi-GPU system, NVIDIA driver, CUDA (all defined in the sections above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 6 findings the learner commits one branch from the six listed in Content before the sim reveals the answer. A choice is correct when it equals the Correct branch column. Mastery is 5 of 6 correct on the first attempt. Reading the finding text is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Every DGX has dedicated GPU memory. (2) A download that completes will run on any DGX. (3) <code>nvidia-smi</code> always reports how much GPU memory there is. (4) A newer CUDA build is always better.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level work needs the learner to use a rule on a new case, so each finding is a realistic probe result that triggers exactly one branch. Committing before the reveal separates a reasoned choice from recognition.</p>
+<p><strong>Content:</strong></p>
+<p>The six setup branches the learner chooses from are: "Use aarch64 packages", "Use x86_64 packages", "Size models against one shared memory pool", "Size models against one GPU's dedicated memory", "Plan to split the model across several GPUs", and "Choose a CUDA build at or below the driver's version".</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Finding shown to the learner</th>
+<th>Correct branch</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>uname -m</code> prints <code>aarch64</code>.</td>
+<td>Use aarch64 packages</td>
+<td>The processor is Arm, so only builds for aarch64 will run.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>uname -m</code> prints <code>x86_64</code>.</td>
+<td>Use x86_64 packages</td>
+<td>The processor is Intel or AMD, so builds for x86_64 are the ones that run.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>nvidia-smi</code> lists one GPU with memory reported as <code>Not Supported</code>; <code>free -h</code> shows about 120 GiB of memory.</td>
+<td>Size models against one shared memory pool</td>
+<td>The GPU has no memory of its own, so the system's memory is the limit.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>nvidia-smi</code> lists one GPU with 80 GB of memory; <code>free -h</code> shows 512 GiB.</td>
+<td>Size models against one GPU's dedicated memory</td>
+<td>The weights must fit in the GPU's own 80 GB, however much system RAM there is.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>nvidia-smi</code> lists eight GPUs of 80 GB each.</td>
+<td>Plan to split the model across several GPUs</td>
+<td>A model larger than 80 GB can run only if it is divided across the GPUs.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The driver reports CUDA 13.0; the framework build you downloaded needs CUDA 13.2.</td>
+<td>Choose a CUDA build at or below the driver's version</td>
+<td>The driver sets a ceiling, and a runtime above it will not start.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The findings are synthetic examples written for this exercise, and the sim labels them "synthetic example". The meanings of the branches come from the sections of this chapter above.</p>
+<p><strong>Rules:</strong> Findings are shown in the fixed order 1 to 6. Each finding allows exactly one branch choice, and the choice is final. A finding is correct only when the chosen branch equals the Correct branch. Each finding triggers exactly one branch of the six.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads finding 1.</li>
+<li>The learner chooses one of the six branches and confirms.</li>
+<li>The sim shows the correct branch and the Why text, and marks the finding correct or incorrect.</li>
+<li>The learner repeats for findings 2 to 6. After finding 6 the sim shows the score and, for each miss, the misconception behind it.</li>
+</ol>
+<p><strong>Feedback:</strong> Six findings, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct branch and the Why text. The final score reads "n of 6 correct".</p>
+<p><strong>Starting State:</strong> Finding 1 is shown with no branch chosen, and the question on screen is "Which setup branch does this finding trigger?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that aarch64 and x86_64 builds are not interchangeable, that on unified memory the GPU has no memory of its own and <code>nvidia-smi</code> reports it as <code>Not Supported</code>, that a model larger than one GPU's dedicated memory must be split across GPUs, and that the driver sets a ceiling on the CUDA version.</p>
+</details>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>The hardware answers six questions before any software is installed. The processor's architecture, x86_64 or aarch64, decides which downloads run. The memory arrangement, unified or dedicated, decides how a model's size is judged and what a memory shortage does to the machine. The GPU's compute capability and the driver's CUDA ceiling decide which libraries start. Storage capacity and read speed decide how many models you can keep and how long a load takes, and power draw and thermals decide the running cost and whether a long run is safe.</p>
+<p>The DGX Spark-class unit in this evaluation answers them as follows: aarch64, 20 cores, one GPU with no memory of its own, 128 GB of unified memory, 1 TB of NVMe storage, a draw well under 200 W, DGX OS 7.4, driver 580, and CUDA 13.0.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">The Machine Is No Longer a Black Box</p>
+<p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now read a DGX's specification and say which packages it needs, how a model's size is judged on it, and which layer to check when something fails. Chapter 6 puts a price on all of it.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

@@ -1,0 +1,23 @@
+{
+  "title": "Data Egress Trace Classifier",
+  "description": "The learner will distinguish, for 8 data flows in a local-generation setup, whether each stays on the DGX, goes to the evaluator's own machine, or goes to a third party, with at least 7 of 8 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "egress-trace-classifier",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "distinguish",
+  "completion_status": "scaffold",
+  "chapter_number": 18,
+  "chapter_title": "Containing the Harness: Containers and Network Boundaries",
+  "chapter_dir": "18-containing-the-harness",
+  "chapter_rel_dir": "chapters/18-containing-the-harness"
+}

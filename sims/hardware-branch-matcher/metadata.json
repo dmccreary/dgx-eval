@@ -1,0 +1,23 @@
+{
+  "title": "Hardware Finding to Setup Branch Matcher",
+  "description": "The learner will apply the hardware-to-setup rules of this chapter to 6 findings by choosing the setup branch each finding triggers, with at least 5 of 6 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "hardware-branch-matcher",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "apply",
+  "completion_status": "scaffold",
+  "chapter_number": 5,
+  "chapter_title": "NVIDIA DGX Hardware Architecture",
+  "chapter_dir": "05-dgx-hardware-architecture",
+  "chapter_rel_dir": "chapters/05-dgx-hardware-architecture"
+}

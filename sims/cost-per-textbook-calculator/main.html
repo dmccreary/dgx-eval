@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Cost per Textbook Calculator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Cost per Textbook Calculator</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> cost-per-textbook-calculator</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Apply</p>
+            <p><strong>Learning Objective:</strong> The learner will calculate the cost per textbook and the price at a stated margin to within 1 dollar for 3 scenarios.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** cost-per-textbook-calculator<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified<br/>
+    **Template:** https://github.com/dmccreary/economics-course/tree/main/docs/sims/opportunity-cost-calculator<br/>
+    **Bloom Level:** Apply<br/>
+    **Bloom Verb:** calculate<br/>
+    **Learning Objective:** The learner will calculate the cost per textbook and the price at a stated margin to within 1 dollar for 3 scenarios.
+    
+    **Prerequisites:** utilization rate, whole-book time estimate, cost per textbook, service price calculation, margin versus markup (all defined in this chapter and in Chapter 6).
+    
+    **Evidence of Mastery:** For each of the 3 scenarios the learner types the cost per textbook and the price at the stated margin, in dollars, before the sim reveals the answers. A scenario is correct when both typed values are within $1 of the model values. Mastery is 3 of 3. Changing sliders in exploration is not evidence.
+    
+    **Misconceptions:** (1) A faster model always lowers the cost per book. (2) The cost is set by the electricity. (3) A 20% margin means a 20% markup. (4) A machine's cost per book does not depend on how often it is used.
+    
+    **Instructional Rationale:** Apply-level calculation needs a formula the learner commits to, and the three scenarios isolate the two inputs that move the answer most, utilization and the hours per book, so exploration can then confirm that hardware price moves it far less.
+    
+    **Content:**
+    
+    The learner can change five quantities:
+    
+    | Quantity | Min | Max | Step | Default | Unit |
+    |---|---|---|---|---|---|
+    | Yearly cost | 2,000 | 20,000 | 25 | 8,275 | dollars a year |
+    | Utilization | 0.05 | 0.95 | 0.05 | 0.50 | share of 8,760 hours |
+    | Whole-book hours | 5 | 100 | 1 | 28 | hours |
+    | Margin | 0 | 0.50 | 0.05 | 0.20 | share of price |
+    | Chapters | 5 | 30 | 1 | 13 | chapters |
+    
+    The three scenarios, in this order:
+    
+    | # | Yearly cost | Utilization | Whole-book hours | Margin | Model cost per book | Model price | Feedback when wrong |
+    |---|---|---|---|---|---|---|---|
+    | 1 | 8,275 | 0.50 | 28 | 0.20 | $52.9 | $66.1 | 8,760 × 0.50 = 4,380 hours, $8,275 ÷ 4,380 = $1.89 an hour, × 28 = $52.9, ÷ 0.80 = $66.1. |
+    | 2 | 8,275 | 0.25 | 28 | 0.20 | $105.8 | $132.2 | 8,760 × 0.25 = 2,190 hours, $8,275 ÷ 2,190 = $3.78 an hour, × 28 = $105.8, ÷ 0.80 = $132.2. |
+    | 3 | 8,275 | 0.50 | 17 | 0.20 | $32.1 | $40.1 | $1.89 an hour × 17 = $32.1, ÷ 0.80 = $40.1. |
+    
+    **Provenance:** The yearly cost, utilization, and whole-book hours are the reference and sensitivity values of the cost analysis page. The scenario 3 hours of 17 are the whole-book estimate for a mixture-of-experts model in that analysis. The sim labels them "estimate, not a measurement".
+    
+    **Rules:** Generating hours = 8,760 × utilization. Cost per generating hour = yearly cost ÷ generating hours. Cost per book = whole-book hours × cost per generating hour. Price = cost per book ÷ (1 − margin). Cost per chapter = cost per book ÷ chapters. Books per year = generating hours ÷ whole-book hours, rounded down. Dollars are shown to one decimal.
+    
+    **Learner Activity:**
+    
+    1. The learner reads scenario 1, whose inputs are shown, and types the cost per book and the price.
+    2. The learner presses Check.
+    3. The sim reveals the model values and the Feedback text, and marks the scenario correct or missed.
+    4. After all three scenarios the exploration mode unlocks, with a readout of cost per chapter and books per year, and the learner changes any of the five quantities.
+    5. In exploration the learner should notice that halving utilization doubles the cost per book, and that a 10% change in yearly cost moves it by 10%.
+    
+    **Feedback:** Three scenarios, fixed order, two attempts each. Correct: "Correct: cost $<value>, price $<value>." Incorrect: the "Feedback when wrong" text for that scenario. After the second wrong attempt the model values and the worked calculation are shown, and the scenario counts as missed. A running count "Scenarios correct: n of 3" is shown.
+    
+    **Starting State:** Scenario 1 is shown with empty answer boxes and its inputs displayed, and the question on screen is "What does one textbook cost, and what must it sell for?"
+    
+    **Chapter Anchors:** The chapter states $1.89 per generating hour, $52.92 per 28-hour book, $66.15 at a 20% margin, 156 books a year at 50% utilization, and that halving utilization doubles the cost per book.
+    -->
+</body>
+</html>

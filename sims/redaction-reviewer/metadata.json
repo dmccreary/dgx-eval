@@ -1,0 +1,23 @@
+{
+  "title": "Redaction Reviewer",
+  "description": "The learner will judge each of 10 lines of captured output as safe to publish or in need of redaction, and name the category of any detail to redact, with at least 9 of 10 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "redaction-reviewer",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate",
+  "bloomVerb": "judge",
+  "completion_status": "scaffold",
+  "chapter_number": 23,
+  "chapter_title": "Sanitizing Evaluation Artifacts and Publishing the Report",
+  "chapter_dir": "23-sanitizing-and-publishing",
+  "chapter_rel_dir": "chapters/23-sanitizing-and-publishing"
+}

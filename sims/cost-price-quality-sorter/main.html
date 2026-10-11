@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Cost, Price, and Quality Sorter</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Cost, Price, and Quality Sorter</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> cost-price-quality-sorter</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Understand</p>
+            <p><strong>Learning Objective:</strong> The learner will classify each of 10 statements about generating a textbook as describing a cost, a price, or a quality, with at least 9 of 10 correct.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** cost-price-quality-sorter<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified<br/>
+    **Template:** https://github.com/dmccreary/token-efficiency/tree/main/docs/sims/cost-quality-pareto-frontier<br/>
+    **Bloom Level:** Understand<br/>
+    **Bloom Verb:** classify<br/>
+    **Learning Objective:** The learner will classify each of 10 statements about generating a textbook as describing a cost, a price, or a quality, with at least 9 of 10 correct.
+    
+    **Prerequisites:** cost, price, quality (defined in the section above this block).
+    
+    **Evidence of Mastery:** For each of the 10 statements the learner commits one label, "Cost", "Price", or "Quality", before the sim reveals the answer. A label is correct when it equals the Correct label column. Mastery is 9 of 10 correct on the first attempt. Reading a statement is exploration, not evidence.
+    
+    **Misconceptions:** (1) A number in dollars must be a price. (2) A service's charge tells you what delivering the service costs it. (3) A generated text that builds without errors is good.
+    
+    **Instructional Rationale:** Classifying a statement shows the learner has constructed the distinction, and mixed items in dollars and in non-money terms prevent a shortcut based on the unit of the number. Committing before the reveal separates understanding from recognition.
+    
+    **Content:**
+    
+    | # | Statement shown to the learner | Correct label | Why (shown as feedback) |
+    |---|---|---|---|
+    | 1 | The unit used about 832 kWh of electricity in a year. | Cost | It is what the owner spends to operate the machine. |
+    | 2 | A provider charges a fixed fee for each million tokens generated. | Price | It is what a provider asks of a customer for a service. |
+    | 3 | The generated learning graph has 200 concepts and no dependency cycles. | Quality | It describes how good the output is. |
+    | 4 | Setting up the machine took 40 hours of labor at $90 an hour. | Cost | It is effort the owner spends to put the machine into use. |
+    | 5 | A subscription lets one user generate chapters for a flat monthly amount. | Price | It is the provider's charge for access to a service. |
+    | 6 | A reviewer found every worked example in the chapter correct. | Quality | It describes how good the output is. |
+    | 7 | The hardware loses its value evenly over three years. | Cost | Depreciation is what owning the asset uses up. |
+    | 8 | A service adds a 20% margin to what it costs the service to generate a book. | Price | The margin is part of what the provider charges. |
+    | 9 | Chapter prose stays at the stated reading level across 10,000 words. | Quality | It describes how good the output is. |
+    | 10 | An uninterruptible power supply and cabling add $250 to the purchase. | Cost | It is spent by the owner to run the machine. |
+    
+    **Provenance:** The statements are synthetic, written for this exercise, and the sim labels them "synthetic example". Numeric values match the cost analysis page and the sections of this chapter.
+    
+    **Rules:** Statements are shown in the fixed order 1 to 10. Each statement allows exactly one label, and the label is final. A statement is correct when its label equals the Correct label column.
+    
+    **Learner Activity:**
+    
+    1. The learner reads statement 1.
+    2. The learner chooses "Cost", "Price", or "Quality" and confirms.
+    3. The sim shows the correct label and the Why text, and marks the statement correct or incorrect.
+    4. The learner repeats for statements 2 to 10. After statement 10 the sim shows the score and, for each miss, the misconception behind it.
+    
+    **Feedback:** Ten statements, fixed order, one confirmed label each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct label and the Why text. The final score reads "n of 10 correct".
+    
+    **Starting State:** Statement 1 is shown with no label chosen, and the question on screen is "Is this a cost, a price, or a quality?"
+    
+    **Chapter Anchors:** The chapter states that cost is what you pay to own and operate, price is what a provider charges, and quality is how good the output is, and that these are three different things.
+    -->
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "title": "Model-Fit Calculator",
+  "description": "The learner will calculate the memory a model needs from its parameter count, precision, and context length, to within 1 GB, and state the fit verdict, for 3 challenges.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "model-fit-calculator",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "calculate",
+  "completion_status": "scaffold",
+  "chapter_number": 11,
+  "chapter_title": "Model Sizing and Fit",
+  "chapter_dir": "11-model-sizing-and-fit",
+  "chapter_rel_dir": "chapters/11-model-sizing-and-fit"
+}

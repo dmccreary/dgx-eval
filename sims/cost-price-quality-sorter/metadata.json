@@ -1,0 +1,23 @@
+{
+  "title": "Cost, Price, and Quality Sorter",
+  "description": "The learner will classify each of 10 statements about generating a textbook as describing a cost, a price, or a quality, with at least 9 of 10 correct.",
+  "creator": "DGX Evaluation for Textbook Generation",
+  "author": "Dan McCreary",
+  "date": "2026-10-11",
+  "subject": [
+    "DGX Evaluation for Textbook Generation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "cost-price-quality-sorter",
+  "library": "p5.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "classify",
+  "completion_status": "scaffold",
+  "chapter_number": 6,
+  "chapter_title": "Cost, Price, and Quality",
+  "chapter_dir": "06-cost-price-quality",
+  "chapter_rel_dir": "chapters/06-cost-price-quality"
+}
