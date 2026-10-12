@@ -35,7 +35,7 @@ nav:
   - Home: index.md
   - About: about.md
   - Course Description: course-description.md
-  - Textbook Chapters:
+  - Chapters:
       - List of Chapters: chapters/index.md
       - 1. Prerequisites and the Intelligent Textbook:
           - Content: chapters/01-intro-intelligent-textbooks/index.md

@@ -10,12 +10,12 @@
 
 5. Zero Trust Networks: Building Secure Systems in Untrusted Networks (2nd Edition) - Razi Rais, Christina Morillo, Evan Gilman, and Doug Barth - O'Reilly Media - Explains networks that grant access through authentication, authorization, and encryption on every connection instead of network location. It is the model behind a tailnet's identity-based access rules.
 
-6. [Tailscale CLI](https://tailscale.com/kb/1080/cli) - Tailscale - Reference for the tailscale command, including up, status, and ping, with status described as the state of your connections to other devices. It is the reference for the commands in the chapter's connectivity test.
+6. [Tailscale CLI](https://tailscale.com/docs/reference/tailscale-cli) - Tailscale - Reference for the tailscale command, including up, status, and ping, with status described as the state of your connections to other devices. It is the reference for the commands in the chapter's connectivity test.
 
-7. [MagicDNS](https://tailscale.com/kb/1081/magicdns) - Tailscale - Explains how each device gets a DNS name, a short name through search domains, and a fully qualified name ending in the tailnet's ts.net domain. It documents the naming behavior the chapter relies on.
+7. [MagicDNS](https://tailscale.com/docs/features/magicdns) - Tailscale - Explains how each device gets a DNS name, a short name through search domains, and a fully qualified name ending in the tailnet's ts.net domain. It documents the naming behavior the chapter relies on.
 
-8. [Manage permissions using ACLs](https://tailscale.com/kb/1018/acls) - Tailscale - Describes the tailnet policy file and directional accept rules built from action, src, and dst, where devices cannot communicate unless a rule allows it. It matches the chapter's minimal access rule example.
+8. [Manage permissions using ACLs](https://tailscale.com/docs/features/access-control/acls) - Tailscale - Describes the tailnet policy file and directional accept rules built from action, src, and dst, where devices cannot communicate unless a rule allows it. It matches the chapter's minimal access rule example.
 
-9. [Auth keys](https://tailscale.com/kb/1085/auth-keys) - Tailscale - Explains pre-authentication keys for joining devices without a browser sign-in, with one-off, reusable, ephemeral, and pre-approved options, expiry, and storage guidance. It supports the chapter's warning to treat an auth key like a password.
+9. [Auth keys](https://tailscale.com/docs/features/access-control/auth-keys) - Tailscale - Explains pre-authentication keys for joining devices without a browser sign-in, with one-off, reusable, ephemeral, and pre-approved options, expiry, and storage guidance. It supports the chapter's warning to treat an auth key like a password.
 
 10. [lscpu(1)](https://man.archlinux.org/man/lscpu.1) - Arch Linux manual pages - Manual page for the util-linux tool that reports CPU architecture, counts, sockets, and cache sizes, with JSON output for parsing. It documents one of the read-only inventory commands in the chapter's table.

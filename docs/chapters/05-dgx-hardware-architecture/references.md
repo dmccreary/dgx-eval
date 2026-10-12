@@ -16,6 +16,6 @@
 
 8. [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-programming-guide/) - NVIDIA Documentation - Official guide to the CUDA programming model, with sections on unified and system memory, Unified Memory, and a compute capabilities appendix. Clarifies the compute capability and unified memory concepts used in this chapter.
 
-9. [NVIDIA Driver Installation Guide](https://docs.nvidia.com/datacenter/tesla/driver-installation-guide/) - NVIDIA Documentation - Gives instructions and best practices for installing GPU drivers on Linux, including verifying module loading and aligning driver versions with CUDA releases. Backs this chapter's rule that the driver sets the ceiling for CUDA versions.
+9. [NVIDIA Driver Installation Guide](https://docs.nvidia.com/datacenter/tesla/driver-installation-guide/latest/) - NVIDIA Documentation - Gives instructions and best practices for installing GPU drivers on Linux, including verifying module loading and aligning driver versions with CUDA releases. Backs this chapter's rule that the driver sets the ceiling for CUDA versions.
 
 10. [nvidia-smi: NVIDIA System Management Interface](https://docs.nvidia.com/deploy/nvidia-smi/index.html) - NVIDIA Documentation - Documents the command-line tool that reports GPU temperature, power draw, memory use, and utilization as text, CSV, or XML. This is the tool the chapter uses to read the driver version, CUDA version, power, and thermals.

@@ -18,4 +18,4 @@
 
 9. [Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html) - OWASP Cheat Sheet Series - Covers keeping secrets out of code and logs, rotation and revocation, detecting secrets with pre-commit checks, and responding when one is exposed. It supports this chapter's rules for keys and tokens.
 
-10. [Tailnet names and types](https://tailscale.com/kb/1217/tailnet-name) - Tailscale Documentation - Explains the tailnet DNS name ending in .ts.net, the per-device machine name, and the tailnet ID. It shows why this chapter treats the tailnet name and hostnames as device-identifying details to replace with placeholders.
+10. [Tailnet names and types](https://tailscale.com/docs/concepts/tailnet-name) - Tailscale Documentation - Explains the tailnet DNS name ending in .ts.net, the per-device machine name, and the tailnet ID. It shows why this chapter treats the tailnet name and hostnames as device-identifying details to replace with placeholders.

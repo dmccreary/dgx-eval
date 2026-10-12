@@ -12,7 +12,7 @@
 
 6. [nvidia-smi: NVIDIA System Management Interface](https://docs.nvidia.com/deploy/nvidia-smi/index.html) - NVIDIA - Official manual documenting --query-gpu and --format=csv,noheader,nounits, and noting that NVML is the better choice for tools needing stable output. It is the source for the chapter's GPU probe query.
 
-7. [NVML API Reference Guide](https://docs.nvidia.com/deploy/nvml-api/index.html) - NVIDIA - Reference for the C library behind nvidia-smi, used to query GPU temperature, power, memory, and clocks, and wrapped by the nvidia-ml-py Python bindings. It supports the chapter's NVML section.
+7. [NVML API Reference Guide](https://docs.nvidia.com/deploy/nvml-api/latest/index.html) - NVIDIA - Reference for the C library behind nvidia-smi, used to query GPU temperature, power, memory, and clocks, and wrapped by the nvidia-ml-py Python bindings. It supports the chapter's NVML section.
 
 8. [psutil: Process and System Utilities for Python](https://psutil.io/) - psutil project - Home page of the cross-platform library that reports CPU, memory, disk, network, and sensor data through functions such as virtual_memory() and disk_usage(). It is the optional package that the chapter's standard-library probes replace.
 

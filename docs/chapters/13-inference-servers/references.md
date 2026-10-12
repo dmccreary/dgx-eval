@@ -18,4 +18,4 @@
 
 9. [vLLM Documentation](https://docs.vllm.ai/en/latest/) - vLLM Project - Introduces vLLM as a high-throughput serving library with PagedAttention, continuous batching, and an OpenAI-compatible API server. It supports the chapter's comparison of vLLM as the batching server for a second-pass evaluation.
 
-10. [Tailscale Serve](https://tailscale.com/kb/1242/tailscale-serve) - Tailscale Documentation - Explains how tailscale serve shares a local service only within a tailnet, with HTTPS proxying and background mode, and how it differs from public Funnel. It is the reference for sharing an endpoint while the server stays on loopback.
+10. [Tailscale Serve](https://tailscale.com/docs/reference/tailscale-cli/serve) - Tailscale Documentation - Explains how tailscale serve shares a local service only within a tailnet, with HTTPS proxying and background mode, and how it differs from public Funnel. It is the reference for sharing an endpoint while the server stays on loopback.
