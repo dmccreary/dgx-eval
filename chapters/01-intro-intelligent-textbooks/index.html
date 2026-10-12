@@ -21,7 +21,7 @@
         <link rel="next" href="quiz/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
@@ -100,8 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../img/mascot/welcome.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -214,8 +213,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../img/mascot/welcome.png" alt="logo">
 
     </a>
     DGX Evaluation for Textbook Generation
@@ -1944,6 +1942,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1972,6 +1976,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3680,6 +3724,10 @@ Swapping a vague word like "understand" for an observable verb turns a hope into
 <li><strong>Chapters generated.</strong> The model runs the chapter-content skill once per chapter. A chapter counts as written when its placeholder is gone and it has at least 1,000 words.</li>
 </ol>
 <p>The scale comes from a reference book. The published Algebra I book, made with cloud models, has 200 concepts, 13 chapters, and about 55,000 words of chapter text. A local model that finishes the three stages has therefore produced a structured data file with hundreds of connections, a chapter outline, and tens of thousands of words of Markdown.</p>
+<div class="admonition note">
+<p class="admonition-title">Baseline Algebra I Textbook Metrics</p>
+<p>The baseline metrics for the published Algebra I book are stored on that book's <a href="https://dmccreary.github.io/algebra-1/learning-graph/book-metrics/">Book Metrics page</a>. The page counts the book's concepts, chapters, MicroSims, quizzes, glossary terms, FAQ entries, and words. A program regenerates it, so its numbers can move as that book is revised. Its word count for chapters is higher than the figure used in this chapter, because it also includes each chapter's quiz and reference list.</p>
+</div>
 <h2 id="why-it-is-a-demanding-test-for-a-local-model">Why It Is a Demanding Test for a Local Model<a class="headerlink" href="#why-it-is-a-demanding-test-for-a-local-model" title="Permanent link">&para;</a></h2>
 <p>The workload is hard in a specific way: it is not one hard task but a sequence of different ones, and a failure in any link breaks the next. Each demand below uses something this chapter introduced.</p>
 <table>
