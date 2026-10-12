@@ -323,10 +323,10 @@ function placeControls() {
     slider.size(canvasWidth - sliderLeftMargin - margin);
   }
   placeAnswerControls();
-  const y = drawHeight + controlHeight - 38;
-  checkButton.position(margin, y);
-  nextButton.position(margin + 78, y);
-  restartButton.position(margin, y);
+  // Check and Next sit under the two answer rows, and Restart under the sliders
+  checkButton.position(margin, drawHeight + 92);
+  nextButton.position(margin + 78, drawHeight + 92);
+  restartButton.position(margin, drawHeight + controlHeight - 38);
 }
 
 // In exploration each slider has its name and current value to its left. In a

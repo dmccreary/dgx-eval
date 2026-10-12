@@ -1,21 +1,71 @@
 {
   "title": "Redaction Reviewer",
-  "description": "The learner will judge each of 10 lines of captured output as safe to publish or in need of redaction, and name the category of any detail to redact, with at least 9 of 10 correct.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Judge ten lines of captured output as safe to publish or in need of redaction, and name the category of detail to remove.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "redaction-reviewer",
-  "library": "p5.js",
-  "bloomLevel": "Evaluate",
-  "bloomVerb": "judge",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Sanitizing Evaluation Artifacts and Publishing the Report",
+    "learningObjectives": [
+      "The learner will judge each of 10 lines of captured output as safe to publish or in need of redaction, and name the category of any detail to redact, with at least 9 of 10 correct."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "judge",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Device-identifying details",
+      "IP address",
+      "Hostname",
+      "Tailnet name",
+      "Hardware identifiers",
+      "Keys and tokens",
+      "Home directory path",
+      "Placeholder conventions",
+      "Documentation address ranges"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 552
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Line 10 contains an address and a host name and is still safe. Explain what makes it so."
+    ],
+    "commonMisconceptions": [
+      "A private address is not identifying.",
+      "A serial number or unique identifier is harmless because it grants no access.",
+      "A line already shown in a tutorial is safe.",
+      "Placeholders and documentation ranges still need redacting."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 9 of 10 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 552,
+  "completion_status": "built",
   "chapter_number": 23,
   "chapter_title": "Sanitizing Evaluation Artifacts and Publishing the Report",
   "chapter_dir": "23-sanitizing-and-publishing",

@@ -1,21 +1,64 @@
 {
   "title": "CIS Calculator",
-  "description": "The learner will calculate the concept impact score of each of 6 concepts in a small dependency graph, working from the concepts nothing depends on, with at least 5 of 6 correct.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Calculate the concept impact score of six concepts in a small dependency graph, starting from the concepts nothing depends on.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "cis-calculator",
-  "library": "p5.js",
-  "bloomLevel": "Apply",
-  "bloomVerb": "calculate",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Learning Graphs, MicroSims, and Content Generation Rules",
+    "learningObjectives": [
+      "The learner will calculate the concept impact score of each of 6 concepts in a small dependency graph, working from the concepts nothing depends on, with at least 5 of 6 correct."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Concept dependency",
+      "Dependents",
+      "Concept impact score and its formula"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 532
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "B has one direct dependent and C has two, yet the scores are 3 and 4. Explain why the scores are not 2 and 3."
+    ],
+    "commonMisconceptions": [
+      "A concept's score counts only its direct dependents' count, not their scores.",
+      "A concept's score excludes itself.",
+      "The concept with the most direct dependents always has the highest score."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct."
+    ]
+  },
+  "canvasHeight": 532,
+  "completion_status": "built",
   "chapter_number": 2,
   "chapter_title": "Learning Graphs, MicroSims, and Content Generation Rules",
   "chapter_dir": "02-learning-graphs-microsims-rules",

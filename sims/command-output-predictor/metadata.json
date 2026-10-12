@@ -1,21 +1,70 @@
 {
   "title": "Command Output Predictor",
-  "description": "The learner will execute five shell commands against a given directory tree by predicting the output and the resulting working directory after each, with at least 4 of 5 correct.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Predict what five shell commands print, in order, against a small practice directory, and watch the working directory carry over.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "command-output-predictor",
-  "library": "p5.js",
-  "bloomLevel": "Apply",
-  "bloomVerb": "execute",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Prerequisites and the Intelligent Textbook",
+    "learningObjectives": [
+      "The learner will execute five shell commands against a given directory tree by predicting the output and the resulting working directory after each, with at least 4 of 5 correct."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "execute",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Terminal",
+      "Shell",
+      "Working directory",
+      "Path",
+      "Absolute path",
+      "Relative path",
+      "Command",
+      "Argument"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 712
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Command 3 prints nothing. Name the evidence, in commands 4 and 5, that it did something."
+    ],
+    "commonMisconceptions": [
+      "`ls` lists everything below the working directory, including the contents of subfolders.",
+      "`cd` prints the new path.",
+      "`..` names the current folder rather than the parent folder.",
+      "Each command starts fresh instead of continuing from the working directory the previous command left."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 4 of 5 correct."
+    ]
+  },
+  "canvasHeight": 712,
+  "completion_status": "built",
   "chapter_number": 1,
   "chapter_title": "Prerequisites and the Intelligent Textbook",
   "chapter_dir": "01-intro-intelligent-textbooks",

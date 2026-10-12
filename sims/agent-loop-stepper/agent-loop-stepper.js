@@ -403,7 +403,7 @@ function drawStimulus(item, x, y, w) {
 // The five phases in a row with the conversation beside them. activeStep is the
 // phase to mark, or -1 for none. Returns the y just below the diagram.
 function drawDiagram(activeStep, x, y, w) {
-  const stackWidth = min(190, w * 0.27);     // the conversation column on the right
+  const stackWidth = min(190, w * 0.22);     // the conversation column on the right
   const rowWidth = w - stackWidth - 16;      // the five phase boxes
   const gap = 12;
   const boxWidth = (rowWidth - 4 * gap) / 5;

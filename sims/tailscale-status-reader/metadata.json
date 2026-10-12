@@ -1,21 +1,67 @@
 {
   "title": "Tailscale Status Reader",
-  "description": "The learner will interpret 6 sanitized lines of Tailscale output by choosing the meaning of each, with at least 5 of 6 correct.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Read six sanitized lines of Tailscale status output and choose what each one means.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "tailscale-status-reader",
-  "library": "p5.js",
-  "bloomLevel": "Understand",
-  "bloomVerb": "interpret",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Installing Tailscale and Taking a Read-Only Inventory",
+    "learningObjectives": [
+      "The learner will interpret 6 sanitized lines of Tailscale output by choosing the meaning of each, with at least 5 of 6 correct."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "interpret",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Tailscale status command",
+      "Tailscale ping",
+      "Device key expiry",
+      "DERP relay",
+      "Peer-to-peer connection"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 532
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Lines 3 and 5 both mean you are not connected directly. Explain which of the two still lets you log in."
+    ],
+    "commonMisconceptions": [
+      "`idle` means the device is down.",
+      "A relay connection is a failure.",
+      "A listed device is reachable.",
+      "A dash in the last column means something is wrong."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 532,
+  "completion_status": "built",
   "chapter_number": 9,
   "chapter_title": "Installing Tailscale and Taking a Read-Only Inventory",
   "chapter_dir": "09-tailscale-and-inventory",

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The working skills this course assumes, the intelligent-textbook model, the MkDocs toolchain, and the documents that describe a course, ending with what the benchmark workload produces and why it is hard for a small model.">
+        <meta name="description" content="Why this book tests small language models on textbook generation, the working skills this course assumes, the intelligent-textbook model, the MkDocs toolchain, and the documents that describe a course, ending with what the benchmark workload produces and why it is hard for a small model.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -18,7 +18,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../02-learning-graphs-microsims-rules/">
+        <link rel="next" href="quiz/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -311,95 +311,49 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
         
       
     
@@ -450,393 +404,73 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+        
+          
+        
       
         
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
           
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
   
   <span class="md-ellipsis">
     1. Prerequisites and the Intelligent Textbook
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. Prerequisites and the Intelligent Textbook
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quiz/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Prerequisites and the Intelligent Textbook
+    Quiz
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#concepts-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts Covered
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-this-chapter-sets-up" class="md-nav__link">
-    <span class="md-ellipsis">
-      What This Chapter Sets Up
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#five-working-skills" class="md-nav__link">
-    <span class="md-ellipsis">
-      Five Working Skills
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Five Working Skills">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#generative-ai-assistant-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      Generative AI Assistant Use
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#command-line-basics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command Line Basics
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Command Line Basics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-command-output-predictor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Command Output Predictor
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python-scripting-basics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Python Scripting Basics
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-version-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Version Control
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#github-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      GitHub Repository
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#markdown-source-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Markdown Source Files
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-intelligent-textbook" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Intelligent Textbook
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Intelligent Textbook">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-makes-a-textbook-intelligent" class="md-nav__link">
-    <span class="md-ellipsis">
-      What Makes a Textbook Intelligent
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#levels-of-intelligent-textbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Levels of Intelligent Textbooks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Levels of Intelligent Textbooks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-book-levels-microsim" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Book Levels MicroSim
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#microsim" class="md-nav__link">
-    <span class="md-ellipsis">
-      MicroSim
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#iframe-embedding" class="md-nav__link">
-    <span class="md-ellipsis">
-      Iframe Embedding
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-build-toolchain" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Build Toolchain
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Build Toolchain">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mkdocs-material" class="md-nav__link">
-    <span class="md-ellipsis">
-      MkDocs Material
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkdocs-navigation" class="md-nav__link">
-    <span class="md-ellipsis">
-      MkDocs Navigation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#static-site-build" class="md-nav__link">
-    <span class="md-ellipsis">
-      Static Site Build
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#strict-site-build" class="md-nav__link">
-    <span class="md-ellipsis">
-      Strict Site Build
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#describing-what-a-course-must-teach" class="md-nav__link">
-    <span class="md-ellipsis">
-      Describing What a Course Must Teach
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Describing What a Course Must Teach">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#blooms-taxonomy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bloom's Taxonomy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#learning-outcomes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Learning Outcomes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#course-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Course Description
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Course Description">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-textbook-generation-pipeline-explorer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Textbook Generation Pipeline Explorer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#course-description-quality-score" class="md-nav__link">
-    <span class="md-ellipsis">
-      Course Description Quality Score
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lesson-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lesson Plan
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-the-benchmark-workload-produces" class="md-nav__link">
-    <span class="md-ellipsis">
-      What the Benchmark Workload Produces
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-it-is-a-demanding-test-for-a-local-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why It Is a Demanding Test for a Local Model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chapter-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Chapter Summary
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -849,15 +483,73 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-learning-graphs-microsims-rules/" class="md-nav__link">
+      <a href="references/" class="md-nav__link">
         
+  
+  <span class="md-ellipsis">
+    Annotated References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../02-learning-graphs-microsims-rules/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     2. Learning Graphs, MicroSims, and Content Generation Rules
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -869,16 +561,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../03-small-language-models/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../03-small-language-models/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     3. Small Language Models
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -890,16 +611,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../04-local-versus-cloud/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../04-local-versus-cloud/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     4. Local SLMs Versus Cloud LLM Services
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -911,16 +661,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../05-dgx-hardware-architecture/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../05-dgx-hardware-architecture/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     5. NVIDIA DGX Hardware Architecture
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -932,16 +711,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../06-cost-price-quality/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../06-cost-price-quality/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     6. Cost, Price, and Quality
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -953,16 +761,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../07-remote-access-ssh-mesh-vpn/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../07-remote-access-ssh-mesh-vpn/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     7. Remote Access, SSH, and Mesh VPN Concepts
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -974,16 +811,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../08-conda-environments/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../08-conda-environments/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     8. Reproducible Python Environments with Conda
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -995,16 +861,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../09-tailscale-and-inventory/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../09-tailscale-and-inventory/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     9. Installing Tailscale and Taking a Read-Only Inventory
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1016,16 +911,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../10-hardware-probes/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../10-hardware-probes/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     10. Python Hardware Probes
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1037,16 +961,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../11-model-sizing-and-fit/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../11-model-sizing-and-fit/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     11. Model Sizing and Fit
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1058,16 +1011,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../12-selecting-downloading-models/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../12-selecting-downloading-models/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     12. Selecting and Downloading an Open-Weight Model
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1079,16 +1061,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../13-inference-servers/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../13-inference-servers/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     13. Inference Servers and Local API Endpoints
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1100,16 +1111,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../14-candidate-models/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../14-candidate-models/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     14. Open-Weight Model Families and Candidate Models
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1121,16 +1161,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../15-optimizing-performance/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../15-optimizing-performance/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     15. Optimizing Small Language Model Performance
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1142,16 +1211,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../16-agent-loop-and-tools/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../16-agent-loop-and-tools/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     16. The Agent Loop, Tools, and Context
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1163,16 +1261,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../17-agent-skills-and-harness/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../17-agent-skills-and-harness/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     17. Agent Skills and Connecting a Harness to a Local Model
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1184,16 +1311,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../18-containing-the-harness/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../18-containing-the-harness/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     18. Containing the Harness: Containers and Network Boundaries
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1205,16 +1361,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../19-fair-evaluation-design/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../19-fair-evaluation-design/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     19. Designing a Fair Evaluation
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1226,16 +1411,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../20-scoring-and-bias/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../20-scoring-and-bias/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     20. Scoring, Bias, and Structural Checks
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1247,16 +1461,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../21-running-the-benchmark/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../21-running-the-benchmark/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     21. Running the Textbook Benchmark
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1268,16 +1511,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../22-diagnosis-and-reporting/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../22-diagnosis-and-reporting/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     22. Diagnosing Failures, Reporting, and Cost per Textbook
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1289,16 +1561,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../23-sanitizing-and-publishing/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../23-sanitizing-and-publishing/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     23. Sanitizing Evaluation Artifacts and Publishing the Report
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1576,6 +1877,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1619,6 +1928,8 @@
       
         
           
+        
+      
         
       
         
@@ -1755,6 +2066,99 @@
       Prerequisites
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Textbook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why This Textbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-an-interactive-intelligent-textbook-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      What an Interactive Intelligent Textbook Is
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-a-coherent-textbook-is-hard-to-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why a Coherent Textbook Is Hard to Build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#five-tiers-from-one-document-to-a-whole-book" class="md-nav__link">
+    <span class="md-ellipsis">
+      Five Tiers, from One Document to a Whole Book
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Five Tiers, from One Document to a Whole Book">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-five-tiers-of-textbook-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Five Tiers of Textbook Generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thousands-of-small-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thousands of Small Rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#following-rules-for-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      Following Rules for Hours
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#large-models-can-do-this-but-can-small-ones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Large Models Can Do This, but Can Small Ones?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-book-sets-out-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Book Sets Out to Do
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2095,7 +2499,7 @@
 
 <h1 id="prerequisites-and-the-intelligent-textbook">Prerequisites and the Intelligent Textbook<a class="headerlink" href="#prerequisites-and-the-intelligent-textbook" title="Permanent link">&para;</a></h1>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<p>This chapter sets up everything the rest of the book builds on. It reviews the command-line, Python, Git, and generative-AI skills the course assumes, then introduces the intelligent-textbook model, its five levels, MkDocs Material, and the course description that seeds every later step. After completing it, students can explain what the benchmark workload produces and why it is a demanding test for a local model.</p>
+<p>This chapter opens with why the book exists: generating an intelligent textbook means following thousands of small rules for hours, and the book tests whether a small language model on one NVIDIA DGX can do it. The chapter then sets up everything the rest of the book builds on. It reviews the command-line, Python, Git, and generative-AI skills the course assumes, then introduces the intelligent-textbook model, its five levels, MkDocs Material, and the course description that seeds every later step. After completing it, students can explain what the benchmark workload produces and why it is a demanding test for a local model.</p>
 <h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
 <p>This chapter covers the following 19 concepts from the learning graph:</p>
 <table>
@@ -2201,8 +2605,240 @@ Hello, I'm Tera, a robot with a tool belt full of benchmarking instruments, and 
 </ol>
 <p>If I'm not doing one of those six things, I'm not in the chapter. Measure first, then decide!</p>
 </div>
+<h2 id="why-this-textbook">Why This Textbook<a class="headerlink" href="#why-this-textbook" title="Permanent link">&para;</a></h2>
+<p>Writing a textbook looks like one large creative act. Generating one with a language model is a different kind of work. It is thousands of small rules, each easy to follow once, that must all be followed, in order, for hours. This book measures whether a small model, running on a machine you can own, is able to do that.</p>
+<p>The experiment is simple to state. We take one NVIDIA DGX system and have it generate the same Algebra I textbook many times, each time with a different open-weight language model, which is a model whose trained weights anyone may download and run. For each model we ask three questions, in this order:</p>
+<ol>
+<li><strong>Can it finish?</strong> Does the model reach a complete book, or does it stall partway?</li>
+<li><strong>How long does it take?</strong> How many hours of machine time does one book need?</li>
+<li><strong>How good is the result?</strong> What can a program measure about the quality of the book, so that the comparison does not rest on opinion?</li>
+</ol>
+<p>The rest of this section explains what is being generated, why generating it is hard, and why the answer is worth a careful measurement.</p>
+<h3 id="what-an-interactive-intelligent-textbook-is">What an Interactive Intelligent Textbook Is<a class="headerlink" href="#what-an-interactive-intelligent-textbook-is" title="Permanent link">&para;</a></h3>
+<p>An <strong>interactive intelligent textbook</strong> is a textbook with two properties that an ordinary one lacks. The first is explicit structure: the concepts it teaches, and which concept depends on which, are stored as data that a program can check. The second is interactivity: its pages hold small simulations and quizzes that the reader operates, where a printed book has figures the reader only looks at.</p>
+<p>The simulations have a name in this book. A MicroSim is a small interactive simulation that demonstrates exactly one idea, such as a line whose slope changes as the reader drags a point. Later sections of this chapter define both properties and the MicroSim in full.</p>
+<h3 id="why-a-coherent-textbook-is-hard-to-build">Why a Coherent Textbook Is Hard to Build<a class="headerlink" href="#why-a-coherent-textbook-is-hard-to-build" title="Permanent link">&para;</a></h3>
+<p>Those two properties are what make the book hard to build. A course of 200 concepts cannot be written one page at a time, because every page depends on decisions made somewhere else. A chapter may use only the concepts an earlier chapter has taught. Each concept has to be introduced once, in one place. The vocabulary, the depth, and the reading level have to stay the same from the first chapter to the last, even when the chapters are written hours apart.</p>
+<p>A book that gets these right has a coherent architecture. A book that gets them wrong is a stack of lessons that do not fit together, however good each lesson is. The workflow in this book gets coherence by working from the top down, in five tiers, where each tier is built from the tiers above it and narrows the choices left to the tiers below.</p>
+<h3 id="five-tiers-from-one-document-to-a-whole-book">Five Tiers, from One Document to a Whole Book<a class="headerlink" href="#five-tiers-from-one-document-to-a-whole-book" title="Permanent link">&para;</a></h3>
+<p>The five tiers run from a single short document to a finished book. The sizes are those of the Algebra I course this book uses as its test.</p>
+<ol>
+<li><strong>Course description.</strong> One document of a few pages, written by a person. It states who the course is for, what it covers, what it leaves out, and what students will be able to do. Everything below it inherits its scope.</li>
+<li><strong>Learning graph.</strong> The 200 concepts of the course and the dependencies between them, stored as data. A dependency records that one concept must be learned before another.</li>
+<li><strong>Book structure.</strong> The design step that places every concept into a chapter, so that no chapter needs a concept the book has not yet taught.</li>
+<li><strong>Chapter content.</strong> The prose, tables, and worked examples for about 10 chapters of about 20 concepts each. This tier also writes a specification for every MicroSim, which states what the simulation must teach without building it.</li>
+<li><strong>MicroSims and supplementary content.</strong> The working MicroSims built from those specifications, plus a glossary, an FAQ, and quizzes. This tier is not part of the benchmark.</li>
+</ol>
+<p>A person writes tier 1. In the benchmark, the model has to produce tiers 2, 3, and 4, starting from the same course description every time. The model decides the number of chapters itself, and the books generated so far have between 10 and 14 chapters.</p>
+<p>The picture in tier 2 of the diagram below is a real one. It is the 200-concept learning graph that one of the tested models, <code>qwen3.6:35b</code>, generated for Algebra I, shown in this book's <a href="../../models/qwen3.6-35b/learning-graph-viewer/">learning graph viewer</a>. Each box is a concept, each color is a topic, and each line is a dependency.</p>
+<h4 id="diagram-five-tiers-of-textbook-generation">Diagram: Five Tiers of Textbook Generation<a class="headerlink" href="#diagram-five-tiers-of-textbook-generation" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/textbook-generation-tiers/main.html" width="100%" height="642px" scrolling="no"></iframe>
+<p><a href="../../sims/textbook-generation-tiers/main.html">Run Five Tiers of Textbook Generation Fullscreen</a></p>
+<details>
+<summary>Five Tiers of Textbook Generation</summary>
+<p>Type: infographic
+<strong>sim-id:</strong> textbook-generation-tiers<br/>
+<strong>Library:</strong> html<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Remember<br/>
+<strong>Bloom Verb:</strong> identify<br/>
+<strong>Learning Objective:</strong> The learner will identify which of the five tiers of textbook generation matches a description, for 5 descriptions, with at least 4 of 5 correct.</p>
+<p><strong>Prerequisites:</strong> course description, learning graph, concept, dependency, book structure, chapter content, MicroSim, MicroSim specification, benchmark (all introduced in the section "Five Tiers, from One Document to a Whole Book" above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner opens all 5 tiers to read their descriptions, then answers 5 questions, each by choosing one tier, before any answer is revealed. A choice is correct when it equals the Correct tier column. Mastery is 4 of 5 correct on the first attempt. Opening a tier is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) The model writes the course description. (2) Chapters are written straight from the course description, with no learning graph and no structure step. (3) MicroSim specifications are written in tier 5, when the MicroSims are built. (4) The benchmark covers all five tiers.</p>
+<p><strong>Instructional Rationale:</strong> Remember-level mastery of a layered workflow is the ability to say which tier does what, so each question asks for one tier. Showing all five tiers as one stacked picture, from top to bottom, lets the learner see the order before being asked to recall it.</p>
+<p><strong>Content:</strong></p>
+<p>Five tiers, stacked with tier 1 at the top and tier 5 at the bottom. Each tier is built from the tiers above it. The name, the maker, and the size of every tier are visible without opening anything. Opening a tier shows its description and its example rule.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Name</th>
+<th>Made by</th>
+<th>Size for Algebra I</th>
+<th>In this benchmark</th>
+<th>Description</th>
+<th>An example rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Course Description</td>
+<td>A person</td>
+<td>One document of a few pages</td>
+<td>Yes, as the fixed input</td>
+<td>States who the course is for, what it covers, what it leaves out, and what students will be able to do. Every model starts from the same copy.</td>
+<td>It names the topics the course leaves out, so that the tiers below do not invent them.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Learning Graph</td>
+<td>The model</td>
+<td>200 concepts</td>
+<td>Yes, as stage 1</td>
+<td>Lists the concepts of the course and records which concept depends on which.</td>
+<td>Every concept label is in Title Case and at most 32 characters long, and the graph has no cycles.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Book Structure</td>
+<td>The model</td>
+<td>About 10 chapters</td>
+<td>Yes, as stage 2</td>
+<td>Places every concept into a chapter and writes each chapter's title, summary, and concept list.</td>
+<td>Every concept appears in exactly one chapter, and no concept appears before the concepts it depends on.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Chapter Content</td>
+<td>The model</td>
+<td>About 20 concepts per chapter</td>
+<td>Yes, as stage 3</td>
+<td>Writes the prose, tables, and worked examples for each chapter, and the specification for each MicroSim.</td>
+<td>Every sentence suits the reading level of the audience.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>MicroSims and Supplementary Content</td>
+<td>A model, outside this benchmark</td>
+<td>MicroSims, a glossary, an FAQ, and quizzes</td>
+<td>No</td>
+<td>Builds the working MicroSims from their specifications, and writes the glossary, the FAQ, and the quizzes.</td>
+<td>Each MicroSim demonstrates exactly one idea.</td>
+</tr>
+</tbody>
+</table>
+<p>Tier 2 shows a screen image of this book's learning graph viewer displaying the 200-concept Algebra I learning graph that the model <code>qwen3.6:35b</code> generated in this evaluation. When tier 2 is open, the learner can follow a link to that graph in the live viewer.</p>
+<p>The five questions, in this order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Correct tier</th>
+<th>Why (shown as feedback)</th>
+<th>Misconception</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Which tier decides which chapter each concept goes in?</td>
+<td>3, Book Structure</td>
+<td>Book structure design places every concept into exactly one chapter.</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Which tier is written by a person?</td>
+<td>1, Course Description</td>
+<td>A person writes the course description, and every model starts from the same copy of it.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Which tier is not part of this benchmark?</td>
+<td>5, MicroSims and Supplementary Content</td>
+<td>The benchmark stops after chapter content. MicroSims, the glossary, the FAQ, and the quizzes are outside it.</td>
+<td>4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Which tier records which concept depends on which?</td>
+<td>2, Learning Graph</td>
+<td>The learning graph stores the concepts and the dependencies between them as data.</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Which tier writes the specification for each MicroSim?</td>
+<td>4, Chapter Content</td>
+<td>The specification is written inside a chapter. Tier 5 builds the MicroSim from it.</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The tier names, makers, sizes, and descriptions come from this chapter's section "Five Tiers, from One Document to a Whole Book". The label rule comes from the learning-graph-generator skill, and the placement rule comes from the book-chapter-generator skill. The screen image was captured from this book's own viewer at <code>sims/graph-viewer/main.html?model=qwen3.6-35b</code> and is copied into the sim folder. No value is synthetic.</p>
+<p><strong>Rules:</strong> The five questions run in the fixed order 1 to 5. Each question allows exactly one choice, and the choice is final once confirmed. There is no randomness and no numeric tolerance.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees the five tiers stacked from top to bottom. The learner should notice that tier 1 is the only tier a person writes and that tier 5 is marked as outside the benchmark.</li>
+<li>The learner opens each tier, in any order, and reads its description and its example rule.</li>
+<li>After all five tiers are open, the learner starts the questions. For each question the learner chooses one tier and confirms it. The sim then shows the correct tier and the Why text.</li>
+<li>After question 5 the sim shows the score and, for each missed question, the misconception it corresponds to.</li>
+</ol>
+<p><strong>Feedback:</strong> Five questions, fixed order, one attempt each. Correct: "Correct" followed by the Why text. Incorrect: "Not quite. Correct tier: <name>" followed by the Why text. The correct tier is revealed immediately after each confirmation. The final score reads "n of 5 correct" and states whether the mastery mark of 4 of 5 was met.</p>
+<p><strong>Starting State:</strong> All five tiers are shown with none open, and the instruction on screen is "Open each tier to see what it holds".</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that there are five tiers, that a person writes tier 1, that the learning graph has 200 concepts, that chapter content is about 10 chapters of about 20 concepts each, that the model produces tiers 2, 3, and 4 in the benchmark, that tier 5 is not part of the benchmark, and that the picture in tier 2 is the graph <code>qwen3.6:35b</code> generated.</p>
+</details>
+<h3 id="thousands-of-small-rules">Thousands of Small Rules<a class="headerlink" href="#thousands-of-small-rules" title="Permanent link">&para;</a></h3>
+<p>Each tier comes with rules. The instructions for tiers 2, 3, and 4 are packaged as three skills, where a skill is a set of written instructions that an AI agent follows to do one job. Together the three skills hold more than 30,000 words of instructions. One rule from each gives the flavor.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>A rule the model must follow</th>
+<th>How often it applies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Learning graph</td>
+<td>Every concept label is in Title Case and at most 32 characters long</td>
+<td>Once for each of 200 concepts</td>
+</tr>
+<tr>
+<td>Book structure</td>
+<td>Every concept appears in exactly one chapter, and never before the concepts it depends on</td>
+<td>Once for each of 200 concepts</td>
+</tr>
+<tr>
+<td>Chapter content</td>
+<td>Every sentence suits the reading level of the audience</td>
+<td>Once for every sentence in the book</td>
+</tr>
+</tbody>
+</table>
+<p>The last rule is the one to look at closely. A textbook is written for students with a particular background. The Algebra I course description names its audience as students in grades 8 through 10, and students in that course typically read at a seventh- to ninth-grade level. Both versions in the table below state the same correct fact about slope. The grade is the Flesch-Kincaid reading grade, a formula based on sentence length and word length that Chapter 20 explains.</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Text</th>
+<th>Reading grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correct, but too hard</td>
+<td>The slope of a linear function quantifies the rate at which the dependent variable changes relative to the independent variable.</td>
+<td>15.2</td>
+</tr>
+<tr>
+<td>Correct, and at the right level</td>
+<td>Slope is a number that describes how steep a line is. You calculate it by dividing the vertical change between two points by the horizontal change between them.</td>
+<td>7.1</td>
+</tr>
+</tbody>
+</table>
+<p>A model that knows algebra can write either version. Only the second follows the rule. The published Algebra I book that this evaluation uses as its reference for scale has about 55,000 words of chapter text. At 15 to 20 words a sentence, that is roughly three thousand sentences, so this one rule has to be applied about three thousand times. Every other rule in force is being applied at the same moment.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Count the Repetitions, Not the Rules</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Notice where the difficulty sits. A model can follow any one of these rules when you ask it to, so no single rule is the test. The test is whether the model is still following all of them on sentence three thousand, long after it read the instructions.</p>
+</div>
+<h3 id="following-rules-for-hours">Following Rules for Hours<a class="headerlink" href="#following-rules-for-hours" title="Permanent link">&para;</a></h3>
+<p>Generating a book takes a long time. In this benchmark the learning graph run may take up to 150 minutes, the book structure run up to two hours, and each chapter gets its own run of up to 90 minutes. Through all of it the model reads instructions, runs commands, writes files, and checks its own output, with nobody present to correct it.</p>
+<p>Not every small model can do this. In this evaluation's first round, four of the ten candidate models produced no learning graph. Of the six that did, two wrote every chapter they had planned. One model placed concepts in chapters that came after the chapters that needed them, and three of its chapter runs stopped when a check caught the error. That is a tier 3 mistake that did not show itself until tier 4. The <a href="../../appendices/evaluation-status/">Evaluation Status</a> page lists what happened to each model.</p>
+<h3 id="large-models-can-do-this-but-can-small-ones">Large Models Can Do This, but Can Small Ones?<a class="headerlink" href="#large-models-can-do-this-but-can-small-ones" title="Permanent link">&para;</a></h3>
+<p>None of this is beyond the largest models. Since agent skills were introduced in October 2025, large language models (LLMs) such as Anthropic's Claude Opus running in Claude Code, and the models behind OpenAI's ChatGPT, have been able to generate high-quality interactive intelligent textbooks by following this workflow. The reference Algebra I book was made that way in November 2025.</p>
+<p>Those models run in data centers, on clusters of GPU servers with terabytes of memory between them, and every book is paid for by the token. A small language model (SLM) is one small enough to run on a single machine you control, and Chapter 3 defines the term in full. The machine in this book is a medium-scale one: an NVIDIA DGX with 128 GB of memory. Our question is whether an SLM on that machine is up to a task that has so far been done in a data center.</p>
+<h3 id="what-this-book-sets-out-to-do">What This Book Sets Out to Do<a class="headerlink" href="#what-this-book-sets-out-to-do" title="Permanent link">&para;</a></h3>
+<p>The goal of this book is a formal, repeatable process for testing SLMs on tiers 1 through 4. Tier 1 is the fixed input, and tiers 2, 3, and 4 are what each model must produce. Every model starts from the same files and the same prompts, every run is timed, and the results are measured by programs. Tier 5 is left out on purpose, because generating working MicroSims is currently beyond most of the small models tested here.</p>
+<p>The reason to ask is cost. A cloud service charges a price for every token, on every book and every revision. A private DGX is bought once, and after that a book costs machine time and a little electricity. If an open-weight SLM on that machine can generate a textbook of acceptable quality, the cost of generating textbooks can come down. If it cannot, that is worth knowing before anyone buys the hardware. Chapter 6 separates cost, price, and quality, and the <a href="../../appendices/cost-analysis/">Cost Analysis</a> appendix works through the numbers.</p>
 <h2 id="what-this-chapter-sets-up">What This Chapter Sets Up<a class="headerlink" href="#what-this-chapter-sets-up" title="Permanent link">&para;</a></h2>
-<p>This course asks an empirical question: can a single NVIDIA DGX system running an open-weight small language model generate an entire intelligent textbook without sending a token to the cloud? Answering it requires two kinds of groundwork. The first is a handful of working skills, because every later chapter asks you to type commands, read scripts, and commit files. The second is a shared vocabulary for the thing being generated, because you cannot judge a textbook until you know what makes one intelligent.</p>
+<p>Answering that question requires two kinds of groundwork. The first is a handful of working skills, because every later chapter asks you to type commands, read scripts, and commit files. The second is a shared vocabulary for the thing being generated, because you cannot judge a textbook until you know what makes one intelligent.</p>
 <p>The chapter therefore moves through four groups of ideas. It starts with the five skills the course assumes, then defines the intelligent textbook and its interactive parts. It continues with the toolchain that turns Markdown files into a website, and it closes with the documents that describe what a course must teach. A final section connects those ideas to the benchmark workload that the rest of the book measures.</p>
 <h2 id="five-working-skills">Five Working Skills<a class="headerlink" href="#five-working-skills" title="Permanent link">&para;</a></h2>
 <p>You do not need prior GPU or model-serving experience, but you do need these five skills. Each one is used in a specific later chapter, and the closing table of this section lists where.</p>
@@ -2317,6 +2953,8 @@ Before you run a command an assistant gives you, ask it to explain every flag, t
 </table>
 <p>Reading about commands is not the same as predicting what they do. The interactive exercise below makes you commit to an output before the answer appears, which is the quickest way to find out which of these ideas you only half hold.</p>
 <h4 id="diagram-command-output-predictor">Diagram: Command Output Predictor<a class="headerlink" href="#diagram-command-output-predictor" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/command-output-predictor/main.html" width="100%" height="714px" scrolling="no"></iframe>
+<p><a href="../../sims/command-output-predictor/main.html">Run Command Output Predictor Fullscreen</a></p>
 <details>
 <summary>Command Output Predictor</summary>
 <p>Type: microsim
@@ -2659,7 +3297,7 @@ An intelligent textbook is a set of plain text files plus a build, so a model ca
 </table>
 <p>This book targets Level 2 and above, so it contains MicroSims and quizzes. The books the benchmark generates are Level 2 books as well: Markdown prose, interactive elements, quizzes, and a glossary. The Book Levels MicroSim below lets you compare the five levels directly.</p>
 <h4 id="diagram-book-levels-microsim">Diagram: Book Levels MicroSim<a class="headerlink" href="#diagram-book-levels-microsim" title="Permanent link">&para;</a></h4>
-<iframe src="https://dmccreary.github.io/ibook-skills/sims/book-levels/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/ibook-skills/sims/book-levels/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 <p><a class="md-button" href="https://dmccreary.github.io/ibook-skills/sims/book-levels/main.html">Run the Book Levels MicroSim fullscreen</a></p>
 <details>
@@ -2853,8 +3491,10 @@ Swapping a vague word like "understand" for an observable verb turns a hope into
 </table>
 <p>The "Topics not covered" section deserves attention because it is the one authors skip. A model asked to write about a DGX will happily write about training and fine-tuning unless the course description rules it out. An explicit exclusion costs one line and prevents a chapter nobody wanted.</p>
 <p>The course description is also the first of a chain of artifacts. Before looking at the chain, four terms need a definition. A <strong>learning graph</strong> is a graph of the course's concepts in which each connection records that one concept depends on another; Chapter 2 builds one. A <strong>skill</strong> is a packaged set of instructions that an AI agent follows to do one job, covered in Chapter 17. A <strong>glossary</strong> defines each concept in a sentence, and an <strong>FAQ</strong> answers questions a reader is likely to ask. A <strong>quiz</strong> is a set of questions that test a chapter's content.</p>
-<p>With those terms in hand, the pipeline has eight artifacts: the course description and seven that the skills generate from it. The diagram below lets you explore what each one contains and then test whether you can say what each one is built from.</p>
+<p>With those terms in hand, the pipeline has eight artifacts: the course description and seven that the skills generate from it. The first four are tiers 1 to 4 of the diagram that opened this chapter, and the other four together make up tier 5. The diagram below lets you explore what each one contains and then test whether you can say what each one is built from.</p>
 <h4 id="diagram-textbook-generation-pipeline-explorer">Diagram: Textbook Generation Pipeline Explorer<a class="headerlink" href="#diagram-textbook-generation-pipeline-explorer" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/textbook-pipeline-explorer/main.html" width="100%" height="594px" scrolling="no"></iframe>
+<p><a href="../../sims/textbook-pipeline-explorer/main.html">Run Textbook Generation Pipeline Explorer Fullscreen</a></p>
 <details>
 <summary>Textbook Generation Pipeline Explorer</summary>
 <p>Type: microsim
@@ -3033,7 +3673,7 @@ Swapping a vague word like "understand" for an observable verb turns a hope into
 </tbody>
 </table>
 <h2 id="what-the-benchmark-workload-produces">What the Benchmark Workload Produces<a class="headerlink" href="#what-the-benchmark-workload-produces" title="Permanent link">&para;</a></h2>
-<p>Everything above exists to make the benchmark workload legible, so it is time to state it. The workload is the <code>ibook-skills</code> skill chain, run by a local model on the DGX against the course description for Algebra I. This evaluation deliberately runs three of the pipeline's stages and no more.</p>
+<p>Everything above exists to make the benchmark workload legible, so it is time to state it. The workload is the <code>ibook-skills</code> skill chain, run by a local model on the DGX against the course description for Algebra I. This evaluation deliberately runs three of the pipeline's stages and no more. They are tiers 2, 3, and 4 of the five-tier diagram.</p>
 <ol>
 <li><strong>Learning graph.</strong> The model runs the learning-graph skill on the Algebra I course description. The stage is done when the run ends on its own and leaves the graph as both a CSV file and a JSON file.</li>
 <li><strong>Book structure.</strong> The model runs the chapter-design skill to organize its own learning graph into chapters.</li>
@@ -3085,12 +3725,13 @@ Swapping a vague word like "understand" for an observable verb turns a hope into
 </table>
 <p>A model that writes beautiful prose but breaks the JSON fails the first stage. A model that writes valid files but loses the thread after the fortieth tool call fails the third. That is why this benchmark reports per-stage results instead of one score, and why the course spends its early chapters on measuring the machine before it measures the model.</p>
 <h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
-<p>You started from a list of skills and ended with a description of a benchmark. The skills were a way of working with a generative AI assistant, the command line, Python scripts, Git and GitHub, and Markdown. The vocabulary was the intelligent textbook, its five levels, and the MicroSims inside it. The toolchain was MkDocs Material with its navigation and its static and strict builds, and the planning documents were Bloom's Taxonomy, learning outcomes, the course description and its quality score, and the lesson plan.</p>
+<p>You started from the question this book asks and a five-tier picture of how a textbook is generated, and you ended with a description of the benchmark that answers it. In between came the skills, the vocabulary, the toolchain, and the planning documents. The skills were a way of working with a generative AI assistant, the command line, Python scripts, Git and GitHub, and Markdown. The vocabulary was the intelligent textbook, its five levels, and the MicroSims inside it. The toolchain was MkDocs Material with its navigation and its static and strict builds, and the planning documents were Bloom's Taxonomy, learning outcomes, the course description and its quality score, and the lesson plan.</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Groundwork Laid</p>
 <p><img alt="Tera celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
 You can now predict what a shell command will print, read a Python script, trace a change through Git and GitHub, read an <code>mkdocs.yml</code>, and say what the benchmark produces and why it is hard for a small model. That is the whole prerequisite stack, and Chapter 2 builds the learning graph on top of it.</p>
 </div>
+<p><a href="references/">See Annotated References</a></p>
 
 
 
@@ -3146,13 +3787,13 @@ You can now predict what a shell command will print, read a Python script, trace
         
         
           
-          <a href="../02-learning-graphs-microsims-rules/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Learning Graphs, MicroSims, and Content Generation Rules">
+          <a href="quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                2. Learning Graphs, MicroSims, and Content Generation Rules
+                Quiz
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3189,6 +3830,8 @@ You can now predict what a shell command will print, read a Python script, trace
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
       
         <script src="../../js/katex.js"></script>
       

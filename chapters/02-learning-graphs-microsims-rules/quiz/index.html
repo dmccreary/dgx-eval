@@ -1,0 +1,2556 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/chapters/02-learning-graphs-microsims-rules/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Quiz - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quiz-learning-graphs-microsims-and-content-generation-rules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Textbook Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Textbook Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../01-intro-intelligent-textbooks/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    1. Prerequisites and the Intelligent Textbook
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    2. Learning Graphs, MicroSims, and Content Generation Rules
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            2. Learning Graphs, MicroSims, and Content Generation Rules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-in-this-books-convention-which-way-does-a-concept-dependency-edge-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. In this book's convention, which way does a concept dependency edge point?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-a-directed-acyclic-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What is a directed acyclic graph?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-serves-as-the-checklist-that-generated-chapter-content-is-judged-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. What serves as the checklist that generated chapter content is judged against?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-who-may-move-a-microsim-from-built-to-approved" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Who may move a MicroSim from built to approved?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-why-can-the-same-learning-graph-be-regrouped-into-a-different-number-of-chapters-without-breaking-a-prerequisite" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Why can the same learning graph be regrouped into a different number of chapters without breaking a prerequisite?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-why-does-the-elaboration-score-normalize-cis-with-a-logarithm-instead-of-a-straight-proportion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Why does the elaboration score normalize CIS with a logarithm instead of a straight proportion?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-why-does-keeping-the-writing-rules-in-a-file-matter-for-small-models-in-particular" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Why does keeping the writing rules in a file matter for small models in particular?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-why-does-the-book-treat-a-word-count-target-as-a-guideline-and-not-a-quota" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Why does the book treat a word-count target as a guideline and not a quota?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-in-a-small-graph-q-needs-p-r-needs-p-and-s-needs-r-nothing-depends-on-q-or-s-what-is-the-concept-impact-score-of-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. In a small graph, Q needs P, R needs P, and S needs R. Nothing depends on Q or S. What is the concept impact score of P?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-in-a-generated-learning-graph-the-concepts-with-no-prerequisites-are-advanced-terms-such-as-evaluation-report-and-no-introductory-term-appears-among-them-what-does-this-pattern-indicate" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. In a generated learning graph, the concepts with no prerequisites are advanced terms such as "Evaluation Report", and no introductory term appears among them. What does this pattern indicate?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annotated References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../03-small-language-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    3. Small Language Models
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../04-local-versus-cloud/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    4. Local SLMs Versus Cloud LLM Services
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../05-dgx-hardware-architecture/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    5. NVIDIA DGX Hardware Architecture
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../06-cost-price-quality/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    6. Cost, Price, and Quality
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../07-remote-access-ssh-mesh-vpn/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    7. Remote Access, SSH, and Mesh VPN Concepts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../08-conda-environments/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    8. Reproducible Python Environments with Conda
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../09-tailscale-and-inventory/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    9. Installing Tailscale and Taking a Read-Only Inventory
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../10-hardware-probes/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    10. Python Hardware Probes
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../11-model-sizing-and-fit/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Model Sizing and Fit
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../12-selecting-downloading-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Selecting and Downloading an Open-Weight Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../13-inference-servers/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Inference Servers and Local API Endpoints
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../14-candidate-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Open-Weight Model Families and Candidate Models
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../15-optimizing-performance/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    15. Optimizing Small Language Model Performance
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../16-agent-loop-and-tools/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. The Agent Loop, Tools, and Context
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../17-agent-skills-and-harness/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. Agent Skills and Connecting a Harness to a Local Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../18-containing-the-harness/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    18. Containing the Harness: Containers and Network Boundaries
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../19-fair-evaluation-design/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    19. Designing a Fair Evaluation
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../20-scoring-and-bias/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    20. Scoring, Bias, and Structural Checks
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../21-running-the-benchmark/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    21. Running the Textbook Benchmark
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../22-diagnosis-and-reporting/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    22. Diagnosing Failures, Reporting, and Cost per Textbook
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../23-sanitizing-and-publishing/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    23. Sanitizing Evaluation Artifacts and Publishing the Report
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../appendices/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-in-this-books-convention-which-way-does-a-concept-dependency-edge-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. In this book's convention, which way does a concept dependency edge point?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-a-directed-acyclic-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What is a directed acyclic graph?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-serves-as-the-checklist-that-generated-chapter-content-is-judged-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. What serves as the checklist that generated chapter content is judged against?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-who-may-move-a-microsim-from-built-to-approved" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Who may move a MicroSim from built to approved?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-why-can-the-same-learning-graph-be-regrouped-into-a-different-number-of-chapters-without-breaking-a-prerequisite" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Why can the same learning graph be regrouped into a different number of chapters without breaking a prerequisite?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-why-does-the-elaboration-score-normalize-cis-with-a-logarithm-instead-of-a-straight-proportion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Why does the elaboration score normalize CIS with a logarithm instead of a straight proportion?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-why-does-keeping-the-writing-rules-in-a-file-matter-for-small-models-in-particular" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Why does keeping the writing rules in a file matter for small models in particular?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-why-does-the-book-treat-a-word-count-target-as-a-guideline-and-not-a-quota" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Why does the book treat a word-count target as a guideline and not a quota?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-in-a-small-graph-q-needs-p-r-needs-p-and-s-needs-r-nothing-depends-on-q-or-s-what-is-the-concept-impact-score-of-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. In a small graph, Q needs P, R needs P, and S needs R. Nothing depends on Q or S. What is the concept impact score of P?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-in-a-generated-learning-graph-the-concepts-with-no-prerequisites-are-advanced-terms-such-as-evaluation-report-and-no-introductory-term-appears-among-them-what-does-this-pattern-indicate" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. In a generated learning graph, the concepts with no prerequisites are advanced terms such as "Evaluation Report", and no introductory term appears among them. What does this pattern indicate?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/chapters/02-learning-graphs-microsims-rules/quiz.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="quiz-learning-graphs-microsims-and-content-generation-rules">Quiz: Learning Graphs, MicroSims, and Content Generation Rules<a class="headerlink" href="#quiz-learning-graphs-microsims-and-content-generation-rules" title="Permanent link">&para;</a></h1>
+<p>Test your understanding of learning graphs, concept impact scores, and the rules for generated content with these review questions.</p>
+<hr />
+<h4 id="1-in-this-books-convention-which-way-does-a-concept-dependency-edge-point">1. In this book's convention, which way does a concept dependency edge point?<a class="headerlink" href="#1-in-this-books-convention-which-way-does-a-concept-dependency-edge-point" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>From the prerequisite to the concept that depends on it</li>
+<li>From the dependent concept to its prerequisite</li>
+<li>From an earlier chapter to a later chapter</li>
+<li>From a taxonomy category to each concept inside it</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. A concept dependency states that one concept must be understood before another, and this book writes it as an edge from the dependent concept to its prerequisite. The edge <code>Percent → Decimals</code> reads "Percent needs Decimals". Reading an edge the other way turns every prerequisite into a follow-on topic and silently inverts the whole ordering. Dependencies are a property of the subject, so they do not point from chapter to chapter.</p>
+<p><strong>Concept Tested:</strong> Concept Dependency</p>
+<p><strong>See:</strong> <a href="../#concept-dependency">Concept Dependency</a></p>
+</details>
+<hr />
+<h4 id="2-what-is-a-directed-acyclic-graph">2. What is a directed acyclic graph?<a class="headerlink" href="#2-what-is-a-directed-acyclic-graph" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>A graph in which every concept has exactly one prerequisite</li>
+<li>A graph whose concepts are all connected in a single chain</li>
+<li>A graph with undirected edges and at most one cycle</li>
+<li>A graph whose edges have a direction and form no cycle</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. A directed acyclic graph, or DAG, has edges with a direction and contains no cycle, where a cycle is a path that follows dependencies back to its starting concept. A learning graph must be a DAG because a cycle leaves no concept that can be learned first. A DAG does not have to be a single chain, and a concept in it may have several prerequisites or share one with another concept.</p>
+<p><strong>Concept Tested:</strong> Directed Acyclic Graph</p>
+<p><strong>See:</strong> <a href="../#directed-acyclic-graph">Directed Acyclic Graph</a></p>
+</details>
+<hr />
+<h4 id="3-what-serves-as-the-checklist-that-generated-chapter-content-is-judged-against">3. What serves as the checklist that generated chapter content is judged against?<a class="headerlink" href="#3-what-serves-as-the-checklist-that-generated-chapter-content-is-judged-against" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The word count of the previous chapter in the book</li>
+<li>The chapter header, whose concept table must all be taught</li>
+<li>The FAQ entries that were generated for the chapter</li>
+<li>The navigation sidebar entry that points to the chapter</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. Chapter content is written into the chapter's <code>index.md</code> below a fixed header that lists the title, summary, concepts, and prerequisites. A generator is given that header and asked to fill in everything below the final rule. The header doubles as the checklist: every concept in its table should be taught, so a missing concept is a defect a program can find. The FAQ is generated afterward from the chapters, so it cannot be the standard.</p>
+<p><strong>Concept Tested:</strong> Chapter Content</p>
+<p><strong>See:</strong> <a href="../#chapter-content">Chapter Content</a></p>
+</details>
+<hr />
+<h4 id="4-who-may-move-a-microsim-from-built-to-approved">4. Who may move a MicroSim from <code>built</code> to <code>approved</code>?<a class="headerlink" href="#4-who-may-move-a-microsim-from-built-to-approved" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The generator, once the site passes a strict build</li>
+<li>Any agent that has read the content generation guide</li>
+<li>Only a human reviewer who has tested the MicroSim</li>
+<li>The site build, when the sidebar dot turns green</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. MicroSim status levels record how far a sim has progressed: <code>scaffold</code> means only a specification exists, <code>built</code> means it is implemented and awaiting review, and <code>approved</code> means it was tested and approved for learners. Only a human reviewer moves a MicroSim to <code>approved</code>; a generator may reach <code>built</code> and no further. The colored dot in the sidebar displays the status stored in the page's frontmatter. It does not set it.</p>
+<p><strong>Concept Tested:</strong> MicroSim Status Levels</p>
+<p><strong>See:</strong> <a href="../#microsim-status-levels">MicroSim Status Levels</a></p>
+</details>
+<hr />
+<h4 id="5-why-can-the-same-learning-graph-be-regrouped-into-a-different-number-of-chapters-without-breaking-a-prerequisite">5. Why can the same learning graph be regrouped into a different number of chapters without breaking a prerequisite?<a class="headerlink" href="#5-why-can-the-same-learning-graph-be-regrouped-into-a-different-number-of-chapters-without-breaking-a-prerequisite" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Each taxonomy category maps to exactly one chapter</li>
+<li>The graph stores a fixed chapter number on every concept</li>
+<li>It stores dependencies, not an authored chapter order</li>
+<li>Orphan concepts can be moved freely between any two chapters</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. A learning graph is a DAG of concepts whose edges are dependencies. It does not store a chapter order; it stores what depends on what, and any order that respects those dependencies is valid. Chapters are a partition of the concepts in which no concept appears before its prerequisites. Taxonomy categories are a grouping for the author, not a teaching order, and this book's chapters deliberately cut across them.</p>
+<p><strong>Concept Tested:</strong> Learning Graph</p>
+<p><strong>See:</strong> <a href="../#the-learning-graph">The Learning Graph</a></p>
+</details>
+<hr />
+<h4 id="6-why-does-the-elaboration-score-normalize-cis-with-a-logarithm-instead-of-a-straight-proportion">6. Why does the elaboration score normalize CIS with a logarithm instead of a straight proportion?<a class="headerlink" href="#6-why-does-the-elaboration-score-normalize-cis-with-a-logarithm-instead-of-a-straight-proportion" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Impact scores can be negative for the graph's terminal concepts</li>
+<li>A logarithm places every concept in the top tier</li>
+<li>Word counts must stay under a fixed chapter limit</li>
+<li>CIS is heavy-tailed, so a plain ratio crushes most scores</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. A concept's word-count target comes from its elaboration score, which divides the logarithm of its CIS plus one by the logarithm of the largest CIS plus one. The logarithm is needed because CIS is heavy-tailed: a few foundational concepts score in the thousands while 193 of the 506 concepts score 1. A straight proportion would crush the large majority to nearly zero. With the logarithm, a concept with a CIS of 36 scores about 0.46 and lands in tier B.</p>
+<p><strong>Concept Tested:</strong> Word-Count Targets</p>
+<p><strong>See:</strong> <a href="../#word-count-targets">Word-Count Targets</a></p>
+</details>
+<hr />
+<h4 id="7-why-does-keeping-the-writing-rules-in-a-file-matter-for-small-models-in-particular">7. Why does keeping the writing rules in a file matter for small models in particular?<a class="headerlink" href="#7-why-does-keeping-the-writing-rules-in-a-file-matter-for-small-models-in-particular" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>A rule in a file can be re-read after the context fills up</li>
+<li>A rule in a file is enforced automatically by the build</li>
+<li>A file lets the model skip any rules that it finds irrelevant</li>
+<li>A file is always shorter than the same rules written in a prompt</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. The content generation guide gathers every writing rule in one file so an agent can be told to read it first. That matters for small models because a rule that lives only in a prompt is lost when the context fills up, while a rule in a file can be re-read. The same file also makes two runs comparable, since both started from the same instructions. The build does not enforce the writing rules for the model.</p>
+<p><strong>Concept Tested:</strong> Content Generation Guide</p>
+<p><strong>See:</strong> <a href="../#content-generation-guide">Content Generation Guide</a></p>
+</details>
+<hr />
+<h4 id="8-why-does-the-book-treat-a-word-count-target-as-a-guideline-and-not-a-quota">8. Why does the book treat a word-count target as a guideline and not a quota?<a class="headerlink" href="#8-why-does-the-book-treat-a-word-count-target-as-a-guideline-and-not-a-quota" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The tier boundaries change from one chapter to the next</li>
+<li>Short sections always score higher when they are reviewed</li>
+<li>Padding to reach a number adds repetition and errors</li>
+<li>A generator has no means of counting the words it wrote</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. Anti-padding rules stop a generator from reaching a word target by inflating text. A model that sees "500 words" will often manufacture 500 words by restating itself, and padded text is repetitive and sometimes wrong. A target is therefore a guideline: a dense, correct section beats a padded one that reaches the number. If a section is thin, the remedy is a worked example or more technical detail, never a restatement of earlier paragraphs.</p>
+<p><strong>Concept Tested:</strong> Anti-Padding Rules</p>
+<p><strong>See:</strong> <a href="../#anti-padding-rules">Anti-Padding Rules</a></p>
+</details>
+<hr />
+<h4 id="9-in-a-small-graph-q-needs-p-r-needs-p-and-s-needs-r-nothing-depends-on-q-or-s-what-is-the-concept-impact-score-of-p">9. In a small graph, Q needs P, R needs P, and S needs R. Nothing depends on Q or S. What is the concept impact score of P?<a class="headerlink" href="#9-in-a-small-graph-q-needs-p-r-needs-p-and-s-needs-r-nothing-depends-on-q-or-s-what-is-the-concept-impact-score-of-p" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. A concept's impact score is 1 for itself plus the scores of every concept that depends on it directly. Work from the ends: Q and S have no dependents, so each scores 1. R has one dependent, S, so R scores 1 + 1 = 2. P has dependents Q and R, so P scores 1 + 1 + 2 = 4. An answer of 2 counts only the number of direct dependents, and an answer of 3 leaves out P itself.</p>
+<p><strong>Concept Tested:</strong> Concept Impact Score</p>
+<p><strong>See:</strong> <a href="../#concept-impact-score">Concept Impact Score</a></p>
+</details>
+<hr />
+<h4 id="10-in-a-generated-learning-graph-the-concepts-with-no-prerequisites-are-advanced-terms-such-as-evaluation-report-and-no-introductory-term-appears-among-them-what-does-this-pattern-indicate">10. In a generated learning graph, the concepts with no prerequisites are advanced terms such as "Evaluation Report", and no introductory term appears among them. What does this pattern indicate?<a class="headerlink" href="#10-in-a-generated-learning-graph-the-concepts-with-no-prerequisites-are-advanced-terms-such-as-evaluation-report-and-no-introductory-term-appears-among-them-what-does-this-pattern-indicate" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The dependency edges were written in the reversed direction</li>
+<li>The graph contains a cycle among its advanced concepts</li>
+<li>The advanced concepts were put in the wrong taxonomy category</li>
+<li>The impact scores were normalized without a logarithm</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. A foundational concept has no prerequisites inside the graph, so learning can start there. In a correct graph these are plain, introductory terms such as Command Line Basics. If advanced terms such as "Evaluation Report" show up there instead, the edges were written backwards, which turns every prerequisite into a follow-on topic. Listing the concepts with no prerequisites is the check to run before trusting any graph. A cycle gives a different symptom: no valid teaching order exists at all.</p>
+<p><strong>Concept Tested:</strong> Foundational Concepts</p>
+<p><strong>See:</strong> <a href="../#foundational-concepts">Foundational Concepts</a></p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Content">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Content
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../references/" class="md-footer__link md-footer__link--next" aria-label="Next: Annotated References">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Annotated References
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../js/extra.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

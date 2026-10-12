@@ -1,5 +1,5 @@
 // Words to Tokens Estimator MicroSim (sim id: words-to-tokens-estimator)
-// CANVAS_HEIGHT: 572
+// CANVAS_HEIGHT: 586
 // The learner estimates the token count of six documents from their word
 // counts, then decides whether each document and a 2,000-token reply fit in a
 // given context window. Both answers are confirmed before the reveal, which
@@ -8,7 +8,7 @@
 // global variables for width and height
 let canvasWidth = 800;   // reset from the container on init and on resize
 // A fixed top drawing region above the interactive controls
-let drawHeight = 442;
+let drawHeight = 456;
 // The control region holds the token entry, the two fit buttons, then Confirm
 // and Next
 let controlHeight = 130;

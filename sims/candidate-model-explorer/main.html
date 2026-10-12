@@ -3,150 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Candidate Model Explorer</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
-    </style>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Candidate Model Explorer using Chart.js</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
-    <div id="container">
+    <main>
         <h1>Candidate Model Explorer</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
+        <div class="stage">
+            <span class="tag">measured, one run each, provisional</span>
+            <div class="chart-box">
+                <canvas id="chart" role="img" aria-label="Bubble chart of ten candidate models. The horizontal position is the parameter count in billions, the vertical position is the generation speed in tokens per second, and the size of each bubble is the download size in gigabytes."></canvas>
+            </div>
+            <p class="hint">Hover over a bubble to read its values. A bubble's size shows its download in GB.</p>
         </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> candidate-model-explorer</p>
-            <p><strong>Library:</strong> Chart.js</p>
-            <p><strong>Bloom Level:</strong> Analyze</p>
-            <p><strong>Learning Objective:</strong> The learner will compare the ten candidate models on parameter count, generation speed, and download size by answering 5 questions from a bubble chart, with at least 4 of 5 correct.</p>
+        <div class="panel">
+            <div class="status-row">
+                <span id="status"></span>
+                <span id="score"></span>
+            </div>
+            <p id="prompt" class="prompt"></p>
+            <p id="detail" class="detail" hidden></p>
+            <div id="choices" class="choices"></div>
+            <p id="feedback" class="feedback" hidden></p>
+            <div id="results" class="results" hidden></div>
+            <div class="actions">
+                <button id="confirm">Confirm</button>
+                <button id="next">Next question</button>
+                <button id="restart">Start over</button>
+            </div>
         </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: chart
-    **sim-id:** candidate-model-explorer<br/>
-    **Library:** Chart.js<br/>
-    **Status:** Specified<br/>
-    **Template:** https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/lm-arena-timeline<br/>
-    **Bloom Level:** Analyze<br/>
-    **Bloom Verb:** compare<br/>
-    **Learning Objective:** The learner will compare the ten candidate models on parameter count, generation speed, and download size by answering 5 questions from a bubble chart, with at least 4 of 5 correct.
-    
-    **Prerequisites:** dense model, mixture of experts, active parameters, tokens per second, model download (all defined in Chapters 11 and 12 and in this chapter).
-    
-    **Evidence of Mastery:** For each of the 5 questions the learner selects one model from the ten before the sim reveals the answer. A selection is correct when it equals the Correct model column. Mastery is 4 of 5 correct on the first attempt. Hovering over a bubble to read its values is exploration, not evidence.
-    
-    **Misconceptions:** (1) A bigger model is a faster model. (2) A bigger download means more parameters. (3) A mixture-of-experts model needs less memory. (4) The model with the most parameters is the best choice.
-    
-    **Instructional Rationale:** Analyze-level comparing needs the learner to hold several dimensions at once, so a bubble chart places parameters, speed, and download size together, and questions that need two dimensions at a time prevent a single-dimension answer.
-    
-    **Content:**
-    
-    The chart plots each of ten models as a bubble. The horizontal position is the parameter count in billions, the vertical position is the generation speed in tokens per second, and the bubble's size is the download size in gigabytes.
-    
-    | Model | Parameters (billions) | Speed (tokens/s) | Download (GB) |
-    |---|---|---|---|
-    | `qwen3.8:27b` | 27 | 26 | 17 |
-    | `gemma4:31b` | 30.7 | 34 | 20 |
-    | `muse-glimmer:30b` | 30 | 13 | 18 |
-    | `qwen3.6:35b` | 35 | 94 | 22 |
-    | `gemma4:26b` | 25.2 | 108 | 18 |
-    | `nemotron-3.5-lightning:30b` | 30 | 95 | 25 |
-    | `mistral-medium-3.5:128b` | 128 | 3 | 80 |
-    | `gpt-oss:120b` | 117 | 41 | 65 |
-    | `devstral-small-2:24b` | 24 | 15 | 15 |
-    | `granite4.2:30b` | 30 | 12 | 17 |
-    
-    The five questions:
-    
-    | # | Question shown to the learner | Correct model | Why (shown as feedback) |
-    |---|---|---|---|
-    | 1 | Which model has the highest generation speed? | `gemma4:26b` | At 108 tokens per second it is the highest point on the chart. |
-    | 2 | Which model has the largest download? | `mistral-medium-3.5:128b` | At 80 GB it is the largest bubble. |
-    | 3 | Among models faster than 80 tokens per second, which has the largest download? | `nemotron-3.5-lightning:30b` | The three above 80 are 18, 22, and 25 GB, and 25 GB is the largest. |
-    | 4 | Which model has more than 100 billion parameters and runs faster than 30 tokens per second? | `gpt-oss:120b` | It has 117 billion parameters at 41 tokens per second, and the other model above 100 billion runs at 3. |
-    | 5 | Which model has the fewest parameters? | `devstral-small-2:24b` | At 24 billion it is the leftmost bubble. |
-    
-    **Provenance:** The values are the midpoints of the measured ranges in this chapter's table, rounded to whole tokens per second, and the sim labels them "measured, one run each, provisional". The speed for `qwen3.8:27b` was measured on one long turn. The speeds for `muse-glimmer:30b`, `devstral-small-2:24b`, `granite4.2:30b`, and `mistral-medium-3.5:128b` come from the model-only test.
-    
-    **Rules:** Questions are shown in the fixed order 1 to 5. Each allows one final choice among the ten models. Exactly one model is correct for each question under the data in Content.
-    
-    **Learner Activity:**
-    
-    1. The learner hovers over bubbles to read each model's three values.
-    2. The learner reads question 1 and clicks the bubble for the model they choose, then confirms.
-    3. The sim shows the correct model and the Why text, and marks the question correct or incorrect.
-    4. The learner repeats for questions 2 to 5. After question 5 the sim shows the score and the misconception behind each miss.
-    
-    **Feedback:** Five questions, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct model and the Why text. The final score reads "n of 5 correct".
-    
-    **Starting State:** The chart is shown with all ten bubbles, no question answered, and the instruction on screen is "Hover over a bubble to read its values".
-    
-    **Chapter Anchors:** The chapter states a fastest speed of 108 tokens per second for `gemma4:26b`, an 80 GB download for `mistral-medium-3.5:128b`, 117 billion parameters at about 41 tokens per second for `gpt-oss:120b`, and 3 tokens per second for the 128-billion-parameter model.
-    -->
+    </main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
+    <script src="candidate-model-explorer.js"></script>
 </body>
 </html>

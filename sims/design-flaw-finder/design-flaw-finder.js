@@ -1,5 +1,5 @@
 // Evaluation Design Flaw Finder MicroSim (sim id: design-flaw-finder)
-// CANVAS_HEIGHT: 582
+// CANVAS_HEIGHT: 600
 // The learner reads a described model comparison, then judges eight statements
 // about it as a flaw or not a flaw. A judgment is confirmed before the answer
 // is revealed, and the final screen names the misconception behind each miss.
@@ -7,7 +7,7 @@
 // global variables for width and height
 let canvasWidth = 800;   // reset from the container on init and on resize
 // A fixed top drawing region above the interactive controls
-let drawHeight = 490;
+let drawHeight = 508;
 // The control region holds the two judgment buttons, then Confirm and Next
 let controlHeight = 92;
 let canvasHeight = drawHeight + controlHeight;
@@ -301,7 +301,7 @@ function placeControls() {
   placeAnswerControls();
   confirmButton.position(margin, y);
   nextButton.position(margin + 92, y);
-  restartButton.position(margin, y);
+  restartButton.position(margin, drawHeight + 12);
 }
 
 // The described evaluation, with the statement to judge beneath it

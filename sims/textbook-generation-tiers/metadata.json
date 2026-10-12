@@ -1,0 +1,68 @@
+{
+  "title": "Five Tiers of Textbook Generation",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "See the five tiers that turn one course description into a whole intelligent textbook, then check which tier does what.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "textbook-generation-tiers",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Prerequisites and the Intelligent Textbook",
+    "learningObjectives": [
+      "The learner will identify which of the five tiers of textbook generation matches a description, for 5 descriptions, with at least 4 of 5 correct."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Course description",
+      "Learning graph",
+      "Concept and dependency",
+      "Book structure",
+      "Chapter content",
+      "MicroSim and MicroSim specification"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 640
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "The book structure tier writes no prose. Explain how a mistake made there could still stop a chapter from being written."
+    ],
+    "commonMisconceptions": [
+      "The model writes the course description.",
+      "Chapters are written straight from the course description, with no learning graph and no structure step.",
+      "MicroSim specifications are written in tier 5, when the MicroSims are built.",
+      "The benchmark covers all five tiers."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 4 of 5 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 640,
+  "completion_status": "built",
+  "chapter_number": 1,
+  "chapter_title": "Prerequisites and the Intelligent Textbook",
+  "chapter_dir": "01-intro-intelligent-textbooks",
+  "chapter_rel_dir": "chapters/01-intro-intelligent-textbooks"
+}

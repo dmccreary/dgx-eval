@@ -1,5 +1,5 @@
 // Endpoint Exposure Classifier MicroSim (sim id: endpoint-exposure-classifier)
-// CANVAS_HEIGHT: 492
+// CANVAS_HEIGHT: 510
 // The learner reads six configurations of a local model endpoint. Each one
 // states how the server is bound and which party sends a request by which path.
 // The learner decides whether that party can reach the endpoint, confirms, and
@@ -8,7 +8,7 @@
 // global variables for width and height
 let canvasWidth = 800;   // reset from the container on init and on resize
 // A fixed top drawing region above the interactive controls
-let drawHeight = 400;
+let drawHeight = 418;
 // The control region holds the two answer buttons, then Confirm and Next
 let controlHeight = 92;
 let canvasHeight = drawHeight + controlHeight;
@@ -308,7 +308,7 @@ function placeControls() {
   placeAnswerControls();
   confirmButton.position(margin, y);
   nextButton.position(margin + 92, y);
-  restartButton.position(margin, y);
+  restartButton.position(margin, drawHeight + 12);
 }
 
 // The case, split into the server's binding and the party's request

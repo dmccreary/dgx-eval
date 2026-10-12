@@ -1,21 +1,70 @@
 {
   "title": "Failure Diagnosis Chooser",
-  "description": "The learner will attribute each of 8 failed-run symptoms to its most likely cause from a list of 8, with at least 7 of 8 correct.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Attribute each of eight failed-run symptoms to its most likely cause from a list of eight.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "failure-diagnosis-chooser",
-  "library": "p5.js",
-  "bloomLevel": "Analyze",
-  "bloomVerb": "attribute",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Diagnosing Failures, Reporting, and Cost per Textbook",
+    "learningObjectives": [
+      "The learner will attribute each of 8 failed-run symptoms to its most likely cause from a list of 8, with at least 7 of 8 correct."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "attribute",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Malformed tool call",
+      "Text-emitted tool call",
+      "Premature turn termination",
+      "Task loss",
+      "Context overflow",
+      "Harness misconfiguration",
+      "Prompt re-reading",
+      "Chapter dependency check"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 572
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Symptoms 1 and 6 both end a run with nothing done. State the detail in each that tells the two causes apart."
+    ],
+    "commonMisconceptions": [
+      "A failure that ends a run is always a model failure.",
+      "A tool error means the run cannot recover.",
+      "A slow run is a failed run.",
+      "A model that says it is doing the work has done it."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 7 of 8 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 572,
+  "completion_status": "built",
   "chapter_number": 22,
   "chapter_title": "Diagnosing Failures, Reporting, and Cost per Textbook",
   "chapter_dir": "22-diagnosis-and-reporting",

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The learner will calculate the time of an agent turn from its prompt tokens, reply tokens, speeds, and tool time to within 1 second, and name the component that dominates it, for 3 challenges.">
+        <meta name="description" content="Calculate the time of one agent turn from its tokens, speeds, and tool time, name the part that dominates, then explore five inputs.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -65,7 +65,9 @@
     
     
     
-  </head>
+    <meta property="og:image" content="https://dmccreary.github.io/dgx-eval/sims/turn-time-breakdown/turn-time-breakdown.png">
+  <meta name="twitter:image" content="https://dmccreary.github.io/dgx-eval/sims/turn-time-breakdown/turn-time-breakdown.png">
+</head>
   
   
     
@@ -309,95 +311,49 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
         
       
     
@@ -699,6 +655,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -746,11 +710,898 @@
   
   
     <li class="md-nav__item">
+      <a href="../agent-loop-stepper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent Loop Stepper
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Agent Turn Time Breakdown
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Agent Turn Time Breakdown
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embed-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embed Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grade-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grade Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misconceptions-addressed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misconceptions Addressed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark-stage-pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Benchmark Stage Pipeline
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../book-levels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Book Levels MicroSim
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../candidate-model-explorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Candidate Model Explorer
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cis-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CIS Calculator
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command-output-predictor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Command Output Predictor
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cost-per-textbook-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost per Textbook Calculator
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cost-price-quality-sorter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost, Price, and Quality Sorter
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dag-cycle-spotter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DAG Cycle Spotter
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../egress-trace-classifier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Egress Trace Classifier
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoint-exposure-classifier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Endpoint Exposure Classifier
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environment-reproducibility-auditor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environment Reproducibility Auditor
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design-flaw-finder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation Design Flaw Finder
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variable-role-sorter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Experiment Variable Role Sorter
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../failure-diagnosis-chooser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Failure Diagnosis Chooser
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../textbook-generation-tiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Five Tiers of Textbook Generation
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware-branch-matcher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Finding to Setup Branch Matcher
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inference-request-path/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inference Request Path
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-graph-defect-finder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Graph Defect Finder
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../graph-viewer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Learning Graph Viewer
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-break-even-explorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local Versus Cloud Break-Even Explorer
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-cloud-hybrid-chooser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local, Cloud, or Hybrid Chooser
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-shortlist-filter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Shortlist Filter
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-fit-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model-Fit Calculator
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nvidia-smi-reader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nvidia-smi Output Reader
   </span>
   
     
@@ -804,6 +1655,151 @@
   
   
     <li class="md-nav__item">
+      <a href="../redaction-reviewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redaction Reviewer
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill-md-anatomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SKILL.md Anatomy
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structured-output-judge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structured Output Judge
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tailscale-connection-path/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tailscale Connection Path
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tailscale-status-reader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tailscale Status Reader
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../testing-architecture/" class="md-nav__link">
         
   
@@ -833,913 +1829,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent-loop-stepper/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Agent Loop Stepper
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Agent Turn Time Breakdown
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Agent Turn Time Breakdown
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Specification
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Related Resources
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../benchmark-stage-pipeline/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Benchmark Stage Pipeline
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../book-levels/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Book Levels MicroSim
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../candidate-model-explorer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Candidate Model Explorer
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cis-calculator/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    CIS Calculator
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../command-output-predictor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Command Output Predictor
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cost-per-textbook-calculator/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost per Textbook Calculator
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cost-price-quality-sorter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cost, Price, and Quality Sorter
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dag-cycle-spotter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    DAG Cycle Spotter
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../egress-trace-classifier/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Data Egress Trace Classifier
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../endpoint-exposure-classifier/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Endpoint Exposure Classifier
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../environment-reproducibility-auditor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Environment Reproducibility Auditor
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../design-flaw-finder/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Evaluation Design Flaw Finder
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../variable-role-sorter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Experiment Variable Role Sorter
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../failure-diagnosis-chooser/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Failure Diagnosis Chooser
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../hardware-branch-matcher/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Hardware Finding to Setup Branch Matcher
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../inference-request-path/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Inference Request Path
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../learning-graph-defect-finder/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Learning Graph Defect Finder
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../local-break-even-explorer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Local Versus Cloud Break-Even Explorer
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../local-cloud-hybrid-chooser/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Local, Cloud, or Hybrid Chooser
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../model-shortlist-filter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Shortlist Filter
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../model-fit-calculator/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model-Fit Calculator
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nvidia-smi-reader/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    nvidia-smi Output Reader
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../redaction-reviewer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Redaction Reviewer
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../skill-md-anatomy/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SKILL.md Anatomy
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../structured-output-judge/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Structured Output Judge
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tailscale-connection-path/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tailscale Connection Path
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tailscale-status-reader/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tailscale Status Reader
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../textbook-pipeline-explorer/" class="md-nav__link">
         
   
@@ -1750,7 +1839,36 @@
     
   
   
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dgx-system-comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Three Kinds of DGX System
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
     </span>
   
 
@@ -1779,7 +1897,7 @@
     
   
   
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
     </span>
   
 
@@ -1809,6 +1927,8 @@
       
         
           
+        
+      
         
       
         
@@ -1922,18 +2042,114 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#specification" class="md-nav__link">
+  <a href="#about-this-microsim" class="md-nav__link">
     <span class="md-ellipsis">
-      Specification
+      About This MicroSim
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#how-to-use" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Resources
+      How to Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embed-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embed Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grade-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grade Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misconceptions-addressed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misconceptions Addressed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1963,70 +2179,65 @@
 
 
 <h1 id="agent-turn-time-breakdown">Agent Turn Time Breakdown<a class="headerlink" href="#agent-turn-time-breakdown" title="Permanent link">&para;</a></h1>
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" height="592px" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run MicroSim in Fullscreen</a></p>
-<h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">&para;</a></h2>
-<p>The full specification below is extracted from
-<a href="../../chapters/15-optimizing-performance/">Chapter 15: Optimizing Small Language Model Performance</a>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Type: microsim
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>**sim-id:** turn-time-breakdown&lt;br/&gt;
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>**Library:** p5.js&lt;br/&gt;
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>**Status:** Specified&lt;br/&gt;
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>**Bloom Level:** Apply&lt;br/&gt;
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>**Bloom Verb:** calculate&lt;br/&gt;
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>**Learning Objective:** The learner will calculate the time of an agent turn from its prompt tokens, reply tokens, speeds, and tool time to within 1 second, and name the component that dominates it, for 3 challenges.
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>**Prerequisites:** prompt processing speed, tokens per second, prompt caching, prompt re-reading, latency, time breakdown (all defined in the sections above this block).
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>**Evidence of Mastery:** For each of the 3 challenges the learner types the turn time in seconds and chooses the dominant component from "Reading the prompt", "Writing the reply", and "Running the tool" before the sim reveals the answer. A challenge is correct when the typed value is within 1 second of the model value and the dominant component matches. Mastery is 3 of 3. Changing sliders in exploration is not evidence.
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>**Misconceptions:** (1) Faster generation always makes a turn faster. (2) Prompt reading is negligible. (3) A model's speed is one number for every workload. (4) Re-reading happens only when the context is full.
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>**Instructional Rationale:** Apply-level calculation needs a stated formula and committed numbers, and the dominant-component question turns the arithmetic into a diagnosis. The three cases are chosen so that each has a different dominant component or a different cause for the same one.
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>**Content:**
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>The learner can change five quantities:
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>| Quantity | Min | Max | Step | Default | Unit |
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>|---|---|---|---|---|---|
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>| Prompt tokens read this turn | 0 | 100,000 | 500 | 2,000 | tokens |
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>| Prompt processing speed | 100 | 5,000 | 100 | 3,000 | tokens per second |
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>| Reply tokens | 50 | 5,000 | 50 | 600 | tokens |
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>| Generation speed | 5 | 150 | 1 | 34 | tokens per second |
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>| Tool time | 0 | 60 | 1 | 5 | seconds |
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>The three challenges, in this order:
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>| # | Prompt tokens | Reading speed | Reply tokens | Writing speed | Tool time | Model turn time | Dominant component | Feedback when wrong |
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>|---|---|---|---|---|---|---|---|---|
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>| 1 | 2,000 | 3,000 | 600 | 34 | 5 | 23.3 s | Writing the reply | 2,000 ÷ 3,000 = 0.7 s, 600 ÷ 34 = 17.6 s, tool 5 s, total 23.3 s, and writing is the largest. |
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>| 2 | 55,000 | 500 | 600 | 26 | 5 | 138.1 s | Reading the prompt | 55,000 ÷ 500 = 110 s, 600 ÷ 26 = 23.1 s, tool 5 s, total 138.1 s, and reading is the largest. |
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>| 3 | 2,000 | 3,000 | 600 | 108 | 8 | 14.2 s | Running the tool | 0.7 s reading, 600 ÷ 108 = 5.6 s writing, tool 8 s, total 14.2 s, and the tool is the largest. |
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>**Provenance:** The speeds and token counts are drawn from the measurements in this chapter and the cost analysis page: 3,000 tokens per second reading and 108 writing for the mixture-of-experts model, 34 writing for the dense model, 26 writing and about 500 reading with 55,000 tokens re-read for the slow case. Tool times are illustrative, and the sim labels them "illustrative".
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>**Rules:** Turn time = prompt tokens ÷ reading speed + reply tokens ÷ writing speed + tool time, in seconds, shown to one decimal. The dominant component is the largest of the three terms; a tie is shown as "tie". Model load time is not included.
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>**Learner Activity:**
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>1. The learner reads challenge 1, whose inputs are shown, and types the turn time in seconds.
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>2. The learner chooses the dominant component and presses Check.
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>3. The sim reveals the model value, the dominant component, and the Feedback text, and marks the challenge correct or missed.
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>4. After the three challenges the exploration mode unlocks, with a stacked bar of the three components, and the learner changes any of the five quantities.
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>5. In exploration the learner should notice that changing generation speed barely moves the bar when reading dominates.
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>**Feedback:** Three challenges, fixed order, two attempts each. Correct: "Correct: &lt;model value&gt; s, &lt;component&gt; dominates." Incorrect: the "Feedback when wrong" text for that challenge. After the second wrong attempt the model value and the worked calculation are shown, and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>**Starting State:** Challenge 1 is shown with an empty answer box and its inputs displayed. The question on screen is "How long does this turn take, and where does the time go?"
-</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
-</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>**Chapter Anchors:** The chapter states a 23.3-second turn with caching on a dense model, a 138.1-second turn with 55,000 tokens re-read, and 110 of those seconds spent reading, and that the stage total of 102 minutes was about 83 minutes of re-reading plus a 19-minute reasoning turn.
-</span></code></pre></div>
-<h2 id="related-resources">Related Resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h2>
+<p><a class="md-button md-button--primary" href="main.html">Run the Agent Turn Time Breakdown MicroSim Fullscreen</a>
+<br/>
+<a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
+<h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
+<p>One agent turn spends time reading the prompt, writing the reply, and running a tool. Which of the three dominates decides what is worth optimizing: a faster generation speed does little for a turn that spends its time re-reading the prompt.</p>
+<p>Three challenges each have a different dominant part. Free exploration follows, with five sliders and a bar split into the three parts. The speeds are drawn from measurements in this book, and the tool times are illustrative.</p>
+<h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../chapters/15-optimizing-performance/">Chapter 15: Optimizing Small Language Model Performance</a></li>
+<li>Read what the challenge gives and the rules, then type the turn time in seconds.</li>
+<li>Choose the dominant component and press <strong>Check</strong>. An answer within one second with the right component is correct. Each challenge allows two attempts.</li>
+<li>After the third challenge, press <strong>Start exploring</strong> and move the sliders to see the bar change.</li>
 </ul>
+<h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
+<p>You can add this MicroSim to any web page by adding this to your HTML:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/dgx-eval/sims/turn-time-breakdown/main.html"</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">height</span><span class="o">=</span><span class="s">"592px"</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
+<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
+<p>The learner will calculate the time of an agent turn from its prompt tokens, reply tokens, speeds, and tool time to within 1 second, and name the component that dominates it, for 3 challenges.</p>
+<h3 id="grade-level">Grade Level<a class="headerlink" href="#grade-level" title="Permanent link">&para;</a></h3>
+<p>Professional development and adult continuing education</p>
+<h3 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h3>
+<p>15 minutes</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Prompt processing speed</li>
+<li>Tokens per second</li>
+<li>Prompt caching</li>
+<li>Prompt re-reading</li>
+<li>Latency</li>
+<li>Time breakdown</li>
+</ul>
+<h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Work the challenges</strong> (6 min): Do each calculation on paper before typing it. Use the second attempt only after finding the step that went wrong.</li>
+<li><strong>Explore</strong> (5 min): Change one slider at a time, and predict which way the result moves before looking.</li>
+<li><strong>Discuss</strong> (4 min): Challenge 2 is almost six times slower than challenge 1, and its model generates only a little more slowly. Explain where the time went.</li>
+</ol>
+<h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
+<p>Mastery is 3 of 3. Exploring before answering is practice and does not count as evidence.</p>
+<h3 id="misconceptions-addressed">Misconceptions Addressed<a class="headerlink" href="#misconceptions-addressed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Faster generation always makes a turn faster.</li>
+<li>Prompt reading is negligible.</li>
+<li>A model's speed is one number for every workload.</li>
+<li>Re-reading happens only when the context is full.</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="../../chapters/15-optimizing-performance/">Chapter 15: Optimizing Small Language Model Performance</a> - The chapter of this book that teaches the concepts this MicroSim practices.</li>
+<li><a href="https://en.wikipedia.org/wiki/Latency_(engineering)">Latency (Engineering)</a> - Wikipedia. Delay as a sum of separate components.</li>
+<li><a href="https://en.wikipedia.org/wiki/Large_language_model">Large Language Model</a> - Wikipedia. Tokens, context windows, and how model size is measured.</li>
+<li><a href="https://p5js.org/reference/">p5.js Reference</a> - p5.js. The drawing and control functions this MicroSim is built from.</li>
+</ol>
 
 
 
@@ -2125,6 +2336,8 @@
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
       
         <script src="../../js/katex.js"></script>
       

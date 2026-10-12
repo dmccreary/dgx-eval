@@ -1,0 +1,2556 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/chapters/22-diagnosis-and-reporting/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Quiz - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quiz-diagnosing-failures-reporting-and-cost-per-textbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Textbook Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Textbook Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../01-intro-intelligent-textbooks/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    1. Prerequisites and the Intelligent Textbook
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../02-learning-graphs-microsims-rules/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    2. Learning Graphs, MicroSims, and Content Generation Rules
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../03-small-language-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    3. Small Language Models
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../04-local-versus-cloud/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    4. Local SLMs Versus Cloud LLM Services
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../05-dgx-hardware-architecture/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    5. NVIDIA DGX Hardware Architecture
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../06-cost-price-quality/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    6. Cost, Price, and Quality
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../07-remote-access-ssh-mesh-vpn/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    7. Remote Access, SSH, and Mesh VPN Concepts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../08-conda-environments/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    8. Reproducible Python Environments with Conda
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../09-tailscale-and-inventory/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    9. Installing Tailscale and Taking a Read-Only Inventory
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../10-hardware-probes/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    10. Python Hardware Probes
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../11-model-sizing-and-fit/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Model Sizing and Fit
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../12-selecting-downloading-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Selecting and Downloading an Open-Weight Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../13-inference-servers/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Inference Servers and Local API Endpoints
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../14-candidate-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Open-Weight Model Families and Candidate Models
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../15-optimizing-performance/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    15. Optimizing Small Language Model Performance
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../16-agent-loop-and-tools/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. The Agent Loop, Tools, and Context
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../17-agent-skills-and-harness/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. Agent Skills and Connecting a Harness to a Local Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../18-containing-the-harness/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    18. Containing the Harness: Containers and Network Boundaries
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../19-fair-evaluation-design/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    19. Designing a Fair Evaluation
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../20-scoring-and-bias/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    20. Scoring, Bias, and Structural Checks
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../21-running-the-benchmark/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    21. Running the Textbook Benchmark
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_23" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    22. Diagnosing Failures, Reporting, and Cost per Textbook
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_23" id="__nav_4_23_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_23_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_23">
+            <span class="md-nav__icon md-icon"></span>
+            22. Diagnosing Failures, Reporting, and Cost per Textbook
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-a-text-emitted-tool-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is a text-emitted tool call?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-is-a-100-tool-call-success-rate-on-28-calls-not-necessarily-better-than-84-on-50-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Why is a 100% tool-call success rate on 28 calls not necessarily better than 84% on 50 calls?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-why-does-an-evaluation-report-put-the-method-before-the-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Why does an evaluation report put the method before the recommendation?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-a-models-three-benchmark-stages-take-4-hours-with-the-three-stages-set-at-10-of-the-work-of-a-whole-book-what-is-the-whole-book-time-estimate" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. A model's three benchmark stages take 4 hours. With the three stages set at 10% of the work of a whole book, what is the whole-book time estimate?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-a-13-chapter-book-costs-5292-to-generate-and-8-of-its-chapters-meet-the-completion-criterion-what-is-the-cost-per-usable-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. A 13-chapter book costs $52.92 to generate, and 8 of its chapters meet the completion criterion. What is the cost per usable chapter?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-every-model-you-try-fails-at-the-first-turn-with-the-same-model-not-found-error-what-should-you-do-before-concluding-anything-about-the-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Every model you try fails at the first turn with the same "model not found" error. What should you do before concluding anything about the models?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-a-runs-final-message-says-the-chapter-skill-is-now-running-no-tool-call-follows-and-no-chapter-file-exists-in-the-run-directory-which-cause-does-this-evidence-point-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. A run's final message says the chapter skill is now running. No tool call follows, and no chapter file exists in the run directory. Which cause does this evidence point to?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-the-cost-model-assumes-the-three-benchmark-stages-are-10-of-a-whole-book-if-they-are-really-5-how-does-the-cost-per-textbook-change-and-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. The cost model assumes the three benchmark stages are 10% of a whole book. If they are really 5%, how does the cost per textbook change, and why?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-one-model-completes-all-three-stages-the-cost-is-estimated-at-53-per-book-and-no-human-review-has-been-finished-which-sufficiency-statement-is-best-supported-by-this-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. One model completes all three stages, the cost is estimated at $53 per book, and no human review has been finished. Which sufficiency statement is best supported by this evidence?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-local-models-complete-the-learning-graph-and-chapter-structure-stages-the-chapter-text-stage-exposes-capability-differences-and-every-result-is-one-run-with-no-finished-human-review-which-recommendation-design-fits-this-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Local models complete the learning-graph and chapter-structure stages, the chapter-text stage exposes capability differences, and every result is one run with no finished human review. Which recommendation design fits this evidence?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annotated References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../23-sanitizing-and-publishing/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    23. Sanitizing Evaluation Artifacts and Publishing the Report
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../appendices/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-a-text-emitted-tool-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is a text-emitted tool call?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-is-a-100-tool-call-success-rate-on-28-calls-not-necessarily-better-than-84-on-50-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Why is a 100% tool-call success rate on 28 calls not necessarily better than 84% on 50 calls?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-why-does-an-evaluation-report-put-the-method-before-the-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Why does an evaluation report put the method before the recommendation?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-a-models-three-benchmark-stages-take-4-hours-with-the-three-stages-set-at-10-of-the-work-of-a-whole-book-what-is-the-whole-book-time-estimate" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. A model's three benchmark stages take 4 hours. With the three stages set at 10% of the work of a whole book, what is the whole-book time estimate?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-a-13-chapter-book-costs-5292-to-generate-and-8-of-its-chapters-meet-the-completion-criterion-what-is-the-cost-per-usable-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. A 13-chapter book costs $52.92 to generate, and 8 of its chapters meet the completion criterion. What is the cost per usable chapter?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-every-model-you-try-fails-at-the-first-turn-with-the-same-model-not-found-error-what-should-you-do-before-concluding-anything-about-the-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Every model you try fails at the first turn with the same "model not found" error. What should you do before concluding anything about the models?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-a-runs-final-message-says-the-chapter-skill-is-now-running-no-tool-call-follows-and-no-chapter-file-exists-in-the-run-directory-which-cause-does-this-evidence-point-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. A run's final message says the chapter skill is now running. No tool call follows, and no chapter file exists in the run directory. Which cause does this evidence point to?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-the-cost-model-assumes-the-three-benchmark-stages-are-10-of-a-whole-book-if-they-are-really-5-how-does-the-cost-per-textbook-change-and-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. The cost model assumes the three benchmark stages are 10% of a whole book. If they are really 5%, how does the cost per textbook change, and why?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-one-model-completes-all-three-stages-the-cost-is-estimated-at-53-per-book-and-no-human-review-has-been-finished-which-sufficiency-statement-is-best-supported-by-this-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. One model completes all three stages, the cost is estimated at $53 per book, and no human review has been finished. Which sufficiency statement is best supported by this evidence?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-local-models-complete-the-learning-graph-and-chapter-structure-stages-the-chapter-text-stage-exposes-capability-differences-and-every-result-is-one-run-with-no-finished-human-review-which-recommendation-design-fits-this-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Local models complete the learning-graph and chapter-structure stages, the chapter-text stage exposes capability differences, and every result is one run with no finished human review. Which recommendation design fits this evidence?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/chapters/22-diagnosis-and-reporting/quiz.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="quiz-diagnosing-failures-reporting-and-cost-per-textbook">Quiz: Diagnosing Failures, Reporting, and Cost per Textbook<a class="headerlink" href="#quiz-diagnosing-failures-reporting-and-cost-per-textbook" title="Permanent link">&para;</a></h1>
+<p>Test your understanding of failure diagnosis, the cost of a textbook, sufficiency judgments, and evidence-based recommendations with these review questions.</p>
+<hr />
+<h4 id="1-what-is-a-text-emitted-tool-call">1. What is a text-emitted tool call?<a class="headerlink" href="#1-what-is-a-text-emitted-tool-call" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>A call with a wrong name or a missing argument</li>
+<li>A call the harness refuses under a permission rule</li>
+<li>A call written as ordinary text, which the harness does not see</li>
+<li>A call that returns more output than the window can hold</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. A text-emitted tool call is a tool call that the model writes out as ordinary text in its reply, in the shape of a call but not as a call. The harness sees no tool call and treats the reply as a final answer, so the run ends. Its signature is a run of one turn whose last message contains something that looks like a call. A call with a wrong name or a missing argument is a malformed tool call, which is usually recoverable.</p>
+<p><strong>Concept Tested:</strong> Text-Emitted Tool Call</p>
+<p><strong>See:</strong> <a href="../#malformed-tool-call-and-text-emitted-tool-call">Malformed Tool Call and Text-Emitted Tool Call</a></p>
+</details>
+<hr />
+<h4 id="2-why-is-a-100-tool-call-success-rate-on-28-calls-not-necessarily-better-than-84-on-50-calls">2. Why is a 100% tool-call success rate on 28 calls not necessarily better than 84% on 50 calls?<a class="headerlink" href="#2-why-is-a-100-tool-call-success-rate-on-28-calls-not-necessarily-better-than-84-on-50-calls" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>A success rate is meaningful only above 100 tool calls per run</li>
+<li>Failed tool calls are never recorded in the run's event stream</li>
+<li>A higher call count always means a more careful model</li>
+<li>The 28 calls may never have reached the file-writing step</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. The tool call count, the failed tool calls, and the success rate all come straight from the event stream, and a number alone does not diagnose. 100% success on 28 calls is not better than 84% on 50 if the 28 calls never reached the step that writes the file. The count is the prompt for a question, and the event stream holds the answer: what the calls did, and whether the work was finished.</p>
+<p><strong>Concept Tested:</strong> Tool-Call Success Rate</p>
+<p><strong>See:</strong> <a href="../#tool-call-count-failed-tool-calls-and-tool-call-success-rate">Tool Call Count, Failed Tool Calls, and Tool-Call Success Rate</a></p>
+</details>
+<hr />
+<h4 id="3-why-does-an-evaluation-report-put-the-method-before-the-recommendation">3. Why does an evaluation report put the method before the recommendation?<a class="headerlink" href="#3-why-does-an-evaluation-report-put-the-method-before-the-recommendation" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>A reader needs the method in order to judge the recommendation</li>
+<li>The method is the shortest part and is the quickest to read</li>
+<li>The recommendation cannot be drafted until the report is printed</li>
+<li>The method lists the limitations, which must always come first</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. A report structure is the order of an evaluation report's parts: question, method, results, limitations, recommendation. The order matters because each part answers a reader's question in turn. A reader who meets the recommendation before the method has nothing to judge it with, and a report that puts limitations after a confident recommendation has buried the part that tempers it. Limitations are their own part, placed before the recommendation, not inside the method.</p>
+<p><strong>Concept Tested:</strong> Report Structure</p>
+<p><strong>See:</strong> <a href="../#evaluation-report-and-report-structure">Evaluation Report and Report Structure</a></p>
+</details>
+<hr />
+<h4 id="4-a-models-three-benchmark-stages-take-4-hours-with-the-three-stages-set-at-10-of-the-work-of-a-whole-book-what-is-the-whole-book-time-estimate">4. A model's three benchmark stages take 4 hours. With the three stages set at 10% of the work of a whole book, what is the whole-book time estimate?<a class="headerlink" href="#4-a-models-three-benchmark-stages-take-4-hours-with-the-three-stages-set-at-10-of-the-work-of-a-whole-book-what-is-the-whole-book-time-estimate" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>4.4 hours</li>
+<li>40 hours</li>
+<li>14 hours</li>
+<li>400 hours</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. A whole-book time estimate extrapolates from the measured stages. The three benchmark stages were set at 10% of the work of a whole book, so the estimate is the three-stage time divided by 0.10: 4 hours ÷ 0.10 is 40 hours of machine time. The figure rests on an assumption about stages that have not been run, so treat it as a model to adjust. If the three stages were 5% of the book, the estimate would double.</p>
+<p><strong>Concept Tested:</strong> Whole-Book Time Estimate</p>
+<p><strong>See:</strong> <a href="../#time-breakdown-and-whole-book-time-estimate">Time Breakdown and Whole-Book Time Estimate</a></p>
+</details>
+<hr />
+<h4 id="5-a-13-chapter-book-costs-5292-to-generate-and-8-of-its-chapters-meet-the-completion-criterion-what-is-the-cost-per-usable-chapter">5. A 13-chapter book costs $52.92 to generate, and 8 of its chapters meet the completion criterion. What is the cost per usable chapter?<a class="headerlink" href="#5-a-13-chapter-book-costs-5292-to-generate-and-8-of-its-chapters-meet-the-completion-criterion-what-is-the-cost-per-usable-chapter" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>$4.07</li>
+<li>$6.62</li>
+<li>$10.58</li>
+<li>$52.92</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. Quality-adjusted cost corrects the cost for how much of the output is usable. One way to express it is the cost per usable chapter: the generation cost divided by the chapters that met the completion criterion. Here $52.92 ÷ 8 is about $6.62. Dividing by all 13 chapters gives $4.07, which prices chapters that were never written. A cheap model that leaves chapters unwritten is more expensive per chapter than its speed suggests.</p>
+<p><strong>Concept Tested:</strong> Quality-Adjusted Cost</p>
+<p><strong>See:</strong> <a href="../#service-price-calculation-and-quality-adjusted-cost">Service Price Calculation and Quality-Adjusted Cost</a></p>
+</details>
+<hr />
+<h4 id="6-every-model-you-try-fails-at-the-first-turn-with-the-same-model-not-found-error-what-should-you-do-before-concluding-anything-about-the-models">6. Every model you try fails at the first turn with the same "model not found" error. What should you do before concluding anything about the models?<a class="headerlink" href="#6-every-model-you-try-fails-at-the-first-turn-with-the-same-model-not-found-error-what-should-you-do-before-concluding-anything-about-the-models" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Record that none of the models can run the skill</li>
+<li>Raise the time limit and rerun every model once more</li>
+<li>Compare each model's peak context with its window</li>
+<li>Check the base address, model name, and mounts first</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. Harness misconfiguration is a fault in how the harness was set up and not in the model: a wrong address, a model name the server does not have, a skill folder that was not mounted, or a permission rule that stalls. Its signature is a failure at the very first turn, for every model, with an error that names the configuration. A failure identical across all models is a configuration fault until shown otherwise, so check the setup before blaming any model.</p>
+<p><strong>Concept Tested:</strong> Harness Misconfiguration</p>
+<p><strong>See:</strong> <a href="../#context-overflow-and-harness-misconfiguration">Context Overflow and Harness Misconfiguration</a></p>
+</details>
+<hr />
+<h4 id="7-a-runs-final-message-says-the-chapter-skill-is-now-running-no-tool-call-follows-and-no-chapter-file-exists-in-the-run-directory-which-cause-does-this-evidence-point-to">7. A run's final message says the chapter skill is now running. No tool call follows, and no chapter file exists in the run directory. Which cause does this evidence point to?<a class="headerlink" href="#7-a-runs-final-message-says-the-chapter-skill-is-now-running-no-tool-call-follows-and-no-chapter-file-exists-in-the-run-directory-which-cause-does-this-evidence-point-to" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Premature turn termination: work described but not done</li>
+<li>Malformed tool call: an argument had the wrong type</li>
+<li>Context overflow: the conversation exceeded the model's window</li>
+<li>Harness misconfiguration: the skill folder was not mounted</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. Premature turn termination is the model ending its turn before the work is done, with no error. Its signature is a final message that describes work and no file that contains it. Here the model announced the skill, made no tool call, and wrote nothing. A malformed call would show an error and usually a retry, context overflow shows late forgetting with a peak near the window, and a misconfiguration fails at turn one for every model.</p>
+<p><strong>Concept Tested:</strong> Premature Turn Termination</p>
+<p><strong>See:</strong> <a href="../#premature-turn-termination-and-task-loss">Premature Turn Termination and Task Loss</a></p>
+</details>
+<hr />
+<h4 id="8-the-cost-model-assumes-the-three-benchmark-stages-are-10-of-a-whole-book-if-they-are-really-5-how-does-the-cost-per-textbook-change-and-why">8. The cost model assumes the three benchmark stages are 10% of a whole book. If they are really 5%, how does the cost per textbook change, and why?<a class="headerlink" href="#8-the-cost-model-assumes-the-three-benchmark-stages-are-10-of-a-whole-book-if-they-are-really-5-how-does-the-cost-per-textbook-change-and-why" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>It halves, because fewer stages remain to be run</li>
+<li>It doubles, because the whole-book hours double</li>
+<li>It is unchanged, because the yearly cost is fixed</li>
+<li>It rises by 5%, matching the change in the share</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. The cost per textbook is the whole-book hours times the cost of a generating hour. The whole-book hours come from dividing the measured three-stage time by the share of the book those stages represent. Halving that share from 10% to 5% doubles the whole-book hours, so the cost per book doubles, from about $53 to about $106 in the reference case. The yearly cost is fixed, but it is spread over half as many books.</p>
+<p><strong>Concept Tested:</strong> Cost per Textbook</p>
+<p><strong>See:</strong> <a href="../#cost-per-textbook-cost-per-chapter-and-books-per-year">Cost per Textbook, Cost per Chapter, and Books per Year</a></p>
+</details>
+<hr />
+<h4 id="9-one-model-completes-all-three-stages-the-cost-is-estimated-at-53-per-book-and-no-human-review-has-been-finished-which-sufficiency-statement-is-best-supported-by-this-evidence">9. One model completes all three stages, the cost is estimated at $53 per book, and no human review has been finished. Which sufficiency statement is best supported by this evidence?<a class="headerlink" href="#9-one-model-completes-all-three-stages-the-cost-is-estimated-at-53-per-book-and-no-human-review-has-been-finished-which-sufficiency-statement-is-best-supported-by-this-evidence" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The DGX is sufficient, because one model finished every single stage</li>
+<li>The DGX is insufficient, because no human review has been completed</li>
+<li>The DGX is sufficient, because $53 is below any service price</li>
+<li>Completion is established, cost is estimated, quality is unknown</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. A DGX sufficiency judgment answers whether this machine, with these models and this harness, is enough to generate the textbook. It is a judgment made against criteria written down beforehand: completion without an unusable fault, acceptable time and cost, and reviewed quality that meets the standard. The honest answer can be that the first is established, the second is estimated, and the third is not yet known. Declaring the machine sufficient or insufficient outright claims more than this evidence shows.</p>
+<p><strong>Concept Tested:</strong> DGX Sufficiency Judgment</p>
+<p><strong>See:</strong> <a href="../#dgx-sufficiency-judgment">DGX Sufficiency Judgment</a></p>
+</details>
+<hr />
+<h4 id="10-local-models-complete-the-learning-graph-and-chapter-structure-stages-the-chapter-text-stage-exposes-capability-differences-and-every-result-is-one-run-with-no-finished-human-review-which-recommendation-design-fits-this-evidence">10. Local models complete the learning-graph and chapter-structure stages, the chapter-text stage exposes capability differences, and every result is one run with no finished human review. Which recommendation design fits this evidence?<a class="headerlink" href="#10-local-models-complete-the-learning-graph-and-chapter-structure-stages-the-chapter-text-stage-exposes-capability-differences-and-every-result-is-one-run-with-no-finished-human-review-which-recommendation-design-fits-this-evidence" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Local for every stage, stated as a final verdict</li>
+<li>Cloud for every stage, since one stage showed weakness</li>
+<li>A provisional hybrid routed by stage, with its conditions stated</li>
+<li>No recommendation until each model has been run five times</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. A recommendation is the action the evidence supports, stated with its conditions. When local models complete the structural stages and a hard stage exposes differences, the rules lean toward a hybrid routed by stage: structural stages local, a stronger model for the prose. Because every result is one run and no human review is finished, the recommendation must be labeled provisional and say what would change it. A flat verdict or a refusal to recommend both serve the reader worse.</p>
+<p><strong>Concept Tested:</strong> Recommendation</p>
+<p><strong>See:</strong> <a href="../#recommendation-and-the-local-cloud-or-hybrid-decision">Recommendation and the Local, Cloud, or Hybrid Decision</a></p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Content">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Content
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../references/" class="md-footer__link md-footer__link--next" aria-label="Next: Annotated References">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Annotated References
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../js/extra.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

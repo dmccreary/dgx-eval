@@ -1,21 +1,67 @@
 {
   "title": "Candidate Model Explorer",
-  "description": "The learner will compare the ten candidate models on parameter count, generation speed, and download size by answering 5 questions from a bubble chart, with at least 4 of 5 correct.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Compare ten candidate models on a bubble chart of parameter count, generation speed, and download size, then answer five questions.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "candidate-model-explorer",
-  "library": "Chart.js",
-  "bloomLevel": "Analyze",
-  "bloomVerb": "compare",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Open-Weight Model Families and Candidate Models",
+    "learningObjectives": [
+      "The learner will compare the ten candidate models on parameter count, generation speed, and download size by answering 5 questions from a bubble chart, with at least 4 of 5 correct."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "compare",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Dense model",
+      "Mixture of experts",
+      "Active parameters",
+      "Tokens per second",
+      "Model download"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Chart.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 750
+    },
+    "responsive": true,
+    "dependencies": [
+      "Chart.js 4.4.0"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "The two models above 100 billion parameters differ in speed by more than ten times. Use the chapter to explain what accounts for the difference."
+    ],
+    "commonMisconceptions": [
+      "A bigger model is a faster model.",
+      "A bigger download means more parameters.",
+      "A mixture-of-experts model needs less memory.",
+      "The model with the most parameters is the best choice."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 4 of 5 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 750,
+  "completion_status": "built",
   "chapter_number": 14,
   "chapter_title": "Open-Weight Model Families and Candidate Models",
   "chapter_dir": "14-candidate-models",

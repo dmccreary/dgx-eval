@@ -1,21 +1,68 @@
 {
   "title": "Benchmark Stage Pipeline",
-  "description": "The learner will explain how the three benchmark stages chain by opening each of 7 elements of the pipeline and then answering 4 questions about what starts from what, with at least 3 of 4 correct.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Open the seven elements of the three-stage benchmark pipeline, then answer four questions about what starts from what.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "benchmark-stage-pipeline",
-  "library": "Mermaid",
-  "bloomLevel": "Understand",
-  "bloomVerb": "explain",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Running the Textbook Benchmark",
+    "learningObjectives": [
+      "The learner will explain how the three benchmark stages chain by opening each of 7 elements of the pipeline and then answering 4 questions about what starts from what, with at least 3 of 4 correct."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "explain",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Pipeline stage",
+      "Stage chaining",
+      "Benchmark workspace template",
+      "Per-chapter generation run",
+      "Run time limit",
+      "Run event stream"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Mermaid",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 520
+    },
+    "responsive": true,
+    "dependencies": [
+      "Mermaid 11"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Explain what would go wrong with the comparison between models if stage 2 started from the template instead of from the stage 1 output."
+    ],
+    "commonMisconceptions": [
+      "Every stage starts from the template.",
+      "Stage 3 is one run for the whole book.",
+      "A run that hits its time limit loses what it wrote.",
+      "A run can change its starting directory."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 3 of 4 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 520,
+  "completion_status": "built",
   "chapter_number": 21,
   "chapter_title": "Running the Textbook Benchmark",
   "chapter_dir": "21-running-the-benchmark",

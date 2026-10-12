@@ -3,148 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Model-Fit Calculator</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Model-Fit Calculator using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="model-fit-calculator.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Model-Fit Calculator</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> model-fit-calculator</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply</p>
-            <p><strong>Learning Objective:</strong> The learner will calculate the memory a model needs from its parameter count, precision, and context length, to within 1 GB, and state the fit verdict, for 3 challenges.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** model-fit-calculator<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified<br/>
-    **Template:** https://github.com/dmccreary/dgx-eval/tree/main/docs/sims/model-fit-by-memory<br/>
-    **Bloom Level:** Apply<br/>
-    **Bloom Verb:** calculate<br/>
-    **Learning Objective:** The learner will calculate the memory a model needs from its parameter count, precision, and context length, to within 1 GB, and state the fit verdict, for 3 challenges.
-    
-    **Prerequisites:** model weights, numeric precision, quantization, KV cache, runtime overhead, safety headroom, fit verdict, unified memory fit (all defined in the sections above this block).
-    
-    **Evidence of Mastery:** For each of the 3 challenges the learner types the memory needed in gigabytes and chooses one of the three verdicts before the sim reveals the answer. A challenge is correct when the typed value is within 1 GB of the model value and the verdict matches. Mastery is 3 of 3. Changing the inputs in exploration is not evidence.
-    
-    **Misconceptions:** (1) A 4-bit file uses exactly 4 bits per parameter. (2) The context length does not change memory until the conversation is long. (3) A model that loads has therefore fit. (4) A larger memory always means a bigger model can be run.
-    
-    **Instructional Rationale:** Apply-level calculation needs the learner to combine three terms, so each challenge changes one input that moves a different term: context for the cache, memory for the verdict, and precision for the weights. The middle verdict is included so that the learner meets the zone where a model loads and is still unsafe.
-    
-    **Content:**
-    
-    The learner can change seven quantities:
-    
-    | Quantity | Min | Max | Step | Default | Unit |
-    |---|---|---|---|---|---|
-    | Parameters | 1 | 200 | 0.1 | 30.5 | billions |
-    | Precision | 16, 8, or 4-bit file | | | 4-bit | |
-    | Context length | 4,096 | 262,144 | 4,096 | 32,768 | tokens |
-    | KV cache per token | 32 | 512 | 32 | 192 | KiB |
-    | Runtime overhead | 0 | 10 | 0.5 | 3 | GB |
-    | Memory | 16 | 512 | 16 | 128 | GB |
-    | Headroom | 0.05 | 0.40 | 0.05 | 0.20 | share of memory |
-    
-    The effective bits per parameter for each precision are 16 for the 16-bit file, 8.5 for the 8-bit file, and 5.0 for the 4-bit file.
-    
-    The three challenges, in this order:
-    
-    | # | Parameters | Precision | Context | Memory | Model memory needed | Verdict | Feedback when wrong |
-    |---|---|---|---|---|---|---|---|
-    | 1 | 30.7 | 4-bit | 32,768 | 128 | 28.6 GB | Fits | Weights 30.7 × 5.0 ÷ 8 = 19.2 GB, cache 32,768 × 192 KiB = 6.4 GB, overhead 3 GB, total 28.6 GB, which is under the usable 102.4 GB. |
-    | 2 | 30.7 | 4-bit | 262,144 | 64 | 73.7 GB | Does not fit | Weights 19.2 GB, cache 262,144 × 192 KiB = 51.5 GB, overhead 3 GB, total 73.7 GB, which is above all 64 GB of memory. |
-    | 3 | 110 | 8-bit | 32,768 | 128 | 126.3 GB | Fits without headroom | Weights 110 × 8.5 ÷ 8 = 116.9 GB, cache 6.4 GB, overhead 3 GB, total 126.3 GB, which is under 128 GB and above the usable 102.4 GB. |
-    
-    **Provenance:** The effective bits for the 4-bit file are rounded from the measured range of 4.4 to 5.7 in this chapter's table. The 8-bit value of 8.5 and the cache shape of 192 KiB per token are illustrative, and the sim labels them "illustrative, not a published figure". Challenge 1 compares with the measured 29 GB in this chapter.
-    
-    **Rules:** Weights in GB = parameters × effective bits ÷ 8. Cache in GB = context × KV per token in KiB × 1,024 ÷ 10^9. Needed = weights + cache + overhead. Usable = memory × (1 − headroom). Verdict "Fits" when needed <= usable, "Fits without headroom" when usable < needed <= memory, and "Does not fit" when needed > memory. Values are shown to one decimal.
-    
-    **Learner Activity:**
-    
-    1. The learner reads challenge 1, whose inputs are shown, and types the memory needed in GB.
-    2. The learner chooses a verdict and presses Check.
-    3. The sim reveals the model value, the verdict, and the Feedback text, and marks the challenge correct or missed.
-    4. After all three challenges the exploration mode unlocks and the learner changes any of the seven quantities, watching a bar split into weights, cache, and overhead, with the usable limit and the memory marked.
-    5. In exploration the learner should notice that raising the context moves the cache term far more than changing the precision of a small model.
-    
-    **Feedback:** Three challenges, fixed order, two attempts each. Correct: "Correct: <model value> GB, <verdict>." Incorrect: the "Feedback when wrong" text for that challenge. After the second wrong attempt the model value and the worked calculation are shown, and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.
-    
-    **Starting State:** Challenge 1 is shown with an empty answer box and its inputs displayed. The question on screen is "How much memory does this model need, and does it fit?"
-    
-    **Chapter Anchors:** The chapter states 5.0 effective bits for a 4-bit file, 192 KiB of cache per token in the worked example, 3 GB of runtime overhead, a 20% headroom default, and the three verdicts; its worked results are 28.6 GB and 73.7 GB for the 30.7-billion-parameter model.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

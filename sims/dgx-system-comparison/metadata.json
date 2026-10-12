@@ -1,0 +1,66 @@
+{
+  "title": "Three Kinds of DGX System",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Compare three kinds of DGX system in columns, with a drawing of each device in the first row, then select the kind that matches each of six descriptions.",
+  "date": "2026-10-11",
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "dgx-system-comparison",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "NVIDIA DGX Hardware Architecture",
+    "learningObjectives": [
+      "The learner will compare the three kinds of DGX system by shape, CPU architecture, and GPU memory arrangement, and select the kind that matches each of 6 descriptions, with at least 5 of 6 correct."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "compare",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "The table of three kinds of system in the NVIDIA DGX section of Chapter 5"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Infographic overlay (grid-diagram.js)",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 715
+    },
+    "responsive": true,
+    "dependencies": [
+      "docs/sims/shared-libs/grid-diagram.js",
+      "docs/sims/shared-libs/grid-overlay.css"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Side-by-side comparison in columns, with detail on request and a column-selection quiz",
+    "keyQuestions": [
+      "Which kind of system needs a model split across GPUs, and why?",
+      "Which package build does each kind of system need?"
+    ],
+    "commonMisconceptions": [
+      "Every DGX is a rack server.",
+      "Every DGX has the same processor architecture.",
+      "Every DGX GPU has its own memory."
+    ],
+    "assessmentOpportunities": [
+      "Select the column that matches each of six descriptions in Quiz Me mode."
+    ]
+  },
+  "canvasHeight": 715,
+  "completion_status": "built",
+  "chapter_number": 5,
+  "chapter_title": "NVIDIA DGX Hardware Architecture",
+  "chapter_dir": "05-dgx-hardware-architecture",
+  "chapter_rel_dir": "chapters/05-dgx-hardware-architecture"
+}

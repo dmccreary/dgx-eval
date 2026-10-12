@@ -1,5 +1,5 @@
 // Experiment Variable Role Sorter MicroSim (sim id: variable-role-sorter)
-// CANVAS_HEIGHT: 502
+// CANVAS_HEIGHT: 520
 // The learner reads ten items from a model-comparison experiment and assigns
 // each one a role: independent variable, controlled variable, measured result,
 // or uncontrolled variable. A role is confirmed before the answer is revealed.
@@ -7,7 +7,7 @@
 // global variables for width and height
 let canvasWidth = 800;   // reset from the container on init and on resize
 // A fixed top drawing region above the interactive controls
-let drawHeight = 380;
+let drawHeight = 398;
 // The control region holds the four role buttons (two rows on a narrow
 // canvas), then Confirm and Next
 let controlHeight = 122;
@@ -306,7 +306,7 @@ function placeControls() {
   placeAnswerControls();
   confirmButton.position(margin, y);
   nextButton.position(margin + 92, y);
-  restartButton.position(margin, y);
+  restartButton.position(margin, drawHeight + 12);
 }
 
 // The experiment, with the item to classify beneath it

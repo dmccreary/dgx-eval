@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Five Tiers of Textbook Generation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Five Tiers of Textbook Generation</h1>
+        <div class="stage">
+            <div id="tiers" class="tiers" role="group" aria-label="Five tiers stacked from top to bottom, each one wider than the tier above it: course description, learning graph, book structure, chapter content, and MicroSims with supplementary content. Each tier is built from the tiers above it."></div>
+        </div>
+        <div class="panel">
+            <div class="status-row">
+                <span id="status"></span>
+                <span id="score"></span>
+            </div>
+            <p id="prompt" class="prompt"></p>
+            <p id="detail" class="detail" hidden></p>
+            <p id="feedback" class="feedback" hidden></p>
+            <div id="results" class="results" hidden></div>
+            <div class="actions">
+                <button id="start">Start the questions</button>
+                <button id="confirm">Confirm</button>
+                <button id="next">Next question</button>
+                <button id="restart">Start over</button>
+            </div>
+        </div>
+    </main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
+    <script src="textbook-generation-tiers.js"></script>
+</body>
+</html>

@@ -1,21 +1,69 @@
 {
   "title": "Agent Loop Stepper",
-  "description": "The learner will explain what the harness does after each of 6 model replies or tool results by choosing the outcome of each, with at least 5 of 6 correct.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Step through the five phases of one agent turn, then choose what the harness does next in six situations.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "agent-loop-stepper",
-  "library": "p5.js",
-  "bloomLevel": "Understand",
-  "bloomVerb": "explain",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "The Agent Loop, Tools, and Context",
+    "learningObjectives": [
+      "The learner will explain what the harness does after each of 6 model replies or tool results by choosing the outcome of each, with at least 5 of 6 correct."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "explain",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "AI agent harness",
+      "Agent loop",
+      "Agent turn",
+      "Tool definition",
+      "Permission model",
+      "Context compaction",
+      "Context truncation"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 632
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Situation 3 and situation 1 both contain a tool call. State the one difference that makes the harness act on one and not the other."
+    ],
+    "commonMisconceptions": [
+      "The model runs its own tools.",
+      "A tool call written as text still runs.",
+      "The conversation is reset each turn.",
+      "A permission question is answered automatically."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 632,
+  "completion_status": "built",
   "chapter_number": 16,
   "chapter_title": "The Agent Loop, Tools, and Context",
   "chapter_dir": "16-agent-loop-and-tools",

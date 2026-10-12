@@ -1,0 +1,2556 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/chapters/15-optimizing-performance/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Quiz - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quiz-optimizing-small-language-model-performance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Textbook Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Textbook Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../01-intro-intelligent-textbooks/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    1. Prerequisites and the Intelligent Textbook
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../02-learning-graphs-microsims-rules/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    2. Learning Graphs, MicroSims, and Content Generation Rules
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../03-small-language-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    3. Small Language Models
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../04-local-versus-cloud/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    4. Local SLMs Versus Cloud LLM Services
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../05-dgx-hardware-architecture/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    5. NVIDIA DGX Hardware Architecture
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../06-cost-price-quality/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    6. Cost, Price, and Quality
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../07-remote-access-ssh-mesh-vpn/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    7. Remote Access, SSH, and Mesh VPN Concepts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../08-conda-environments/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    8. Reproducible Python Environments with Conda
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../09-tailscale-and-inventory/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    9. Installing Tailscale and Taking a Read-Only Inventory
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../10-hardware-probes/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    10. Python Hardware Probes
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../11-model-sizing-and-fit/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Model Sizing and Fit
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../12-selecting-downloading-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Selecting and Downloading an Open-Weight Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../13-inference-servers/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Inference Servers and Local API Endpoints
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../14-candidate-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Open-Weight Model Families and Candidate Models
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_16" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    15. Optimizing Small Language Model Performance
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_16" id="__nav_4_16_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_16_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_16">
+            <span class="md-nav__icon md-icon"></span>
+            15. Optimizing Small Language Model Performance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-does-tokens-per-second-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What does tokens per second measure?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-time-to-first-token-mostly-made-up-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What is time to first token mostly made up of?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-does-a-temperature-setting-of-0-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. What does a temperature setting of 0 do?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-how-does-prompt-caching-shorten-an-agent-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. How does prompt caching shorten an agent turn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-why-is-latency-and-not-throughput-the-figure-that-matters-for-a-single-benchmark-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Why is latency, and not throughput, the figure that matters for a single benchmark session?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-why-is-thermal-throttling-invisible-in-a-short-speed-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Why is thermal throttling invisible in a short speed test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-a-server-processes-prompts-at-500-tokens-per-second-because-of-re-reading-each-agent-turn-reads-55000-tokens-how-long-does-the-reading-take-on-each-turn-before-any-reply-token-is-written" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. A server processes prompts at 500 tokens per second. Because of re-reading, each agent turn reads 55,000 tokens. How long does the reading take on each turn, before any reply token is written?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-two-runs-differ-in-quantization-context-length-and-keep-alive-and-the-second-is-faster-what-should-you-do-to-learn-which-setting-mattered" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Two runs differ in quantization, context length, and keep-alive, and the second is faster. What should you do to learn which setting mattered?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-a-vitals-log-shows-available-memory-falling-from-72-gib-at-the-start-of-a-run-to-18-gib-near-the-end-and-the-job-has-slowed-what-is-the-condition-and-which-figure-does-a-watchdog-act-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. A vitals log shows available memory falling from 72 GiB at the start of a run to 18 GiB near the end, and the job has slowed. What is the condition, and which figure does a watchdog act on?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-in-a-turn-with-prompt-re-reading-reading-takes-110-of-the-138-seconds-what-would-tripling-the-generation-speed-do-to-that-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. In a turn with prompt re-reading, reading takes 110 of the 138 seconds. What would tripling the generation speed do to that turn?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annotated References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../16-agent-loop-and-tools/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. The Agent Loop, Tools, and Context
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../17-agent-skills-and-harness/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. Agent Skills and Connecting a Harness to a Local Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../18-containing-the-harness/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    18. Containing the Harness: Containers and Network Boundaries
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../19-fair-evaluation-design/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    19. Designing a Fair Evaluation
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../20-scoring-and-bias/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    20. Scoring, Bias, and Structural Checks
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../21-running-the-benchmark/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    21. Running the Textbook Benchmark
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../22-diagnosis-and-reporting/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    22. Diagnosing Failures, Reporting, and Cost per Textbook
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../23-sanitizing-and-publishing/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    23. Sanitizing Evaluation Artifacts and Publishing the Report
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../appendices/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-does-tokens-per-second-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What does tokens per second measure?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-time-to-first-token-mostly-made-up-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What is time to first token mostly made up of?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-does-a-temperature-setting-of-0-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. What does a temperature setting of 0 do?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-how-does-prompt-caching-shorten-an-agent-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. How does prompt caching shorten an agent turn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-why-is-latency-and-not-throughput-the-figure-that-matters-for-a-single-benchmark-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Why is latency, and not throughput, the figure that matters for a single benchmark session?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-why-is-thermal-throttling-invisible-in-a-short-speed-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Why is thermal throttling invisible in a short speed test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-a-server-processes-prompts-at-500-tokens-per-second-because-of-re-reading-each-agent-turn-reads-55000-tokens-how-long-does-the-reading-take-on-each-turn-before-any-reply-token-is-written" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. A server processes prompts at 500 tokens per second. Because of re-reading, each agent turn reads 55,000 tokens. How long does the reading take on each turn, before any reply token is written?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-two-runs-differ-in-quantization-context-length-and-keep-alive-and-the-second-is-faster-what-should-you-do-to-learn-which-setting-mattered" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Two runs differ in quantization, context length, and keep-alive, and the second is faster. What should you do to learn which setting mattered?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-a-vitals-log-shows-available-memory-falling-from-72-gib-at-the-start-of-a-run-to-18-gib-near-the-end-and-the-job-has-slowed-what-is-the-condition-and-which-figure-does-a-watchdog-act-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. A vitals log shows available memory falling from 72 GiB at the start of a run to 18 GiB near the end, and the job has slowed. What is the condition, and which figure does a watchdog act on?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-in-a-turn-with-prompt-re-reading-reading-takes-110-of-the-138-seconds-what-would-tripling-the-generation-speed-do-to-that-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. In a turn with prompt re-reading, reading takes 110 of the 138 seconds. What would tripling the generation speed do to that turn?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/chapters/15-optimizing-performance/quiz.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="quiz-optimizing-small-language-model-performance">Quiz: Optimizing Small Language Model Performance<a class="headerlink" href="#quiz-optimizing-small-language-model-performance" title="Permanent link">&para;</a></h1>
+<p>Test your understanding of the kinds of time in a run, prompt caching, the settings that move speed, and the limits that cut a run short with these review questions.</p>
+<hr />
+<h4 id="1-what-does-tokens-per-second-measure">1. What does tokens per second measure?<a class="headerlink" href="#1-what-does-tokens-per-second-measure" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>How fast the server reads the tokens of the prompt</li>
+<li>How long the server takes to load a model from disk</li>
+<li>How many requests the server completes each second</li>
+<li>How many output tokens the model produces each second</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. Tokens per second is the generation speed: how many output tokens the model produces each second once it has started. Generation is slower than reading because each token depends on the one before it, so tokens are produced in sequence and each requires reading the model's active weights from memory. Reading the prompt has its own, much higher figure, the prompt processing speed. The measured generation speeds in this evaluation ranged from 3 to 130 tokens a second.</p>
+<p><strong>Concept Tested:</strong> Tokens per Second</p>
+<p><strong>See:</strong> <a href="../#tokens-per-second">Tokens per Second</a></p>
+</details>
+<hr />
+<h4 id="2-what-is-time-to-first-token-mostly-made-up-of">2. What is time to first token mostly made up of?<a class="headerlink" href="#2-what-is-time-to-first-token-mostly-made-up-of" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Model loading, if needed, and prompt processing</li>
+<li>Generating the reply and running the requested tool</li>
+<li>Sampling the next token at a high temperature</li>
+<li>Writing the vitals log and checking the watchdog</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. Time to first token is the delay between sending a request and receiving the first token of the reply. It is made up mostly of loading the model, if it is not already loaded, and prompt processing. One model in this evaluation read a 30,000-token prompt at about 3,000 tokens a second, so its time to first token was about ten seconds. Generating the rest of the reply and running tools come after the first token.</p>
+<p><strong>Concept Tested:</strong> Time to First Token</p>
+<p><strong>See:</strong> <a href="../#prompt-processing-speed-and-time-to-first-token">Prompt Processing Speed and Time to First Token</a></p>
+</details>
+<hr />
+<h4 id="3-what-does-a-temperature-setting-of-0-do">3. What does a temperature setting of 0 do?<a class="headerlink" href="#3-what-does-a-temperature-setting-of-0-do" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>It limits the choice to the k most likely tokens</li>
+<li>It spreads the choice across less likely tokens</li>
+<li>It always takes the most likely next token</li>
+<li>It stops generation after the first token</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. Sampling parameters control how the next token is chosen from the model's probabilities. Temperature scales how adventurous the choice is: 0 always takes the most likely token, and higher values spread the choice. Limiting the choice to the k most likely tokens is top-k, a different parameter. These settings change the output, so a benchmark must fix and record them, and they have little effect on speed.</p>
+<p><strong>Concept Tested:</strong> Temperature Setting</p>
+<p><strong>See:</strong> <a href="../#sampling-parameters-temperature-top-p-and-top-k">Sampling Parameters, Temperature, Top-p, and Top-k</a></p>
+</details>
+<hr />
+<h4 id="4-how-does-prompt-caching-shorten-an-agent-turn">4. How does prompt caching shorten an agent turn?<a class="headerlink" href="#4-how-does-prompt-caching-shorten-an-agent-turn" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The server reuses saved state and reads only the new tokens</li>
+<li>The harness stops resending the conversation after the first turn</li>
+<li>The model writes several tokens of the reply in parallel</li>
+<li>The server stores finished replies and returns them on later turns</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. An agent harness resends the whole conversation on every turn. Prompt caching is the server's remedy: it keeps the already-computed internal state for the part of the prompt that has not changed, so each new turn only has to read what is new. With caching working, a turn that adds 2,000 tokens to a 50,000-token conversation reads 2,000. The harness still resends everything, and replies are still written one token at a time.</p>
+<p><strong>Concept Tested:</strong> Prompt Caching</p>
+<p><strong>See:</strong> <a href="../#prompt-caching-and-prompt-re-reading">Prompt Caching and Prompt Re-Reading</a></p>
+</details>
+<hr />
+<h4 id="5-why-is-latency-and-not-throughput-the-figure-that-matters-for-a-single-benchmark-session">5. Why is latency, and not throughput, the figure that matters for a single benchmark session?<a class="headerlink" href="#5-why-is-latency-and-not-throughput-the-figure-that-matters-for-a-single-benchmark-session" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Throughput can be measured only on dedicated GPU memory</li>
+<li>Throughput and latency are two names for the same figure</li>
+<li>Only one request is in flight at a time, so latency governs</li>
+<li>A benchmark session never generates more than one reply</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. Latency is the total time for one request, from sending it to receiving the last token. Throughput is the total work done per unit of time across all requests in flight. For a single benchmark session only one request is in flight at a time, so latency is what you feel and throughput is irrelevant. For a service that generates many books at once, throughput is the number that sets the cost per book.</p>
+<p><strong>Concept Tested:</strong> Latency</p>
+<p><strong>See:</strong> <a href="../#latency-and-throughput">Latency and Throughput</a></p>
+</details>
+<hr />
+<h4 id="6-why-is-thermal-throttling-invisible-in-a-short-speed-test">6. Why is thermal throttling invisible in a short speed test?<a class="headerlink" href="#6-why-is-thermal-throttling-invisible-in-a-short-speed-test" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Throttling occurs only while the GPU is idle</li>
+<li>Throttling is reported only in the model card</li>
+<li>A short test reads the prompt but never writes a reply</li>
+<li>A short test ends before the chassis has warmed up</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. Thermal throttling is the chip reducing its own speed to stay below a safe temperature. It shows up as a speed that falls over a long run with no change in the workload. A thirty-second test finishes before the chassis has warmed, so the only way to find throttling is to run long and read temperature and tokens per second together. A speed that decays while the temperature climbs is the pattern to look for.</p>
+<p><strong>Concept Tested:</strong> Thermal Throttling</p>
+<p><strong>See:</strong> <a href="../#thermal-throttling">Thermal Throttling</a></p>
+</details>
+<hr />
+<h4 id="7-a-server-processes-prompts-at-500-tokens-per-second-because-of-re-reading-each-agent-turn-reads-55000-tokens-how-long-does-the-reading-take-on-each-turn-before-any-reply-token-is-written">7. A server processes prompts at 500 tokens per second. Because of re-reading, each agent turn reads 55,000 tokens. How long does the reading take on each turn, before any reply token is written?<a class="headerlink" href="#7-a-server-processes-prompts-at-500-tokens-per-second-because-of-re-reading-each-agent-turn-reads-55000-tokens-how-long-does-the-reading-take-on-each-turn-before-any-reply-token-is-written" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>11 seconds</li>
+<li>55 seconds</li>
+<li>110 seconds</li>
+<li>275 seconds</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. Prompt processing speed is how fast the server reads the prompt, in input tokens per second. Reading time is the tokens read divided by that speed: 55,000 ÷ 500 is 110 seconds, before a single reply token is written. That is why a turn that re-reads most of a conversation is dominated by reading. With caching working, the same turn would read only the new tokens, perhaps 2,000, in about four seconds at this speed.</p>
+<p><strong>Concept Tested:</strong> Prompt Processing Speed</p>
+<p><strong>See:</strong> <a href="../#time-breakdown-for-an-agent-turn">Time Breakdown for an Agent Turn</a></p>
+</details>
+<hr />
+<h4 id="8-two-runs-differ-in-quantization-context-length-and-keep-alive-and-the-second-is-faster-what-should-you-do-to-learn-which-setting-mattered">8. Two runs differ in quantization, context length, and keep-alive, and the second is faster. What should you do to learn which setting mattered?<a class="headerlink" href="#8-two-runs-differ-in-quantization-context-length-and-keep-alive-and-the-second-is-faster-what-should-you-do-to-learn-which-setting-mattered" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Average the two runs and report the mean speed</li>
+<li>Change one setting at a time against a fixed baseline</li>
+<li>Keep all three changes, since the second run was faster</li>
+<li>Raise the temperature and see whether the speed changes</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. Performance optimization is changing one setting at a time and measuring the result against a fixed baseline: one change, one measurement, then restore. A comparison between two runs that differ in three settings tells you nothing about which one mattered. Each setting moves a different part of the time, so the single-change discipline is also how you confirm that the setting aimed at your bottleneck is the one that helped.</p>
+<p><strong>Concept Tested:</strong> Performance Optimization</p>
+<p><strong>See:</strong> <a href="../#performance-optimization">Performance Optimization</a></p>
+</details>
+<hr />
+<h4 id="9-a-vitals-log-shows-available-memory-falling-from-72-gib-at-the-start-of-a-run-to-18-gib-near-the-end-and-the-job-has-slowed-what-is-the-condition-and-which-figure-does-a-watchdog-act-on">9. A vitals log shows available memory falling from 72 GiB at the start of a run to 18 GiB near the end, and the job has slowed. What is the condition, and which figure does a watchdog act on?<a class="headerlink" href="#9-a-vitals-log-shows-available-memory-falling-from-72-gib-at-the-start-of-a-run-to-18-gib-near-the-end-and-the-job-has-slowed-what-is-the-condition-and-which-figure-does-a-watchdog-act-on" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Memory pressure; the watchdog acts on the low, later figure</li>
+<li>Thermal throttling; the watchdog acts on the starting figure</li>
+<li>Prompt re-reading; the watchdog acts on tokens read per turn</li>
+<li>A model reload; the watchdog acts on the keep-alive period</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. Memory pressure is the condition in which available memory is low enough that the system starts to struggle: it swaps, stalls, or kills a process. It builds gradually as the context grows, and the symptom is a job that slows for no obvious reason late in a run. The vitals log records available memory every 30 seconds, so the slope is visible. A fall from 72 GiB to 18 GiB is growing pressure, and the second number is the one a watchdog acts on.</p>
+<p><strong>Concept Tested:</strong> Memory Pressure</p>
+<p><strong>See:</strong> <a href="../#memory-pressure">Memory Pressure</a></p>
+</details>
+<hr />
+<h4 id="10-in-a-turn-with-prompt-re-reading-reading-takes-110-of-the-138-seconds-what-would-tripling-the-generation-speed-do-to-that-turn">10. In a turn with prompt re-reading, reading takes 110 of the 138 seconds. What would tripling the generation speed do to that turn?<a class="headerlink" href="#10-in-a-turn-with-prompt-re-reading-reading-takes-110-of-the-138-seconds-what-would-tripling-the-generation-speed-do-to-that-turn" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The turn would take about a third as long</li>
+<li>The turn would barely change, since reading dominates</li>
+<li>The turn would get slower, since the tool would then wait</li>
+<li>The turn would fail, since the KV cache would overflow</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. A turn's time is reading plus writing plus tool time. With prompt re-reading, the server recomputes most of the conversation on each turn, so the first term dominates: 55,000 tokens at 500 per second is 110 of the 138 seconds. Tripling the generation speed would shorten only the 23 seconds of writing, so the turn would barely change. The setting to fix first is the one aimed at the bottleneck, which here is caching.</p>
+<p><strong>Concept Tested:</strong> Prompt Re-Reading</p>
+<p><strong>See:</strong> <a href="../#time-breakdown-for-an-agent-turn">Time Breakdown for an Agent Turn</a></p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Content">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Content
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../references/" class="md-footer__link md-footer__link--next" aria-label="Next: Annotated References">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Annotated References
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../js/extra.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

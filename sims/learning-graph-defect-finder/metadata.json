@@ -1,21 +1,67 @@
 {
   "title": "Learning Graph Defect Finder",
-  "description": "The learner will examine a 16-concept dependency graph and mark the concepts that have one of four structural defects, finding all 4 defects with no more than 1 false flag.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Examine a 16-concept dependency graph and flag the concepts that have one of four structural defects.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "learning-graph-defect-finder",
-  "library": "vis-network",
-  "bloomLevel": "Analyze",
-  "bloomVerb": "examine",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Scoring, Bias, and Structural Checks",
+    "learningObjectives": [
+      "The learner will examine a 16-concept dependency graph and mark the concepts that have one of four structural defects, finding all 4 defects with no more than 1 false flag."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "examine",
+    "duration": "15 minutes",
+    "prerequisites": [
+      "Duplicate concept labels",
+      "Orphaned concepts",
+      "Dependency cycle check",
+      "Label length limit",
+      "Structural checks"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "vis-network",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 836
+    },
+    "responsive": true,
+    "dependencies": [
+      "vis-network"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Concept 1 and concept 14 both have no prerequisites. Explain why only one of them is a defect."
+    ],
+    "commonMisconceptions": [
+      "A concept with no prerequisites is always a defect.",
+      "A label at the limit is over it.",
+      "Two concepts whose labels differ only in case are different.",
+      "A cycle is visible only as one edge."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is all 4 defects found, with no more than 1 flag on a concept that is not in the answer key."
+    ]
+  },
+  "canvasHeight": 836,
+  "completion_status": "built",
   "chapter_number": 20,
   "chapter_title": "Scoring, Bias, and Structural Checks",
   "chapter_dir": "20-scoring-and-bias",

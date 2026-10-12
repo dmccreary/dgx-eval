@@ -1,21 +1,68 @@
 {
   "title": "Structured Output Judge",
-  "description": "The learner will judge whether each of 6 model replies is valid JSON that matches a given required format, naming the defect in each invalid reply, with at least 5 of 6 judged correctly.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Judge whether each of six model replies is valid JSON in a required format, and name the defect in each invalid one.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "structured-output-judge",
-  "library": "p5.js",
-  "bloomLevel": "Evaluate",
-  "bloomVerb": "judge",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Small Language Models",
+    "learningObjectives": [
+      "The learner will judge whether each of 6 model replies is valid JSON that matches a given required format, naming the defect in each invalid reply, with at least 5 of 6 judged correctly."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "judge",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Structured output",
+      "JSON object",
+      "Field",
+      "Integer",
+      "String",
+      "Array"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 624
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Reply 4 contains exactly the JSON of reply 1. Explain why a program rejects one and accepts the other."
+    ],
+    "commonMisconceptions": [
+      "A reply that looks right is valid.",
+      "A reply containing valid JSON inside explanatory text is valid.",
+      "A trailing comma is harmless.",
+      "An empty array is a missing field."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct."
+    ]
+  },
+  "canvasHeight": 624,
+  "completion_status": "built",
   "chapter_number": 3,
   "chapter_title": "Small Language Models",
   "chapter_dir": "03-small-language-models",

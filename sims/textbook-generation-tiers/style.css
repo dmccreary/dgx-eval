@@ -1,0 +1,323 @@
+/* Shared layout for the MicroSims that are built from HTML elements.
+   The page is a title, a stage (diagram or chart), and a panel that holds the
+   question, the choices, and the feedback. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid silver;
+    background: white;
+}
+
+h1 {
+    margin: 0;
+    padding: 8px 15px 6px;
+    font-size: 22px;
+    text-align: center;
+    background: aliceblue;
+}
+
+.stage {
+    position: relative;
+    flex: none;
+    padding: 4px 15px 8px;
+    background: aliceblue;
+    border-bottom: 1px solid silver;
+}
+
+.panel {
+    flex: 1;
+    padding: 8px 15px 10px;
+    overflow: hidden;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: dimgray;
+}
+
+.prompt {
+    margin: 6px 0 8px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.detail {
+    margin: 0 0 8px;
+    padding: 8px 12px;
+    border: 1px solid silver;
+    border-radius: 8px;
+    background: white;
+    line-height: 1.35;
+}
+
+.feedback {
+    margin: 0 0 8px;
+    padding: 8px 12px;
+    border: 2px solid darkorange;
+    border-left-width: 8px;
+    border-radius: 8px;
+    line-height: 1.35;
+}
+
+.feedback.is-correct {
+    border-color: forestgreen;
+}
+
+.feedback strong:first-child {
+    display: block;
+    color: saddlebrown;
+}
+
+.feedback.is-correct strong:first-child {
+    color: darkgreen;
+}
+
+.results p {
+    margin: 0 0 8px;
+}
+
+.results table {
+    width: 100%;
+    margin-bottom: 8px;
+    border-collapse: collapse;
+    border: 1.5px solid darkorange;
+}
+
+.results th {
+    text-align: left;
+    color: saddlebrown;
+}
+
+.results th,
+.results td {
+    padding: 2px 10px;
+    vertical-align: top;
+}
+
+.results td:first-child {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.actions button {
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* On a narrow screen the text is smaller, and the panel scrolls rather than
+   cutting off whatever does not fit */
+@media (max-width: 700px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .prompt {
+        font-size: 15px;
+    }
+
+    .panel {
+        overflow-y: auto;
+    }
+}
+
+/* The five tiers */
+main {
+    height: 640px;
+}
+
+.tiers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Each tier is one step wider than the tier above it */
+.tier {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 12px 5px 8px;
+    font: inherit;
+    color: black;
+    text-align: left;
+    background: white;
+    border: 1.5px solid steelblue;
+    border-left-width: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.tier[data-id="1"] { width: 60%; }
+.tier[data-id="2"] { width: 70%; }
+.tier[data-id="3"] { width: 80%; }
+.tier[data-id="4"] { width: 90%; }
+.tier[data-id="5"] { width: 100%; }
+
+/* The left bar and the tag say who makes the tier: a person, the model in the
+   benchmark, or a model outside it */
+.tier.by-person {
+    border-color: darkorange;
+}
+
+.tier.outside {
+    border-style: dashed;
+    border-left-style: solid;
+    border-color: gray;
+}
+
+.tier .num {
+    flex: none;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background: steelblue;
+    border-radius: 50%;
+}
+
+.tier.by-person .num {
+    background: chocolate;
+}
+
+.tier.outside .num {
+    background: dimgray;
+}
+
+.tier .body {
+    flex: 1;
+    min-width: 0;
+}
+
+.tier .name {
+    display: block;
+    font-weight: bold;
+}
+
+.tier .facts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px 8px;
+    font-size: 14px;
+}
+
+.tier .maker {
+    padding: 1px 8px;
+    font-size: 13px;
+    white-space: nowrap;
+    color: midnightblue;
+    background: lavender;
+    border-radius: 10px;
+}
+
+.tier.by-person .maker {
+    color: saddlebrown;
+    background: papayawhip;
+}
+
+.tier.outside .maker {
+    color: black;
+    background: gainsboro;
+}
+
+.tier img {
+    flex: none;
+    display: block;
+    width: 174px;
+    height: 116px;
+    border: 1px solid silver;
+    border-radius: 4px;
+}
+
+.arrow {
+    height: 13px;
+    line-height: 13px;
+    font-size: 11px;
+    color: slategray;
+}
+
+/* During the questions the size and the maker are hidden, because they would
+   give two of the answers away */
+.tiers.is-quiz .facts {
+    visibility: hidden;
+}
+
+.tier.is-opened {
+    background: lightsteelblue;
+}
+
+.tier.is-selected {
+    background: lightskyblue;
+    outline: 3px solid navy;
+}
+
+.tier.is-correct {
+    background: palegreen;
+    outline: 3px solid forestgreen;
+}
+
+.tier.is-wrong {
+    background: lightsalmon;
+    outline: 3px solid navy;
+}
+
+.tier:disabled {
+    color: black;
+    cursor: default;
+}
+
+.detail a {
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+    .tier .facts {
+        font-size: 13px;
+    }
+
+    .tier .maker {
+        font-size: 12px;
+    }
+
+    .tier img {
+        width: 162px;
+        height: 108px;
+    }
+}
+
+/* On a phone the tiers are all full width, and the picture is smaller */
+@media (max-width: 520px) {
+    .tier[data-id] {
+        width: 100%;
+    }
+
+    .tier img {
+        width: 96px;
+        height: 64px;
+    }
+}

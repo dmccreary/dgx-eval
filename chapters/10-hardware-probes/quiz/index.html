@@ -1,0 +1,2556 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/dgx-eval/chapters/10-hardware-probes/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Quiz - DGX Evaluation for Textbook Generation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quiz-python-hardware-probes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DGX Evaluation for Textbook Generation" class="md-header__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DGX Evaluation for Textbook Generation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DGX Evaluation for Textbook Generation" class="md-nav__button md-logo" aria-label="DGX Evaluation for Textbook Generation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DGX Evaluation for Textbook Generation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/dgx-eval" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Textbook Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Textbook Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../01-intro-intelligent-textbooks/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    1. Prerequisites and the Intelligent Textbook
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../02-learning-graphs-microsims-rules/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    2. Learning Graphs, MicroSims, and Content Generation Rules
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../03-small-language-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    3. Small Language Models
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../04-local-versus-cloud/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    4. Local SLMs Versus Cloud LLM Services
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../05-dgx-hardware-architecture/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    5. NVIDIA DGX Hardware Architecture
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../06-cost-price-quality/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    6. Cost, Price, and Quality
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../07-remote-access-ssh-mesh-vpn/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    7. Remote Access, SSH, and Mesh VPN Concepts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../08-conda-environments/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    8. Reproducible Python Environments with Conda
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../09-tailscale-and-inventory/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    9. Installing Tailscale and Taking a Read-Only Inventory
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    10. Python Hardware Probes
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            10. Python Hardware Probes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-a-hardware-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is a hardware probe?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-does-the-absence-of-the-nvidia-smi-command-on-a-machine-usually-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What does the absence of the nvidia-smi command on a machine usually mean?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-why-is-memavailable-the-number-to-watch-in-the-ram-probe-and-not-memtotal" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Why is MemAvailable the number to watch in the RAM probe, and not MemTotal?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-why-should-a-script-avoid-parsing-the-table-that-nvidia-smi-prints-when-run-with-no-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Why should a script avoid parsing the table that nvidia-smi prints when run with no arguments?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-why-does-the-probe-suite-write-a-machine-readable-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Why does the probe suite write a machine-readable report?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-a-probe-report-shows-memory_total_mib-null-for-the-only-gpu-and-unified_memory-true-which-figure-should-you-use-to-judge-whether-a-model-fits" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. A probe report shows memory_total_mib: null for the only GPU and unified_memory: true. Which figure should you use to judge whether a model fits?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-you-time-a-read-of-a-model-file-that-you-loaded-five-minutes-ago-and-the-measured-speed-is-far-higher-than-expected-what-should-you-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. You time a read of a model file that you loaded five minutes ago, and the measured speed is far higher than expected. What should you do?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-you-are-about-to-start-a-run-that-will-last-several-hours-on-a-unit-that-has-stopped-responding-before-what-should-you-start-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. You are about to start a run that will last several hours on a unit that has stopped responding before. What should you start first?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-a-probe-returns-0-whenever-it-cannot-read-a-value-and-a-report-from-a-healthy-machine-shows-available_gib-0-what-is-wrong-with-this-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. A probe returns 0 whenever it cannot read a value, and a report from a healthy machine shows available_gib: 0. What is wrong with this design?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-the-suite-runs-on-a-machine-with-no-gpu-where-nvidia-smi-is-missing-yet-the-report-still-contains-cpu-ram-and-storage-results-which-design-choices-explain-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. The suite runs on a machine with no GPU, where nvidia-smi is missing, yet the report still contains CPU, RAM, and storage results. Which design choices explain this?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annotated References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../11-model-sizing-and-fit/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Model Sizing and Fit
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../12-selecting-downloading-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Selecting and Downloading an Open-Weight Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../13-inference-servers/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Inference Servers and Local API Endpoints
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../14-candidate-models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Open-Weight Model Families and Candidate Models
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../15-optimizing-performance/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    15. Optimizing Small Language Model Performance
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../16-agent-loop-and-tools/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. The Agent Loop, Tools, and Context
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../17-agent-skills-and-harness/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. Agent Skills and Connecting a Harness to a Local Model
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../18-containing-the-harness/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    18. Containing the Harness: Containers and Network Boundaries
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../19-fair-evaluation-design/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    19. Designing a Fair Evaluation
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../20-scoring-and-bias/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    20. Scoring, Bias, and Structural Checks
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../21-running-the-benchmark/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    21. Running the Textbook Benchmark
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../22-diagnosis-and-reporting/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    22. Diagnosing Failures, Reporting, and Cost per Textbook
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../23-sanitizing-and-publishing/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    23. Sanitizing Evaluation Artifacts and Publishing the Report
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../appendices/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../models/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Model Results
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-a-hardware-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is a hardware probe?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-does-the-absence-of-the-nvidia-smi-command-on-a-machine-usually-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What does the absence of the nvidia-smi command on a machine usually mean?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-why-is-memavailable-the-number-to-watch-in-the-ram-probe-and-not-memtotal" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Why is MemAvailable the number to watch in the RAM probe, and not MemTotal?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-why-should-a-script-avoid-parsing-the-table-that-nvidia-smi-prints-when-run-with-no-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Why should a script avoid parsing the table that nvidia-smi prints when run with no arguments?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-why-does-the-probe-suite-write-a-machine-readable-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Why does the probe suite write a machine-readable report?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-a-probe-report-shows-memory_total_mib-null-for-the-only-gpu-and-unified_memory-true-which-figure-should-you-use-to-judge-whether-a-model-fits" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. A probe report shows memory_total_mib: null for the only GPU and unified_memory: true. Which figure should you use to judge whether a model fits?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-you-time-a-read-of-a-model-file-that-you-loaded-five-minutes-ago-and-the-measured-speed-is-far-higher-than-expected-what-should-you-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. You time a read of a model file that you loaded five minutes ago, and the measured speed is far higher than expected. What should you do?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-you-are-about-to-start-a-run-that-will-last-several-hours-on-a-unit-that-has-stopped-responding-before-what-should-you-start-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. You are about to start a run that will last several hours on a unit that has stopped responding before. What should you start first?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-a-probe-returns-0-whenever-it-cannot-read-a-value-and-a-report-from-a-healthy-machine-shows-available_gib-0-what-is-wrong-with-this-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. A probe returns 0 whenever it cannot read a value, and a report from a healthy machine shows available_gib: 0. What is wrong with this design?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-the-suite-runs-on-a-machine-with-no-gpu-where-nvidia-smi-is-missing-yet-the-report-still-contains-cpu-ram-and-storage-results-which-design-choices-explain-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. The suite runs on a machine with no GPU, where nvidia-smi is missing, yet the report still contains CPU, RAM, and storage results. Which design choices explain this?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/dgx-eval/blob/main/docs/chapters/10-hardware-probes/quiz.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="quiz-python-hardware-probes">Quiz: Python Hardware Probes<a class="headerlink" href="#quiz-python-hardware-probes" title="Permanent link">&para;</a></h1>
+<p>Test your understanding of read-only probes, the <code>nvidia-smi</code> query, machine-readable reports, and vitals logging with these review questions.</p>
+<hr />
+<h4 id="1-what-is-a-hardware-probe">1. What is a hardware probe?<a class="headerlink" href="#1-what-is-a-hardware-probe" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>A specification sheet that the hardware's vendor has published</li>
+<li>A small, read-only measurement of one fact about a machine</li>
+<li>A stress test that loads the GPU until it throttles</li>
+<li>A background service that restarts a frozen machine</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. A hardware probe is a small, read-only measurement of one fact about a machine: how many cores it has, how much memory is free, which GPU is installed. The word "measurement" matters. A probe reads the value from the machine, so it reports what is true now, whatever the specification sheet or the last person's notes say. It has three parts: the question, the source it reads, and the form of the answer.</p>
+<p><strong>Concept Tested:</strong> Hardware Probe</p>
+<p><strong>See:</strong> <a href="../#hardware-probe">Hardware Probe</a></p>
+</details>
+<hr />
+<h4 id="2-what-does-the-absence-of-the-nvidia-smi-command-on-a-machine-usually-mean">2. What does the absence of the <code>nvidia-smi</code> command on a machine usually mean?<a class="headerlink" href="#2-what-does-the-absence-of-the-nvidia-smi-command-on-a-machine-usually-mean" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The GPU has overheated and shut itself down</li>
+<li>The machine uses unified memory for its GPU</li>
+<li>The NVIDIA driver is not installed on the machine</li>
+<li>The account lacks administrator privileges</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. <code>nvidia-smi</code>, the NVIDIA System Management Interface, is the command-line tool that reports a GPU's state. It is installed with the driver, so its presence on a machine is itself a probe: no <code>nvidia-smi</code> usually means no driver. Unified memory shows up differently, as GPU memory fields that come back as <code>Not Supported</code> or <code>[N/A]</code> from a tool that is present and working.</p>
+<p><strong>Concept Tested:</strong> nvidia-smi</p>
+<p><strong>See:</strong> <a href="../#nvidia-smi-and-its-output">nvidia-smi and Its Output</a></p>
+</details>
+<hr />
+<h4 id="3-why-is-memavailable-the-number-to-watch-in-the-ram-probe-and-not-memtotal">3. Why is <code>MemAvailable</code> the number to watch in the RAM probe, and not <code>MemTotal</code>?<a class="headerlink" href="#3-why-is-memavailable-the-number-to-watch-in-the-ram-probe-and-not-memtotal" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>It is what a new program could use without pushing others out</li>
+<li>It is the only figure the kernel reports in gibibytes</li>
+<li>It includes the dedicated memory of every GPU on every kind of system</li>
+<li>It stays constant while a model server is running</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. The RAM probe reads <code>/proc/meminfo</code>. <code>MemTotal</code> is all the memory the system can use, and <code>MemAvailable</code> is what a new program could use without pushing others out. Available is the number to watch, because a large total with little available is a machine about to struggle. On a unified-memory machine it is also the figure that model fit is judged against, since the GPU has no memory of its own.</p>
+<p><strong>Concept Tested:</strong> RAM Probe</p>
+<p><strong>See:</strong> <a href="../#ram-probe">RAM Probe</a></p>
+</details>
+<hr />
+<h4 id="4-why-should-a-script-avoid-parsing-the-table-that-nvidia-smi-prints-when-run-with-no-arguments">4. Why should a script avoid parsing the table that <code>nvidia-smi</code> prints when run with no arguments?<a class="headerlink" href="#4-why-should-a-script-avoid-parsing-the-table-that-nvidia-smi-prints-when-run-with-no-arguments" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The table leaves out the GPU's temperature and power</li>
+<li>The table is printed only when the driver is missing</li>
+<li>The table can be read only with administrator rights</li>
+<li>The table's layout changes between versions</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. Run with no arguments, <code>nvidia-smi</code> prints a table meant for people. A script should not parse it, because its layout changes between versions. The GPU probe instead asks for exactly the fields it wants with <code>--query-gpu</code> and <code>--format=csv,noheader,nounits</code>, which returns one comma-separated line per GPU. The table does show temperature and power, and it needs no administrator rights, so neither of those is the reason.</p>
+<p><strong>Concept Tested:</strong> nvidia-smi Output</p>
+<p><strong>See:</strong> <a href="../#nvidia-smi-and-its-output">nvidia-smi and Its Output</a></p>
+</details>
+<hr />
+<h4 id="5-why-does-the-probe-suite-write-a-machine-readable-report">5. Why does the probe suite write a machine-readable report?<a class="headerlink" href="#5-why-does-the-probe-suite-write-a-machine-readable-report" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Later programs consume it, such as a model-fit calculator</li>
+<li>It is shorter than the table that <code>nvidia-smi</code> prints</li>
+<li>It can hold hostnames and serial numbers in a safely encoded form</li>
+<li>It lets a probe change the settings of the machine that it reads</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. A machine-readable report is output a program can parse without guessing, in contrast to text written for a person. The reason to produce one is that later steps consume it: a model-fit calculator reads <code>available_gib</code>, and a benchmark runner records the whole report beside each result so a number is never separated from the machine that produced it. The report deliberately contains no hostname, address, or account name.</p>
+<p><strong>Concept Tested:</strong> Machine-Readable Report</p>
+<p><strong>See:</strong> <a href="../#machine-readable-report-and-json-report">Machine-Readable Report and JSON Report</a></p>
+</details>
+<hr />
+<h4 id="6-a-probe-report-shows-memory_total_mib-null-for-the-only-gpu-and-unified_memory-true-which-figure-should-you-use-to-judge-whether-a-model-fits">6. A probe report shows <code>memory_total_mib: null</code> for the only GPU and <code>unified_memory: true</code>. Which figure should you use to judge whether a model fits?<a class="headerlink" href="#6-a-probe-report-shows-memory_total_mib-null-for-the-only-gpu-and-unified_memory-true-which-figure-should-you-use-to-judge-whether-a-model-fits" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The GPU's <code>power_w</code> reading from the same report</li>
+<li>The storage probe's <code>free_gb</code> for the root filesystem</li>
+<li>The RAM probe's <code>total_gib</code>, with nothing subtracted</li>
+<li>The RAM probe's <code>available_gib</code>, less some headroom</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. The unified memory probe is the check that the GPU's own memory fields are missing. When every GPU's total comes back as <code>None</code>, the probe sets <code>unified_memory</code> to true, and the figure to use is the system RAM probe's <code>available_gib</code>, minus the headroom Chapter 11 introduces. The <code>null</code> values are not an error; they are the unified-memory signature. Using <code>total_gib</code> would ignore what the operating system and other programs already hold.</p>
+<p><strong>Concept Tested:</strong> Unified Memory Probe</p>
+<p><strong>See:</strong> <a href="../#gpu-memory-total-and-free-and-the-unified-memory-probe">GPU Memory Total and Free, and the Unified Memory Probe</a></p>
+</details>
+<hr />
+<h4 id="7-you-time-a-read-of-a-model-file-that-you-loaded-five-minutes-ago-and-the-measured-speed-is-far-higher-than-expected-what-should-you-do">7. You time a read of a model file that you loaded five minutes ago, and the measured speed is far higher than expected. What should you do?<a class="headerlink" href="#7-you-time-a-read-of-a-model-file-that-you-loaded-five-minutes-ago-and-the-measured-speed-is-far-higher-than-expected-what-should-you-do" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Record the figure as the true read speed of the drive</li>
+<li>Rerun on a file that has not been read since boot</li>
+<li>Divide the result by the number of CPU cores</li>
+<li>Rerun the same file with the GPU sitting idle</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. A disk read benchmark reads an existing large file and divides the bytes by the seconds. The one trap is the operating system's page cache: a file read recently comes from memory, not the disk, so the number is far too high. The fix is to read a file that has not been touched since boot, such as a model file you have not loaded, and to say so in the report.</p>
+<p><strong>Concept Tested:</strong> Disk Read Benchmark</p>
+<p><strong>See:</strong> <a href="../#disk-read-benchmark">Disk Read Benchmark</a></p>
+</details>
+<hr />
+<h4 id="8-you-are-about-to-start-a-run-that-will-last-several-hours-on-a-unit-that-has-stopped-responding-before-what-should-you-start-first">8. You are about to start a run that will last several hours on a unit that has stopped responding before. What should you start first?<a class="headerlink" href="#8-you-are-about-to-start-a-run-that-will-last-several-hours-on-a-unit-that-has-stopped-responding-before-what-should-you-start-first" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>A disk read benchmark on the largest model file</li>
+<li>A vitals log that writes and syncs a line every 30 seconds</li>
+<li>A probe verification test against a fake <code>meminfo</code> file</li>
+<li>A full <code>nvidia-smi</code> table, saved once before the run</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. Vitals logging records a few measurements at a fixed interval while a long job runs, so a machine that fails leaves its last readings behind. The loop writes one line every 30 seconds with available memory, GPU temperature, and power draw, and <code>flush</code> and <code>fsync</code> put each line on the disk at once, because a machine that freezes does not get to finish its buffers. A single snapshot taken before the run records nothing about the failure.</p>
+<p><strong>Concept Tested:</strong> Vitals Logging</p>
+<p><strong>See:</strong> <a href="../#vitals-logging">Vitals Logging</a></p>
+</details>
+<hr />
+<h4 id="9-a-probe-returns-0-whenever-it-cannot-read-a-value-and-a-report-from-a-healthy-machine-shows-available_gib-0-what-is-wrong-with-this-design">9. A probe returns 0 whenever it cannot read a value, and a report from a healthy machine shows <code>available_gib: 0</code>. What is wrong with this design?<a class="headerlink" href="#9-a-probe-returns-0-whenever-it-cannot-read-a-value-and-a-report-from-a-healthy-machine-shows-available_gib-0-what-is-wrong-with-this-design" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Zero is not valid JSON, so the report cannot be parsed</li>
+<li>The probe should keep retrying until the value becomes nonzero</li>
+<li>A failed reading cannot be told apart from a measured zero</li>
+<li>The probe should have read the value with <code>psutil</code></li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. A probe script should report an unknown value as <code>null</code> and never guess. If a probe returns zero when it cannot read a value, a failed measurement looks like a machine with no memory, and the report appears complete while hiding the failure. Returning <code>null</code> lets a reader tell a missing measurement from a measured zero. Retrying without limit is no fix, because a probe must also have a bounded run time.</p>
+<p><strong>Concept Tested:</strong> Probe Script</p>
+<p><strong>See:</strong> <a href="../#probe-script">Probe Script</a></p>
+</details>
+<hr />
+<h4 id="10-the-suite-runs-on-a-machine-with-no-gpu-where-nvidia-smi-is-missing-yet-the-report-still-contains-cpu-ram-and-storage-results-which-design-choices-explain-this">10. The suite runs on a machine with no GPU, where <code>nvidia-smi</code> is missing, yet the report still contains CPU, RAM, and storage results. Which design choices explain this?<a class="headerlink" href="#10-the-suite-runs-on-a-machine-with-no-gpu-where-nvidia-smi-is-missing-yet-the-report-still-contains-cpu-ram-and-storage-results-which-design-choices-explain-this" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The suite retries <code>nvidia-smi</code> until the GPU driver finally responds</li>
+<li>The suite copies GPU values from the last saved report</li>
+<li>The suite stops at the first error and prints whatever it has so far</li>
+<li>Separate probes and a helper that returns <code>None</code> on failure</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. A probe suite runs a set of probes together to produce one report. Every probe goes through a helper that returns <code>None</code> when a command is missing, fails, or times out, so a missing <code>nvidia-smi</code> gives an empty GPU answer instead of a crash. Keeping the probes separate and the suite thin means a single failing probe cannot take the others with it, and each probe can be tested alone.</p>
+<p><strong>Concept Tested:</strong> Probe Suite</p>
+<p><strong>See:</strong> <a href="../#probe-suite">Probe Suite</a></p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Content">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Content
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../references/" class="md-footer__link md-footer__link--next" aria-label="Next: Annotated References">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Annotated References
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../js/extra.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

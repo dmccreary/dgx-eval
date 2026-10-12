@@ -1,21 +1,67 @@
 {
   "title": "DAG Cycle Spotter",
-  "description": "The learner will distinguish prerequisite graphs that contain a cycle from graphs that do not, in 6 small graphs, with at least 5 of 6 classified correctly.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Inspect six small prerequisite graphs, decide which contain a cycle, and mark the concepts that lie on it.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "dag-cycle-spotter",
-  "library": "p5.js",
-  "bloomLevel": "Analyze",
-  "bloomVerb": "distinguish",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Learning Graphs, MicroSims, and Content Generation Rules",
+    "learningObjectives": [
+      "The learner will distinguish prerequisite graphs that contain a cycle from graphs that do not, in 6 small graphs, with at least 5 of 6 classified correctly."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "distinguish",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Concept dependency",
+      "Edge direction",
+      "Directed acyclic graph",
+      "Cycle",
+      "Topological order"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 600
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Graph 4 has a concept that is not on the cycle. Explain why removing that concept would not make the graph valid."
+    ],
+    "commonMisconceptions": [
+      "Two concepts that share a prerequisite form a cycle.",
+      "A graph with two disconnected parts is invalid.",
+      "A concept that depends on itself is not a cycle.",
+      "A longer chain of dependencies is more likely to contain a cycle."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct."
+    ]
+  },
+  "canvasHeight": 600,
+  "completion_status": "built",
   "chapter_number": 2,
   "chapter_title": "Learning Graphs, MicroSims, and Content Generation Rules",
   "chapter_dir": "02-learning-graphs-microsims-rules",

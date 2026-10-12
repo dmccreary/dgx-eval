@@ -1,5 +1,5 @@
 // Model Shortlist Filter MicroSim (sim id: model-shortlist-filter)
-// CANVAS_HEIGHT: 602
+// CANVAS_HEIGHT: 634
 // The learner applies four selection criteria, in a fixed order, to eight
 // candidate models for a 128 GB unified-memory machine. Each card is either
 // shortlisted or excluded, and an exclusion names the first criterion that
@@ -8,7 +8,7 @@
 // global variables for width and height
 let canvasWidth = 800;   // reset from the container on init and on resize
 // A fixed top drawing region above the interactive controls
-let drawHeight = 424;
+let drawHeight = 456;
 // The control region holds the decision buttons, the list of four criteria,
 // then Confirm and Next
 let controlHeight = 178;

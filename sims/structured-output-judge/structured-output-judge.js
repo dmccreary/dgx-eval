@@ -1,5 +1,5 @@
 // Structured Output Judge MicroSim (sim id: structured-output-judge)
-// CANVAS_HEIGHT: 592
+// CANVAS_HEIGHT: 624
 // The learner sees a required JSON format and six model replies. Each reply is
 // judged valid or invalid, and an invalid reply needs the defect named. Both
 // choices are confirmed before the answer is revealed.
@@ -7,7 +7,7 @@
 // global variables for width and height
 let canvasWidth = 800;   // reset from the container on init and on resize
 // A fixed top drawing region above the interactive controls
-let drawHeight = 414;
+let drawHeight = 446;
 // The control region holds the judgment buttons, the list of four defects,
 // then Confirm and Next
 let controlHeight = 178;

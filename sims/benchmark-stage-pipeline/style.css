@@ -1,0 +1,260 @@
+/* Shared layout for the MicroSims that are built from HTML elements.
+   The page is a title, a stage (diagram or chart), and a panel that holds the
+   question, the choices, and the feedback. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid silver;
+    background: white;
+}
+
+h1 {
+    margin: 0;
+    padding: 8px 15px 6px;
+    font-size: 22px;
+    text-align: center;
+    background: aliceblue;
+}
+
+.stage {
+    position: relative;
+    flex: none;
+    padding: 4px 15px 8px;
+    background: aliceblue;
+    border-bottom: 1px solid silver;
+}
+
+.tag {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    font-size: 14px;
+    font-style: italic;
+    color: dimgray;
+}
+
+.panel {
+    flex: 1;
+    padding: 8px 15px 10px;
+    overflow: hidden;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: dimgray;
+}
+
+.prompt {
+    margin: 6px 0 8px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.detail {
+    margin: 0 0 8px;
+    padding: 8px 12px;
+    border: 1px solid silver;
+    border-radius: 8px;
+    background: white;
+    line-height: 1.35;
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.choice {
+    padding: 5px 12px;
+    font-size: 15px;
+    color: black;
+    background: white;
+    border: 1px solid gray;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.choice.is-opened {
+    background: lightsteelblue;
+}
+
+.choice.is-selected {
+    background: lightskyblue;
+    outline: 2px solid navy;
+}
+
+.choice.is-correct {
+    background: palegreen;
+}
+
+.choice.is-wrong {
+    background: lightsalmon;
+    outline: 2px solid navy;
+}
+
+.feedback {
+    margin: 0 0 8px;
+    padding: 8px 12px;
+    border: 2px solid darkorange;
+    border-left-width: 8px;
+    border-radius: 8px;
+    line-height: 1.35;
+}
+
+.feedback.is-correct {
+    border-color: forestgreen;
+}
+
+.feedback strong:first-child {
+    display: block;
+    color: saddlebrown;
+}
+
+.feedback.is-correct strong:first-child {
+    color: darkgreen;
+}
+
+.results p {
+    margin: 0 0 8px;
+}
+
+.results table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1.5px solid darkorange;
+}
+
+.results th {
+    text-align: left;
+    color: saddlebrown;
+}
+
+.results th,
+.results td {
+    padding: 4px 10px;
+    vertical-align: top;
+}
+
+.results td:first-child {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.actions button {
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.results table {
+    margin-bottom: 8px;
+}
+
+/* On a narrow screen the text is smaller, and the panel scrolls rather than
+   cutting off whatever does not fit */
+@media (max-width: 700px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .prompt {
+        font-size: 15px;
+    }
+
+    .choice {
+        padding: 3px 8px;
+        font-size: 13px;
+    }
+
+    .panel {
+        overflow-y: auto;
+    }
+}
+
+/* The Mermaid flowchart */
+main {
+    height: 520px;
+}
+
+.stage {
+    height: 176px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#diagram {
+    width: 100%;
+    text-align: center;
+}
+
+#diagram svg {
+    max-height: 160px;
+}
+
+#diagram .node {
+    cursor: pointer;
+}
+
+/* !important is needed because Mermaid sets the node colors inline */
+#diagram .node rect,
+#diagram .node path,
+#diagram .node polygon {
+    fill: white !important;
+    stroke: steelblue !important;
+    stroke-width: 1.5px !important;
+}
+
+#diagram .node.is-opened rect,
+#diagram .node.is-opened path,
+#diagram .node.is-opened polygon {
+    fill: lightsteelblue !important;
+}
+
+#diagram .node.is-selected rect,
+#diagram .node.is-selected path,
+#diagram .node.is-selected polygon {
+    fill: lightskyblue !important;
+    stroke: navy !important;
+    stroke-width: 3.5px !important;
+}
+
+#diagram .node.is-correct rect,
+#diagram .node.is-correct path,
+#diagram .node.is-correct polygon {
+    fill: palegreen !important;
+    stroke: forestgreen !important;
+    stroke-width: 3.5px !important;
+}
+
+#diagram .node.is-wrong rect,
+#diagram .node.is-wrong path,
+#diagram .node.is-wrong polygon {
+    fill: lightsalmon !important;
+    stroke: navy !important;
+    stroke-width: 3.5px !important;
+}

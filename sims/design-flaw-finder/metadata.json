@@ -1,21 +1,70 @@
 {
   "title": "Evaluation Design Flaw Finder",
-  "description": "The learner will critique a described evaluation by judging each of 8 statements about it as a flaw or not a flaw, with at least 7 of 8 correct.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Read a described comparison of a local and a cloud model, then judge eight statements about it as a flaw or not a flaw.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "design-flaw-finder",
-  "library": "p5.js",
-  "bloomLevel": "Evaluate",
-  "bloomVerb": "critique",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Designing a Fair Evaluation",
+    "learningObjectives": [
+      "The learner will critique a described evaluation by judging each of 8 statements about it as a flaw or not a flaw, with at least 7 of 8 correct."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "critique",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Evaluation question",
+      "Controlled variables",
+      "Fixed inputs",
+      "Repeated runs",
+      "Sample size",
+      "Fair comparison",
+      "Bias",
+      "Limitations statement"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 600
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Rewrite the described evaluation in three sentences so that none of the five flaws remains."
+    ],
+    "commonMisconceptions": [
+      "A comparison of two systems needs no controls if one is clearly stronger.",
+      "A single run is enough to rank.",
+      "A result scored by the system that produced it is neutral.",
+      "Having a method is the same as having a fair method."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 7 of 8 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 600,
+  "completion_status": "built",
   "chapter_number": 19,
   "chapter_title": "Designing a Fair Evaluation",
   "chapter_dir": "19-fair-evaluation-design",

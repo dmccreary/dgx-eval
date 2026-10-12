@@ -316,7 +316,7 @@ function placeControls() {
   placeAnswerControls();
   confirmButton.position(margin, y);
   nextButton.position(margin + 92, y);
-  restartButton.position(margin, y);
+  restartButton.position(margin, drawHeight + 12);
 }
 
 // The listing with the current field outlined, and the field repeated in words

@@ -1,21 +1,69 @@
 {
   "title": "Environment Reproducibility Auditor",
-  "description": "The learner will judge whether each of 6 environment specifications rebuilds the same software on a second machine, and name the reason, with at least 5 of 6 correct.",
-  "creator": "DGX Evaluation for Textbook Generation",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Judge whether each of six environment specifications rebuilds the same software on a second machine, and name the reason when it does not.",
   "date": "2026-10-11",
-  "subject": [
-    "DGX Evaluation for Textbook Generation"
-  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "environment-reproducibility-auditor",
-  "library": "p5.js",
-  "bloomLevel": "Evaluate",
-  "bloomVerb": "judge",
-  "completion_status": "scaffold",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Reproducible Python Environments with Conda",
+    "learningObjectives": [
+      "The learner will judge whether each of 6 environment specifications rebuilds the same software on a second machine, and name the reason, with at least 5 of 6 correct."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "judge",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Environment.yml",
+      "Python version pinning",
+      "Package channel",
+      "Architecture-specific wheels",
+      "Conda export forms",
+      "CUDA-enabled PyTorch",
+      "Environment rebuild"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 542
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Specification 4 installs a package that imports without error. Describe the one-line check that would have exposed the problem."
+    ],
+    "commonMisconceptions": [
+      "A file that lists packages is automatically reproducible.",
+      "A full export from one machine rebuilds on any machine.",
+      "A package that imports without error has the capabilities you need.",
+      "An unnamed channel is harmless."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 542,
+  "completion_status": "built",
   "chapter_number": 8,
   "chapter_title": "Reproducible Python Environments with Conda",
   "chapter_dir": "08-conda-environments",

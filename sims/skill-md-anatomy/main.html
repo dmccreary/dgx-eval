@@ -3,136 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>SKILL.md Anatomy</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
-    </style>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>SKILL.md Anatomy using HTML</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
+    <main>
         <h1>SKILL.md Anatomy</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
+        <div class="stage">
+            <span class="tag">synthetic example</span>
+            <div class="folder" aria-label="An annotated skill folder named chapter-outliner. It holds a SKILL.md file with a name field, a description field, a metadata field, and an instruction body, beside a references folder and a scripts folder.">
+                <div class="file">
+                    <div class="path">chapter-outliner/SKILL.md</div>
+                    <div class="rule">---</div>
+                    <button class="choice region" data-id="name">name: chapter-outliner</button>
+                    <button class="choice region" data-id="description">description: Outlines one chapter. Use when a chapter needs a section plan.</button>
+                    <button class="choice region" data-id="metadata">metadata:
+  version: "1.2"</button>
+                    <div class="rule">---</div>
+                    <button class="choice region" data-id="body"># Chapter Outliner
+1. Read the chapter's concept list.
+2. Read references/outline-format.md.
+3. Write the outline.
+4. Run scripts/check-outline.py on it.</button>
+                </div>
+                <div class="folders">
+                    <div class="path">chapter-outliner/</div>
+                    <button class="choice region" data-id="references">references/
+  outline-format.md
+  section-patterns.md</button>
+                    <button class="choice region" data-id="scripts">scripts/
+  check-outline.py</button>
+                </div>
+            </div>
+            <p id="region-label" class="hint">Hover over a region to read its label</p>
         </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> skill-md-anatomy</p>
-            <p><strong>Library:</strong> html</p>
-            <p><strong>Bloom Level:</strong> Remember</p>
-            <p><strong>Learning Objective:</strong> The learner will identify the part of a skill that answers each of 6 questions about how a harness uses it, with at least 5 of 6 correct.</p>
+        <div class="panel">
+            <div class="status-row">
+                <span id="status"></span>
+                <span id="score"></span>
+            </div>
+            <p id="prompt" class="prompt"></p>
+            <p id="detail" class="detail" hidden></p>
+            <div id="choices" class="choices"></div>
+            <p id="feedback" class="feedback" hidden></p>
+            <div id="results" class="results" hidden></div>
+            <div class="actions">
+                <button id="confirm">Confirm</button>
+                <button id="next">Next question</button>
+                <button id="restart">Start over</button>
+            </div>
         </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: infographic
-    **sim-id:** skill-md-anatomy<br/>
-    **Library:** html<br/>
-    **Status:** Specified<br/>
-    **Template:** https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-file-anatomy-diagram<br/>
-    **Bloom Level:** Remember<br/>
-    **Bloom Verb:** identify<br/>
-    **Learning Objective:** The learner will identify the part of a skill that answers each of 6 questions about how a harness uses it, with at least 5 of 6 correct.
-    
-    **Prerequisites:** agent skill, SKILL.md format, skill loading, skill installation (all defined in the sections above this block).
-    
-    **Evidence of Mastery:** The sim shows an annotated skill folder with six labeled regions. For each of 6 questions the learner selects one region before the sim reveals the answer. A selection is correct when it equals the Correct region column. Mastery is 5 of 6 correct on the first attempt. Hovering over a region to read its label is exploration, not evidence.
-    
-    **Misconceptions:** (1) The harness reads every file in a skill at startup. (2) The body of `SKILL.md` is how a skill is chosen. (3) Reference documents are loaded with the instructions. (4) A skill's scripts run by themselves.
-    
-    **Instructional Rationale:** Identifying a part at the Remember level needs a labeled structure and questions that name a function, so that the learner links each function to its place. The questions are phrased by what the harness does, which is the behavior the chapter taught.
-    
-    **Content:**
-    
-    The six regions of the annotated skill folder: "name field", "description field", "metadata field", "instruction body", "references folder", and "scripts folder".
-    
-    | # | Question shown to the learner | Correct region | Why (shown as feedback) |
-    |---|---|---|---|
-    | 1 | Which part is the skill's identifier, matching the directory name? | name field | The name identifies the skill to the harness. |
-    | 2 | Which part does the harness read at startup to decide whether the skill applies? | description field | Only the name and description of each skill are loaded at startup. |
-    | 3 | Which part holds the step-by-step procedure, loaded when the skill is invoked? | instruction body | The body is loaded on selection, not at startup. |
-    | 4 | Which part holds long documents that are read only when a step names them? | references folder | References are loaded last, one at a time. |
-    | 5 | Which part holds helper programs that a step tells the model to run? | scripts folder | Scripts are run by a step, and they do not run on their own. |
-    | 6 | Which part records the skill's version? | metadata field | The version is carried in the metadata block of the header. |
-    
-    **Provenance:** The annotated folder and the questions are synthetic, written for this exercise, and the sim labels them "synthetic example". The meanings of the parts come from the sections of this chapter above.
-    
-    **Rules:** Questions are shown in the fixed order 1 to 6. Each allows one final choice among the six regions, and exactly one region is correct for each question. A region may be the answer to only one question.
-    
-    **Learner Activity:**
-    
-    1. The learner hovers over the regions of the annotated folder to read their labels.
-    2. The learner reads question 1 and selects a region, then confirms.
-    3. The sim shows the correct region and the Why text, and marks the question correct or incorrect.
-    4. The learner repeats for questions 2 to 6. After question 6 the sim shows the score and the misconception behind each miss.
-    
-    **Feedback:** Six questions, fixed order, one confirmed choice each, no second attempt. Correct: "Correct" followed by the Why text. Incorrect: "Not quite" followed by the correct region and the Why text. The final score reads "n of 6 correct".
-    
-    **Starting State:** The annotated folder is shown with no region selected, and the instruction on screen is "Hover over a region to read its label".
-    
-    **Chapter Anchors:** The chapter states that a harness reads only each skill's name and description at startup, loads the body when the skill is selected, and loads references only when a step names them, and that scripts run only when a step runs them.
-    -->
+    </main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
+    <script src="skill-md-anatomy.js"></script>
 </body>
 </html>

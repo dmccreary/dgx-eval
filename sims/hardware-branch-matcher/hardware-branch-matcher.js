@@ -308,7 +308,7 @@ function placeControls() {
   placeAnswerControls();
   confirmButton.position(margin, y);
   nextButton.position(margin + 92, y);
-  restartButton.position(margin, y);
+  restartButton.position(margin, drawHeight + 12);
 }
 
 // The probe finding to act on
