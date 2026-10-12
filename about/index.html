@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.">
+        <meta name="description" content="Why the cost of generating an intelligent textbook decides whether every child can have a Primer of their own, and how this book measures that cost on one NVIDIA DGX with no cloud.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>About - DGX Evaluation for Textbook Generation</title>
+        <title>About This Book - DGX Evaluation for Textbook Generation</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              About
+              About This Book
             
           </span>
         </div>
@@ -304,6 +304,60 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-primer-for-every-child" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Primer for Every Child
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-whole-game-is-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Whole Game Is Cost
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-event-stream-is-the-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Event Stream Is the Point
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-book-stops-at-the-fourth-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Book Stops at the Fourth Tier
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You Will Be Able to Do
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-honest-scoreboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      An Honest Scoreboard
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#audience" class="md-nav__link">
@@ -928,6 +982,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#a-primer-for-every-child" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Primer for Every Child
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-whole-game-is-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Whole Game Is Cost
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-event-stream-is-the-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Event Stream Is the Point
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-book-stops-at-the-fourth-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Book Stops at the Fourth Tier
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You Will Be Able to Do
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-honest-scoreboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      An Honest Scoreboard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#audience" class="md-nav__link">
     <span class="md-ellipsis">
       Audience
@@ -978,10 +1086,188 @@
 
 
 <h1 id="about">About<a class="headerlink" href="#about" title="Permanent link">&para;</a></h1>
-<p>An evaluation of the NVIDIA DGX hardware to test the ability to generate interactive intelligent textbooks on a local GPU without ever going to the cloud.</p>
+<h2 id="a-primer-for-every-child">A Primer for Every Child<a class="headerlink" href="#a-primer-for-every-child" title="Permanent link">&para;</a></h2>
+<p>In Neal Stephenson's novel <em>The Diamond Age</em>, a girl named Nell is given a book
+unlike any other: <em>A Young Lady's Illustrated Primer</em>. It does not teach a
+fixed course. It pays attention to Nell, works out what she needs next, and
+tells her stories built from her own life, at the moment she is ready for
+them. It changes the course of her life.</p>
+<p>For three decades the Primer was a fantasy. Language models have made it an
+engineering problem. A model can now write a lesson, build an example around a
+child's own interests, and answer the follow-up question. The hard part has
+moved. It is no longer only whether a machine can write the page. It is what a
+whole book costs to produce, and who can afford to produce it.</p>
+<h2 id="the-whole-game-is-cost">The Whole Game Is Cost<a class="headerlink" href="#the-whole-game-is-cost" title="Permanent link">&para;</a></h2>
+<p>If every intelligent textbook needs a cloud subscription, a team, and weeks of
+editing, the children who most need a Primer are the last to get one. If a
+book can be generated by an open-weight model running on one machine you own,
+with no token sent to the cloud, the arithmetic changes. A Primer for every
+child on earth needs a book to cost close to the electricity it takes to write
+it.</p>
+<p>This book is about that arithmetic. It takes one NVIDIA DGX, a small language
+model, and the course description of a real course, Algebra I, and measures
+what it takes to turn the description into a textbook. Each strategy for
+lowering the cost is something you learn to do and to measure:</p>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Why it lowers the cost</th>
+<th>Where you learn it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Own the hardware instead of renting tokens</td>
+<td>The cost is fixed and spread over every book, not charged per token on each one</td>
+<td><a href="../chapters/04-local-versus-cloud/">Chapter 4</a>, <a href="../chapters/06-cost-price-quality/">Chapter 6</a></td>
+</tr>
+<tr>
+<td>Use a small open-weight model</td>
+<td>A model that fits in memory runs fast on a single machine</td>
+<td><a href="../chapters/03-small-language-models/">Chapter 3</a>, <a href="../chapters/14-candidate-models/">Chapter 14</a></td>
+</tr>
+<tr>
+<td>Size and tune before you generate</td>
+<td>A model that does not fit, or a context that is too long, wastes hours before it fails</td>
+<td><a href="../chapters/11-model-sizing-and-fit/">Chapter 11</a>, <a href="../chapters/15-optimizing-performance/">Chapter 15</a></td>
+</tr>
+<tr>
+<td>Build top down, with a test at every step</td>
+<td>A failure is caught where it happens and not three layers later</td>
+<td><a href="../chapters/01-intro-intelligent-textbooks/">Chapter 1</a>, <a href="../chapters/02-learning-graphs-microsims-rules/">Chapter 2</a></td>
+</tr>
+<tr>
+<td>Run unattended, in a container</td>
+<td>A harness that works with nobody watching turns machine time into books</td>
+<td><a href="../chapters/16-agent-loop-and-tools/">Chapter 16</a>, <a href="../chapters/18-containing-the-harness/">Chapter 18</a></td>
+</tr>
+<tr>
+<td>Report the cost per textbook</td>
+<td>You cannot lower a cost you cannot see</td>
+<td><a href="../chapters/21-running-the-benchmark/">Chapter 21</a>, <a href="../chapters/22-diagnosis-and-reporting/">Chapter 22</a></td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="../appendices/cost-analysis/">Cost Analysis</a> appendix turns the last row
+into a model you can adjust: hardware, setup time, electricity, and the hours
+one book takes.</p>
+<h2 id="the-event-stream-is-the-point">The Event Stream Is the Point<a class="headerlink" href="#the-event-stream-is-the-point" title="Permanent link">&para;</a></h2>
+<p>A textbook is not intelligent because it has animations. It is intelligent
+because what the reader does with it leaves a record. Each answer a student
+commits to, and each control they move, is an event. The stream of events is
+the raw material for predicting whether that student has mastered a concept. A
+Primer can adapt only to a child it can see, and the event stream is how it
+sees.</p>
+<p>That is why interactivity is a requirement in this book and not a garnish.
+Every MicroSim specification states an <strong>Evidence of Mastery</strong>, the pattern of
+events that counts as proof, such as 5 of 6 answers correct, each committed
+before the simulation reveals the right one.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Exploration Is Not Evidence</p>
+<p><img alt="Tera thinking" class="mascot-admonition-img" src="../img/mascot/thinking.png" />
+Each specification separates the two, with a line such as "Inspecting the
+graph before answering is exploration, not evidence." Dragging a control
+shows what a learner did, and an answer committed before the reveal shows
+what they know. Only the second belongs in the stream that predicts mastery.</p>
+</div>
+<p>On the <a href="../sims/book-levels/">five levels of intelligent textbooks</a>, this
+is the step from Level 2 to Level 3: a book that only offers quizzes becomes a
+book that reads what the quizzes record. Level 5, lessons generated in real
+time for each reader, is the Primer.</p>
+<h2 id="why-this-book-stops-at-the-fourth-tier">Why This Book Stops at the Fourth Tier<a class="headerlink" href="#why-this-book-stops-at-the-fourth-tier" title="Permanent link">&para;</a></h2>
+<p><a href="../chapters/01-intro-intelligent-textbooks/#five-tiers-from-one-document-to-a-whole-book">Chapter 1</a>
+describes the generation pipeline as five tiers, each built from the tiers
+above it. This book evaluates the first four.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Component</th>
+<th>Made by</th>
+<th>In the benchmark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Course description</td>
+<td>A person</td>
+<td>The fixed input</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Learning graph</td>
+<td>The model</td>
+<td>Stage 1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Book structure</td>
+<td>The model</td>
+<td>Stage 2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Chapter content, including a specification for every MicroSim</td>
+<td>The model</td>
+<td>Stage 3</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Working MicroSims, glossary, FAQ, and quizzes</td>
+<td>A model, outside this benchmark</td>
+<td>Not tested</td>
+</tr>
+</tbody>
+</table>
+<p>Small language models are not yet strong enough to write high-quality
+MicroSims, so the benchmark does not ask them to. That is not a retreat,
+because the first four tiers hold everything the event stream depends on:</p>
+<ul>
+<li>The <strong>learning graph</strong> says which concept an event belongs to and which
+  concepts must be mastered first, so a failure can be read against what the
+  student already knows.</li>
+<li>The <strong>book structure</strong> fixes the order, so no concept is tested before its
+  prerequisites are taught.</li>
+<li>The <strong>chapter content</strong> specifies what every interaction must elicit and
+  what counts as evidence.</li>
+</ul>
+<p>A stronger model or a person can build working MicroSims from those
+specifications later, and the boundary moves outward as small models improve.
+The method in this book is how you watch it move.</p>
+<h2 id="what-you-will-be-able-to-do">What You Will Be Able to Do<a class="headerlink" href="#what-you-will-be-able-to-do" title="Permanent link">&para;</a></h2>
+<p>After the last chapter you will be able to:</p>
+<ul>
+<li>Reach a DGX over a private network and verify what it has with Python probes</li>
+<li>Predict whether a model fits in memory before you download it</li>
+<li>Serve an open-weight model locally and run textbook-generation skills
+  against it from a sandboxed harness</li>
+<li>Score what comes out with objective measures, and diagnose why a run failed</li>
+<li>Report the cost per textbook and the break-even point against cloud pricing</li>
+<li>Publish the results without making the machine easier to find or reach</li>
+</ul>
+<h2 id="an-honest-scoreboard">An Honest Scoreboard<a class="headerlink" href="#an-honest-scoreboard" title="Permanent link">&para;</a></h2>
+<p>This book does not claim the problem is solved. As of October 10, 2026, ten
+open-weight models had been tried on the first three stages. Six produced a
+learning graph, and two wrote every chapter they had designed. No person has
+yet judged whether the content teaches well, and no cloud-generated baseline
+exists to compare against.</p>
+<p><a href="../appendices/evaluation-status/">Evaluation Status</a> tracks every model, and
+<a href="../models/">Model Results</a> shows exactly what each one wrote. A method
+that reports a failed run as data is worth more than a demo that shows only the
+success.</p>
 <h2 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h2>
-<p>Describe the intended reader: their background, prerequisites, and what they
-should be able to do after working through the book.</p>
+<p>AI and machine-learning engineers, instructional technologists, technical
+authors, and IT infrastructure leads who must decide whether a local DGX can
+replace or supplement cloud AI services for generating textbooks. It is also
+for anyone who believes the cost of a book, not the idea of one, is what keeps
+a Primer from every child.</p>
+<p>You need comfort with a Linux or macOS command line, basic Python, basic git
+and GitHub, and hands-on experience with at least one generative AI assistant.
+No experience with GPU administration, model serving, or model training is
+required. The <a href="../course-description/">course description</a> lists the learning
+outcomes.</p>
 <h2 id="how-to-use-this-book">How to Use This Book<a class="headerlink" href="#how-to-use-this-book" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Read chapters in order — concepts are introduced in dependency order.</li>
@@ -999,6 +1285,9 @@ should be able to do after working through the book.</p>
 
 
 
+
+  
+  
 
 
 
