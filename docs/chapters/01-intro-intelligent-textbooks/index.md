@@ -773,6 +773,9 @@ Everything above exists to make the benchmark workload legible, so it is time to
 
 The scale comes from a reference book. The published Algebra I book, made with cloud models, has 200 concepts, 13 chapters, and about 55,000 words of chapter text. A local model that finishes the three stages has therefore produced a structured data file with hundreds of connections, a chapter outline, and tens of thousands of words of Markdown.
 
+!!! note "Baseline Algebra I Textbook Metrics"
+    The baseline metrics for the published Algebra I book are stored on that book's [Book Metrics page](https://dmccreary.github.io/algebra-1/learning-graph/book-metrics/). The page counts the book's concepts, chapters, MicroSims, quizzes, glossary terms, FAQ entries, and words. A program regenerates it, so its numbers can move as that book is revised. Its word count for chapters is higher than the figure used in this chapter, because it also includes each chapter's quiz and reference list.
+
 ## Why It Is a Demanding Test for a Local Model
 
 The workload is hard in a specific way: it is not one hard task but a sequence of different ones, and a failure in any link breaks the next. Each demand below uses something this chapter introduced.
