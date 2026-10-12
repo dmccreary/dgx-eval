@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Benchmark Stage Pipeline using Mermaid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Benchmark Stage Pipeline</h1>
+        <div class="stage">
+            <span class="tag">questions: synthetic example</span>
+            <div id="diagram" role="img" aria-label="Flowchart of seven elements in a row: template workspace, stage 1 run, stage 1 output, stage 2 run, stage 2 output, stage 3 runs, and finished book. Each run starts from a copy of the element before it and writes the element after it."></div>
+        </div>
+        <div class="panel">
+            <div class="status-row">
+                <span id="status"></span>
+                <span id="score"></span>
+            </div>
+            <p id="prompt" class="prompt"></p>
+            <p id="detail" class="detail" hidden></p>
+            <div id="choices" class="choices"></div>
+            <p id="feedback" class="feedback" hidden></p>
+            <div id="results" class="results" hidden></div>
+            <div class="actions">
+                <button id="start">Start the questions</button>
+                <button id="confirm">Confirm</button>
+                <button id="next">Next question</button>
+                <button id="restart">Start over</button>
+            </div>
+        </div>
+    </main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
+    <script type="module" src="benchmark-stage-pipeline.js"></script>
+</body>
+</html>

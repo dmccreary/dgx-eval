@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>SKILL.md Anatomy using HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>SKILL.md Anatomy</h1>
+        <div class="stage">
+            <span class="tag">synthetic example</span>
+            <div class="folder" aria-label="An annotated skill folder named chapter-outliner. It holds a SKILL.md file with a name field, a description field, a metadata field, and an instruction body, beside a references folder and a scripts folder.">
+                <div class="file">
+                    <div class="path">chapter-outliner/SKILL.md</div>
+                    <div class="rule">---</div>
+                    <button class="choice region" data-id="name">name: chapter-outliner</button>
+                    <button class="choice region" data-id="description">description: Outlines one chapter. Use when a chapter needs a section plan.</button>
+                    <button class="choice region" data-id="metadata">metadata:
+  version: "1.2"</button>
+                    <div class="rule">---</div>
+                    <button class="choice region" data-id="body"># Chapter Outliner
+1. Read the chapter's concept list.
+2. Read references/outline-format.md.
+3. Write the outline.
+4. Run scripts/check-outline.py on it.</button>
+                </div>
+                <div class="folders">
+                    <div class="path">chapter-outliner/</div>
+                    <button class="choice region" data-id="references">references/
+  outline-format.md
+  section-patterns.md</button>
+                    <button class="choice region" data-id="scripts">scripts/
+  check-outline.py</button>
+                </div>
+            </div>
+            <p id="region-label" class="hint">Hover over a region to read its label</p>
+        </div>
+        <div class="panel">
+            <div class="status-row">
+                <span id="status"></span>
+                <span id="score"></span>
+            </div>
+            <p id="prompt" class="prompt"></p>
+            <p id="detail" class="detail" hidden></p>
+            <div id="choices" class="choices"></div>
+            <p id="feedback" class="feedback" hidden></p>
+            <div id="results" class="results" hidden></div>
+            <div class="actions">
+                <button id="confirm">Confirm</button>
+                <button id="next">Next question</button>
+                <button id="restart">Start over</button>
+            </div>
+        </div>
+    </main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
+    <script src="skill-md-anatomy.js"></script>
+</body>
+</html>

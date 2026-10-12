@@ -1,0 +1,69 @@
+{
+  "title": "Experiment Variable Role Sorter",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Assign each of ten items in a model-comparison experiment its role: independent, controlled, measured, or uncontrolled.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "variable-role-sorter",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Designing a Fair Evaluation",
+    "learningObjectives": [
+      "The learner will differentiate the role of each of 10 items in a model-comparison experiment as independent variable, controlled variable, measured result, or uncontrolled variable, with at least 9 of 10 correct."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "differentiate",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Independent variable",
+      "Controlled variables",
+      "Uncontrolled variable",
+      "Metric selection",
+      "Fixed inputs"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 520
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Items 9 and 10 both mention a model's default setting, and have different roles. State the difference."
+    ],
+    "commonMisconceptions": [
+      "Anything that is the same in every run is controlled, whether or not it was decided.",
+      "A measured result can also be the independent variable.",
+      "A variable that cannot be controlled can be ignored.",
+      "The model's default setting counts as controlled."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 9 of 10 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 520,
+  "completion_status": "built",
+  "chapter_number": 19,
+  "chapter_title": "Designing a Fair Evaluation",
+  "chapter_dir": "19-fair-evaluation-design",
+  "chapter_rel_dir": "chapters/19-fair-evaluation-design"
+}

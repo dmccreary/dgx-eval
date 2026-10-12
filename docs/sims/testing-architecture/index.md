@@ -1,6 +1,6 @@
 ---
-title: Testing Architecture
-description: Step through how a laptop, two home networks, the internet, Tailscale, and two DGX systems fit together when a local model generates textbook content.
+title: "Testing Architecture"
+description: "Step through how a laptop, two home networks, the internet, Tailscale, and two DGX systems fit together when a local model generates textbook content."
 image: /sims/testing-architecture/testing-architecture.png
 og:image: /sims/testing-architecture/testing-architecture.png
 twitter:image: /sims/testing-architecture/testing-architecture.png

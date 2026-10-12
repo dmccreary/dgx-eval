@@ -1,0 +1,71 @@
+{
+  "title": "Inference Request Path",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Open the six stages of a chat completion request, then find the stage responsible for each of four described events.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "inference-request-path",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Inference Servers and Local API Endpoints",
+    "learningObjectives": [
+      "The learner will explain what each of 6 stages of a chat completion request does by opening each stage and then locating the stage responsible for each of 4 described events, with at least 3 of 4 correct."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "explain",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Inference server",
+      "Local API endpoint",
+      "Chat completions endpoint",
+      "Model loading",
+      "GPU offload",
+      "Localhost binding",
+      "Curl request"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Mermaid",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 520
+    },
+    "responsive": true,
+    "dependencies": [
+      "Mermaid 11"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "A request returns \"model not found\" in a few milliseconds. Explain why the speed of that failure is itself evidence about the stage."
+    ],
+    "commonMisconceptions": [
+      "The first request is slow because the GPU is slow.",
+      "A wrong model name is rejected by the model.",
+      "A refused connection is a model problem.",
+      "Token counts are computed by the client."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 3 of 4 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 520,
+  "completion_status": "built",
+  "chapter_number": 13,
+  "chapter_title": "Inference Servers and Local API Endpoints",
+  "chapter_dir": "13-inference-servers",
+  "chapter_rel_dir": "chapters/13-inference-servers"
+}

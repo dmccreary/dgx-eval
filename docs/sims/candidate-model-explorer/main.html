@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Candidate Model Explorer using Chart.js</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Candidate Model Explorer</h1>
+        <div class="stage">
+            <span class="tag">measured, one run each, provisional</span>
+            <div class="chart-box">
+                <canvas id="chart" role="img" aria-label="Bubble chart of ten candidate models. The horizontal position is the parameter count in billions, the vertical position is the generation speed in tokens per second, and the size of each bubble is the download size in gigabytes."></canvas>
+            </div>
+            <p class="hint">Hover over a bubble to read its values. A bubble's size shows its download in GB.</p>
+        </div>
+        <div class="panel">
+            <div class="status-row">
+                <span id="status"></span>
+                <span id="score"></span>
+            </div>
+            <p id="prompt" class="prompt"></p>
+            <p id="detail" class="detail" hidden></p>
+            <div id="choices" class="choices"></div>
+            <p id="feedback" class="feedback" hidden></p>
+            <div id="results" class="results" hidden></div>
+            <div class="actions">
+                <button id="confirm">Confirm</button>
+                <button id="next">Next question</button>
+                <button id="restart">Start over</button>
+            </div>
+        </div>
+    </main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
+    <script src="candidate-model-explorer.js"></script>
+</body>
+</html>

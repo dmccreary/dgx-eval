@@ -1,0 +1,67 @@
+{
+  "title": "Local Versus Cloud Break-Even Explorer",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Calculate the volume at which a local machine costs the same as a per-book alternative, decide whether one unit can reach it, then explore.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "local-break-even-explorer",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Cost, Price, and Quality",
+    "learningObjectives": [
+      "The learner will calculate the break-even volume of a local machine against a per-book price to within 1 book for 3 challenges, and state whether one unit can reach it."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "15 minutes",
+    "prerequisites": [
+      "Fixed costs",
+      "Variable costs",
+      "Break-even volume",
+      "Utilization rate"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 704
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Committed calculation with two attempts, followed by free exploration",
+    "keyQuestions": [
+      "In challenge 2 the arithmetic gives a break-even volume, and the answer is still \"Not reachable\". Explain what an owner could change to make it reachable."
+    ],
+    "commonMisconceptions": [
+      "Local generation is always cheaper than a service.",
+      "A break-even volume can always be reached by producing more.",
+      "A machine that is idle costs nothing."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 3 of 3."
+    ]
+  },
+  "canvasHeight": 704,
+  "completion_status": "built",
+  "chapter_number": 6,
+  "chapter_title": "Cost, Price, and Quality",
+  "chapter_dir": "06-cost-price-quality",
+  "chapter_rel_dir": "chapters/06-cost-price-quality"
+}

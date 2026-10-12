@@ -10,19 +10,14 @@ describe the text. They do not say whether it is correct.
 
 [View the chapters](chapters/index.md){ .md-button }
 
-!!! note "Still running"
-
-    `gemma4:31b` had not finished stage 3 when this page was built. Chapters it
-    has not reached yet are counted as not written.
-
 | | Result |
 |---|---|
-| Chapters written | 4 of 12 |
-| Words in all chapters | 11,742 |
-| Diagrams specified | 17 |
-| Average reading grade of the written chapters | 10.9 |
-| Average reading ease of the written chapters | 42.8 |
-| Concepts from the learning graph assigned to a chapter | 200 of 200 |
+| Chapters written | 10 of 12 |
+| Words in all chapters | 26,841 |
+| Diagrams specified | 36 |
+| Average reading grade of the written chapters | 10.5 |
+| Average reading ease of the written chapters | 46.8 |
+| Concepts from the learning graph assigned to a chapter | 173 of 200 |
 
 ## Each Chapter
 
@@ -33,14 +28,14 @@ describe the text. They do not say whether it is correct.
 | 3 | [Linear Equations](chapters/03-linear-equations/index.md) | Yes | 2,775 | 5 | 10.7 | 42.6 | 13.8 | 21 | 0 |
 | 4 | [Linear Inequalities and Absolute Value](chapters/04-linear-inequalities-abs-value/index.md) | Yes | 2,055 | 4 | 11.7 | 39.8 | 16.1 | 15 | 0 |
 | 5 | [Introduction to Functions](chapters/05-intro-to-functions/index.md) | No | 153 | 0 | — | — | — | 1 | 0 |
-| 6 | [Linear Functions and Slope](chapters/06-linear-functions-slope/index.md) | No | 222 | 0 | — | — | — | 1 | 0 |
-| 7 | [Systems of Linear Equations](chapters/07-systems-linear-equations/index.md) | No | 146 | 0 | — | — | — | 1 | 0 |
-| 8 | [Polynomials and Factoring](chapters/08-polynomials-factoring/index.md) | No | 251 | 0 | — | — | — | 1 | 0 |
+| 6 | [Linear Functions and Slope](chapters/06-linear-functions-slope/index.md) | Yes | 2,707 | 3 | 9.3 | 54.7 | 14.6 | 31 | 0 |
+| 7 | [Systems of Linear Equations](chapters/07-systems-linear-equations/index.md) | Yes | 1,880 | 1 | 11.7 | 42.5 | 17.7 | 9 | 0 |
+| 8 | [Polynomials and Factoring](chapters/08-polynomials-factoring/index.md) | Yes | 5,884 | 10 | 9.9 | 48.0 | 13.4 | 69 | 0 |
 | 9 | [Quadratic Functions](chapters/09-quadratic-functions/index.md) | No | 187 | 0 | — | — | — | 1 | 0 |
-| 10 | [Exponential Functions](chapters/10-exponential-functions/index.md) | No | 147 | 0 | — | — | — | 1 | 0 |
-| 11 | [Data Analysis and Statistics](chapters/11-data-analysis-stats/index.md) | No | 199 | 0 | — | — | — | 1 | 0 |
-| 12 | [Sequences and Series](chapters/12-sequences-series/index.md) | No | 146 | 0 | — | — | — | 1 | 0 |
-| | **Whole book** | 4 of 12 | 11,742 | 17 | 10.9 | 42.8 | 14.7 | 100 | 0 |
+| 10 | [Exponential Functions](chapters/10-exponential-functions/index.md) | Yes | 1,659 | 1 | 8.7 | 57.4 | 13.9 | 8 | 0 |
+| 11 | [Data Analysis and Statistics](chapters/11-data-analysis-stats/index.md) | Yes | 2,357 | 2 | 10.2 | 50.7 | 16.1 | 11 | 0 |
+| 12 | [Sequences and Series](chapters/12-sequences-series/index.md) | Yes | 1,723 | 2 | 11.6 | 43.5 | 17.9 | 7 | 0 |
+| | **Whole book** | 10 of 12 | 26,841 | 36 | 10.5 | 46.8 | 15.2 | 229 | 0 |
 
 ## What the Columns Mean
 

@@ -1,0 +1,66 @@
+{
+  "title": "SKILL.md Anatomy",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Find the part of a skill folder that answers each of six questions about how a harness uses a skill.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "skill-md-anatomy",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Agent Skills and Connecting a Harness to a Local Model",
+    "learningObjectives": [
+      "The learner will identify the part of a skill that answers each of 6 questions about how a harness uses it, with at least 5 of 6 correct."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Agent skill",
+      "SKILL.md format",
+      "Skill loading",
+      "Skill installation"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "HTML and JavaScript",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 728
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "A harness with 50 skills installed reads only two fields of each at startup. Estimate what would change if it read every body instead."
+    ],
+    "commonMisconceptions": [
+      "The harness reads every file in a skill at startup.",
+      "The body of `SKILL.md` is how a skill is chosen.",
+      "Reference documents are loaded with the instructions.",
+      "A skill's scripts run by themselves."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 728,
+  "completion_status": "built",
+  "chapter_number": 17,
+  "chapter_title": "Agent Skills and Connecting a Harness to a Local Model",
+  "chapter_dir": "17-agent-skills-and-harness",
+  "chapter_rel_dir": "chapters/17-agent-skills-and-harness"
+}

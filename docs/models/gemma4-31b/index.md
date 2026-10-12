@@ -12,12 +12,9 @@ with a context of 163,840 tokens. The model has 30.7 billion parameters.
 |---|---|---|---|
 | 1. Learning graph | 200 concepts, 348 dependencies | 21 min | [Graph](learning-graph-viewer.md), [quality report](learning-graph-quality.md) |
 | 2. Book structure | 12 chapters, 200 of 200 concepts assigned | 10 min | [Chapter list](chapters/index.md) |
-| 3. Chapter content | 4 of 12 chapters written, 11,742 words | 60 min in 4 runs | [Chapters](chapters/index.md), [metrics](chapter-metrics.md) |
+| 3. Chapter content | 10 of 12 chapters written, 26,841 words | 257 min in 12 runs | [Chapters](chapters/index.md), [metrics](chapter-metrics.md) |
 
-!!! note "Still running"
-
-    `gemma4:31b` had not finished stage 3 when this page was built. Chapters it
-    has not reached yet are counted as not written.
+1 of the 12 chapter runs reached the time limit.
 
 ## What to Look At
 

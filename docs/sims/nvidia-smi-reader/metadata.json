@@ -1,0 +1,71 @@
+{
+  "title": "nvidia-smi Output Reader",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Read six outlined fields of an nvidia-smi listing and choose what each one reports.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "nvidia-smi-reader",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Python Hardware Probes",
+    "learningObjectives": [
+      "The learner will interpret 6 highlighted fields of an `nvidia-smi` listing by choosing what each one reports, with at least 5 of 6 correct."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "interpret",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Nvidia-smi",
+      "Driver version",
+      "CUDA version",
+      "GPU temperature",
+      "GPU power draw",
+      "GPU memory total and free",
+      "GPU utilization"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 582
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "The memory field ends in MiB. Work out the total in GiB and explain why it is not the same number in GB."
+    ],
+    "commonMisconceptions": [
+      "The CUDA version is the toolkit installed on the machine.",
+      "The power figure is the whole machine's draw.",
+      "A figure in MiB is the same as one in MB.",
+      "A GPU at 0% utilization is not working correctly."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 582,
+  "completion_status": "built",
+  "chapter_number": 10,
+  "chapter_title": "Python Hardware Probes",
+  "chapter_dir": "10-hardware-probes",
+  "chapter_rel_dir": "chapters/10-hardware-probes"
+}

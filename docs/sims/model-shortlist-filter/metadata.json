@@ -1,0 +1,71 @@
+{
+  "title": "Model Shortlist Filter",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Apply four selection criteria, in order, to eight candidate models and name the first criterion each excluded model fails.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "model-shortlist-filter",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Selecting and Downloading an Open-Weight Model",
+    "learningObjectives": [
+      "The learner will apply four selection criteria to 8 candidate models for a 128 GB unified-memory machine, deciding shortlist or exclude and naming the first failed criterion, with at least 7 of 8 correct."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "apply",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Model selection criteria",
+      "Tool-calling reliability",
+      "Context window",
+      "Safety headroom",
+      "Publisher provenance",
+      "License review",
+      "Exclusion rationale"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 634
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Model D would load on this machine. Explain why it is excluded anyway."
+    ],
+    "commonMisconceptions": [
+      "A model that fits in raw memory is acceptable.",
+      "A large context window makes up for a missing tool-calling feature.",
+      "A missing license statement is as good as a permissive one.",
+      "A popular name is proof of provenance."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 7 of 8 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 634,
+  "completion_status": "built",
+  "chapter_number": 12,
+  "chapter_title": "Selecting and Downloading an Open-Weight Model",
+  "chapter_dir": "12-selecting-downloading-models",
+  "chapter_rel_dir": "chapters/12-selecting-downloading-models"
+}

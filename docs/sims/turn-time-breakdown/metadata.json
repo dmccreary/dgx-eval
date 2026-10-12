@@ -1,0 +1,70 @@
+{
+  "title": "Agent Turn Time Breakdown",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Calculate the time of one agent turn from its tokens, speeds, and tool time, name the part that dominates, then explore five inputs.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "turn-time-breakdown",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Optimizing Small Language Model Performance",
+    "learningObjectives": [
+      "The learner will calculate the time of an agent turn from its prompt tokens, reply tokens, speeds, and tool time to within 1 second, and name the component that dominates it, for 3 challenges."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "15 minutes",
+    "prerequisites": [
+      "Prompt processing speed",
+      "Tokens per second",
+      "Prompt caching",
+      "Prompt re-reading",
+      "Latency",
+      "Time breakdown"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 590
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Committed calculation with two attempts, followed by free exploration",
+    "keyQuestions": [
+      "Challenge 2 is almost six times slower than challenge 1, and its model generates only a little more slowly. Explain where the time went."
+    ],
+    "commonMisconceptions": [
+      "Faster generation always makes a turn faster.",
+      "Prompt reading is negligible.",
+      "A model's speed is one number for every workload.",
+      "Re-reading happens only when the context is full."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 3 of 3."
+    ]
+  },
+  "canvasHeight": 590,
+  "completion_status": "built",
+  "chapter_number": 15,
+  "chapter_title": "Optimizing Small Language Model Performance",
+  "chapter_dir": "15-optimizing-performance",
+  "chapter_rel_dir": "chapters/15-optimizing-performance"
+}

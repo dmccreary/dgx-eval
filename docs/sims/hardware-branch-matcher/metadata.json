@@ -1,0 +1,72 @@
+{
+  "title": "Hardware Finding to Setup Branch Matcher",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Match six hardware probe findings to the setup branch each one triggers.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "hardware-branch-matcher",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "NVIDIA DGX Hardware Architecture",
+    "learningObjectives": [
+      "The learner will apply the hardware-to-setup rules of this chapter to 6 findings by choosing the setup branch each finding triggers, with at least 5 of 6 correct."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "apply",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "CPU architecture",
+      "X86_64",
+      "Aarch64",
+      "Dedicated GPU memory",
+      "Unified memory",
+      "Multi-GPU system",
+      "NVIDIA driver",
+      "CUDA"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 532
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Findings 3 and 4 both list one GPU. Explain why they lead to different ways of sizing a model."
+    ],
+    "commonMisconceptions": [
+      "Every DGX has dedicated GPU memory.",
+      "A download that completes will run on any DGX.",
+      "`nvidia-smi` always reports how much GPU memory there is.",
+      "A newer CUDA build is always better."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 532,
+  "completion_status": "built",
+  "chapter_number": 5,
+  "chapter_title": "NVIDIA DGX Hardware Architecture",
+  "chapter_dir": "05-dgx-hardware-architecture",
+  "chapter_rel_dir": "chapters/05-dgx-hardware-architecture"
+}

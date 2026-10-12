@@ -1,6 +1,6 @@
 ---
-title: Parameters That Fit in Memory
-description: Move a memory slider to see the largest model whose weights fit in memory, marked by one dashed line on a fixed chart of ten candidate models placed by parameter count.
+title: "Parameters That Fit in Memory"
+description: "Move a memory slider to see the largest model whose weights fit in memory, marked by one dashed line on a fixed chart of ten candidate models placed by parameter count."
 image: /sims/model-fit-by-memory/model-fit-by-memory.png
 og:image: /sims/model-fit-by-memory/model-fit-by-memory.png
 twitter:image: /sims/model-fit-by-memory/model-fit-by-memory.png

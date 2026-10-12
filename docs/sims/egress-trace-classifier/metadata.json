@@ -1,0 +1,69 @@
+{
+  "title": "Data Egress Trace Classifier",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Decide where the data in each of eight flows ends up: on the DGX, on the evaluator's own machine, or with a third party.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "egress-trace-classifier",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Containing the Harness: Containers and Network Boundaries",
+    "learningObjectives": [
+      "The learner will distinguish, for 8 data flows in a local-generation setup, whether each stays on the DGX, goes to the evaluator's own machine, or goes to a third party, with at least 7 of 8 correct."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "distinguish",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Network boundary",
+      "Data egress trace",
+      "Supervision data exposure",
+      "Host network mode",
+      "Telemetry disabled"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 532
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Flow 5 starts on the evaluator's own laptop and still counts as going to a third party. Explain why."
+    ],
+    "commonMisconceptions": [
+      "A locally hosted model means no data leaves.",
+      "Traffic to the evaluator's own laptop is traffic to a third party.",
+      "A one-time download is not egress.",
+      "The supervising assistant's reads are local."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 7 of 8 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 532,
+  "completion_status": "built",
+  "chapter_number": 18,
+  "chapter_title": "Containing the Harness: Containers and Network Boundaries",
+  "chapter_dir": "18-containing-the-harness",
+  "chapter_rel_dir": "chapters/18-containing-the-harness"
+}

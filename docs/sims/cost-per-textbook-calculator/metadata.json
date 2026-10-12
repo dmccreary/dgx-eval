@@ -1,0 +1,69 @@
+{
+  "title": "Cost per Textbook Calculator",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Calculate what one generated textbook costs on an owned machine and what it must sell for at a stated margin, then explore five inputs.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "cost-per-textbook-calculator",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Diagnosing Failures, Reporting, and Cost per Textbook",
+    "learningObjectives": [
+      "The learner will calculate the cost per textbook and the price at a stated margin to within 1 dollar for 3 scenarios."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "15 minutes",
+    "prerequisites": [
+      "Utilization rate",
+      "Whole-book time estimate",
+      "Cost per textbook",
+      "Service price calculation",
+      "Margin versus markup"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 620
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Committed calculation with two attempts, followed by free exploration",
+    "keyQuestions": [
+      "Halving the utilization doubles the cost per book, while a 10% change in the yearly cost moves it by 10%. Explain which input an owner has more control over."
+    ],
+    "commonMisconceptions": [
+      "A faster model always lowers the cost per book.",
+      "The cost is set by the electricity.",
+      "A 20% margin means a 20% markup.",
+      "A machine's cost per book does not depend on how often it is used."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 3 of 3."
+    ]
+  },
+  "canvasHeight": 620,
+  "completion_status": "built",
+  "chapter_number": 22,
+  "chapter_title": "Diagnosing Failures, Reporting, and Cost per Textbook",
+  "chapter_dir": "22-diagnosis-and-reporting",
+  "chapter_rel_dir": "chapters/22-diagnosis-and-reporting"
+}

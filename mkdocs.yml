@@ -35,6 +35,77 @@ nav:
   - Home: index.md
   - About: about.md
   - Course Description: course-description.md
+  - Textbook Chapters:
+      - List of Chapters: chapters/index.md
+      - 1. Prerequisites and the Intelligent Textbook:
+          - Content: chapters/01-intro-intelligent-textbooks/index.md
+          - Quiz: chapters/01-intro-intelligent-textbooks/quiz.md
+      - 2. Learning Graphs, MicroSims, and Content Generation Rules:
+          - Content: chapters/02-learning-graphs-microsims-rules/index.md
+          - Quiz: chapters/02-learning-graphs-microsims-rules/quiz.md
+      - 3. Small Language Models:
+          - Content: chapters/03-small-language-models/index.md
+          - Quiz: chapters/03-small-language-models/quiz.md
+      - 4. Local SLMs Versus Cloud LLM Services:
+          - Content: chapters/04-local-versus-cloud/index.md
+          - Quiz: chapters/04-local-versus-cloud/quiz.md
+      - 5. NVIDIA DGX Hardware Architecture:
+          - Content: chapters/05-dgx-hardware-architecture/index.md
+          - Quiz: chapters/05-dgx-hardware-architecture/quiz.md
+      - 6. Cost, Price, and Quality:
+          - Content: chapters/06-cost-price-quality/index.md
+          - Quiz: chapters/06-cost-price-quality/quiz.md
+      - 7. Remote Access, SSH, and Mesh VPN Concepts:
+          - Content: chapters/07-remote-access-ssh-mesh-vpn/index.md
+          - Quiz: chapters/07-remote-access-ssh-mesh-vpn/quiz.md
+      - 8. Reproducible Python Environments with Conda:
+          - Content: chapters/08-conda-environments/index.md
+          - Quiz: chapters/08-conda-environments/quiz.md
+      - 9. Installing Tailscale and Taking a Read-Only Inventory:
+          - Content: chapters/09-tailscale-and-inventory/index.md
+          - Quiz: chapters/09-tailscale-and-inventory/quiz.md
+      - 10. Python Hardware Probes:
+          - Content: chapters/10-hardware-probes/index.md
+          - Quiz: chapters/10-hardware-probes/quiz.md
+      - 11. Model Sizing and Fit:
+          - Content: chapters/11-model-sizing-and-fit/index.md
+          - Quiz: chapters/11-model-sizing-and-fit/quiz.md
+      - 12. Selecting and Downloading an Open-Weight Model:
+          - Content: chapters/12-selecting-downloading-models/index.md
+          - Quiz: chapters/12-selecting-downloading-models/quiz.md
+      - 13. Inference Servers and Local API Endpoints:
+          - Content: chapters/13-inference-servers/index.md
+          - Quiz: chapters/13-inference-servers/quiz.md
+      - 14. Open-Weight Model Families and Candidate Models:
+          - Content: chapters/14-candidate-models/index.md
+          - Quiz: chapters/14-candidate-models/quiz.md
+      - 15. Optimizing Small Language Model Performance:
+          - Content: chapters/15-optimizing-performance/index.md
+          - Quiz: chapters/15-optimizing-performance/quiz.md
+      - 16. The Agent Loop, Tools, and Context:
+          - Content: chapters/16-agent-loop-and-tools/index.md
+          - Quiz: chapters/16-agent-loop-and-tools/quiz.md
+      - 17. Agent Skills and Connecting a Harness to a Local Model:
+          - Content: chapters/17-agent-skills-and-harness/index.md
+          - Quiz: chapters/17-agent-skills-and-harness/quiz.md
+      - '18. Containing the Harness: Containers and Network Boundaries':
+          - Content: chapters/18-containing-the-harness/index.md
+          - Quiz: chapters/18-containing-the-harness/quiz.md
+      - 19. Designing a Fair Evaluation:
+          - Content: chapters/19-fair-evaluation-design/index.md
+          - Quiz: chapters/19-fair-evaluation-design/quiz.md
+      - 20. Scoring, Bias, and Structural Checks:
+          - Content: chapters/20-scoring-and-bias/index.md
+          - Quiz: chapters/20-scoring-and-bias/quiz.md
+      - 21. Running the Textbook Benchmark:
+          - Content: chapters/21-running-the-benchmark/index.md
+          - Quiz: chapters/21-running-the-benchmark/quiz.md
+      - 22. Diagnosing Failures, Reporting, and Cost per Textbook:
+          - Content: chapters/22-diagnosis-and-reporting/index.md
+          - Quiz: chapters/22-diagnosis-and-reporting/quiz.md
+      - 23. Sanitizing Evaluation Artifacts and Publishing the Report:
+          - Content: chapters/23-sanitizing-and-publishing/index.md
+          - Quiz: chapters/23-sanitizing-and-publishing/quiz.md
 
   - Appendices:
     - List of Appendices: appendices/index.md
@@ -171,31 +242,46 @@ nav:
       - Course Description Given to the Model: models/gpt-oss-120b/course-description.md
   # END model-results
 
-  - Chapters:
-      - List of Chapters: chapters/index.md
-      - 1. Prerequisites and the Intelligent Textbook: chapters/01-intro-intelligent-textbooks/index.md
-      - 2. Learning Graphs, MicroSims, and Content Generation Rules: chapters/02-learning-graphs-microsims-rules/index.md
-      - 3. Small Language Models: chapters/03-small-language-models/index.md
-      - 4. Local SLMs Versus Cloud LLM Services: chapters/04-local-versus-cloud/index.md
-      - 5. NVIDIA DGX Hardware Architecture: chapters/05-dgx-hardware-architecture/index.md
-      - 6. Cost, Price, and Quality: chapters/06-cost-price-quality/index.md
-      - 7. Remote Access, SSH, and Mesh VPN Concepts: chapters/07-remote-access-ssh-mesh-vpn/index.md
-      - 8. Reproducible Python Environments with Conda: chapters/08-conda-environments/index.md
-      - 9. Installing Tailscale and Taking a Read-Only Inventory: chapters/09-tailscale-and-inventory/index.md
-      - 10. Python Hardware Probes: chapters/10-hardware-probes/index.md
-      - 11. Model Sizing and Fit: chapters/11-model-sizing-and-fit/index.md
-      - 12. Selecting and Downloading an Open-Weight Model: chapters/12-selecting-downloading-models/index.md
-      - 13. Inference Servers and Local API Endpoints: chapters/13-inference-servers/index.md
-      - 14. Open-Weight Model Families and Candidate Models: chapters/14-candidate-models/index.md
-      - 15. Optimizing Small Language Model Performance: chapters/15-optimizing-performance/index.md
-      - 16. The Agent Loop, Tools, and Context: chapters/16-agent-loop-and-tools/index.md
-      - 17. Agent Skills and Connecting a Harness to a Local Model: chapters/17-agent-skills-and-harness/index.md
-      - '18. Containing the Harness: Containers and Network Boundaries': chapters/18-containing-the-harness/index.md
-      - 19. Designing a Fair Evaluation: chapters/19-fair-evaluation-design/index.md
-      - 20. Scoring, Bias, and Structural Checks: chapters/20-scoring-and-bias/index.md
-      - 21. Running the Textbook Benchmark: chapters/21-running-the-benchmark/index.md
-      - 22. Diagnosing Failures, Reporting, and Cost per Textbook: chapters/22-diagnosis-and-reporting/index.md
-      - 23. Sanitizing Evaluation Artifacts and Publishing the Report: chapters/23-sanitizing-and-publishing/index.md
+
+  - MicroSims:
+    - List of MicroSims: sims/index.md
+    - Agent Loop Stepper: sims/agent-loop-stepper/index.md
+    - Agent Turn Time Breakdown: sims/turn-time-breakdown/index.md
+    - Benchmark Stage Pipeline: sims/benchmark-stage-pipeline/index.md
+    - Book Levels MicroSim: sims/book-levels/index.md
+    - Candidate Model Explorer: sims/candidate-model-explorer/index.md
+    - CIS Calculator: sims/cis-calculator/index.md
+    - Command Output Predictor: sims/command-output-predictor/index.md
+    - Cost per Textbook Calculator: sims/cost-per-textbook-calculator/index.md
+    - Cost, Price, and Quality Sorter: sims/cost-price-quality-sorter/index.md
+    - DAG Cycle Spotter: sims/dag-cycle-spotter/index.md
+    - Data Egress Trace Classifier: sims/egress-trace-classifier/index.md
+    - Endpoint Exposure Classifier: sims/endpoint-exposure-classifier/index.md
+    - Environment Reproducibility Auditor: sims/environment-reproducibility-auditor/index.md
+    - Evaluation Design Flaw Finder: sims/design-flaw-finder/index.md
+    - Experiment Variable Role Sorter: sims/variable-role-sorter/index.md
+    - Failure Diagnosis Chooser: sims/failure-diagnosis-chooser/index.md
+    - Hardware Finding to Setup Branch Matcher: sims/hardware-branch-matcher/index.md
+    - Inference Request Path: sims/inference-request-path/index.md
+    - Learning Graph Defect Finder: sims/learning-graph-defect-finder/index.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
+    - Local Versus Cloud Break-Even Explorer: sims/local-break-even-explorer/index.md
+    - Local, Cloud, or Hybrid Chooser: sims/local-cloud-hybrid-chooser/index.md
+    - Model Shortlist Filter: sims/model-shortlist-filter/index.md
+    - Model-Fit Calculator: sims/model-fit-calculator/index.md
+    - nvidia-smi Output Reader: sims/nvidia-smi-reader/index.md
+    - Parameters That Fit in Memory: sims/model-fit-by-memory/index.md
+    - Redaction Reviewer: sims/redaction-reviewer/index.md
+    - SKILL.md Anatomy: sims/skill-md-anatomy/index.md
+    - Structured Output Judge: sims/structured-output-judge/index.md
+    - Tailscale Connection Path: sims/tailscale-connection-path/index.md
+    - Tailscale Status Reader: sims/tailscale-status-reader/index.md
+    - Testing Architecture: sims/testing-architecture/index.md
+    - Textbook Generation Pipeline Explorer: sims/textbook-pipeline-explorer/index.md
+    - Three Kinds of DGX System: sims/dgx-system-comparison/index.md
+    - Words to Tokens Estimator: sims/words-to-tokens-estimator/index.md
+
+
 
   - Learning Graph:
       - Introduction: learning-graph/index.md
@@ -206,16 +292,7 @@ nav:
       - Graph Quality Analysis: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
       - Mascot Test: learning-graph/mascot-test.md
-
-  - MicroSims:
-    - List of MicroSims: sims/index.md
-    - Learning Graph Viewer: sims/graph-viewer/index.md
-    - Parameters That Fit in Memory: sims/model-fit-by-memory/index.md
-    - Testing Architecture: sims/testing-architecture/index.md
-
-
-
-
+      - Quiz Generation Report: learning-graph/quiz-generation-report.md
 
   - License: license.md
   - Contact: contact.md
@@ -301,6 +378,7 @@ extra_css:
 
 # Custom JavaScript. KaTeX renders the equations in the generated chapters.
 extra_javascript:
+  - js/extra.js
   - js/katex.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js

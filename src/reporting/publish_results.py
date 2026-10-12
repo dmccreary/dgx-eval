@@ -553,6 +553,11 @@ def main():
         else:
             without.append(model)
 
+    # The status page has moved before, so find it instead of assuming where it is.
+    status_pages = sorted(DOCS.rglob("evaluation-status.md"))
+    status_sentence = (f"[Evaluation Status]({Path(os.path.relpath(status_pages[0], OUT)).as_posix()}) "
+                       "shows how far each\nmodel has got." if status_pages else "")
+
     rows = []
     for s in summaries:
         chapters = (f"{s['chapters_written']} of {s['chapter_count']}" if s["has_chapters"] and "chapters_written" in s
@@ -569,8 +574,7 @@ def main():
 
 Each model that produced a learning graph has its own section here, holding
 what it generated for the Algebra I benchmark and what a program measured
-about it. [Evaluation Status](../evaluation-status.md) shows how far each
-model has got.
+about it. """ + status_sentence + """
 
 | Model | Concepts | Chapters written | Words | Diagrams specified | Average reading grade |
 |---|---:|:---:|---:|---:|---:|

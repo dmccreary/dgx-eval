@@ -1,0 +1,70 @@
+{
+  "title": "Tailscale Connection Path",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Step through how two devices behind home routers build an encrypted connection, then predict paths and sort messages by plane.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "tailscale-connection-path",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Remote Access, SSH, and Mesh VPN Concepts",
+    "learningObjectives": [
+      "The learner will explain how two devices behind NAT build an encrypted connection by predicting the path for 3 scenarios and assigning 3 messages to the coordination plane or the data plane, with at least 5 of 6 correct."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "explain",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Home router",
+      "NAT traversal",
+      "Peer-to-peer connection",
+      "DERP relay",
+      "Coordination plane",
+      "Data plane"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 602
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "A relay forwards every packet of a relayed connection. Explain why it still cannot read them."
+    ],
+    "commonMisconceptions": [
+      "The coordination service carries or can read the traffic.",
+      "A relay can read the traffic it forwards.",
+      "Two devices behind routers can never connect directly.",
+      "A relayed connection is not encrypted."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct on the first attempt."
+    ]
+  },
+  "canvasHeight": 602,
+  "completion_status": "built",
+  "chapter_number": 7,
+  "chapter_title": "Remote Access, SSH, and Mesh VPN Concepts",
+  "chapter_dir": "07-remote-access-ssh-mesh-vpn",
+  "chapter_rel_dir": "chapters/07-remote-access-ssh-mesh-vpn"
+}

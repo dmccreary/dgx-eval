@@ -1,0 +1,83 @@
+{
+  "title": "Three Kinds of DGX System",
+  "image": "dgx-systems.svg",
+  "layout": "grid",
+  "showLabels": false,
+  "palette": ["#0F6E86", "#6A3FB5", "#B4501A", "#23783F"],
+  "zones": [
+    {
+      "id": "desktop-personal",
+      "label": "Desktop personal system",
+      "color": "#0F6E86",
+      "x1": 14.7, "y1": 10.9,
+      "x2": 42.2, "y2": 98.3,
+      "summary": "A small box that holds one chip, with one pool of memory shared by the CPU and the GPU.",
+      "facts": [
+        "Example: DGX Spark, the machine this evaluation used.",
+        "The processor is aarch64, so every download must be the arm64 or aarch64 build.",
+        "The GPU has no memory of its own. The 128 GB pool is all the memory the machine has.",
+        "Size a model against the shared pool, and leave room for the operating system."
+      ]
+    },
+    {
+      "id": "desktop-workstation",
+      "label": "Desktop workstation",
+      "color": "#6A3FB5",
+      "x1": 43.1, "y1": 10.9,
+      "x2": 70.6, "y2": 98.3,
+      "summary": "A tower with a large coherent memory pool that the CPU and the GPU both use.",
+      "facts": [
+        "Example: DGX Station.",
+        "The processor is aarch64, so it needs the same arm64 or aarch64 builds as the personal system.",
+        "Memory is shared with the CPU, so there is one pool to size a model against.",
+        "The pool is larger than the personal system's, so larger models fit."
+      ]
+    },
+    {
+      "id": "rack-server",
+      "label": "Rack server",
+      "color": "#B4501A",
+      "x1": 71.4, "y1": 10.9,
+      "x2": 98.9, "y2": 98.3,
+      "summary": "Eight GPUs in one chassis, and each GPU has its own dedicated memory.",
+      "facts": [
+        "Example: DGX H100, with eight H100 GPUs of 80 GB each, 640 GB in total.",
+        "The processor is x86_64, the build that most download pages offer first.",
+        "Each GPU's memory is a separate pool and a hard limit for the part of the model placed on it.",
+        "A 100 GB model does not fit on one 80 GB GPU. It must be split across at least two."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "uname -m prints x86_64. Which kind of system are you logged in to?",
+      "correct_zone": "rack-server",
+      "explanation": "The rack server is the only one of the three with an x86_64 processor. Both desktop systems are aarch64."
+    },
+    {
+      "question": "Which kind of system is the DGX Spark, the machine this evaluation used?",
+      "correct_zone": "desktop-personal",
+      "explanation": "DGX Spark is the small desktop member of the family, a box built around one chip."
+    },
+    {
+      "question": "A model's weights take 100 GB. On which kind of system must the model be split across GPUs before it can load?",
+      "correct_zone": "rack-server",
+      "explanation": "Each GPU in the rack server has its own 80 GB, so a 100 GB model cannot be placed on one of them."
+    },
+    {
+      "question": "Which kind of system puts the CPU and the GPU on one chip?",
+      "correct_zone": "desktop-personal",
+      "explanation": "The desktop personal system holds one chip that combines an Arm processor and a GPU."
+    },
+    {
+      "question": "Which kind of system is a tower whose CPU and GPU use one large coherent memory pool?",
+      "correct_zone": "desktop-workstation",
+      "explanation": "The desktop workstation is the tower. Its memory is shared with the CPU, as on the personal system."
+    },
+    {
+      "question": "Which of the two desktop systems has the larger memory pool?",
+      "correct_zone": "desktop-workstation",
+      "explanation": "The workstation's coherent memory pool is larger than the personal system's 128 GB."
+    }
+  ]
+}

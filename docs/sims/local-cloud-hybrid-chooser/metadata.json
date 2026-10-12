@@ -1,0 +1,72 @@
+{
+  "title": "Local, Cloud, or Hybrid Chooser",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Recommend local, cloud, or hybrid deployment for six scenarios and name the one constraint that decides each.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "local-cloud-hybrid-chooser",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Local SLMs Versus Cloud LLM Services",
+    "learningObjectives": [
+      "The learner will recommend local, cloud, or hybrid deployment for each of 6 scenarios and identify the constraint that decides it, with at least 5 of 6 correct."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "recommend",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Cloud LLM service",
+      "Local model deployment",
+      "Privacy",
+      "Data sovereignty",
+      "Offline operation",
+      "Rate limits",
+      "Operational burden",
+      "Hybrid workflow"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 592
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Scenario 5 is the only hybrid answer. State what would have to change in scenario 1 for hybrid to become acceptable there."
+    ],
+    "commonMisconceptions": [
+      "Local is always cheaper.",
+      "Cloud always gives the best result for the task.",
+      "Hybrid is always the safest answer.",
+      "A privacy requirement can always be met by a cloud provider's contract."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct."
+    ]
+  },
+  "canvasHeight": 592,
+  "completion_status": "built",
+  "chapter_number": 4,
+  "chapter_title": "Local SLMs Versus Cloud LLM Services",
+  "chapter_dir": "04-local-versus-cloud",
+  "chapter_rel_dir": "chapters/04-local-versus-cloud"
+}

@@ -1,6 +1,6 @@
 ---
-title: Learning Graph Viewer
-description: An interactive viewer for the learning graph each model generated in the benchmark, with search, category filters, and a chooser to switch between models.
+title: "Learning Graph Viewer"
+description: "An interactive viewer for the learning graph each model generated in the benchmark, with search, category filters, and a chooser to switch between models."
 status: built
 hide:
   - toc

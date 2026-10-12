@@ -1,0 +1,70 @@
+{
+  "title": "Textbook Generation Pipeline Explorer",
+  "creator": "Dan McCreary",
+  "subject": "DGX Evaluation for Textbook Generation",
+  "description": "Open the eight artifacts of the textbook pipeline, then check which artifacts each generated one is built from.",
+  "date": "2026-10-11",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "textbook-pipeline-explorer",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Prerequisites and the Intelligent Textbook",
+    "learningObjectives": [
+      "The learner will identify, for each of the seven generated artifacts of the textbook pipeline, which of the other seven artifacts it is built from, with at least 6 of 7 exactly correct."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Course description",
+      "Learning graph",
+      "Skill",
+      "Glossary",
+      "FAQ",
+      "Quiz",
+      "MicroSim"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 592
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit an answer, then see the correct answer and the reason",
+    "keyQuestions": [
+      "Chapter Structure and Chapter Content are stored in the same file. Explain how that can be true when one is built from the other."
+    ],
+    "commonMisconceptions": [
+      "The chapters are written directly from the course description without a learning graph.",
+      "The glossary is written from the chapters rather than from the concept list.",
+      "A MicroSim is built from the course description rather than from a specification inside a chapter."
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 6 of 7 correct."
+    ]
+  },
+  "canvasHeight": 592,
+  "completion_status": "built",
+  "chapter_number": 1,
+  "chapter_title": "Prerequisites and the Intelligent Textbook",
+  "chapter_dir": "01-intro-intelligent-textbooks",
+  "chapter_rel_dir": "chapters/01-intro-intelligent-textbooks"
+}

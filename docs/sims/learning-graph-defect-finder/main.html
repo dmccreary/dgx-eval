@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Learning Graph Defect Finder using vis-network</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Learning Graph Defect Finder</h1>
+        <div class="stage">
+            <span class="tag">synthetic example</span>
+            <div id="network" role="img" aria-label="A dependency graph of 16 algebra concepts drawn as boxes. An arrow points from a concept to each concept it depends on. The same concepts can be chosen from the Concept list below the graph."></div>
+        </div>
+        <div class="panel">
+            <p id="prompt" class="prompt"></p>
+            <div id="workbench" class="workbench">
+                <div class="column">
+                    <label for="concept-select">Concept:</label>
+                    <select id="concept-select"></select>
+                    <p id="detail" class="detail"></p>
+                </div>
+                <div class="column">
+                    <label for="type-select">Flag it as:</label>
+                    <select id="type-select"></select>
+                    <button id="flag">Flag</button>
+                    <button id="unflag">Remove flag</button>
+                    <p id="flags" class="flags"></p>
+                    <button id="submit">Submit</button>
+                </div>
+            </div>
+            <p id="checks" class="checks"></p>
+            <div id="results" class="results" hidden></div>
+            <div class="actions">
+                <button id="restart" hidden>Start over</button>
+            </div>
+        </div>
+    </main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
+    <script src="learning-graph-defect-finder.js"></script>
+</body>
+</html>
