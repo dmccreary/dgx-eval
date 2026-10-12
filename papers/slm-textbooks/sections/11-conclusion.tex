@@ -1,0 +1,24 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We asked whether open-weight models small enough to run on one 128~GB workstation can generate an intelligent textbook without sending a token to the cloud. In a first, single-run round of ten models on one DGX Spark-class unit, six produced a learning graph, all six ran all three stages, and two wrote every chapter they had designed, in about two to three machine hours. The others stopped for reasons that were mostly about protocol and persistence over a long session and not about prose: tool calls written as text, work announced and not done, a lost task, a time limit, or a context that did not fit. The cleanest learning graph came from the slowest model, and a clean first stage did not predict a finished book.
+
+We offered five artifacts alongside the measurements: a reproducible benchmark definition; a deterministic chapter-conformance score that favors even quality and states its own limits; a cost model whose inputs were checked against measured time and found to agree only partly by cancellation; a 23-chapter open textbook that teaches the method; and a publication discipline for evidence from private hardware.
+
+The evidence is thin by design and should be read that way. Each model ran each stage once, no person has judged whether the chapters are correct, the conformance score has not been compared with human ratings, and there is no cloud baseline. The paper therefore supports a statement about feasibility, that a local model on one machine can complete the pipeline, and withholds any statement about equivalence.
+
+\subsection{Future Work}
+
+The next steps follow directly from the limits above, in the order that would most reduce uncertainty.
+
+\begin{enumerate}
+\item \textbf{Repeated runs.} At least three, preferably five, runs of each completed configuration, to report a range and not a point, and a control run to check the apparatus.
+\item \textbf{Blind human review.} Have subject experts rate a sample of chapters, about ten to twenty, without knowing the producing model, to calibrate or replace the score's weights and to judge correctness.
+\item \textbf{A cloud baseline.} Generate the same book with a cloud model under the same prompts and skills, with token counts and timings recorded, and score it with the same program.
+\item \textbf{A second harness.} Run the same models under a harness with a lighter prompt to separate model failure from harness mismatch.
+\item \textbf{Throughput and precision.} Test a batching server such as vLLM on the best candidate, and an 8-bit quantization of the models that completed.
+\item \textbf{The remaining stages and other courses.} Extend to MicroSims, the glossary, FAQ, quizzes, and references, and to a second course, to test whether the thresholds and the stage ordering carry over.
+\item \textbf{Energy at the wall.} Replace the assumed power draw with a measured one.
+\end{enumerate}
+
+\noindent The book, its source, the aggregated run data, and the scripts that regenerate every number and figure in this paper are public at \url{https://github.com/dmccreary/dgx-eval}; the raw run output is deliberately not.

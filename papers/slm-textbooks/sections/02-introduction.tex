@@ -1,0 +1,42 @@
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{An Empirical Question}
+
+A textbook that carries its own interactive simulations, quizzes, glossary, and a machine-readable map of which concept depends on which is now within reach of a single author working with a generative AI assistant \cite{brusilovsky2022return, mccreary2025microsims}. The assistant is usually a frontier model hosted by a cloud provider. That arrangement is convenient, and it has four costs that a growing number of organizations weigh: the source material and the generated text pass through a third party; the model, its price, and its behavior can change without notice; a long generation job is subject to rate limits however much the customer is willing to pay; and the author's prompts and tooling drift toward one vendor's conventions.
+
+The hardware picture has shifted in parallel. A class of desktop systems built on a single system-on-chip with 128~GB of unified CPU--GPU memory, of which the NVIDIA DGX Spark is the best known \cite{nvidia2025dgxspark}, can hold open-weight models of up to roughly one hundred billion parameters. Position papers argue that small language models (SLMs) are sufficient, better suited, and cheaper for many repetitive agentic tasks \cite{belcak2025slm}. Whether that claim holds for a task as long-horizon and format-sensitive as writing a textbook is an empirical question, and it is the question this paper asks:
+
+\begin{quote}
+\textit{Can a single DGX-class workstation, running an open-weight small language model under the same agent harness and skills used for cloud generation, produce an intelligent textbook from a course description without sending a token off the machine?}
+\end{quote}
+
+\subsection{Why the Task Is Harder Than It Looks}
+
+Textbook generation is often imagined as a long-form writing problem. In practice, the workload we study is closer to a long-horizon software task. A \textit{skill} is a document of a thousand lines or more that tells an agent what to do, with reference files, templates, and scripts beside it that the agent must find and use at the right step \cite{anthropic2025skills}. A single stage takes tens of tool calls. The output of each stage is the input to the next, and the files passed between stages (CSV, JSON, YAML, Markdown with embedded specifications) must be well formed or the next stage fails. A model that writes good prose but emits a tool call as plain text, loses the thread of a long instruction, or takes ninety minutes per turn will not finish. The benchmark therefore stresses two abilities above all: following a long skill faithfully, and calling tools correctly dozens of times in one session.
+
+\subsection{Approach and Contributions}
+
+We built an evaluation around a published, cloud-generated Algebra~I textbook, restricted to the first three stages of the generation pipeline, and ran it through a local harness on one DGX-class machine. The same effort produced a second artifact: an open, 23-chapter intelligent textbook that teaches how to run such an evaluation. This paper describes both. Its contributions are:
+
+\begin{enumerate}
+\item \textbf{A reproducible benchmark definition.} A fixed course description, one fixed prompt per stage, pinned harness and server versions, fresh workspaces, and explicit time limits, so that the model is the only thing that changes (Section~\ref{sec:design}).
+
+\item \textbf{A first measurement of ten open-weight models.} Six produced a learning graph and ran all three stages; two wrote every chapter they designed. We give completion, time, tool-call behavior, and a taxonomy of the failures observed (Section~\ref{sec:results}).
+
+\item \textbf{A deterministic chapter-conformance score.} A 0--100 score computed from counts a program can reproduce, with no model as judge, built to favor consistent quality over peak quality, with its own validation limits stated (Section~\ref{sec:measurement}).
+
+\item \textbf{A cost model checked against measurement.} The model's per-hour cost and its predicted run times are compared with the wall-clock time of the runs (Section~\ref{sec:cost}).
+
+\item \textbf{An open textbook that teaches the method.} 23 chapters, 506 concepts with 824 dependencies, 36 MicroSims, a glossary, quizzes, and annotated references, generated with the same skill chain it evaluates (Section~\ref{sec:book}).
+
+\item \textbf{A publication discipline for private hardware.} A practice for publishing results from a machine that must stay hard to find, reach, and log in to (Section~\ref{sec:publishing}).
+\end{enumerate}
+
+\subsection{Scope and Honesty About What Is Known}
+
+This is a first round. Every model ran each stage once. No person has yet judged whether any generated chapter is mathematically correct or pedagogically sound. The cloud baseline has not been run. The conformance score measures adherence to written rules, not truth, and has not been compared with human ratings. We state these limits early because they bound every claim that follows: the paper reports what \textit{completes} and what a program can \textit{count}, not which model teaches best.
+
+\subsection{Paper Organization}
+
+Section~\ref{sec:related} places the work among intelligent-textbook research, SLM and local-inference work, agent harnesses, and language-model evaluation. Section~\ref{sec:book} describes the textbook itself. Section~\ref{sec:design} defines the benchmark, the roles, the hardware, the models, and the controls. Section~\ref{sec:measurement} describes structural checks and the conformance score. Section~\ref{sec:results} reports results. Section~\ref{sec:cost} gives the cost model. Section~\ref{sec:publishing} describes how results were published safely. Section~\ref{sec:discussion} discusses findings, implications, and threats to validity, and Section~\ref{sec:conclusion} concludes.

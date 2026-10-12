@@ -1,0 +1,30 @@
+\section{Publishing Evidence from a Private Machine}
+\label{sec:publishing}
+
+An evaluation is meant to be shared, and the raw material behind it is not safe to share. The book and its source repository are public; the machines it evaluates are real, sit on a private network, and belong to someone else. Probe reports, command output, logs, and screenshots all carry addresses, host names, account names, and identifiers that make a machine easier to find, reach, or log in to. We treat publication as a security boundary and not as an afterthought, and the book teaches the practice as its last chapter.
+
+\subsection{What Is Never Published}
+
+The rule is that nothing in the repository or on the site may make the device under test easier to find, reach, or log in to, and it outranks realism and completeness: a sanitized example that looks less authentic is always the right trade. The excluded classes are: network addresses of the machines, the private network, and the author's own network; host names, mesh-network names, and the network's name; user names, passwords, and passphrases; SSH keys, network auth keys, API tokens, and model-hub tokens; log files and unedited command output; hardware identifiers such as serial numbers, GPU unique identifiers, and MAC addresses; and the access configuration of the real device, including its access-control policy, open ports, and firewall rules.
+
+\subsection{Four Practices}
+
+\paragraph{Placeholders and documentation ranges.}
+Every example uses a placeholder (a host, a user, a network name) or an address from a range reserved for documentation. Sample output is edited by hand before it enters a chapter, including probe reports, GPU status output, and screenshots of terminals and admin consoles.
+
+\paragraph{Raw output isolation.}
+Run output stays outside the repository, and log files are ignored by version control. Hosts reach the scripts only through an environment variable, so no address is written into any file. The single automated path from run output to the book is a results publisher that copies only three kinds of file: a model's learning graph, its chapter text, and the course description. It leaves out any file that holds an address, a host name, or a home-directory path, and it counts what it removed so that the omission is visible. A narrow path with a blocklist beats a broad copy followed by cleaning because it fails closed: a file it does not recognize is left out.
+
+\paragraph{Layered scanning.}
+A pre-commit script inspects only the lines being added and matches addresses, mesh-network names, private-key headers, auth-key and token formats, home-directory paths, and serial-number and GPU-identifier lines, while allowing documentation ranges and the loopback address. A secret scanner can be run over the tree and over history \cite{gitleaks}. Both are layers and not a defense: a scanner finds credentials with a known shape and does not find an address in a paragraph or a host name in a caption, so a human reads the diff before every publish.
+
+\paragraph{History persistence.}
+A leak deleted in a later commit remains in every earlier commit, in every clone and fork made before the deletion, and in the deployed site and whatever indexes it. The order of operations follows: prevent rather than repair; if something sensitive has been committed, stop and tell the person responsible for the repository; treat any leaked credential as compromised; and regard history rewriting as a last resort that does not reach earlier copies.
+
+\subsection{Applied to This Paper}
+
+The numbers in this paper derive from logs but are counts and durations. The aggregation step copies no path, host name, session identifier, or text from the event streams, and its output was scanned for address-, host-, and path-like strings before it was committed. No figure contains an address, host name, or login, and the architecture diagram names the machines only as roles. The model-results pages that the book publishes contain only generated text.
+
+\subsection{What Was Not Local}
+
+One disclosure bears on the claim that generation never leaves the machine. The orchestrator, which started, watched, and scored runs, was a cloud model, and whatever it read to do so, including generated text, went to the cloud provider's API. The generation loop was local; its supervision was not. The harness was configured to send model requests only to the server on the same machine, with a placeholder credential and optional network features off, but that configuration was not confirmed with a packet capture. A deployment that needs the stronger property would replace the orchestrator with scripts and verify the network boundary.

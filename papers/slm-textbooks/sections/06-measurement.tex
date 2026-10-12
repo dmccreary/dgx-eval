@@ -1,0 +1,102 @@
+\section{Measuring What Was Produced}
+\label{sec:measurement}
+
+Two kinds of measurement are used. \textit{Structural checks} ask whether an output exists and is well formed, which a program can verify exactly. The \textit{chapter-conformance score} asks how closely a written chapter follows the book's content rules. Neither judges whether the mathematics is correct or the explanation is good; that remains a human review that has not yet been done.
+
+\subsection{Structural Checks}
+
+For stage~1 the checks are: every expected file is present; the CSV has the required columns; the concept count matches the target of 200; identifiers are consecutive from~1; no label is duplicated; no label exceeds 32 characters; every dependency refers to an existing concept; no concept lies on a cycle; the JSON file agrees with the CSV; and a strict site build succeeds. The report also counts concepts with no prerequisite and concepts connected to nothing. For stages~2 and~3 the checks are: chapter files exist, concepts are assigned to chapters, words per chapter, and whether the placeholder text is gone. A chapter is \textit{written} when its placeholder is gone and it has at least 1,000 words.
+
+\subsection{The Chapter-Conformance Score}
+
+The author set four requirements: use objective measurements; include adherence to the book's content rules, the placement of diagrams, and the quality of their specifications; report word count, diagram count, and reading level for each chapter; and favor consistent quality over high absolute quality. Three further constraints follow from how the benchmark runs. The same files must always receive the same score; the program must run on a DGX with nothing beyond the Python standard library; and every number must be explainable, so that a chapter that scores badly shows which rule it broke.
+
+\paragraph{Budget from the chapter's own concepts.}
+Each concept $c$ has a Concept Impact Score $\mathrm{CIS}(c)$, one plus the sum of $\mathrm{CIS}$ over every concept that depends on it. Its normalized importance is
+\begin{equation}
+E(c) = \frac{\ln\bigl(\mathrm{CIS}(c)+1\bigr)}{\ln\bigl(\mathrm{CIS}_{\max}+1\bigr)},
+\end{equation}
+and $E(c)$ assigns a tier (Table~\ref{tab:tiers}). A chapter's word budget is the sum of its concepts' targets. A chapter of mostly Tier~A concepts is therefore expected to run several times longer than one of mostly Tier~C, and the score does not normalize that variation away. The word-fit sub-score is a plateau: zero below 20\% of the low target, full credit from 60\% of the low target to 125\% of the high target, and falling to zero at 250\% of the high target. A chapter is never rewarded for exceeding its budget, because the content guide says a dense chapter beats a padded one.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{@{}clrl@{}}
+\toprule
+\textbf{Tier} & \textbf{$E(c)$} & \textbf{Target words} & \textbf{Required elements} \\
+\midrule
+A & $\ge 0.5$ & 500--750 & worked example, plus a diagram, chart, table, or MicroSim \\
+B & 0.2 to 0.5 & 250--400 & worked example \\
+C & $<0.2$ & 120--200 & a clear definition \\
+\bottomrule
+\end{tabular}
+\caption{Concept tiers and per-concept word targets taken from the book's content-generation guide.}
+\label{tab:tiers}
+\end{table}
+
+\paragraph{Six dimensions.}
+Each dimension is a weighted mean of sub-scores in $[0,1]$. A sub-score that does not apply to a chapter is dropped and the remaining weights are rescaled, so a chapter with no admonitions is not penalized for their absence. The chapter score is $Q = 100\sum_d w_d s_d \big/ \sum_d w_d$ with the weights in Table~\ref{tab:dimensions}, which were set by hand because no human ratings exist yet.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}lrX@{}}
+\toprule
+\textbf{Dimension} & \textbf{Weight} & \textbf{Question it asks} \\
+\midrule
+Budget & 20 & Does the chapter hold the words, worked examples, and non-text elements that its own concepts call for, and cover the concepts it lists? \\
+Diagram placement & 20 & Is each diagram introduced by prose, defined before it appears, near the text it illustrates, and spread through the chapter? \\
+Diagram specification & 20 & Does each specification carry the 18 required fields at the precision that 14 written rules ask for? \\
+Format & 15 & Does the Markdown render, and are headings, admonitions, and mascot used as the guide says? \\
+Padding & 10 & Does the chapter repeat itself or pad with filler (duplicate sentences, windowed compression ratio, stock phrases, templated specifications)? \\
+Reader fit & 15 & Is the reading level right for the audience, with equations and worked examples present? \\
+\bottomrule
+\end{tabularx}
+\caption{The six dimensions of the chapter score and their weights.}
+\label{tab:dimensions}
+\end{table}
+
+Three design choices deserve explanation. First, the specification dimension encodes the rules of the chapter-content skill itself, so a diagram counts as correctly placed when the skill's own batch tool will find and build it, even if a stricter reading of the rules would disagree; a score should agree with the toolchain that consumes the output. Second, reading grade is the Flesch--Kincaid grade \cite{kincaid1975} of the prose with math, code, tables, and specifications removed, against a target of 9.0 for Algebra~I. Third, equations are \textit{counted but not scored}: each chapter and book reports how many equations are well formed and how many the site would display as source text. The count is a syntax check, written from the KaTeX function list and not by running KaTeX, and it is kept out of the score so that every number in this paper holds the value at which the weights were checked.
+
+\paragraph{From chapters to a book.}
+Algorithm~\ref{alg:book} gives the book score. The book's headline is its level multiplied by its consistency, where consistency is one minus the coefficient of variation of the written chapters. Unwritten chapters enter the level as zero and are left out of the consistency, so that one fact, that a chapter is missing, is not charged twice.
+
+\begin{algorithm}[htbp]
+\caption{Scoring one generated book}
+\label{alg:book}
+\begin{algorithmic}[1]
+\Require chapters $c_1,\dots,c_N$ with their concept tables; the book's learning graph
+\For{each chapter $c_i$}
+  \If{$c_i$ holds the placeholder text or has fewer than 1,000 words}
+    \State $Q_i \gets 0$ \Comment{stub}
+  \Else
+    \State compute the word budget $[L_i,H_i]$ from the tiers of $c_i$'s concepts
+    \State score the six dimensions $s_d\in[0,1]$, dropping sub-scores that do not apply
+    \State $Q_i \gets 100\sum_d w_d s_d \big/ \sum_d w_d$
+  \EndIf
+\EndFor
+\State $\mathrm{level} \gets \frac{1}{N}\sum_{i} Q_i$ \Comment{stubs count as 0}
+\State $\mu,\sigma \gets$ mean and standard deviation of $Q_i$ over \emph{written} chapters only
+\State $\mathrm{consistency} \gets 100\,(1-\sigma/\mu)$ \Comment{undefined for fewer than two written chapters}
+\State \Return $\mathrm{level}\times\mathrm{consistency}/100$
+\end{algorithmic}
+\end{algorithm}
+
+Several ways of favoring consistency were weighed. The mean alone ignores spread, and a book of ten excellent chapters and ten stubs would tie a book of twenty middling ones. A mean with a variance penalty trades points for spread at an invented exchange rate. The lowest chapter alone lets one bad chapter in twenty decide the whole book. The geometric mean of level and consistency is too generous to a uniformly poor book: level 20 at consistency 95 scores 44, where the product scores 19. The product keeps a uniformly poor book poor and cuts a lopsided one by its spread.
+
+\subsection{Why Counts and Not a Language Model}
+
+A model asked to rate a chapter would be quicker to build and would notice what a regular expression cannot, such as an explanation that is wrong. It would also give a different answer on each run, bring its own bias toward text that sounds like itself \cite{zheng2023judge, panickssery2024selfpref}, and, if hosted in the cloud, send the generated books to a third party. The rules to be checked are written, specific, and mostly countable, so a program can check them, repeat itself exactly, and run on the DGX. The cost is real: a counting score can be satisfied by text that has the right fields and nothing in them. We do not claim otherwise.
+
+\subsection{Validation and Its Limits}
+
+The checks we ran on the score are modest, and we report them with the bugs they missed.
+
+\begin{itemize}
+\item \textbf{Determinism.} The same input scored twice gave identical output.
+\item \textbf{Insensitivity to size.} Across the 49 written chapters, the Spearman correlation of the chapter score with body words is $-0.10$, with the number of diagram specifications $0.15$, and with the number of equations $0.15$. The score does not track size, which is what the plateau and the saturating sub-scores were built to achieve.
+\item \textbf{Reweighting.} We multiplied each of the six dimension weights by an independent uniform draw from $[0.6,1.4]$, 500 times, and recomputed the headlines (Section~\ref{sec:quality}).
+\item \textbf{Bugs that survived.} Three defects passed the checks above and were found later: a header rule stricter than the skill's own parser, a function that treated a whole chapter as boilerplate, and a case-insensitive pattern that matched an HTML tag and failed 278 of 282 specification blocks. None showed in the totals. Two were found by reading single chapters whose sub-scores looked wrong, and the third by tabulating how often each check failed: a check that fails 99\% of the time is a defect. One chapter had been scored about 14 points too low.
+\end{itemize}
+
+Three limits remain. The thresholds, such as the compression ratio and words per sentence, were read off the same six books they now score, so they fit this corpus and must be revisited for a new course or model. The weights are the author's and the assistant's opinions, untested against a human. And the specification checks encode one version of one skill, so a new skill version can make a check wrong without any change in the chapters.

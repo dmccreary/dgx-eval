@@ -112,6 +112,8 @@ export DGX_HOSTS="<user>@<dgx-host-a> <user>@<dgx-host-b>"
 | File | Purpose |
 |---|---|
 | `publish_results.py` | Rebuild `docs/models/` from fetched run output: for each model, its learning graph for the viewer, a graph quality report, its chapters, and a page of chapter metrics. It also rewrites the Model Results block of the navigation in `mkdocs.yml` |
+| `aggregate_runs.py` | Reduce fetched run output to one sanitized CSV of per-run counts and times, `papers/slm-textbooks/data/stage-metrics.csv`. It copies no path, host name, or text |
+| `make_paper_figures.py` | Make the figures and `data/paper-numbers.json` for the paper in `papers/slm-textbooks`. It runs `scoring/chapter_quality.py` itself and needs matplotlib, so use the `mkdocs` conda environment |
 
 It reuses two scripts from the skills instead of repeating them: the graph
 analysis from `learning-graph-generator` and the reading-level measure from
@@ -120,6 +122,15 @@ with a Python that has it:
 
 ```bash
 python3 src/reporting/publish_results.py
+```
+
+The paper is rebuilt from two further scripts. `aggregate_runs.py` is standard
+library only and reads the same fetched run output; `make_paper_figures.py`
+reads its CSV, the published model books, and the book's own chapters:
+
+```bash
+python3 src/reporting/aggregate_runs.py
+/usr/local/Caskroom/miniforge/base/envs/mkdocs/bin/python src/reporting/make_paper_figures.py
 ```
 
 ## microsim-review

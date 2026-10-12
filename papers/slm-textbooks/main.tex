@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+
+% ArXiv-compatible packages (same preamble as the MicroSims paper)
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Page geometry
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em}  % let lines with long model names stretch instead of overflowing
+
+% Code listing settings
+\lstset{
+    basicstyle=\small\ttfamily,
+    commentstyle=\color{green!50!black},
+    numbers=none,
+    backgroundcolor=\color{gray!5},
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,
+    tabsize=2,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=false
+}
+
+% Model names: monospaced, and allowed to break after hyphens so that long
+% names do not run into the margin.
+\newcommand{\mdl}[1]{\texttt{#1}}
+\newcommand{\Qeight}{\mdl{qwen3.8:27b}}
+\newcommand{\Gthirtyone}{\mdl{gemma4:31b}}
+\newcommand{\Muse}{\mdl{muse-\allowbreak glimmer:30b}}
+\newcommand{\Qsix}{\mdl{qwen3.6:35b}}
+\newcommand{\Gtwentysix}{\mdl{gemma4:26b}}
+\newcommand{\Nemo}{\mdl{nemotron-\allowbreak 3.5-\allowbreak lightning:30b}}
+\newcommand{\Mistral}{\mdl{mistral-\allowbreak medium-\allowbreak 3.5:128b}}
+\newcommand{\Gptoss}{\mdl{gpt-oss:120b}}
+\newcommand{\Devstral}{\mdl{devstral-\allowbreak small-2:24b}}
+\newcommand{\Granite}{\mdl{granite4.2:30b}}
+
+% Title and author
+\title{Small Language Models as Textbook Generators: A Local-Hardware Benchmark on the NVIDIA DGX Spark and the Intelligent Textbook That Teaches It}
+
+\author{
+    Dan McCreary \\
+    \texttt{https://www.linkedin.com/in/danmccreary/}
+}
+
+\date{Version 0.01 \\ \today}
+
+\begin{document}
+
+\maketitle
+
+% Abstract
+\input{sections/01-abstract}
+
+% Main content sections
+\input{sections/02-introduction}
+\input{sections/03-related-work}
+\input{sections/04-the-book}
+\input{sections/05-benchmark-design}
+\input{sections/06-measurement}
+\input{sections/07-results}
+\input{sections/08-cost}
+\input{sections/09-publishing}
+\input{sections/10-discussion}
+\input{sections/11-conclusion}
+
+% Acknowledgments
+\input{sections/12-acknowledgments}
+
+% References
+\bibliographystyle{ieeetr}
+\bibliography{sections/references}
+
+\end{document}

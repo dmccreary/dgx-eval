@@ -1,0 +1,20 @@
+Intelligent textbooks — interactive books organized around a graph of concept
+dependencies — are generated today almost entirely by cloud-hosted frontier
+models driven by agent skills. This paper asks whether open-weight models small
+enough to run on one 128 GB desktop workstation can do the same work without
+sending a token to the cloud. We contribute (1) a reproducible three-stage
+benchmark (learning graph, chapter structure, chapter text) on a fixed Algebra I
+course description, run through the agent harness and skills that produced the
+published reference book; (2) a first single-run measurement of ten open-weight
+models of 24 to 128 billion parameters on a DGX Spark-class machine; (3) a
+deterministic, model-free chapter-conformance score that favors consistency over
+peak quality; (4) a cost model checked against measured run times; and (5) a
+23-chapter open textbook, with 506 concepts in a dependency graph, that teaches
+the method, including how to publish results without exposing the machine
+tested. Six of ten models produced a learning graph and ran all three stages,
+but only two wrote every chapter they had designed; the model with the cleanest
+learning graph was the slowest and wrote no chapter. Conformance scores ranged
+from 39.0 to 64.3 of 100, and the top two books swap places in 39% of reweighted
+trials. Three stages took 1.8 to 5.6 machine hours. All results are single runs,
+no person has yet judged whether the chapters are correct, and no cloud baseline
+exists, so we report what completes, not what teaches best.

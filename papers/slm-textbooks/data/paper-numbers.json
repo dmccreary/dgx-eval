@@ -1,0 +1,802 @@
+{
+ "books": {
+  "qwen3.8:27b": {
+   "designed": 14,
+   "written": 0,
+   "level": 0.0,
+   "consistency": null,
+   "floor": 0.0,
+   "headline": null,
+   "median_written": null,
+   "words_written": 0,
+   "words_body": 0,
+   "diagram_specs": 0,
+   "mean_grade": null,
+   "equations_ok": 0,
+   "equations_bad": 0,
+   "scaffold_leaks": 0,
+   "lists_unrendered": 0,
+   "templated_specs": 0,
+   "dim_means": {
+    "budget": null,
+    "placement": null,
+    "spec": null,
+    "format": null,
+    "padding": null,
+    "reader": null
+   }
+  },
+  "gemma4:31b": {
+   "designed": 12,
+   "written": 10,
+   "level": 69.8,
+   "consistency": 91.11260159968133,
+   "floor": 68.7,
+   "headline": 63.59659591657756,
+   "median_written": 85.75,
+   "words_written": 26501.0,
+   "words_body": 16137.0,
+   "diagram_specs": 36.0,
+   "mean_grade": 9.4419,
+   "equations_ok": 1065.0,
+   "equations_bad": 1.0,
+   "scaffold_leaks": 0,
+   "lists_unrendered": 227.0,
+   "templated_specs": 0,
+   "dim_means": {
+    "budget": 69.08,
+    "placement": 85.68,
+    "spec": 89.26,
+    "format": 70.83,
+    "padding": 98.87,
+    "reader": 96.21000000000001
+   }
+  },
+  "qwen3.6:35b": {
+   "designed": 11,
+   "written": 11,
+   "level": 76.4090909090909,
+   "consistency": 84.11520257801472,
+   "floor": 55.9,
+   "headline": 64.27166160620123,
+   "median_written": 79.8,
+   "words_written": 75425.0,
+   "words_body": 51900.0,
+   "diagram_specs": 36.0,
+   "mean_grade": 10.536545454545454,
+   "equations_ok": 3079.0,
+   "equations_bad": 0,
+   "scaffold_leaks": 9.0,
+   "lists_unrendered": 110.0,
+   "templated_specs": 0,
+   "dim_means": {
+    "budget": 65.45454545454545,
+    "placement": 64.02727272727273,
+    "spec": 78.85454545454546,
+    "format": 77.57272727272728,
+    "padding": 99.63636363636364,
+    "reader": 87.58181818181818
+   }
+  },
+  "gemma4:26b": {
+   "designed": 14,
+   "written": 10,
+   "level": 53.43571428571429,
+   "consistency": 79.13514154708834,
+   "floor": 54.5,
+   "headline": 42.28642813669771,
+   "median_written": 83.15,
+   "words_written": 26486.0,
+   "words_body": 22569.0,
+   "diagram_specs": 15.0,
+   "mean_grade": 10.3984,
+   "equations_ok": 1154.0,
+   "equations_bad": 0,
+   "scaffold_leaks": 0,
+   "lists_unrendered": 59.0,
+   "templated_specs": 2.0,
+   "dim_means": {
+    "budget": 83.32,
+    "placement": 50.65,
+    "spec": 56.6,
+    "format": 87.84,
+    "padding": 95.83,
+    "reader": 92.9
+   }
+  },
+  "nemotron-3.5-lightning:30b": {
+   "designed": 12,
+   "written": 12,
+   "level": 66.14999999999999,
+   "consistency": 79.32487993287411,
+   "floor": 35.2,
+   "headline": 52.47340807559622,
+   "median_written": 71.85,
+   "words_written": 81739.0,
+   "words_body": 52792.0,
+   "diagram_specs": 87.0,
+   "mean_grade": 11.49775,
+   "equations_ok": 3294.0,
+   "equations_bad": 0,
+   "scaffold_leaks": 127.0,
+   "lists_unrendered": 141.0,
+   "templated_specs": 0,
+   "dim_means": {
+    "budget": 75.83333333333333,
+    "placement": 42.34166666666667,
+    "spec": 55.81666666666666,
+    "format": 70.04166666666667,
+    "padding": 98.54166666666667,
+    "reader": 73.24166666666666
+   }
+  },
+  "gpt-oss:120b": {
+   "designed": 10,
+   "written": 6,
+   "level": 40.93,
+   "consistency": 95.26618617308856,
+   "floor": 63.5,
+   "headline": 38.99245000064514,
+   "median_written": 69.30000000000001,
+   "words_written": 17890.0,
+   "words_body": 5658.0,
+   "diagram_specs": 108.0,
+   "mean_grade": 9.567333333333334,
+   "equations_ok": 288.0,
+   "equations_bad": 0,
+   "scaffold_leaks": 20.0,
+   "lists_unrendered": 19.0,
+   "templated_specs": 31.0,
+   "dim_means": {
+    "budget": 55.0,
+    "placement": 62.38333333333333,
+    "spec": 63.6,
+    "format": 80.23333333333333,
+    "padding": 90.66666666666667,
+    "reader": 73.03333333333333
+   }
+  }
+ },
+ "flags": {
+  "qwen3.8:27b": {},
+  "gemma4:31b": {
+   "UNDER_BUDGET": 3,
+   "LISTS": 10,
+   "MALFORMED_MATH": 1,
+   "NO_CONCEPT_TABLE": 2,
+   "OUTLIER_LOW": 2,
+   "IFRAME_FAKE_HOST": 1
+  },
+  "qwen3.6:35b": {
+   "NO_DIAGRAMS": 2,
+   "LISTS": 10,
+   "SCAFFOLD_LEAK": 4,
+   "NO_CONCEPT_TABLE": 3,
+   "MASCOT_UNDEFINED": 1
+  },
+  "gemma4:26b": {
+   "LISTS": 9,
+   "TITLE_MISMATCH": 1,
+   "NO_CONCEPT_TABLE": 1,
+   "NO_HEADER": 1,
+   "TEMPLATED": 1,
+   "OUTLIER_LOW": 3,
+   "NO_DIAGRAMS": 3,
+   "UNDER_BUDGET": 1,
+   "BARE_DIAGRAM_HEADER": 1
+  },
+  "nemotron-3.5-lightning:30b": {
+   "NO_HEADER": 8,
+   "LISTS": 10,
+   "SCAFFOLD_LEAK": 9,
+   "TITLE_MISMATCH": 5,
+   "THIN_SPEC": 1,
+   "TRUNCATED": 2,
+   "IMG_BROKEN": 1,
+   "UNDER_BUDGET": 1,
+   "OVER_BUDGET": 1,
+   "NO_DIAGRAMS": 2,
+   "OUTLIER_LOW": 2,
+   "BARE_DIAGRAM_HEADER": 1
+  },
+  "gpt-oss:120b": {
+   "UNDER_BUDGET": 6,
+   "TITLE_MISMATCH": 5,
+   "TEMPLATED": 3,
+   "LISTS": 4,
+   "SCAFFOLD_LEAK": 1
+  }
+ },
+ "spearman": {
+  "words_body": -0.10189555352955809,
+  "words_total": -0.09388473635172102,
+  "diagrams": 0.15473684806927182,
+  "equations_ok": 0.1490594398881726
+ },
+ "weight_sensitivity": {
+  "trials": 500,
+  "same_order_share": 0.608,
+  "pair_flip_share": 0.045,
+  "pairs_compared": 10,
+  "flipping_pairs": {
+   "qwen3.6:35b vs gemma4:31b": 0.392,
+   "gemma4:26b vs gpt-oss:120b": 0.058
+  }
+ },
+ "runs": {
+  "qwen3.8:27b": {
+   "stages": {
+    "s1": {
+     "runs": 1,
+     "wall_s": 6123,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 55,
+     "failed_tool_calls": 1,
+     "output_tokens": 53889,
+     "turns": 57,
+     "chapter_wall_s": null
+    },
+    "s2": {
+     "runs": 1,
+     "wall_s": 3162,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 34,
+     "failed_tool_calls": 0,
+     "output_tokens": 26961,
+     "turns": 36,
+     "chapter_wall_s": null
+    },
+    "s3": {
+     "runs": 2,
+     "wall_s": 10801,
+     "timed_out_runs": 2,
+     "timed_out_wall_s": 10801,
+     "tool_calls": 39,
+     "failed_tool_calls": 1,
+     "output_tokens": 0,
+     "turns": 77,
+     "chapter_wall_s": [
+      5401,
+      5400
+     ]
+    }
+   },
+   "wall_s": 20086,
+   "tool_calls": 128,
+   "failed_tool_calls": 2,
+   "output_tokens": 80850,
+   "peak_context_tokens": 107755
+  },
+  "gemma4:31b": {
+   "stages": {
+    "s1": {
+     "runs": 1,
+     "wall_s": 1279,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 50,
+     "failed_tool_calls": 8,
+     "output_tokens": 25866,
+     "turns": 52,
+     "chapter_wall_s": null
+    },
+    "s2": {
+     "runs": 1,
+     "wall_s": 571,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 17,
+     "failed_tool_calls": 6,
+     "output_tokens": 9869,
+     "turns": 19,
+     "chapter_wall_s": null
+    },
+    "s3": {
+     "runs": 12,
+     "wall_s": 15437,
+     "timed_out_runs": 1,
+     "timed_out_wall_s": 5400,
+     "tool_calls": 198,
+     "failed_tool_calls": 38,
+     "output_tokens": 134804,
+     "turns": 230,
+     "chapter_wall_s": [
+      783,
+      1024,
+      943,
+      875,
+      5400,
+      816,
+      940,
+      2682,
+      104,
+      660,
+      732,
+      478
+     ]
+    }
+   },
+   "wall_s": 17287,
+   "tool_calls": 265,
+   "failed_tool_calls": 52,
+   "output_tokens": 170539,
+   "peak_context_tokens": 113552
+  },
+  "muse-glimmer:30b": {
+   "stages": {
+    "s1": {
+     "runs": 1,
+     "wall_s": 360,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 6,
+     "failed_tool_calls": 0,
+     "output_tokens": 1266,
+     "turns": 8,
+     "chapter_wall_s": null
+    }
+   },
+   "wall_s": 360,
+   "tool_calls": 6,
+   "failed_tool_calls": 0,
+   "output_tokens": 1266,
+   "peak_context_tokens": 124523
+  },
+  "qwen3.6:35b": {
+   "stages": {
+    "s1": {
+     "runs": 1,
+     "wall_s": 1312,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 55,
+     "failed_tool_calls": 4,
+     "output_tokens": 84506,
+     "turns": 57,
+     "chapter_wall_s": null
+    },
+    "s2": {
+     "runs": 1,
+     "wall_s": 1946,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 115,
+     "failed_tool_calls": 10,
+     "output_tokens": 97818,
+     "turns": 117,
+     "chapter_wall_s": null
+    },
+    "s3": {
+     "runs": 11,
+     "wall_s": 4672,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 295,
+     "failed_tool_calls": 19,
+     "output_tokens": 254413,
+     "turns": 317,
+     "chapter_wall_s": [
+      316,
+      386,
+      507,
+      447,
+      593,
+      586,
+      505,
+      345,
+      350,
+      276,
+      361
+     ]
+    }
+   },
+   "wall_s": 7930,
+   "tool_calls": 465,
+   "failed_tool_calls": 33,
+   "output_tokens": 436737,
+   "peak_context_tokens": 163082
+  },
+  "gemma4:26b": {
+   "stages": {
+    "s1": {
+     "runs": 1,
+     "wall_s": 343,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 51,
+     "failed_tool_calls": 5,
+     "output_tokens": 18994,
+     "turns": 53,
+     "chapter_wall_s": null
+    },
+    "s2": {
+     "runs": 1,
+     "wall_s": 221,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 10,
+     "failed_tool_calls": 0,
+     "output_tokens": 11171,
+     "turns": 12,
+     "chapter_wall_s": null
+    },
+    "s3": {
+     "runs": 14,
+     "wall_s": 5987,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 355,
+     "failed_tool_calls": 33,
+     "output_tokens": 272374,
+     "turns": 362,
+     "chapter_wall_s": [
+      456,
+      153,
+      350,
+      625,
+      587,
+      588,
+      590,
+      635,
+      270,
+      170,
+      529,
+      317,
+      427,
+      290
+     ]
+    }
+   },
+   "wall_s": 6551,
+   "tool_calls": 416,
+   "failed_tool_calls": 38,
+   "output_tokens": 302539,
+   "peak_context_tokens": 112059
+  },
+  "nemotron-3.5-lightning:30b": {
+   "stages": {
+    "s1": {
+     "runs": 1,
+     "wall_s": 1075,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 140,
+     "failed_tool_calls": 7,
+     "output_tokens": 68407,
+     "turns": 142,
+     "chapter_wall_s": null
+    },
+    "s2": {
+     "runs": 1,
+     "wall_s": 1311,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 62,
+     "failed_tool_calls": 17,
+     "output_tokens": 85526,
+     "turns": 64,
+     "chapter_wall_s": null
+    },
+    "s3": {
+     "runs": 12,
+     "wall_s": 7211,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 489,
+     "failed_tool_calls": 53,
+     "output_tokens": 377643,
+     "turns": 472,
+     "chapter_wall_s": [
+      738,
+      376,
+      356,
+      376,
+      529,
+      1111,
+      835,
+      272,
+      840,
+      471,
+      312,
+      995
+     ]
+    }
+   },
+   "wall_s": 9597,
+   "tool_calls": 691,
+   "failed_tool_calls": 77,
+   "output_tokens": 531576,
+   "peak_context_tokens": 163832
+  },
+  "gpt-oss:120b": {
+   "stages": {
+    "s1": {
+     "runs": 1,
+     "wall_s": 1014,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 28,
+     "failed_tool_calls": 0,
+     "output_tokens": 14271,
+     "turns": 30,
+     "chapter_wall_s": null
+    },
+    "s2": {
+     "runs": 1,
+     "wall_s": 561,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 17,
+     "failed_tool_calls": 1,
+     "output_tokens": 7597,
+     "turns": 19,
+     "chapter_wall_s": null
+    },
+    "s3": {
+     "runs": 10,
+     "wall_s": 5318,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 113,
+     "failed_tool_calls": 6,
+     "output_tokens": 86010,
+     "turns": 147,
+     "chapter_wall_s": [
+      251,
+      1087,
+      107,
+      613,
+      315,
+      604,
+      119,
+      863,
+      664,
+      695
+     ]
+    }
+   },
+   "wall_s": 6893,
+   "tool_calls": 158,
+   "failed_tool_calls": 7,
+   "output_tokens": 107878,
+   "peak_context_tokens": 79791
+  },
+  "devstral-small-2:24b": {
+   "stages": {
+    "s1": {
+     "runs": 1,
+     "wall_s": 32,
+     "timed_out_runs": 0,
+     "timed_out_wall_s": 0,
+     "tool_calls": 0,
+     "failed_tool_calls": 0,
+     "output_tokens": 27,
+     "turns": 1,
+     "chapter_wall_s": null
+    }
+   },
+   "wall_s": 32,
+   "tool_calls": 0,
+   "failed_tool_calls": 0,
+   "output_tokens": 27,
+   "peak_context_tokens": 21357
+  },
+  "granite4.2:30b": {
+   "stages": {
+    "s1": {
+     "runs": 1,
+     "wall_s": 9000,
+     "timed_out_runs": 1,
+     "timed_out_wall_s": 9000,
+     "tool_calls": 32,
+     "failed_tool_calls": 4,
+     "output_tokens": 0,
+     "turns": 65,
+     "chapter_wall_s": null
+    }
+   },
+   "wall_s": 9000,
+   "tool_calls": 32,
+   "failed_tool_calls": 4,
+   "output_tokens": 0,
+   "peak_context_tokens": 49595
+  }
+ },
+ "cost_base": {
+  "yearly": 8275.2597,
+  "per_generating_hour": 1.8893286986301372,
+  "three_stage_hours": 2.8006535947712417,
+  "book_hours": 28.006535947712415,
+  "cost": 52.91355211522965,
+  "price_20pct_margin": 66.14194014403705
+ },
+ "cost_measured": {
+  "qwen3.8:27b": {
+   "three_stage_hours": 5.579444444444444,
+   "cost_at_base_rate": 10.541404511301371,
+   "cost_per_1000_written_words": null
+  },
+  "gemma4:31b": {
+   "three_stage_hours": 4.801944444444445,
+   "cost_at_base_rate": 9.072451448116439,
+   "cost_per_1000_written_words": 0.34234373978779814
+  },
+  "muse-glimmer:30b": {
+   "three_stage_hours": 0.1,
+   "cost_at_base_rate": 0.18893286986301372,
+   "cost_per_1000_written_words": null
+  },
+  "qwen3.6:35b": {
+   "three_stage_hours": 2.202777777777778,
+   "cost_at_base_rate": 4.161771272260275,
+   "cost_per_1000_written_words": 0.05517761050394796
+  },
+  "gemma4:26b": {
+   "three_stage_hours": 1.8197222222222222,
+   "cost_at_base_rate": 3.4380534179794524,
+   "cost_per_1000_written_words": 0.1298064418175433
+  },
+  "nemotron-3.5-lightning:30b": {
+   "three_stage_hours": 2.6658333333333335,
+   "cost_at_base_rate": 5.036635422431508,
+   "cost_per_1000_written_words": 0.06161851041034889
+  },
+  "gpt-oss:120b": {
+   "three_stage_hours": 1.9147222222222222,
+   "cost_at_base_rate": 3.6175396443493155,
+   "cost_per_1000_written_words": 0.20221015340130327
+  },
+  "devstral-small-2:24b": {
+   "three_stage_hours": 0.008888888888888889,
+   "cost_at_base_rate": 0.01679403287671233,
+   "cost_per_1000_written_words": null
+  },
+  "granite4.2:30b": {
+   "three_stage_hours": 2.5,
+   "cost_at_base_rate": 4.723321746575343,
+   "cost_per_1000_written_words": null
+  }
+ },
+ "cost_scenarios": {
+  "Generating share of hours": {
+   "25%": 105.40042465529588,
+   "75%": 35.417927935207565
+  },
+  "Operations labor": {
+   "8 h/month": 80.53643688557614,
+   "none": 25.290667344883158
+  },
+  "Three stages' share of a book": {
+   "5%": 105.8271042304593,
+   "20%": 26.456776057614825
+  },
+  "Hardware price": {
+   "$9,000": 57.28291274634156,
+   "$3,999": 46.623804201858306
+  },
+  "Service life": {
+   "3 years (base)": 52.91355211522965,
+   "5 years": 43.70592385844749
+  }
+ },
+ "book_structure": [
+  {
+   "n": 1,
+   "concepts": 19,
+   "words": 10756
+  },
+  {
+   "n": 2,
+   "concepts": 19,
+   "words": 5450
+  },
+  {
+   "n": 3,
+   "concepts": 23,
+   "words": 5913
+  },
+  {
+   "n": 4,
+   "concepts": 19,
+   "words": 3883
+  },
+  {
+   "n": 5,
+   "concepts": 27,
+   "words": 5829
+  },
+  {
+   "n": 6,
+   "concepts": 25,
+   "words": 5482
+  },
+  {
+   "n": 7,
+   "concepts": 21,
+   "words": 5045
+  },
+  {
+   "n": 8,
+   "concepts": 21,
+   "words": 3660
+  },
+  {
+   "n": 9,
+   "concepts": 18,
+   "words": 3422
+  },
+  {
+   "n": 10,
+   "concepts": 25,
+   "words": 4290
+  },
+  {
+   "n": 11,
+   "concepts": 24,
+   "words": 4233
+  },
+  {
+   "n": 12,
+   "concepts": 23,
+   "words": 3735
+  },
+  {
+   "n": 13,
+   "concepts": 25,
+   "words": 4888
+  },
+  {
+   "n": 14,
+   "concepts": 18,
+   "words": 2884
+  },
+  {
+   "n": 15,
+   "concepts": 22,
+   "words": 3854
+  },
+  {
+   "n": 16,
+   "concepts": 16,
+   "words": 3293
+  },
+  {
+   "n": 17,
+   "concepts": 16,
+   "words": 3768
+  },
+  {
+   "n": 18,
+   "concepts": 18,
+   "words": 3646
+  },
+  {
+   "n": 19,
+   "concepts": 24,
+   "words": 5329
+  },
+  {
+   "n": 20,
+   "concepts": 24,
+   "words": 4174
+  },
+  {
+   "n": 21,
+   "concepts": 25,
+   "words": 3984
+  },
+  {
+   "n": 22,
+   "concepts": 26,
+   "words": 4865
+  },
+  {
+   "n": 23,
+   "concepts": 28,
+   "words": 4593
+  }
+ ],
+ "written_chapters_scored": 49
+}
