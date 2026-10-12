@@ -343,3 +343,5 @@ A model's memory is its weights plus its KV cache plus a small runtime overhead.
 !!! mascot-celebration "You Can Predict a Fit Before You Download"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now estimate a model's weights, cache, and overhead, apply a headroom, and reach one of three verdicts that matches what this evaluation measured to within a few percent. Chapter 12 uses the calculation to choose which models are worth downloading at all.
+
+[See Annotated References](./references.md)

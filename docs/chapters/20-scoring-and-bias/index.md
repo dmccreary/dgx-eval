@@ -304,3 +304,5 @@ A rubric defines quality dimension by dimension, and structural checks cover the
 !!! mascot-celebration "You Can Say What a Score Does and Does Not Show"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now separate checks from judgments, calibrate a check before trusting it, name the biases in a judge, and write a limitations statement. Chapter 21 uses all of it to run the benchmark.
+
+[See Annotated References](./references.md)

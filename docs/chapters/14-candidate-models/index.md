@@ -229,3 +229,5 @@ Eight families publish the open-weight models a DGX evaluator is likely to meet,
 !!! mascot-celebration "Every Name Now Has a Reason"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now say where each of the ten candidates came from, why it was tested, and what the first round showed, and you know that each number is one observation and not a ranking. Chapter 15 measures why the same model can be fast in one test and slow in another.
+
+[See Annotated References](./references.md)

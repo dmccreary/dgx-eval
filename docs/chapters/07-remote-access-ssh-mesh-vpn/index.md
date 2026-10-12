@@ -375,3 +375,5 @@ Remote access to a machine behind a home router fails by default, because the ro
 !!! mascot-celebration "You Can Trace the Whole Path"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now follow a command from your laptop through two routers to the DGX, say which party sees what, and explain why the privacy of your prompts does not depend on trusting the coordination service. Chapter 8 builds the Python environment that the tooling will live in.
+
+[See Annotated References](./references.md)

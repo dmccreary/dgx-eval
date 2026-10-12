@@ -354,3 +354,5 @@ Failure diagnosis starts from the event stream and asks what the evidence rules 
 !!! mascot-celebration "From Run Logs to a Defensible Recommendation"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now diagnose a failed run from its evidence, compute cost and energy per book, adjust for quality, and structure a report whose recommendation states its conditions. Chapter 23 makes that report safe to publish.
+
+[See Annotated References](./references.md)

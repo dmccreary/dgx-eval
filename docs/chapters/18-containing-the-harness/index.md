@@ -289,3 +289,5 @@ A container gives an agent a filesystem sandbox: a pinned image, a non-root user
 !!! mascot-celebration "You Can Fence the Run and Say Where It Leaks"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now run a harness in a sandbox that limits what it can write, draw the network boundary honestly, and put a watchdog under a long run. Chapter 19 designs the evaluation those runs will serve.
+
+[See Annotated References](./references.md)

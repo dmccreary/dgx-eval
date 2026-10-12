@@ -466,3 +466,5 @@ A hardware probe is a read-only measurement, and a probe script gathers several 
 !!! mascot-celebration "The Machine Now Reports in Data"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now write read-only probes, combine them into a suite that produces a JSON report without identifying fields, and branch your setup on what it says. Chapter 11 uses that report to predict whether a model will fit before you download it.
+
+[See Annotated References](./references.md)

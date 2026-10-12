@@ -252,3 +252,5 @@ A harness is a loop around a model: it sends the conversation, runs the tool the
 !!! mascot-celebration "You Can Trace One Turn"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now follow a turn through the loop, say which tool and permission rule applied, and find where its context and its time went. Chapter 17 loads the benchmark workload, the skills, into a harness connected to your local model.
+
+[See Annotated References](./references.md)

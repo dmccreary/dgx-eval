@@ -1,6 +1,6 @@
 ---
 title: "Prerequisites and the Intelligent Textbook"
-description: "The working skills this course assumes, the intelligent-textbook model, the MkDocs toolchain, and the documents that describe a course, ending with what the benchmark workload produces and why it is hard for a small model."
+description: "Why this book tests small language models on textbook generation, the working skills this course assumes, the intelligent-textbook model, the MkDocs toolchain, and the documents that describe a course, ending with what the benchmark workload produces and why it is hard for a small model."
 generated_by: claude skill chapter-content-generator
 date: "2026-10-10 21:04:10"
 version: 1.11
@@ -10,7 +10,7 @@ version: 1.11
 
 ## Summary
 
-This chapter sets up everything the rest of the book builds on. It reviews the command-line, Python, Git, and generative-AI skills the course assumes, then introduces the intelligent-textbook model, its five levels, MkDocs Material, and the course description that seeds every later step. After completing it, students can explain what the benchmark workload produces and why it is a demanding test for a local model.
+This chapter opens with why the book exists: generating an intelligent textbook means following thousands of small rules for hours, and the book tests whether a small language model on one NVIDIA DGX can do it. The chapter then sets up everything the rest of the book builds on. It reviews the command-line, Python, Git, and generative-AI skills the course assumes, then introduces the intelligent-textbook model, its five levels, MkDocs Material, and the course description that seeds every later step. After completing it, students can explain what the benchmark workload produces and why it is a demanding test for a local model.
 
 ## Concepts Covered
 
@@ -57,9 +57,154 @@ This chapter assumes only the prerequisites listed in the [course description](.
 
     If I'm not doing one of those six things, I'm not in the chapter. Measure first, then decide!
 
+## Why This Textbook
+
+Writing a textbook looks like one large creative act. Generating one with a language model is a different kind of work. It is thousands of small rules, each easy to follow once, that must all be followed, in order, for hours. This book measures whether a small model, running on a machine you can own, is able to do that.
+
+The experiment is simple to state. We take one NVIDIA DGX system and have it generate the same Algebra I textbook many times, each time with a different open-weight language model, which is a model whose trained weights anyone may download and run. For each model we ask three questions, in this order:
+
+1. **Can it finish?** Does the model reach a complete book, or does it stall partway?
+2. **How long does it take?** How many hours of machine time does one book need?
+3. **How good is the result?** What can a program measure about the quality of the book, so that the comparison does not rest on opinion?
+
+The rest of this section explains what is being generated, why generating it is hard, and why the answer is worth a careful measurement.
+
+### What an Interactive Intelligent Textbook Is
+
+An **interactive intelligent textbook** is a textbook with two properties that an ordinary one lacks. The first is explicit structure: the concepts it teaches, and which concept depends on which, are stored as data that a program can check. The second is interactivity: its pages hold small simulations and quizzes that the reader operates, where a printed book has figures the reader only looks at.
+
+The simulations have a name in this book. A MicroSim is a small interactive simulation that demonstrates exactly one idea, such as a line whose slope changes as the reader drags a point. Later sections of this chapter define both properties and the MicroSim in full.
+
+### Why a Coherent Textbook Is Hard to Build
+
+Those two properties are what make the book hard to build. A course of 200 concepts cannot be written one page at a time, because every page depends on decisions made somewhere else. A chapter may use only the concepts an earlier chapter has taught. Each concept has to be introduced once, in one place. The vocabulary, the depth, and the reading level have to stay the same from the first chapter to the last, even when the chapters are written hours apart.
+
+A book that gets these right has a coherent architecture. A book that gets them wrong is a stack of lessons that do not fit together, however good each lesson is. The workflow in this book gets coherence by working from the top down, in five tiers, where each tier is built from the tiers above it and narrows the choices left to the tiers below.
+
+### Five Tiers, from One Document to a Whole Book
+
+The five tiers run from a single short document to a finished book. The sizes are those of the Algebra I course this book uses as its test.
+
+1. **Course description.** One document of a few pages, written by a person. It states who the course is for, what it covers, what it leaves out, and what students will be able to do. Everything below it inherits its scope.
+2. **Learning graph.** The 200 concepts of the course and the dependencies between them, stored as data. A dependency records that one concept must be learned before another.
+3. **Book structure.** The design step that places every concept into a chapter, so that no chapter needs a concept the book has not yet taught.
+4. **Chapter content.** The prose, tables, and worked examples for about 10 chapters of about 20 concepts each. This tier also writes a specification for every MicroSim, which states what the simulation must teach without building it.
+5. **MicroSims and supplementary content.** The working MicroSims built from those specifications, plus a glossary, an FAQ, and quizzes. This tier is not part of the benchmark.
+
+A person writes tier 1. In the benchmark, the model has to produce tiers 2, 3, and 4, starting from the same course description every time. The model decides the number of chapters itself, and the books generated so far have between 10 and 14 chapters.
+
+The picture in tier 2 of the diagram below is a real one. It is the 200-concept learning graph that one of the tested models, `qwen3.6:35b`, generated for Algebra I, shown in this book's [learning graph viewer](../../models/qwen3.6-35b/learning-graph-viewer.md). Each box is a concept, each color is a topic, and each line is a dependency.
+
+#### Diagram: Five Tiers of Textbook Generation
+
+
+<iframe src="../../sims/textbook-generation-tiers/main.html" width="100%" height="642px" scrolling="no"></iframe>
+[Run Five Tiers of Textbook Generation Fullscreen](../../sims/textbook-generation-tiers/main.html)
+
+<details markdown="1">
+<summary>Five Tiers of Textbook Generation</summary>
+Type: infographic
+**sim-id:** textbook-generation-tiers<br/>
+**Library:** html<br/>
+**Status:** Specified<br/>
+**Bloom Level:** Remember<br/>
+**Bloom Verb:** identify<br/>
+**Learning Objective:** The learner will identify which of the five tiers of textbook generation matches a description, for 5 descriptions, with at least 4 of 5 correct.
+
+**Prerequisites:** course description, learning graph, concept, dependency, book structure, chapter content, MicroSim, MicroSim specification, benchmark (all introduced in the section "Five Tiers, from One Document to a Whole Book" above this block).
+
+**Evidence of Mastery:** The learner opens all 5 tiers to read their descriptions, then answers 5 questions, each by choosing one tier, before any answer is revealed. A choice is correct when it equals the Correct tier column. Mastery is 4 of 5 correct on the first attempt. Opening a tier is exploration, not evidence.
+
+**Misconceptions:** (1) The model writes the course description. (2) Chapters are written straight from the course description, with no learning graph and no structure step. (3) MicroSim specifications are written in tier 5, when the MicroSims are built. (4) The benchmark covers all five tiers.
+
+**Instructional Rationale:** Remember-level mastery of a layered workflow is the ability to say which tier does what, so each question asks for one tier. Showing all five tiers as one stacked picture, from top to bottom, lets the learner see the order before being asked to recall it.
+
+**Content:**
+
+Five tiers, stacked with tier 1 at the top and tier 5 at the bottom. Each tier is built from the tiers above it. The name, the maker, and the size of every tier are visible without opening anything. Opening a tier shows its description and its example rule.
+
+| Tier | Name | Made by | Size for Algebra I | In this benchmark | Description | An example rule |
+|---|---|---|---|---|---|---|
+| 1 | Course Description | A person | One document of a few pages | Yes, as the fixed input | States who the course is for, what it covers, what it leaves out, and what students will be able to do. Every model starts from the same copy. | It names the topics the course leaves out, so that the tiers below do not invent them. |
+| 2 | Learning Graph | The model | 200 concepts | Yes, as stage 1 | Lists the concepts of the course and records which concept depends on which. | Every concept label is in Title Case and at most 32 characters long, and the graph has no cycles. |
+| 3 | Book Structure | The model | About 10 chapters | Yes, as stage 2 | Places every concept into a chapter and writes each chapter's title, summary, and concept list. | Every concept appears in exactly one chapter, and no concept appears before the concepts it depends on. |
+| 4 | Chapter Content | The model | About 20 concepts per chapter | Yes, as stage 3 | Writes the prose, tables, and worked examples for each chapter, and the specification for each MicroSim. | Every sentence suits the reading level of the audience. |
+| 5 | MicroSims and Supplementary Content | A model, outside this benchmark | MicroSims, a glossary, an FAQ, and quizzes | No | Builds the working MicroSims from their specifications, and writes the glossary, the FAQ, and the quizzes. | Each MicroSim demonstrates exactly one idea. |
+
+Tier 2 shows a screen image of this book's learning graph viewer displaying the 200-concept Algebra I learning graph that the model `qwen3.6:35b` generated in this evaluation. When tier 2 is open, the learner can follow a link to that graph in the live viewer.
+
+The five questions, in this order:
+
+| # | Question | Correct tier | Why (shown as feedback) | Misconception |
+|---|---|---|---|---|
+| 1 | Which tier decides which chapter each concept goes in? | 3, Book Structure | Book structure design places every concept into exactly one chapter. | 2 |
+| 2 | Which tier is written by a person? | 1, Course Description | A person writes the course description, and every model starts from the same copy of it. | 1 |
+| 3 | Which tier is not part of this benchmark? | 5, MicroSims and Supplementary Content | The benchmark stops after chapter content. MicroSims, the glossary, the FAQ, and the quizzes are outside it. | 4 |
+| 4 | Which tier records which concept depends on which? | 2, Learning Graph | The learning graph stores the concepts and the dependencies between them as data. | 2 |
+| 5 | Which tier writes the specification for each MicroSim? | 4, Chapter Content | The specification is written inside a chapter. Tier 5 builds the MicroSim from it. | 3 |
+
+**Provenance:** The tier names, makers, sizes, and descriptions come from this chapter's section "Five Tiers, from One Document to a Whole Book". The label rule comes from the learning-graph-generator skill, and the placement rule comes from the book-chapter-generator skill. The screen image was captured from this book's own viewer at `sims/graph-viewer/main.html?model=qwen3.6-35b` and is copied into the sim folder. No value is synthetic.
+
+**Rules:** The five questions run in the fixed order 1 to 5. Each question allows exactly one choice, and the choice is final once confirmed. There is no randomness and no numeric tolerance.
+
+**Learner Activity:**
+
+1. The learner sees the five tiers stacked from top to bottom. The learner should notice that tier 1 is the only tier a person writes and that tier 5 is marked as outside the benchmark.
+2. The learner opens each tier, in any order, and reads its description and its example rule.
+3. After all five tiers are open, the learner starts the questions. For each question the learner chooses one tier and confirms it. The sim then shows the correct tier and the Why text.
+4. After question 5 the sim shows the score and, for each missed question, the misconception it corresponds to.
+
+**Feedback:** Five questions, fixed order, one attempt each. Correct: "Correct" followed by the Why text. Incorrect: "Not quite. Correct tier: <name>" followed by the Why text. The correct tier is revealed immediately after each confirmation. The final score reads "n of 5 correct" and states whether the mastery mark of 4 of 5 was met.
+
+**Starting State:** All five tiers are shown with none open, and the instruction on screen is "Open each tier to see what it holds".
+
+**Chapter Anchors:** The chapter states that there are five tiers, that a person writes tier 1, that the learning graph has 200 concepts, that chapter content is about 10 chapters of about 20 concepts each, that the model produces tiers 2, 3, and 4 in the benchmark, that tier 5 is not part of the benchmark, and that the picture in tier 2 is the graph `qwen3.6:35b` generated.
+</details>
+
+### Thousands of Small Rules
+
+Each tier comes with rules. The instructions for tiers 2, 3, and 4 are packaged as three skills, where a skill is a set of written instructions that an AI agent follows to do one job. Together the three skills hold more than 30,000 words of instructions. One rule from each gives the flavor.
+
+| Tier | A rule the model must follow | How often it applies |
+|---|---|---|
+| Learning graph | Every concept label is in Title Case and at most 32 characters long | Once for each of 200 concepts |
+| Book structure | Every concept appears in exactly one chapter, and never before the concepts it depends on | Once for each of 200 concepts |
+| Chapter content | Every sentence suits the reading level of the audience | Once for every sentence in the book |
+
+The last rule is the one to look at closely. A textbook is written for students with a particular background. The Algebra I course description names its audience as students in grades 8 through 10, and students in that course typically read at a seventh- to ninth-grade level. Both versions in the table below state the same correct fact about slope. The grade is the Flesch-Kincaid reading grade, a formula based on sentence length and word length that Chapter 20 explains.
+
+| Version | Text | Reading grade |
+|---|---|---|
+| Correct, but too hard | The slope of a linear function quantifies the rate at which the dependent variable changes relative to the independent variable. | 15.2 |
+| Correct, and at the right level | Slope is a number that describes how steep a line is. You calculate it by dividing the vertical change between two points by the horizontal change between them. | 7.1 |
+
+A model that knows algebra can write either version. Only the second follows the rule. The published Algebra I book that this evaluation uses as its reference for scale has about 55,000 words of chapter text. At 15 to 20 words a sentence, that is roughly three thousand sentences, so this one rule has to be applied about three thousand times. Every other rule in force is being applied at the same moment.
+
+!!! mascot-thinking "Count the Repetitions, Not the Rules"
+    ![Tera thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+    Notice where the difficulty sits. A model can follow any one of these rules when you ask it to, so no single rule is the test. The test is whether the model is still following all of them on sentence three thousand, long after it read the instructions.
+
+### Following Rules for Hours
+
+Generating a book takes a long time. In this benchmark the learning graph run may take up to 150 minutes, the book structure run up to two hours, and each chapter gets its own run of up to 90 minutes. Through all of it the model reads instructions, runs commands, writes files, and checks its own output, with nobody present to correct it.
+
+Not every small model can do this. In this evaluation's first round, four of the ten candidate models produced no learning graph. Of the six that did, two wrote every chapter they had planned. One model placed concepts in chapters that came after the chapters that needed them, and three of its chapter runs stopped when a check caught the error. That is a tier 3 mistake that did not show itself until tier 4. The [Evaluation Status](../../appendices/evaluation-status.md) page lists what happened to each model.
+
+### Large Models Can Do This, but Can Small Ones?
+
+None of this is beyond the largest models. Since agent skills were introduced in October 2025, large language models (LLMs) such as Anthropic's Claude Opus running in Claude Code, and the models behind OpenAI's ChatGPT, have been able to generate high-quality interactive intelligent textbooks by following this workflow. The reference Algebra I book was made that way in November 2025.
+
+Those models run in data centers, on clusters of GPU servers with terabytes of memory between them, and every book is paid for by the token. A small language model (SLM) is one small enough to run on a single machine you control, and Chapter 3 defines the term in full. The machine in this book is a medium-scale one: an NVIDIA DGX with 128 GB of memory. Our question is whether an SLM on that machine is up to a task that has so far been done in a data center.
+
+### What This Book Sets Out to Do
+
+The goal of this book is a formal, repeatable process for testing SLMs on tiers 1 through 4. Tier 1 is the fixed input, and tiers 2, 3, and 4 are what each model must produce. Every model starts from the same files and the same prompts, every run is timed, and the results are measured by programs. Tier 5 is left out on purpose, because generating working MicroSims is currently beyond most of the small models tested here.
+
+The reason to ask is cost. A cloud service charges a price for every token, on every book and every revision. A private DGX is bought once, and after that a book costs machine time and a little electricity. If an open-weight SLM on that machine can generate a textbook of acceptable quality, the cost of generating textbooks can come down. If it cannot, that is worth knowing before anyone buys the hardware. Chapter 6 separates cost, price, and quality, and the [Cost Analysis](../../appendices/cost-analysis.md) appendix works through the numbers.
+
 ## What This Chapter Sets Up
 
-This course asks an empirical question: can a single NVIDIA DGX system running an open-weight small language model generate an entire intelligent textbook without sending a token to the cloud? Answering it requires two kinds of groundwork. The first is a handful of working skills, because every later chapter asks you to type commands, read scripts, and commit files. The second is a shared vocabulary for the thing being generated, because you cannot judge a textbook until you know what makes one intelligent.
+Answering that question requires two kinds of groundwork. The first is a handful of working skills, because every later chapter asks you to type commands, read scripts, and commit files. The second is a shared vocabulary for the thing being generated, because you cannot judge a textbook until you know what makes one intelligent.
 
 The chapter therefore moves through four groups of ideas. It starts with the five skills the course assumes, then defines the intelligent textbook and its interactive parts. It continues with the toolchain that turns Markdown files into a website, and it closes with the documents that describe what a course must teach. A final section connects those ideas to the benchmark workload that the rest of the book measures.
 
@@ -530,7 +675,7 @@ The "Topics not covered" section deserves attention because it is the one author
 
 The course description is also the first of a chain of artifacts. Before looking at the chain, four terms need a definition. A **learning graph** is a graph of the course's concepts in which each connection records that one concept depends on another; Chapter 2 builds one. A **skill** is a packaged set of instructions that an AI agent follows to do one job, covered in Chapter 17. A **glossary** defines each concept in a sentence, and an **FAQ** answers questions a reader is likely to ask. A **quiz** is a set of questions that test a chapter's content.
 
-With those terms in hand, the pipeline has eight artifacts: the course description and seven that the skills generate from it. The diagram below lets you explore what each one contains and then test whether you can say what each one is built from.
+With those terms in hand, the pipeline has eight artifacts: the course description and seven that the skills generate from it. The first four are tiers 1 to 4 of the diagram that opened this chapter, and the other four together make up tier 5. The diagram below lets you explore what each one contains and then test whether you can say what each one is built from.
 
 #### Diagram: Textbook Generation Pipeline Explorer
 
@@ -620,7 +765,7 @@ A **lesson plan** is a structured teaching outline for one session. It lists the
 
 ## What the Benchmark Workload Produces
 
-Everything above exists to make the benchmark workload legible, so it is time to state it. The workload is the `ibook-skills` skill chain, run by a local model on the DGX against the course description for Algebra I. This evaluation deliberately runs three of the pipeline's stages and no more.
+Everything above exists to make the benchmark workload legible, so it is time to state it. The workload is the `ibook-skills` skill chain, run by a local model on the DGX against the course description for Algebra I. This evaluation deliberately runs three of the pipeline's stages and no more. They are tiers 2, 3, and 4 of the five-tier diagram.
 
 1. **Learning graph.** The model runs the learning-graph skill on the Algebra I course description. The stage is done when the run ends on its own and leaves the graph as both a CSV file and a JSON file.
 2. **Book structure.** The model runs the chapter-design skill to organize its own learning graph into chapters.
@@ -645,8 +790,10 @@ A model that writes beautiful prose but breaks the JSON fails the first stage. A
 
 ## Chapter Summary
 
-You started from a list of skills and ended with a description of a benchmark. The skills were a way of working with a generative AI assistant, the command line, Python scripts, Git and GitHub, and Markdown. The vocabulary was the intelligent textbook, its five levels, and the MicroSims inside it. The toolchain was MkDocs Material with its navigation and its static and strict builds, and the planning documents were Bloom's Taxonomy, learning outcomes, the course description and its quality score, and the lesson plan.
+You started from the question this book asks and a five-tier picture of how a textbook is generated, and you ended with a description of the benchmark that answers it. In between came the skills, the vocabulary, the toolchain, and the planning documents. The skills were a way of working with a generative AI assistant, the command line, Python scripts, Git and GitHub, and Markdown. The vocabulary was the intelligent textbook, its five levels, and the MicroSims inside it. The toolchain was MkDocs Material with its navigation and its static and strict builds, and the planning documents were Bloom's Taxonomy, learning outcomes, the course description and its quality score, and the lesson plan.
 
 !!! mascot-celebration "Groundwork Laid"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now predict what a shell command will print, read a Python script, trace a change through Git and GitHub, read an `mkdocs.yml`, and say what the benchmark produces and why it is hard for a small model. That is the whole prerequisite stack, and Chapter 2 builds the learning graph on top of it.
+
+[See Annotated References](./references.md)

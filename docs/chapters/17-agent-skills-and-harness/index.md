@@ -308,3 +308,5 @@ A skill is a folder whose `SKILL.md` header lets a harness choose it and whose b
 !!! mascot-celebration "The Harness Runs a Skill End to End"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now install a skill, point a harness at your own endpoint with a placeholder credential, and prove with a scripted three-minute run that the chain works. Chapter 18 builds the container and the boundaries that keep that run from reaching anything it should not.
+
+[See Annotated References](./references.md)

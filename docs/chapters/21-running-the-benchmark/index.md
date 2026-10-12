@@ -298,3 +298,5 @@ The benchmark runs three chained stages from a fixed template with one prompt ea
 !!! mascot-celebration "You Have a Complete, Logged Run"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now run the three stages from a fixed template, bound each by a time limit, retrieve the outputs, and record per-stage metrics against definitions you wrote first. Chapter 22 turns those raw records into a diagnosis and a decision.
+
+[See Annotated References](./references.md)

@@ -479,3 +479,5 @@ You started with the dependency between two concepts and ended with the rules th
 !!! mascot-celebration "The Structure Is Yours Now"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now check a graph's edge direction, compute a concept impact score by hand, and read an elaboration tier off it. That is the machinery that decides how every later chapter is shaped, and Chapter 3 turns to the models whose output it will judge.
+
+[See Annotated References](./references.md)

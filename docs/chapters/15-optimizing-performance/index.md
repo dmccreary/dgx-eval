@@ -280,3 +280,5 @@ A run's wall-clock time is made of loading the model, reading the prompt, writin
 !!! mascot-celebration "You Can Split a Run Into Its Causes"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now take a slow run, separate loading, reading, writing, and tool time, and say which setting to change first. Chapter 16 opens up the harness itself to see where an agent turn spends its time and its context.
+
+[See Annotated References](./references.md)

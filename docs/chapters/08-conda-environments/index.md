@@ -321,3 +321,5 @@ An environment is a directory holding an interpreter and packages, and isolating
 !!! mascot-celebration "You Can Rebuild Your Tools on Demand"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now write an `environment.yml` that names its channel and pins its versions, rebuild it into a throwaway environment, and diff the result against the original. Chapter 9 uses the `dgx` environment to install Tailscale and take a first inventory.
+
+[See Annotated References](./references.md)

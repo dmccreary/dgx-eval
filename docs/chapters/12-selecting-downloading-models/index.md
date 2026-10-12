@@ -276,3 +276,5 @@ Selection starts from the workload: tool calling, a context window of at least 6
 !!! mascot-celebration "A Shortlist That Fits, Is Legal, and Is Explained"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now turn a long list into a shortlist with a stated reason for every name left off, and download and verify a file safely. Chapter 13 puts a model behind a local endpoint you can send a first prompt to.
+
+[See Annotated References](./references.md)

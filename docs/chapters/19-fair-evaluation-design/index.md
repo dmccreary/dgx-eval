@@ -388,3 +388,5 @@ A defensible evaluation starts from a question that could have different answers
 !!! mascot-celebration "You Can Defend a Design and Attack One"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now turn a question into a design with named variables, say which were controlled and which were not, and critique a comparison that skipped the steps. Chapter 20 turns to the hardest measurement in the design, which is how good the output is.
+
+[See Annotated References](./references.md)

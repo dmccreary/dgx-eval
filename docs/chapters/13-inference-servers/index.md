@@ -392,3 +392,5 @@ An inference server loads a model and exposes it behind an API, and the stack ab
 !!! mascot-celebration "A Local Endpoint That Answers and Stays Private"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now install a model server without administrator rights, send it a first prompt from `curl` and Python, and say exactly who can reach it. Chapter 14 turns to the ten models this evaluation puts behind such an endpoint.
+
+[See Annotated References](./references.md)

@@ -437,3 +437,5 @@ You started with a definition of a generative model and ended with the abilities
 !!! mascot-celebration "Vocabulary Locked In"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now convert words to tokens, test whether a document fits a context window, tell an open-weight model from an open-source one, and name the five abilities this benchmark scores. Chapter 4 puts those terms to work in the case for and against running them locally.
+
+[See Annotated References](./references.md)

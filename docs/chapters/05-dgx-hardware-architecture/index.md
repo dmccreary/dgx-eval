@@ -392,3 +392,5 @@ The DGX Spark-class unit in this evaluation answers them as follows: aarch64, 20
 !!! mascot-celebration "The Machine Is No Longer a Black Box"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now read a DGX's specification and say which packages it needs, how a model's size is judged on it, and which layer to check when something fails. Chapter 6 puts a price on all of it.
+
+[See Annotated References](./references.md)

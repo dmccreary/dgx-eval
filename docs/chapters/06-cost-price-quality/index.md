@@ -448,3 +448,5 @@ Cost is what owning and operating costs you, price is what a provider charges, a
 !!! mascot-celebration "You Can Price the Machine Honestly"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now separate cost from price from quality, build an annual cost model from a purchase price, and find where a local unit breaks even against a service. Chapter 7 starts the hands-on work by reaching the machine securely.
+
+[See Annotated References](./references.md)

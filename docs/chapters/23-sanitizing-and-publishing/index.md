@@ -361,3 +361,5 @@ Sanitization removes or replaces every detail that could identify, locate, or gi
 !!! mascot-celebration "A Report You Can Publish Without Looking Over Your Shoulder"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now catalog the details that make a machine easier to reach, keep them out with placeholders, redaction, isolation, and scans, and review an artifact before it goes public. That completes the course: you can probe a DGX, run a textbook benchmark on it, decide what the results mean, and share them safely. Measure first, then decide!
+
+[See Annotated References](./references.md)

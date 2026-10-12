@@ -315,3 +315,5 @@ You installed the Tailscale client and daemon in a dedicated environment, brough
 !!! mascot-celebration "You Have a Verified Path and a First Look Inside"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now bring a machine onto a tailnet, prove the connection at three layers, and take an inventory that changes nothing. Chapter 10 turns the inventory into repeatable Python probes.
+
+[See Annotated References](./references.md)

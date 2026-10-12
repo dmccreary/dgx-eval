@@ -109,6 +109,12 @@ MicroSims are small interactive exercises, each on one concept from a chapter of
 
     Attribute each of eight failed-run symptoms to its most likely cause from a list of eight.
 
+-   **[Five Tiers of Textbook Generation](./textbook-generation-tiers/index.md)**
+
+    ![Five Tiers of Textbook Generation](./textbook-generation-tiers/textbook-generation-tiers.png)
+
+    See the five tiers that turn one course description into a whole intelligent textbook, then check which tier does what.
+
 -   **[Hardware Finding to Setup Branch Matcher](./hardware-branch-matcher/index.md)**
 
     ![Hardware Finding to Setup Branch Matcher](./hardware-branch-matcher/hardware-branch-matcher.png)

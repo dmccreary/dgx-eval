@@ -40,72 +40,95 @@ nav:
       - 1. Prerequisites and the Intelligent Textbook:
           - Content: chapters/01-intro-intelligent-textbooks/index.md
           - Quiz: chapters/01-intro-intelligent-textbooks/quiz.md
+          - Annotated References: chapters/01-intro-intelligent-textbooks/references.md
       - 2. Learning Graphs, MicroSims, and Content Generation Rules:
           - Content: chapters/02-learning-graphs-microsims-rules/index.md
           - Quiz: chapters/02-learning-graphs-microsims-rules/quiz.md
+          - Annotated References: chapters/02-learning-graphs-microsims-rules/references.md
       - 3. Small Language Models:
           - Content: chapters/03-small-language-models/index.md
           - Quiz: chapters/03-small-language-models/quiz.md
+          - Annotated References: chapters/03-small-language-models/references.md
       - 4. Local SLMs Versus Cloud LLM Services:
           - Content: chapters/04-local-versus-cloud/index.md
           - Quiz: chapters/04-local-versus-cloud/quiz.md
+          - Annotated References: chapters/04-local-versus-cloud/references.md
       - 5. NVIDIA DGX Hardware Architecture:
           - Content: chapters/05-dgx-hardware-architecture/index.md
           - Quiz: chapters/05-dgx-hardware-architecture/quiz.md
+          - Annotated References: chapters/05-dgx-hardware-architecture/references.md
       - 6. Cost, Price, and Quality:
           - Content: chapters/06-cost-price-quality/index.md
           - Quiz: chapters/06-cost-price-quality/quiz.md
+          - Annotated References: chapters/06-cost-price-quality/references.md
       - 7. Remote Access, SSH, and Mesh VPN Concepts:
           - Content: chapters/07-remote-access-ssh-mesh-vpn/index.md
           - Quiz: chapters/07-remote-access-ssh-mesh-vpn/quiz.md
+          - Annotated References: chapters/07-remote-access-ssh-mesh-vpn/references.md
       - 8. Reproducible Python Environments with Conda:
           - Content: chapters/08-conda-environments/index.md
           - Quiz: chapters/08-conda-environments/quiz.md
+          - Annotated References: chapters/08-conda-environments/references.md
       - 9. Installing Tailscale and Taking a Read-Only Inventory:
           - Content: chapters/09-tailscale-and-inventory/index.md
           - Quiz: chapters/09-tailscale-and-inventory/quiz.md
+          - Annotated References: chapters/09-tailscale-and-inventory/references.md
       - 10. Python Hardware Probes:
           - Content: chapters/10-hardware-probes/index.md
           - Quiz: chapters/10-hardware-probes/quiz.md
+          - Annotated References: chapters/10-hardware-probes/references.md
       - 11. Model Sizing and Fit:
           - Content: chapters/11-model-sizing-and-fit/index.md
           - Quiz: chapters/11-model-sizing-and-fit/quiz.md
+          - Annotated References: chapters/11-model-sizing-and-fit/references.md
       - 12. Selecting and Downloading an Open-Weight Model:
           - Content: chapters/12-selecting-downloading-models/index.md
           - Quiz: chapters/12-selecting-downloading-models/quiz.md
+          - Annotated References: chapters/12-selecting-downloading-models/references.md
       - 13. Inference Servers and Local API Endpoints:
           - Content: chapters/13-inference-servers/index.md
           - Quiz: chapters/13-inference-servers/quiz.md
+          - Annotated References: chapters/13-inference-servers/references.md
       - 14. Open-Weight Model Families and Candidate Models:
           - Content: chapters/14-candidate-models/index.md
           - Quiz: chapters/14-candidate-models/quiz.md
+          - Annotated References: chapters/14-candidate-models/references.md
       - 15. Optimizing Small Language Model Performance:
           - Content: chapters/15-optimizing-performance/index.md
           - Quiz: chapters/15-optimizing-performance/quiz.md
+          - Annotated References: chapters/15-optimizing-performance/references.md
       - 16. The Agent Loop, Tools, and Context:
           - Content: chapters/16-agent-loop-and-tools/index.md
           - Quiz: chapters/16-agent-loop-and-tools/quiz.md
+          - Annotated References: chapters/16-agent-loop-and-tools/references.md
       - 17. Agent Skills and Connecting a Harness to a Local Model:
           - Content: chapters/17-agent-skills-and-harness/index.md
           - Quiz: chapters/17-agent-skills-and-harness/quiz.md
+          - Annotated References: chapters/17-agent-skills-and-harness/references.md
       - '18. Containing the Harness: Containers and Network Boundaries':
           - Content: chapters/18-containing-the-harness/index.md
           - Quiz: chapters/18-containing-the-harness/quiz.md
+          - Annotated References: chapters/18-containing-the-harness/references.md
       - 19. Designing a Fair Evaluation:
           - Content: chapters/19-fair-evaluation-design/index.md
           - Quiz: chapters/19-fair-evaluation-design/quiz.md
+          - Annotated References: chapters/19-fair-evaluation-design/references.md
       - 20. Scoring, Bias, and Structural Checks:
           - Content: chapters/20-scoring-and-bias/index.md
           - Quiz: chapters/20-scoring-and-bias/quiz.md
+          - Annotated References: chapters/20-scoring-and-bias/references.md
       - 21. Running the Textbook Benchmark:
           - Content: chapters/21-running-the-benchmark/index.md
           - Quiz: chapters/21-running-the-benchmark/quiz.md
+          - Annotated References: chapters/21-running-the-benchmark/references.md
       - 22. Diagnosing Failures, Reporting, and Cost per Textbook:
           - Content: chapters/22-diagnosis-and-reporting/index.md
           - Quiz: chapters/22-diagnosis-and-reporting/quiz.md
+          - Annotated References: chapters/22-diagnosis-and-reporting/references.md
       - 23. Sanitizing Evaluation Artifacts and Publishing the Report:
           - Content: chapters/23-sanitizing-and-publishing/index.md
           - Quiz: chapters/23-sanitizing-and-publishing/quiz.md
+          - Annotated References: chapters/23-sanitizing-and-publishing/references.md
 
   - Appendices:
     - List of Appendices: appendices/index.md
@@ -261,6 +284,7 @@ nav:
     - Evaluation Design Flaw Finder: sims/design-flaw-finder/index.md
     - Experiment Variable Role Sorter: sims/variable-role-sorter/index.md
     - Failure Diagnosis Chooser: sims/failure-diagnosis-chooser/index.md
+    - Five Tiers of Textbook Generation: sims/textbook-generation-tiers/index.md
     - Hardware Finding to Setup Branch Matcher: sims/hardware-branch-matcher/index.md
     - Inference Request Path: sims/inference-request-path/index.md
     - Learning Graph Defect Finder: sims/learning-graph-defect-finder/index.md

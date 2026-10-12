@@ -271,3 +271,5 @@ You started with a question that sounds like a single choice and ended with the 
 !!! mascot-celebration "Both Cases Made Honestly"
     ![Tera celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now state the reasons for and against a local model, keep cost, price, and quality separate, and recommend local, cloud, or hybrid for a stated situation. Chapter 5 starts building the local side, with the hardware a deployment stands on.
+
+[See Annotated References](./references.md)
