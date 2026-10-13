@@ -35,7 +35,7 @@ author.
 | 9 Discussion | `10-discussion.tex` | Complete |
 | 10 Conclusion | `11-conclusion.tex` | Complete |
 | Acknowledgments | `12-acknowledgments.tex` | Complete; AI-use statement needs the author's confirmation |
-| References | `references.bib` | 44 entries; see "Reference Verification" |
+| References | `references.bib` | 45 entries; see "Reference Verification" |
 
 ## Directory Structure
 
@@ -99,14 +99,15 @@ python3 src/reporting/aggregate_runs.py            # reads ~/dgx-eval-runs/unit-
 
 ## Reference Verification
 
-Ten entries were checked against the source's own page or a search result
+Eleven entries were checked against the source's own page or a search result
 during drafting (title, authors, venue, identifier). They are marked
 `% VERIFIED` in `sections/references.bib`:
 
 `brusilovsky2022return` (the DOI is 10.1002/aaai.12061), `belcak2025slm`,
 `lu2024slm`, `wang2024slmsurvey`, `nvidia2025dgxspark`, `openai2025gptoss`,
 `patil2025bfcl`, `liu2023agentbench`, `biderman2024lessons`,
-`anthropic2025skills`.
+`anthropic2025skills`, and `mccreary2025fivelevels` (title, author, and version
+taken from that paper's own `main.tex`; it has no DOI or arXiv identifier).
 
 The remaining entries are well-known works entered from memory without a DOI.
 **Verify them before submission**, in the same way as the TODO in the MicroSims
