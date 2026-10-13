@@ -19,7 +19,7 @@ Both models that wrote every chapter activate about 3 billion parameters per tok
 Three of \Gtwentysix's chapter runs halted because the skill's own check found that a chapter depended on concepts placed in later chapters, and the chapter order that violated the dependency was the model's own stage~2 design. A cheap structural validation of the stage~2 output against the stage~1 graph would have found this in seconds, before ninety minutes of stage~3 per chapter. The benchmark chains stages by copying output forward, so a defect inherited from stage~2 is paid for once per chapter.
 
 \paragraph{F6: The conformance score separates evenness from level, and shows its own limits.}
-The headline separates two things that a mean would blur: \Gptoss{} is the most even book and the smallest, and \Nemo{} wrote the most and has the lowest floor. At the same time the score ties its top two books, cannot see that most of \Gptoss's words are specifications, and records that every book exceeds the target reading grade. It is a screen that points to chapters worth reading, not a verdict.
+The composite score separates two things that a mean would blur: \Gptoss{} is the most even book and the smallest, and \Nemo{} wrote the most and has the lowest floor. At the same time the score ties its top two books, cannot see that most of \Gptoss's words are specifications, and records that every book exceeds the target reading grade. It is a screen that points to chapters worth reading, not a verdict.
 
 \paragraph{F7: On unified memory, context is a competitor to weights.}
 \Mistral{} loaded and ran at 3 tokens per second and left no context of useful length. Two models drove a task to within about a thousand tokens of their configured window. One of the two units stopped responding twice during runs of the same model at large contexts. The cause was not established, and the second freeze at a smaller context makes memory exhaustion a weaker suspect than it first appeared, but the practical lesson holds: start a memory watchdog and a vitals log before any run, because a unified-memory machine can freeze instead of failing one process.
@@ -32,7 +32,7 @@ These follow from the observations above and are offered as practice, not as pro
 \item \textbf{Gate on completion, then on quality.} Run a model-only test, then a three-minute harness smoke test, before any hour-long stage. A model that cannot call a tool in the harness will not finish a book.
 \item \textbf{Budget time by turns, not tokens.} For the fast models the per-turn overhead exceeded generation time. Measure overhead per model; it ranged from 7 to 100 seconds here.
 \item \textbf{Validate between stages.} Check each stage's output structurally before spending the next stage's budget on it.
-\item \textbf{Treat a book-level score as a screen.} Read the chapters it flags, and do not choose a model on a headline that sits within the reweighting noise.
+\item \textbf{Treat a book-level score as a screen.} Read the chapters it flags, and do not choose a model on a composite score that sits within the reweighting noise.
 \item \textbf{Keep the evidence and the machine safe.} Isolate raw output, publish through a narrow path, and run the watchdog.
 \end{itemize}
 

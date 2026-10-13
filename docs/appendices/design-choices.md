@@ -282,7 +282,7 @@ Claude made four choices inside the conformance score.
 |---|---|---|
 | Measure each chapter against a budget derived from its own concepts | Raw counts of words and diagrams | A raw count rewards whoever writes the most, and a chapter on a foundational topic should be longer than one on a narrow topic |
 | Cap every sub-score at full credit | Reward more words, diagrams, or equations | Length is not quality, and the guide says a dense chapter beats a padded one |
-| The book's headline is its mean score times its consistency | The mean alone, or the best chapter | Consistent quality was the Primary Author's stated priority. Unwritten chapters lower the mean and are left out of the consistency, so one fact is not charged twice |
+| The book's composite score is its mean score times its consistency | The mean alone, or the best chapter | Consistent quality was the Primary Author's stated priority. Unwritten chapters lower the mean and are left out of the consistency, so one fact is not charged twice |
 | Follow the skill's own batch tool for what counts as a placed diagram | A stricter reading of the rules | A diagram that the tool will find and build is correctly placed |
 
 The cost is that the score measures conformance, not correctness. It cannot tell
@@ -312,6 +312,6 @@ reasoning behind each choice, and a link to the source code.
   bugs that its totals did not show. One rule was stricter than the skill's own
   tool, one function treated a whole chapter as boilerplate, and one pattern
   matched an HTML tag. One chapter was scored about 14 points too low, and
-  book headlines moved by about two points when the bugs were fixed. Reading
+  book composite scores moved by about two points when the bugs were fixed. Reading
   single chapters found two of them, and tabulating how often each check failed
   found the third.

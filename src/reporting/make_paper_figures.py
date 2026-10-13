@@ -125,7 +125,7 @@ def f(x):
 # ------------------------------------------------------- derived numbers
 
 def book_summary(rows):
-    """Level, consistency, floor and headline per book, as the scorer defines them."""
+    """Level, consistency, floor and composite score per book, as the scorer defines them."""
     by_book = OrderedDict()
     for r in rows:
         by_book.setdefault(tag_of(r["book"]), []).append(r)
@@ -137,14 +137,14 @@ def book_summary(rows):
         w = [f(r["score"]) for r in written]
         if len(w) >= 2:
             cons = 100 * (1 - st.pstdev(w) / st.mean(w))
-            headline = level * cons / 100
+            composite = level * cons / 100
         else:
-            cons = headline = None
+            cons = composite = None
         grades = [f(r["grade"]) for r in written if f(r["grade"]) is not None]
         out[tag] = {
             "designed": len(rs), "written": len(written),
             "level": level, "consistency": cons,
-            "floor": min(w) if w else 0.0, "headline": headline,
+            "floor": min(w) if w else 0.0, "composite": composite,
             "median_written": st.median(w) if w else None,
             "words_written": sum(f(r["words_total"]) for r in written),
             "words_body": sum(f(r["words_body"]) for r in written),
@@ -197,7 +197,7 @@ def spearman(xs, ys):
 WEIGHTS = {"budget": 20, "placement": 20, "spec": 20, "format": 15, "padding": 10, "reader": 15}
 
 
-def headline_with(rs, weights):
+def composite_with(rs, weights):
     qs, wr = [], []
     for r in rs:
         if r["state"] == "written":
@@ -212,15 +212,15 @@ def headline_with(rs, weights):
 
 
 def weight_sensitivity(by_book, trials=500, seed=20261011):
-    ranked = [t for t, rs in by_book.items() if headline_with(rs, WEIGHTS) is not None]
-    base = {t: headline_with(by_book[t], WEIGHTS) for t in ranked}
+    ranked = [t for t, rs in by_book.items() if composite_with(rs, WEIGHTS) is not None]
+    base = {t: composite_with(by_book[t], WEIGHTS) for t in ranked}
     order0 = sorted(ranked, key=lambda t: -base[t])
     pairs = [(a, b) for i, a in enumerate(order0) for b in order0[i + 1:]]
     rng = random.Random(seed)
     same, flips = 0, defaultdict(int)
     for _ in range(trials):
         w = {d: v * rng.uniform(0.6, 1.4) for d, v in WEIGHTS.items()}
-        h = {t: headline_with(by_book[t], w) for t in ranked}
+        h = {t: composite_with(by_book[t], w) for t in ranked}
         if sorted(ranked, key=lambda t: -h[t]) == order0:
             same += 1
         for a, b in pairs:
@@ -443,14 +443,14 @@ def fig_time(totals, by_book):
 
 
 def fig_quality(summary, by_book):
-    models = [t for t in summary if summary[t]["headline"] is not None]
-    models.sort(key=lambda t: -summary[t]["headline"])
+    models = [t for t in summary if summary[t]["composite"] is not None]
+    models.sort(key=lambda t: -summary[t]["composite"])
     fig, (a, b) = plt.subplots(1, 2, figsize=(6.5, 3.0), gridspec_kw={"width_ratios": [1, 1.25]})
-    # (a) level against consistency, with iso-headline curves
+    # (a) level against consistency, with iso-composite curves
     xs = [x / 10 for x in range(300, 1001)]
     for h, x0 in ((40, 72.0), (60, 74.0)):
         a.plot(xs, [h / v * 100 for v in xs], color=LIGHT, lw=1)
-        a.text(x0, h / x0 * 100 + 1.2, f"headline {h}", color=GREY, fontsize=6.5, ha="left")
+        a.text(x0, h / x0 * 100 + 1.2, f"composite {h}", color=GREY, fontsize=6.5, ha="left")
     marks = {"qwen3.6:35b": "o", "gemma4:31b": "s", "nemotron-3.5-lightning:30b": "^",
              "gemma4:26b": "D", "gpt-oss:120b": "v"}
     palette = [BLUE, ORANGE, GREEN, PURPLE, VERM]
@@ -477,7 +477,7 @@ def fig_quality(summary, by_book):
         if stubs:
             b.scatter([i + (k - (stubs - 1) / 2) * 0.1 for k in range(stubs)], [0] * stubs,
                       marker="x", s=14, color=GREY, zorder=3)
-        b.text(i, 101.5, f"{summary[tag]['headline']:.1f}", ha="center", fontsize=8,
+        b.text(i, 101.5, f"{summary[tag]['composite']:.1f}", ha="center", fontsize=8,
                fontweight="bold")
     b.set_xticks(range(len(models)))
     b.set_xticklabels([m.replace("nemotron-3.5-lightning", "nemotron") for m in models],
@@ -485,7 +485,7 @@ def fig_quality(summary, by_book):
     b.set_ylim(-6, 108)
     b.set_xlim(-0.7, len(models) - 0.3)
     b.set_ylabel("Chapter score")
-    b.set_title("(b) Chapters, with headline above", loc="left")
+    b.set_title("(b) Chapters, composite score above", loc="left")
     fig.tight_layout()
     save(fig, "fig-quality.png")
 

@@ -399,6 +399,14 @@ The part of a model's license that states whether the model, or what it writes, 
 
 **See also:** Model License Terms, License Review
 
+#### Composite Score
+
+The book-level score that combines level and consistency: the mean chapter score, counting each unwritten chapter as 0, multiplied by the consistency of the written chapters and divided by 100, where consistency is 100 times one minus the coefficient of variation of the written chapters' scores. It is at most 100 and is undefined when fewer than two chapters are written. It measures conformance to the content rules, not whether the content is correct.
+
+**Example:** Ten of twelve designed chapters are written and average 83.8, so the level over all twelve is 69.8. Their consistency is 91.1, so the composite score is 69.8 × 91.1 ÷ 100 = 63.6.
+
+**See also:** Automated Quality Score, Human Quality Score, Structural Checks
+
 #### Compute Capability
 
 A version number NVIDIA assigns to each GPU generation that indicates which CUDA features and instructions the hardware supports, and therefore which prebuilt libraries can run on it.

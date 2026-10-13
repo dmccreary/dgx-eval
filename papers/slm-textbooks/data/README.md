@@ -29,7 +29,7 @@ python3 src/reporting/aggregate_runs.py
 ## `paper-numbers.json`
 
 Every derived number the paper's text and tables use: per-book level,
-consistency, floor, and headline; written words, prose words, diagram
+consistency, floor, and composite score; written words, prose words, diagram
 specifications, reading grade, and equation counts; per-model time, tool calls,
 and tokens; the score's rank correlations with size; the weight-sensitivity
 trial; and the cost model's base case, measured-time costs, and scenarios.

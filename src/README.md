@@ -71,7 +71,8 @@ model.
 | `score_learning_graph.py` | Structural checks on stage 1 output: file presence, concept count, valid dependencies, no cycles, and a JSON file that agrees with the CSV |
 | `score_analyzer_runs.py` | Checks on the analyzer smoke test: report written, score given, frontmatter and nav updated, strict site build |
 | `score_chapters.py` | Structural checks on stage 2 and stage 3 output: chapter files, concepts assigned to chapters, words per chapter, and how many chapters have been written |
-| `chapter_quality.py` | A 0-100 score for each written chapter, and a consistency score for the book: how closely it follows the content guide and the diagram-specification rules. Reports words, diagrams, reading grade, and the sub-scores behind each number |
+| `chapter_quality.py` | A 0-100 score for each written chapter, and a consistency score for the book: how closely it follows the content guide and the diagram-specification rules. Reports words, diagrams, reading grade, the number of well-formed and malformed equations, and the sub-scores behind each number |
+| `test_equations.py` | Regression cases for the equation check in `chapter_quality.py`. Run it after changing the command lists or the delimiter rules |
 | `summarize_tests.py` | One block per model for everything `test_models.sh` has produced so far |
 
 The first scripts check structure, which a program can verify.
@@ -86,11 +87,23 @@ python3 src/scoring/chapter_quality.py docs/models/<model> ~/dgx-eval-runs/unit-
 
 Give it several books and it ends with a comparison table. The score is built
 so that every sub-score is measured against the chapter's own concept budget,
-and the headline number is the book's mean score multiplied by how little the
+and the composite score is the book's mean score multiplied by how little the
 chapters differ from one another. A book of uniformly decent chapters beats a
 book with a few excellent ones and several stubs. The weights and thresholds
 are constants at the top of the file. It uses `textstat` for reading level when
 it is installed and a built-in estimate otherwise, and records which.
+
+The equation counts are reported but not scored. A malformed equation is one the
+site would draw as red source text instead of math: a delimiter that never
+closes, TeX that KaTeX cannot parse, or TeX commands left in the prose with no
+delimiters. `--json` lists each one under `math_issues`, and the chapter's flags
+carry `MALFORMED_MATH:n`. It is a syntax check written from the KaTeX function
+list, not a KaTeX run, so a valid command it does not know is reported as
+malformed with its name.
+
+```bash
+python3 src/scoring/test_equations.py
+```
 
 ## orchestration
 

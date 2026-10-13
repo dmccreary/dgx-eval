@@ -51,7 +51,15 @@ never a raw count, and it saturates. The book-level numbers are what carry
 
   level        mean chapter score, unwritten chapters counted as 0
   consistency  100 x (1 - coefficient of variation of the written chapters)
-  headline     level x consistency / 100
+  composite    level x consistency / 100
+
+One metric is reported and deliberately not scored: how many equations are well
+formed and how many are malformed (equations_ok, equations_bad, and the kinds of
+fault in equation_problems; --json also lists each malformed one under
+math_issues). Malformed means the site's renderer would show source text instead
+of math: a delimiter that never closes, TeX that KaTeX cannot parse, or TeX
+commands left in the prose with no delimiters. It is a syntax check, so it says
+nothing about whether the mathematics is right. See the Equations section.
 
 Standard library only. textstat is used for reading level when it is installed.
 """
@@ -517,6 +525,437 @@ def reading_stats(prose, engine):
 
 
 # --------------------------------------------------------------------------- #
+# Equations: how many are well formed, how many are not
+# --------------------------------------------------------------------------- #
+#
+# "Well formed" means what the site's renderer needs. mkdocs.yml runs
+# pymdownx.arithmatex (smart_dollar; inline $...$ and \(...\); display $$...$$ and
+# \[...\]) and then KaTeX with throwOnError: false, so an equation KaTeX cannot
+# parse is drawn as red source text instead of math. An equation is counted as
+# malformed when
+#   - its delimiters never close, or a $ is left over that is not a price;
+#   - the TeX inside would not parse: unbalanced braces, \left without \right,
+#     \begin without \end, a command or environment KaTeX does not have, a
+#     missing argument, a dangling or doubled ^ or _, a & outside an alignment
+#     environment, a bare $ inside the math, an unescaped % (it starts a comment
+#     and drops the rest of the line), or an empty body;
+#   - TeX commands sit in the prose with no delimiters around them.
+#
+# This is a syntax check. It does not say the mathematics is right. It is also
+# not a KaTeX run: the command lists below come from the KaTeX 0.16 function list
+# (the version mkdocs.yml loads) and lean generous, because a name missing from
+# them is reported as a malformed equation. The unknown name is kept in
+# math_issues so a valid one that was left out is easy to see and add.
+
+INLINE_CODE_RE = re.compile(r"(?<!\\)(`+)((?:[^\n]|\n(?![ \t]*\n))+?)(?<!`)\1(?!`)")
+FENCED_CODE_RE = re.compile(r"^[ \t]*(`{3,}|~{3,})[^\n]*\n.*?(?:^[ \t]*\1[`~]*[ \t]*$|\Z)", re.S | re.M)
+PARAGRAPH_RE = re.compile(r"(?:^[^\n]*\S[^\n]*(?:\n|\Z))+", re.M)
+
+# The delimiter patterns pymdownx.arithmatex uses with the mkdocs.yml settings
+# (RE_SMART_DOLLAR_INLINE, RE_DOLLAR_BLOCK, RE_BRACKET_INLINE, RE_BRACKET_BLOCK).
+# They are tried per paragraph, so an equation cannot run across a blank line.
+EQ_DOLLAR2 = re.compile(r"\$\$((?:\\.|[^\\])+?)\$\$", re.S)
+EQ_DOLLAR = re.compile(r"\$(?!\s)((?:\\.|[^\\$])+?)(?<!\s)\$", re.S)
+EQ_PAREN = re.compile(r"\\\(((?:\\[^)]|[^\\])+?)\\\)", re.S)
+EQ_BRACKET = re.compile(r"\\\[((?:\\[^\]]|[^\\])+?)\\\]", re.S)
+EQ_TOKEN = re.compile(r"\\\\|\\\$|\$\$|\$|\\\(|\\\[|\\\)|\\\]")
+# smart_dollar leaves "$5 for", "$1,000.", "$4.80" as text on purpose: not an equation.
+PRICE_RE = re.compile(r"\$\d[\d,]*(?:\.\d+)?(?![\w^_{\\(])")
+MISSING_BACKSLASH_RE = re.compile(r"(?<![\\A-Za-z])(?:d?frac|sqrt|mathbf|mathrm|overline|boldsymbol)\s*\{")
+MACRO_DEF_RE = re.compile(r"\\(?:re|provide)?newcommand\*?\s*\{?\s*\\([A-Za-z]+)|\\[gex]?def\s*\\([A-Za-z]+)")
+
+
+def _names(s):
+    return frozenset(s.split())
+
+
+TEX_GREEK = _names("""
+alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau
+upsilon phi chi psi omega varepsilon vartheta varpi varrho varsigma varphi varkappa digamma
+Gamma Delta Theta Lambda Xi Pi Sigma Upsilon Phi Psi Omega varGamma varDelta varTheta varLambda
+varXi varPi varSigma varUpsilon varPhi varPsi varOmega Alpha Beta Epsilon Zeta Eta Iota Kappa Mu
+Nu Omicron Rho Tau Chi backepsilon aleph beth gimel daleth
+""")
+TEX_OPERATORS_RELATIONS = _names("""
+times div cdot cdotp pm mp ast star circ bullet oplus ominus otimes oslash odot bigcirc dagger
+ddagger amalg wedge vee cap cup uplus sqcap sqcup land lor lnot neg setminus smallsetminus wr
+diamond triangle bigtriangleup bigtriangledown triangleleft triangleright lhd rhd unlhd unrhd
+centerdot circledast circledcirc circleddash dotplus divideontimes doublebarwedge doublecap
+doublecup barwedge veebar curlywedge curlyvee leftthreetimes rightthreetimes ltimes rtimes
+intercal Cap Cup boxdot boxminus boxplus boxtimes ldotp
+eq ne neq le leq ge geq lt gt ll gg lll ggg equiv sim simeq approx approxeq cong ncong propto
+varpropto doteq doteqdot Doteq fallingdotseq risingdotseq parallel nparallel shortparallel
+nshortparallel perp mid nmid smallfrown smallsmile frown smile asymp bowtie Join models vdash
+Vdash vDash Vvdash dashv subset supset subseteq supseteq subsetneq supsetneq nsubseteq nsupseteq
+subseteqq supseteqq subsetneqq supsetneqq sqsubset sqsupset sqsubseteq sqsupseteq in ni notin
+owns isin Subset Supset prec succ preceq succeq precsim succsim precapprox succapprox
+preccurlyeq succcurlyeq curlyeqprec curlyeqsucc nprec nsucc npreceq nsucceq lesssim gtrsim
+lessapprox gtrapprox lessgtr gtrless lesseqgtr gtreqless lessdot gtrdot leqslant geqslant leqq
+geqq lneq gneq lneqq gneqq lnsim gnsim lnapprox gnapprox nleq ngeq nless ngtr nleqslant
+ngeqslant nleqq ngeqq nsim not triangleq trianglelefteq trianglerighteq vartriangleleft
+vartriangleright ntriangleleft ntriangleright ntrianglelefteq ntrianglerighteq between
+pitchfork backsim backsimeq thicksim thickapprox bumpeq Bumpeq eqcirc circeq eqsim eqslantless
+eqslantgtr questeq therefore because
+""")
+TEX_ARROWS = _names("""
+leftarrow rightarrow to gets leftrightarrow Leftarrow Rightarrow Leftrightarrow iff implies
+impliedby uparrow downarrow updownarrow Uparrow Downarrow Updownarrow longleftarrow
+longrightarrow longleftrightarrow Longleftarrow Longrightarrow Longleftrightarrow mapsto
+longmapsto hookleftarrow hookrightarrow leftharpoonup leftharpoondown rightharpoonup
+rightharpoondown rightleftharpoons leftrightharpoons nearrow searrow swarrow nwarrow nleftarrow
+nrightarrow nleftrightarrow nLeftarrow nRightarrow nLeftrightarrow leftleftarrows
+rightrightarrows leftrightarrows rightleftarrows Lleftarrow Rrightarrow twoheadleftarrow
+twoheadrightarrow leftarrowtail rightarrowtail looparrowleft looparrowright curvearrowleft
+curvearrowright circlearrowleft circlearrowright Lsh Rsh upuparrows downdownarrows
+upharpoonleft upharpoonright downharpoonleft downharpoonright leftrightsquigarrow
+rightsquigarrow dashleftarrow dashrightarrow multimap restriction
+""")
+TEX_MISC_SYMBOLS = _names("""
+infty partial nabla forall exists nexists emptyset varnothing empty ell hbar hslash imath jmath
+wp Re Im prime backprime angle measuredangle sphericalangle top bot flat natural sharp clubsuit
+diamondsuit heartsuit spadesuit surd checkmark maltese complement Finv Game eth mho Bbbk
+cdots ldots dots dotsb dotsc dotsi dotsm dotso vdots ddots iddots hdots mathellipsis
+square blacksquare Box Diamond lozenge blacklozenge blacktriangle blacktriangledown
+blacktriangleleft blacktriangleright bigstar vartriangle triangledown circledR circledS
+degree pounds yen textdegree copyright dag ddag S P ss ae AE oe OE o O aa AA i j l L
+lbrace rbrace lbrack rbrack langle rangle lvert rvert lVert rVert vert Vert lceil rceil
+lfloor rfloor lgroup rgroup lmoustache rmoustache ulcorner urcorner llcorner lrcorner
+backslash slash N R Z Q C H Reals reals Complex cnums natnums Bbb bold TeX LaTeX KaTeX
+""")
+TEX_BIG_OPERATORS = _names("""
+sum prod coprod int iint iiint oint oiint oiiint intop smallint bigcup bigcap bigvee bigwedge
+bigoplus bigotimes bigodot biguplus bigsqcup
+""")
+TEX_FUNCTIONS = _names("""
+sin cos tan cot sec csc arcsin arccos arctan arccot sinh cosh tanh coth sech csch log ln lg exp
+lim limsup liminf max min sup inf arg det dim gcd hom ker deg Pr mod bmod pmod pod operatorname
+varlimsup varliminf varinjlim varprojlim injlim projlim argmax argmin sgn plim lcm
+""")
+TEX_FONTS = _names("""
+mathrm mathbf mathit mathsf mathtt mathnormal mathbb mathcal mathfrak mathscr boldsymbol bm
+pmb rm bf it sf tt cal frak scr text textrm textbf textit textsf texttt textnormal textup
+textmd emph mbox hbox fbox
+""")
+TEX_STRUCTURE = _names("""
+frac dfrac tfrac cfrac binom dbinom tbinom genfrac sqrt overset underset stackrel atop over
+choose brace brack above overbrace underbrace overline underline overleftarrow overrightarrow
+overleftrightarrow underleftarrow underrightarrow underleftrightarrow overgroup undergroup
+overlinesegment underlinesegment Overrightarrow overleftharpoon overrightharpoon
+xleftarrow xrightarrow xLeftarrow xRightarrow xleftrightarrow xLeftrightarrow xhookleftarrow
+xhookrightarrow xtwoheadleftarrow xtwoheadrightarrow xleftharpoonup xleftharpoondown
+xrightharpoonup xrightharpoondown xleftrightharpoons xrightleftharpoons xtofrom xlongequal
+xmapsto hat widehat bar check tilde widetilde vec dot ddot dddot ddddot acute grave breve
+mathring utilde boxed cancel bcancel xcancel sout phantom hphantom vphantom smash
+mathstrut strut substack mathop mathrel mathbin mathord mathopen mathclose mathpunct
+mathinner left right middle big Big bigg Bigg bigl Bigl biggl Biggl bigr Bigr biggr Biggr
+bigm Bigm biggm Biggm limits nolimits displaystyle textstyle scriptstyle scriptscriptstyle
+tiny scriptsize footnotesize small normalsize large Large LARGE huge Huge color textcolor
+colorbox fcolorbox kern mkern mskip hskip hspace rule raisebox quad qquad enspace thinspace
+medspace thickspace negthinspace negmedspace negthickspace nobreakspace space tag nonumber
+notag hline hdashline cr newline begin end bra ket braket set Set Bra Ket Braket
+newcommand renewcommand providecommand def gdef edef xdef let global long relax
+href url verb unicode mathchoice
+""")
+TEX_KNOWN = (TEX_GREEK | TEX_OPERATORS_RELATIONS | TEX_ARROWS | TEX_MISC_SYMBOLS |
+             TEX_BIG_OPERATORS | TEX_FUNCTIONS | TEX_FONTS | TEX_STRUCTURE)
+# Commands that belong to prose (bold, italic ...) are not an equation when they
+# appear outside delimiters; every other known command is.
+TEX_TEXT_ONLY = _names("""textrm textbf textit textsf texttt textnormal textup textmd emph mbox hbox
+fbox textdegree copyright dag ddag S P ss ae AE oe OE o O aa AA i j l L degree pounds yen href url
+verb unicode newcommand renewcommand providecommand def gdef edef xdef let global long relax
+TeX LaTeX KaTeX N R Z Q C H S""")
+TEX_TEXT_MODE = _names("text textrm textbf textit textsf texttt textnormal textup textmd emph mbox hbox fbox")
+TEX_ONE_ARG = _names("""
+text textrm textbf textit textsf texttt textnormal textup textmd emph mbox hbox fbox
+mathrm mathbf mathit mathsf mathtt mathnormal mathbb mathcal mathfrak mathscr boldsymbol bm pmb
+operatorname hat widehat bar check tilde widetilde vec dot ddot dddot acute grave breve mathring
+overline underline overbrace underbrace overleftarrow overrightarrow boxed cancel bcancel
+xcancel sout phantom hphantom vphantom smash substack mathop mathrel mathbin mathord mathopen
+mathclose mathpunct mathinner pmod xrightarrow xleftarrow color
+""")
+TEX_TWO_ARGS = _names("frac dfrac tfrac cfrac binom dbinom tbinom overset underset stackrel textcolor colorbox")
+TEX_OPTIONAL_BRACKET = _names("sqrt xrightarrow xleftarrow")
+TEX_DELIMITER_COMMANDS = _names("""
+lbrace rbrace langle rangle lvert rvert lVert rVert vert Vert lceil rceil lfloor rfloor lbrack
+rbrack lgroup rgroup lmoustache rmoustache ulcorner urcorner llcorner lrcorner uparrow downarrow
+updownarrow Uparrow Downarrow Updownarrow backslash lt gt
+""")
+TEX_ENVIRONMENTS = _names("""
+matrix pmatrix bmatrix Bmatrix vmatrix Vmatrix smallmatrix array subarray darray cases rcases
+dcases drcases aligned alignedat gathered split align align* alignat alignat* gather gather*
+equation equation* eqnarray eqnarray* CD
+""")
+# Open a text group: inside it ^ _ & $ are not math syntax.
+TEX_NAKED = TEX_KNOWN - TEX_TEXT_ONLY
+
+
+def _tex_tokens(body, probs):
+    """Split an equation body into (type, value) tokens: ('cmd', name), ('sym', ch),
+    the characters { } ^ _ & $ ' , and ('char', c). Whitespace is dropped and a %
+    comment is skipped to the end of its line, as TeX does."""
+    toks = []
+    i, n = 0, len(body)
+    name = re.compile(r"[A-Za-z]+")
+    while i < n:
+        c = body[i]
+        if c == "\\":
+            m = name.match(body, i + 1)
+            if m:
+                toks.append(("cmd", m.group()))
+                i = m.end()
+            elif i + 1 < n:
+                toks.append(("sym", body[i + 1]))
+                i += 2
+            else:
+                probs.add("trailing_backslash")
+                i += 1
+        elif c.isspace():
+            i += 1
+        elif c == "%":
+            probs.add("unescaped_percent")
+            j = body.find("\n", i)
+            i = n if j < 0 else j + 1
+        elif c in "{}^_&$'":
+            toks.append((c, c))
+            i += 1
+        else:
+            toks.append(("char", c))
+            i += 1
+    return toks
+
+
+def _skip_tex_arg(toks, j):
+    """Index just past the argument that starts at toks[j], or None if there is none:
+    one {group} or one token."""
+    if j >= len(toks):
+        return None
+    t, v = toks[j]
+    if t == "{":
+        depth = 0
+        for k in range(j, len(toks)):
+            if toks[k][0] == "{":
+                depth += 1
+            elif toks[k][0] == "}":
+                depth -= 1
+                if depth == 0:
+                    return k + 1
+        return None
+    if t in ("}", "^", "_", "&") or (t == "cmd" and v in ("right", "end", "middle")):
+        return None
+    return j + 1
+
+
+def _frame(kind, text=False, env=None):
+    return {"k": kind, "text": text, "env": env, "sup": False, "sub": False, "arg": False}
+
+
+def tex_problems(body):
+    """Problem codes for one equation body; an empty list means it would parse."""
+    probs = set()
+    if not body.strip():
+        return ["empty"]
+    if MISSING_BACKSLASH_RE.search(body):
+        probs.add("missing_backslash")
+    toks = _tex_tokens(body, probs)
+    macros = {n for pair in MACRO_DEF_RE.findall(body) for n in pair if n}
+    stack = [_frame("root")]
+    n = len(toks)
+    i = 0
+    while i < n:
+        t, v = toks[i]
+        top = stack[-1]
+        is_arg, top["arg"] = top["arg"], False
+        in_text = top["text"]
+
+        if t == "}":
+            if top["k"] == "brace":
+                stack.pop()
+            else:
+                probs.add("unbalanced_braces")
+            i += 1
+            continue
+        if t in ("^", "_") and not in_text:
+            key = "sup" if t == "^" else "sub"
+            if is_arg:
+                probs.add("dangling_script")
+            if top[key]:
+                probs.add("double_superscript" if t == "^" else "double_subscript")
+            top[key] = True
+            nxt = toks[i + 1] if i + 1 < n else None
+            if nxt is None or nxt[0] in ("}", "&") or (nxt[0] == "cmd" and nxt[1] in ("right", "end", "middle")):
+                probs.add("dangling_script")
+            else:
+                top["arg"] = True
+            i += 1
+            continue
+        if t == "'" and not in_text:
+            # KaTeX folds primes and a ^ that follows them into one superscript.
+            if top["sup"]:
+                probs.add("double_superscript")
+            top["sup"] = True
+            while i + 1 < n and toks[i + 1][0] == "'":
+                i += 1
+            if i + 1 < n and toks[i + 1][0] == "^":
+                i += 1
+                top["arg"] = True
+            i += 1
+            continue
+        if not is_arg:
+            top["sup"] = top["sub"] = False      # a new atom starts here
+
+        if t == "{":
+            prev = toks[i - 1] if i else None
+            text = in_text or bool(prev and prev[0] == "cmd" and prev[1] in TEX_TEXT_MODE)
+            stack.append(_frame("brace", text))
+        elif t == "&":
+            if not in_text and not any(f["k"] == "env" for f in stack):
+                probs.add("ampersand_outside_environment")
+        elif t == "$":
+            if not in_text:
+                probs.add("dollar_in_math")
+        elif t == "cmd":
+            if v in ("left", "right"):
+                nxt = toks[i + 1] if i + 1 < n else None
+                ok = bool(nxt and ((nxt[0] == "char" and nxt[1] in "()[]|./<>")
+                                   or (nxt[0] == "sym" and nxt[1] in "{}|")
+                                   or (nxt[0] == "cmd" and nxt[1] in TEX_DELIMITER_COMMANDS)))
+                if not ok:
+                    probs.add("bad_delimiter")
+                if v == "left":
+                    stack.append(_frame("left"))
+                elif top["k"] == "left":
+                    stack.pop()
+                else:
+                    probs.add("unmatched_left_right")
+            elif v == "middle":
+                if not any(f["k"] == "left" for f in stack):
+                    probs.add("unmatched_left_right")
+            elif v in ("begin", "end"):
+                j = i + 1
+                name = ""
+                ok = j < n and toks[j][0] == "{"
+                if ok:
+                    j += 1
+                    while j < n and toks[j][0] == "char":
+                        name += toks[j][1]
+                        j += 1
+                    ok = j < n and toks[j][0] == "}" and bool(name)
+                if not ok:
+                    probs.add("bad_environment")
+                else:
+                    if name not in TEX_ENVIRONMENTS:
+                        probs.add("unknown_environment:" + name)
+                    if v == "begin":
+                        stack.append(_frame("env", env=name))
+                    elif top["k"] == "env" and top["env"] == name:
+                        stack.pop()
+                    else:
+                        probs.add("unmatched_environment")
+                    i = j
+            else:
+                if v not in TEX_KNOWN and v not in macros:
+                    probs.add("unknown_command:\\" + v)
+                needs = 2 if v in TEX_TWO_ARGS else 1 if v in TEX_ONE_ARG or v == "sqrt" else 0
+                if needs:
+                    j = i + 1
+                    if v in TEX_OPTIONAL_BRACKET and j < n and toks[j] == ("char", "["):
+                        while j < n and toks[j] != ("char", "]"):
+                            j += 1
+                        j += 1
+                    for _ in range(needs):
+                        j = _skip_tex_arg(toks, j) if j is not None else None
+                    if j is None:
+                        probs.add("missing_argument")
+        i += 1
+    for f in stack[1:]:
+        probs.add({"brace": "unbalanced_braces", "left": "unmatched_left_right",
+                   "env": "unmatched_environment"}[f["k"]])
+    return sorted(probs)
+
+
+def _blank(match):
+    return re.sub(r"[^\n]", " ", match.group())
+
+
+def scan_equations(text):
+    """Every equation and every attempt at one in `text`, as a list of
+    {"form", "excerpt", "problems"}. `problems` is empty for a well-formed equation."""
+    text = FENCED_CODE_RE.sub(_blank, text)
+    text = INLINE_CODE_RE.sub(_blank, text)
+    found = []
+
+    def add(form, body, problems):
+        found.append({"form": form, "excerpt": re.sub(r"\s+", " ", body).strip()[:70], "problems": problems})
+
+    for para in PARAGRAPH_RE.finditer(text):
+        p = para.group()
+        prose = list(p)                  # the paragraph with every equation blanked out
+
+        def blank(a, b):
+            for k in range(a, b):
+                if prose[k] != "\n":
+                    prose[k] = " "
+
+        stray = None                     # an unmatched, non-price $ waiting for its partner
+        pos = 0
+        while True:
+            m = EQ_TOKEN.search(p, pos)
+            if not m:
+                break
+            tok, s = m.group(), m.start()
+            pos = m.end()
+            if tok in ("\\\\", "\\$"):
+                continue
+            if tok in ("\\)", "\\]"):
+                add(tok, p[max(0, s - 30):s + 2], ["closing_without_opening"])
+                continue
+            pat, form, code = {"$$": (EQ_DOLLAR2, "$$", "unclosed_display_dollar"),
+                               "$": (EQ_DOLLAR, "$", "stray_dollar"),
+                               "\\(": (EQ_PAREN, "\\(", "unclosed_paren"),
+                               "\\[": (EQ_BRACKET, "\\[", "unclosed_bracket")}[tok]
+            mm = pat.match(p, s)
+            if mm:
+                if stray is not None:           # a lone $ before a real equation was text
+                    add("$", p[stray:s], ["stray_dollar"])
+                    stray = None
+                add(form, mm.group(1), tex_problems(mm.group(1)))
+                blank(s, mm.end())
+                pos = mm.end()
+            elif tok == "$":
+                if PRICE_RE.match(p, s):
+                    continue
+                if stray is None:
+                    stray = s
+                else:                           # two strays are one equation that never closed
+                    add("$", p[stray:s + 1], ["stray_dollar"])
+                    blank(stray, s + 1)
+                    stray = None
+            else:
+                add(form, p[s:s + 70], [code])
+                blank(s, len(p))
+                break
+        if stray is not None:
+            add("$", p[stray:stray + 70], ["stray_dollar"])
+            blank(stray, len(p))
+        for line in "".join(prose).splitlines():
+            names = [x for x in re.findall(r"\\([A-Za-z]+)", line) if x in TEX_NAKED]
+            if names:
+                add("naked", line, ["naked_tex"])
+    return found
+
+
+def summarize_equations(equations):
+    """(well formed, malformed, 'problem:count ...' text) for scan_equations output."""
+    bad = [e for e in equations if e["problems"]]
+    kinds = {}
+    for e in bad:
+        for code in e["problems"]:
+            kinds[code] = kinds.get(code, 0) + 1
+    detail = " ".join(f"{k}:{v}" for k, v in sorted(kinds.items(), key=lambda kv: (-kv[1], kv[0])))
+    return len(equations) - len(bad), len(bad), detail
+
+
+# --------------------------------------------------------------------------- #
 # Diagram specifications
 # --------------------------------------------------------------------------- #
 
@@ -827,6 +1266,10 @@ def score_chapter(path, ctx):
 
     # ---- raw metrics ----------------------------------------------------------
     math = count_math("\n".join(e["text"] for e in els if e["kind"] != "code"))
+    equations = scan_equations("\n".join(e["text"] for e in els if e["kind"] != "code"))
+    eq_ok, eq_bad, eq_detail = summarize_equations(equations)
+    math_issues = [{"form": e["form"], "problems": e["problems"], "excerpt": e["excerpt"]}
+                   for e in equations if e["problems"]]
     lists_total, lists_missing = list_stats(text)
     tables = [e for e in els if e["kind"] == "table" and e is not concept_table]
     counted_text = "\n".join(e["text"] for e in counted if e["kind"] != "table")
@@ -848,15 +1291,19 @@ def score_chapter(path, ctx):
         "lists_unrendered": lists_missing, "worked_examples": worked,
         "admonitions": len(admons), "code_blocks": sum(1 for e in els if e["kind"] == "code"),
         "math_paren": math["paren"], "math_bracket": math["bracket"], "math_dollar": math["dollar"],
+        "equations_ok": eq_ok, "equations_bad": eq_bad, "equation_problems": eq_detail,
         "grade": r3(grade), "ease": r3(ease), "words_per_sentence": r3(wps),
         "headings_h1": sum(1 for e in els if e["kind"] == "heading" and e["level"] == 1),
     }
     flags = list(flags_pending)
+    if eq_bad:
+        flags.append(f"MALFORMED_MATH:{eq_bad}")
     metrics["diagram_headers_without_block"] = bare_headers
     if stub:
         flags.append("STUB")
         return {"chapter": path.parent.name, "title": meta.get("title", ""), "state": "stub", "score": 0.0,
-                "dims": {}, "metrics": metrics, "flags": flags, "subscores": {}, "reading_engine": engine}
+                "dims": {}, "metrics": metrics, "flags": flags, "subscores": {}, "reading_engine": engine,
+                "math_issues": math_issues}
 
     start = teaching_start(els)
     # ---- budget ---------------------------------------------------------------
@@ -1177,7 +1624,7 @@ def score_chapter(path, ctx):
                  "padding": padding_sub, "reader": reader_sub}
     return {"chapter": path.parent.name, "title": meta.get("title", ""), "state": "written",
             "score": round(score, 1), "dims": {k: round(v * 100, 1) for k, v in dims.items()},
-            "metrics": metrics, "flags": flags, "reading_engine": engine,
+            "metrics": metrics, "flags": flags, "reading_engine": engine, "math_issues": math_issues,
             "subscores": {d: {k: r3(v) for k, v in s.items()} for d, s in subscores.items()},
             "diagram_blocks": [{"title": b["title"], "score": b["score"],
                                 "failed": [k for k, v in b["checks"].items() if v < 1.0]} for b in block_rows]}
@@ -1264,7 +1711,10 @@ def score_book(path, args):
         "level": round(level, 1), "median_written": round(med, 1),
         "consistency": None if consistency is None else round(consistency, 1),
         "floor": round(min(q), 1) if q else 0.0,
-        "headline": None if consistency is None else round(level * consistency / 100, 1),
+        "composite": None if consistency is None else round(level * consistency / 100, 1),
+        "equations_ok": sum(c["metrics"]["equations_ok"] for c in chapters),
+        "equations_bad": sum(c["metrics"]["equations_bad"] for c in chapters),
+        "equations_bad_chapters": sum(1 for c in chapters if c["metrics"]["equations_bad"]),
         "dimensions": dim_stats, "cis_max": cis_max, "cis_max_source": cis_src,
         "reading_engine": ctx["engine"], "mascot_rules": mascot,
     }
@@ -1286,7 +1736,11 @@ def print_book(book, raw):
     print(f"- Chapters written: {s['written']} of {s['chapters']}")
     print(f"- Level {s['level']} (mean score, unwritten = 0) · median of written {s['median_written']} · "
           f"floor {s['floor']}")
-    print(f"- Consistency {fmt_num(s['consistency'])} · **Headline {fmt_num(s['headline'])}**")
+    print(f"- Consistency {fmt_num(s['consistency'])} · **Composite {fmt_num(s['composite'])}**")
+    n_bad = s["equations_bad_chapters"]
+    eq_where = f" in {n_bad} chapter{'s' if n_bad != 1 else ''}" if s["equations_bad"] else ""
+    print(f"- Equations: {s['equations_ok']} well formed, {s['equations_bad']} malformed{eq_where} "
+          f"(reported, not scored)")
     print(f"- Max CIS {s['cis_max']:.0f} from {s['cis_max_source']}; reading engine {s['reading_engine']}; "
           f"mascot rules {s['mascot_rules']}\n")
     print("| Chapter | State | Score | Budget | Place | Spec | Format | Pad | Reader | Flags |")
@@ -1304,8 +1758,8 @@ def print_book(book, raw):
         print("| CV | " + " | ".join(fmt_num(v["cv"], 2) for v in dims.values()) + " |")
     if raw:
         print("\n| Chapter | Words | Body | Target | Concepts A/B/C | Diagrams | Worked | Tables | Lists (bad) "
-              "| Math | Grade | Ease | Words/sent |")
-        print("|---|---:|---:|---:|---|---:|---:|---:|---|---:|---:|---:|---:|")
+              "| Math | Eq ok | Eq bad | Grade | Ease | Words/sent |")
+        print("|---|---:|---:|---:|---|---:|---:|---:|---|---:|---:|---:|---:|---:|---:|")
         for c in book["chapters"]:
             m = c["metrics"]
             math = m["math_paren"] + m["math_bracket"] + m["math_dollar"]
@@ -1313,18 +1767,21 @@ def print_book(book, raw):
                   f"{m['target_words_low']}-{m['target_words_high']} | "
                   f"{m['tier_a']}/{m['tier_b']}/{m['tier_c']} | {m['diagrams']} | {m['worked_examples']} | "
                   f"{m['tables']} | {m['lists']} ({m['lists_unrendered']}) | {math} | "
+                  f"{m['equations_ok']} | {m['equations_bad']} | "
                   f"{fmt_num(m['grade'])} | {fmt_num(m['ease'])} | {fmt_num(m['words_per_sentence'])} |")
 
 
 def print_comparison(books):
     print("\n## Comparison\n")
-    print("| Book | Written | Level | Consistency | Floor | Headline | Budget | Place | Spec | Format | Pad | Reader |")
-    print("|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
-    for b in sorted(books, key=lambda b: -(b["summary"]["headline"] or 0.0)):
+    print("| Book | Written | Level | Consistency | Floor | Composite | Budget | Place | Spec | Format | Pad | Reader "
+          "| Math ok/bad |")
+    print("|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
+    for b in sorted(books, key=lambda b: -(b["summary"]["composite"] or 0.0)):
         s = b["summary"]
         dm = [fmt_num(s["dimensions"].get(k, {}).get("mean"), 0) for k in WEIGHTS]
         print(f"| {s['book']} | {s['written']}/{s['chapters']} | {s['level']:.1f} | {fmt_num(s['consistency'])} | "
-              f"{s['floor']:.1f} | **{fmt_num(s['headline'])}** | " + " | ".join(dm) + " |")
+              f"{s['floor']:.1f} | **{fmt_num(s['composite'])}** | " + " | ".join(dm)
+              + f" | {s['equations_ok']}/{s['equations_bad']} |")
 
 
 def main(argv=None):

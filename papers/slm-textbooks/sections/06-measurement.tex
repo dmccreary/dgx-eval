@@ -59,7 +59,7 @@ Reader fit & 15 & Is the reading level right for the audience, with equations an
 Three design choices deserve explanation. First, the specification dimension encodes the rules of the chapter-content skill itself, so a diagram counts as correctly placed when the skill's own batch tool will find and build it, even if a stricter reading of the rules would disagree; a score should agree with the toolchain that consumes the output. Second, reading grade is the Flesch--Kincaid grade \cite{kincaid1975} of the prose with math, code, tables, and specifications removed, against a target of 9.0 for Algebra~I. Third, equations are \textit{counted but not scored}: each chapter and book reports how many equations are well formed and how many the site would display as source text. The count is a syntax check, written from the KaTeX function list and not by running KaTeX, and it is kept out of the score so that every number in this paper holds the value at which the weights were checked.
 
 \paragraph{From chapters to a book.}
-Algorithm~\ref{alg:book} gives the book score. The book's headline is its level multiplied by its consistency, where consistency is one minus the coefficient of variation of the written chapters. Unwritten chapters enter the level as zero and are left out of the consistency, so that one fact, that a chapter is missing, is not charged twice.
+Algorithm~\ref{alg:book} gives the book score. The book's composite score is its level multiplied by its consistency, where consistency is one minus the coefficient of variation of the written chapters. Unwritten chapters enter the level as zero and are left out of the consistency, so that one fact, that a chapter is missing, is not charged twice.
 
 \begin{algorithm}[htbp]
 \caption{Scoring one generated book}
@@ -95,7 +95,7 @@ The checks we ran on the score are modest, and we report them with the bugs they
 \begin{itemize}
 \item \textbf{Determinism.} The same input scored twice gave identical output.
 \item \textbf{Insensitivity to size.} Across the 49 written chapters, the Spearman correlation of the chapter score with body words is $-0.10$, with the number of diagram specifications $0.15$, and with the number of equations $0.15$. The score does not track size, which is what the plateau and the saturating sub-scores were built to achieve.
-\item \textbf{Reweighting.} We multiplied each of the six dimension weights by an independent uniform draw from $[0.6,1.4]$, 500 times, and recomputed the headlines (Section~\ref{sec:quality}).
+\item \textbf{Reweighting.} We multiplied each of the six dimension weights by an independent uniform draw from $[0.6,1.4]$, 500 times, and recomputed the composite scores (Section~\ref{sec:quality}).
 \item \textbf{Bugs that survived.} Three defects passed the checks above and were found later: a header rule stricter than the skill's own parser, a function that treated a whole chapter as boilerplate, and a case-insensitive pattern that matched an HTML tag and failed 278 of 282 specification blocks. None showed in the totals. Two were found by reading single chapters whose sub-scores looked wrong, and the third by tabulating how often each check failed: a check that fails 99\% of the time is a defect. One chapter had been scored about 14 points too low.
 \end{itemize}
 

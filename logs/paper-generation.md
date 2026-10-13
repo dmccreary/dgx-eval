@@ -20,10 +20,19 @@ Please generate a publication-style paper on this book.  Put the paper into @pap
 spelled out the absolute path on the laptop. It is shortened here because the
 repository's rule is to keep home-directory paths out of published files.
 
-Two later requests in the same session:
+Later requests in the same session:
 
 1. `commit the paper and push it`
 2. A request for this log, including the original prompt.
+3. `commit and push it`, for the log.
+4. A request to add the five-levels paper to the references.
+5. A question whether "composite score" describes the book-level number better
+   than "headline", followed by `Rename it everywhere, including the scorer and
+   its page ... Update the log also so it is consistent`.
+6. `create a @docs/glossary.md and put a precise definition for "Composite
+   Score" in there for now - we will generate a full glossary of terms later`.
+
+Requests 4 to 6 are described under "Later Changes in the Same Session".
 
 ## Starting State
 
@@ -230,7 +239,7 @@ that is not in the repository.
 | Build | Tectonic exits clean; 32 pages |
 | Undefined references or citations | None |
 | Overfull boxes | None |
-| Bibliography | 44 entries, all cited; 10 marked verified |
+| Bibliography | 44 entries, all cited; 10 marked verified (45 and 11 after the later addition below) |
 | Abstract | 249 words |
 | Figures | 6, all PNG at 300 dpi, all cited in the text |
 | Tables and algorithms | 17 tables, 1 algorithm |
@@ -241,7 +250,7 @@ that is not in the repository.
 
 ## Results the Paper Reports
 
-| Model | Stage 1 | Chapters written | Three-stage time | Headline score |
+| Model | Stage 1 | Chapters written | Three-stage time | Composite score |
 |---|---|---|---|---|
 | `qwen3.6:35b` | 22 min | 11 of 11 | 2.2 h | 64.3 |
 | `gemma4:31b` | 21 min | 10 of 12 | 4.8 h | 63.6 |
@@ -272,6 +281,10 @@ context fits beside its weights.
 | Commit directly to `main` and push | A branch and a pull request | The Primary Author's documented workflow commits and pushes to `main` |
 | Commit both `main.pdf` and the versioned PDF | One copy | The reference keeps both; identical files are stored once by git |
 | Stage only the assistant's hunks of `src/README.md` | Stage the whole file | The rest describes uncommitted files |
+| Call the book-level number "composite score" | "Headline", "book score", "consistency-adjusted score" | It is built from two components, it is numeric in tone, and it does not claim quality; "book score" does not say how it is built and the other is long for a table header |
+| Define the composite as a product, in one line | Leave it implied | "Composite" often suggests a weighted average, and this one is multiplicative |
+| Add "Composite Score" to the existing glossary, in place | Create `docs/glossary.md` as asked | The file already existed with 506 committed entries; creating it would have overwritten them |
+| Cite only the GitHub URL for the five-levels paper | Also cite its EdArXiv preprint | The source README holds unresolved merge-conflict markers, so the preprint link is unconfirmed |
 
 ## Findings Raised for the Primary Author
 
@@ -296,6 +309,91 @@ context fits beside its weights.
    and related files appeared untracked while the session ran and were left
    alone.
 
+## Later Changes in the Same Session
+
+### This log
+
+Committed and pushed as `5a15248`, after the staged diff passed the same scan
+as the paper. It was the only file in that commit.
+
+### A reference added
+
+The Primary Author asked for the five-levels paper in the `intelligent-textbooks`
+repository to be added to the references.
+
+- **Details.** Title, author, and "Version 0.04" were taken from that paper's own
+  `main.tex`, because the repository page's rendered title had a stray fragment
+  from a link.
+- **Year.** 2025, the date `main.tex` last changed. The paper states no date.
+- **Citation.** Section 2.1, where the five-level scale is introduced, as earlier
+  work by the author that draws lessons from autonomous-vehicle standards. The
+  sentence says no more than that paper's title and README support.
+- **Not cited.** The EdArXiv preprint link in that repository's README, because
+  the README holds unresolved merge-conflict markers.
+- **Counts.** 45 entries, 11 marked verified, 34 unverified. The paper's README
+  and STATUS were updated and the PDF rebuilt: 32 pages, no new warnings.
+
+### "Headline" renamed to "composite score"
+
+The Primary Author found "headline" awkward for a number, since it suggests
+newspaper text, and asked whether "composite score" would be more descriptive.
+The assistant agreed, gave the caveats and the alternatives (see Decisions
+Recorded), counted 12 files that used the word, and noted that two of them held
+the Primary Author's uncommitted edits. The Primary Author then approved
+renaming it everywhere, including those two, and asked for this log to match.
+
+| Area | Change |
+|---|---|
+| The scorer | The `headline` field of its `--json` output is now `composite`; the per-book line and the comparison table header say Composite; its header comment and sort key follow |
+| The scorer's page | Prose, formula, worked example, and results table header |
+| Other book pages | Two sentences in the design-choices page; one in `src/README.md` |
+| The paper | Sections 5, 6, and 9, Table 13, the Figure 5 caption and labels, and the data README |
+| Scripts and data | The figure script's variable names and labels; `paper-numbers.json` and `fig-quality.png` regenerated |
+| This log | The results table header, and this section |
+| Left alone | `docs/appendices/model-candidates.md`, where "headline strengths" is the ordinary word for a publisher's claims |
+
+Verification:
+
+- The scorer, rerun on the six books, gives identical scores: 64.3, 63.6, 52.5,
+  42.3, 39.0, and none for the book that wrote no chapter.
+- All 61 equation regression cases pass.
+- The paper rebuilds at 32 pages with no overfull boxes and no undefined
+  references. The word "headline" no longer appears in the PDF text or the data.
+- Anything outside the repository that reads the `headline` key from the
+  scorer's `--json` output needs the new key. The word remains only in git
+  history.
+
+The assistant's persistent project note about the score was updated to the new
+name as well.
+
+### A glossary entry
+
+The Primary Author asked for a `docs/glossary.md` to be created with a precise
+definition of "Composite Score", to be replaced later by a full glossary.
+
+- **The file already existed.** `docs/glossary.md` is tracked, unmodified, and
+  holds 506 generated entries from commit `b078f31`. Creating it would have
+  overwritten them, so the assistant added the entry in place instead.
+- **The entry.** It sits between "Commercial Use Terms" and "Compute Capability"
+  and follows the file's format: a definition, an example, and links to related
+  terms. The definition states the formula, the upper bound, when it is
+  undefined, and that it measures conformance and not correctness. The example
+  is the worked one from the scorer's page (level 69.8, consistency 91.1,
+  composite 63.6).
+- **Checks.** The glossary still has every heading in alphabetical order, now
+  507, and the three "See also" terms exist.
+- **A mismatch to resolve.** The glossary's front matter and the book's home
+  page say 506 terms, one per concept in the learning graph. "Composite Score"
+  is not in the concept list, so the count is now one short of the entries, and
+  a regeneration from the concept list would drop the entry. The same is true
+  of "level" and "consistency", which have no entries.
+- **Site build.** `mkdocs build --strict`, run after this and the rename, exits
+  clean.
+
+All of these changes are uncommitted at the time of writing: the renamed scorer
+and its page, the design-choices page, the glossary, `src/README.md`, the
+paper's sources, figures, data, and both PDFs.
+
 ## Files
 
 Created, all committed in `bd4e8bb`:
@@ -304,7 +402,7 @@ Created, all committed in `bd4e8bb`:
 |---|---|
 | `papers/slm-textbooks/main.tex`, `build.sh` | Document and build script |
 | `papers/slm-textbooks/sections/01-abstract.tex` to `12-acknowledgments.tex` | The paper |
-| `papers/slm-textbooks/sections/references.bib` | 44 references |
+| `papers/slm-textbooks/sections/references.bib` | 44 references (45 after the later addition) |
 | `papers/slm-textbooks/figures/` | Six PNG figures and a README |
 | `papers/slm-textbooks/data/` | `stage-metrics.csv`, `paper-numbers.json`, and a README |
 | `papers/slm-textbooks/README.md`, `STATUS.md`, `abstract.txt` | Project files |
@@ -314,8 +412,11 @@ Created, all committed in `bd4e8bb`:
 
 Modified: `src/README.md` (two rows and one paragraph, committed).
 
-Created after the commit: this log, `logs/paper-generation.md`, not yet
-committed.
+Created after that commit: this log, `logs/paper-generation.md`, committed in
+`5a15248`.
+
+Changed afterwards and not yet committed: the files listed under "Later
+Changes in the Same Session".
 
 ## Tools Used
 
@@ -323,7 +424,7 @@ committed.
 |---|---|
 | File read, write, edit | The paper, scripts, and notes |
 | Shell | Compiling, regenerating numbers, scanning, git |
-| Web search (10 queries), web fetch (1) | Citation and hardware verification |
+| Web search (10 queries), web fetch (4), public repository API lookups (2) | Citation and hardware verification, and the details of the added reference |
 | Image read | Viewing figures and rendered PDF pages |
 | Subagents, skills, questions to the user | None |
 
@@ -331,7 +432,13 @@ committed.
 
 - Review of every claim by the Primary Author.
 - Verify the 34 remaining references and add DOIs.
-- Commit the scorer and its test file, then re-check the paper's numbers.
+- Commit the scorer and its test file, then re-check the paper's numbers. The
+  scorer now also carries the rename.
+- Commit the later changes: the added reference, the rename, the glossary
+  entry, and the rebuilt paper.
+- Add "Composite Score", "Level", and "Consistency" to the learning graph's
+  concept list, so that a regenerated glossary keeps them and the 506 count
+  stays true.
 - Confirm the second-unit wording with the Administrator.
 - Resolve the `gemma4:31b` speed question.
 - Update the cost analysis page with the measured times.

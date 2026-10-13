@@ -272,6 +272,39 @@ built-in syllable estimate when it is not, and the output says which. On the 49
 written chapters the two differ by 0.47 grade levels on average, which moves the
 chapter score by 0.22 points on average and by 2.5 points at most.
 
+### Equations: counted, not scored
+
+Every chapter and every book also reports two numbers that add nothing to the
+score: how many equations are well formed and how many are malformed. A
+well-formed equation is one the site draws as math. KaTeX is set to show the
+source text when it cannot parse, so a malformed equation is visible to every
+reader. An equation is malformed when any of these holds:
+
+| Fault | Examples |
+|---|---|
+| A delimiter never closes | `\(` with no `\)`, `$$` with no closing `$$`, a `$` that is not a price and has no partner |
+| The TeX would not parse | Unbalanced braces, `\left` without `\right`, `\begin` without `\end`, `\frac{1}` with a missing argument, a `^` with nothing after it, `x^2^3`, a `&` outside an alignment environment, a bare `$` inside the math, an unescaped `%`, which starts a comment, or an empty body |
+| A name KaTeX does not have | `\mathbbm`, `\begin{tabular}` |
+| TeX with no delimiters | `\frac{a}{b}` written straight into a sentence |
+
+Delimiters are read with the same rules as `pymdownx.arithmatex` under the
+`mkdocs.yml` settings, so `$n$th` is math, `\$` and prices such as `$5 for`
+stay text, and an equation cannot run across a blank line. Code spans and
+fenced code are skipped.
+
+This is a syntax check and nothing more. `\frac{6} = 3` parses, because the
+`=` becomes the denominator, and so does an equation with the wrong answer. The
+list of commands is written from the KaTeX 0.16 function list, not taken from
+KaTeX, and it leans generous. A valid command missing from it is reported as a
+malformed equation with its name in `math_issues`, which is how to find it and
+add it.
+
+The count stays out of the score so that the weights, and every number on this
+page, keep the values they were checked at. On the six existing books it finds
+8,880 well-formed equations and 1 malformed one. The one is in a gemma4-31b
+chapter that opens an equation with `\(` and closes it with `$`, so the
+renderer pairs it with the next `\)` and swallows a sentence of prose.
+
 ## Step 4: From Sub-Scores to One Number
 
 Every sub-score is one of three shapes: a plateau with sloping sides, a
@@ -287,16 +320,16 @@ with the weights in the first table of this page.
 
 ## Step 5: The Book Score
 
-A book gets a level, a consistency, and a headline that combines the two.
+A book gets a level, a consistency, and a composite score that multiplies the two.
 
 \[ \mathrm{level} = \frac{1}{N} \sum_{i=1}^{N} Q_i \qquad
 \mathrm{consistency} = 100 \left(1 - \frac{\sigma_W}{\mu_W}\right) \qquad
-\mathrm{headline} = \frac{\mathrm{level} \times \mathrm{consistency}}{100} \]
+\mathrm{composite} = \frac{\mathrm{level} \times \mathrm{consistency}}{100} \]
 
 Here `N` is every chapter in the book, with stubs counted as 0, and `μ_W` and
 `σ_W` are the mean and population standard deviation of the written chapters
 only. Consistency needs at least two written chapters; with one it is undefined
-and so is the headline.
+and so is the composite score.
 
 The program also reports the floor, the lowest written chapter, and a robust
 z-score for each written chapter: its distance from the median divided by 1.4826
@@ -326,7 +359,7 @@ at the low end and 5 × 400 + 11 × 200 = 4,200 at the high end.
 For the book, `gemma4:31b` has 12 chapters. Ten are written, with scores from
 68.7 to 90.8 and a mean of 83.8, and two are stubs. Level is the sum of those ten
 scores over all twelve, 69.8. The coefficient of variation of the written
-chapters is 0.09, so consistency is 91.1 and the headline is 69.8 × 0.911 =
+chapters is 0.09, so consistency is 91.1 and the composite score is 69.8 × 0.911 =
 63.6.
 
 ## Why It Is Built This Way
@@ -404,7 +437,7 @@ documents the one place where it is stricter.
 | Padding weight lowered from 15 to 10 | Keep 15 | Every book averages above 90 on it, so it adds points without separating anyone | It would catch a model that did start to pad, but it is now worth less |
 | Thresholds read off the six existing books | Derive from theory | Compression, density, and sentence length have no authoritative limit | The limits fit this corpus. Revisit them when new models or a second course are added |
 | Plain regular expressions and stemming | An NLP library | Every rule can be read and audited in a few lines, and the file has no dependencies | It misses paraphrase. "Linear function" and "a function that is linear" do not match |
-| One file, standard library only | Several modules, packages | It copies to a fresh DGX and runs | It is long, about 1,300 lines, and regex-heavy |
+| One file, standard library only | Several modules, packages | It copies to a fresh DGX and runs | It is long, about 1,800 lines, and regex-heavy |
 | A sub-score that does not apply is dropped | Score it 0 or 1 | A chapter with no images should not gain or lose points for them | A chapter can avoid a check by not having the thing |
 | Mascot rules only where a mascot is defined | Always score them | The Algebra I books have no mascot, and no chapter could pass | The rule is silent in a book that forgot its mascot |
 | Math delimiters unscored | Penalize `$…$` | The Primary Author chose `$…$` for the algebra books and the site renders it | A model that writes `\(…\)` is not distinguished from one that writes `$…$` |
@@ -412,7 +445,8 @@ documents the one place where it is stricter.
 ## What It Cannot Tell You
 
 - **Correctness.** A chapter can follow every rule and teach a wrong
-  procedure. Nothing here evaluates the mathematics.
+  procedure. Nothing here evaluates the mathematics. The equation count checks
+  that the TeX would parse, not that it says the right thing.
 - **Gaming.** A model could fill every specification field with plausible
   keywords and score well. The checks for templated specs, repeated sentences,
   and thin fields narrow the gap, and nothing closes it. In one gpt-oss chapter
@@ -438,7 +472,7 @@ documents the one place where it is stricter.
 
 The flips come from two pairs: `qwen3.6:35b` against `gemma4:31b`, in 41% of the
 trials, and `gemma4:26b` against `gpt-oss:120b`, in 8%. The first pair is within a
-point of each other on the headline and should be treated as a tie.
+point of each other on the composite score and should be treated as a tie.
 
 Three bugs got past all four checks.
 
@@ -463,7 +497,7 @@ human judgment that is still owed.
 These are the six books of the Algebra I benchmark as scored on October 11,
 2026, by the version of the program in the repository that day.
 
-| Model | Written | Level | Consistency | Floor | Headline |
+| Model | Written | Level | Consistency | Floor | Composite |
 |---|---|---:|---:|---:|---:|
 | qwen3.6:35b | 11 of 11 | 76.4 | 84.1 | 55.9 | **64.3** |
 | gemma4:31b | 10 of 12 | 69.8 | 91.1 | 68.7 | **63.6** |
@@ -490,7 +524,8 @@ python3 src/scoring/chapter_quality.py docs/models/<model> --raw
 ```
 
 Give it several books and it ends with a comparison table. `--json` writes
-every raw count and sub-score, `--csv` writes one row per chapter, and
+every raw count and sub-score and lists each malformed equation, `--csv` writes
+one row per chapter, and
 `--target-grade` sets the reading grade for a course other than Algebra I. The
 weights, tier table, and every threshold are constants at the top of the file.
 
@@ -509,6 +544,7 @@ Each chapter's flags say which rule it broke:
 | `TEMPLATED:n` | `n` specifications that copy a sibling |
 | `SCAFFOLD_LEAK:n` | `n` pieces of the model's working left in the text |
 | `LISTS:n` | `n` lists with no blank line before them |
+| `MALFORMED_MATH:n` | `n` equations the renderer would show as source text. Reported, not scored |
 | `IMG_BROKEN:n` | `n` image targets that do not exist |
 | `IFRAME_FAKE_HOST:n` | `n` embeds pointing at a placeholder host |
 | `TRUNCATED` | The file ends mid-sentence |
