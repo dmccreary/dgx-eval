@@ -779,6 +779,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#equations-counted-not-scored" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equations: counted, not scored
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1497,6 +1506,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#equations-counted-not-scored" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equations: counted, not scored
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2139,6 +2157,53 @@ itself.</p>
 built-in syllable estimate when it is not, and the output says which. On the 49
 written chapters the two differ by 0.47 grade levels on average, which moves the
 chapter score by 0.22 points on average and by 2.5 points at most.</p>
+<h3 id="equations-counted-not-scored">Equations: counted, not scored<a class="headerlink" href="#equations-counted-not-scored" title="Permanent link">&para;</a></h3>
+<p>Every chapter and every book also reports two numbers that add nothing to the
+score: how many equations are well formed and how many are malformed. A
+well-formed equation is one the site draws as math. KaTeX is set to show the
+source text when it cannot parse, so a malformed equation is visible to every
+reader. An equation is malformed when any of these holds:</p>
+<table>
+<thead>
+<tr>
+<th>Fault</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A delimiter never closes</td>
+<td><code>\(</code> with no <code>\)</code>, <code>$$</code> with no closing <code>$$</code>, a <code>$</code> that is not a price and has no partner</td>
+</tr>
+<tr>
+<td>The TeX would not parse</td>
+<td>Unbalanced braces, <code>\left</code> without <code>\right</code>, <code>\begin</code> without <code>\end</code>, <code>\frac{1}</code> with a missing argument, a <code>^</code> with nothing after it, <code>x^2^3</code>, a <code>&amp;</code> outside an alignment environment, a bare <code>$</code> inside the math, an unescaped <code>%</code>, which starts a comment, or an empty body</td>
+</tr>
+<tr>
+<td>A name KaTeX does not have</td>
+<td><code>\mathbbm</code>, <code>\begin{tabular}</code></td>
+</tr>
+<tr>
+<td>TeX with no delimiters</td>
+<td><code>\frac{a}{b}</code> written straight into a sentence</td>
+</tr>
+</tbody>
+</table>
+<p>Delimiters are read with the same rules as <code>pymdownx.arithmatex</code> under the
+<code>mkdocs.yml</code> settings, so <code>$n$th</code> is math, <code>\$</code> and prices such as <code>$5 for</code>
+stay text, and an equation cannot run across a blank line. Code spans and
+fenced code are skipped.</p>
+<p>This is a syntax check and nothing more. <code>\frac{6} = 3</code> parses, because the
+<code>=</code> becomes the denominator, and so does an equation with the wrong answer. The
+list of commands is written from the KaTeX 0.16 function list, not taken from
+KaTeX, and it leans generous. A valid command missing from it is reported as a
+malformed equation with its name in <code>math_issues</code>, which is how to find it and
+add it.</p>
+<p>The count stays out of the score so that the weights, and every number on this
+page, keep the values they were checked at. On the six existing books it finds
+8,880 well-formed equations and 1 malformed one. The one is in a gemma4-31b
+chapter that opens an equation with <code>\(</code> and closes it with <code>$</code>, so the
+renderer pairs it with the next <code>\)</code> and swallows a sentence of prose.</p>
 <h2 id="step-4-from-sub-scores-to-one-number">Step 4: From Sub-Scores to One Number<a class="headerlink" href="#step-4-from-sub-scores-to-one-number" title="Permanent link">&para;</a></h2>
 <p>Every sub-score is one of three shapes: a plateau with sloping sides, a
 threshold that rises to full credit, or a threshold that falls from it. All are
@@ -2148,14 +2213,14 @@ editing one constant.</p>
 <div class="arithmatex">\[ Q = 100 \times \frac{\sum_d w_d \, s_d}{\sum_d w_d} \]</div>
 <p>with the weights in the first table of this page.</p>
 <h2 id="step-5-the-book-score">Step 5: The Book Score<a class="headerlink" href="#step-5-the-book-score" title="Permanent link">&para;</a></h2>
-<p>A book gets a level, a consistency, and a headline that combines the two.</p>
+<p>A book gets a level, a consistency, and a composite score that multiplies the two.</p>
 <div class="arithmatex">\[ \mathrm{level} = \frac{1}{N} \sum_{i=1}^{N} Q_i \qquad
 \mathrm{consistency} = 100 \left(1 - \frac{\sigma_W}{\mu_W}\right) \qquad
-\mathrm{headline} = \frac{\mathrm{level} \times \mathrm{consistency}}{100} \]</div>
+\mathrm{composite} = \frac{\mathrm{level} \times \mathrm{consistency}}{100} \]</div>
 <p>Here <code>N</code> is every chapter in the book, with stubs counted as 0, and <code>μ_W</code> and
 <code>σ_W</code> are the mean and population standard deviation of the written chapters
 only. Consistency needs at least two written chapters; with one it is undefined
-and so is the headline.</p>
+and so is the composite score.</p>
 <p>The program also reports the floor, the lowest written chapter, and a robust
 z-score for each written chapter: its distance from the median divided by 1.4826
 times the median absolute deviation, with the divisor never below 2 points. With
@@ -2212,7 +2277,7 @@ at the low end and 5 × 400 + 11 × 200 = 4,200 at the high end.</p>
 <p>For the book, <code>gemma4:31b</code> has 12 chapters. Ten are written, with scores from
 68.7 to 90.8 and a mean of 83.8, and two are stubs. Level is the sum of those ten
 scores over all twelve, 69.8. The coefficient of variation of the written
-chapters is 0.09, so consistency is 91.1 and the headline is 69.8 × 0.911 =
+chapters is 0.09, so consistency is 91.1 and the composite score is 69.8 × 0.911 =
 63.6.</p>
 <h2 id="why-it-is-built-this-way">Why It Is Built This Way<a class="headerlink" href="#why-it-is-built-this-way" title="Permanent link">&para;</a></h2>
 <h3 id="counts-not-a-language-model">Counts, not a language model<a class="headerlink" href="#counts-not-a-language-model" title="Permanent link">&para;</a></h3>
@@ -2333,7 +2398,7 @@ documents the one place where it is stricter.</p>
 <td>One file, standard library only</td>
 <td>Several modules, packages</td>
 <td>It copies to a fresh DGX and runs</td>
-<td>It is long, about 1,300 lines, and regex-heavy</td>
+<td>It is long, about 1,800 lines, and regex-heavy</td>
 </tr>
 <tr>
 <td>A sub-score that does not apply is dropped</td>
@@ -2358,7 +2423,8 @@ documents the one place where it is stricter.</p>
 <h2 id="what-it-cannot-tell-you">What It Cannot Tell You<a class="headerlink" href="#what-it-cannot-tell-you" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Correctness.</strong> A chapter can follow every rule and teach a wrong
-  procedure. Nothing here evaluates the mathematics.</li>
+  procedure. Nothing here evaluates the mathematics. The equation count checks
+  that the TeX would parse, not that it says the right thing.</li>
 <li><strong>Gaming.</strong> A model could fill every specification field with plausible
   keywords and score well. The checks for templated specs, repeated sentences,
   and thin fields narrow the gap, and nothing closes it. In one gpt-oss chapter
@@ -2402,7 +2468,7 @@ documents the one place where it is stricter.</p>
 </table>
 <p>The flips come from two pairs: <code>qwen3.6:35b</code> against <code>gemma4:31b</code>, in 41% of the
 trials, and <code>gemma4:26b</code> against <code>gpt-oss:120b</code>, in 8%. The first pair is within a
-point of each other on the headline and should be treated as a tie.</p>
+point of each other on the composite score and should be treated as a tie.</p>
 <p>Three bugs got past all four checks.</p>
 <ul>
 <li><strong>The header rule</strong>, described above, was stricter than the toolchain.</li>
@@ -2431,7 +2497,7 @@ human judgment that is still owed.</p>
 <th style="text-align: right;">Level</th>
 <th style="text-align: right;">Consistency</th>
 <th style="text-align: right;">Floor</th>
-<th style="text-align: right;">Headline</th>
+<th style="text-align: right;">Composite</th>
 </tr>
 </thead>
 <tbody>
@@ -2500,7 +2566,8 @@ reading the chapter:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3<span class="w"> </span>src/scoring/chapter_quality.py<span class="w"> </span>docs/models/&lt;model&gt;<span class="w"> </span>--raw
 </span></code></pre></div>
 <p>Give it several books and it ends with a comparison table. <code>--json</code> writes
-every raw count and sub-score, <code>--csv</code> writes one row per chapter, and
+every raw count and sub-score and lists each malformed equation, <code>--csv</code> writes
+one row per chapter, and
 <code>--target-grade</code> sets the reading grade for a course other than Algebra I. The
 weights, tier table, and every threshold are constants at the top of the file.</p>
 <p>Each chapter's flags say which rule it broke:</p>
@@ -2555,6 +2622,10 @@ weights, tier table, and every threshold are constants at the top of the file.</
 <tr>
 <td><code>LISTS:n</code></td>
 <td><code>n</code> lists with no blank line before them</td>
+</tr>
+<tr>
+<td><code>MALFORMED_MATH:n</code></td>
+<td><code>n</code> equations the renderer would show as source text. Reported, not scored</td>
 </tr>
 <tr>
 <td><code>IMG_BROKEN:n</code></td>
