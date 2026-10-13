@@ -61,7 +61,7 @@ This chapter assumes only the prerequisites listed in the [course description](.
 
 Writing a textbook looks like one large creative act. Generating one with a language model is a different kind of work. It is thousands of small rules, each easy to follow once, that must all be followed, in order, for hours. This book measures whether a small model, running on a machine you can own, is able to do that.
 
-The experiment is simple to state. We take one NVIDIA DGX system and have it generate the same Algebra I textbook many times, each time with a different open-weight language model, which is a model whose trained weights anyone may download and run. For each model we ask three questions, in this order:
+The experiment is simple to state. We take one NVIDIA DGX system and have it generate the same Algebra I textbook many times from an [856-word course description](https://dmccreary.github.io/algebra-1/course-description/), each time with a different open-weight language model, which is a model whose trained weights anyone may download and run. For each model we ask three questions, in this order:
 
 1. **Can it finish?** Does the model reach a complete book, or does it stall partway?
 2. **How long does it take?** How many hours of machine time does one book need?

@@ -151,6 +151,72 @@ outcomes.
 - Check the [Learning Graph](learning-graph/index.md) when you want to see how
   a concept fits into the larger picture.
 
-## Author
+## About the Author
 
-Dan McCreary
+![Dan McCreary](./img/dan-headshot-small.png){ width="150px" align="right"}
+
+Dan McCreary is a semi-retired AI researcher, solution architect, and
+educator who has spent more than three decades helping Fortune 100
+organizations reason over massive datasets. At Optum he founded the
+Generative AI Center of Excellence and led the team that built one of the
+world's largest healthcare knowledge graphs — spanning over 25 billion
+vertices — to unify member, provider, and patient insights. Dan's deep
+background in knowledge representation and systems thinking underpins the
+precise learning graphs and intelligent textbook workflows used throughout
+this book.
+
+He is the co-author of *Making Sense of NoSQL* (Manning Publications), the
+founding chair of the NoSQL Now! conference, and a frequent keynote speaker
+on semantic search, ontology strategy, and AI hardware. Beyond industry, Dan
+has mentored students as a STEM volunteer since 2014 and now applies the same
+rigor to building open educational resources. You can visit the
+[Intelligent Textbooks Case Studies](https://dmccreary.github.io/intelligent-textbooks/case-studies/)
+to see over 87 textbooks that Dan has created or co-created with other
+authors.
+
+**Selected Credentials**
+
+- B.A. in Physics and Computer Science from Carleton College
+- M.S.E.E. from the University of Minnesota
+- MBA coursework at the University of St. Thomas
+- Patent holder in semantic search and ontology management techniques
+- Advocate for large-scale Enterprise Knowledge Graph adoption across
+  healthcare and education
+- Long-time promoter of accessible, low-cost AI-powered learning experiences
+
+## How to Cite This Book
+
+If you reference this textbook in academic work, curriculum proposals,
+lesson plans, or other publications, please use one of the following
+citation formats. The results in this book change as new models are run, so
+note the date you accessed it.
+
+**APA (7th edition)**
+
+McCreary, D. (2026). *DGX Evaluation for Textbook Generation*. https://dmccreary.github.io/dgx-eval/
+
+**Chicago (17th edition)**
+
+McCreary, Dan. 2026. *DGX Evaluation for Textbook Generation*. https://dmccreary.github.io/dgx-eval/.
+
+**MLA (9th edition)**
+
+McCreary, Dan. *DGX Evaluation for Textbook Generation*. 2026, dmccreary.github.io/dgx-eval/.
+
+**BibTeX**
+
+```bibtex
+@book{mccreary2026dgxeval,
+  title     = {DGX Evaluation for Textbook Generation},
+  author    = {McCreary, Dan},
+  year      = {2026},
+  url       = {https://dmccreary.github.io/dgx-eval/},
+  note      = {Interactive intelligent textbook}
+}
+```
+
+To cite a specific chapter, append the chapter number and title — for
+example:
+
+McCreary, D. (2026). Chapter 1: Prerequisites and the Intelligent Textbook. In
+*DGX Evaluation for Textbook Generation*. https://dmccreary.github.io/dgx-eval/chapters/01-intro-intelligent-textbooks/
