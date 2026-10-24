@@ -10,6 +10,7 @@ Version 0.01, 2026-10-12.
 - Every number regenerated from the repository by program
   (`data/paper-numbers.json`)
 - Figures and per-run data reproducible from `src/reporting/`
+- Reference list verified entry by entry on 2026-10-13; the scorer is committed
 
 ## What the Paper Claims
 
@@ -39,10 +40,9 @@ Not claimed, and stated as limits in the paper:
 | Item | Who | Why it matters |
 |---|---|---|
 | Review every claim | Author | The draft was written by an AI assistant from the book's pages and run records |
-| Verify the 34 unverified references; add DOIs | Author or assistant | Eleven were verified; the rest are from memory |
-| Commit `src/scoring/chapter_quality.py` | Author | The paper's numbers come from the modified working tree |
+| Re-read the Brusilovsky, Sosnovsky, and Thaker article | Author | The publisher blocked automated access; Section 2.1 now states only what the abstract supports, and the full text may support more |
 | Confirm the wording about the second unit | Administrator | Section 4.8 relays a third party's findings |
-| Check the `gemma4:31b` speed against the memory-bandwidth bound | Author | See README note 4 |
+| Explain the `gemma4:31b` speed | Author | 19 GB of weights at 273 GB/s caps a plain decode near 14 tokens per second; 28 to 40 was measured. See README note 4 |
 | Update `docs/appendices/cost-analysis.md` with measured times | Author | The page still says one stage was measured |
 | Repeated runs, human blind review, cloud baseline | Author | Future work in Section 10; they would change the findings |
 
@@ -51,9 +51,14 @@ Not claimed, and stated as limits in the paper:
 - [x] All sections have content
 - [x] Abstract under 250 words
 - [x] All figures created and referenced
-- [x] All citations resolve
+- [x] All citations resolve (every key is defined and every entry is cited)
+- [x] All 45 references verified against a source on 2026-10-13 (`src/reporting/verify_references.py` and by hand)
+- [x] Paper numbers and figures regenerate byte-identical from the committed scorer
 - [x] Compiles without errors
 - [x] No device details in any file
 - [ ] PDF reviewed by the author
-- [ ] References verified
-- [ ] arXiv package built
+- [x] References verified
+- [x] arXiv package built and scanned (`python3 src/reporting/make_arxiv_package.py`)
+- [ ] Administrator confirms the Section 4.8 wording
+- [ ] License chosen
+- [ ] arXiv endorsement in hand for the chosen category

@@ -1,10 +1,16 @@
 % References for the SLM textbook-generation paper.
-% Entries marked VERIFIED were checked against the source's own page or a
-% search result during drafting (title, authors, venue, identifier). The
-% others are well-known works entered from memory; verify before submission.
+%
+% All 45 entries were checked on 2026-10-13 against a primary source: the
+% arXiv API, Crossref, a publisher or proceedings page, Open Library, or the
+% page or repository the entry points to. A "% VERIFIED" line names the source.
+% src/reporting/verify_references.py repeats the automatic part of the check.
+%
+% The bibliography style (ieeetr) does not print the eprint, archivePrefix, or
+% doi fields, so each arXiv-sourced entry also carries the identifier in its
+% note field; that is what prints.
 
 % ---------------------------------------------------------------- Textbooks
-% VERIFIED
+% VERIFIED Crossref 10.1002/aaai.12061
 @article{brusilovsky2022return,
   author  = {Brusilovsky, Peter and Sosnovsky, Sergey and Thaker, Khushboo},
   title   = {The Return of Intelligent Textbooks},
@@ -16,40 +22,47 @@
   doi     = {10.1002/aaai.12061}
 }
 
+% VERIFIED Open Library, ISBN 0-8013-1903-X. The catalog dates the first
+% printing December 2000; the copyright year, used here, is 2001.
 @book{anderson2001taxonomy,
-  author    = {Anderson, Lorin W. and Krathwohl, David R.},
+  author    = {Anderson, Lorin W. and Krathwohl, David R. and Airasian, Peter W. and Cruikshank, Kathleen A. and Mayer, Richard E. and Pintrich, Paul R. and Raths, James and Wittrock, Merlin C.},
   title     = {A Taxonomy for Learning, Teaching, and Assessing: A Revision of {Bloom's} Taxonomy of Educational Objectives},
-  publisher = {Addison Wesley Longman},
+  publisher = {Longman},
   address   = {New York},
   year      = {2001}
 }
 
+% VERIFIED Open Library, ISBN 1-4166-0035-3 (Expanded 2nd ed., ASCD, 2005)
 @book{wiggins2005ubd,
   author    = {Wiggins, Grant and McTighe, Jay},
   title     = {Understanding by Design},
-  edition   = {2nd},
+  edition   = {Expanded 2nd},
   publisher = {ASCD},
   address   = {Alexandria, VA},
   year      = {2005}
 }
 
+% VERIFIED Crossref 10.1007/978-3-642-58625-5 and Open Library, ISBN 3-540-64501-2
 @book{doignon1999knowledge,
   author    = {Doignon, Jean-Paul and Falmagne, Jean-Claude},
   title     = {Knowledge Spaces},
   publisher = {Springer},
   address   = {Berlin},
-  year      = {1999}
+  year      = {1999},
+  doi       = {10.1007/978-3-642-58625-5}
 }
 
+% VERIFIED the report's own title page and citation line, at the IHMC address in note
 @techreport{novak2008concept,
   author      = {Novak, Joseph D. and Ca{\~n}as, Alberto J.},
   title       = {The Theory Underlying Concept Maps and How to Construct and Use Them},
   institution = {Florida Institute for Human and Machine Cognition},
   number      = {IHMC CmapTools 2006-01 Rev 01-2008},
-  year        = {2008}
+  year        = {2008},
+  note        = {\url{https://cmap.ihmc.us/docs/theory-of-concept-maps}, accessed October 2026}
 }
 
-% VERIFIED
+% VERIFIED the author's own paper source (title, version); GitHub tree returns 200
 @misc{mccreary2025fivelevels,
   author = {McCreary, Dan},
   title  = {A Five-Level Classification Framework for Intelligent Textbooks: Lessons from Autonomous Vehicle Standards},
@@ -57,22 +70,27 @@
   note   = {Version 0.04 preprint. Source at \url{https://github.com/dmccreary/intelligent-textbooks/tree/main/papers/five-levels}, accessed October 2026}
 }
 
+% VERIFIED the paper's own source (title, three authors, version); repository returns 200
 @misc{mccreary2025microsims,
   author = {Lockhart, Valerie and McCreary, Dan and Peterson, Troy A.},
   title  = {{MicroSims}: A Framework for {AI}-Generated, Scalable Educational Simulations with Universal Embedding and Adaptive Learning Support},
   year   = {2025},
-  note   = {Preprint. Source and examples at \url{https://github.com/dmccreary/microsims}}
+  note   = {Preprint. Source and examples at \url{https://github.com/dmccreary/microsims}, accessed October 2026}
 }
 
+% VERIFIED UCF STARS record (authors, report 8-75, Millington TN, 1975) and Crossref 10.21236/ada006655
 @techreport{kincaid1975,
-  author      = {Kincaid, J. Peter and Fishburne, Robert P. and Rogers, Richard L. and Chissom, Brad S.},
+  author      = {Kincaid, J. Peter and Fishburne, Jr., Robert P. and Rogers, Richard L. and Chissom, Brad S.},
   title       = {Derivation of New Readability Formulas (Automated Readability Index, Fog Count and {Flesch} Reading Ease Formula) for {Navy} Enlisted Personnel},
   institution = {Naval Technical Training Command, Research Branch},
+  address     = {Millington, TN},
   type        = {Research Branch Report},
   number      = {8-75},
-  year        = {1975}
+  year        = {1975},
+  doi         = {10.21236/ADA006655}
 }
 
+% VERIFIED Crossref 10.1016/j.lindif.2023.102274
 @article{kasneci2023chatgpt,
   author  = {Kasneci, Enkelejda and others},
   title   = {{ChatGPT} for Good? On Opportunities and Challenges of Large Language Models for Education},
@@ -84,61 +102,75 @@
 }
 
 % ------------------------------------------- Small models and local inference
-% VERIFIED
+% VERIFIED arXiv 2506.02153; the working definition quoted in the text is WD1
 @misc{belcak2025slm,
   author        = {Belcak, Peter and Heinrich, Greg and Diao, Shizhe and Fu, Yonggan and Dong, Xin and Muralidharan, Saurav and Lin, Yingyan Celine and Molchanov, Pavlo},
   title         = {Small Language Models are the Future of Agentic {AI}},
   year          = {2025},
   eprint        = {2506.02153},
-  archivePrefix = {arXiv}
+  archivePrefix = {arXiv},
+  note          = {arXiv:2506.02153}
 }
 
-% VERIFIED
+% VERIFIED arXiv 2409.15790; abstract bounds the survey at 100M to 5B parameters
 @misc{lu2024slm,
   author        = {Lu, Zhenyan and Li, Xiang and others},
   title         = {Small Language Models: Survey, Measurements, and Insights},
   year          = {2024},
   eprint        = {2409.15790},
-  archivePrefix = {arXiv}
+  archivePrefix = {arXiv},
+  note          = {arXiv:2409.15790}
 }
 
-% VERIFIED
+% VERIFIED arXiv 2411.03350
 @misc{wang2024slmsurvey,
   author        = {Wang, Fali and others},
   title         = {A Comprehensive Survey of Small Language Models in the Era of Large Language Models: Techniques, Enhancements, Applications, Collaboration with {LLMs}, and Trustworthiness},
   year          = {2024},
   eprint        = {2411.03350},
-  archivePrefix = {arXiv}
+  archivePrefix = {arXiv},
+  note          = {arXiv:2411.03350}
 }
 
+% VERIFIED arXiv 1701.06538 (title, authors) and OpenReview B1ckMDqlg (ICLR 2017 poster)
 @inproceedings{shazeer2017moe,
   author    = {Shazeer, Noam and Mirhoseini, Azalia and Maziarz, Krzysztof and Davis, Andy and Le, Quoc and Hinton, Geoffrey and Dean, Jeff},
   title     = {Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer},
   booktitle = {International Conference on Learning Representations},
-  year      = {2017}
+  year      = {2017},
+  note      = {arXiv:1701.06538}
 }
 
+% VERIFIED Crossref (NeurIPS 35, pp. 30318--30332)
 @inproceedings{dettmers2022llmint8,
   author    = {Dettmers, Tim and Lewis, Mike and Belkada, Younes and Zettlemoyer, Luke},
   title     = {{LLM.int8()}: 8-bit Matrix Multiplication for Transformers at Scale},
   booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {35},
+  pages     = {30318--30332},
   year      = {2022}
 }
 
+% VERIFIED arXiv 2210.17323 (title, authors; comment field says ICLR 2023)
 @inproceedings{frantar2022gptq,
   author    = {Frantar, Elias and Ashkboos, Saleh and Hoefler, Torsten and Alistarh, Dan},
   title     = {{GPTQ}: Accurate Post-Training Quantization for Generative Pre-trained Transformers},
   booktitle = {International Conference on Learning Representations},
-  year      = {2023}
+  year      = {2023},
+  note      = {arXiv:2210.17323}
 }
 
+% VERIFIED Crossref 10.1145/3600006.3613165
 @inproceedings{kwon2023vllm,
   author    = {Kwon, Woosuk and Li, Zhuohan and Zhuang, Siyuan and Sheng, Ying and Zheng, Lianmin and Yu, Cody Hao and Gonzalez, Joseph E. and Zhang, Hao and Stoica, Ion},
   title     = {Efficient Memory Management for Large Language Model Serving with {PagedAttention}},
   booktitle = {Proceedings of the 29th Symposium on Operating Systems Principles},
-  year      = {2023}
+  pages     = {611--626},
+  year      = {2023},
+  doi       = {10.1145/3600006.3613165}
 }
 
+% VERIFIED repository page returns 200; title is the repository's own description
 @misc{llamacpp,
   author = {{ggml-org}},
   title  = {{llama.cpp}: {LLM} inference in {C/C++}},
@@ -146,14 +178,17 @@
   note   = {\url{https://github.com/ggml-org/llama.cpp}, accessed October 2026}
 }
 
+% VERIFIED site returns 200; title is the site's current <title>
 @misc{ollama,
   author = {{Ollama}},
-  title  = {{Ollama}: Get up and running with large language models locally},
+  title  = {{Ollama}: Run {AI} Models Locally and in the Cloud},
   year   = {2026},
   note   = {\url{https://ollama.com}, accessed October 2026. Model library pages at \url{https://ollama.com/library}}
 }
 
-% VERIFIED
+% VERIFIED page returns 200 and states every figure the paper takes from it:
+% 128 GB LPDDR5x unified memory, 273 GB/s, 20 Arm cores (10 Cortex-X925 +
+% 10 Cortex-A725), 6,144 CUDA cores, 1 TB or 4 TB NVMe
 @misc{nvidia2025dgxspark,
   author = {{NVIDIA}},
   title  = {{DGX Spark} User Guide: Hardware Overview},
@@ -161,32 +196,37 @@
   note   = {\url{https://docs.nvidia.com/dgx/dgx-spark/hardware.html}, accessed October 2026}
 }
 
-% VERIFIED
+% VERIFIED arXiv 2508.10925; text gives 116.8B total and 5.1B active parameters
 @misc{openai2025gptoss,
   author        = {{OpenAI}},
   title         = {gpt-oss-120b \& gpt-oss-20b Model Card},
   year          = {2025},
   eprint        = {2508.10925},
-  archivePrefix = {arXiv}
+  archivePrefix = {arXiv},
+  note          = {arXiv:2508.10925}
 }
 
 % ------------------------------------------ Agents, skills, and tool calling
+% VERIFIED arXiv 2210.03629 (title, authors) and OpenReview WE_vluYUL-X (ICLR 2023)
 @inproceedings{yao2023react,
   author    = {Yao, Shunyu and Zhao, Jeffrey and Yu, Dian and Du, Nan and Shafran, Izhak and Narasimhan, Karthik and Cao, Yuan},
   title     = {{ReAct}: Synergizing Reasoning and Acting in Language Models},
   booktitle = {International Conference on Learning Representations},
-  year      = {2023}
+  year      = {2023},
+  note      = {arXiv:2210.03629}
 }
 
+% VERIFIED arXiv 2305.15334
 @misc{patil2023gorilla,
   author        = {Patil, Shishir G. and Zhang, Tianjun and Wang, Xin and Gonzalez, Joseph E.},
   title         = {Gorilla: Large Language Model Connected with Massive {APIs}},
   year          = {2023},
   eprint        = {2305.15334},
-  archivePrefix = {arXiv}
+  archivePrefix = {arXiv},
+  note          = {arXiv:2305.15334}
 }
 
-% VERIFIED
+% VERIFIED PMLR v267 page (seven authors, pp. 48371--48392)
 @inproceedings{patil2025bfcl,
   author    = {Patil, Shishir G. and Mao, Huanzhi and Yan, Fanjia and Ji, Charlie Cheng-Jie and Suresh, Vishnu and Stoica, Ion and Gonzalez, Joseph E.},
   title     = {The {Berkeley} Function Calling Leaderboard ({BFCL}): From Tool Use to Agentic Evaluation of Large Language Models},
@@ -197,30 +237,34 @@
   year      = {2025}
 }
 
-% VERIFIED
-@misc{liu2023agentbench,
-  author        = {Liu, Xiao and others},
-  title         = {{AgentBench}: Evaluating {LLMs} as Agents},
-  year          = {2023},
-  eprint        = {2308.03688},
-  archivePrefix = {arXiv}
+% VERIFIED arXiv 2308.03688 and OpenReview (ICLR 2024 poster)
+@inproceedings{liu2023agentbench,
+  author    = {Liu, Xiao and others},
+  title     = {{AgentBench}: Evaluating {LLMs} as Agents},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2024},
+  note      = {arXiv:2308.03688}
 }
 
+% VERIFIED arXiv 2310.06770 (comment field says ICLR 2024)
 @inproceedings{jimenez2024swebench,
   author    = {Jimenez, Carlos E. and Yang, John and Wettig, Alexander and Yao, Shunyu and Pei, Kexin and Press, Ofir and Narasimhan, Karthik},
   title     = {{SWE-bench}: Can Language Models Resolve Real-World {GitHub} Issues?},
   booktitle = {International Conference on Learning Representations},
-  year      = {2024}
+  year      = {2024},
+  note      = {arXiv:2310.06770}
 }
 
+% VERIFIED page: <h1> "Building effective agents", published 2024-12-19, byline
+% "Erik S. and Barry Zhang" (the page abbreviates the first author's surname)
 @misc{anthropic2024agents,
-  author = {{Anthropic}},
+  author = {Schluntz, Erik and Zhang, Barry},
   title  = {Building Effective Agents},
   year   = {2024},
-  note   = {\url{https://www.anthropic.com/engineering/building-effective-agents}, accessed October 2026}
+  note   = {Anthropic Engineering. \url{https://www.anthropic.com/engineering/building-effective-agents}, accessed October 2026}
 }
 
-% VERIFIED
+% VERIFIED page: title, byline (Zhang, Lazuka, Murag), published 2025-10-16
 @misc{anthropic2025skills,
   author = {Zhang, Barry and Lazuka, Keith and Murag, Mahesh},
   title  = {Equipping Agents for the Real World with Agent Skills},
@@ -228,6 +272,7 @@
   note   = {Anthropic Engineering. \url{https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills}, accessed October 2026}
 }
 
+% VERIFIED page returns 200; title matches the page's <title>
 @misc{claudecode,
   author = {{Anthropic}},
   title  = {How {Claude Code} Works},
@@ -235,38 +280,46 @@
   note   = {\url{https://code.claude.com/docs/en/how-claude-code-works}, accessed October 2026}
 }
 
+% VERIFIED repository returns 200; title is the README's heading; first commit 2025-11-01
 @misc{ibookskills,
   author = {McCreary, Dan},
-  title  = {{ibook-skills}: Agent Skills for Generating Intelligent Textbooks},
-  year   = {2026},
-  note   = {\url{https://github.com/dmccreary/ibook-skills}}
+  title  = {{ibook-skills}: Agent Skills for Intelligent Textbooks},
+  year   = {2025},
+  note   = {\url{https://github.com/dmccreary/ibook-skills}, accessed October 2026}
 }
 
+% VERIFIED repository returns 200; first commit 2025-11-10; the site footer and
+% license page state CC BY-NC-SA 4.0
 @misc{algebra1,
   author = {McCreary, Dan},
   title  = {Algebra {I}: An Intelligent Textbook},
   year   = {2025},
-  note   = {\url{https://github.com/dmccreary/algebra-1}. Course description licensed {CC BY-NC-SA 4.0}}
+  note   = {\url{https://github.com/dmccreary/algebra-1}, accessed October 2026. Course description licensed {CC BY-NC-SA 4.0}}
 }
 
 % -------------------------------------------------- Evaluation methodology
-@misc{liang2022helm,
+% VERIFIED arXiv 2211.09110; its journal reference is TMLR 2023
+@article{liang2022helm,
   author        = {Liang, Percy and others},
   title         = {Holistic Evaluation of Language Models},
-  year          = {2022},
+  journal       = {Transactions on Machine Learning Research},
+  year          = {2023},
   eprint        = {2211.09110},
-  archivePrefix = {arXiv}
+  archivePrefix = {arXiv},
+  note          = {arXiv:2211.09110}
 }
 
-% VERIFIED
+% VERIFIED arXiv 2405.14782
 @misc{biderman2024lessons,
   author        = {Biderman, Stella and Schoelkopf, Hailey and Sutawika, Lintang and others},
   title         = {Lessons from the Trenches on Reproducible Evaluation of Language Models},
   year          = {2024},
   eprint        = {2405.14782},
-  archivePrefix = {arXiv}
+  archivePrefix = {arXiv},
+  note          = {arXiv:2405.14782}
 }
 
+% VERIFIED JMLR page, volume 22, paper 164
 @article{pineau2021reproducibility,
   author  = {Pineau, Joelle and Vincent-Lamarre, Philippe and Sinha, Koustuv and Larivi{\`e}re, Vincent and Beygelzimer, Alina and d'Alch{\'e}-Buc, Florence and Fox, Emily and Larochelle, Hugo},
   title   = {Improving Reproducibility in Machine Learning Research (A Report from the {NeurIPS} 2019 Reproducibility Program)},
@@ -277,57 +330,78 @@
   year    = {2021}
 }
 
+% VERIFIED Crossref 10.18653/v1/D19-1224
 @inproceedings{dodge2019show,
   author    = {Dodge, Jesse and Gururangan, Suchin and Card, Dallas and Schwartz, Roy and Smith, Noah A.},
   title     = {Show Your Work: Improved Reporting of Experimental Results},
   booktitle = {Proceedings of EMNLP-IJCNLP},
-  year      = {2019}
+  pages     = {2185--2194},
+  year      = {2019},
+  doi       = {10.18653/v1/D19-1224}
 }
 
+% VERIFIED Crossref 10.1609/aaai.v32i1.11694
 @inproceedings{henderson2018rl,
   author    = {Henderson, Peter and Islam, Riashat and Bachman, Philip and Pineau, Joelle and Precup, Doina and Meger, David},
   title     = {Deep Reinforcement Learning That Matters},
   booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
-  year      = {2018}
+  volume    = {32},
+  number    = {1},
+  year      = {2018},
+  doi       = {10.1609/aaai.v32i1.11694}
 }
 
+% VERIFIED Crossref (NeurIPS 36, pp. 46595--46623); arXiv 2306.05685 comment names the Datasets and Benchmarks Track
 @inproceedings{zheng2023judge,
   author    = {Zheng, Lianmin and Chiang, Wei-Lin and Sheng, Ying and Zhuang, Siyuan and Wu, Zhanghao and Zhuang, Yonghao and Lin, Zi and Li, Zhuohan and Li, Dacheng and Xing, Eric P. and Zhang, Hao and Gonzalez, Joseph E. and Stoica, Ion},
   title     = {Judging {LLM}-as-a-Judge with {MT-Bench} and Chatbot Arena},
   booktitle = {Advances in Neural Information Processing Systems, Datasets and Benchmarks Track},
+  volume    = {36},
+  pages     = {46595--46623},
   year      = {2023}
 }
 
+% VERIFIED Crossref (NeurIPS 37, pp. 68772--68802)
 @inproceedings{panickssery2024selfpref,
   author    = {Panickssery, Arjun and Bowman, Samuel R. and Feng, Shi},
   title     = {{LLM} Evaluators Recognize and Favor Their Own Generations},
   booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {37},
+  pages     = {68772--68802},
   year      = {2024}
 }
 
+% VERIFIED Crossref 10.1145/3287560.3287596
 @inproceedings{mitchell2019modelcards,
   author    = {Mitchell, Margaret and Wu, Simone and Zaldivar, Andrew and Barnes, Parker and Vasserman, Lucy and Hutchinson, Ben and Spitzer, Elena and Raji, Inioluwa Deborah and Gebru, Timnit},
   title     = {Model Cards for Model Reporting},
   booktitle = {Proceedings of the Conference on Fairness, Accountability, and Transparency},
-  year      = {2019}
+  pages     = {220--229},
+  year      = {2019},
+  doi       = {10.1145/3287560.3287596}
 }
 
+% VERIFIED Crossref 10.1162/tacl_a_00638
 @article{liu2024lost,
   author  = {Liu, Nelson F. and Lin, Kevin and Hewitt, John and Paranjape, Ashwin and Bevilacqua, Michele and Petroni, Fabio and Liang, Percy},
   title   = {Lost in the Middle: How Language Models Use Long Contexts},
   journal = {Transactions of the Association for Computational Linguistics},
   volume  = {12},
   pages   = {157--173},
-  year    = {2024}
+  year    = {2024},
+  doi     = {10.1162/tacl_a_00638}
 }
 
+% VERIFIED arXiv 2404.06654 (title, authors; comment field says COLM 2024)
 @inproceedings{hsieh2024ruler,
   author    = {Hsieh, Cheng-Ping and others},
   title     = {{RULER}: What's the Real Context Size of Your Long-Context Language Models?},
   booktitle = {Conference on Language Modeling},
-  year      = {2024}
+  year      = {2024},
+  note      = {arXiv:2404.06654}
 }
 
+% VERIFIED Open Library (Wiley, 1991)
 @book{jain1991art,
   author    = {Jain, Raj},
   title     = {The Art of Computer Systems Performance Analysis: Techniques for Experimental Design, Measurement, Simulation, and Modeling},
@@ -336,6 +410,7 @@
   year      = {1991}
 }
 
+% VERIFIED Open Library, ISBN 978-1-108-72426-5 (title, subtitle, three authors, 2020)
 @book{kohavi2020trustworthy,
   author    = {Kohavi, Ron and Tang, Diane and Xu, Ya},
   title     = {Trustworthy Online Controlled Experiments: A Practical Guide to {A/B} Testing},
@@ -344,23 +419,27 @@
 }
 
 % ---------------------------------------------------- Networking and safety
+% VERIFIED Crossref 10.14722/ndss.2017.23160
 @inproceedings{donenfeld2017wireguard,
   author    = {Donenfeld, Jason A.},
   title     = {{WireGuard}: Next Generation Kernel Network Tunnel},
   booktitle = {Network and Distributed System Security Symposium},
-  year      = {2017}
+  year      = {2017},
+  doi       = {10.14722/ndss.2017.23160}
 }
 
+% VERIFIED page: <h1> "How Tailscale works", byline Avery Pennarun, 2020-03-20
 @misc{pennarun2020tailscale,
   author = {Pennarun, Avery},
   title  = {How {Tailscale} Works},
   year   = {2020},
-  note   = {\url{https://tailscale.com/blog/how-tailscale-works}}
+  note   = {\url{https://tailscale.com/blog/how-tailscale-works}, accessed October 2026}
 }
 
+% VERIFIED repository returns 200; title is the repository's current description
 @misc{gitleaks,
   author = {{Gitleaks contributors}},
-  title  = {Gitleaks: Protect and discover secrets using {Gitleaks}},
+  title  = {Gitleaks: Find secrets with {Gitleaks}},
   year   = {2026},
-  note   = {\url{https://github.com/gitleaks/gitleaks}}
+  note   = {\url{https://github.com/gitleaks/gitleaks}, accessed October 2026}
 }

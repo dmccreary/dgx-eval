@@ -5,9 +5,10 @@
 #   ./build.sh          build main.pdf
 #   ./build.sh clean    remove build artifacts
 #   ./build.sh numbers  regenerate figures and data/paper-numbers.json first
+#   ./build.sh arxiv    build and scan the arXiv package (arxiv-submission.zip)
 #
-# The figure and number generator lives in src/reporting/ because it reads the
-# evaluation's scored output; see src/README.md.
+# The figure and number generator and the arXiv packager live in src/reporting/;
+# see src/README.md.
 
 set -e  # Exit on error
 
@@ -30,6 +31,12 @@ if [ "$1" == "clean" ]; then
     rm -f main.pdf main.aux main.log main.out main.bbl main.blg
     echo "Clean complete."
     exit 0
+fi
+
+if [ "$1" == "arxiv" ]; then
+    echo "Building and scanning the arXiv package..."
+    python3 ../../src/reporting/make_arxiv_package.py "$(pwd)"
+    exit $?
 fi
 
 if [ "$1" == "numbers" ]; then

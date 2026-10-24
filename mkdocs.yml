@@ -326,6 +326,7 @@ nav:
 
   - Glossary: glossary.md
   - FAQ: faq.md
+  - References: references.md
   - License: license.md
   - Contact: contact.md
 
@@ -455,7 +456,7 @@ extra:
   textbook_name: 'DGX Evaluation for Textbook Generation'
   textbook_version: '0.1'
 
-  # Google Analytics — uncomment once a property ID exists:
-  # analytics:
-  #   provider: google
-  #   property: G-XXXXXXXXXX
+  # Google Analytics — uncomment once a property ID exists: G-M7YM8CKB99
+  analytics:
+     provider: google
+     property: G-M7YM8CKB99

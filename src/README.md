@@ -127,6 +127,8 @@ export DGX_HOSTS="<user>@<dgx-host-a> <user>@<dgx-host-b>"
 | `publish_results.py` | Rebuild `docs/models/` from fetched run output: for each model, its learning graph for the viewer, a graph quality report, its chapters, and a page of chapter metrics. It also rewrites the Model Results block of the navigation in `mkdocs.yml` |
 | `aggregate_runs.py` | Reduce fetched run output to one sanitized CSV of per-run counts and times, `papers/slm-textbooks/data/stage-metrics.csv`. It copies no path, host name, or text |
 | `make_paper_figures.py` | Make the figures and `data/paper-numbers.json` for the paper in `papers/slm-textbooks`. It runs `scoring/chapter_quality.py` itself and needs matplotlib, so use the `mkdocs` conda environment |
+| `verify_references.py` | Check every entry of a BibTeX file against arXiv, Crossref, Open Library, or the page it cites, and print each entry beside what the source says. It finds what a source states; it cannot tell whether the cited work supports the sentence that cites it |
+| `make_arxiv_package.py` | Build the arXiv upload for the paper: flatten it, strip every comment, inline the bibliography, test-compile it alone, scan the source and the PNG metadata for device details, and zip it. It writes nothing if the scan has a hit. Needs Tectonic |
 
 It reuses two scripts from the skills instead of repeating them: the graph
 analysis from `learning-graph-generator` and the reading-level measure from
@@ -145,6 +147,23 @@ reads its CSV, the published model books, and the book's own chapters:
 python3 src/reporting/aggregate_runs.py
 /usr/local/Caskroom/miniforge/base/envs/mkdocs/bin/python src/reporting/make_paper_figures.py
 ```
+
+Two more scripts prepare the paper for arXiv. Both are standard library only,
+and the first needs network access:
+
+```bash
+python3 src/reporting/verify_references.py
+python3 src/reporting/make_arxiv_package.py
+```
+
+`verify_references.py` marks an entry `REVIEW` when its title, first author, or
+year does not match the source; a web page or a book needs a person to read the
+line. `make_arxiv_package.py` is also run as `./build.sh arxiv` in the paper
+directory. arXiv publishes the TeX source, so the package ships no comment and
+no `.bib`, and the scan applies the rules of the repository's security section
+to it. Names that must never appear go in `DGX_EVAL_SCAN_TERMS`
+(comma-separated), so they are not written into the repository; unset, the script
+says that no names were checked.
 
 ## microsim-review
 
